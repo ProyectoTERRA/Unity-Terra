@@ -20,4 +20,9 @@ public class MenuPLay : MonoBehaviour
     {
         SceneManager.LoadScene(jugar);
     }
+
+    public void salir()
+    {
+        Application.Quit();
+    }
 }
