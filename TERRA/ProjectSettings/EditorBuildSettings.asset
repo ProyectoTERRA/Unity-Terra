@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/confi.unity
     guid: 8e2cd5cff9c7a2b4d8118e2c5ac3cd6a
+  - enabled: 1
+    path: Assets/Scenes/Menus/menuSeleccionPartida.unity
+    guid: 391c1cff9339c16458ead9ef4a609db7
+  - enabled: 1
+    path: Assets/Scenes/Menus/menuJugador.unity
+    guid: f800456f67d6c064593665906e8d337c
   m_configObjects: {}
