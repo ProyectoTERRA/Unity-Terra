@@ -13,5 +13,10 @@ public class getText : MonoBehaviour
         
         setNombre.text ="Nombre: "+nombre.text;
         Debug.Log(nombre+"        "+nombre.text);
+
+        Debug.Log("Nombre de partida: "+ EstadoJuego.estadoJuego.nombrePartida);
+        EstadoJuego.estadoJuego.guardar();
+        EstadoJuego.estadoJuego.nombrePartida = "Aleee";
+        Debug.Log("Nombre de partida despues: " + EstadoJuego.estadoJuego.nombrePartida);
     }
 }
