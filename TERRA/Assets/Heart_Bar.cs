@@ -55,6 +55,7 @@ public class Heart_Bar : MonoBehaviour
 
             type = 1;
             hearts = 6;
+            Debug.Log("Corazones: " + hearts);
 
         }
 
@@ -64,15 +65,16 @@ public class Heart_Bar : MonoBehaviour
 
             type = 2;
             hearts = 8;
-
+            Debug.Log("Corazones: " + hearts);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3)){
+        if (Input.GetKeyDown(KeyCode.Alpha3)) {
 
             Debug.Log("Tipo: " + type);
 
             type = 3;
             hearts = 10;
+            Debug.Log("Corazones: " + hearts);
 
         }
 
@@ -84,13 +86,13 @@ public class Heart_Bar : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.P))
                     {
-                        Debug.Log("Corazones: " + hearts);
+                        
                         if (hearts > 0) {
 
                             hearts--;
 
                         }
-
+                        Debug.Log("Corazones: " + hearts);
                     }
 
                     if(hearts == 6)
@@ -135,12 +137,15 @@ public class Heart_Bar : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.P))
                     {
+
                         if (hearts > 0)
                         {
 
                             hearts--;
 
                         }
+
+                        Debug.Log("Corazones: " + hearts);
 
                     }
 
@@ -196,14 +201,17 @@ public class Heart_Bar : MonoBehaviour
             case 3:
                 {
 
-                    if (Input.GetKeyDown(KeyCode.P))
-                    {
+                    if (Input.GetKeyDown(KeyCode.P)) { 
+
+                        
                         if (hearts > 0)
                         {
 
                             hearts--;
 
                         }
+
+                        Debug.Log("Corazones: " + hearts);
 
                     }
 
