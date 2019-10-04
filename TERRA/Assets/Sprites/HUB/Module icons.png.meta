@@ -1,7 +1,19 @@
 fileFormatVersion: 2
-guid: b904d3b14e77ddd4e8ab2cd3cc2533e0
+guid: 6baffdb8341cffd479baf838c0294a72
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -786741138214063059
+    second: Module icons_0
+  - first:
+      213: 4082591644369316254
+    second: Module icons_1
+  - first:
+      213: 4304937822940093992
+    second: Module icons_2
+  - first:
+      213: 5650257488868599521
+    second: Module icons_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Module icons_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1515
+        width: 345
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1c7fa11b7128e4a922d4f1e6005e63
+      internalID: -786741138214063059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Module icons_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1035
+        width: 345
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465dac2b5d0975c47841db23018b87b4
+      internalID: 4082591644369316254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Module icons_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 555
+        width: 345
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016da5436eaba1843a2cd5bce08bd023
+      internalID: 4304937822940093992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Module icons_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 75
+        width: 345
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f7603434677dbc4695f985d24bf832e
+      internalID: 5650257488868599521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
