@@ -11,6 +11,78 @@ TextureImporter:
   - first:
       213: -8032838479458428398
     second: Heart Bar - HUD_2
+  - first:
+      213: -2538383428321051349
+    second: Heart Bar - HUD_3
+  - first:
+      213: 1550991713787156250
+    second: Heart Bar - HUD_4
+  - first:
+      213: 2542286701285202932
+    second: Heart Bar - HUD_5
+  - first:
+      213: 3924655710798690366
+    second: Heart Bar - HUD_6
+  - first:
+      213: -5011289219287401177
+    second: Heart Bar - HUD_7
+  - first:
+      213: 3363215680955250802
+    second: Heart Bar - HUD_8
+  - first:
+      213: -8232666664271859962
+    second: Heart Bar - HUD_9
+  - first:
+      213: -5714612827088884279
+    second: Heart Bar - HUD_10
+  - first:
+      213: -328118753775405316
+    second: Heart Bar - HUD_11
+  - first:
+      213: -3894807961169170702
+    second: Heart Bar - HUD_12
+  - first:
+      213: -7288757490532810253
+    second: Heart Bar - HUD_13
+  - first:
+      213: 532225973583000243
+    second: Heart Bar - HUD_14
+  - first:
+      213: -7732939928866879016
+    second: Heart Bar - HUD_15
+  - first:
+      213: -8892294918660615598
+    second: Heart Bar - HUD_16
+  - first:
+      213: 3963100895857083591
+    second: Heart Bar - HUD_17
+  - first:
+      213: 953788435562328893
+    second: Heart Bar - HUD_18
+  - first:
+      213: 893040857981752892
+    second: Heart Bar - HUD_19
+  - first:
+      213: -8258807896052027728
+    second: Heart Bar - HUD_20
+  - first:
+      213: -4074161296029253235
+    second: Heart Bar - HUD_21
+  - first:
+      213: 3494774697565845777
+    second: Heart Bar - HUD_22
+  - first:
+      213: -8040541160353156362
+    second: Heart Bar - HUD_23
+  - first:
+      213: 4905716379504333919
+    second: Heart Bar - HUD_24
+  - first:
+      213: 774568880688577768
+    second: Heart Bar - HUD_25
+  - first:
+      213: 1282317584577081253
+    second: Heart Bar - HUD_26
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -54,7 +126,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 480
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,10 +182,10 @@ TextureImporter:
       name: Heart Bar - HUD_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 26
-        width: 2619
-        height: 444
+        x: 19
+        y: 2422
+        width: 2629
+        height: 454
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,7 +193,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ba66d5afb9d1a942acaa5e9afd12679
+      spriteID: 284ef897f9fb3de4d95fe5df2000730a
       internalID: 8389861959188856108
       vertices: []
       indices: 
@@ -131,10 +203,10 @@ TextureImporter:
       name: Heart Bar - HUD_1
       rect:
         serializedVersion: 2
-        x: 2757
-        y: 26
-        width: 2108
-        height: 444
+        x: 3021
+        y: 2422
+        width: 2630
+        height: 454
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,7 +214,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d21b532bd9a32c489b866b285c0d9aa
+      spriteID: 765c8650d73cb1c43b32e902a1e4d541
       internalID: 5784495346426572479
       vertices: []
       indices: 
@@ -152,10 +224,10 @@ TextureImporter:
       name: Heart Bar - HUD_2
       rect:
         serializedVersion: 2
-        x: 5485
-        y: 26
-        width: 1599
-        height: 444
+        x: 6018
+        y: 2422
+        width: 2628
+        height: 454
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +235,512 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eefa2e46a28a4aa4abf013a853896a12
+      spriteID: 490e6ab6c59ae34438c83808c476a16c
       internalID: -8032838479458428398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_3
+      rect:
+        serializedVersion: 2
+        x: 9020
+        y: 2422
+        width: 2629
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20b9478f8d5f6e4ebf1fa84822cdc79
+      internalID: -2538383428321051349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_4
+      rect:
+        serializedVersion: 2
+        x: 12023
+        y: 2422
+        width: 2629
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb9428342993b640901db9834946fed
+      internalID: 1550991713787156250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_5
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1939
+        width: 2629
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1029965c486aa554c84f2ebe264deef7
+      internalID: 2542286701285202932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_6
+      rect:
+        serializedVersion: 2
+        x: 3021
+        y: 1939
+        width: 2630
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9029126396b444a87c045d98f8e817
+      internalID: 3924655710798690366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_7
+      rect:
+        serializedVersion: 2
+        x: 6018
+        y: 1939
+        width: 2628
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e184d158b4d7504d8b80729d051e126
+      internalID: -5011289219287401177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_8
+      rect:
+        serializedVersion: 2
+        x: 9020
+        y: 1939
+        width: 2629
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3c771f4f5c24747b934f83f1d0b4c5
+      internalID: 3363215680955250802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_9
+      rect:
+        serializedVersion: 2
+        x: 12023
+        y: 1939
+        width: 2629
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d93f5ff04dfbd47aed3e115229c719
+      internalID: -8232666664271859962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_10
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1462
+        width: 2629
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b7f4dff9469e98498f62ea6e4a837d3
+      internalID: -5714612827088884279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_11
+      rect:
+        serializedVersion: 2
+        x: 3021
+        y: 1462
+        width: 2117
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf5e5ab67c52cb46ae5d57d472f463d
+      internalID: -328118753775405316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_12
+      rect:
+        serializedVersion: 2
+        x: 6018
+        y: 1462
+        width: 2123
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8b2fc9484333249a8397b335de1cc5
+      internalID: -3894807961169170702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_13
+      rect:
+        serializedVersion: 2
+        x: 9020
+        y: 1462
+        width: 2116
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586b7d88ccfe8ef4ea22dd96aef79c88
+      internalID: -7288757490532810253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_14
+      rect:
+        serializedVersion: 2
+        x: 12023
+        y: 1462
+        width: 2116
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b58db2d92dfef349b7dfee6257eb718
+      internalID: 532225973583000243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_15
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 979
+        width: 2123
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d54c0e4f433b8f4a830a194f247dca6
+      internalID: -7732939928866879016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_16
+      rect:
+        serializedVersion: 2
+        x: 3021
+        y: 979
+        width: 2117
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e1bb7f50cbbdf64bb94a2337308d76b
+      internalID: -8892294918660615598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_17
+      rect:
+        serializedVersion: 2
+        x: 6018
+        y: 979
+        width: 2123
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f3182249e66bf4c8b77e0a2fa754fc
+      internalID: 3963100895857083591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_18
+      rect:
+        serializedVersion: 2
+        x: 9020
+        y: 979
+        width: 2116
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b419024d35b34144bbc1b3c6dcf8c11c
+      internalID: 953788435562328893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_19
+      rect:
+        serializedVersion: 2
+        x: 12023
+        y: 979
+        width: 2116
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe675a2aad3ef2443af5c04e3925c67e
+      internalID: 893040857981752892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_20
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 502
+        width: 1611
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214ee5886c392f842b3d47a6e2c8f062
+      internalID: -8258807896052027728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_21
+      rect:
+        serializedVersion: 2
+        x: 3021
+        y: 502
+        width: 1611
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d4cf14455b5c442803d5b725389f54
+      internalID: -4074161296029253235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_22
+      rect:
+        serializedVersion: 2
+        x: 6018
+        y: 502
+        width: 1610
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6853b70b211a745b37c44778848a90
+      internalID: 3494774697565845777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_23
+      rect:
+        serializedVersion: 2
+        x: 9020
+        y: 502
+        width: 1611
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4042965a340f8cb4eb6120406c40d68a
+      internalID: -8040541160353156362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_24
+      rect:
+        serializedVersion: 2
+        x: 12023
+        y: 502
+        width: 1604
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8125a316e8878ce4abe96cc811b5eaf0
+      internalID: 4905716379504333919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_25
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 19
+        width: 1611
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03559baf9e0ab9418bd8038155c247a
+      internalID: 774568880688577768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart Bar - HUD_26
+      rect:
+        serializedVersion: 2
+        x: 3021
+        y: 19
+        width: 1611
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ccc7a12bdd57545a064aee185f375b
+      internalID: 1282317584577081253
       vertices: []
       indices: 
       edges: []
