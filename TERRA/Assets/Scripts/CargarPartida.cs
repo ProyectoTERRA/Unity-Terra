@@ -12,7 +12,9 @@ public class CargarPartida : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        EstadoJuego datosCargados = GameObject.Find("Guardar").GetComponent<EstadoJuego>();
+
+
     }
 
     // Update is called once per frame

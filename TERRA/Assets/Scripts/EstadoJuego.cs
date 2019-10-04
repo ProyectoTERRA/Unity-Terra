@@ -33,8 +33,7 @@ public class EstadoJuego : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        guardar();
-        Cargar();
+
     }
 
     // Update is called once per frame
@@ -58,6 +57,11 @@ public class EstadoJuego : MonoBehaviour
         file.Close();
     }
 
+    public void hacer()
+    {
+        guardar();
+        Cargar();
+    }
     public void getName()
     {
         nombrePartida = nombre.text;
@@ -85,10 +89,11 @@ public class EstadoJuego : MonoBehaviour
         
     }
 
-    [Serializable]
-    class DatosGuardados
-    {
-        public String nombre;
-    }
+    
 
+}
+[Serializable]
+public class DatosGuardados
+{
+    public String nombre;
 }

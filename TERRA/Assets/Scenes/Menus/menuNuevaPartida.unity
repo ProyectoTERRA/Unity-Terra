@@ -434,8 +434,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1184890397}
-        m_MethodName: setGet
+      - m_Target: {fileID: 1184890396}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -789,11 +789,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1184890396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 824a9b8587bd6af4ab636382fc8dca6d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ee4db375b6e2e749b35ca13fe58b082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nombre: {fileID: 0}
   setNombre: {fileID: 0}
+  nombrePartida: 
+  nuevoNombre: 
 --- !u!4 &1184890398
 Transform:
   m_ObjectHideFlags: 0
@@ -1281,8 +1283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824a9b8587bd6af4ab636382fc8dca6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombre: {fileID: 876043714}
-  setNombre: {fileID: 277027656}
 --- !u!4 &1866528634
 Transform:
   m_ObjectHideFlags: 0
