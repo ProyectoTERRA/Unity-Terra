@@ -26,11 +26,16 @@ public class Hability_1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+    }
+
+    private void FixedUpdate()
+    {
         Debug.Log(spr.color);
         if (Input.GetKeyDown(KeyCode.B))
         {
-            Debug.Log(spr.color);
             spr.color = g;
+            Debug.Log(spr.color);
         }
     }
 }
