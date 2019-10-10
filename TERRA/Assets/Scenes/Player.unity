@@ -323,9 +323,12 @@ MonoBehaviour:
   Invisible: {fileID: 4304937822940093992, guid: 6baffdb8341cffd479baf838c0294a72,
     type: 3}
   Dash: {fileID: -786741138214063059, guid: 6baffdb8341cffd479baf838c0294a72, type: 3}
-  g: {r: 108, g: 152, b: 241, a: 1}
+  disp: 0
+  act: 0
+  actD: 0
+  dispD: 0
+  ac: {r: 0.8679245, g: 0.3561766, b: 0.3814742, a: 1}
   spr: {fileID: 0}
-  set: Double_Jump
 --- !u!212 &1110258686
 SpriteRenderer:
   m_ObjectHideFlags: 0
