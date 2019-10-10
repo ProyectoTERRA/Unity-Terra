@@ -1,11 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Hability_1 : MonoBehaviour
+public class Hability_2 : MonoBehaviour
 {
-
     public Sprite DoubleJump;
     public Sprite LongJump;
     public Sprite Invisible;
@@ -22,8 +20,9 @@ public class Hability_1 : MonoBehaviour
 
     public SpriteRenderer spr;
 
-    private string set = "Long_Jump";
+    private string set = "Dash";
 
+    // Start is called before the first frame update
     void Start()
     {
         spr = GetComponent<SpriteRenderer>();
@@ -62,25 +61,24 @@ public class Hability_1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-       
+        
     }
 
     private void FixedUpdate()
     {
         if (disp)
         {
-            if (Input.GetKeyDown(KeyCode.N))
+            if (Input.GetKeyDown(KeyCode.M))
             {
                 act = true;
                 disp = false;
-                Invoke("Activate",actD);            
+                Invoke("Activate", actD);
             }
             spr.color = Color.white;
         }
-        else if(act)
+        else if (act)
         {
-            
+
 
             spr.color = ac;
             Debug.Log(spr.color);
