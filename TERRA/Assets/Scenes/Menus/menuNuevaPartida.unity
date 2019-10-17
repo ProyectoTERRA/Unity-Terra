@@ -685,6 +685,9 @@ MonoBehaviour:
   buscarNombre: 
   prueba: 
   basura: 0
+  nombre1: a
+  nombre2: b
+  nombre3: c
 --- !u!1 &1419138707
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,7 +771,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2040680523}
-        m_MethodName: newpar
+        m_MethodName: CargarJuego
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1280,6 +1283,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1184890398}
+  - {fileID: 2040680522}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1312,12 +1316,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040680521}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 604.61694, y: 347.75897, z: -23.157799}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1080.1836, y: 633.56274, z: -78.1423}
+  m_LocalScale: {x: 3.3743408, y: 3.3743408, z: 3.3743408}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 2035857133}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2040680523
 MonoBehaviour:
@@ -1328,6 +1332,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2040680521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93c0ee691611f6a48a8897531e4cfe75, type: 3}
+  m_Script: {fileID: 11500000, guid: bc32e66ead0e164458942448ce74d147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

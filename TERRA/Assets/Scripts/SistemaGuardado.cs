@@ -10,23 +10,25 @@ public class SistemaGuardado : MonoBehaviour
 {
     public String nombrePartida = "";
     public String buscarNombre = "", prueba;
-    bool cargarInicio;
+    public bool cargarInicio;
     public int basura;
-    bool guardaAutomatico;
-    int contador=1;
-    List<string> listaPartidas = new List<string>();
-    InputField name;
+    public bool guardaAutomatico;
+    int contador = 1;
+    public string nombre1 = "", nombre2 = "", nombre3 = "";
+    public InputField name;
+    public Text txt1, txt2, txt3;
+    public Button borrar1, borrar2, borrar3;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(!File.Exists(Application.persistentDataPath + "/contandoPartida.d"))
+        if (!File.Exists(Application.persistentDataPath + "/contandoPartida.d"))
         {
             guardarContador();
         }
         guardaAutomatico = Input.GetKeyDown(KeyCode.Space);
-        
-        if(cargarInicio)
+
+        if (cargarInicio)
         {
             cargar();
         }
@@ -39,10 +41,7 @@ public class SistemaGuardado : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetButton("btnAceptar"))
-        {
 
-        }*/
     }
 
     public void guardar()
@@ -58,12 +57,12 @@ public class SistemaGuardado : MonoBehaviour
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
-        Debug.Log("se creo"+ name.text);
+        Debug.Log("se creo" + name.text);
     }
 
     public void cargar()
     {
-        if(File.Exists(Application.persistentDataPath+"/"+buscarNombre+".d"))
+        if (File.Exists(Application.persistentDataPath + "/" + buscarNombre + ".d"))
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream expediente = File.OpenRead(Application.persistentDataPath + "/" + buscarNombre + ".d");
@@ -79,7 +78,7 @@ public class SistemaGuardado : MonoBehaviour
 
     public void borrar()
     {
-        if(File.Exists(Application.persistentDataPath + "/" + nombrePartida + ".d"))
+        if (File.Exists(Application.persistentDataPath + "/" + nombrePartida + ".d"))
         {
             File.Delete(Application.persistentDataPath + "/" + nombrePartida + ".d");
         }
@@ -100,47 +99,48 @@ public class SistemaGuardado : MonoBehaviour
             dato = bf.Deserialize(expediente) as DatosPartidas;
 
             contador = dato.contador;
-            
+            nombre1 = dato.nombre1;
+            nombre2 = dato.nombre2;
+            nombre3 = dato.nombre3;
+
             Debug.Log("Linea 100 dato.contador: " + dato.contador);
-            
+
             name = GameObject.Find("InputField").GetComponent<InputField>();
-            if(contador == 1)
+
+            if (contador == 1)
             {
-                listaPartidas.Add(name.text);
+                nombre1 = name.text;
                 nombrePartida = name.text;
+                dato.nombre1 = nombre1;
                 Debug.Log("Partida 1");
                 contador += 1;
                 guardar();
             }
-            else if(contador == 2)
+            else if (contador == 2)
             {
-                listaPartidas.Add(name.text);
+                nombre2 = name.text;
                 nombrePartida = name.text;
+                dato.nombre2 = nombre2;
                 Debug.Log("Partida 2");
                 contador += 1;
                 guardar();
             }
-            else if(contador == 3)
+            else if (contador == 3)
             {
-                listaPartidas.Add(name.text);
+                nombre3 = name.text;
                 nombrePartida = name.text;
                 Debug.Log("Partida 3");
+                dato.nombre3 = nombre3;
                 contador += 1;
                 guardar();
-            }              
-            else if(contador == 4)
+            }
+            else if (contador == 4)
             {
                 Debug.Log("No se pueden crear mas de 3 partidas");
             }
-            dato.nombre = listaPartidas;
             dato.contador = contador;
             expediente.Close();
-            Debug.Log("Linea 137 dato.contador: " + dato.contador);
-            foreach (string color in dato.nombre)
-            {
-                Debug.Log("Guardado en partida" + color);
-            }
-            guardarContador();            
+            guardarContador();
         }
     }
 
@@ -152,14 +152,93 @@ public class SistemaGuardado : MonoBehaviour
 
         //Variables a guardar 
 
-        dato.nombre = listaPartidas;
+        dato.nombre1 = nombre1;
+        dato.nombre2 = nombre2;
+        dato.nombre3 = nombre3;
         dato.contador = contador;
-        Debug.Log("Linea 150 dato.contador " + dato.contador);
-        Debug.Log("Linea 150 contador " + contador);
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
-        Debug.Log("se creo arhivo contador partida");
+        Debug.Log("se guardo archivo contador partida");
+    }
+
+    public void mostrarPartida()
+    {
+        if (File.Exists(Application.persistentDataPath + "/contandoPartida.d"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream expediente = File.OpenRead(Application.persistentDataPath + "/contandoPartida.d");
+            DatosPartidas datos = new DatosPartidas();
+
+            datos = bf.Deserialize(expediente) as DatosPartidas;
+
+            nombre1 = datos.nombre1;
+            nombre2 = datos.nombre2;
+            nombre3 = datos.nombre3;
+            contador = datos.contador;
+
+            txt1.text = nombre1;
+            txt2.text = nombre2;
+            txt3.text = nombre3;
+            expediente.Close();
+        }
+        else { Debug.Log("No se encontro el archivo"); }
+    }
+
+    public void eliminarPartida1()
+    {
+        cargarPartida();
+        nombrePartida = nombre1;
+        nombre1 = nombre2;
+        nombre2 = nombre3;
+        nombre3 = " ";
+        while(contador>1)
+            contador--;
+        
+        guardarContador();
+        borrar();
+        Debug.Log("Se borro");
+    }
+    public void eliminarPartida2()
+    {
+        cargarPartida();
+        nombrePartida = nombre2;
+        nombre2 = nombre3;
+        nombre3 = ".";
+        while (contador > 1)
+            contador--;
+        guardarContador();
+        borrar();
+        Debug.Log("Se borro");
+    }
+    public void eliminarPartida3()
+    {
+        cargarPartida();
+        nombrePartida = nombre3;
+        nombre3 = " ";
+        while (contador > 1)
+            contador--;
+        guardarContador();
+        borrar();
+        Debug.Log("Se borro");
+    }
+    public void cargarPartida()
+    {
+        if (File.Exists(Application.persistentDataPath + "/contandoPartida.d"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream expediente = File.OpenRead(Application.persistentDataPath + "/contandoPartida.d");
+            DatosPartidas datos = new DatosPartidas();
+
+            datos = bf.Deserialize(expediente) as DatosPartidas;
+
+            nombre1 = datos.nombre1;
+            nombre2 = datos.nombre2;
+            nombre3 = datos.nombre3;
+            contador = datos.contador;
+            expediente.Close();
+        }
+        else { Debug.Log("No se encontro el archivo"); }
     }
 }
 
@@ -173,6 +252,6 @@ class DatosJuego:System.Object
 [Serializable()]
 class DatosPartidas:System.Object
 {
-    public List<string> nombre;
+    public string nombre1, nombre2, nombre3;
     public int contador;
 }
