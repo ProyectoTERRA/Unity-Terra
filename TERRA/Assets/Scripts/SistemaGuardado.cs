@@ -22,19 +22,10 @@ public class SistemaGuardado : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //La primera vez que se abre laescena, se crea el archivo donde se iran contadno las partidas
         if (!File.Exists(Application.persistentDataPath + "/contandoPartida.d"))
         {
             guardarContador();
-        }
-        guardaAutomatico = Input.GetKeyDown(KeyCode.Space);
-
-        if (cargarInicio)
-        {
-            cargar();
-        }
-        if (guardaAutomatico)
-        {
-            guardar();
         }
     }
 
@@ -43,12 +34,13 @@ public class SistemaGuardado : MonoBehaviour
     {
 
     }
-
+    
+    // Este método se llama al momento de crear un archivo y también cada vez que se actualizan los datos para guardar
     public void guardar()
     {
         BinaryFormatter bf = new BinaryFormatter(); //Ayudante
         FileStream expediente = File.Create(Application.persistentDataPath + "/" + nombrePartida + ".d");//Crea archivo datos.d
-        DatosJuego dato = new DatosJuego(); //Daro es la variable de la clase que se serializa
+        DatosJuego dato = new DatosJuego(); //Dato es la variable de la clase que se serializa
 
         //Variables a guardar        
         dato.nombrePartida = nombrePartida;
@@ -60,6 +52,7 @@ public class SistemaGuardado : MonoBehaviour
         Debug.Log("se creo" + name.text);
     }
 
+    //Este método nos carga el progreso de un archivo
     public void cargar()
     {
         if (File.Exists(Application.persistentDataPath + "/" + buscarNombre + ".d"))
@@ -76,6 +69,7 @@ public class SistemaGuardado : MonoBehaviour
         else { Debug.Log("No se encontro el archivo"); }
     }
 
+    //Este método borra un archivo
     public void borrar()
     {
         if (File.Exists(Application.persistentDataPath + "/" + nombrePartida + ".d"))
@@ -88,6 +82,8 @@ public class SistemaGuardado : MonoBehaviour
         }
     }
 
+    /*Este método es llamado para crear una partida, se toma el nombre del archivo y de la partida,
+    asi como asignar y guardas los nombres en el archivo contador Partida, además nos indica si ya se han creado las tres partidas*/
     public void get()
     {
         if (File.Exists(Application.persistentDataPath + "/contandoPartida.d"))
@@ -144,6 +140,7 @@ public class SistemaGuardado : MonoBehaviour
         }
     }
 
+    //Este método solamente nos indica para guarcar los datos del archivo contador partida
     public void guardarContador()
     {
         BinaryFormatter bf = new BinaryFormatter(); //Ayudante
@@ -162,6 +159,7 @@ public class SistemaGuardado : MonoBehaviour
         Debug.Log("se guardo archivo contador partida");
     }
 
+    //El método nos manda los nombres de las partidas creadas
     public void mostrarPartida()
     {
         if (File.Exists(Application.persistentDataPath + "/contandoPartida.d"))
@@ -185,6 +183,7 @@ public class SistemaGuardado : MonoBehaviour
         else { Debug.Log("No se encontro el archivo"); }
     }
 
+    //El método nos ayuda a eliminar la partida 1
     public void eliminarPartida1()
     {
         cargarPartida();
@@ -199,6 +198,7 @@ public class SistemaGuardado : MonoBehaviour
         borrar();
         Debug.Log("Se borro");
     }
+    //El método nos ayuda a eliminar la partida 2
     public void eliminarPartida2()
     {
         cargarPartida();
@@ -211,6 +211,7 @@ public class SistemaGuardado : MonoBehaviour
         borrar();
         Debug.Log("Se borro");
     }
+    //El método nos ayuda a eliminar la partida 3
     public void eliminarPartida3()
     {
         cargarPartida();
@@ -222,6 +223,7 @@ public class SistemaGuardado : MonoBehaviour
         borrar();
         Debug.Log("Se borro");
     }
+    //El método nos carga los nombres y el contador del archivo contando partida
     public void cargarPartida()
     {
         if (File.Exists(Application.persistentDataPath + "/contandoPartida.d"))
@@ -242,6 +244,7 @@ public class SistemaGuardado : MonoBehaviour
     }
 }
 
+//Esta clase nos serializa los datos de las partidas
 [Serializable()]//Datos listos para serializar
 class DatosJuego:System.Object
 {
@@ -249,6 +252,8 @@ class DatosJuego:System.Object
     public int basura;
 }
 
+
+//Esta clase serializa el archivo contando partida
 [Serializable()]
 class DatosPartidas:System.Object
 {

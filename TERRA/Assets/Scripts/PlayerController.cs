@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         }
         if(h < -0.1f)
         {
-            transform.localScale = new Vector3(11f, 1f, 1f);
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
 
         if(jump)
@@ -82,10 +82,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnBecameInvisible()
+    /*private void OnBecameInvisible()
     {
         transform.position = new Vector3(-7, 2, 0);
-    }
+    }*/
 
     public void EnemyJump()
     {
