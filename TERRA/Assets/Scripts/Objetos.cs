@@ -5,8 +5,6 @@ using UnityEngine;
 public class Objetos : MonoBehaviour
 {
     
-    public string manzana;
-    
 
 
     // Start is called before the first frame update
@@ -34,18 +32,51 @@ public class Objetos : MonoBehaviour
         
         
         Debug.Log("Hay una colision");
-        if(other.gameObject.tag =="manzana")
-        {
-            manzana = other.gameObject.name;
-            Debug.Log("Ha habido una colision con la manzana");
-            radial.basura[3]++;
+        
 
-            Destroy(GameObject.Find(manzana));
+        if (other.gameObject.tag == "pila")
+        {
+            string nombre = other.gameObject.name;
+            radial.basura[0]++;
+            Destroy(GameObject.Find(nombre));
+        }
+
+        if (other.gameObject.tag == "bolsa")
+        {
+            string nombre = other.gameObject.name;
+            radial.basura[1]++;
+            Destroy(GameObject.Find(nombre));
+        }
+
+        if (other.gameObject.tag == "carton")
+        {
+            string nombre = other.gameObject.name;
+            radial.basura[2]++;
+            Destroy(GameObject.Find(nombre));
+        }
+
+        if (other.gameObject.tag == "manzana")
+        {
+            string nombre = other.gameObject.name;
+            radial.basura[3]++;
+            Destroy(GameObject.Find(nombre));
+        }
+
+        if (other.gameObject.tag == "platano")
+        {
+            string nombre = other.gameObject.name;
+            radial.basura[4]++;
+            Destroy(GameObject.Find(nombre));
+        }
+
+        if (other.gameObject.tag == "lata")
+        {
+            string nombre = other.gameObject.name;
+            radial.basura[5]++;
+
+            Destroy(GameObject.Find(nombre));
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
+
 }
 
