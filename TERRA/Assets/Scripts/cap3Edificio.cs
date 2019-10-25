@@ -22,6 +22,7 @@ public class cap3Edificio : MonoBehaviour
         {
             mensaje1.SetActive(true);
         }
+        
     }
 
     public void OnTriggerExit2D(Collider2D collision)

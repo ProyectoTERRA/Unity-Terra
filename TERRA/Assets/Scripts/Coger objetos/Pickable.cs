@@ -18,7 +18,7 @@ public class Pickable : MonoBehaviour
         if (collision.tag == "PlayerInteractionZone")
         {
             collision.GetComponentInParent<PickUpObject>().objectToPick = null;
-
         }
     }
+    
 }
