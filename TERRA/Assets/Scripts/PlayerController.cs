@@ -17,7 +17,11 @@ public class PlayerController : MonoBehaviour
     private bool jump;
     private bool doubleJump;
     private bool movement = true;
-    
+
+    public float x;
+    public float y;
+    public float z;
+
     void Start()
     {
         rbd2 = GetComponent<Rigidbody2D>();
@@ -66,11 +70,11 @@ public class PlayerController : MonoBehaviour
             rbd2.velocity = new Vector2(limetedSpeed, rbd2.velocity.y);
         if(h> 0.1f)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            transform.localScale = new Vector3(-x, y, z);
         }
         if(h < -0.1f)
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = new Vector3(x, y, z);
         }
 
         if(jump)
