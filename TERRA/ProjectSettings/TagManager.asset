@@ -4,11 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
-  - Puerta
-  - Puerta2
-  - trasn1
-  - Puerta3
+  - PlayerInteractionZone
+  - manzana
+  - platano
+  - lata
+  - pila
+  - bolsa
+  - carton
   layers:
   - Default
   - TransparentFX
@@ -45,22 +47,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 478716217
-    locked: 0
-  - name: Midground
-    uniqueID: 2478415545
-    locked: 0
-  - name: Foreground
-    uniqueID: 316663187
-    locked: 0
-  - name: Sparks
-    uniqueID: 3330642077
-    locked: 0
-  - name: Bullet
-    uniqueID: 2889535705
-    locked: 0
-  - name: Player
-    uniqueID: 3519565601
     locked: 0

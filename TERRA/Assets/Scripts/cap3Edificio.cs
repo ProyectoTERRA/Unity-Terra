@@ -16,13 +16,20 @@ public class cap3Edificio : MonoBehaviour
     {
         
     }
-
-
     public void OnTriggerStay2D(Collider2D collision)
     {
-        while (collision.gameObject.tag == "florero")
+        if (collision.gameObject.tag == "florero")
         {
             mensaje1.SetActive(true);
+        }
+        
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "florero")
+        {
+            mensaje1.SetActive(false);
         }
     }
 }

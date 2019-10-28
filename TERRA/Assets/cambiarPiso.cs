@@ -15,10 +15,10 @@ public class cambiarPiso : MonoBehaviour
         if (collision.gameObject.tag == "Puerta2")
         {
             Debug.Log("Has tocado la puerta2");
-            transform.position = new Vector3(-7f, 8f);
+            transform.position = new Vector3(-5.5f, 8f);
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        if (collision.gameObject.tag == "Puerta3")
+        if (collision.gameObject.tag == "Pasar")
         {
             Debug.Log("Has tocado la puerta3");
             transform.position = new Vector3(7f, 13.04f);
