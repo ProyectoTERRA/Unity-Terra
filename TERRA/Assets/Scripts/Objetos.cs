@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class Objetos : MonoBehaviour
 {
+<<<<<<< HEAD
+    public string manzana;
+=======
     
 
 
     // Start is called before the first frame update
+>>>>>>> 9cec2d7defee081eddb517639edc4aa7fc4a8708
     void Start()
     {
 
-        
-
-
-
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         
     }
 
@@ -29,6 +26,16 @@ public class Objetos : MonoBehaviour
     {
         GameObject go = GameObject.Find("InvFunc");
         radial radial = go.GetComponent<radial>();
+<<<<<<< HEAD
+        manzana = other.gameObject.name;
+
+        if (manzana =="manzana")
+        {
+            radial.basura[3]++;
+            Destroy(GameObject.Find(manzana));
+        }
+    }
+=======
         
         
         Debug.Log("Hay una colision");
@@ -78,5 +85,6 @@ public class Objetos : MonoBehaviour
         }
     }
 
+>>>>>>> 9cec2d7defee081eddb517639edc4aa7fc4a8708
 }
 

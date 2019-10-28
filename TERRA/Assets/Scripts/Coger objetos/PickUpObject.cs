@@ -31,10 +31,10 @@ public class PickUpObject : MonoBehaviour
                 pickedObject.GetComponent<Pickable>().coger = true;
                 pickedObject.transform.SetParent(null);
                 pickedObject.GetComponent<Rigidbody2D>().gravityScale = 1;
-                pickedObject.GetComponent<Rigidbody2D>().isKinematic = true;
+                pickedObject.GetComponent<Rigidbody2D>().isKinematic = true ;
                 pickedObject = null;
                 mensaje3.SetActive(true);
-                StartCoroutine(enumerator());
+                StartCoroutine(test());
             }
         }
     }
@@ -43,11 +43,6 @@ public class PickUpObject : MonoBehaviour
         yield return new WaitForSeconds(3);
         Debug.Log("Si se espero");
         mensaje2.SetActive(false);
-    }
-    public IEnumerator enumerator()
-    {
-        yield return new WaitForSeconds(3);
-        Debug.Log("Si se espero");
         mensaje3.SetActive(false);
     }
 }
