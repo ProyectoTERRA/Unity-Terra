@@ -4,31 +4,10 @@ using UnityEngine;
 
 public class Objetos : MonoBehaviour
 {
-    public string manzana;
-    
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void OnTriggerEnter2D(Collider2D other)
     {
         GameObject go = GameObject.Find("InvFunc");
         radial radial = go.GetComponent<radial>();
-        manzana = other.gameObject.name;
-
-        if (manzana =="manzana")
-        {
-            radial.basura[3]++;
-            Destroy(GameObject.Find(manzana));
-        }
-        Debug.Log("Hay una colision");
-
 
         if (other.gameObject.tag == "pila")
         {
@@ -73,6 +52,5 @@ public class Objetos : MonoBehaviour
             Destroy(GameObject.Find(nombre));
         }
     }
-
 }
 
