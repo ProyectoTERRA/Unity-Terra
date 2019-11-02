@@ -33,8 +33,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animacion.SetFloat("Velocidad",Mathf.Abs(rbd2.velocity.x));
-        animacion.SetBool("Grounded", grounded);
+        //animacion.SetFloat("Velocidad",Mathf.Abs(rbd2.velocity.x));
+        //animacion.SetBool("Grounded", grounded);
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
