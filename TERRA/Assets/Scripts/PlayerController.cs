@@ -11,11 +11,6 @@ public class PlayerController : MonoBehaviour
     public bool grounded;
     public float JumpPower = 6.5f;
 
-
-    public float x;
-    public float y;
-    public float z;
-
     private Rigidbody2D rbd2;
     private Animator animacion;
     private SpriteRenderer spr;
@@ -23,6 +18,9 @@ public class PlayerController : MonoBehaviour
     private bool doubleJump;
     private bool movement = true;
 
+    public float x;
+    public float y;
+    public float z;
 
     void Start()
     {
