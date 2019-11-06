@@ -6,7 +6,9 @@ public class PlayerCasa : MonoBehaviour
 {
     [SerializeField] private GameObject camera;
 
+
     public bool lucy;
+    public bool linterna;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,7 @@ public class PlayerCasa : MonoBehaviour
         transform.localScale = new Vector3(1.75f, 1.75f, 1.75f);
 
         lucy = false;
+        linterna = false;
 
     }
 
@@ -66,6 +69,29 @@ public class PlayerCasa : MonoBehaviour
                 lucy = true;
             }
         }
+
+        if (collision.gameObject.tag == "PuertaCalle")//compara si hizo la colision con el objeto correcto
+        {
+            
+            if (Input.GetKeyDown(KeyCode.E) && linterna)
+            {
+
+                Debug.Log("Salido");
+            }
+        }
+
+        if (collision.gameObject.tag == "linterna")//compara si hizo la colision con el objeto correcto
+        {
+            Debug.Log("Has tocado a LINTERNA");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("Has agarrado la linterna");
+                linterna = true;
+                Destroy(GameObject.Find("linterna"));
+
+            }
+        }
+
 
 
     }
