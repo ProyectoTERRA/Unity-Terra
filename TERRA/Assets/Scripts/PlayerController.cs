@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         //animacion.SetFloat("Velocidad",Mathf.Abs(rbd2.velocity.x));
         //animacion.SetBool("Grounded", grounded);
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (grounded)
             {

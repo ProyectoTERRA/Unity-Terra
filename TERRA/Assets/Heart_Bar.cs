@@ -35,7 +35,7 @@ public class Heart_Bar : MonoBehaviour
     public Sprite LIFE_3x1;
     public Sprite LIFE_3x0;
 
-    public int type = 1;
+    public int type;
     public int life = 6;
     public int hearts = 6;
 
@@ -46,51 +46,33 @@ public class Heart_Bar : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-
-        
-        if (Input.GetKeyDown(KeyCode.Alpha1)){
-
+    {        
+        if (type==1){
             Debug.Log("Tipo: " + type);
-
             type = 1;
             hearts = 6;
             Debug.Log("Corazones: " + hearts);
-
         }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2)){
-
+        if (type==2){
             Debug.Log("Tipo: " + type);
-
             type = 2;
             hearts = 8;
             Debug.Log("Corazones: " + hearts);
         }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3)) {
-
+        if (type==3) {
             Debug.Log("Tipo: " + type);
-
             type = 3;
             hearts = 10;
             Debug.Log("Corazones: " + hearts);
-
         }
-
         switch (type)
         {
             case 1:
-                {
-                    
-
+                {   
                     if (Input.GetKeyDown(KeyCode.P))
-                    {
-                        
+                    {                        
                         if (hearts > 0) {
-
                             hearts--;
-
                         }
                         Debug.Log("Corazones: " + hearts);
                     }
@@ -137,14 +119,10 @@ public class Heart_Bar : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.P))
                     {
-
                         if (hearts > 0)
                         {
-
                             hearts--;
-
                         }
-
                         Debug.Log("Corazones: " + hearts);
 
                     }
@@ -200,41 +178,29 @@ public class Heart_Bar : MonoBehaviour
 
             case 3:
                 {
-
-                    if (Input.GetKeyDown(KeyCode.P)) { 
-
-                        
+                    if (Input.GetKeyDown(KeyCode.P)) {                         
                         if (hearts > 0)
                         {
-
                             hearts--;
-
                         }
-
                         Debug.Log("Corazones: " + hearts);
-
                     }
-
                     if (hearts == 10)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_5x10;
                     }
-
                     else if (hearts == 9)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_5x9;
                     }
-
                     else if (hearts == 8)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_5x8;
                     }
-
                     else if (hearts == 7)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_5x7;
                     }
-
                     else if (hearts == 6)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_5x6;
@@ -244,7 +210,6 @@ public class Heart_Bar : MonoBehaviour
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_5x5;
                     }
-
                     else if (hearts == 4)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_5x4;
@@ -254,69 +219,53 @@ public class Heart_Bar : MonoBehaviour
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_5x3;
                     }
-
                     else if (hearts == 2)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_5x2;
                     }
-
                     else if (hearts == 1)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_5x1;
                     }
-
                     else if (hearts == 0)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_5x0;
                     }
-
-
                     break;
                 }
-
             default:
                 {
                     break;
                 }
-        }
-
-       
+        }     
 
         if(hearts == 6)
         {
 
         }
-
         else if(hearts == 5)
         {
 
         }
-
         else if(hearts == 4)
         {
 
         }
-
         else if(hearts == 3)
         {
 
         }
-
         else if(hearts == 2)
         {
 
         }
-
         else if(hearts == 1)
         {
 
         }
-
         else if (hearts == 1)
         {
 
         }
-
-
     }
 }
