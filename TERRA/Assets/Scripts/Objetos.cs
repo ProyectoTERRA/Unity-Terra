@@ -9,6 +9,8 @@ public class Objetos : MonoBehaviour
         GameObject go = GameObject.Find("InvFunc");
         radial radial = go.GetComponent<radial>();
 
+        
+
         if (other.gameObject.tag == "pila")
         {
             string nombre = other.gameObject.name;
