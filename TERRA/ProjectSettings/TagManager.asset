@@ -23,6 +23,8 @@ TagManager:
   - Next
   - mensaje2
   - PuertaLucy
+  - PuertaSala
+  - PuertaCalle
   layers:
   - Default
   - TransparentFX
@@ -74,4 +76,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1177007845
+    locked: 0
+  - name: HUD
+    uniqueID: 2849678823
     locked: 0
