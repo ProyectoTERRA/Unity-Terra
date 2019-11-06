@@ -63,10 +63,6 @@ public class CarController : MonoBehaviour
         rbd2.AddForce(Vector2.right * velocidad * h);
         float limetedSpeed = Mathf.Clamp(rbd2.velocity.x, -maxspeed, maxspeed);
         rbd2.velocity = new Vector2(limetedSpeed, rbd2.velocity.y);
-        transform.localScale = new Vector3(-x, y, z);
-    }
-    IEnumerator move()
-    {
-        yield return new WaitForSeconds(2);
+        transform.localScale = new Vector3(x, y, z);
     }
 }

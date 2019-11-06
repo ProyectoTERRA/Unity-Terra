@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class pase : MonoBehaviour
 {
-    private void Start()
+    public void Start()
     {
-        GameObject vida = GameObject.Find("Heart Bar - HUD_0");
-        Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
-        heart_Bar.type = 3;
+
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {

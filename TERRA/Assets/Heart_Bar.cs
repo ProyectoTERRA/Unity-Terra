@@ -36,35 +36,40 @@ public class Heart_Bar : MonoBehaviour
     public Sprite LIFE_3x0;
 
     public int type;
-    public int life = 6;
-    public int hearts = 6;
+    public int life;
+    public int hearts;
 
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {        
-        if (type==1){
+        StartCoroutine(wait());
+        if (type == 1)
+        {
             Debug.Log("Tipo: " + type);
             type = 1;
             hearts = 6;
             Debug.Log("Corazones: " + hearts);
         }
-        if (type==2){
+        if (type == 2)
+        {
             Debug.Log("Tipo: " + type);
             type = 2;
             hearts = 8;
             Debug.Log("Corazones: " + hearts);
         }
-        if (type==3) {
+        if (type == 3)
+        {
             Debug.Log("Tipo: " + type);
             type = 3;
             hearts = 10;
             Debug.Log("Corazones: " + hearts);
         }
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {        
+        
         switch (type)
         {
             case 1:
@@ -267,5 +272,9 @@ public class Heart_Bar : MonoBehaviour
         {
 
         }
+    }
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(2);
     }
 }
