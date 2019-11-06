@@ -41,7 +41,6 @@ public class Heart_Bar : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(wait());
         if (type == 1)
         {
             Debug.Log("Tipo: " + type);
@@ -272,9 +271,5 @@ public class Heart_Bar : MonoBehaviour
         {
 
         }
-    }
-    IEnumerator wait()
-    {
-        yield return new WaitForSeconds(2);
     }
 }
