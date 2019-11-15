@@ -12,7 +12,6 @@ public class PickFormula : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Has cogido una formula");
                 invent = true;
                 numFormula++;
             }

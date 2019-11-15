@@ -5,10 +5,10 @@ using UnityEngine.UI;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class SistemaGuardado : MonoBehaviour
 {
-    public String nombrePartida = "";
     public String buscarNombre = "", prueba;
     public bool cargarInicio;
     public int basura;
@@ -18,6 +18,9 @@ public class SistemaGuardado : MonoBehaviour
     public InputField name;
     public Text txt1, txt2, txt3;
     public Button borrar1, borrar2, borrar3;
+
+    //Variables que guardaran los datos de las partidas
+    public String nombreEscena, nombrePartida;
 
     // Start is called before the first frame update
     void Start()
@@ -45,11 +48,11 @@ public class SistemaGuardado : MonoBehaviour
         //Variables a guardar        
         dato.nombrePartida = nombrePartida;
         dato.basura = 4;
+        dato.nombreEscena = nombreEscena;
 
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
-        Debug.Log("se creo" + name.text);
     }
 
     //Este método nos carga el progreso de un archivo
@@ -63,8 +66,11 @@ public class SistemaGuardado : MonoBehaviour
 
             datos = bf.Deserialize(expediente) as DatosJuego;
 
-            prueba = datos.nombrePartida;
+            nombrePartida = datos.nombrePartida;
+            nombreEscena = datos.nombreEscena;
             basura = datos.basura;
+            SceneManager.LoadScene(nombreEscena);
+           
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
@@ -242,13 +248,56 @@ public class SistemaGuardado : MonoBehaviour
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
+
+    public void escena1()
+    {
+        if (nombre1 != "")
+        {
+            buscarNombre = nombre1;
+            nombrePartida = buscarNombre;
+            Debug.Log("Nombre partida antes de cargar" + nombrePartida);
+            cargar();
+            Debug.Log("Nombre partida despues de cargar" + nombrePartida);
+        }
+        else
+        {
+            Debug.Log("No hay partida");
+        }
+    }
+    public void escena2()
+    {
+        if(nombre2!="")
+        {
+            buscarNombre = nombre2;
+            nombrePartida = buscarNombre;
+            cargar();
+        }
+        else
+        {
+            Debug.Log("No hay partida");
+        }
+    }
+    public void escena3()
+    {
+        if (nombre3 != "")
+        {
+            
+            buscarNombre = nombre3;
+            nombrePartida = buscarNombre;
+            cargar();
+        }
+        else
+        {
+            Debug.Log("No hay partida");
+        }
+    }
 }
 
 //Esta clase nos serializa los datos de las partidas
 [Serializable()]//Datos listos para serializar
 class DatosJuego:System.Object
 {
-    public String nombrePartida;
+    public String nombrePartida, nombreEscena;
     public int basura;
 }
 

@@ -43,29 +43,21 @@ public class Heart_Bar : MonoBehaviour
     {
         if (type == 1)
         {
-            Debug.Log("Tipo: " + type);
             type = 1;
             hearts = 6;
-            Debug.Log("Corazones: " + hearts);
         }
         if (type == 2)
         {
-            Debug.Log("Tipo: " + type);
             type = 2;
             hearts = 8;
-            Debug.Log("Corazones: " + hearts);
         }
         if (type == 3)
         {
-            Debug.Log("Tipo: " + type);
             type = 3;
             hearts = 10;
-            Debug.Log("Corazones: " + hearts);
         }
 
     }
-
-    // Update is called once per frame
     void Update()
     {        
         
@@ -78,7 +70,6 @@ public class Heart_Bar : MonoBehaviour
                         if (hearts > 0) {
                             hearts--;
                         }
-                        Debug.Log("Corazones: " + hearts);
                     }
 
                     if(hearts == 6)
@@ -127,7 +118,6 @@ public class Heart_Bar : MonoBehaviour
                         {
                             hearts--;
                         }
-                        Debug.Log("Corazones: " + hearts);
 
                     }
 
