@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 465, y: -392}
+  m_AnchoredPosition: {x: 80, y: -185.85}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &24706104
@@ -426,6 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e027f7f30521e4d8aad91d7d03ed95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nombrePartida: 
   buscarNombre: 
   prueba: 
   cargarInicio: 0
@@ -441,8 +442,6 @@ MonoBehaviour:
   borrar1: {fileID: 0}
   borrar2: {fileID: 0}
   borrar3: {fileID: 0}
-  nombreEscena: edificio
-  nombrePartida: 
 --- !u!1 &238755454
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 479, y: -222}
+  m_AnchoredPosition: {x: 203, y: -24}
   m_SizeDelta: {x: 422.7, y: 40.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &308648469
@@ -654,8 +653,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 150831123}
-        m_MethodName: escena1
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -814,7 +813,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 482, y: -281}
+  m_AnchoredPosition: {x: 203.2, y: -77.05}
   m_SizeDelta: {x: 406.4, y: 40.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &360255264
@@ -859,18 +858,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 360255265}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 150831123}
-        m_MethodName: escena2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &360255265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,7 +1057,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 485, y: -342}
+  m_AnchoredPosition: {x: 202.675, y: -134}
   m_SizeDelta: {x: 405.35, y: 40.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &527151850
@@ -1114,18 +1102,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 527151851}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 150831123}
-        m_MethodName: escena3
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &527151851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2347,6 +2324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e027f7f30521e4d8aad91d7d03ed95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nombrePartida: 
   buscarNombre: 
   prueba: 
   cargarInicio: 0
@@ -2362,5 +2340,3 @@ MonoBehaviour:
   borrar1: {fileID: 0}
   borrar2: {fileID: 0}
   borrar3: {fileID: 0}
-  nombreEscena: edificio
-  nombrePartida: 
