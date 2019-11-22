@@ -19,15 +19,11 @@ public class SistemaGuardado : MonoBehaviour
     public Text txt1, txt2, txt3;
     public Button borrar1, borrar2, borrar3;
 
-<<<<<<< HEAD
-    public String nombreEscena;
 
-=======
     //Variables que guardaran los datos de las partidas
     public String nombreEscena, nombrePartida;
 
     // Start is called before the first frame update
->>>>>>> parent of a8f8f5e... Revert "Tratando de guardar partida"
     void Start()
     {
         //La primera vez que se abre laescena, se crea el archivo donde se iran contadno las partidas
@@ -36,7 +32,7 @@ public class SistemaGuardado : MonoBehaviour
             guardarContador();
         }
     }
-    
+
     // Este método se llama al momento de crear un archivo y también cada vez que se actualizan los datos para guardar
     public void guardar()
     {
@@ -69,13 +65,9 @@ public class SistemaGuardado : MonoBehaviour
             nombreEscena = datos.nombreEscena;
             basura = datos.basura;
             SceneManager.LoadScene(nombreEscena);
-<<<<<<< HEAD
             Debug.Log("Nombre partida " + nombrePartida);
             Debug.Log("Nombre escena " + nombreEscena);
 
-=======
-           
->>>>>>> parent of a8f8f5e... Revert "Tratando de guardar partida"
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
@@ -202,9 +194,9 @@ public class SistemaGuardado : MonoBehaviour
         nombre1 = nombre2;
         nombre2 = nombre3;
         nombre3 = " ";
-        while(contador>1)
+        while (contador > 1)
             contador--;
-        
+
         guardarContador();
         borrar();
         Debug.Log("Se borro");
@@ -251,9 +243,11 @@ public class SistemaGuardado : MonoBehaviour
             contador = datos.contador;
             expediente.Close();
         }
-        else { Debug.Log("No se encontro el archivo"); }
+        else
+        {
+            Debug.Log("No se encontro el archivo");
+        }
     }
-<<<<<<< HEAD
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Checkpoint")
@@ -265,9 +259,8 @@ public class SistemaGuardado : MonoBehaviour
             guardar();
             Debug.Log("Nombre partida despues " + nombrePartida);
             Debug.Log("Nombre escena despues " + nombreEscena);
-
-=======
-
+        }
+    }
     public void escena1()
     {
         if (nombre1 != "")
@@ -285,7 +278,7 @@ public class SistemaGuardado : MonoBehaviour
     }
     public void escena2()
     {
-        if(nombre2!="")
+        if (nombre2 != "")
         {
             buscarNombre = nombre2;
             nombrePartida = buscarNombre;
@@ -300,7 +293,7 @@ public class SistemaGuardado : MonoBehaviour
     {
         if (nombre3 != "")
         {
-            
+
             buscarNombre = nombre3;
             nombrePartida = buscarNombre;
             cargar();
@@ -308,14 +301,13 @@ public class SistemaGuardado : MonoBehaviour
         else
         {
             Debug.Log("No hay partida");
->>>>>>> parent of a8f8f5e... Revert "Tratando de guardar partida"
         }
     }
 }
 
 //Esta clase nos serializa los datos de las partidas
 [Serializable()]//Datos listos para serializar
-class DatosJuego:System.Object
+class DatosJuego : System.Object
 {
     public String nombrePartida, nombreEscena;
     public int basura;
@@ -324,7 +316,7 @@ class DatosJuego:System.Object
 
 //Esta clase serializa el archivo contando partida
 [Serializable()]
-class DatosPartidas:System.Object
+class DatosPartidas : System.Object
 {
     public string nombre1, nombre2, nombre3;
     public int contador;
