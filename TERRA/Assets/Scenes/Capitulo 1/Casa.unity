@@ -1431,12 +1431,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9318a95855c23c4bb25d5a8a08031d7, type: 3}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 4bf9c49... Revert "Merge branch 'master' of https://github.com/ProyectoTERRA/Unity-Terra"
 --- !u!1 &1755478458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,23 +1510,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-=======
   m_SortingLayerID: 1177007845
   m_SortingLayer: 5
->>>>>>> parent of 4bf9c49... Revert "Merge branch 'master' of https://github.com/ProyectoTERRA/Unity-Terra"
-=======
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
->>>>>>> parent of d39f4ee... calle v1
-=======
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
->>>>>>> parent of d39f4ee... calle v1
   m_SortingOrder: 0
   m_Sprite: {fileID: -3509768373723393573, guid: db7eadb5e90895746985708b768a5999,
     type: 3}
@@ -1560,12 +1539,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
->>>>>>> parent of d39f4ee... calle v1
-=======
->>>>>>> parent of b01bc4e... Merge branch 'master' of https://github.com/ProyectoTERRA/Unity-Terra
-=======
->>>>>>> parent of 4bf9c49... Revert "Merge branch 'master' of https://github.com/ProyectoTERRA/Unity-Terra"
 --- !u!4 &1774272629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6786952540499391446, guid: 56112751c76786142b615e3af4cdf7e9,
