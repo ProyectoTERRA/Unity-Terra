@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class SistemaGuardado : MonoBehaviour
 {
-    public String nombrePartida = "";
     public String buscarNombre = "", prueba;
     public bool cargarInicio;
     public int basura;
@@ -20,8 +19,15 @@ public class SistemaGuardado : MonoBehaviour
     public Text txt1, txt2, txt3;
     public Button borrar1, borrar2, borrar3;
 
+<<<<<<< HEAD
     public String nombreEscena;
 
+=======
+    //Variables que guardaran los datos de las partidas
+    public String nombreEscena, nombrePartida;
+
+    // Start is called before the first frame update
+>>>>>>> parent of a8f8f5e... Revert "Tratando de guardar partida"
     void Start()
     {
         //La primera vez que se abre laescena, se crea el archivo donde se iran contadno las partidas
@@ -41,11 +47,11 @@ public class SistemaGuardado : MonoBehaviour
         //Variables a guardar        
         dato.nombrePartida = nombrePartida;
         dato.basura = 4;
+        dato.nombreEscena = nombreEscena;
 
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
-        Debug.Log("se creo" + name.text);
     }
 
     //Este método nos carga el progreso de un archivo
@@ -59,12 +65,17 @@ public class SistemaGuardado : MonoBehaviour
 
             datos = bf.Deserialize(expediente) as DatosJuego;
 
-            prueba = datos.nombrePartida;
+            nombrePartida = datos.nombrePartida;
+            nombreEscena = datos.nombreEscena;
             basura = datos.basura;
             SceneManager.LoadScene(nombreEscena);
+<<<<<<< HEAD
             Debug.Log("Nombre partida " + nombrePartida);
             Debug.Log("Nombre escena " + nombreEscena);
 
+=======
+           
+>>>>>>> parent of a8f8f5e... Revert "Tratando de guardar partida"
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
@@ -242,6 +253,7 @@ public class SistemaGuardado : MonoBehaviour
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
+<<<<<<< HEAD
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Checkpoint")
@@ -254,6 +266,49 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("Nombre partida despues " + nombrePartida);
             Debug.Log("Nombre escena despues " + nombreEscena);
 
+=======
+
+    public void escena1()
+    {
+        if (nombre1 != "")
+        {
+            buscarNombre = nombre1;
+            nombrePartida = buscarNombre;
+            Debug.Log("Nombre partida antes de cargar" + nombrePartida);
+            cargar();
+            Debug.Log("Nombre partida despues de cargar" + nombrePartida);
+        }
+        else
+        {
+            Debug.Log("No hay partida");
+        }
+    }
+    public void escena2()
+    {
+        if(nombre2!="")
+        {
+            buscarNombre = nombre2;
+            nombrePartida = buscarNombre;
+            cargar();
+        }
+        else
+        {
+            Debug.Log("No hay partida");
+        }
+    }
+    public void escena3()
+    {
+        if (nombre3 != "")
+        {
+            
+            buscarNombre = nombre3;
+            nombrePartida = buscarNombre;
+            cargar();
+        }
+        else
+        {
+            Debug.Log("No hay partida");
+>>>>>>> parent of a8f8f5e... Revert "Tratando de guardar partida"
         }
     }
 }
@@ -262,7 +317,7 @@ public class SistemaGuardado : MonoBehaviour
 [Serializable()]//Datos listos para serializar
 class DatosJuego:System.Object
 {
-    public String nombrePartida;
+    public String nombrePartida, nombreEscena;
     public int basura;
 }
 
