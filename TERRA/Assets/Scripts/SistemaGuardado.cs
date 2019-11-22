@@ -19,11 +19,9 @@ public class SistemaGuardado : MonoBehaviour
     public Text txt1, txt2, txt3;
     public Button borrar1, borrar2, borrar3;
 
-
     //Variables que guardaran los datos de las partidas
     public String nombreEscena, nombrePartida;
 
-    // Start is called before the first frame update
     void Start()
     {
         //La primera vez que se abre laescena, se crea el archivo donde se iran contadno las partidas
@@ -32,7 +30,7 @@ public class SistemaGuardado : MonoBehaviour
             guardarContador();
         }
     }
-
+    
     // Este método se llama al momento de crear un archivo y también cada vez que se actualizan los datos para guardar
     public void guardar()
     {
@@ -194,9 +192,9 @@ public class SistemaGuardado : MonoBehaviour
         nombre1 = nombre2;
         nombre2 = nombre3;
         nombre3 = " ";
-        while (contador > 1)
+        while(contador>1)
             contador--;
-
+        
         guardarContador();
         borrar();
         Debug.Log("Se borro");
@@ -243,24 +241,9 @@ public class SistemaGuardado : MonoBehaviour
             contador = datos.contador;
             expediente.Close();
         }
-        else
-        {
-            Debug.Log("No se encontro el archivo");
-        }
+        else { Debug.Log("No se encontro el archivo"); }
     }
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Checkpoint")
-        {
-            Debug.Log("Nombre partida " + SceneManager.GetActiveScene().name);
-            Debug.Log("Nombre partida antes " + nombrePartida);
-            nombreEscena = SceneManager.GetActiveScene().name;
-            Debug.Log("Nombre escena antes " + nombreEscena);
-            guardar();
-            Debug.Log("Nombre partida despues " + nombrePartida);
-            Debug.Log("Nombre escena despues " + nombreEscena);
-        }
-    }
+
     public void escena1()
     {
         if (nombre1 != "")
@@ -278,7 +261,7 @@ public class SistemaGuardado : MonoBehaviour
     }
     public void escena2()
     {
-        if (nombre2 != "")
+        if(nombre2!="")
         {
             buscarNombre = nombre2;
             nombrePartida = buscarNombre;
@@ -293,7 +276,7 @@ public class SistemaGuardado : MonoBehaviour
     {
         if (nombre3 != "")
         {
-
+            
             buscarNombre = nombre3;
             nombrePartida = buscarNombre;
             cargar();
@@ -307,7 +290,7 @@ public class SistemaGuardado : MonoBehaviour
 
 //Esta clase nos serializa los datos de las partidas
 [Serializable()]//Datos listos para serializar
-class DatosJuego : System.Object
+class DatosJuego:System.Object
 {
     public String nombrePartida, nombreEscena;
     public int basura;
@@ -316,7 +299,7 @@ class DatosJuego : System.Object
 
 //Esta clase serializa el archivo contando partida
 [Serializable()]
-class DatosPartidas : System.Object
+class DatosPartidas:System.Object
 {
     public string nombre1, nombre2, nombre3;
     public int contador;
