@@ -22,7 +22,6 @@ public class SistemaGuardado : MonoBehaviour
     //Variables que guardaran los datos de las partidas
     public String nombreEscena, nombrePartida;
 
-    // Start is called before the first frame update
     void Start()
     {
         //La primera vez que se abre laescena, se crea el archivo donde se iran contadno las partidas
@@ -30,12 +29,6 @@ public class SistemaGuardado : MonoBehaviour
         {
             guardarContador();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
     
     // Este método se llama al momento de crear un archivo y también cada vez que se actualizan los datos para guardar
@@ -70,7 +63,9 @@ public class SistemaGuardado : MonoBehaviour
             nombreEscena = datos.nombreEscena;
             basura = datos.basura;
             SceneManager.LoadScene(nombreEscena);
-           
+            Debug.Log("Nombre partida " + nombrePartida);
+            Debug.Log("Nombre escena " + nombreEscena);
+
         }
         else { Debug.Log("No se encontro el archivo"); }
     }

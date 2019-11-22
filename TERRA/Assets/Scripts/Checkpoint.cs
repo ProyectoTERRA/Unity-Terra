@@ -22,6 +22,7 @@ public class Checkpoint : MonoBehaviour
     {
         if(collision.gameObject.tag =="Checkpoint")
         {
+            Debug.Log("Nombre partida " + SceneManager.GetActiveScene().name);
             Debug.Log("Nombre partida antes "+sistemaGuardado.nombrePartida);
             sistemaGuardado.nombreEscena = SceneManager.GetActiveScene().name;
             Debug.Log("Nombre escena antes " + sistemaGuardado.nombreEscena);
