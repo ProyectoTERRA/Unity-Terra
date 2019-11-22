@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CarController : MonoBehaviour
 {
     public float velocidad = 2f;
     public float maxspeed = 5f;
+
+    public bool grounded;   
+
 
     private Rigidbody2D rbd2;
     private Animator animacion;
@@ -21,16 +23,18 @@ public class CarController : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Nombre escena: " +SceneManager.GetActiveScene().name);
         rbd2 = GetComponent<Rigidbody2D>();
         animacion = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
         rbd2.AddForce(Vector3.left * 10f);
-
-    }
         
+    }
+
+
+    // Update is called once per frame
     void Update()
     {
+       //transform.Translate(Vector3.forward * Time.deltaTime);
         transform.Translate(Vector3.left * Time.deltaTime, Space.World);
         
     }
@@ -48,6 +52,11 @@ public class CarController : MonoBehaviour
     {
         Vector3 fixedVelocity = rbd2.velocity;
         fixedVelocity.x *= 0.75f;
+        if (grounded)
+        {
+            rbd2.velocity = fixedVelocity;
+        }
+
 
         float h = Input.GetAxis("Horizontal");
 
