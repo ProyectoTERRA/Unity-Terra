@@ -10,7 +10,13 @@ public class pase : MonoBehaviour
         {
             transform.position = new Vector2(-11.36f, -4.3f);
             transform.localScale = new Vector3(1f, 1f, 1f);
-        }        
+        } 
+        if(collision.gameObject.tag == "alcantarilla")
+        {
+            GameObject vida = GameObject.Find("Heart Bar - HUD_0");
+            Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
+            heart_Bar.hearts-=2;
+        }
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -21,4 +27,5 @@ public class pase : MonoBehaviour
             heart_Bar.hearts--;
         }
     }
+
 }

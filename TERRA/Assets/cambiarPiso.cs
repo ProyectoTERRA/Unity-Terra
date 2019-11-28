@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class cambiarPiso : MonoBehaviour
 {
-    public string nombreEscena;
+    
     public GameObject mensaje1, panel;
     bool panelSolar;
 
@@ -60,21 +60,7 @@ public class cambiarPiso : MonoBehaviour
         {
             mensaje1.SetActive(true);
         }
-        if (collision.gameObject.tag == "Next")
-        {
-            mensaje1.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("Press E");
-                panelSolar = false;
-
-                if (!panelSolar)
-                {
-                    SceneManager.LoadScene(nombreEscena);
-                    //Destroy(panel);
-                }
-            }
-        }
+        
     }
     public void OnTriggerExit2D(Collider2D collision)
     {

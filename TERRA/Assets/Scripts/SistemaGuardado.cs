@@ -18,6 +18,7 @@ public class SistemaGuardado : MonoBehaviour
     public InputField name;
     public Text txt1, txt2, txt3;
     public Button borrar1, borrar2, borrar3;
+    public string next;
 
     //Variables que guardaran los datos de las partidas
     public String nombreEscena, nombrePartida;
@@ -285,6 +286,37 @@ public class SistemaGuardado : MonoBehaviour
         {
             Debug.Log("No hay partida");
         }
+    }
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Next")
+        {
+            //mensaje1.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                nombreEscena = next;
+                buscarNombre = nombreEscena;
+                guardar();
+                SceneManager.LoadScene(nombreEscena);
+                cargar();
+
+            }
+        }
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "checkpoint")
+        {
+            Debug.Log("Nombre partida " + SceneManager.GetActiveScene().name);
+            Debug.Log("Nombre partida antes " + nombrePartida);
+            nombreEscena = SceneManager.GetActiveScene().name;
+            Debug.Log("Nombre escena antes " + nombreEscena);
+            guardar();
+            Debug.Log("Nombre partida despues " + nombrePartida);
+            Debug.Log("Nombre escena despues " + nombreEscena);
+
+        }
+        
     }
 }
 

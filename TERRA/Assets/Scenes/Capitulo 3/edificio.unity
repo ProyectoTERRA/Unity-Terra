@@ -7211,7 +7211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc8dc65b169e0f4aab66f222a370a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscena: CalleC3
   mensaje1: {fileID: 151927505}
   panel: {fileID: 1034315741}
 --- !u!212 &8755725002330985214
@@ -7332,6 +7331,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 8755725002330985212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a99731b6dae9c04aa72742dd3ae7934, type: 3}
+  m_Script: {fileID: 11500000, guid: 12e027f7f30521e4d8aad91d7d03ed95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buscarNombre: 
+  prueba: 
+  cargarInicio: 0
+  basura: 0
+  guardaAutomatico: 0
+  nombre1: 
+  nombre2: 
+  nombre3: 
+  name: {fileID: 0}
+  txt1: {fileID: 0}
+  txt2: {fileID: 0}
+  txt3: {fileID: 0}
+  borrar1: {fileID: 0}
+  borrar2: {fileID: 0}
+  borrar3: {fileID: 0}
+  next: CalleC3
+  nombreEscena: 
+  nombrePartida: 

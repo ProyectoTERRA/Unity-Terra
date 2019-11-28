@@ -482,6 +482,7 @@ GameObject:
   - component: {fileID: 4654490811321302703}
   - component: {fileID: 4654490811321302688}
   - component: {fileID: 4654490811321302868}
+  - component: {fileID: 4654490811321302704}
   m_Layer: 8
   m_Name: Jugador
   m_TagString: Player
@@ -639,6 +640,35 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
+--- !u!114 &4654490811321302704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654490811321302697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e027f7f30521e4d8aad91d7d03ed95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buscarNombre: 
+  prueba: 
+  cargarInicio: 0
+  basura: 0
+  guardaAutomatico: 0
+  nombre1: 
+  nombre2: 
+  nombre3: 
+  name: {fileID: 0}
+  txt1: {fileID: 0}
+  txt2: {fileID: 0}
+  txt3: {fileID: 0}
+  borrar1: {fileID: 0}
+  borrar2: {fileID: 0}
+  borrar3: {fileID: 0}
+  nombreEscena: 
+  nombrePartida: 
 --- !u!114 &4654490811321302868
 MonoBehaviour:
   m_ObjectHideFlags: 0
