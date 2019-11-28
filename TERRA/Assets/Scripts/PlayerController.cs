@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float maxspeed = 5f;
    
     public bool grounded;
+    public bool wall;
     public float JumpPower = 6.5f;
 
     private Rigidbody2D rbd2;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
         rbd2 = GetComponent<Rigidbody2D>();
         animacion = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
+        wall = false;
     }
 
 
@@ -64,8 +66,9 @@ public class PlayerController : MonoBehaviour
 
         float h = Input.GetAxis("Horizontal");
         if (!movement) h = 0;
-
-        rbd2.AddForce(Vector2.right * velocidad * h);
+    
+            rbd2.AddForce(Vector2.right * velocidad * h);
+        
         float limetedSpeed = Mathf.Clamp(rbd2.velocity.x, -maxspeed, maxspeed);
             rbd2.velocity = new Vector2(limetedSpeed, rbd2.velocity.y);
         if(h> 0.1f)
@@ -90,6 +93,26 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = new Vector3(-7, 2, 0);
     }*/
+    void OnCollisionStay2D(Collision2D col)
+    {
+
+        if (col.gameObject.tag == "Wall" && !grounded)
+        {
+          wall = true;
+        }
+
+
+    }
+
+    void OnCollisionExit2D(Collision2D col)
+    {
+
+        if (col.gameObject.tag == "Wall" )
+        {
+           wall = false;
+        }
+
+    }
 
     public void EnemyJump()
     {
