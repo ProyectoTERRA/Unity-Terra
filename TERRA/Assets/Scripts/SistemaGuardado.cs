@@ -19,19 +19,25 @@ public class SistemaGuardado : MonoBehaviour
     public Text txt1, txt2, txt3;
     public Button borrar1, borrar2, borrar3;
     public string next;
-
     //Variables que guardaran los datos de las partidas
     public String nombreEscena, nombrePartida;
 
     void Start()
     {
+        Debug.Log("En star el nombre de la partida " + nombrePartida);
         //La primera vez que se abre laescena, se crea el archivo donde se iran contadno las partidas
         if (!File.Exists(Application.persistentDataPath + "/contandoPartida.d"))
         {
             guardarContador();
         }
     }
+    public void Update()
+    {
+        cargarContador(); Debug.Log("Update " + nombrePartida);
+        
+    }
     
+
     // Este método se llama al momento de crear un archivo y también cada vez que se actualizan los datos para guardar
     public void guardar()
     {
@@ -63,10 +69,10 @@ public class SistemaGuardado : MonoBehaviour
             nombrePartida = datos.nombrePartida;
             nombreEscena = datos.nombreEscena;
             basura = datos.basura;
+            guardarContador();
             SceneManager.LoadScene(nombreEscena);
             Debug.Log("Nombre partida " + nombrePartida);
             Debug.Log("Nombre escena " + nombreEscena);
-
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
@@ -108,7 +114,7 @@ public class SistemaGuardado : MonoBehaviour
             if (contador == 1)
             {
                 nombre1 = name.text;
-                nombrePartida = name.text;
+                //nombrePartida = name.text;
                 dato.nombre1 = nombre1;
                 Debug.Log("Partida 1");
                 contador += 1;
@@ -117,7 +123,7 @@ public class SistemaGuardado : MonoBehaviour
             else if (contador == 2)
             {
                 nombre2 = name.text;
-                nombrePartida = name.text;
+                //nombrePartida = name.text;
                 dato.nombre2 = nombre2;
                 Debug.Log("Partida 2");
                 contador += 1;
@@ -126,7 +132,7 @@ public class SistemaGuardado : MonoBehaviour
             else if (contador == 3)
             {
                 nombre3 = name.text;
-                nombrePartida = name.text;
+                //nombrePartida = name.text;
                 Debug.Log("Partida 3");
                 dato.nombre3 = nombre3;
                 contador += 1;
@@ -151,17 +157,36 @@ public class SistemaGuardado : MonoBehaviour
 
         //Variables a guardar 
 
+        dato.nombreActual = nombrePartida;
         dato.nombre1 = nombre1;
         dato.nombre2 = nombre2;
         dato.nombre3 = nombre3;
         dato.contador = contador;
+        Debug.Log("Nombre actual " + dato.nombreActual);
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
         Debug.Log("se guardo archivo contador partida");
+
     }
 
     //El método nos manda los nombres de las partidas creadas
+    public void cargarContador()
+    {
+        if (File.Exists(Application.persistentDataPath + "/contandoPartida.d"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream expediente = File.OpenRead(Application.persistentDataPath + "/contandoPartida.d");
+            DatosPartidas datos = new DatosPartidas();
+
+            datos = bf.Deserialize(expediente) as DatosPartidas;
+
+            nombrePartida = datos.nombreActual;
+
+            expediente.Close();
+        }
+        else { Debug.Log("No se encontro el archivo"); }
+    }
     public void mostrarPartida()
     {
         if (File.Exists(Application.persistentDataPath + "/contandoPartida.d"))
@@ -253,7 +278,8 @@ public class SistemaGuardado : MonoBehaviour
             nombrePartida = buscarNombre;
             Debug.Log("Nombre partida antes de cargar" + nombrePartida);
             cargar();
-            Debug.Log("Nombre partida despues de cargar" + nombrePartida);
+            Debug.Log("Buscar nombre " + buscarNombre);
+            Debug.Log("Nombre partida despues de cargar " + nombrePartida);
         }
         else
         {
@@ -287,22 +313,6 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("No hay partida");
         }
     }
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Next")
-        {
-            //mensaje1.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                nombreEscena = next;
-                buscarNombre = nombreEscena;
-                guardar();
-                SceneManager.LoadScene(nombreEscena);
-                cargar();
-
-            }
-        }
-    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "checkpoint")
@@ -316,7 +326,25 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("Nombre escena despues " + nombreEscena);
 
         }
-        
+        if (collision.gameObject.tag == "Next")
+        {
+            Debug.Log("Buscar nombre " + buscarNombre);
+            Debug.Log("Nombre partida en next" + nombrePartida);
+            nombreEscena = next;
+            //buscarNombre = nombreEscena;
+            //SceneManager.LoadScene(nombreEscena);
+            //mensaje1.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                //cargar();
+                Debug.Log("Buscar nombre " + buscarNombre);
+                Debug.Log("Nombre partida en next" + nombrePartida);
+                nombreEscena = next;
+                //buscarNombre = nombreEscena;
+                SceneManager.LoadScene(nombreEscena);
+            }
+        }
+
     }
 }
 
@@ -334,5 +362,6 @@ class DatosJuego:System.Object
 class DatosPartidas:System.Object
 {
     public string nombre1, nombre2, nombre3;
+    public string nombreActual;
     public int contador;
 }
