@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCasa : MonoBehaviour
 {
@@ -77,6 +78,7 @@ public class PlayerCasa : MonoBehaviour
             {
 
                 Debug.Log("Salido");
+                SceneManager.LoadScene("Calle");
             }
         }
 
