@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     public float velocidad = 2f;
     public float maxspeed = 5f;
-   
+
     public bool grounded;
     public bool wall;
     public float JumpPower = 6.5f;
@@ -44,7 +44,8 @@ public class PlayerController : MonoBehaviour
             {
                 jump = true;
                 doubleJump = true;
-            } else if (doubleJump)
+            }
+            else if (doubleJump)
             {
                 jump = true;
                 doubleJump = false;
@@ -66,21 +67,21 @@ public class PlayerController : MonoBehaviour
 
         float h = Input.GetAxis("Horizontal");
         if (!movement) h = 0;
-    
-            rbd2.AddForce(Vector2.right * velocidad * h);
-        
+
+        rbd2.AddForce(Vector2.right * velocidad * h);
+
         float limetedSpeed = Mathf.Clamp(rbd2.velocity.x, -maxspeed, maxspeed);
-            rbd2.velocity = new Vector2(limetedSpeed, rbd2.velocity.y);
-        if(h> 0.1f)
+        rbd2.velocity = new Vector2(limetedSpeed, rbd2.velocity.y);
+        if (h > 0.1f)
         {
             transform.localScale = new Vector3(-x, y, z);
         }
-        if(h < -0.1f)
+        if (h < -0.1f)
         {
             transform.localScale = new Vector3(x, y, z);
         }
 
-        if(jump)
+        if (jump)
         {
             rbd2.velocity = new Vector2(rbd2.velocity.x, 0);
             rbd2.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
@@ -98,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.tag == "Wall" && !grounded)
         {
-          wall = true;
+            wall = true;
         }
 
 
@@ -107,9 +108,9 @@ public class PlayerController : MonoBehaviour
     void OnCollisionExit2D(Collision2D col)
     {
 
-        if (col.gameObject.tag == "Wall" )
+        if (col.gameObject.tag == "Wall")
         {
-           wall = false;
+            wall = false;
         }
 
     }

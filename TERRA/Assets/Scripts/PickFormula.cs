@@ -8,13 +8,13 @@ public class PickFormula : MonoBehaviour
     int numFormula;
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag ==  "formula")
+        if (collision.gameObject.tag == "formula")
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 invent = true;
                 numFormula++;
             }
-        }        
+        }
     }
 }

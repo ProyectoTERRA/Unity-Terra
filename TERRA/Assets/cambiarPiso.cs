@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class cambiarPiso : MonoBehaviour
 {
-    
+
     public GameObject mensaje1, panel;
     bool panelSolar;
 
@@ -27,8 +27,8 @@ public class cambiarPiso : MonoBehaviour
             transform.position = new Vector3(-5.5f, 8f);
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        
-        if(collision.name == "escalerasBajar")
+
+        if (collision.name == "escalerasBajar")
         {
             transform.position = new Vector3(7f, -3.53f, 0);
             transform.localScale = new Vector3(1f, 1f, 1f);
@@ -43,7 +43,7 @@ public class cambiarPiso : MonoBehaviour
             gameObject.transform.position = new Vector3(7f, 8f, 0);
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
-        
+
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -60,7 +60,7 @@ public class cambiarPiso : MonoBehaviour
         {
             mensaje1.SetActive(true);
         }
-        
+
     }
     public void OnTriggerExit2D(Collider2D collision)
     {
@@ -68,11 +68,11 @@ public class cambiarPiso : MonoBehaviour
         {
             mensaje1.SetActive(false);
         }
-        if(collision.gameObject.tag =="Next")
+        if (collision.gameObject.tag == "Next")
         {
             mensaje1.SetActive(false);
         }
-        if(collision.gameObject.tag=="Pasar")
+        if (collision.gameObject.tag == "Pasar")
         {
             mensaje1.SetActive(false);
         }

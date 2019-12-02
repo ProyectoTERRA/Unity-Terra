@@ -696,8 +696,10 @@ MonoBehaviour:
   borrar1: {fileID: 0}
   borrar2: {fileID: 0}
   borrar3: {fileID: 0}
+  next: 
   nombreEscena: CalleC3
   nombrePartida: 
+  nombrePartida1: 
 --- !u!1 &1419138707
 GameObject:
   m_ObjectHideFlags: 0

@@ -120,6 +120,49 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &11289376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 11289378}
+  - component: {fileID: 11289377}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &11289377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11289376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ebd510b0a3393449ae9b3c53acc18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &11289378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11289376}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -27.860085, y: 68.478714, z: -2770.9832}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &12693720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4495851520417761502, guid: f9318a95855c23c4bb25d5a8a08031d7,
@@ -1655,6 +1698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 739852092}
   - component: {fileID: 739852091}
+  - component: {fileID: 739852093}
   m_Layer: 0
   m_Name: checkpoint_img
   m_TagString: Checkpoint
@@ -1725,6 +1769,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &739852093
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739852090}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.36
 --- !u!4 &741704538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2442877598310791928, guid: f35ac9bb24f3b274bb72c4a232cf1009,
@@ -4068,6 +4128,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.617
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952540499391441, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1470656275
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952540499391441, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952539793922044, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1470656275
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952539793922044, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952540217478381, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1470656275
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952540217478381, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56112751c76786142b615e3af4cdf7e9, type: 3}
@@ -6572,8 +6662,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -609417331
-  m_SortingLayer: 4
+  m_SortingLayerID: -1470656275
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 8389861959188856108, guid: db70e236bedb1fb48b927036264dbf74,
     type: 3}
@@ -6758,6 +6848,7 @@ MonoBehaviour:
   velocidad: 60
   maxspeed: 3
   grounded: 0
+  wall: 0
   JumpPower: 5
   x: 1
   y: 1
@@ -6884,6 +6975,7 @@ MonoBehaviour:
   next: 
   nombreEscena: 
   nombrePartida: 
+  nombrePartida1: 
 --- !u!114 &8474523579320546710
 MonoBehaviour:
   m_ObjectHideFlags: 0

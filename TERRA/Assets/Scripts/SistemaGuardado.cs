@@ -20,11 +20,11 @@ public class SistemaGuardado : MonoBehaviour
     public Button borrar1, borrar2, borrar3;
     public string next;
     //Variables que guardaran los datos de las partidas
-    public String nombreEscena, nombrePartida;
+    public String nombreEscena, nombrePartida, nombrePartida1;
 
     void Start()
     {
-        Debug.Log("En star el nombre de la partida " + nombrePartida);
+        contador = 1;
         //La primera vez que se abre laescena, se crea el archivo donde se iran contadno las partidas
         if (!File.Exists(Application.persistentDataPath + "/contandoPartida.d"))
         {
@@ -33,23 +33,58 @@ public class SistemaGuardado : MonoBehaviour
     }
     public void Update()
     {
-        cargarContador(); Debug.Log("Update " + nombrePartida);
-        
+        cargarContador();
+        Debug.Log("Nombre actual " + nombrePartida);
     }
-    
+    public void crearPartida()
+    {
+        BinaryFormatter bf = new BinaryFormatter(); //Ayudante
+        FileStream expediente = File.Create(Application.persistentDataPath + "/" + nombrePartida1 + ".d");//Crea archivo datos.d
+        DatosJuego dato = new DatosJuego(); //Dato es la variable de la clase que se serializa
+
+        //Variables a guardar        
+        dato.nombrePartida = nombrePartida1;
+        dato.nombreEscena = "edificio";
+        dato.pila = 0;
+        dato.bolsa = 0;
+        dato.carton = 0;
+        dato.manzana = 0;
+        dato.platano = 0;
+        dato.lata = 0;
+        Debug.Log("Nueva partida");
+
+        //Serializara los archivos
+        bf.Serialize(expediente, dato);
+        expediente.Close();
+    }
 
     // Este método se llama al momento de crear un archivo y también cada vez que se actualizan los datos para guardar
     public void guardar()
     {
+
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+
         BinaryFormatter bf = new BinaryFormatter(); //Ayudante
         FileStream expediente = File.Create(Application.persistentDataPath + "/" + nombrePartida + ".d");//Crea archivo datos.d
         DatosJuego dato = new DatosJuego(); //Dato es la variable de la clase que se serializa
 
         //Variables a guardar        
         dato.nombrePartida = nombrePartida;
-        dato.basura = 4;
         dato.nombreEscena = nombreEscena;
-
+        dato.pila = radial.basura[0];
+        dato.bolsa = radial.basura[1];
+        dato.carton = radial.basura[2];
+        dato.manzana = radial.basura[3];
+        dato.platano = radial.basura[4];
+        dato.lata = radial.basura[5];
+        Debug.Log("ACTUALIZAR PARTIDA");
+        Debug.Log("Pila " + radial.basura[0]);
+        Debug.Log("Bolsa " + radial.basura[1]);
+        Debug.Log("Carton " + radial.basura[2]);
+        Debug.Log("Manzana " + radial.basura[3]);
+        Debug.Log("Platano " + radial.basura[4]);
+        Debug.Log("Lata " + radial.basura[5]);
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
@@ -58,6 +93,8 @@ public class SistemaGuardado : MonoBehaviour
     //Este método nos carga el progreso de un archivo
     public void cargar()
     {
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
         if (File.Exists(Application.persistentDataPath + "/" + buscarNombre + ".d"))
         {
             BinaryFormatter bf = new BinaryFormatter();
@@ -65,14 +102,23 @@ public class SistemaGuardado : MonoBehaviour
             DatosJuego datos = new DatosJuego();
 
             datos = bf.Deserialize(expediente) as DatosJuego;
-
+            Debug.Log("Nombre al cargar " + nombrePartida);
             nombrePartida = datos.nombrePartida;
             nombreEscena = datos.nombreEscena;
-            basura = datos.basura;
+            radial.basura[0] = datos.pila;
+            radial.basura[1] = datos.bolsa;
+            radial.basura[2] = datos.carton;
+            radial.basura[3] = datos.manzana;
+            radial.basura[4] = datos.platano;
+            radial.basura[5] = datos.lata;
+            GameController.lata = datos.lata;
+            GameController.pila = datos.pila;
+            GameController.bolsa = datos.bolsa;
+            GameController.manzana = datos.manzana;
+            GameController.platano = datos.platano;
+            GameController.carton = datos.carton;
             guardarContador();
             SceneManager.LoadScene(nombreEscena);
-            Debug.Log("Nombre partida " + nombrePartida);
-            Debug.Log("Nombre escena " + nombreEscena);
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
@@ -102,41 +148,41 @@ public class SistemaGuardado : MonoBehaviour
 
             dato = bf.Deserialize(expediente) as DatosPartidas;
 
-            contador = dato.contador;
+            contador = dato.contador ;
             nombre1 = dato.nombre1;
             nombre2 = dato.nombre2;
             nombre3 = dato.nombre3;
 
             Debug.Log("Linea 100 dato.contador: " + dato.contador);
-
+            Debug.Log("Contador " + contador);
             name = GameObject.Find("InputField").GetComponent<InputField>();
 
             if (contador == 1)
             {
                 nombre1 = name.text;
-                //nombrePartida = name.text;
+                nombrePartida1 = name.text;
                 dato.nombre1 = nombre1;
                 Debug.Log("Partida 1");
                 contador += 1;
-                guardar();
+                crearPartida();
             }
             else if (contador == 2)
             {
                 nombre2 = name.text;
-                //nombrePartida = name.text;
+                nombrePartida1 = name.text;
                 dato.nombre2 = nombre2;
                 Debug.Log("Partida 2");
                 contador += 1;
-                guardar();
+                crearPartida();
             }
             else if (contador == 3)
             {
                 nombre3 = name.text;
-                //nombrePartida = name.text;
+                nombrePartida1 = name.text;
                 Debug.Log("Partida 3");
                 dato.nombre3 = nombre3;
                 contador += 1;
-                guardar();
+                crearPartida();
             }
             else if (contador == 4)
             {
@@ -163,13 +209,13 @@ public class SistemaGuardado : MonoBehaviour
         dato.nombre3 = nombre3;
         dato.contador = contador;
         Debug.Log("Nombre actual " + dato.nombreActual);
+        Debug.Log("dato contador " + dato.contador);
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
         Debug.Log("se guardo archivo contador partida");
 
     }
-
     //El método nos manda los nombres de las partidas creadas
     public void cargarContador()
     {
@@ -276,10 +322,7 @@ public class SistemaGuardado : MonoBehaviour
         {
             buscarNombre = nombre1;
             nombrePartida = buscarNombre;
-            Debug.Log("Nombre partida antes de cargar" + nombrePartida);
             cargar();
-            Debug.Log("Buscar nombre " + buscarNombre);
-            Debug.Log("Nombre partida despues de cargar " + nombrePartida);
         }
         else
         {
@@ -313,38 +356,25 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("No hay partida");
         }
     }
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "checkpoint")
-        {
-            Debug.Log("Nombre partida " + SceneManager.GetActiveScene().name);
-            Debug.Log("Nombre partida antes " + nombrePartida);
-            nombreEscena = SceneManager.GetActiveScene().name;
-            Debug.Log("Nombre escena antes " + nombreEscena);
-            guardar();
-            Debug.Log("Nombre partida despues " + nombrePartida);
-            Debug.Log("Nombre escena despues " + nombreEscena);
-
-        }
         if (collision.gameObject.tag == "Next")
         {
-            Debug.Log("Buscar nombre " + buscarNombre);
-            Debug.Log("Nombre partida en next" + nombrePartida);
-            nombreEscena = next;
-            //buscarNombre = nombreEscena;
-            //SceneManager.LoadScene(nombreEscena);
-            //mensaje1.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //cargar();
-                Debug.Log("Buscar nombre " + buscarNombre);
-                Debug.Log("Nombre partida en next" + nombrePartida);
                 nombreEscena = next;
-                //buscarNombre = nombreEscena;
                 SceneManager.LoadScene(nombreEscena);
             }
         }
-
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Checkpoint")
+        {
+            Debug.Log("Checkpoint " + nombrePartida);
+            nombreEscena = SceneManager.GetActiveScene().name;
+            guardar();            
+        }
     }
 }
 
@@ -353,7 +383,7 @@ public class SistemaGuardado : MonoBehaviour
 class DatosJuego:System.Object
 {
     public String nombrePartida, nombreEscena;
-    public int basura;
+    public int pila, manzana, platano, bolsa, carton, lata;
 }
 
 
@@ -364,4 +394,6 @@ class DatosPartidas:System.Object
     public string nombre1, nombre2, nombre3;
     public string nombreActual;
     public int contador;
+    public int pila, manzana, platano, bolsa, carton, lata;
 }
+
