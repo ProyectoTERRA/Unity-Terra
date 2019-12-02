@@ -25,6 +25,8 @@ public class Watcher : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+
         //Funciones para Seguimiento del Jugador
         Vector3 target = PosicionInicial;
 
@@ -73,7 +75,6 @@ public class Watcher : MonoBehaviour
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
    */
+
     }
-
-
 }
