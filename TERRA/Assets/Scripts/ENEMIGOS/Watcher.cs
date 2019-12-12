@@ -2,6 +2,11 @@
 
 public class Watcher : MonoBehaviour
 {
+
+    public float x;
+    public float y;
+    public float z;
+
     public float speed = 4f;
     public float maxspeed = 4f;
     public float DistanciaVision;
@@ -20,6 +25,26 @@ public class Watcher : MonoBehaviour
         rbd2 = GetComponent<Rigidbody2D>();
         Jugador = GameObject.FindGameObjectWithTag("Player");
         PosicionInicial = transform.position;
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+
+        if (col.gameObject.tag == "Player")
+        {
+            col.SendMessage("EnemyKnockBack", transform.position.x+1);/*
+            Debug.Log("Ha hecho colision con el jugador");
+            float yOffset = 0.04f;
+            if (transform.position.y + yOffset < col.transform.position.y)
+            {
+                col.SendMessage("EnemyJump");
+                Destroy(gameObject);
+            }
+            else
+            {
+                col.SendMessage("EnemyKnockBack", transform.position.x);
+            }*/
+
+        }
     }
 
     // Update is called once per frame

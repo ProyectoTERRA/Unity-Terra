@@ -5,6 +5,7 @@ using UnityEngine;
 public class desactiveCollider : MonoBehaviour
 {
     Collider2D collider;
+    public GameObject desactive;
     int contador = 0;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class desactiveCollider : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         collider.enabled = true;
+        desactive.SetActive(false);
         contador = 0;
         Debug.Log("TRUE");
     }
@@ -36,6 +38,7 @@ public class desactiveCollider : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         collider.enabled = false;
+        desactive.SetActive(true);
         contador = 1;
         Debug.Log("FALSE");
     }

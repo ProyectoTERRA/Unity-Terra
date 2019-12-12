@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
+    public float x;
+    public float y;
+    public float z;
+
     public float speed = 3f;
     public float maxspeed = 3f;
     public float DistanciaVision;
+    public float scaleX, scaleY, scaleZ;
     public GameObject matchPanel;
 
     private Color color;
@@ -55,12 +60,12 @@ public class EnemyFollow : MonoBehaviour
 
             if (speed > 0)
             {
-                transform.localScale = new Vector3(1f, 1f, 1f);
+                transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
 
             }
             else if (speed < 0)
             {
-                transform.localScale = new Vector3(-1f, 1f, 1f);
+                transform.localScale = new Vector3(-scaleX, scaleY, scaleZ);
             }
         }
     }
