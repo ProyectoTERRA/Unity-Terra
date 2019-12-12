@@ -55,7 +55,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-
         Vector3 fixedVelocity = rbd2.velocity;
         fixedVelocity.x *= 0.75f;
 
@@ -89,6 +88,25 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "life")
+        {
+            GameObject vida = GameObject.Find("Heart Bar - HUD_0");
+            Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
+            heart_Bar.hearts--;
+        }
+    }
+    
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "life")
+        {
+            GameObject vida = GameObject.Find("Heart Bar - HUD_0");
+            Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
+            heart_Bar.hearts--;
+        }
+    }
 
     /*private void OnBecameInvisible()
     {
@@ -104,21 +122,14 @@ public class PlayerController : MonoBehaviour
 
 
     }
-
     void OnCollisionExit2D(Collision2D col)
     {
-
         if (col.gameObject.tag == "Wall")
         {
             wall = false;
         }
-
     }
-
-    public void EnemyJump()
-    {
-        jump = true;
-    }
+    public void EnemyJump() { jump = true; }
 
     public void EnemyKnockBack(float enemyPosX)
     {
