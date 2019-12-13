@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd784180161480419b0ee92af6c29a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  follow: {fileID: 0}
+  follow: {fileID: 4436905505232760053}
   minCamPos: {x: -10, y: -8}
   maxCamPos: {x: 12, y: 14}
   smoothTime: 0
@@ -2740,7 +2740,6 @@ GameObject:
   - component: {fileID: 4436905505232760060}
   - component: {fileID: 4436905505232760072}
   - component: {fileID: 8291163399463221700}
-  - component: {fileID: 8291163399463221703}
   - component: {fileID: 4436905505232760056}
   - component: {fileID: 4436905505232760057}
   m_Layer: 8
@@ -3025,18 +3024,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48dd375ef4e9b44a92be781f25ca9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8291163399463221703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4436905505232760053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1bf223a8942b4640bf6e61ec1c01be3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 0}
-  lucy: 0
-  linterna: 0
