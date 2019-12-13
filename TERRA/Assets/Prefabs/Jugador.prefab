@@ -133,6 +133,8 @@ GameObject:
   - component: {fileID: 5657417382059861990}
   - component: {fileID: 5657417382059861993}
   - component: {fileID: 5657417382059861533}
+  - component: {fileID: 153776849}
+  - component: {fileID: 153776850}
   m_Layer: 8
   m_Name: Jugador
   m_TagString: Player
@@ -149,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 5657417382059861984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.54, y: -3.67, z: 0}
-  m_LocalScale: {x: 1.012, y: 0.995, z: 1}
+  m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_Children:
   - {fileID: 5657417381014890200}
   - {fileID: 3963654058375444807}
@@ -191,9 +193,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -775401695
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 1177007845
+  m_SortingLayer: 5
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 045fd3d96959da347b754490b29671ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -286,10 +288,18 @@ MonoBehaviour:
   velocidad: 60
   maxspeed: 3
   grounded: 0
+  wall: 0
   JumpPower: 5
-  x: 0
-  y: 0
-  z: 0
+  x: 1.75
+  y: 1.75
+  z: 1.75
+  Equip: esf
+  Esf:
+  - {fileID: 4315916757541250148, guid: 78c9b5aac88a1514791507f1c86b3f19, type: 3}
+  - {fileID: 3077139853389278693, guid: 1d15aa45a327c0a45a064b1e80def78a, type: 3}
+  - {fileID: 2754682376862866162, guid: c3b3d80fea09da94cb20b2608a707c89, type: 3}
+  - {fileID: 6890347032649923809, guid: a1f154dc19d1c484fa12bc622472f410, type: 3}
+  - {fileID: 6431206688879001315, guid: 5c3f7ad2dffec1a4a96a5d8e133afd9f, type: 3}
 --- !u!58 &5657417382059861993
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -323,3 +333,30 @@ MonoBehaviour:
   mensaje2: {fileID: 0}
   mensaje3: {fileID: 0}
   interactionZone: {fileID: 3963654058375444807}
+--- !u!114 &153776849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657417382059861984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48dd375ef4e9b44a92be781f25ca9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &153776850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657417382059861984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1bf223a8942b4640bf6e61ec1c01be3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  lucy: 0
+  linterna: 0
