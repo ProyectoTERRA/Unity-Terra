@@ -4,33 +4,37 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - pila
-  - lata
-  - carton
-  - manzana
-  - platano
-  - bolsa
+  - PlayerInteractionZone
+  - Pesada
+  - Paraliz
+  - Normal
+  - Tranqui
+  - Desac
   - Puerta
   - florero
   - Ground
   - Puerta3
-  - PlayerInteractionZone
-  - panel
   - Llave
+  - panel
+  - formula
   - Puerta2
   - Chapa
   - Pasar
   - Next
   - mensaje2
-  - PuertaLucy
-  - formula
-  - Lampara
-  - Pared
-  - limite
-  - life
-  - Checkpoint
-  - alcantarilla
+  - bolsa
+  - lata
+  - platano
   - before
+  - life
+  - Pared
+  - Wall
+  - Lucy
+  - linterna
+  - PuertaLucy
+  - PuertaSala
+  - PuertaCalle
+  - carton
   layers:
   - Default
   - TransparentFX
@@ -68,21 +72,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BackGround
-    uniqueID: 1741305643
+  - name: Fondo
+    uniqueID: 882085237
     locked: 0
-  - name: MidGround
-    uniqueID: 3667132601
+  - name: Level Fondo
+    uniqueID: 1638842355
     locked: 0
-  - name: LaterGround
-    uniqueID: 593938815
-    locked: 0
-  - name: Sparks
-    uniqueID: 3685549965
+  - name: Level
+    uniqueID: 1473199511
     locked: 0
   - name: Player
-    uniqueID: 1177007845
+    uniqueID: 871274355
+    locked: 0
+  - name: Objetos
+    uniqueID: 2889764979
     locked: 0
   - name: HUD
-    uniqueID: 2824311021
+    uniqueID: 2375791109
     locked: 0

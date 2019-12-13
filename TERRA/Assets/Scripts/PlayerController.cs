@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
     public float x;
     public float y;
     public float z;
+    public string Equip;
+
+    public static int side;
+
+    public GameObject[] Esf;
 
     void Start()
     {
@@ -29,6 +34,7 @@ public class PlayerController : MonoBehaviour
         animacion = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
         wall = false;
+        Equip = "esf_T";
     }
 
 
@@ -50,6 +56,54 @@ public class PlayerController : MonoBehaviour
                 jump = true;
                 doubleJump = false;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            var pl = GameObject.Find("Jugador");
+
+            if (Equip == "esf_N")
+            {
+                if (pl != null)
+                {
+                    Instantiate(Esf[0], pl.transform.position, Quaternion.identity);
+                }
+            }
+
+            if (Equip == "esf_P")
+            {
+                if (pl != null)
+                {
+                    Instantiate(Esf[1], pl.transform.position, Quaternion.identity);
+                }
+            }
+
+            if (Equip == "esf_D")
+            {
+                if (pl != null)
+                {
+                    Instantiate(Esf[2], pl.transform.position, Quaternion.identity);
+                }
+            }
+
+            if (Equip == "esf_T")
+            {
+                if (pl != null)
+                {
+                    Instantiate(Esf[3], pl.transform.position, Quaternion.identity);
+                }
+            }
+
+            if (Equip == "esf_H")
+            {
+                if (pl != null)
+                {
+                    Instantiate(Esf[4], pl.transform.position, Quaternion.identity);
+                }
+            }
+
+
+
         }
     }
 
@@ -73,11 +127,14 @@ public class PlayerController : MonoBehaviour
         rbd2.velocity = new Vector2(limetedSpeed, rbd2.velocity.y);
         if (h > 0.1f)
         {
+            
             transform.localScale = new Vector3(-x, y, z);
+            side = - 1;
         }
         if (h < -0.1f)
         {
             transform.localScale = new Vector3(x, y, z);
+            side = 1;
         }
 
         if (jump)
