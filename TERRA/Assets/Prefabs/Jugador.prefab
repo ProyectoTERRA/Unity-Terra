@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 5657417382059861533}
   - component: {fileID: 153776849}
   - component: {fileID: 153776850}
+  - component: {fileID: 7846055455518431008}
   m_Layer: 8
   m_Name: Jugador
   m_TagString: Player
@@ -194,7 +195,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1177007845
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 045fd3d96959da347b754490b29671ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -360,3 +361,35 @@ MonoBehaviour:
   camera: {fileID: 0}
   lucy: 0
   linterna: 0
+--- !u!114 &7846055455518431008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657417382059861984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e027f7f30521e4d8aad91d7d03ed95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buscarNombre: 
+  prueba: 
+  cargarInicio: 0
+  basura: 0
+  guardaAutomatico: 0
+  nombre1: 
+  nombre2: 
+  nombre3: 
+  name: {fileID: 0}
+  txt1: {fileID: 0}
+  txt2: {fileID: 0}
+  txt3: {fileID: 0}
+  borrar1: {fileID: 0}
+  borrar2: {fileID: 0}
+  borrar3: {fileID: 0}
+  next: 
+  before: 
+  nombreEscena: 
+  nombrePartida: 
+  nombrePartida1: 
