@@ -18,7 +18,7 @@ public class SistemaGuardado : MonoBehaviour
     public InputField name;
     public Text txt1, txt2, txt3;
     public Button borrar1, borrar2, borrar3;
-    public string next;
+    public string next, before;
     //Variables que guardaran los datos de las partidas
     public String nombreEscena, nombrePartida, nombrePartida1;
 
@@ -363,6 +363,14 @@ public class SistemaGuardado : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 nombreEscena = next;
+                SceneManager.LoadScene(nombreEscena);
+            }
+        }
+        if(collision.gameObject.tag == "before")
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                nombreEscena = before;
                 SceneManager.LoadScene(nombreEscena);
             }
         }
