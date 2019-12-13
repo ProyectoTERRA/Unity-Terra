@@ -25,7 +25,8 @@ public class Esferas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(gameObject,1f);
+        transform.localScale = new Vector3(transform.localScale.x - 0.01f, transform.localScale.x - 0.01f);
+        Destroy(gameObject,1.7f);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
