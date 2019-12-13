@@ -3,7 +3,38 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlayerInteractionZone
+  - Pesada
+  - Paraliz
+  - Normal
+  - Tranqui
+  - Desac
+  - Puerta
+  - florero
+  - Ground
+  - Puerta3
+  - Llave
+  - panel
+  - formula
+  - Puerta2
+  - Chapa
+  - Pasar
+  - Next
+  - mensaje2
+  - bolsa
+  - lata
+  - platano
+  - before
+  - life
+  - Pared
+  - Wall
+  - Lucy
+  - linterna
+  - PuertaLucy
+  - PuertaSala
+  - PuertaCalle
+  - carton
   layers:
   - Default
   - TransparentFX
@@ -40,4 +71,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Fondo
+    uniqueID: 882085237
+    locked: 0
+  - name: Level Fondo
+    uniqueID: 1638842355
+    locked: 0
+  - name: Level
+    uniqueID: 1473199511
+    locked: 0
+  - name: Player
+    uniqueID: 871274355
+    locked: 0
+  - name: Objetos
+    uniqueID: 2889764979
+    locked: 0
+  - name: HUD
+    uniqueID: 2375791109
     locked: 0
