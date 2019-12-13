@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     public float x;
     public float y;
     public float z;
-    public string Equip;
+    public static string Equip;
 
     public static int side;
 
@@ -34,13 +34,13 @@ public class PlayerController : MonoBehaviour
         animacion = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
         wall = false;
-        Equip = "esf_T";
     }
 
 
     // Update is called once per frame
     void Update()
     {
+
         //animacion.SetFloat("Velocidad",Mathf.Abs(rbd2.velocity.x));
         //animacion.SetBool("Grounded", grounded);
 
@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
                 if (pl != null)
                 {
                     Instantiate(Esf[0], pl.transform.position, Quaternion.identity);
+                    
                 }
             }
 
@@ -75,6 +76,7 @@ public class PlayerController : MonoBehaviour
                 if (pl != null)
                 {
                     Instantiate(Esf[1], pl.transform.position, Quaternion.identity);
+
                 }
             }
 
