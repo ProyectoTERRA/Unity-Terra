@@ -26,7 +26,7 @@ public class Esferas : MonoBehaviour
     void Update()
     {
         transform.localScale = new Vector3(transform.localScale.x - 0.01f, transform.localScale.x - 0.01f);
-        Destroy(gameObject,1.7f);
+        Destroy(gameObject,1.5f);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
