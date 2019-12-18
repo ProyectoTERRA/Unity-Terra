@@ -333,7 +333,7 @@ MonoBehaviour:
   speed: 2
   maxspeed: 2
   DistanciaVision: 3
-  matchPanel: {fileID: 0}
+  matchPanel: {fileID: 4436905505232760053}
 --- !u!212 &129087138
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1770,11 +1770,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6795967696577525223, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5225394894740060154, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1799,6 +1794,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795967696577525223, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a72f4c8686a07504fbcf19c0072337c4, type: 3}
@@ -2642,7 +2642,7 @@ Transform:
   m_GameObject: {fileID: 4436905505232760053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12, y: -0.37, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1.75}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 4436905506267770317}
   - {fileID: 4904872388557222482}
@@ -2713,8 +2713,8 @@ MonoBehaviour:
   grounded: 0
   wall: 0
   JumpPower: 5
-  x: 1
-  y: 1
+  x: 0.8
+  y: 0.8
   z: 1
   Equip: esf
   Esf:
@@ -2741,7 +2741,6 @@ GameObject:
   - component: {fileID: 4436905505232760072}
   - component: {fileID: 8291163399463221700}
   - component: {fileID: 4436905505232760056}
-  - component: {fileID: 4436905505232760057}
   m_Layer: 8
   m_Name: Jugador
   m_TagString: Player
@@ -2849,19 +2848,6 @@ MonoBehaviour:
   nombreEscena: 
   nombrePartida: 
   nombrePartida1: 
---- !u!114 &4436905505232760057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4436905505232760053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a09dee137f0a84991c2795acf20692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpPower: 6.5
 --- !u!58 &4436905505232760060
 CircleCollider2D:
   m_ObjectHideFlags: 0
