@@ -24,12 +24,16 @@ public class PlayerController : MonoBehaviour
     public float z;
     public static string Equip;
 
+    public float scale;
+    public static float scal;
+
     public static int side;
 
     public GameObject[] Esf;
 
     void Start()
     {
+        scal = scale;
         rbd2 = GetComponent<Rigidbody2D>();
         animacion = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
@@ -61,6 +65,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             var pl = GameObject.Find("Jugador");
+            Debug.Log("Esferas");
 
             if (Equip == "esf_N")
             {
