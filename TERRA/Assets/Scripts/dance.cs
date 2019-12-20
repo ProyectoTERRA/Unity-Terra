@@ -81,4 +81,5 @@ public class dance : MonoBehaviour
         yield return new WaitForSeconds(1);
         spr.color = Color.white;
     }
+
 }

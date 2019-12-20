@@ -6,8 +6,12 @@ public class oracion : MonoBehaviour
 {
     public static string frase;
     public static int contador;
-    public GameObject hoja, mensaje;
+    public GameObject hoja, mensaje, mensaje1;
 
+    private void Start()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {
@@ -33,5 +37,10 @@ public class oracion : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         mensaje.SetActive(false);
+    }
+    public IEnumerator test1()
+    {
+        yield return new WaitForSeconds(5);
+        mensaje1.SetActive(false);
     }
 }
