@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         //animacion.SetFloat("Velocidad",Mathf.Abs(rbd2.velocity.x));
         //animacion.SetBool("Grounded", grounded);
 
+        //Doble Salto
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (grounded)
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        //Esferas
         if (Input.GetKeyDown(KeyCode.J))
         {
             var pl = GameObject.Find("Jugador");
@@ -116,6 +118,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        //Movimiento
         Vector3 fixedVelocity = rbd2.velocity;
         fixedVelocity.x *= 0.75f;
 
@@ -154,6 +157,7 @@ public class PlayerController : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        //Animacion de Vida
         if (collision.gameObject.tag == "life")
         {
             GameObject vida = GameObject.Find("Heart Bar - HUD_0");
