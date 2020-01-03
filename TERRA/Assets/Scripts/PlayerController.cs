@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        transform.localScale = new Vector3(-x, y, z);
         scal = scale;
         rbd2 = GetComponent<Rigidbody2D>();
         animacion = GetComponent<Animator>();

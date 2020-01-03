@@ -23,8 +23,9 @@ public class Guards : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("ahhh");
 
-        if(collision.gameObject.tag == "Normal")
+        if (collision.gameObject.tag == "Normal")
         {
             life = life - 50;
             string nombre = collision.gameObject.name;
@@ -40,7 +41,8 @@ public class Guards : MonoBehaviour
 
         if (collision.gameObject.tag == "Paraliz")
         {
-            GetComponent<EnemyFollow>().enabled = false;
+            Debug.Log("ahhh");
+            GetComponent<Watcher>().enabled = false;
             string nombre = collision.gameObject.name;
             StartCoroutine(lib());
             Destroy(GameObject.Find(nombre));
@@ -52,7 +54,7 @@ public class Guards : MonoBehaviour
     IEnumerator lib()
     {
         yield return new WaitForSeconds(5f);
-        GetComponent<EnemyFollow>().enabled = true;
+        GetComponent<Watcher>().enabled = true;
     }
 
     }
