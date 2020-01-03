@@ -34,7 +34,7 @@ public class SistemaGuardado : MonoBehaviour
     public void Update()
     {
         cargarContador();
-        Debug.Log("Nombre actual " + nombrePartida);
+        //Debug.Log("Nombre actual " + nombrePartida);
     }
     public void crearPartida()
     {

@@ -60,7 +60,6 @@ public class List : MonoBehaviour
 
         PlayerController.Equip = hrr[index];
 
-        Debug.Log(index);
 
     }
 }
