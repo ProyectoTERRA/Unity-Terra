@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public static int pila, bolsa, carton, manzana, platano, lata;
+    public static int pila, bolsa, carton, manzana, platano, lata, llave, formula;
     // Start is called before the first frame update
     void Start()
     {/*
@@ -13,18 +13,14 @@ public class GameController : MonoBehaviour
         Debug.Log("Carton en gameController " + carton);
         Debug.Log("Manzana en gameController " + manzana);
         Debug.Log("Platano en gameController " + platano);
-        Debug.Log("Lata en gameController " + lata);*/
+        Debug.Log("Lata en gameController " + lata);*/        
     }
-
-
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-
+        Debug.Log("Formula en gameController " + formula);
     }
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        Debug.Log("Nomnbre del gameobject  " + gameObject.name);
     }
 }

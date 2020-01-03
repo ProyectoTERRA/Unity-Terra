@@ -35,11 +35,17 @@ TagManager:
   - PuertaSala
   - PuertaCalle
   - carton
+  - manzana
+  - alcantarilla
+  - limite
+  - Checkpoint
+  - cientifico
+  - lave
   - Platform
   - InteraccionWatcher
   - PuertaIzq
   - PuertaDer
-  - Agranda
+  - erizo
   layers:
   - Default
   - TransparentFX
@@ -83,20 +89,8 @@ TagManager:
   - name: Level Fondo
     uniqueID: 1638842355
     locked: 0
-  - name: Profundidad1
-    uniqueID: 1417775255
-    locked: 0
-  - name: Profundidad2
-    uniqueID: 4201020803
-    locked: 0
-  - name: Profundidad3
-    uniqueID: 2376144437
-    locked: 0
   - name: Level
     uniqueID: 1473199511
-    locked: 0
-  - name: NPC
-    uniqueID: 1141069347
     locked: 0
   - name: Player
     uniqueID: 871274355

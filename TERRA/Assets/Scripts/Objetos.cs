@@ -15,11 +15,6 @@ public class Objetos : MonoBehaviour
         radial.basura[4] = GameController.platano;
         radial.basura[5] = GameController.lata;
     }
-    public void Update()
-    {
-
-    }
-
     public void OnTriggerEnter2D(Collider2D other)
     {
         GameObject go = GameObject.Find("InvFunc");
