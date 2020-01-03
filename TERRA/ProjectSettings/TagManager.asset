@@ -41,6 +41,11 @@ TagManager:
   - Checkpoint
   - cientifico
   - lave
+  - Platform
+  - InteraccionWatcher
+  - PuertaIzq
+  - PuertaDer
+  - erizo
   layers:
   - Default
   - TransparentFX
