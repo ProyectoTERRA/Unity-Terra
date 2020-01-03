@@ -35,6 +35,12 @@ TagManager:
   - PuertaSala
   - PuertaCalle
   - carton
+  - manzana
+  - alcantarilla
+  - limite
+  - Checkpoint
+  - cientifico
+  - lave
   layers:
   - Default
   - TransparentFX

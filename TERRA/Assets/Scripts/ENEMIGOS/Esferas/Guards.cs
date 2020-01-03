@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Guards : MonoBehaviour
 {
-    // Start is called before the first frame update
     public int life;
     void Start()
     {
@@ -12,11 +11,12 @@ public class Guards : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(life <= 0)
         {
+            eliminarEnemyesC3.guardias++;
+            Debug.Log("Guardias eliminados " + eliminarEnemyesC3.guardias);
             Destroy(gameObject);
         }
     }

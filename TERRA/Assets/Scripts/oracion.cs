@@ -8,11 +8,6 @@ public class oracion : MonoBehaviour
     public static int contador;
     public GameObject hoja, mensaje, mensaje1;
 
-    private void Start()
-    {
-        
-    }
-    // Update is called once per frame
     void Update()
     {
         if (contador == 15)

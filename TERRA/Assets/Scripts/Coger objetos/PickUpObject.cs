@@ -6,14 +6,13 @@ public class PickUpObject : MonoBehaviour
 {
     public GameObject objectToPick, pickedObject, mensaje2, mensaje3;
     public Transform interactionZone;
-
     void Update()
-    {
-        
+    {        
         if (objectToPick != null && objectToPick.GetComponent<Pickable>().coger == true && pickedObject == null)
         {
             if(Input.GetKeyDown(KeyCode.E))
-            {                
+            {
+                Debug.Log("Objeto " + objectToPick.tag);
                 pickedObject = objectToPick;
                 pickedObject.GetComponent<Pickable>().coger = false;
                 pickedObject.transform.SetParent(interactionZone);
@@ -22,6 +21,11 @@ public class PickUpObject : MonoBehaviour
                 pickedObject.GetComponent<Rigidbody2D>().isKinematic = true;
                 mensaje2.SetActive(true);
                 StartCoroutine(test());
+                if (objectToPick.tag == "lave")
+                {
+                    Debug.Log("Recogiste llave");
+                    GameController.llave = 1;
+                }
             }
         }
         else if(pickedObject!=null)
@@ -41,7 +45,6 @@ public class PickUpObject : MonoBehaviour
     public IEnumerator test()
     {
         yield return new WaitForSeconds(3);
-        Debug.Log("Si se espero");
         mensaje2.SetActive(false);
         mensaje3.SetActive(false);
     }

@@ -11,7 +11,7 @@ public class desactiveCollider : MonoBehaviour
     void Start()
     {
         collider = GetComponent<Collider2D>();
-        
+        eliminarEnemyesC3.guardias = 0;
     }
 
     // Update is called once per frame
