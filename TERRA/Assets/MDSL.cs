@@ -6,9 +6,10 @@ public class MDSL : MonoBehaviour
 {
     private bool laserOn;
     GameObject line;
-
+    /*
     IEnumerator FireLaser()
     {
+
         line.enabled = true;
 
         while (laserOn)
@@ -31,4 +32,5 @@ public class MDSL : MonoBehaviour
         }
         line.enabled = false;
     }
+    */
 }
