@@ -5,11 +5,16 @@ using UnityEngine;
 public class MDSL : MonoBehaviour
 {
     private bool laserOn;
+
     //GameObject line;
+
+
+    GameObject line;
 
     /*
     IEnumerator FireLaser()
     {
+
         line.enabled = true;
 
         while (laserOn)

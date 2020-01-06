@@ -1,14 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerCalle : MonoBehaviour
 {
     [SerializeField] private GameObject camera;
 
+    [SerializeField] private GameObject img_obj_1;
+    [SerializeField] private GameObject img_obj_2;
+    [SerializeField] private GameObject img_obj_3;
+    [SerializeField] private GameObject img_obj_4;
+    [SerializeField] private GameObject img_obj_5;
+    [SerializeField] private GameObject img_obj_6;
+
 
 
     public bool s1, s2;
+
+    public Image spr;
+    public Sprite Palanca1;
+    public Sprite Palanca2;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +63,33 @@ public class PlayerCalle : MonoBehaviour
             camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
             camera.transform.localScale = new Vector3(1f, 1f, 1f);
             
+        }
+    }
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Palanca1")//compara si hizo la colision con el objeto correcto
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                spr = img_obj_1.GetComponent<Image>();
+                spr.sprite = Palanca1;
+                Destroy(GameObject.Find("Palanca1"));
+
+            }
+
+        }
+
+        if (collision.gameObject.name == "Palanca2")//compara si hizo la colision con el objeto correcto
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                spr = img_obj_2.GetComponent<Image>();
+                spr.sprite = Palanca2;
+                Destroy(GameObject.Find("Palanca2"));
+
+            }
+
         }
     }
 }
