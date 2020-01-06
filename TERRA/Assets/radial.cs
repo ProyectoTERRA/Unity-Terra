@@ -38,6 +38,13 @@ public class radial : MonoBehaviour
     [SerializeField] private Button btn_ObjCuracion;
     [SerializeField] private Button btn_Ganzuas;
 
+    [SerializeField] private GameObject img_obj_1;
+    [SerializeField] private GameObject img_obj_2;
+    [SerializeField] private GameObject img_obj_3;
+    [SerializeField] private GameObject img_obj_4;
+    [SerializeField] private GameObject img_obj_5;
+    [SerializeField] private GameObject img_obj_6;
+
 
     private bool esc;
     private bool ivn;
