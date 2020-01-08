@@ -25,17 +25,17 @@ public class ChangeGravity : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "GArriba") //&& Input.GetKey(KeyCode.E)
+        if(collision.name == "GArriba" && Input.GetKey(KeyCode.E))
         {
             Debug.Log("Funciona");
-            Physics2D.gravity = new Vector3(0, -1, 0);
+            Physics2D.gravity = new Vector2(0, -1.0f);
             AddForceUP();
         }
 
-        if (collision.name == "GAbajo") //&& Input.GetKey(KeyCode.E))
+        if (collision.name == "GAbajo" && Input.GetKey(KeyCode.E))
         {
             Debug.Log("Funciona");
-            Physics2D.gravity = new Vector3(0, 1, 0);
+            Physics2D.gravity = new Vector2(0, 1.0f);
             AddForceDown();
         }
     }
