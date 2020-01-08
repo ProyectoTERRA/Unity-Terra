@@ -22,37 +22,37 @@ public class AntartidaPantallas : MonoBehaviour
 
         if (collision.name == "A_2-3")
         {
-
+            transform.position = new Vector3(171f, 14.2f, 1f);
         }
 
         if (collision.name == "A_3-4")
         {
-
+            transform.position = new Vector3(278.5f, 14.37f, 1f);
         }
 
         if (collision.name == "A_4-5")
         {
-
+            transform.position = new Vector3(353.9f, 14.37f, 1f);
         }
 
         if (collision.name == "A_5-6")
         {
-
+            transform.position = new Vector3(467.8f, 17.77f, 1f);
         }
 
         if (collision.name == "BE_1-2")
         {
-
+            transform.position = new Vector3(534.2f, 19.2f, 1f);
         }
 
         if (collision.name == "BE_2-3")
         {
-
+            transform.position = new Vector3(30.56f, 17.83f, 1f);
         }
 
         if (collision.name == "BE_Final")
         {
-
+            transform.position = new Vector3(30.56f, 17.83f, 1f);
         }
     }
 
