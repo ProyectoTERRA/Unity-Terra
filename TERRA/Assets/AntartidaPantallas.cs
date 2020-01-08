@@ -17,7 +17,7 @@ public class AntartidaPantallas : MonoBehaviour
     {
         if(collision.name == "A_1-2")
         {
-            Debug.Log("Sirve");
+            transform.position = new Vector3(30.56f, 17.83f,  1f);
         }
 
         if (collision.name == "A_2-3")
