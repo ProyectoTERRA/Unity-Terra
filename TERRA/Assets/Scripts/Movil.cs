@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
-public class Movil : MonoBehaviour
-{
+//public class Movil : MonoBehaviour
+//{
+    /*
     public Transform target;
     public float speed;
 
@@ -38,4 +39,5 @@ public class Movil : MonoBehaviour
             target.position = (target.position == start) ? end : start;
         }
     }
-}
+    */
+//}

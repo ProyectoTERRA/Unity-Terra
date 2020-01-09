@@ -15,14 +15,14 @@ public class AntartidaPantallas : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "A_1-2")
+        if(collision.name == "BE_2-3")
         {
-            transform.position = new Vector3(30.56f, 17.83f,  1f);
+            transform.position = new Vector3(473.64f, 18.2f,  1f);
         }
 
-        if (collision.name == "A_2-3")
+        if (collision.name == "BE_Final")
         {
-            transform.position = new Vector3(171f, 14.2f, 1f);
+            transform.position = new Vector3(576, 20.84f, 1f);
         }
 
         if (collision.name == "A_3-4")
@@ -45,15 +45,7 @@ public class AntartidaPantallas : MonoBehaviour
             transform.position = new Vector3(534.2f, 19.2f, 1f);
         }
 
-        if (collision.name == "BE_2-3")
-        {
-            transform.position = new Vector3(30.56f, 17.83f, 1f);
-        }
 
-        if (collision.name == "BE_Final")
-        {
-            transform.position = new Vector3(30.56f, 17.83f, 1f);
-        }
     }
 
     void FixedUpdate()
