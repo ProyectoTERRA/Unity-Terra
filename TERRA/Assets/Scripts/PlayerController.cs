@@ -180,7 +180,7 @@ public class PlayerController : MonoBehaviour
     private void OnBecameInvisible()
    {
         
-        transform.position = new Vector3(129.79f, 14f, 0);
+        //transform.position = new Vector3(129.79f, 14f, 0);
    
     }
    
