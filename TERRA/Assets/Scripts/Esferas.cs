@@ -23,9 +23,9 @@ public class Esferas : MonoBehaviour
 
 
         rbd2 = GetComponent<Rigidbody2D>();
-        transform.position = new Vector3(transform.position.x - (1.5f * PlayerController.side), transform.position.y + 0.6f);
+        transform.position = new Vector3(transform.position.x - ((1.5f * PlayerController.side)*scale), (transform.position.y + (0.6f*scale)));
 
-        rbd2.AddForce(Vector2.left * PlayerController.side * JumpPower, ForceMode2D.Impulse);
+        rbd2.AddForce(Vector2.left * PlayerController.side * (JumpPower * scale), ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
