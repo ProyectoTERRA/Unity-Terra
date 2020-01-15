@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8874622975858047570}
   - component: {fileID: 8874622975858047572}
   - component: {fileID: 8874622975858047573}
-  - component: {fileID: 8874622975858047575}
   m_Layer: 0
   m_Name: WATCHER LATERAL 1
   m_TagString: Untagged
@@ -172,6 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543880471c5cd1d4db5ddb3efae66853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  z: 0
   speed: 5
   maxspeed: 5
   DistanciaVision: 5
@@ -195,19 +197,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8874622975858047575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8874622975858047535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b974995d95d9f40b063b1869195b95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectToPickUp: {fileID: 0}
 --- !u!1 &8874622976033329123
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +207,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8874622976033329122}
   - component: {fileID: 8874622976033329125}
-  - component: {fileID: 8874622976033329124}
   m_Layer: 0
   m_Name: CargoElPayaso
   m_TagString: InteraccionWatcher
@@ -266,16 +254,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1207769, y: 1.9510598}
   m_EdgeRadius: 0
---- !u!114 &8874622976033329124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8874622976033329123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b974995d95d9f40b063b1869195b95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectToPickUp: {fileID: 0}

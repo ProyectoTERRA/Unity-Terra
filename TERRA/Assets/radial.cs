@@ -38,6 +38,21 @@ public class radial : MonoBehaviour
     [SerializeField] private Button btn_ObjCuracion;
     [SerializeField] private Button btn_Ganzuas;
 
+    [SerializeField] private Button btn_fab;
+
+    [SerializeField] private GameObject img_fab;
+    [SerializeField] private GameObject img_fab_1;
+    [SerializeField] private GameObject img_fab_2;
+
+    static public bool pl1, pl2, pl;
+
+    static public string objFab  = "none";
+
+    public Image req1;
+    public Image req2;
+    public Image req;
+    public Sprite Palanca1;
+    public Sprite Palanca2;
 
     private bool esc;
     private bool ivn;
@@ -57,15 +72,23 @@ public class radial : MonoBehaviour
         obj.SetActive(false);
         herr.SetActive(false);
 
-        
 
-        
+        btn_fab.interactable = false;
 
-
-
+        pl = false;
+        pl1 = false;
+        pl2 = false;
 
         esc = false;
         ivn = false;
+
+        req1 = img_fab_1.GetComponent<Image>();
+        req2 = img_fab_2.GetComponent<Image>();
+        req = img_fab.GetComponent<Image>();
+
+        req.color = Color.gray;
+        req1.color = Color.gray;
+        req2.color = Color.gray;
 
     }
 
@@ -100,7 +123,46 @@ public class radial : MonoBehaviour
 
         valCraft();
 
+        if (objFab == "Palanca")
+        {
+            checkPl();
+        }
 
+    }
+
+    public void checkPl()
+    {
+        if (pl1)
+        {
+            req1.color = Color.white;
+        }
+        else
+        {
+            req1.color = Color.gray;
+        }
+
+        if (pl2)
+        {
+            req2.color = Color.white;
+        }
+        else
+        {
+            req2.color = Color.gray;
+        }
+
+        if (pl1 && pl2)
+        {
+            btn_fab.interactable = true;
+        }
+    }
+
+    public void fabPl()
+    {
+        pl = true;
+        req.color = Color.white;
+        btn_fab.interactable = false;
+        pl1 = false;
+        pl2 = false;
     }
 
     public void txt_Basura ()

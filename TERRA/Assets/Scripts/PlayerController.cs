@@ -177,10 +177,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /*private void OnBecameInvisible()
-    {
-        transform.position = new Vector3(-7, 2, 0);
-    }*/
+    private void OnBecameInvisible()
+   {
+        
+        //transform.position = new Vector3(129.79f, 14f, 0);
+   
+    }
+   
     void OnCollisionStay2D(Collision2D col)
     {
 
