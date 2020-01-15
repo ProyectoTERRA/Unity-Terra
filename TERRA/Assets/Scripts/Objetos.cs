@@ -30,10 +30,12 @@ public class Objetos : MonoBehaviour
 
         if (other.gameObject.tag == "bolsa")
         {
-            GameController.bolsa++;
             string nombre = other.gameObject.name;
-            radial.basura[1]++;
             Destroy(GameObject.Find(nombre));
+            Debug.Log("S");
+            GameController.bolsa++;
+            radial.basura[1]++;
+
         }
 
         if (other.gameObject.tag == "carton")
