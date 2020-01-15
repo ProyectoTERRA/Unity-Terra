@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     public float scale;
     public static float scal;
-
+    public int SIDE;
     public static int side;
 
     public GameObject[] Esf;
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.localScale = new Vector3(-x, y, z);
         scal = scale;
+        side = SIDE;
         rbd2 = GetComponent<Rigidbody2D>();
         animacion = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
