@@ -43,7 +43,6 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-
         if (col.gameObject.tag == "Player")
         {
             Debug.Log("Ha hecho colision con el jugador");

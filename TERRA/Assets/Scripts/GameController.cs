@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     }
     public void Update()
     {
-        Debug.Log("Formula en gameController " + formula);
+
     }
     private void Awake()
     {

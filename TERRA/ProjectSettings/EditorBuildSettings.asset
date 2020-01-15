@@ -42,6 +42,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Capitulo 3/almacenC3.unity
     guid: 5a7fa32fd420f8745aafb0cbf75265b5
   - enabled: 1
-    path: Assets/Scenes/Capitulo 1/Calle.unity
-    guid: 698fac718b671734fb83f7d410912147
+    path: Assets/Scenes/Capitulo 4/Playa.unity
+    guid: 320688172943e2b46a00577970b43045
+  - enabled: 1
+    path: Assets/Scenes/Capitulo 4/Mar.unity
+    guid: 3315a8a061c0efd4a869ce09f9efb29e
+  - enabled: 1
+    path: Assets/Scenes/Capitulo 4/Plataforma.unity
+    guid: ffb51e93cf64d8549889e97bf4381030
   m_configObjects: {}

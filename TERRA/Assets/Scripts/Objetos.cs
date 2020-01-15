@@ -67,7 +67,6 @@ public class Objetos : MonoBehaviour
             GameController.lata++;
             string nombre = other.gameObject.name;
             radial.basura[5]++;
-
             Destroy(GameObject.Find(nombre));
         }
     }
