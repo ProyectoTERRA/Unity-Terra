@@ -25565,6 +25565,7 @@ MonoBehaviour:
   y: 0.75
   z: 0.75
   scale: 0.75
+  SIDE: -1
   Esf:
   - {fileID: 4315916757541250148, guid: 78c9b5aac88a1514791507f1c86b3f19, type: 3}
   - {fileID: 3077139853389278693, guid: 1d15aa45a327c0a45a064b1e80def78a, type: 3}
