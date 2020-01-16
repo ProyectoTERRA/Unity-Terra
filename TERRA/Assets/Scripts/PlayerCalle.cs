@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -108,7 +109,7 @@ public class PlayerCalle : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && radial.pl)
             {
                 Debug.Log("Salido");
-
+                SceneManager.LoadScene("Alcantarillas");
             }
 
         }
