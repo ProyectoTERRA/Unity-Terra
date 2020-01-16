@@ -538,8 +538,8 @@ GameObject:
   - component: {fileID: 109592214}
   - component: {fileID: 109592213}
   - component: {fileID: 109592212}
-  - component: {fileID: 109592211}
   - component: {fileID: 109592210}
+  - component: {fileID: 109592211}
   m_Layer: 0
   m_Name: Diana 2.0
   m_TagString: Untagged
@@ -567,14 +567,13 @@ CircleCollider2D:
 --- !u!114 &109592211
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4532665858601000086, guid: deb1b7eace8e77c4f9c9f72f472dbf91,
-    type: 3}
-  m_PrefabInstance: {fileID: 1499280525232512790}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109592209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c9038ff993c044aa39ddcd864580a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 823473bcd57608542bd3c624185a94c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
@@ -586,10 +585,10 @@ MonoBehaviour:
     - Bueno, en realidad todos la necesitamos
     - Te contare la historia...
     - "EY! muy buenas a todos GUA-p\xEDsimos, aqui VEGGGGG 777"
-  DialoguePanel: {fileID: 1748076195}
-  typingSpeed: 0
+  dialogPanel: {fileID: 1748076195}
   displayText: {fileID: 1346776857}
-  speakSound: {fileID: 0}
+  typingpeed: 0.06
+  speakSound: {fileID: 8300000, guid: b2086f0f4777b8a4b8dcb6406d27989b, type: 3}
 --- !u!61 &109592212
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -603,7 +602,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: -1.1219616}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -7549,6 +7548,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4532665858601000170, guid: deb1b7eace8e77c4f9c9f72f472dbf91,
+        type: 3}
+      propertyPath: m_UsedByComposite
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4532665858601000086, guid: deb1b7eace8e77c4f9c9f72f472dbf91,
         type: 3}
       propertyPath: DialoguePanel
@@ -7559,7 +7563,8 @@ PrefabInstance:
       propertyPath: displayText
       value: 
       objectReference: {fileID: 1346776857}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: deb1b7eace8e77c4f9c9f72f472dbf91, type: 3}
 --- !u!1001 &1828675242319912230
 PrefabInstance:
