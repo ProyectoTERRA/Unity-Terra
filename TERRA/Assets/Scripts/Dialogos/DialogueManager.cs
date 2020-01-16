@@ -6,20 +6,18 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public Dialog dialogue;
-
     Queue<string> sentences;
-
     public GameObject dialogPanel;
-
     public TextMeshProUGUI displayText;
-
     string activeSentence;
-
     public float typingpeed;
+    AudioSource myAudio;
+    public AudioClip speakSound;
 
     public void Start()
     {
         sentences = new Queue<string>();
+        myAudio = GetComponent<AudioSource>();
     }
     void StartDialogue()
     {
@@ -58,10 +56,9 @@ public class DialogueManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.Return) && displayText.text == activeSentence)
+            if (Input.GetKeyDown(KeyCode.E) && displayText.text == activeSentence)
             {
-                cont++;
-                Debug.Log(cont);
+
                 displayNextSentence();
             }
         }

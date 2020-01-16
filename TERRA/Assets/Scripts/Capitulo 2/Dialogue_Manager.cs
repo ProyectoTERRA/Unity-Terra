@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class Dialogue_Manager : MonoBehaviour
 {
     public Dialogue dialogue;
+    public GameObject clip;
     Queue<string> sentences;
     public GameObject DialoguePanel;
     string activeSentence;
@@ -43,8 +45,22 @@ public class Dialogue_Manager : MonoBehaviour
 
         activeSentence = sentences.Dequeue();
         displayText.text = activeSentence;
+
+        StopAllCoroutines();
+        StartCoroutine(TypeTheSentence(activeSentence));
     }
 
+    IEnumerator TypeTheSentence(string sentence)
+    {
+        displayText.text = "";
+
+        foreach(char letter in sentence.ToCharArray())
+        {
+            displayText.text += letter;
+            myAudio.PlayOneShot(speakSound);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D col)
     {
         
@@ -58,20 +74,23 @@ public class Dialogue_Manager : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-       
-           if (Input.GetKeyDown(KeyCode.E) & other.CompareTag("Player"))
-                {
-                    DisplayNextSentence();
-                    Debug.Log("Colision Jugador");
-                }
-        
+        if (other.CompareTag("Player"))
+        {
+            if (Input.GetKeyDown(KeyCode.E) && displayText.text == activeSentence)
+            {
+                DisplayNextSentence();
+                Debug.Log("Colision Jugador");
+            }
+        }
     }
+    
 
     private void OnTriggerExit2D(Collider2D salida)
     {
         if (salida.CompareTag("Player"))
         {
             DialoguePanel.SetActive(false);
+            StopAllCoroutines();
             Debug.Log("Adios");
         }
     }
