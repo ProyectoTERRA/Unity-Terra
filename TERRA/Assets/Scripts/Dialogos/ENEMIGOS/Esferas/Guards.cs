@@ -16,7 +16,8 @@ public class Guards : MonoBehaviour
         if(life <= 0)
         {
             eliminarEnemyesC3.guardias++;
-            Debug.Log("Guardias eliminados " + eliminarEnemyesC3.guardias);
+            Botones.enemigos++;
+            Debug.Log("Guardias eliminados " + Botones.enemigos);
             Destroy(gameObject);
         }
     }
