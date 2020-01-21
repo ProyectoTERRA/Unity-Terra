@@ -8,6 +8,7 @@ public class PuertaLab : MonoBehaviour
 {
 
     public bool puertaIzq, puertaDer, Salir, Entrar,EntrFabr,SalidaFab,PuertaFD1, PuertaFD2, PuertaFI1, PuertaFI2;
+    public bool PuertaFD3, PuertaFI3, EscP12, EscP21, EscP23, EscP32;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +57,30 @@ public class PuertaLab : MonoBehaviour
         {
             PuertaFI2 = true;
         }
+        if (collision.name == "PuertaFD3")
+        {
+            PuertaFD3 = true;
+        }
+        if (collision.name == "PuertaFI3")
+        {
+            PuertaFI3 = true;
+        }
+        if (collision.name == "EscP12")
+        {
+            EscP12 = true;
+        }
+        if (collision.name == "EscP21")
+        {
+            EscP21 = true;
+        }
+        if (collision.name == "EscP23")
+        {
+            EscP23 = true;
+        }
+        if (collision.name == "EscP32")
+        {
+            EscP32 = true;
+        }
     }
        
         public void OnTriggerExit2D(Collider2D LabDoor)
@@ -70,7 +95,13 @@ public class PuertaLab : MonoBehaviour
             PuertaFD2 = false;
             PuertaFI1 = false;
             PuertaFI2 = false;
-        }
+            PuertaFI3 = false;
+            PuertaFI3 = false;
+            EscP12 = false;
+            EscP21 = false;
+            EscP23 = false;
+            EscP32 = false;
+    }
         
         // Update is called once per frame
         
@@ -145,8 +176,44 @@ public class PuertaLab : MonoBehaviour
             transform.localScale = new Vector3(1f, 1f, 1f);
             PuertaFI2 = false;
         }
+        if (PuertaFD3 == true & Input.GetKey(KeyCode.E) & Input.GetKey(KeyCode.A))
+        {
+            transform.position = new Vector3(361.7f, 7.99f, 0);
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            PuertaFD3 = false;
+        }
+        if (PuertaFI3 == true & Input.GetKey(KeyCode.E) & Input.GetKey(KeyCode.D))
+        {
+            transform.position = new Vector3(366.48f, 7.99f, 0);
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            PuertaFI3 = false;
+        }
 
-
+        //Puertas Escaleras
+        if (EscP12 == true & Input.GetKey(KeyCode.E))
+        {
+            transform.position = new Vector3(424.4f, 35.1f, 0);
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            EscP12 = false;
+        }
+        if (EscP21 == true & Input.GetKey(KeyCode.E))
+        {
+            transform.position = new Vector3(367.9f, 8f, 0);
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            EscP21 = false;
+        }
+        if (EscP23 == true & Input.GetKey(KeyCode.E))
+        {
+            transform.position = new Vector3(195.7f, 66.2f, 0);
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            EscP21 = false;
+        }
+        if (EscP32 == true & Input.GetKey(KeyCode.E))
+        {
+            transform.position = new Vector3(195.7f, 32.9f, 0);
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            EscP21 = false;
+        }
 
 
 

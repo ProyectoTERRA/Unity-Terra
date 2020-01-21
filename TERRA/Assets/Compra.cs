@@ -14,7 +14,7 @@ public class Compra : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            gameObject.SetActive(true);
+            //game.SetActive(true);
         }
     }
 
