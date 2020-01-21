@@ -212,10 +212,32 @@ public class PlayerController : MonoBehaviour
         rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
 
         movement = false;
-        Invoke("EnableMovement", 0.7f);
+
+      
+            Invoke("EnableMovement", 0.7f);
+        
+        
 
         spr.color = Color.red;
     }
+
+    public void RATAKnockBack(float enemyPosX)
+    {
+        jump = true;
+
+        float side = Mathf.Sign(enemyPosX - transform.position.x);
+        rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
+
+        movement = false;
+
+
+        Invoke("EnableMovement", 2f);
+
+
+
+        spr.color = Color.red;
+    }
+
 
     void EnableMovement()
     {
