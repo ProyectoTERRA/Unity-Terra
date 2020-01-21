@@ -45,6 +45,14 @@ public class List : MonoBehaviour
         Debug.Log(PlayerController.Equip);
 
         GetComponent<SpriteRenderer>().sprite = Resources.Load("Esferas_0", typeof(Sprite)) as Sprite;
+        if (select[index].name == "Hand")
+        {
+            Equipado.GetComponent<SpriteRenderer>().sprite = null;
+        }
+        else
+        {
+            Equipado.GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
+        }
 
     }
 
@@ -60,6 +68,15 @@ public class List : MonoBehaviour
                 if (index >= i) index = 0;
             }
 
+            if (select[index].name == "Hand")
+            {
+                Equipado.GetComponent<SpriteRenderer>().sprite = null;
+            }
+            else
+            {
+                Equipado.GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
+            }
+
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -70,18 +87,18 @@ public class List : MonoBehaviour
                 index--;
 
             }
-
+            if (select[index].name == "Hand")
+            {
+                Equipado.GetComponent<SpriteRenderer>().sprite = null;
+            }
+            else
+            {
+                Equipado.GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
+            }
 
         }
 
-        if (select[index].name == "Hand")
-        {
-            Equipado.GetComponent<SpriteRenderer>().sprite = null;
-        }
-        else
-        {
-            Equipado.GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
-        }
+       
         GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
         PlayerController.Equip = select[index].name;
 
