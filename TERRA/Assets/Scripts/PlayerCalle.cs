@@ -47,6 +47,7 @@ public class PlayerCalle : MonoBehaviour
         radial.objFab = "Palanca";
 
         spr = img_fab.GetComponent<Image>();
+        img_fab.GetComponent<SpriteRenderer>().sprite = Palanca;
         spr.sprite = Palanca;
         spr = img_fab_1.GetComponent<Image>();
         spr.sprite = Palanca1;

@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             var pl = GameObject.Find("Jugador");
             Debug.Log("Esferas");
 
-            if (Equip == "esf_N")
+            if (Equip == "Esfera Normal")
             {
                 if (pl != null)
                 {
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Equip == "esf_P")
+            if (Equip == "Esfera Paraliz")
             {
                 if (pl != null)
                 {
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Equip == "esf_D")
+            if (Equip == "Esfera Desac")
             {
                 if (pl != null)
                 {
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Equip == "esf_T")
+            if (Equip == "Esfera Tranqui")
             {
                 if (pl != null)
                 {
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Equip == "esf_H")
+            if (Equip == "Esfera Pesada")
             {
                 if (pl != null)
                 {

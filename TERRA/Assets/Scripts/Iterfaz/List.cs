@@ -1,22 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class List : MonoBehaviour
 {
-    public Sprite esf_N;
-    public Sprite esf_P;
-    public Sprite esf_D;
-    public Sprite esf_T;
-    public Sprite esf_H;
+    public GameObject esf_N;
+    public GameObject esf_P;
+    public GameObject esf_D;
+    public GameObject esf_T;
+    public GameObject esf_H;
+    public GameObject Hand;
+
+
+    public GameObject Equipado;
 
     List<string> hrr;
+
+    public static List<GameObject> select;
     public int index;
-    int i;
+    public int i;
     // Start is called before the first frame update
     void Start()
     {
         index = 0;
+
+        select = new List<GameObject>();
+
+        select.Add(Hand);
+        select.Add(esf_N);
+        select.Add(esf_P);
+        select.Add(esf_D);
+        select.Add(esf_T);
+
+
         hrr = new List<string>();
         hrr.Add("esf_N");
         hrr.Add("esf_P");
@@ -34,10 +51,10 @@ public class List : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        i = hrr.Count;
+        i = select.Count;
         if (Input.GetKeyDown(KeyCode.V))
         {
-            if(index >= 0 && index <= i)
+            if (index >= 0 && index <= i)
             {
                 index++;
                 if (index >= i) index = 0;
@@ -51,15 +68,22 @@ public class List : MonoBehaviour
             {
                 if (index <= 0) index = i;
                 index--;
-                
+
             }
 
 
         }
 
-
-        PlayerController.Equip = hrr[index];
-
+        if (select[index].name == "Hand")
+        {
+            Equipado.GetComponent<SpriteRenderer>().sprite = null;
+        }
+        else
+        {
+            Equipado.GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
+        }
+        GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
+        PlayerController.Equip = select[index].name;
 
     }
 }

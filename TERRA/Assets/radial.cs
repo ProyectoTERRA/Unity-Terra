@@ -159,6 +159,7 @@ public class radial : MonoBehaviour
     public void fabPl()
     {
         pl = true;
+        List.select.Add(img_fab);
         req.color = Color.white;
         btn_fab.interactable = false;
         pl1 = false;
