@@ -28,7 +28,6 @@ public class List : MonoBehaviour
         select = new List<GameObject>();
 
         select.Add(Hand);
-        select.Add(esf_N);
         select.Add(esf_P);
         select.Add(esf_D);
         select.Add(esf_T);
@@ -103,10 +102,26 @@ public class List : MonoBehaviour
         PlayerController.Equip = select[index].name;
 
     }
-}
 
-public class herramiemtas
-{
-    string nombre;
-    Sprite img;
+    public void add(string n)
+    {
+        if (n == "normal") select.Add(esf_N);
+        if (n == "paraliz") select.Add(esf_P);
+        if (n == "desac") select.Add(esf_D);
+        if (n == "tranqui") select.Add(esf_T);
+        if (n == "heavy") select.Add(esf_H);
+    }
+
+    public void remove(string n)
+    {
+        if (n == "normal") select.Remove(esf_N);
+        if (n == "paraliz") select.Remove(esf_P);
+        if (n == "desac") select.Remove(esf_D);
+        if (n == "tranqui") select.Remove(esf_T);
+        if (n == "heavy") select.Remove(esf_H);
+        index = 0;
+        Equipado.GetComponent<SpriteRenderer>().sprite = null;
+
+    }
+
 }
