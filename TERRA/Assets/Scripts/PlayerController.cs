@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public int SIDE;
     public static int side;
 
+    [SerializeField] private GameObject list;
+
     public GameObject[] Esf;
 
     void Start()
@@ -66,19 +68,26 @@ public class PlayerController : MonoBehaviour
         //Esferas
         if (Input.GetKeyDown(KeyCode.J))
         {
+            GameObject go = GameObject.Find("InvFunc");
+            radial radial = go.GetComponent<radial>();
             var pl = GameObject.Find("Jugador");
             Debug.Log("Esferas");
 
-            if (Equip == "esf_N")
+            if (Equip == "Esfera Normal")
             {
                 if (pl != null)
                 {
                     Instantiate(Esf[0], pl.transform.position, Quaternion.identity);
 
+
+                    radial.esfera[0]--;
+                    string normal = "normal";
+                    if (radial.esfera[0] <= 0) list.SendMessage("remove", normal);
+
                 }
             }
 
-            if (Equip == "esf_P")
+            if (Equip == "Esfera Paraliz")
             {
                 if (pl != null)
                 {
@@ -87,7 +96,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Equip == "esf_D")
+            if (Equip == "Esfera Desac")
             {
                 if (pl != null)
                 {
@@ -95,7 +104,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Equip == "esf_T")
+            if (Equip == "Esfera Tranqui")
             {
                 if (pl != null)
                 {
@@ -103,7 +112,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Equip == "esf_H")
+            if (Equip == "Esfera Pesada")
             {
                 if (pl != null)
                 {

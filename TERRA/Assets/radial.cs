@@ -42,6 +42,8 @@ public class radial : MonoBehaviour
     [SerializeField] private GameObject img_fab_1;
     [SerializeField] private GameObject img_fab_2;
 
+    [SerializeField] private GameObject list;
+
     static public bool pl1, pl2, pl;
 
     static public string objFab = "none";
@@ -157,6 +159,7 @@ public class radial : MonoBehaviour
     public void fabPl()
     {
         pl = true;
+        List.select.Add(img_fab);
         req.color = Color.white;
         btn_fab.interactable = false;
         pl1 = false;
@@ -433,6 +436,8 @@ public class radial : MonoBehaviour
 
     public void Fab_Nl()
     {
+        string normal = "normal";
+        if (esfera[0] == 0) list.SendMessage("add", normal);
         basura[5] = basura[5] - 3;
         esfera[0]++;
     }
