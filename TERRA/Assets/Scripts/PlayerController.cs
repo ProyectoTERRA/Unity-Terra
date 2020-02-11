@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -76,7 +74,7 @@ public class PlayerController : MonoBehaviour
                 if (pl != null)
                 {
                     Instantiate(Esf[0], pl.transform.position, Quaternion.identity);
-                    
+
                 }
             }
 
@@ -139,9 +137,9 @@ public class PlayerController : MonoBehaviour
         rbd2.velocity = new Vector2(limetedSpeed, rbd2.velocity.y);
         if (h > 0.1f)
         {
-            
+
             transform.localScale = new Vector3(-x, y, z);
-            side = - 1;
+            side = -1;
         }
         if (h < -0.1f)
         {
@@ -167,7 +165,7 @@ public class PlayerController : MonoBehaviour
             heart_Bar.hearts--;
         }
     }
-    
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "life")
@@ -179,12 +177,12 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnBecameInvisible()
-   {
-        
+    {
+
         //transform.position = new Vector3(129.79f, 14f, 0);
-   
+
     }
-   
+
     void OnCollisionStay2D(Collision2D col)
     {
 
@@ -213,10 +211,10 @@ public class PlayerController : MonoBehaviour
 
         movement = false;
 
-      
-            Invoke("EnableMovement", 0.7f);
-        
-        
+
+        Invoke("EnableMovement", 0.7f);
+
+
 
         spr.color = Color.red;
     }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class cajaFuerte : MonoBehaviour
 {
@@ -15,8 +13,8 @@ public class cajaFuerte : MonoBehaviour
                 formula.SetActive(true);
             }
         }
-        
-        if(GameController.formula == 8)
+
+        if (GameController.formula == 8)
         {
             cientifico.SetActive(false);
             cientifica1.SetActive(true);

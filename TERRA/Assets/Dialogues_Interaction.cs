@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 public class Dialogues_Interaction : MonoBehaviour
 {
 
@@ -68,7 +68,7 @@ public class Dialogues_Interaction : MonoBehaviour
         {
             DialoguePanel.SetActive(true);
             StartDialogue();
-            transform.localScale = new Vector3(-1.8f,1.8f,1f);
+            transform.localScale = new Vector3(-1.8f, 1.8f, 1f);
             Debug.Log("Colision Inicial");
         }
     }

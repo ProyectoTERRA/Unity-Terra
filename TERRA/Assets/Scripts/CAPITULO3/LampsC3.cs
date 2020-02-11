@@ -1,20 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LampsC3 : MonoBehaviour
 {
     public GameObject faroV, faroR, faroAma, faroAzul, hoja;
     public string nombreEscena;
-    int contadorHojas=0;
-    private bool v=false, r=false, ama=false, azul=false;
+    int contadorHojas = 0;
+    private bool v = false, r = false, ama = false, azul = false;
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "lampara1")
-        {                       
+        if (collision.gameObject.name == "lampara1")
+        {
             azul = true;
-            if(r && v && ama)
+            if (r && v && ama)
             {
                 hoja.SetActive(true);
             }
@@ -45,7 +43,7 @@ public class LampsC3 : MonoBehaviour
                 faroAzul.SetActive(false);
                 faroV.SetActive(false);
                 faroAma.SetActive(false);
-            }           
+            }
         }
         if (collision.gameObject.name == "lampara3")
         {
@@ -77,14 +75,14 @@ public class LampsC3 : MonoBehaviour
                 faroR.SetActive(false);
                 faroAma.SetActive(false);
                 faroAzul.SetActive(false);
-            }        
-        }   
+            }
+        }
     }
 
     public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "formula")
-        {            
+        {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 contadorHojas++;

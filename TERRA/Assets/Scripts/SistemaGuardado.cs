@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using System;
-using System.Runtime.Serialization.Formatters.Binary;
+﻿using System;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SistemaGuardado : MonoBehaviour
 {
@@ -148,7 +146,7 @@ public class SistemaGuardado : MonoBehaviour
 
             dato = bf.Deserialize(expediente) as DatosPartidas;
 
-            contador = dato.contador ;
+            contador = dato.contador;
             nombre1 = dato.nombre1;
             nombre2 = dato.nombre2;
             nombre3 = dato.nombre3;
@@ -264,9 +262,9 @@ public class SistemaGuardado : MonoBehaviour
         nombre1 = nombre2;
         nombre2 = nombre3;
         nombre3 = " ";
-        while(contador>1)
+        while (contador > 1)
             contador--;
-        
+
         guardarContador();
         borrar();
         Debug.Log("Se borro");
@@ -331,7 +329,7 @@ public class SistemaGuardado : MonoBehaviour
     }
     public void escena2()
     {
-        if(nombre2!="")
+        if (nombre2 != "")
         {
             buscarNombre = nombre2;
             nombrePartida = buscarNombre;
@@ -346,7 +344,7 @@ public class SistemaGuardado : MonoBehaviour
     {
         if (nombre3 != "")
         {
-            
+
             buscarNombre = nombre3;
             nombrePartida = buscarNombre;
             cargar();
@@ -366,9 +364,9 @@ public class SistemaGuardado : MonoBehaviour
                 SceneManager.LoadScene(nombreEscena);
             }
         }
-        if(collision.gameObject.tag == "before")
+        if (collision.gameObject.tag == "before")
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 nombreEscena = before;
                 SceneManager.LoadScene(nombreEscena);
@@ -381,14 +379,14 @@ public class SistemaGuardado : MonoBehaviour
         {
             Debug.Log("Checkpoint " + nombrePartida);
             nombreEscena = SceneManager.GetActiveScene().name;
-            guardar();            
+            guardar();
         }
     }
 }
 
 //Esta clase nos serializa los datos de las partidas
 [Serializable()]//Datos listos para serializar
-class DatosJuego:System.Object
+class DatosJuego : System.Object
 {
     public String nombrePartida, nombreEscena;
     public int pila, manzana, platano, bolsa, carton, lata;
@@ -397,7 +395,7 @@ class DatosJuego:System.Object
 
 //Esta clase serializa el archivo contando partida
 [Serializable()]
-class DatosPartidas:System.Object
+class DatosPartidas : System.Object
 {
     public string nombre1, nombre2, nombre3;
     public string nombreActual;

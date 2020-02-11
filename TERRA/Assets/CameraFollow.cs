@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 
-    
+
 {
     public GameObject follow;
     public Vector2 minCamPos, maxCamPos;
@@ -15,7 +13,7 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -27,8 +25,8 @@ public class CameraFollow : MonoBehaviour
              ref velocity.y, smoothTime);
 
         transform.position = new Vector3(
-            Mathf.Clamp(posX,minCamPos.x, maxCamPos.x),
-            Mathf.Clamp(posY,minCamPos.y, maxCamPos.y), 
+            Mathf.Clamp(posX, minCamPos.x, maxCamPos.x),
+            Mathf.Clamp(posY, minCamPos.y, maxCamPos.y),
             transform.position.z);
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PickUpObject : MonoBehaviour
@@ -7,10 +6,10 @@ public class PickUpObject : MonoBehaviour
     public GameObject objectToPick, pickedObject, mensaje2, mensaje3;
     public Transform interactionZone;
     void Update()
-    {        
+    {
         if (objectToPick != null && objectToPick.GetComponent<Pickable>().coger == true && pickedObject == null)
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("Objeto " + objectToPick.tag);
                 pickedObject = objectToPick;
@@ -28,14 +27,14 @@ public class PickUpObject : MonoBehaviour
                 }
             }
         }
-        else if(pickedObject!=null)
+        else if (pickedObject != null)
         {
             if (Input.GetKeyDown(KeyCode.E))
-            {                
+            {
                 pickedObject.GetComponent<Pickable>().coger = true;
                 pickedObject.transform.SetParent(null);
                 pickedObject.GetComponent<Rigidbody2D>().gravityScale = 1;
-                pickedObject.GetComponent<Rigidbody2D>().isKinematic = true ;
+                pickedObject.GetComponent<Rigidbody2D>().isKinematic = true;
                 pickedObject = null;
                 mensaje3.SetActive(true);
                 StartCoroutine(test());

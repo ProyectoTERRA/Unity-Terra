@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
 using TMPro;
-using System.Collections;
+using UnityEngine;
 
 public class Dialogue_Manager : MonoBehaviour
 {
@@ -26,9 +26,9 @@ public class Dialogue_Manager : MonoBehaviour
     void StartDialogue()
     {
         sentences.Clear();
-        foreach(string sentence in dialogue.sentenceList)
+        foreach (string sentence in dialogue.sentenceList)
         {
-            
+
             //toma la oración y la agrega a la cola, para despues ser presentada
             sentences.Enqueue(sentence);
         }
@@ -37,7 +37,7 @@ public class Dialogue_Manager : MonoBehaviour
 
     void DisplayNextSentence()
     {
-        if(sentences.Count <= 0)
+        if (sentences.Count <= 0)
         {
             displayText.text = activeSentence;
             return;
@@ -54,7 +54,7 @@ public class Dialogue_Manager : MonoBehaviour
     {
         displayText.text = "";
 
-        foreach(char letter in sentence.ToCharArray())
+        foreach (char letter in sentence.ToCharArray())
         {
             displayText.text += letter;
             myAudio.PlayOneShot(speakSound);
@@ -63,13 +63,13 @@ public class Dialogue_Manager : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        
+
         if (col.CompareTag("Player"))
         {
             DialoguePanel.SetActive(true);
             StartDialogue();
             Debug.Log("Colision Inicial");
-        }  
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -83,7 +83,7 @@ public class Dialogue_Manager : MonoBehaviour
             }
         }
     }
-    
+
 
     private void OnTriggerExit2D(Collider2D salida)
     {

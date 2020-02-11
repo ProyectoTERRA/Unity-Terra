@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Check_Collision : MonoBehaviour
 {
     private float OrigenOffset = 0.5f;
     public float raycastMaxDistance = 5.0f;
     // Start is called before the first frame update
-    
+
     private RaycastHit2D ChecarRaycast(Vector2 direction)
     {
         float direccionOrigenOffset = OrigenOffset * (direction.y > 0 ? 1 : -1);
@@ -35,12 +33,12 @@ public class Check_Collision : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        
+
     }
 }

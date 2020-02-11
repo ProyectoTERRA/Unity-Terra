@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RATA : MonoBehaviour
 {
@@ -31,7 +29,7 @@ public class RATA : MonoBehaviour
             speed = -speed;
             rbd2.velocity = new Vector2(speed, rbd2.velocity.y);
         }
-        
+
         if (speed < 0)
         {
             transform.localScale = new Vector3(0.5f, 0.5f, 1f);
@@ -41,7 +39,7 @@ public class RATA : MonoBehaviour
         {
             transform.localScale = new Vector3(-0.5f, 0.5f, 1f);
         }
-        
+
 
     }
 
@@ -52,7 +50,7 @@ public class RATA : MonoBehaviour
             speed = -speed;
             rbd2.velocity = new Vector2(speed, rbd2.velocity.y);
             Debug.Log("RATA");
-           
+
 
         }
         if (col.gameObject.name == "EnemyCollider2")
@@ -61,7 +59,7 @@ public class RATA : MonoBehaviour
             rbd2.velocity = new Vector2(speed, rbd2.velocity.y);
             Debug.Log("RATA");
 
-            
+
         }
         if (col.gameObject.tag == "Player")
         {

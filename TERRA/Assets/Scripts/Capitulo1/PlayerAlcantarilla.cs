@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class PlayerAlcantarilla : MonoBehaviour
 {
@@ -55,7 +52,7 @@ public class PlayerAlcantarilla : MonoBehaviour
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Interruptor" && Minijuego_1.win == false )//compara si hizo la colision con el objeto correcto
+        if (collision.gameObject.name == "Interruptor" && Minijuego_1.win == false)//compara si hizo la colision con el objeto correcto
         {
             min = true;
         }
@@ -71,7 +68,7 @@ public class PlayerAlcantarilla : MonoBehaviour
         }
     }
 
-        public void OnTriggerExit2D(Collider2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Tran1" && s1)//compara si hizo la colision con el objeto correcto
         {

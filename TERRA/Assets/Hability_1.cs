@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class Hability_1 : MonoBehaviour
 {
@@ -63,7 +60,7 @@ public class Hability_1 : MonoBehaviour
     void Update()
     {
 
-       
+
     }
 
     private void FixedUpdate()
@@ -74,13 +71,13 @@ public class Hability_1 : MonoBehaviour
             {
                 act = true;
                 disp = false;
-                Invoke("Activate",actD);            
+                Invoke("Activate", actD);
             }
             spr.color = Color.white;
         }
-        else if(act)
+        else if (act)
         {
-            
+
 
             spr.color = ac;
             Debug.Log(spr.color);

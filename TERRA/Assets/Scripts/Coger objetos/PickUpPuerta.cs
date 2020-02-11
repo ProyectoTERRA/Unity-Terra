@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PickUpPuerta : MonoBehaviour
 {
@@ -8,7 +6,7 @@ public class PickUpPuerta : MonoBehaviour
     public GameObject pasar;
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.tag =="Chapa")
+        if (collision.tag == "Chapa")
         {
             Debug.Log("Chapa esta tocando la puerta");
             llave.SetActive(true);

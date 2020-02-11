@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class TestSaveGame : MonoBehaviour
@@ -58,8 +56,8 @@ public class TestSaveGame : MonoBehaviour
     //Save "NEXT"
     private void OnApplicationQuit()
     {
-        
-       SaveSystem.SetFloat("float", floatCount);
+
+        SaveSystem.SetFloat("float", floatCount);
         SaveSystem.SetBool("bool", saveBool);
         SaveSystem.SetVector2("vect2", vect2);
         SaveSystem.SetVector3("vect3", vect3);

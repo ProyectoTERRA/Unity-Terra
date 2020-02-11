@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Heart_Bar : MonoBehaviour
 {
@@ -56,12 +54,12 @@ public class Heart_Bar : MonoBehaviour
 
     void Start()
     {
-        
+
 
     }
     void Update()
-    {        
-        
+    {
+
         switch (type)
         {
             case 1:
@@ -70,11 +68,12 @@ public class Heart_Bar : MonoBehaviour
                     LIFES.transform.localPosition = new Vector3(2.5f, 0f);
 
                     if (Input.GetKeyDown(KeyCode.P))
-                    {                        
-                        if (hearts > 0 && life > 0) {
+                    {
+                        if (hearts > 0 && life > 0)
+                        {
                             hearts--;
                         }
-                        
+
                     }
 
                     if (hearts <= 0 && life > 1)
@@ -92,7 +91,7 @@ public class Heart_Bar : MonoBehaviour
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_3x6;
                     }
 
-                    else if(hearts == 5)
+                    else if (hearts == 5)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_3x5;
                     }
@@ -137,7 +136,7 @@ public class Heart_Bar : MonoBehaviour
                         {
                             hearts--;
                         }
-                        
+
                     }
 
                     if (hearts <= 0 && life > 1)
@@ -210,7 +209,7 @@ public class Heart_Bar : MonoBehaviour
                         {
                             hearts--;
                         }
-                       
+
                     }
 
                     if (hearts <= 0 && life > 1)
@@ -315,23 +314,23 @@ public class Heart_Bar : MonoBehaviour
         {
 
         }
-        else if(hearts == 5)
+        else if (hearts == 5)
         {
 
         }
-        else if(hearts == 4)
+        else if (hearts == 4)
         {
 
         }
-        else if(hearts == 3)
+        else if (hearts == 3)
         {
 
         }
-        else if(hearts == 2)
+        else if (hearts == 2)
         {
 
         }
-        else if(hearts == 1)
+        else if (hearts == 1)
         {
 
         }

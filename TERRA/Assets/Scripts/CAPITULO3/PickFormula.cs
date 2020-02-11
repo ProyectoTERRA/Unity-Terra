@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PickFormula : MonoBehaviour
 {
@@ -14,15 +12,15 @@ public class PickFormula : MonoBehaviour
                 Destroy(GameObject.Find(collision.gameObject.tag));
             }
         }
-        if(collision.gameObject.tag == "formula1")
+        if (collision.gameObject.tag == "formula1")
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Formula 1"+ collision.gameObject.tag);
+                Debug.Log("Formula 1" + collision.gameObject.tag);
                 GameController.formula++;
                 Destroy(GameObject.Find(collision.gameObject.tag));
             }
         }
-        
+
     }
 }

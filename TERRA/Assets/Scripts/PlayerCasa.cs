@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerCasa : MonoBehaviour
@@ -14,7 +12,7 @@ public class PlayerCasa : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        camera.transform.position = new Vector3(0.0f, 0.0f, - 10.0f);
+        camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
         camera.transform.localScale = new Vector3(1f, 1f, 1f);
 
         transform.position = new Vector3(-6.4f, 0.5f);
@@ -28,7 +26,7 @@ public class PlayerCasa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void OnTriggerStay2D(Collider2D collision)
@@ -73,7 +71,7 @@ public class PlayerCasa : MonoBehaviour
 
         if (collision.gameObject.tag == "PuertaCalle")//compara si hizo la colision con el objeto correcto
         {
-            
+
             if (Input.GetKeyDown(KeyCode.E) && linterna)
             {
 

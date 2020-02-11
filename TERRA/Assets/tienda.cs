@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class tienda : MonoBehaviour
 {
@@ -8,7 +6,7 @@ public class tienda : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,6 +25,6 @@ public class tienda : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

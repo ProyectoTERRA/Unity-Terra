@@ -1,31 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 
 public class PuertaLab : MonoBehaviour
 {
 
-    public bool puertaIzq, puertaDer, Salir, Entrar,EntrFabr,SalidaFab,PuertaFD1, PuertaFD2, PuertaFI1, PuertaFI2;
+    public bool puertaIzq, puertaDer, Salir, Entrar, EntrFabr, SalidaFab, PuertaFD1, PuertaFD2, PuertaFI1, PuertaFI2;
     public bool PuertaFD3, PuertaFI3, EscP12, EscP21, EscP23, EscP32;
     // Start is called before the first frame update
     void Start()
     {
-    
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "PuertaDer")//compara si hizo la colision con el objeto correcto
         {
-            puertaDer = true;     
+            puertaDer = true;
         }
         if (collision.name == "PuertaIzq")
         {
-            puertaIzq = true;   
+            puertaIzq = true;
         }
-        if(collision.name == "Salir") 
+        if (collision.name == "Salir")
         {
             Salir = true;
         }
@@ -82,47 +80,47 @@ public class PuertaLab : MonoBehaviour
             EscP32 = true;
         }
     }
-       
-        public void OnTriggerExit2D(Collider2D LabDoor)
-        {
-            puertaDer = false;
-            puertaIzq = false;
-            Salir = false;
-            Entrar = false;
-            EntrFabr = false;
-            SalidaFab = false;
-            PuertaFD1 = false;
-            PuertaFD2 = false;
-            PuertaFI1 = false;
-            PuertaFI2 = false;
-            PuertaFI3 = false;
-            PuertaFI3 = false;
-            EscP12 = false;
-            EscP21 = false;
-            EscP23 = false;
-            EscP32 = false;
+
+    public void OnTriggerExit2D(Collider2D LabDoor)
+    {
+        puertaDer = false;
+        puertaIzq = false;
+        Salir = false;
+        Entrar = false;
+        EntrFabr = false;
+        SalidaFab = false;
+        PuertaFD1 = false;
+        PuertaFD2 = false;
+        PuertaFI1 = false;
+        PuertaFI2 = false;
+        PuertaFI3 = false;
+        PuertaFI3 = false;
+        EscP12 = false;
+        EscP21 = false;
+        EscP23 = false;
+        EscP32 = false;
     }
-        
-        // Update is called once per frame
-        
-    
+
+    // Update is called once per frame
+
+
     void FixedUpdate()
     {
-           
+
         //Puertas Laboratorio
         if (puertaIzq == true & Input.GetKey(KeyCode.E) & Input.GetKey(KeyCode.D))
-            {
-                transform.position = new Vector3(5.42f, -1.82f, 0);
-                transform.localScale = new Vector3(1f, 1f, 1f);
-                puertaIzq = false;
+        {
+            transform.position = new Vector3(5.42f, -1.82f, 0);
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            puertaIzq = false;
 
-            }
-            if (puertaDer == true & Input.GetKey(KeyCode.E) & Input.GetKey(KeyCode.A))
-            {
-               transform.position = new Vector3(2.67f, -1.82f, 0);
-               transform.localScale = new Vector3(1f, 1f, 1f);
-               puertaDer = false;
-            }
+        }
+        if (puertaDer == true & Input.GetKey(KeyCode.E) & Input.GetKey(KeyCode.A))
+        {
+            transform.position = new Vector3(2.67f, -1.82f, 0);
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            puertaDer = false;
+        }
 
         if (Salir == true & Input.GetKey(KeyCode.E) & Input.GetKey(KeyCode.D))
         {
@@ -218,7 +216,7 @@ public class PuertaLab : MonoBehaviour
 
 
     }
-       
-    }
+
+}
 
 

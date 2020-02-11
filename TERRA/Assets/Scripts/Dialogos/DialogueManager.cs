@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -22,8 +22,8 @@ public class DialogueManager : MonoBehaviour
     void StartDialogue()
     {
         sentences.Clear();
-        foreach(string sentence in dialogue.sentenceList)
-        {            
+        foreach (string sentence in dialogue.sentenceList)
+        {
             sentences.Enqueue(sentence);
         }
         displayNextSentence();
@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour
     void displayNextSentence()
     {
         Debug.Log("Sentences count " + sentences.Count);
-        if(sentences.Count<=0)
+        if (sentences.Count <= 0)
         {
             displayText.text = activeSentence;
             return;
@@ -46,7 +46,7 @@ public class DialogueManager : MonoBehaviour
     int cont;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             dialogPanel.SetActive(true);
             StartDialogue();
@@ -62,7 +62,7 @@ public class DialogueManager : MonoBehaviour
                 displayNextSentence();
             }
         }
-        
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -75,12 +75,12 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeTheSentence(string sentence)
     {
         displayText.text = "";
-        foreach(char letter in sentence.ToCharArray())
+        foreach (char letter in sentence.ToCharArray())
         {
             displayText.text += letter;
             Debug.Log("Display " + displayText.text);
             yield return new WaitForSeconds(typingpeed);
         }
-        
+
     }
 }

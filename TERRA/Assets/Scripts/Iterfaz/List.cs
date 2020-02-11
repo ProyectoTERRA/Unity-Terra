@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class List : MonoBehaviour
@@ -37,7 +36,7 @@ public class List : MonoBehaviour
         i = hrr.Count;
         if (Input.GetKeyDown(KeyCode.V))
         {
-            if(index >= 0 && index <= i)
+            if (index >= 0 && index <= i)
             {
                 index++;
                 if (index >= i) index = 0;
@@ -51,7 +50,7 @@ public class List : MonoBehaviour
             {
                 if (index <= 0) index = i;
                 index--;
-                
+
             }
 
 

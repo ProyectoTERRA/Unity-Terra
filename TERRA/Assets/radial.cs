@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class radial : MonoBehaviour
@@ -46,7 +44,7 @@ public class radial : MonoBehaviour
 
     static public bool pl1, pl2, pl;
 
-    static public string objFab  = "none";
+    static public string objFab = "none";
 
     public Image req1;
     public Image req2;
@@ -165,7 +163,7 @@ public class radial : MonoBehaviour
         pl2 = false;
     }
 
-    public void txt_Basura ()
+    public void txt_Basura()
     {
         if (basura[0] < 10)
         {
@@ -316,7 +314,7 @@ public class radial : MonoBehaviour
         ivn = !ivn;
         equip.SetActive(false);
     }
-//-----------------------OBJ---------------------------
+    //-----------------------OBJ---------------------------
     public void radial_objetos()
     {
         ivn = !ivn;
@@ -329,7 +327,7 @@ public class radial : MonoBehaviour
         obj.SetActive(false);
     }
 
- //-----------------------HERR---------------------------
+    //-----------------------HERR---------------------------
 
     public void radial_herramientas()
     {
@@ -343,7 +341,7 @@ public class radial : MonoBehaviour
         herr.SetActive(false);
     }
 
-//-----------------------FAB---------------------------
+    //-----------------------FAB---------------------------
     public void radial_fabricacion()
     {
         ivn = !ivn;
@@ -367,7 +365,7 @@ public class radial : MonoBehaviour
             btn_Normal.interactable = true;
         }
 
-        if (basura[1] < 2 || basura[3] < 1) 
+        if (basura[1] < 2 || basura[3] < 1)
         {
             btn_Paralizante.interactable = false;
         }
@@ -431,7 +429,7 @@ public class radial : MonoBehaviour
         }
     }
 
-//-----------------------Fabricación de esferas---------------------------
+    //-----------------------Fabricación de esferas---------------------------
 
     public void Fab_Nl()
     {
@@ -487,7 +485,7 @@ public class radial : MonoBehaviour
 
     public void Fab_GN()
     {
- 
+
         basura[5] = basura[5] - 2;
         especiales[2]++;
     }

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class desactiveCollider : MonoBehaviour
@@ -17,11 +16,11 @@ public class desactiveCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(contador==1)
+        if (contador == 1)
         {
             StartCoroutine(enableCollider());
         }
-        if(contador == 0)
+        if (contador == 0)
         {
             StartCoroutine(falseCollider());
         }

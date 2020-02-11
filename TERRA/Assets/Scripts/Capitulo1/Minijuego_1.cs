@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Minijuego_1 : MonoBehaviour
@@ -46,7 +44,7 @@ public class Minijuego_1 : MonoBehaviour
     void Update()
     {
 
-        if(cont >= 6)
+        if (cont >= 6)
         {
             win = true;
             btn_1.enabled = false;
@@ -68,12 +66,12 @@ public class Minijuego_1 : MonoBehaviour
         }
 
         act_LEDs();
-        
+
     }
 
     void act_LEDs()
     {
-        if(cont == 0)
+        if (cont == 0)
         {
             spr = Led_1.GetComponent<Image>();
             spr.sprite = Off;
@@ -134,7 +132,7 @@ public class Minijuego_1 : MonoBehaviour
     }
     public void btn_act2()
     {
-        if(cont == 3)
+        if (cont == 3)
         {
             cont++;
         }

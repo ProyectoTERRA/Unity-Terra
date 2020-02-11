@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +6,7 @@ public class cocos : MonoBehaviour
 {
     public GameObject coco1, coco2, coco3, coco4, coco5, coco6, coco7, coco8, coco9, coco10;
     float x;
-    int entrar = 0, contador=0, total=0;
+    int entrar = 0, contador = 0, total = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +16,8 @@ public class cocos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(entrar == 0) { StartCoroutine(caida());  }
-        if(entrar == 1) { StartCoroutine(caidaWait()); }
+        if (entrar == 0) { StartCoroutine(caida()); }
+        if (entrar == 1) { StartCoroutine(caidaWait()); }
         if (total >= 30)
         {
             SceneManager.LoadScene("Mar");
@@ -27,20 +26,20 @@ public class cocos : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if (collision.name == "coco1") 
+
+        if (collision.name == "coco1")
         {
             coco1.transform.position = new Vector2(-4, 5);
             coco1.SetActive(false);
             total++;
         }
-        if(collision.name == "coco2")
+        if (collision.name == "coco2")
         {
             coco2.transform.position = new Vector2(-4, 5);
             coco2.SetActive(false);
             total++;
         }
-        if (collision.name == "coco3") 
+        if (collision.name == "coco3")
         {
             coco3.transform.position = new Vector2(0, 5);
             coco3.SetActive(false);
@@ -52,7 +51,7 @@ public class cocos : MonoBehaviour
             coco4.SetActive(false);
             total++;
         }
-        if (collision.name == "coco5") 
+        if (collision.name == "coco5")
         {
             coco5.transform.position = new Vector2(4f, 5);
             coco5.SetActive(false);
@@ -64,7 +63,7 @@ public class cocos : MonoBehaviour
             coco6.SetActive(false);
             total++;
         }
-        if (collision.name == "coco7") 
+        if (collision.name == "coco7")
         {
             coco7.transform.position = new Vector2(8f, 5);
             coco7.SetActive(false);
@@ -76,7 +75,7 @@ public class cocos : MonoBehaviour
             coco8.SetActive(false);
             total++;
         }
-        if (collision.name == "coco9") 
+        if (collision.name == "coco9")
         {
             coco10.transform.position = new Vector2(12f, 5);
             coco10.SetActive(false);
@@ -84,7 +83,7 @@ public class cocos : MonoBehaviour
         }
         if (collision.name == "coco10")
         {
-            coco10.transform.position = new Vector2(12f, 5);            
+            coco10.transform.position = new Vector2(12f, 5);
             coco10.SetActive(false);
             total++;
         }
@@ -135,7 +134,7 @@ public class cocos : MonoBehaviour
                     break;
             }
         }
-        contador = 2;        
+        contador = 2;
     }
     IEnumerator caidaWait()
     {

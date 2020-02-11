@@ -1,43 +1,42 @@
-﻿using UnityEngine;
-
+﻿
 //public class Movil : MonoBehaviour
 //{
-    /*
-    public Transform target;
-    public float speed;
+/*
+public Transform target;
+public float speed;
 
-    private Vector3 start, end;
+private Vector3 start, end;
 
 
-    // Start is called before the first frame update
-    void Start()
+// Start is called before the first frame update
+void Start()
+{
+    if (target != null)
     {
-        if (target != null)
-        {
-            target.parent = null;
-            start = transform.position;
-            end = target.position;
-        }
+        target.parent = null;
+        start = transform.position;
+        end = target.position;
+    }
+}
+
+// Update is called once per frame
+void Update()
+{
+
+}
+
+void FixedUpdate()
+{
+    if (target != null)
+    {
+        float fixedSpeed = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, target.position, speed);
     }
 
-    // Update is called once per frame
-    void Update()
+    if (transform.position == target.position)
     {
-
+        target.position = (target.position == start) ? end : start;
     }
-
-    void FixedUpdate()
-    {
-        if (target != null)
-        {
-            float fixedSpeed = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target.position, speed);
-        }
-
-        if (transform.position == target.position)
-        {
-            target.position = (target.position == start) ? end : start;
-        }
-    }
-    */
+}
+*/
 //}

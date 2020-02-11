@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ObjectivesManager : MonoBehaviour
 {
@@ -22,13 +20,13 @@ public class ObjectivesManager : MonoBehaviour
     {
         //foreach (var goal in goals)
         {
-           // if (goal.IsAchieved())
+            // if (goal.IsAchieved())
             {
-               // goal.Complete();
-               // Destroy(goal);
+                // goal.Complete();
+                // Destroy(goal);
             }
         }
     }
 }
-    
+
 

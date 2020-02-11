@@ -1,23 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AntartidaPantallas : MonoBehaviour
 {
     GameObject Jugador;
-    
+
     void Start()
     {
-            Jugador = GameObject.Find("Player");
-        }
+        Jugador = GameObject.Find("Player");
+    }
 
     // Update is called once per frame
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "BE_2-3")
+        if (collision.name == "BE_2-3")
         {
-            transform.position = new Vector3(473.64f, 18.2f,  1f);
+            transform.position = new Vector3(473.64f, 18.2f, 1f);
         }
 
         if (collision.name == "BE_Final")
@@ -50,6 +48,6 @@ public class AntartidaPantallas : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+
     }
 }
