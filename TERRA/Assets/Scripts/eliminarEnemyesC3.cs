@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class eliminarEnemyesC3 : MonoBehaviour
 {
@@ -8,7 +6,7 @@ public class eliminarEnemyesC3 : MonoBehaviour
     public GameObject puerta;
     void Update()
     {
-        if(guardias == 7)
+        if (guardias == 7)
         {
             Debug.Log(guardias);
             puerta.SetActive(true);

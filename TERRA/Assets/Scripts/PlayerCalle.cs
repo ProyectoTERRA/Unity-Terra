@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -46,6 +45,7 @@ public class PlayerCalle : MonoBehaviour
         radial.objFab = "Palanca";
 
         spr = img_fab.GetComponent<Image>();
+        img_fab.GetComponent<SpriteRenderer>().sprite = Palanca;
         spr.sprite = Palanca;
         spr = img_fab_1.GetComponent<Image>();
         spr.sprite = Palanca1;
@@ -57,10 +57,10 @@ public class PlayerCalle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-   
+
 
     public void OnTriggerExit2D(Collider2D collision)
     {
@@ -81,7 +81,7 @@ public class PlayerCalle : MonoBehaviour
             s2 = false;
             camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
             camera.transform.localScale = new Vector3(1f, 1f, 1f);
-            
+
         }
     }
 
@@ -108,7 +108,7 @@ public class PlayerCalle : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && radial.pl)
             {
                 Debug.Log("Salido");
-
+                SceneManager.LoadScene("Alcantarillas");
             }
 
         }

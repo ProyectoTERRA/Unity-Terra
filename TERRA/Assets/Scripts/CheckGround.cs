@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CheckGround : MonoBehaviour
 {
@@ -14,11 +12,11 @@ public class CheckGround : MonoBehaviour
         rb2d = GetComponentInParent<Rigidbody2D>();
     }
 
-     void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Platform")
         {
-            rb2d.velocity = new Vector3 (0f,0f,0f);
+            rb2d.velocity = new Vector3(0f, 0f, 0f);
             player.transform.parent = col.transform;
             player.grounded = true;
         }

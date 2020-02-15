@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlatImpulso : MonoBehaviour
 {
@@ -18,7 +16,7 @@ public class PlatImpulso : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.name == "PlataformaImpulso")
+        if (collision.name == "PlataformaImpulso")
         {
             Debug.Log("Colision");
             AddForceSide();

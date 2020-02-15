@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
@@ -31,12 +29,12 @@ public class EnemyController : MonoBehaviour
 
         if (speed < 0)
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = new Vector3(0.7f, 0.7f, 1f);
 
         }
         else if (speed > 0)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            transform.localScale = new Vector3(-0.7f, 0.7f, 1f);
         }
 
     }

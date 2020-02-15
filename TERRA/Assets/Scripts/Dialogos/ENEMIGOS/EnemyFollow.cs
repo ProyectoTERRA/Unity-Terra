@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
@@ -30,7 +28,7 @@ public class EnemyFollow : MonoBehaviour
     }
 
     void FixedUpdate()
-    {        
+    {
         //Funciones para Seguimiento del Jugador
         Vector3 target = PosicionInicial;
 

@@ -1,11 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class dance : MonoBehaviour
 {
-    public AudioSource source { get { return GetComponent<AudioSource>(); }}
+    public AudioSource source { get { return GetComponent<AudioSource>(); } }
     public AudioClip clip;
     private SpriteRenderer spr;
     private void Start()
@@ -15,7 +13,7 @@ public class dance : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        if(gameObject.name == "a")
+        if (gameObject.name == "a")
         {
             oracion.frase += "a";
             oracion.contador++;
@@ -23,7 +21,7 @@ public class dance : MonoBehaviour
             StartCoroutine(test());
             playSoundA();
         }
-        if(gameObject.name == "b")
+        if (gameObject.name == "b")
         {
             oracion.frase += "b";
             oracion.contador++;

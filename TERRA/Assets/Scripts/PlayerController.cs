@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public static float scal;
     public int SIDE;
     public static int side;
+
+    [SerializeField] private GameObject list;
 
     public GameObject[] Esf;
 
@@ -68,19 +68,26 @@ public class PlayerController : MonoBehaviour
         //Esferas
         if (Input.GetKeyDown(KeyCode.J))
         {
+            GameObject go = GameObject.Find("InvFunc");
+            radial radial = go.GetComponent<radial>();
             var pl = GameObject.Find("Jugador");
             Debug.Log("Esferas");
 
-            if (Equip == "esf_N")
+            if (Equip == "Esfera Normal")
             {
                 if (pl != null)
                 {
                     Instantiate(Esf[0], pl.transform.position, Quaternion.identity);
-                    
+
+
+                    radial.esfera[0]--;
+                    string normal = "normal";
+                    if (radial.esfera[0] <= 0) list.SendMessage("remove", normal);
+
                 }
             }
 
-            if (Equip == "esf_P")
+            if (Equip == "Esfera Paraliz")
             {
                 if (pl != null)
                 {
@@ -89,7 +96,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Equip == "esf_D")
+            if (Equip == "Esfera Desac")
             {
                 if (pl != null)
                 {
@@ -97,7 +104,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Equip == "esf_T")
+            if (Equip == "Esfera Tranqui")
             {
                 if (pl != null)
                 {
@@ -105,7 +112,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Equip == "esf_H")
+            if (Equip == "Esfera Pesada")
             {
                 if (pl != null)
                 {
@@ -139,9 +146,9 @@ public class PlayerController : MonoBehaviour
         rbd2.velocity = new Vector2(limetedSpeed, rbd2.velocity.y);
         if (h > 0.1f)
         {
-            
+
             transform.localScale = new Vector3(-x, y, z);
-            side = - 1;
+            side = -1;
         }
         if (h < -0.1f)
         {
@@ -167,7 +174,7 @@ public class PlayerController : MonoBehaviour
             heart_Bar.hearts--;
         }
     }
-    
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "life")
@@ -179,12 +186,12 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnBecameInvisible()
-   {
-        
+    {
+
         //transform.position = new Vector3(129.79f, 14f, 0);
-   
+
     }
-   
+
     void OnCollisionStay2D(Collision2D col)
     {
 
@@ -212,10 +219,32 @@ public class PlayerController : MonoBehaviour
         rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
 
         movement = false;
+
+
         Invoke("EnableMovement", 0.7f);
+
+
 
         spr.color = Color.red;
     }
+
+    public void RATAKnockBack(float enemyPosX)
+    {
+        jump = true;
+
+        float side = Mathf.Sign(enemyPosX - transform.position.x);
+        rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
+
+        movement = false;
+
+
+        Invoke("EnableMovement", 2f);
+
+
+
+        spr.color = Color.red;
+    }
+
 
     void EnableMovement()
     {

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
@@ -13,7 +11,7 @@ public class GameController : MonoBehaviour
         Debug.Log("Carton en gameController " + carton);
         Debug.Log("Manzana en gameController " + manzana);
         Debug.Log("Platano en gameController " + platano);
-        Debug.Log("Lata en gameController " + lata);*/        
+        Debug.Log("Lata en gameController " + lata);*/
     }
     public void Update()
     {

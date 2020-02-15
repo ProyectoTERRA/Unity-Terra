@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,10 +7,10 @@ public class LatasMar : MonoBehaviour
     public GameObject lata, lata1, lata2, lata3, lata4, lata5, lata6, lata7, lata8, lata9, lata10, lata11, lata12, lata13, lata14, lata15;
     public GameObject lata16, lata17, lata18, lata19, lata20, lata21, lata22, lata23, lata24, lata25, lata26, lata27, lata28, lata29;
     public GameObject mensaje4;
-    int x=0;
+    int x = 0;
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -49,7 +48,7 @@ public class LatasMar : MonoBehaviour
         if (x == 30) { StartCoroutine(aparecen31()); }
         if (x == 31) { StartCoroutine(aparecen32()); }
     }
-    
+
     IEnumerator aparecen1()
     {
         yield return new WaitForSeconds(3);
@@ -161,7 +160,7 @@ public class LatasMar : MonoBehaviour
     IEnumerator aparecen13()
     {
         yield return new WaitForSeconds(4);
-        if(lata12 != null)
+        if (lata12 != null)
         {
             lata12.SetActive(true);
         }
@@ -219,7 +218,7 @@ public class LatasMar : MonoBehaviour
         if (lata18 != null)
         {
             lata18.SetActive(true);
-        }            
+        }
         x = 19;
     }
     IEnumerator aparecen20()

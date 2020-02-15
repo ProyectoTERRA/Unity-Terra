@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Botones : MonoBehaviour
 {
@@ -11,17 +9,17 @@ public class Botones : MonoBehaviour
     public GameObject mensaje, interruptor1, interruptor2, interruptor3, interruptor4, interruptor5, interruptor6, jefe;
     public static int enemigos = 0;
     // Start is called before the first frame update
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "Limit")
+        if (collision.gameObject.name == "Limit")
         {
             jugador.transform.position = new Vector2(-6f, -0.3f);
             GameObject vida = GameObject.Find("Heart Bar - HUD_0");
             Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
             heart_Bar.hearts--;
         }
-        
+
     }
     private void Update()
     {
@@ -32,7 +30,7 @@ public class Botones : MonoBehaviour
         }
         if (nombre.Length >= 5)
         {
-            
+
             if (nombre == "reusa")
             {
                 Debug.Log("Nombre correcto " + nombre);
@@ -71,7 +69,7 @@ public class Botones : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "interruptores")
+        if (collision.gameObject.name == "interruptores")
         {
             Debug.Log("Interruptres");
             if (Input.GetKeyDown(KeyCode.E))
@@ -89,7 +87,7 @@ public class Botones : MonoBehaviour
                 jefe.SetActive(true);
             }
         }
-        if(collision.gameObject.tag == "interruptor")
+        if (collision.gameObject.tag == "interruptor")
         {
             if (Input.GetKeyDown(KeyCode.E))
             {

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CarController : MonoBehaviour
@@ -21,23 +19,23 @@ public class CarController : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Nombre escena: " +SceneManager.GetActiveScene().name);
+        Debug.Log("Nombre escena: " + SceneManager.GetActiveScene().name);
         rbd2 = GetComponent<Rigidbody2D>();
         animacion = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
         rbd2.AddForce(Vector3.left * 10f);
 
     }
-        
+
     void Update()
     {
         transform.Translate(Vector3.left * Time.deltaTime, Space.World);
-        
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag =="Pared")
+        if (collision.gameObject.tag == "Pared")
         {
             transform.position = new Vector2(19.43f, -4.3f);
             transform.localScale = new Vector3(1f, 1f, 1f);

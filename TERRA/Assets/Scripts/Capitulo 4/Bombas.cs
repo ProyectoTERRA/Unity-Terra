@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bombas : MonoBehaviour
@@ -12,7 +11,7 @@ public class Bombas : MonoBehaviour
         if (entrar == 0) { StartCoroutine(caida()); }
         if (entrar == 1) { StartCoroutine(caidaWait()); }
     }
-    
+
     IEnumerator caida()
     {
         yield return new WaitForSeconds(3);

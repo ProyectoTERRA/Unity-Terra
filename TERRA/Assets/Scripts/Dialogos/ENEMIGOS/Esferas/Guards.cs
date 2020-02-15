@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Guards : MonoBehaviour
@@ -8,12 +7,12 @@ public class Guards : MonoBehaviour
     void Start()
     {
         life = 100;
-        
+
     }
 
     void Update()
     {
-        if(life <= 0)
+        if (life <= 0)
         {
             eliminarEnemyesC3.guardias++;
             Botones.enemigos++;
@@ -47,8 +46,8 @@ public class Guards : MonoBehaviour
             string nombre = collision.gameObject.name;
             StartCoroutine(lib());
             Destroy(GameObject.Find(nombre));
-           
-            
+
+
         }
 
     }
@@ -58,4 +57,4 @@ public class Guards : MonoBehaviour
         GetComponent<Watcher>().enabled = true;
     }
 
-    }
+}

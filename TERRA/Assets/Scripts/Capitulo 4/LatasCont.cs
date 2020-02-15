@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LatasCont : MonoBehaviour
 {
-    int latas, contador=120, cont=0;
+    int latas, contador = 120, cont = 0;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "lata")

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ChangeGravity : MonoBehaviour
 {
@@ -25,7 +23,7 @@ public class ChangeGravity : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "GArriba" && Input.GetKey(KeyCode.E))
+        if (collision.name == "GArriba" && Input.GetKey(KeyCode.E))
         {
             Debug.Log("Funciona");
             Physics2D.gravity = new Vector2(0, -1.0f);
@@ -44,6 +42,6 @@ public class ChangeGravity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
