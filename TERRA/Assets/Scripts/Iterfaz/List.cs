@@ -97,7 +97,7 @@ public class List : MonoBehaviour
                 Equipado.GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
             }
 
-        }
+        
 
        
         GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
