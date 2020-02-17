@@ -34,7 +34,7 @@ public class DivIzqM : MonoBehaviour
             Completo = false;
             
         }
-        if(IndexLvl != 3 && Completo == false) 
+        if (IndexLvl != 3 && Completo == false)
             TextoInstruccion.SetActive(true);
         if(IndexLvl == 3 && Completo == true)
         {
@@ -156,6 +156,7 @@ public class DivIzqM : MonoBehaviour
                 Barra.value = 0;
                 ContFin = 0;
                 Completo = false;
+                
             }
         }
 
