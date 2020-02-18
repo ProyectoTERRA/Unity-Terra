@@ -58,11 +58,13 @@ public class PlayerController : MonoBehaviour
                 jump = true;
                 doubleJump = true;
             }
+            /*
             else if (doubleJump)
             {
                 jump = true;
                 doubleJump = false;
             }
+            */
         }
 
         //Esferas
