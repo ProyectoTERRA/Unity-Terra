@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     public float velocidad = 2f;
     public float maxspeed = 5f;
+    public float SideVelocity = 10f;
 
     public bool grounded;
     public bool wall;
@@ -58,11 +59,13 @@ public class PlayerController : MonoBehaviour
                 jump = true;
                 doubleJump = true;
             }
+            /*
             else if (doubleJump)
             {
                 jump = true;
                 doubleJump = false;
             }
+            */
         }
 
         //Esferas
@@ -163,6 +166,8 @@ public class PlayerController : MonoBehaviour
             jump = false;
         }
 
+        //Habilidades
+
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -251,4 +256,5 @@ public class PlayerController : MonoBehaviour
         movement = true;
         spr.color = Color.white;
     }
+
 }
