@@ -12,6 +12,17 @@ public class Objetos : MonoBehaviour
         radial.basura[3] = GameController.manzana;
         radial.basura[4] = GameController.platano;
         radial.basura[5] = GameController.lata;
+
+        radial.esfera[0] = GameController.normal;
+        radial.esfera[1] = GameController.paralizante;
+        radial.esfera[2] = GameController.desactivadora;
+        radial.esfera[3] = GameController.tranquilizante;
+        radial.esfera[4] = GameController.pesada;
+
+
+        radial.especiales[0] = GameController.energia;
+        radial.especiales[1] = GameController.curacion;
+        radial.especiales[2] = GameController.ganzua;
     }
     public void OnTriggerEnter2D(Collider2D other)
     {

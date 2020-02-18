@@ -23,7 +23,7 @@ public class Botones : MonoBehaviour
     }
     private void Update()
     {
-        if (enemigos == 13)
+        if (enemigos == 8)
         {
             puertaA2.SetActive(true);
             puertaC2.SetActive(false);

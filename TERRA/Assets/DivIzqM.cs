@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,14 +7,17 @@ public class DivIzqM : MonoBehaviour
 {
     // Start is called before the first frame update
     public Slider Barra;
-    public GameObject Slide;
+    public GameObject Slide, TextoInstruccion, IndLvl, Finalizado;
     int ContadorLv1, ContadorLv2, ContadorLv3, ContFin, IndexLvl = 0;
-    float RedSeg1 = 2.0f, RedSeg2, RedSeg3, Contador, currValue, finalW;
+    float RedSeg1 = 2.0f, RedSeg2, RedSeg3, Contador, currValue, finalW, Delay;
     public float countdownTime = 50;
-    public bool Lvl1, Lvl2, Lvl3, Completo;
+    public bool Lvl1, Lvl2, Lvl3, Completo, Resta;
+    public TextMeshProUGUI Instruccion, Nivel;
+    public Text TxtLvl;
     void Start()
     {
-
+        Instruccion = GetComponent<TextMeshProUGUI>();
+        Nivel = GetComponent<TextMeshProUGUI>();
     }
 
     //Barra.value = "Variable";
@@ -28,6 +32,25 @@ public class DivIzqM : MonoBehaviour
             IndexLvl = 1;
             currValue = 0;
             Completo = false;
+            
+        }
+        if (IndexLvl != 3 && Completo == false)
+            TextoInstruccion.SetActive(true);
+        if(IndexLvl == 3 && Completo == true)
+        {
+            Finalizado.SetActive(true);
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        TextoInstruccion.SetActive(false);
+        IndLvl.SetActive(false);
+
+        if(IndexLvl == 3 && Completo == true)
+        {
+            Slide.SetActive(false);
         }
     }
 
@@ -36,8 +59,12 @@ public class DivIzqM : MonoBehaviour
 
          if (IndexLvl == 1)
          {
-             NivelUno();
-             //StartCoroutine(RedLvl1());
+            StartCoroutine(RedLvl1());
+            if (Completo == false && Contador > 0 && Resta == true)
+            { 
+                Contador = Contador - 2;
+                Barra.value = Contador;
+            }
 
          }
 
@@ -58,12 +85,11 @@ public class DivIzqM : MonoBehaviour
 
     }
     */
-  private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player" && IndexLvl == 1)
-        {
+        {         
             NivelUno();
-           
         }
 
         if (collision.gameObject.tag == "Player" && IndexLvl == 2)
@@ -75,14 +101,12 @@ public class DivIzqM : MonoBehaviour
         {
             NivelTres();
         }
+        if (IndexLvl == 3 && Completo == true)
+        {
+            Finalizado.SetActive(true);
+        }
     }
 
-    
-
-    //Utilizar las variables booleanas como Banderas, para checar cual nivel está activo y si está completado, algo como if(Lvl1 == true && Completado) se aumenta
-    //el valor del IndexLvl y se elige el nivel 2, recordar que el valor del Slider es de 100, por lo que se tendrá que dividir entre los diferentes niveles
-    //nivel uno 30 clicks, por lo que el valor de cada contador del botón sera de 1 + 2, algo como cont = cont + 2
-    //Y así sucesivamente
     //Deshabilitar el minijuego por cada nivel 
     
 
@@ -90,12 +114,12 @@ public class DivIzqM : MonoBehaviour
     {
         //while (Completo == false)
         //{
-
+        //StartCoroutine(RedLvl1());
         if (Input.GetKeyDown(KeyCode.E) && Barra.value <= 99 && IndexLvl == 1)
         {
             ContFin++;
             Debug.Log("Clicks: " + ContFin);
-            Contador = Contador + 3.33f;       
+            Contador = Contador + 3.33f;
             Barra.value = Contador;
         }
         else if (Barra.value > 99)
@@ -107,22 +131,20 @@ public class DivIzqM : MonoBehaviour
             Barra.value = 0;
             ContFin = 0;
             Contador = 0;
-
+            currValue = 0;
         }
+
         //}
     }
         public void NivelDos()
         {
-
+             //StartCoroutine(RedLvl2());
         if (Input.GetKeyDown(KeyCode.E) && Contador <= 100 && IndexLvl == 2)
         {
             Barra.value = 0;
             ContFin++;
-            Debug.Log(ContFin);
             Contador = Contador + 2.5f;
             Barra.value = Contador;
-            Debug.Log("Cuenta : " + Contador);
-            StartCoroutine(RedLvl1());
 
             if (Contador >= 100)
             {
@@ -133,17 +155,19 @@ public class DivIzqM : MonoBehaviour
                 Debug.Log("Nivel: " + IndexLvl);
                 Barra.value = 0;
                 ContFin = 0;
+                Completo = false;
+                
             }
-            //RedLvl1();
         }
 
-       }
+         }
 
 
     public void NivelTres()
     {
         if (Input.GetKeyDown(KeyCode.E) && Contador <= 100 && IndexLvl == 3)
         {
+            Completo = false;
             ContFin++;
             Debug.Log(ContFin);
             Contador = Contador + 2f;
@@ -158,25 +182,37 @@ public class DivIzqM : MonoBehaviour
                 Barra.value = 0;
                 ContFin = 0;
                 Slide.SetActive(false);
+                TextoInstruccion.SetActive(false);
+                TxtLvl = GetComponent<Text>();
+                TxtLvl.text = "Completado!";
             }
-
-            //RedLvl1();
         }
 
     }
 
-
-
-    IEnumerator RedLvl1()
+    /*IEnumerator RedLvl1()
     {
-        while (countdownTime >= 0){
-            Contador = Contador - 2;
-            yield return new WaitForSeconds(2.0f);
-            Debug.Log("Valor Contador: " + Contador);
+        Delay = 15f;
+        Delay -= Time.deltaTime;
+        if(Delay <= 0)
+        {
+            Resta = true;
+        }
+        else
+        {
+            Resta = false;
+            Debug.Log("Falso");
+        }
+        if (Resta == true && Barra.value > 0)
+        {
+            Contador -= 2;
             Barra.value = Contador;
-            Debug.Log("Cuenta atras: " + countdownTime);
         }
-        }
+        //Debug.Log("Resta - 2");
+        yield return new WaitForSeconds(15f);
+    }
+    */
+        
         /*
         if (Completo == false && IndexLvl == 1)
         {
@@ -192,18 +228,23 @@ public class DivIzqM : MonoBehaviour
         */
     
 
-    void RedLvl2()
+   /* IEnumerator RedLvl2()
     {
-        while (Completo == false && IndexLvl == 2)
+        if (Completo == false && IndexLvl == 2 && Barra.value > 0)
         {
             RedSeg1 = 4.0f;
             RedSeg1 -= Time.deltaTime;
             if (RedSeg1 <= 0)
             {
+                Debug.Log("REDLVL2");
                 Contador = Contador - 5;
+                Barra.value = Contador;
             }
         }
+        yield return Barra.value;
     }
+    */
 }
+
 
 

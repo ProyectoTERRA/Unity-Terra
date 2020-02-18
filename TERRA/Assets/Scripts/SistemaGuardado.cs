@@ -49,6 +49,14 @@ public class SistemaGuardado : MonoBehaviour
         dato.manzana = 0;
         dato.platano = 0;
         dato.lata = 0;
+        dato.normal = 0;
+        dato.paralizante = 0;
+        dato.desactivadora = 0;
+        dato.tranquilizante = 0;
+        dato.pesada = 0;
+        dato.energia = 0;
+        dato.curacion = 0;
+        dato.ganzua = 0;
         Debug.Log("Nueva partida");
 
         //Serializara los archivos
@@ -76,6 +84,14 @@ public class SistemaGuardado : MonoBehaviour
         dato.manzana = radial.basura[3];
         dato.platano = radial.basura[4];
         dato.lata = radial.basura[5];
+        dato.normal = radial.esfera[0];
+        dato.paralizante = radial.esfera[1];
+        dato.desactivadora = radial.esfera[2];
+        dato.tranquilizante = radial.esfera[3];
+        dato.pesada = radial.esfera[4];
+        dato.energia = radial.especiales[0];
+        dato.curacion = radial.especiales[1];
+        dato.ganzua = radial.especiales[2];
         Debug.Log("ACTUALIZAR PARTIDA");
         Debug.Log("Pila " + radial.basura[0]);
         Debug.Log("Bolsa " + radial.basura[1]);
@@ -109,12 +125,28 @@ public class SistemaGuardado : MonoBehaviour
             radial.basura[3] = datos.manzana;
             radial.basura[4] = datos.platano;
             radial.basura[5] = datos.lata;
+            radial.esfera[0] = datos.normal;
+            radial.esfera[1] = datos.paralizante;
+            radial.esfera[2] = datos.desactivadora;
+            radial.esfera[3] = datos.tranquilizante;
+            radial.esfera[4] = datos.pesada;
+            radial.especiales[0] = datos.energia;
+            radial.especiales[1] = datos.curacion;
+            radial.especiales[2] = datos.ganzua;
             GameController.lata = datos.lata;
             GameController.pila = datos.pila;
             GameController.bolsa = datos.bolsa;
             GameController.manzana = datos.manzana;
             GameController.platano = datos.platano;
             GameController.carton = datos.carton;
+            GameController.normal = datos.normal;
+            GameController.paralizante = datos.paralizante;
+            GameController.desactivadora = datos.desactivadora;
+            GameController.tranquilizante = datos.tranquilizante;
+            GameController.pesada = datos.pesada;
+            GameController.energia = datos.energia;
+            GameController.curacion = datos.curacion;
+            GameController.ganzua = datos.ganzua;
             guardarContador();
             SceneManager.LoadScene(nombreEscena);
         }
@@ -389,7 +421,7 @@ public class SistemaGuardado : MonoBehaviour
 class DatosJuego : System.Object
 {
     public String nombrePartida, nombreEscena;
-    public int pila, manzana, platano, bolsa, carton, lata;
+    public int pila, manzana, platano, bolsa, carton, lata, normal, paralizante, desactivadora, tranquilizante, pesada, energia, curacion, ganzua;
 }
 
 
@@ -400,6 +432,6 @@ class DatosPartidas : System.Object
     public string nombre1, nombre2, nombre3;
     public string nombreActual;
     public int contador;
-    public int pila, manzana, platano, bolsa, carton, lata;
+    public int pila, manzana, platano, bolsa, carton, lata, normal, paralizante, desactivadora, tranquilizante, pesada, energia, curazion, ganzua;
 }
 

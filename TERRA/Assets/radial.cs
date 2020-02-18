@@ -440,6 +440,8 @@ public class radial : MonoBehaviour
         if (esfera[0] == 0) list.SendMessage("add", normal);
         basura[5] = basura[5] - 3;
         esfera[0]++;
+        GameController.normal++;
+        GameController.lata = GameController.lata - 3;
     }
 
     public void Fab_Pl()
@@ -447,6 +449,9 @@ public class radial : MonoBehaviour
         basura[1] = basura[1] - 2;
         basura[3] = basura[3] - 1;
         esfera[1]++;
+        GameController.paralizante++;
+        GameController.bolsa = GameController.bolsa - 2;
+        GameController.manzana = GameController.manzana - 1;
     }
 
     public void Fab_Dc()
@@ -454,6 +459,9 @@ public class radial : MonoBehaviour
         basura[5] = basura[5] - 2;
         basura[0] = basura[0] - 2;
         esfera[2]++;
+        GameController.desactivadora++;
+        GameController.lata = GameController.lata - 2;
+        GameController.pila = GameController.pila - 2;
     }
 
     public void Fab_Tl()
@@ -462,12 +470,17 @@ public class radial : MonoBehaviour
         basura[4] = basura[4] - 2;
         basura[2] = basura[2] - 1;
         esfera[3]++;
+        GameController.tranquilizante++;
+        GameController.lata = GameController.lata - 2;
+        GameController.platano = GameController.platano - 2;
+        GameController.carton = GameController.carton - 1;
     }
 
     public void Fab_Pd()
     {
         latas_recharge = latas_recharge - 5;
-        esfera[5]++;
+        esfera[4]++;
+        GameController.pesada++;
     }
 
     //-----------------------Fabricación de especiales---------------------------
@@ -478,6 +491,11 @@ public class radial : MonoBehaviour
         basura[4] = basura[4] - 1;
         basura[5] = basura[5] - 1;
         especiales[0]++;
+        GameController.energia++;
+        GameController.pila = GameController.pila - 1;
+        GameController.platano = GameController.platano - 1;
+        GameController.lata = GameController.lata - 1;
+
     }
 
     public void Fab_OC()
@@ -486,6 +504,10 @@ public class radial : MonoBehaviour
         basura[4] = basura[4] - 1;
         basura[2] = basura[2] - 1;
         especiales[1]++;
+        GameController.curacion++;
+        GameController.manzana = GameController.manzana - 3;
+        GameController.platano = GameController.platano - 1;
+        GameController.carton = GameController.carton - 1;
     }
 
     public void Fab_GN()
@@ -493,6 +515,8 @@ public class radial : MonoBehaviour
 
         basura[5] = basura[5] - 2;
         especiales[2]++;
+        GameController.ganzua++;
+        GameController.lata = GameController.lata - 2;
     }
 }
 
