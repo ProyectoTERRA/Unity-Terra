@@ -3294,6 +3294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 725437531}
   - component: {fileID: 725437532}
+  - component: {fileID: 725437533}
   m_Layer: 8
   m_Name: InteractionZone
   m_TagString: PlayerInteractionZone
@@ -3341,6 +3342,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.873937, y: 2.1159496}
   m_EdgeRadius: 0
+--- !u!114 &725437533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725437530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034649bf00d4f664aa51e63abf853cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &771118072
 GameObject:
   m_ObjectHideFlags: 0
@@ -4195,7 +4208,7 @@ GameObject:
   - component: {fileID: 1025857827}
   m_Layer: 0
   m_Name: llave (1)
-  m_TagString: Llave
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6638,7 +6651,7 @@ GameObject:
   - component: {fileID: 1488587872}
   m_Layer: 0
   m_Name: llave (2)
-  m_TagString: Llave
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6957,31 +6970,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5225394894740060154, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828124217946342183, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3277342572515588529, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5750229917714460661, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5390300800423343262, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -7003,6 +6991,31 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3569727586052135697, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5225394894740060154, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828124217946342183, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277342572515588529, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750229917714460661, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390300800423343262, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -9127,7 +9140,6 @@ GameObject:
   - component: {fileID: 8755725002330985213}
   - component: {fileID: 8755725002330985216}
   - component: {fileID: 8755725002330985217}
-  - component: {fileID: 8755725002330985218}
   - component: {fileID: 8755725002330985219}
   - component: {fileID: 8755725002330985221}
   m_Layer: 8
@@ -9248,18 +9260,6 @@ MonoBehaviour:
   mensaje2: {fileID: 2073632131}
   mensaje3: {fileID: 14773897}
   interactionZone: {fileID: 725437531}
---- !u!114 &8755725002330985218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8755725002330985212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 034649bf00d4f664aa51e63abf853cb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8755725002330985219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9306,9 +9306,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 60
   maxspeed: 3
+  SideVelocity: 10
   grounded: 0
   wall: 0
-  JumpPower: 5
+  JumpPower: 6
   x: 1
   y: 1
   z: 1
@@ -9334,4 +9335,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MultiplicadorCaida: 2.5
-  Saltopequeno: 2
+  Saltopequeno: 3

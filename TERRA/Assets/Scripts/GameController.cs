@@ -12,10 +12,7 @@ public class GameController : MonoBehaviour
         Debug.Log("Manzana en gameController " + manzana);
         Debug.Log("Platano en gameController " + platano);
         Debug.Log("Lata en gameController " + lata);*/
-    }
-    public void Update()
-    {
-
+        
     }
     private void Awake()
     {
