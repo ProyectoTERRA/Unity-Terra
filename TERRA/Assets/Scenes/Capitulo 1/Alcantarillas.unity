@@ -28377,9 +28377,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 60
   maxspeed: 3
+  SideVelocity: 10
   grounded: 0
   wall: 0
-  JumpPower: 6.5
+  JumpPower: 7.5
   x: 0.75
   y: 0.75
   z: 0.75
@@ -28411,6 +28412,7 @@ GameObject:
   - component: {fileID: 5657417380099297912}
   - component: {fileID: 7846055454660485957}
   - component: {fileID: 5657417380099298185}
+  - component: {fileID: 5657417380099298186}
   m_Layer: 8
   m_Name: Jugador
   m_TagString: Player
@@ -28528,6 +28530,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.88296074, y: 2.130094}
   m_EdgeRadius: 0
+--- !u!114 &5657417380099298186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657417380099298181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da5d341614e4824eae88d6185edc410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MultiplicadorCaida: 2.5
+  Saltopequeno: 1.5
 --- !u!58 &5657417380099298188
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -28748,6 +28764,7 @@ GameObject:
   - component: {fileID: 8161835948879196156}
   - component: {fileID: 8161835948879196157}
   - component: {fileID: 8161835948879196158}
+  - component: {fileID: 8161835948879196160}
   m_Layer: 0
   m_Name: bolsa 1
   m_TagString: bolsa
@@ -28755,3 +28772,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &8161835948879196160
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8161835948879196159}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 812f3018d5a763d4ab9551f14e8f98d4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
