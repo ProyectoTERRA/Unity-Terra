@@ -6,7 +6,7 @@ public class oracion : MonoBehaviour
     public static string frase;
     public static int contador;
     public GameObject hoja, mensaje, mensaje1;
-
+    int bandera = 0;
     void Update()
     {
         if (contador == 15)
@@ -14,8 +14,11 @@ public class oracion : MonoBehaviour
             Debug.Log(frase + " " + contador);
             if (frase == "bbcddcbaggabbaa")
             {
-                hoja.SetActive(true);
-                Debug.Log("Logrado");
+                if (bandera == 0)
+                {
+                    bandera++;
+                    hoja.SetActive(true);
+                }
             }
             else
             {
