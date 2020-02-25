@@ -21,6 +21,6 @@ public class PickFormula : MonoBehaviour
                 Destroy(GameObject.Find(collision.gameObject.tag));
             }
         }
-        Debug.Log("Total de formula "+ GameController.formula);
+        Debug.Log("Totalde formula "+ GameController.formula);
     }
 }
