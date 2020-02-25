@@ -79,6 +79,5 @@ public class Objetos : MonoBehaviour
             Destroy(GameObject.Find(nombre));
         }
     }
-
 }
 

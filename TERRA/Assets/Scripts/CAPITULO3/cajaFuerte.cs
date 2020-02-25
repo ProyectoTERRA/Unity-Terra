@@ -15,9 +15,9 @@ public class cajaFuerte : MonoBehaviour
             }
         }
 
-        if (GameController.formula >= 8)
+        if (GameController.formula >= 7)
         {
-            Debug.Log("YA HAY 8 FORMULAS");
+            Debug.Log("YA HAY 7 FORMULAS");
             cientifico.SetActive(false);
             cientifica1.SetActive(true);
         }

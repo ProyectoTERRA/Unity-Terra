@@ -31,15 +31,17 @@ public class DialogueManager : MonoBehaviour
 
     void displayNextSentence()
     {
-        Debug.Log("Sentences count " + sentences.Count);
+        string nombre;
+        nombre = gameObject.name;
+        Debug.Log("Sentences count " + sentences.Count +" NOMBRE: " +nombre);
         if (sentences.Count <= 0)
         {
             displayText.text = activeSentence;
+            Debug.Log("Menor que cero");
             return;
         }
         activeSentence = sentences.Dequeue();
         displayText.text = activeSentence;
-
         StopAllCoroutines();
         StartCoroutine(TypeTheSentence(activeSentence));
     }
@@ -58,7 +60,6 @@ public class DialogueManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && displayText.text == activeSentence)
             {
-
                 displayNextSentence();
             }
         }
@@ -78,9 +79,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             displayText.text += letter;
-            Debug.Log("Display " + displayText.text);
             yield return new WaitForSeconds(typingpeed);
         }
-
     }
 }
