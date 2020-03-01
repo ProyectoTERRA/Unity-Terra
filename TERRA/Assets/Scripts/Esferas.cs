@@ -24,7 +24,7 @@ public class Esferas : MonoBehaviour
 
         rbd2 = GetComponent<Rigidbody2D>();
 
-        transform.position = new Vector3(transform.position.x - ((1f * PlayerController.side) * scale), (transform.position.y + (0.6f * scale)));
+        transform.position = new Vector3(transform.position.x - ((0.01f * PlayerController.side) * scale), (transform.position.y + (-0.3f * scale)));
 
         x = transform.position.x - ((1.5f * PlayerController.side) * scale);
         y = (transform.position.y + (0.6f * scale));

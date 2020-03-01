@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class KAKA : MonoBehaviour
 {
     public Transform target;
     public float speed;
     private Vector3 start, end;
+    private bool action;
     // Start is called before the first frame update
     void Start()
     {
+        action = true;
         if (target != null)
         {
             target.parent = null;
@@ -32,12 +35,23 @@ public class KAKA : MonoBehaviour
             GetComponent<KAKA>().enabled = false;
             StartCoroutine(lib());
             target.position = (target.position == start) ? end : start;
+            action = !action;
         }
     }
 
     IEnumerator lib()
     {
-        yield return new WaitForSeconds(2f);
+
+        float rWait = Random.Range(2, 5);
+        if (action) {
+            yield return new WaitForSeconds(rWait);
+        }
+        
+        else if (!action)
+        {
+            yield return new WaitForSeconds(2f);
+        }
+
         GetComponent<KAKA>().enabled = true;
     }
 }
