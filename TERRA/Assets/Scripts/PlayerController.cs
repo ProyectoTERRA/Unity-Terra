@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
             radial radial = go.GetComponent<radial>();
             var pl = GameObject.Find("Jugador");
             Debug.Log("Esferas");
+            Debug.Log(Equip);
 
             if (Equip == "Esfera Normal")
             {
