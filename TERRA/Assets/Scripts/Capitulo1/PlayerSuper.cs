@@ -5,15 +5,20 @@ using UnityEngine;
 public class PlayerSuper : MonoBehaviour
 {
     [SerializeField] private GameObject camera;
+    [SerializeField] private GameObject puerta;
+
+    [SerializeField] private GameObject Bloque;
+
     // Start is called before the first frame update
 
-    public bool s1, s2;
+    public bool s1, s2, cuarto;
     void Start()
     {
         camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
 
         s1 = true;
         s2 = false;
+        cuarto = false;
     }
 
     // Update is called once per frame
@@ -52,8 +57,25 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                camera.transform.position = new Vector3(18.0f, 0.0f, -10.0f);
-                this.transform.position = new Vector3(10.2f,-1.1f, 0.0f);
+                cuarto = !cuarto;
+
+                if (cuarto == true)
+                {
+                    Bloque.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                    puerta.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                    camera.transform.position = new Vector3(18.0f, 0.0f, -10.0f);
+                    this.transform.position = new Vector3(10.2f, -1.1f, 0.0f);
+                }
+
+                else if (cuarto == false )
+                {
+                    Bloque.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                    puerta.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                    camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
+                    this.transform.position = new Vector3(8f, -1.1f, 0.0f);
+                    
+                    
+                }
             }
         }
     }
