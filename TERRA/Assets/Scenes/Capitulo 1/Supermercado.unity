@@ -970,8 +970,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187645446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 9, z: 1}
+  m_LocalPosition: {x: -8.96, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 9, z: 1}
   m_Children: []
   m_Father: {fileID: 1362637399}
   m_RootOrder: 7
@@ -986,7 +986,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2895,7 +2895,7 @@ Transform:
   m_GameObject: {fileID: 688826379}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.8, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 9, z: 1}
+  m_LocalScale: {x: 0.01, y: 9, z: 1}
   m_Children: []
   m_Father: {fileID: 1362637399}
   m_RootOrder: 8
@@ -2910,7 +2910,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -10385,6 +10385,7 @@ GameObject:
   - component: {fileID: 2127035601}
   - component: {fileID: 2127035600}
   - component: {fileID: 2127035602}
+  - component: {fileID: 2127035603}
   m_Layer: 0
   m_Name: Puerta SuperMercado 1
   m_TagString: Untagged
@@ -10481,6 +10482,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.14608511, y: 4.8}
+  m_EdgeRadius: 0
+--- !u!61 &2127035603
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127035599}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.2, y: 4.8}
+    newSize: {x: 1.2, y: 4.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 4.8}
   m_EdgeRadius: 0
 --- !u!1 &2136721352
 GameObject:
@@ -10734,6 +10761,7 @@ GameObject:
   - component: {fileID: 2544049821390145780}
   - component: {fileID: 2544049821390145787}
   - component: {fileID: 2544049821390145807}
+  - component: {fileID: 2544049821390145784}
   - component: {fileID: 7912095530765589955}
   - component: {fileID: 2544049821390145779}
   m_Layer: 8
@@ -10860,7 +10888,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2544049821390145778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4, y: -0.5, z: 0}
+  m_LocalPosition: {x: -3.81, y: -1.11, z: 0}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_Children:
   - {fileID: 2544049820211087818}
@@ -10869,6 +10897,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2544049821390145784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544049821390145778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97dfe314c4f498d429b514ce7a184ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 1099881172}
+  s1: 0
+  s2: 0
 --- !u!58 &2544049821390145787
 CircleCollider2D:
   m_ObjectHideFlags: 0
