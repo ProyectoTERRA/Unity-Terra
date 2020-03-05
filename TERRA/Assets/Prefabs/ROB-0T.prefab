@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4652327898675231559}
   - component: {fileID: 4652327898675231552}
-  - component: {fileID: 4652327898675231553}
   - component: {fileID: 4652327898675231554}
   - component: {fileID: 4652327898675231555}
+  - component: {fileID: 8297866009975794169}
   - component: {fileID: 4652327898675231558}
   m_Layer: 0
   m_Name: ROB-0T
@@ -85,20 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4652327898675231553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4652327898675231548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c286a244e4f2ee54da7fddc811f2bff8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  maxspeed: 3
 --- !u!50 &4652327898675231554
 Rigidbody2D:
   serializedVersion: 4
@@ -146,6 +132,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2366428, y: 0.30509448}
   m_EdgeRadius: 0
+--- !u!114 &8297866009975794169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4652327898675231548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f70166e83cc3044adc8c63232d6664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0
+  y: 0
+  z: 0
+  speed: 1
+  maxspeed: 1
 --- !u!95 &4652327898675231558
 Animator:
   serializedVersion: 3
