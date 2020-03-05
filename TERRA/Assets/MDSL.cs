@@ -30,7 +30,7 @@ public class MDSL : MonoBehaviour
 
         if (transform.position == target.position)
         {
-            GetComponent<KMDSL>().enabled = false;
+            GetComponent<MDSL>().enabled = false;
             StartCoroutine(lib());
             target.position = (target.position == start) ? end : start;
             action = !action;
