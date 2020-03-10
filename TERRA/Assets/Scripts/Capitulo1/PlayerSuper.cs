@@ -8,10 +8,13 @@ public class PlayerSuper : MonoBehaviour
     [SerializeField] private GameObject puerta;
 
     [SerializeField] private GameObject Bloque;
+    [SerializeField] private GameObject Caja;
+
+    public Sprite CajaA, CajaC;
 
     // Start is called before the first frame update
 
-    bool prexit, exit, key, pc;
+    bool prexit, exit, key, pc, caja_fuerte;
 
     public bool s1, s2, cuarto;
     void Start()
