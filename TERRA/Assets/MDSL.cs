@@ -1,39 +1,58 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class MDSL : MonoBehaviour
 {
-    private bool laserOn;
+    public Transform target;
+    public float speed;
+    private Vector3 start, end;
+    private bool action;
+    // Start is called before the first frame update
+    void Start()
+    {
+        action = true;
+        if (target != null)
+        {
+            target.parent = null;
+            start = transform.position;
+            end = target.position;
+        }
+    }
 
-    //GameObject line;
+    // Update is called once per frame
+    void Update()
+    {
+        if (target != null)
+        {
+            float fixedSpeed = speed * Time.fixedDeltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, speed);
+        }
 
+        if (transform.position == target.position)
+        {
+            GetComponent<MDSL>().enabled = false;
+            StartCoroutine(lib());
+            target.position = (target.position == start) ? end : start;
+            action = !action;
+        }
+    }
 
-    GameObject line;
-
-    /*
-    IEnumerator FireLaser()
+    IEnumerator lib()
     {
 
-        line.enabled = true;
-
-        while (laserOn)
+        float rWait = Random.Range(2, 5);
+        if (action)
         {
-            Ray2D ray = new Ray2D(transform.position, transform.right);
-            RaycastHit2D hit;
-
-            line.SetPosition(0, ray.origin);
-
-            hit = Physics2D.Raycast(ray.origin, Vector2.right, distance);
-
-            if (hit.collider)
-            {
-                line.SetPosition(1, hit.point);
-            }
-            else
-                line.SetPosition(1, ray.GetPoint(distance));
-
-            yield return null;
+            yield return new WaitForSeconds(rWait);
         }
-        line.enabled = false;
+
+        else if (!action)
+        {
+            yield return new WaitForSeconds(2f);
+        }
+
+        GetComponent<KAKA>().enabled = true;
     }
-    */
+
+
 }
