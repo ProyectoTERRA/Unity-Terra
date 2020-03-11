@@ -2,15 +2,13 @@
 
 public class Estalactitas : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public void OnCollisionEnter(Collision collision)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        if(collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Colision Jugador");
+            SendMessage("Knockback");
+        }
     }
 }
