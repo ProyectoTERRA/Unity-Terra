@@ -9,6 +9,11 @@ public class PlayerSuper : MonoBehaviour
 
     [SerializeField] private GameObject Bloque;
     [SerializeField] private GameObject Caja;
+    [SerializeField] private GameObject KEY;
+
+    [SerializeField] private GameObject LATA1;
+    [SerializeField] private GameObject LATA2;
+    [SerializeField] private GameObject AWA;
 
     public Sprite CajaA, CajaC;
 
@@ -16,14 +21,20 @@ public class PlayerSuper : MonoBehaviour
 
     bool prexit, exit, key, pc, caja_fuerte;
 
+    bool lata1, lata2, awa;
+
     public bool s1, s2, cuarto;
     void Start()
     {
         camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
-
+        key = false;
         s1 = true;
         s2 = false;
         cuarto = false;
+        lata1 = false;
+        lata2 = false;
+        awa = false;
+        Caja.GetComponent<SpriteRenderer>().sprite = CajaC;
     }
 
     // Update is called once per frame
@@ -62,15 +73,49 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Caja.GetComponent<SpriteRenderer>().sprite = CajaA;
+                if (!key)
+                {
+                    KEY.SetActive(true);
+                }
+
+            }
+        }
+
+        if (collision.gameObject.name == "key")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("key");
+                Destroy(KEY);
                 key = true;
             }
         }
 
-         if (collision.gameObject.name == "Puerta SuperMercado 1")
+        if (collision.gameObject.name == "Lata Recargada 1")
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Destroy(LATA1);
+                lata1 = true;
+            }
+        }
 
+        if (collision.gameObject.name == "Lata Recargada 2")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Destroy(LATA2);
+                lata2 = true;
+            }
+        }
+
+        if (collision.gameObject.name == "Botella de Agua")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Destroy(AWA);
+                awa = true;
             }
         }
 
