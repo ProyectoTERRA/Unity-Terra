@@ -54,19 +54,15 @@ public class DivIzqM : MonoBehaviour
         }
     }
 
-    /*void FixedUpdate()
+    void FixedUpdate()
     {
-
-         if (IndexLvl == 1)
-         {
+        Delay = 5f;
+        Delay = Delay - Time.deltaTime;
+        if(Delay <= 0 && IndexLvl == 1)
+        {
+            Debug.Log("IniciaCorutina");
             StartCoroutine(RedLvl1());
-            if (Completo == false && Contador > 0 && Resta == true)
-            { 
-                Contador = Contador - 2;
-                Barra.value = Contador;
-            }
-
-         }
+        }
 
          if (IndexLvl == 2)
          {
@@ -84,7 +80,6 @@ public class DivIzqM : MonoBehaviour
  
 
     }
-    */
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player" && IndexLvl == 1)
@@ -184,16 +179,15 @@ public class DivIzqM : MonoBehaviour
                 Slide.SetActive(false);
                 TextoInstruccion.SetActive(false);
                 TxtLvl = GetComponent<Text>();
-                TxtLvl.text = "Completado!";
+                //TxtLvl.text = "Completado!";
             }
         }
 
     }
 
-    /*IEnumerator RedLvl1()
+    IEnumerator RedLvl1()
     {
-        Delay = 15f;
-        Delay -= Time.deltaTime;
+        Debug.Log("Inicia Corutina");
         if(Delay <= 0)
         {
             Resta = true;
@@ -211,7 +205,7 @@ public class DivIzqM : MonoBehaviour
         //Debug.Log("Resta - 2");
         yield return new WaitForSeconds(15f);
     }
-    */
+ 
         
         /*
         if (Completo == false && IndexLvl == 1)
