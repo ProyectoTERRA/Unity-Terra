@@ -32,12 +32,12 @@ public class RATA : MonoBehaviour
 
         if (speed < 0)
         {
-            transform.localScale = new Vector3(0.5f, 0.5f, 1f);
+            transform.localScale = new Vector3(x, y, 1f);
 
         }
         else if (speed > 0)
         {
-            transform.localScale = new Vector3(-0.5f, 0.5f, 1f);
+            transform.localScale = new Vector3(-x, y, 1f);
         }
 
 
