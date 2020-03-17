@@ -22,13 +22,13 @@ public class Sedantes : MonoBehaviour
 
         this.GetComponent<Rigidbody2D>().velocity = new Vector3(8f * (-Comportamiento.side), 2f);
 
+        rbd2 = GetComponent<Rigidbody2D>();
 
         transform.position = new Vector3(transform.position.x - (-0.3f * Comportamiento.side * scale), transform.position.y + (-0.3f * scale));
 
         x = transform.position.x - (1.5f * Comportamiento.side * scale);
         y = (transform.position.y + (0.6f * scale));
         transform.position = new Vector3(x, y);
-
 
         rbd2.AddForce(Vector2.left * Comportamiento.side * (JumpPower * scale), ForceMode2D.Impulse);
     }
@@ -37,7 +37,7 @@ public class Sedantes : MonoBehaviour
     void Update()
     {
         transform.localScale = new Vector3(transform.localScale.x - (0.01f * scale), transform.localScale.x - (0.01f * scale));
-        Debug.Log("Posicion " + transform.localScale);
-        Destroy(gameObject, 1.5f);
+        
+        //Destroy(gameObject, 1.5f);
     }
 }

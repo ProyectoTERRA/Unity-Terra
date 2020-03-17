@@ -33,7 +33,16 @@ public class Comportamiento : MonoBehaviour
     void Update()
     {
         var pl = GameObject.Find("JefeMisterioso");
-        Instantiate(sedante, pl.transform.position, Quaternion.identity);
+
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            if (pl != null)
+            {
+                Instantiate(sedante, pl.transform.position, Quaternion.identity);
+            }
+
+        }
+        /*
         // Activamos o desactivamos la gravedad en función de la variable 'Terrestre'
         thisRigidbody.useAutoMass = Terrestre;
 
@@ -95,7 +104,7 @@ public class Comportamiento : MonoBehaviour
             {
                 HitoSiguiente++;
             }
-        }
+        }*/
     }
 
     private bool IrHaciaHito(Vector3 PosicionHito, float Velocidad)
