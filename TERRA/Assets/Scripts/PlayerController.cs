@@ -179,6 +179,18 @@ public class PlayerController : MonoBehaviour
             Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
             heart_Bar.hearts--;
         }
+        if (collision.gameObject.tag == "enemigo1")
+        {
+            GameObject vida = GameObject.Find("Heart Bar - HUD_0");
+            Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
+            heart_Bar.hearts--;
+        }
+        if (collision.gameObject.tag == "enemigo1")
+        {
+            GameObject vida = GameObject.Find("Heart Bar - HUD_0");
+            Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
+            heart_Bar.hearts-=2;
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
