@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Boss : MonoBehaviour
+public class Bossun : MonoBehaviour
 {
 
     public int health;

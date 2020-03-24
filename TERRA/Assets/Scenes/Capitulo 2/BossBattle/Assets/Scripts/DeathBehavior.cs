@@ -2,7 +2,7 @@
 
 public class DeathBehavior : StateMachineBehaviour
 {
-
+    /*
     private Boss boss;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -21,5 +21,5 @@ public class DeathBehavior : StateMachineBehaviour
 
     }
 
-
+    */
 }

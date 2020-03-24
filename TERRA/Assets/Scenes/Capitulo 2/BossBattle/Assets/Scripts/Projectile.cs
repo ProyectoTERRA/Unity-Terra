@@ -2,7 +2,7 @@
 
 public class Projectile : MonoBehaviour
 {
-
+    /*
     public int damage;
     public float speed;
     public GameObject explosion;
@@ -27,4 +27,5 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
+*/
 }
