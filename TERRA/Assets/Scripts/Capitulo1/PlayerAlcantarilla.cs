@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerAlcantarilla : MonoBehaviour
 {
@@ -62,6 +63,7 @@ public class PlayerAlcantarilla : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && Minijuego_1.win)
             {
                 Debug.Log("Salido");
+                SceneManager.LoadScene("Supermercado");
 
             }
 

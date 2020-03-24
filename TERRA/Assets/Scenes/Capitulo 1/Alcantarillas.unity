@@ -213,7 +213,7 @@ RectTransform:
   - {fileID: 606286763}
   - {fileID: 557804621}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -821,7 +821,7 @@ PrefabInstance:
     - target: {fileID: 2671807527447435880, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2671807527447435880, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
@@ -8529,8 +8529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f70166e83cc3044adc8c63232d6664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
+  x: 0.5
+  y: 0.5
   z: 0
   speed: 3
   maxspeed: 3
@@ -15965,8 +15965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f70166e83cc3044adc8c63232d6664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
+  x: 0.5
+  y: 0.5
   z: 0
   speed: 3
   maxspeed: 3
@@ -17877,8 +17877,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f70166e83cc3044adc8c63232d6664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
+  x: 0.5
+  y: 0.5
   z: 0
   speed: 3
   maxspeed: 3
@@ -27657,7 +27657,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &874383596981930412
 GameObject:
@@ -29020,7 +29020,7 @@ PrefabInstance:
     - target: {fileID: 2127575734805207767, guid: bf562bd8227523d4089aa91c361b4ca9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2127575734805207767, guid: bf562bd8227523d4089aa91c361b4ca9,
         type: 3}
@@ -29036,6 +29036,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127575734805207766, guid: bf562bd8227523d4089aa91c361b4ca9,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1405202317
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127575734805207766, guid: bf562bd8227523d4089aa91c361b4ca9,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127575734805207765, guid: bf562bd8227523d4089aa91c361b4ca9,
+        type: 3}
+      propertyPath: x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127575734805207765, guid: bf562bd8227523d4089aa91c361b4ca9,
+        type: 3}
+      propertyPath: y
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf562bd8227523d4089aa91c361b4ca9, type: 3}
@@ -29371,8 +29391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f70166e83cc3044adc8c63232d6664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
+  x: 0.5
+  y: 0.5
   z: 0
   speed: 3
   maxspeed: 3

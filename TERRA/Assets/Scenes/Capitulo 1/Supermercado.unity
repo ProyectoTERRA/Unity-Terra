@@ -6414,8 +6414,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1405202317
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9de5560d870eb204c91df39d9740a3f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11436,6 +11436,7 @@ GameObject:
   - component: {fileID: 2544049821390145784}
   - component: {fileID: 7912095530765589955}
   - component: {fileID: 2544049821390145779}
+  - component: {fileID: 2544049821390145785}
   m_Layer: 8
   m_Name: Jugador
   m_TagString: Player
@@ -11492,7 +11493,7 @@ MonoBehaviour:
   SideVelocity: 10
   grounded: 0
   wall: 0
-  JumpPower: 5
+  JumpPower: 7
   x: 1.75
   y: 1.75
   z: 1.75
@@ -11594,6 +11595,20 @@ MonoBehaviour:
   s1: 0
   s2: 0
   cuarto: 0
+--- !u!114 &2544049821390145785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544049821390145778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da5d341614e4824eae88d6185edc410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MultiplicadorCaida: 1.5
+  Saltopequeno: 5
 --- !u!58 &2544049821390145787
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11640,7 +11655,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.24347764, y: 0.006311655}
+  m_Offset: {x: -0.24549386, y: -0.021916747}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11651,7 +11666,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.873937, y: 2.1159496}
+  m_Size: {x: 0.9828177, y: 2.1724064}
   m_EdgeRadius: 0
 --- !u!1 &6542835989454755412
 GameObject:
