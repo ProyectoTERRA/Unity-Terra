@@ -45,6 +45,7 @@ public class RATA : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log(col.gameObject.name);
         if (col.gameObject.name == "EnemyCollider1")
         {
             speed = -speed;
@@ -61,10 +62,10 @@ public class RATA : MonoBehaviour
 
 
         }
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "PlayerInteractionZone")
         {
             Debug.Log("Ha hecho colision con el jugador");
-            float yOffset = 0.5f;
+            float yOffset = x;
             if (transform.position.y + yOffset < col.transform.position.y)
             {
                 col.SendMessage("EnemyJump");
