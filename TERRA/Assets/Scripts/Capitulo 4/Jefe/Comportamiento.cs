@@ -5,143 +5,106 @@ using System;
 
 public class Comportamiento : MonoBehaviour
 {
-    public bool Terrestre = true;
-    public GameObject[] HitosPatronMovimiento;
-    public float[] VelocidadesPatronMovimiento;
-    public GameObject sedante;
-
-    public float scale;
-    public static float scal;
-    public int SIDE;
-    public static int side;
     public float x;
     public float y;
     public float z;
-    // Private variables
-    private Transform thisTransform;
-    private Rigidbody2D thisRigidbody;
-    private int HitoSiguiente = 0;
-    // Start is called before the first frame update
+
+    public float speed = 4f;
+    public float maxspeed = 4f;
+    public float DistanciaVision;
+
+    public float Jumpower;
+    bool jump;
+    public float distancia;
+
+    private Color color;
+    GameObject Jugador;
+    Vector2 PosicionInicial;
+
+    public GameObject sedante;
+
+    int movimiento;
+
+    private Rigidbody2D rbd2;
     void Start()
     {
-        thisTransform = transform;
-        thisRigidbody = GetComponentInParent<Rigidbody2D>();
-        CanGoToNextMilestone = true;
+        movimiento = 1;
+        rbd2 = GetComponent<Rigidbody2D>();
+        Jugador = GameObject.FindGameObjectWithTag("Player");
+        PosicionInicial = transform.position;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        var pl = GameObject.Find("JefeMisterioso");
 
-        if(Input.GetKeyDown(KeyCode.L))
+        if (col.gameObject.tag == "Player")
         {
-            if (pl != null)
-            {
-                Instantiate(sedante, pl.transform.position, Quaternion.identity);
-            }
-
+            col.SendMessage("EnemyKnockBack", transform.position.x + 1);
         }
-        /*
-        // Activamos o desactivamos la gravedad en función de la variable 'Terrestre'
-        thisRigidbody.useAutoMass = Terrestre;
-
-        // Calculamos la velocidad hacia el siguiente hito (si no hubiese velocidad definida para
-        // alguno de los hitos, asumiremos que es 0 y por tanto el objeto quedará parado)
-        float VelocidadHaciaHito = 0;
-        try
-        {
-            VelocidadHaciaHito = VelocidadesPatronMovimiento[HitoSiguiente];
-        }
-        catch
-        {
-            VelocidadHaciaHito = 0;
-        }
-
-        // Comprobamos si podemos ir hacia el siguiente hito
-        if (CanGoToNextMilestone)
-        {
-            try
-            {
-                // Movemos al objeto hacia el siguiente hito
-                if (IrHaciaHito(HitosPatronMovimiento[HitoSiguiente].transform.position, VelocidadHaciaHito))
-                {
-                    // Justo cuando lleguemos a un hito, paramos al objeto
-                    CanGoToNextMilestone = false;
-
-                    // Activamos el/los script/s de comportamiento correspondiente/s al hito actual (los que
-                    // su nombre empiecen contengan la palabra 'Patron').
-                    // Explicaremos estos scripts más adelante.
-                    bool patronFound = false;
-                    MonoBehaviour[] milestoneScripts = HitosPatronMovimiento[HitoSiguiente].GetComponents<MonoBehaviour>();
-                    foreach (MonoBehaviour script in milestoneScripts)
-                    {
-                        if (script.GetType().Name.Contains("Patron"))
-                        {
-                            patronFound = true;
-                            script.enabled = true;
-                        }
-                    }
-
-                    // Si no encontramos ningún script de comportamiento en el hito, continuamos al siguiente
-                    if (!patronFound)
-                    {
-                        CanGoToNextMilestone = true;
-                    }
-
-                    // Calculamos cual será el próximom hito
-                    if (HitoSiguiente != HitosPatronMovimiento.Length - 1)
-                    {
-                        HitoSiguiente++;
-                    }
-                    else
-                    {
-                        HitoSiguiente = 0;
-                    }
-                }
-            }
-            catch
-            {
-                HitoSiguiente++;
-            }
-        }*/
     }
-
-    private bool IrHaciaHito(Vector3 PosicionHito, float Velocidad)
+    private void Update()
     {
-        // Calculamos la distancia entre el hito y el objeto
-        Vector3 VectorHaciaObjetivo = PosicionHito - thisTransform.position;
-        if (Terrestre)
+        if (Input.GetKeyDown(KeyCode.J))
         {
-            // Si estamos en modo 'Terrestre', calculamos la distancia ignorando el eje Y
-            VectorHaciaObjetivo = new Vector3(VectorHaciaObjetivo.x, 0, VectorHaciaObjetivo.z);
-        }
-
-        // Con esta condición comprobamos si el objeto aún no ha llegado a las coordenadas del hito
-        if (Math.Abs(VectorHaciaObjetivo.x) > 0.2F ||
-            Math.Abs(VectorHaciaObjetivo.y) > 0.2F ||
-            Math.Abs(VectorHaciaObjetivo.z) > 0.2F)
-        {
-            // Calculamos el vector de movimiento hacia el hito
-            VectorHaciaObjetivo.Normalize();
-            VectorHaciaObjetivo *= Velocidad;
-            VectorHaciaObjetivo = new Vector3(VectorHaciaObjetivo.x,
-                                              VectorHaciaObjetivo.y,
-                                              VectorHaciaObjetivo.z);
-
-            // Movemos el objeto hacia el hito
-            thisTransform.Translate(VectorHaciaObjetivo * Time.deltaTime, Space.World);
-
-            // El objeto aún no ha llegado al hito
-            return false;
-        }
-        else
-        {
-            // El objeto ha llegado al hito
-            Debug.Log("Ha llegado al hito");
-            return true;
+            jump = true;
         }
     }
-    public bool CanGoToNextMilestone { get; set; }
+    void FixedUpdate()
+    {
+        Vector2 target = PosicionInicial;
 
+        float distanciaJugador = Vector2.Distance(Jugador.transform.position, transform.position);
+        
+        if (movimiento == 1)
+        {  
+            if (distanciaJugador > DistanciaVision)
+            {
+                target = Jugador.transform.position;
+                float fixedSpeed = speed * Time.deltaTime; Debug.Log("Izquierda");
+                transform.position = Vector2.MoveTowards(transform.position, target, fixedSpeed);
+            }
+            if(distanciaJugador <= DistanciaVision)
+            {
+                var pl = GameObject.Find("JefeMisterioso");
+                Debug.Log("Dispara");
+            }
+            
+            StartCoroutine(espera());
+        }
+        if (distanciaJugador < distancia)
+        {
+            Vector2 mover;
+            Debug.Log("Retirarse   " + transform.forward);
+            if (transform.position.x < Jugador.transform.position.x)
+            {
+                mover = new Vector2(-transform.position.x + 0.4f, transform.position.y);
+                rbd2.AddForce(mover * 1.0f);
+            }
+            else
+            {
+                mover = new Vector2(transform.position.x + 0.4f, transform.position.y);
+                rbd2.AddForce(mover * 1.0f);
+            }
+        }
+        Debug.Log("DIstanciade jugador " + distanciaJugador);
+        if (movimiento == 2) { StartCoroutine(lib()); }
+        
+        if (jump)
+        {
+            rbd2.velocity = new Vector2(rbd2.velocity.x, 0);
+            rbd2.AddForce(Vector2.up * Jumpower, ForceMode2D.Impulse);
+            jump = false;
+        }
+
+        Debug.DrawLine(transform.position, target, Color.red);
+    }
+    IEnumerator lib()
+    {
+        yield return new WaitForSeconds(2);
+        movimiento = 1;
+    }
+    IEnumerator espera()
+    {
+        yield return new WaitForSeconds(3);
+        movimiento = 2;
+    }
 }

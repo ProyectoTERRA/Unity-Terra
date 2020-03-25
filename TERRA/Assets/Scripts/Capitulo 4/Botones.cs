@@ -84,6 +84,7 @@ public class Botones : MonoBehaviour
                 interruptor6.SetActive(false);
                 puertaC4.SetActive(true);
                 puertA4.SetActive(false);
+                jugador.transform.position = new Vector2(28.0f, -0.3f);
                 jefe.SetActive(true);
             }
         }
