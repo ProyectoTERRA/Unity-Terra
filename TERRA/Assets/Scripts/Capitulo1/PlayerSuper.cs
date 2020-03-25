@@ -66,6 +66,11 @@ public class PlayerSuper : MonoBehaviour
         }
     }
 
+    void OnMouseOver()
+    {
+        Debug.Log(gameObject.name);
+    }
+
     public void OnTriggerStay2D(Collider2D collision)
     {
         
