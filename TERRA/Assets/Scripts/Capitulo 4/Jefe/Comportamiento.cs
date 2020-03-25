@@ -53,12 +53,13 @@ public class Comportamiento : MonoBehaviour
         Vector2 target = PosicionInicial;
 
         float distanciaJugador = Vector2.Distance(Jugador.transform.position, transform.position);
+        
         if (movimiento == 1)
         {  
             if (distanciaJugador > DistanciaVision)
             {
                 target = Jugador.transform.position;
-                float fixedSpeed = speed * Time.deltaTime;
+                float fixedSpeed = speed * Time.deltaTime; Debug.Log("Izquierda");
                 transform.position = Vector2.MoveTowards(transform.position, target, fixedSpeed);
             }
             if(distanciaJugador <= DistanciaVision)
@@ -66,8 +67,25 @@ public class Comportamiento : MonoBehaviour
                 var pl = GameObject.Find("JefeMisterioso");
                 Debug.Log("Dispara");
             }
+            
             StartCoroutine(espera());
         }
+        if (distanciaJugador < distancia)
+        {
+            Vector2 mover;
+            Debug.Log("Retirarse   " + transform.forward);
+            if (transform.position.x < Jugador.transform.position.x)
+            {
+                mover = new Vector2(-transform.position.x + 0.4f, transform.position.y);
+                rbd2.AddForce(mover * 1.0f);
+            }
+            else
+            {
+                mover = new Vector2(transform.position.x + 0.4f, transform.position.y);
+                rbd2.AddForce(mover * 1.0f);
+            }
+        }
+        Debug.Log("DIstanciade jugador " + distanciaJugador);
         if (movimiento == 2) { StartCoroutine(lib()); }
         
         if (jump)

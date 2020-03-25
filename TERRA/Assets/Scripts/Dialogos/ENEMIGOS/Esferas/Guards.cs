@@ -23,8 +23,6 @@ public class Guards : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("ahhh");
-
         if (collision.gameObject.tag == "Normal")
         {
             life = life - 50;
