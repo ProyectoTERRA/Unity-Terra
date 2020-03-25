@@ -15,9 +15,11 @@ public class Esferas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         scale = PlayerController.scal * 0.5714f;
         transform.localScale = new Vector3(scale, scale);
-
+        Debug.Log(scale);
+        Debug.Log(PlayerController.scal);
 
         this.GetComponent<Rigidbody2D>().velocity = new Vector3(8f * (-PlayerController.side), 2f);
 
@@ -32,6 +34,8 @@ public class Esferas : MonoBehaviour
 
 
         rbd2.AddForce(Vector2.left * PlayerController.side * (JumpPower * scale), ForceMode2D.Impulse);
+        Debug.Log(JumpPower * scale);
+        
     }
 
     // Update is called once per frame
