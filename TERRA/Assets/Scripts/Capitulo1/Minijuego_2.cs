@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Minijuego_2 : MonoBehaviour, IPointerEnterHandler
+public class Minijuego_2 : MonoBehaviour
 {
     [SerializeField] private GameObject bTN;
     // Start is called before the first frame update
+    bool touch;
     void Start()
     {
-        
+        touch = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(touch);
     }
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnMouseOver()
     {
-        Debug.Log(gameObject.name);
+        touch = true;
     }
-    void OnMouseOver()
+    void OnMouseExit()
     {
-        
+        touch = false;
     }
 }
