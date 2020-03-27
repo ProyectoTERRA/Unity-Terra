@@ -15,17 +15,23 @@ public class PlayerSuper : MonoBehaviour
     [SerializeField] private GameObject LATA2;
     [SerializeField] private GameObject AWA;
 
+    [SerializeField] private GameObject Mini;
+
+
     public Sprite CajaA, CajaC;
 
     // Start is called before the first frame update
 
     bool prexit, exit, key, pc, caja_fuerte;
 
-    bool lata1, lata2, awa;
+    bool lata1, lata2, awa, flag;
+    static public bool Complete_mini;
 
     public bool s1, s2, cuarto;
     void Start()
     {
+        flag = true;
+        Mini.SetActive(false);
         camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
         key = false;
         s1 = true;
@@ -66,10 +72,6 @@ public class PlayerSuper : MonoBehaviour
         }
     }
 
-    void OnMouseOver()
-    {
-        Debug.Log(gameObject.name);
-    }
 
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -78,12 +80,23 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                if (!Complete_mini)
+                {
+                    Mini.SetActive(flag);
+                    GetComponent<PlayerController>().enabled = !flag;
+                    flag = !flag;
+                }
+
+            }
+
+            if (Complete_mini)
+            {
                 Caja.GetComponent<SpriteRenderer>().sprite = CajaA;
                 if (!key)
                 {
                     KEY.SetActive(true);
+                    
                 }
-
             }
         }
 
