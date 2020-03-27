@@ -18,7 +18,7 @@ public class Esferas : MonoBehaviour
        
         scale = PlayerController.scal * 0.5714f;
         transform.localScale = new Vector3(scale, scale);
-        Debug.Log(scale);
+        Debug.Log("En esfera "+ scale);
         Debug.Log(PlayerController.scal);
 
         this.GetComponent<Rigidbody2D>().velocity = new Vector3(8f * (-PlayerController.side), 2f);

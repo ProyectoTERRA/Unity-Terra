@@ -5616,7 +5616,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 634911389}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5642,7 +5642,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 634911389}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5685,8 +5685,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651485472}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.8593, y: -0.354, z: 70.21753}
-  m_LocalScale: {x: 0.3637143, y: 0.110681824, z: 0.59699}
+  m_LocalPosition: {x: 18.8593, y: -0.378, z: 70.21753}
+  m_LocalScale: {x: 0.30461073, y: 0.110681824, z: 0.59699}
   m_Children: []
   m_Father: {fileID: 1505082715}
   m_RootOrder: 8
@@ -11466,7 +11466,8 @@ MonoBehaviour:
   DistanciaVision: 1
   Jumpower: 8
   distancia: 0.5
-  scale: 0.25
+  disparar: 0
+  scale: 20
   SIDE: 0
   sedante: {fileID: 2206525311806916783, guid: f820c1b1be2744447a40887a0d5ac620, type: 3}
 --- !u!114 &1381413157
@@ -15498,8 +15499,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912787579}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.213, y: 0.432, z: 70.21753}
-  m_LocalScale: {x: 0.66238266, y: 0.110681824, z: 0.59699}
+  m_LocalPosition: {x: 19.24, y: 0.432, z: 70.21753}
+  m_LocalScale: {x: 0.5464657, y: 0.110681824, z: 0.59699}
   m_Children: []
   m_Father: {fileID: 1505082715}
   m_RootOrder: 10
@@ -17848,7 +17849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5657417380033990137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.453, y: -0.36, z: 0}
+  m_LocalPosition: {x: 27.54, y: -0.36, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 5657417381144890561}

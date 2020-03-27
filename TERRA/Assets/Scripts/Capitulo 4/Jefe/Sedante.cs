@@ -16,33 +16,27 @@ public class Sedante : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         scale = Comportamiento.scal * 0.5714f;
-        transform.localScale = new Vector3(scale, scale);
-        Debug.Log(scale);
-        Debug.Log(Comportamiento.scal);
+        transform.localScale = new Vector3(.07f, .07f);
 
-        this.GetComponent<Rigidbody2D>().velocity = new Vector3(8f * (-Comportamiento.side), 2f);
-
-
+        this.GetComponent<Rigidbody2D>().velocity = new Vector3(2f * (-Comportamiento.side), 2f);
+        Debug.Log("Side " + Comportamiento.side);
         rbd2 = GetComponent<Rigidbody2D>();
 
-        transform.position = new Vector3(transform.position.x - ((-0.3f * Comportamiento.side) * scale), (transform.position.y + (-0.3f * scale)));
+        transform.position = new Vector3(transform.position.x - (-0.3f * Comportamiento.side * scale), transform.position.y + (-0.3f * scale));
 
-        x = transform.position.x - ((1.5f * Comportamiento.side) * scale);
-        y = (transform.position.y + (0.6f * scale));
+        x = transform.position.x - (1.5f * Comportamiento.side * scale);
+        y = transform.position.y + (0.6f * scale);
         transform.position = new Vector3(x, y);
 
-
-        rbd2.AddForce(Vector2.left * Comportamiento.side * (JumpPower * scale), ForceMode2D.Impulse);
-        Debug.Log(JumpPower * scale);
-
+        rbd2.AddForce(Vector2.left * Comportamiento.side * (JumpPower * scale), ForceMode2D.Force);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.localScale = new Vector3(transform.localScale.x - (0.01f * scale), transform.localScale.x - (0.01f * scale));
+        Debug.Log("Local Scale " +transform.localScale);
+        transform.localScale = new Vector3(transform.localScale.x - (0.001f * scale), transform.localScale.x - (0.001f * scale));
         Destroy(gameObject, 1.5f);
     }
 }

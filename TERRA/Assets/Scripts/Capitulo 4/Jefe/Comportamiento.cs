@@ -16,6 +16,7 @@ public class Comportamiento : MonoBehaviour
     public float Jumpower;
     bool jump;
     public float distancia;
+    public float disparar;
 
     public float scale;
     public static float scal;
@@ -27,6 +28,7 @@ public class Comportamiento : MonoBehaviour
     Vector2 PosicionInicial;
 
     public GameObject sedante;
+    GameObject sedanteClone;
 
     int movimiento;
 
@@ -64,13 +66,12 @@ public class Comportamiento : MonoBehaviour
         if (Jugador.transform.position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-x, y, z);
-            SIDE = -1;
+            side = -1;
         }
         if (Jugador.transform.position.x > transform.position.x)
         {
             transform.localScale = new Vector3(x, y, z);
-            Debug.Log("Esta mayor");
-            SIDE = 1;
+            side = 1;
         }
         if (movimiento == 1)
         {  
@@ -80,18 +81,20 @@ public class Comportamiento : MonoBehaviour
                 float fixedSpeed = speed * Time.deltaTime;
                 transform.position = Vector2.MoveTowards(transform.position, target, fixedSpeed);                
             }
-            if(distanciaJugador <= DistanciaVision)
-            {
-                var pl = GameObject.Find("JefeMisterioso");
-                if (pl != null)
-                {
-                    Instantiate(sedante, pl.transform.position, Quaternion.identity);
-
-                }
-                Debug.Log("Dispara");
-            }
             
             StartCoroutine(espera());
+        }
+        if (distanciaJugador <= DistanciaVision)
+        {
+            Debug.Log("Disparar " + disparar);
+            var pl = GameObject.Find("JefeMisterioso");
+            if (pl != null)
+            {
+                if (!sedanteClone)
+                {
+                    sedanteClone = Instantiate(sedante, pl.transform.position, Quaternion.identity);
+                }
+            }
         }
         if (distanciaJugador < distancia)
         {
