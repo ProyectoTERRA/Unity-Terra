@@ -17,6 +17,11 @@ public class Comportamiento : MonoBehaviour
     bool jump;
     public float distancia;
 
+    public float scale;
+    public static float scal;
+    public float SIDE;
+    public static float side;
+
     private Color color;
     GameObject Jugador;
     Vector2 PosicionInicial;
@@ -28,6 +33,9 @@ public class Comportamiento : MonoBehaviour
     private Rigidbody2D rbd2;
     void Start()
     {
+        //transform.localScale = new Vector3(-x, y, z);
+        scal = scale;
+        side = SIDE;
         movimiento = 1;
         rbd2 = GetComponent<Rigidbody2D>();
         Jugador = GameObject.FindGameObjectWithTag("Player");
@@ -53,18 +61,33 @@ public class Comportamiento : MonoBehaviour
         Vector2 target = PosicionInicial;
 
         float distanciaJugador = Vector2.Distance(Jugador.transform.position, transform.position);
-        
+        if (Jugador.transform.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(-x, y, z);
+            SIDE = -1;
+        }
+        if (Jugador.transform.position.x > transform.position.x)
+        {
+            transform.localScale = new Vector3(x, y, z);
+            Debug.Log("Esta mayor");
+            SIDE = 1;
+        }
         if (movimiento == 1)
         {  
             if (distanciaJugador > DistanciaVision)
             {
                 target = Jugador.transform.position;
-                float fixedSpeed = speed * Time.deltaTime; Debug.Log("Izquierda");
-                transform.position = Vector2.MoveTowards(transform.position, target, fixedSpeed);
+                float fixedSpeed = speed * Time.deltaTime;
+                transform.position = Vector2.MoveTowards(transform.position, target, fixedSpeed);                
             }
             if(distanciaJugador <= DistanciaVision)
             {
                 var pl = GameObject.Find("JefeMisterioso");
+                if (pl != null)
+                {
+                    Instantiate(sedante, pl.transform.position, Quaternion.identity);
+
+                }
                 Debug.Log("Dispara");
             }
             
@@ -73,7 +96,6 @@ public class Comportamiento : MonoBehaviour
         if (distanciaJugador < distancia)
         {
             Vector2 mover;
-            Debug.Log("Retirarse   " + transform.forward);
             if (transform.position.x < Jugador.transform.position.x)
             {
                 mover = new Vector2(-transform.position.x + 0.4f, transform.position.y);
@@ -85,7 +107,6 @@ public class Comportamiento : MonoBehaviour
                 rbd2.AddForce(mover * 1.0f);
             }
         }
-        Debug.Log("DIstanciade jugador " + distanciaJugador);
         if (movimiento == 2) { StartCoroutine(lib()); }
         
         if (jump)
