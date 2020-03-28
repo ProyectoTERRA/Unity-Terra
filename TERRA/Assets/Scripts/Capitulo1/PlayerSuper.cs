@@ -9,7 +9,9 @@ public class PlayerSuper : MonoBehaviour
 
     [SerializeField] private GameObject Bloque;
     [SerializeField] private GameObject Caja;
+    [SerializeField] private GameObject PC;
     [SerializeField] private GameObject KEY;
+    [SerializeField] private GameObject interruptor;
 
     [SerializeField] private GameObject LATA1;
     [SerializeField] private GameObject LATA2;
@@ -19,6 +21,8 @@ public class PlayerSuper : MonoBehaviour
 
 
     public Sprite CajaA, CajaC;
+    public Sprite PCOff, PCON;
+    public Sprite IntON;
 
     // Start is called before the first frame update
 
@@ -41,6 +45,7 @@ public class PlayerSuper : MonoBehaviour
         lata2 = false;
         awa = false;
         Caja.GetComponent<SpriteRenderer>().sprite = CajaC;
+        interruptor.GetComponent<SpriteRenderer>().color = Color.gray;
     }
 
     // Update is called once per frame
@@ -97,6 +102,29 @@ public class PlayerSuper : MonoBehaviour
                     KEY.SetActive(true);
                     
                 }
+            }
+        }
+        if (collision.gameObject.name == "Interruptor" && awa && lata1 && lata2)
+        {
+            if (Input.GetKeyDown(KeyCode.E) && !prexit)
+            {
+                interruptor.GetComponent<SpriteRenderer>().color = Color.white;
+                prexit = true;
+                PC.GetComponent<SpriteRenderer>().sprite = PCOff;
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && exit)
+            {
+                Debug.Log("SALIDO");
+            }
+        }
+
+        if (collision.gameObject.name == "PC" && prexit)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                interruptor.GetComponent<SpriteRenderer>().sprite = IntON;
+                exit = true;
+                PC.GetComponent<SpriteRenderer>().sprite = PCON;
             }
         }
 

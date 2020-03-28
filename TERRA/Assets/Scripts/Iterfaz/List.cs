@@ -107,6 +107,7 @@ public class List : MonoBehaviour
 
     public void add(string n)
     {
+        Debug.Log("Recibido");
         if (n == "normal") select.Add(esf_N);
         if (n == "paraliz") select.Add(esf_P);
         if (n == "desac") select.Add(esf_D);

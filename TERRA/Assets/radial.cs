@@ -437,6 +437,7 @@ public class radial : MonoBehaviour
     public void Fab_Nl()
     {
         string normal = "normal";
+        Debug.Log("Enviar");
         if (esfera[0] == 0) list.SendMessage("add", normal);
         basura[5] = basura[5] - 3;
         esfera[0]++;

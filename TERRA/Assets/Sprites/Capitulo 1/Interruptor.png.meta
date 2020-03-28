@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 7151c796e7e993240b0a2a3d2eabea0f
+guid: 86acd169393cc07438b2d4c7457eeb2f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5778590093982927133
-    second: PC_0
+      213: 2994545529810932064
+    second: Interruptor_0
   - first:
-      213: 1341951855039238538
-    second: PC_1
-  - first:
-      213: 1252354279565329153
-    second: PC_2
+      213: -4644485068513921068
+    second: Interruptor_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PC_0
+      name: Interruptor_0
       rect:
         serializedVersion: 2
-        x: 270
-        y: 1155
-        width: 645
-        height: 585
+        x: 75
+        y: 510
+        width: 315
+        height: 420
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 702c934468c08094d94337e44b7ca6c0
-      internalID: -5778590093982927133
+      spriteID: b242d596d2b7623408c5135557f8ad27
+      internalID: 2994545529810932064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC_1
+      name: Interruptor_1
       rect:
         serializedVersion: 2
-        x: 1230
-        y: 1155
-        width: 645
-        height: 585
+        x: 75
+        y: 30
+        width: 315
+        height: 420
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,29 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8709540533a5a09479a7ce6cf451df01
-      internalID: 1341951855039238538
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PC_2
-      rect:
-        serializedVersion: 2
-        x: 270
-        y: 195
-        width: 645
-        height: 585
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f364608fdaf1e5489baebbb4610600c
-      internalID: 1252354279565329153
+      spriteID: 7f0b9ad266f43754bb9c5851ceeb1527
+      internalID: -4644485068513921068
       vertices: []
       indices: 
       edges: []

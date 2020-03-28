@@ -57,6 +57,7 @@ public class Minijuego_2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.position = new Vector3(inx, iny, 10f);
+        GetComponent<CircleCollider2D>().radius = 2f;
     }
     /*
     void OnMouseDrag()
