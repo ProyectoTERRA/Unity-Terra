@@ -11,6 +11,7 @@ public class PlayerSuper : MonoBehaviour
     [SerializeField] private GameObject Caja;
     [SerializeField] private GameObject PC;
     [SerializeField] private GameObject KEY;
+    [SerializeField] private GameObject KEY_inv;
     [SerializeField] private GameObject interruptor;
 
     [SerializeField] private GameObject LATA1;
@@ -18,6 +19,8 @@ public class PlayerSuper : MonoBehaviour
     [SerializeField] private GameObject AWA;
 
     [SerializeField] private GameObject Mini;
+
+    [SerializeField] private GameObject Equip;
 
 
     public Sprite CajaA, CajaC;
@@ -83,13 +86,16 @@ public class PlayerSuper : MonoBehaviour
         
         if (collision.gameObject.name == "Caja fuerte")
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.J) && PlayerController.Equip == "Ganzua")
             {
+               
+
                 if (!Complete_mini)
                 {
                     Mini.SetActive(flag);
                     GetComponent<PlayerController>().enabled = !flag;
                     flag = !flag;
+                    
                 }
 
             }
@@ -130,9 +136,10 @@ public class PlayerSuper : MonoBehaviour
 
         if (collision.gameObject.name == "key")
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && !key)
             {
                 Debug.Log("key");
+                List.select.Add(KEY_inv);
                 Destroy(KEY);
                 key = true;
             }
@@ -211,10 +218,11 @@ public class PlayerSuper : MonoBehaviour
         }
         if (collision.gameObject.name == "Puerta SuperMercado3" && key == true)//compara si hizo la colision con el objeto correcto
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.J) && PlayerController.Equip == "key_inv")
             {
                 camera.transform.position = new Vector3(36f, 0.0f, -10.0f);
                 this.transform.position = new Vector3(30f, -1.1f, 0.0f);
+
             }
         }
     }

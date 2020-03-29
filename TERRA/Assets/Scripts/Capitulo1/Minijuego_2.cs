@@ -12,6 +12,7 @@ public class Minijuego_2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     float inx = 21.5f, iny = -3.5f;
     [SerializeField] private GameObject Mini;
     [SerializeField] private GameObject Jugador;
+    [SerializeField] private GameObject list;
     void Start()
     {
         
@@ -50,14 +51,14 @@ public class Minijuego_2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             Debug.Log("Está siendo arrastrado");
             transform.position = Camera.main.ScreenToWorldPoint(eventData.position);
             transform.position = new Vector3(transform.position.x, transform.position.y, 10f);
-            GetComponent<CircleCollider2D>().radius=.1f;
+            GetComponent<CircleCollider2D>().radius = 0.01f;
         }
         
     }
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.position = new Vector3(inx, iny, 10f);
-        GetComponent<CircleCollider2D>().radius = 2f;
+        GetComponent<CircleCollider2D>().radius = 0.39f;
     }
     /*
     void OnMouseDrag()
@@ -98,6 +99,12 @@ public class Minijuego_2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
         if (collision.gameObject.name == "Fin")
         {
+            GameObject go = GameObject.Find("InvFunc");
+            radial radial = go.GetComponent<radial>();
+            radial.especiales[2]--;
+            string normal = "ganzua";
+            if (radial.especiales[2] <= 0) list.SendMessage("remove", normal);
+
             PlayerSuper.Complete_mini = true;
             Jugador.GetComponent<PlayerController>().enabled = true;
             Destroy(Mini);
@@ -112,7 +119,7 @@ public class Minijuego_2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
  
             transform.position = new Vector3(inx, iny, 10f);
             enable = false;
-            GetComponent<CircleCollider2D>().radius = 2f;
+            GetComponent<CircleCollider2D>().radius = 0.39f;
         }
     }
 }

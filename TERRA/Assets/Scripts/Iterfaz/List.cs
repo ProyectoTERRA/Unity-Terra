@@ -9,15 +9,18 @@ public class List : MonoBehaviour
     public GameObject esf_D;
     public GameObject esf_T;
     public GameObject esf_H;
+    public GameObject esp_G;
+    public GameObject esp_H;
+    public GameObject esp_E;
     public GameObject Hand;
 
 
     public GameObject Equipado;
 
-    List<string> hrr;
+    public List<string> hrr;
 
     public static List<GameObject> select;
-    public int index;
+    public static int index;
     public int i;
     // Start is called before the first frame update
     void Start()
@@ -102,7 +105,7 @@ public class List : MonoBehaviour
        
         GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
         PlayerController.Equip = select[index].name;
-
+        Debug.Log("Equipado: "+PlayerController.Equip);
     }
 
     public void add(string n)
@@ -113,6 +116,7 @@ public class List : MonoBehaviour
         if (n == "desac") select.Add(esf_D);
         if (n == "tranqui") select.Add(esf_T);
         if (n == "heavy") select.Add(esf_H);
+        if (n == "ganzua") { Debug.Log("Recibido"); select.Add(esp_G); }
     }
 
     public void remove(string n)
@@ -122,6 +126,7 @@ public class List : MonoBehaviour
         if (n == "desac") select.Remove(esf_D);
         if (n == "tranqui") select.Remove(esf_T);
         if (n == "heavy") select.Remove(esf_H);
+        if (n == "ganzua") { Debug.Log("Recibido"); select.Remove(esp_G); }
         index = 0;
         Equipado.GetComponent<SpriteRenderer>().sprite = null;
 

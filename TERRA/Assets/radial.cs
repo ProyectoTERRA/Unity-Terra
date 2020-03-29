@@ -513,7 +513,9 @@ public class radial : MonoBehaviour
 
     public void Fab_GN()
     {
-
+        string normal = "ganzua";
+        Debug.Log("Enviar");
+        if (esfera[0] == 0) list.SendMessage("add", normal);
         basura[5] = basura[5] - 2;
         especiales[2]++;
         GameController.ganzua++;
