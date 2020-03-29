@@ -66,12 +66,12 @@ public class Comportamiento : MonoBehaviour
         if (Jugador.transform.position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-x, y, z);
-            side = -1;
+            side = 1;
         }
         if (Jugador.transform.position.x > transform.position.x)
         {
             transform.localScale = new Vector3(x, y, z);
-            side = 1;
+            side = -1;
         }
         if (movimiento == 1)
         {  

@@ -17,21 +17,19 @@ public class Sedante : MonoBehaviour
     void Start()
     {
         //scale = Comportamiento.scal * 0.5714f;
-        float SL = 0.015f;
+        float SL = .15f;
         transform.localScale = new Vector3(SL, SL);
-
-        
-
-        Debug.Log(transform.position);
-        
+        if(Comportamiento.side > 0)
+        {
+            transform.localScale = new Vector3(-SL, SL);
+        }
 
         this.GetComponent<Rigidbody2D>().velocity = new Vector3(2f * (-Comportamiento.side), 2f);
-        Debug.Log("Side " + Comportamiento.side);
         rbd2 = GetComponent<Rigidbody2D>();
 
         transform.position = new Vector3(transform.position.x - (-0.3f * Comportamiento.side * SL), transform.position.y + (-0.3f * SL));
 
-        x = transform.position.x - (1.5f * Comportamiento.side * SL);
+        x = transform.position.x - (1f * Comportamiento.side * SL);
         y = transform.position.y + (0.6f * SL);
         transform.position = new Vector3(x, y);
 
@@ -41,8 +39,15 @@ public class Sedante : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Local Scale " +transform.localScale);
-        //transform.localScale = new Vector3(transform.localScale.x - (0.001f * scale), transform.localScale.x - (0.001f * scale));
-        Destroy(gameObject, 1.5f);
+        transform.localScale = new Vector3(transform.localScale.x - (0.01f * scale), transform.localScale.x - (0.01f * scale));
+        Destroy(gameObject, 1f);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "PlayerInteractionZone" || collision.gameObject.name == "Player")
+        {
+            Debug.Log("Colision");
+            Destroy(gameObject);
+        }
     }
 }
