@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class PrimerDialogo : MonoBehaviour
 {
     public Dialog dialogue;
+    public GameObject clip;
     Queue<string> sentences;
     public GameObject dialogPanel;
     public TextMeshProUGUI displayText;
@@ -38,7 +39,7 @@ public class PrimerDialogo : MonoBehaviour
         {
             displayText.text = activeSentence;
             Cutscene.SetActive(true);
-            Dialogo2.SetActive(true);
+            //Dialogo2.SetActive(true);
             Enable = false;
             Dialogo1.SetActive(false);
             return;
@@ -57,6 +58,7 @@ public class PrimerDialogo : MonoBehaviour
         {
             dialogPanel.SetActive(true);
             StartDialogue();
+
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -85,6 +87,7 @@ public class PrimerDialogo : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             displayText.text += letter;
+            myAudio.PlayOneShot(speakSound, 0.7F);
             Debug.Log("Display " + displayText.text);
             yield return new WaitForSeconds(typingpeed);
         }
