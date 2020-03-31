@@ -15,16 +15,17 @@ public class CambioEscenas : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.name == "PuertaLab" && Input.GetKeyDown(KeyCode.E))
+        /*
+        if (collision.name == "PuertaLab")
         {
             Debug.Log("Colision Puerta");
             SceneManager.LoadScene("Lab");
         }
-
-        if (collision.name == "PuertaCalle" && Input.GetKeyDown(KeyCode.E))
+        */
+        if (collision.name == "PuertaCalle")
         {
             Debug.Log("Colision Puerta");
-            SceneManager.LoadScene("Calle");
+            //SceneManager.LoadScene("Calle");
         }
     }
 

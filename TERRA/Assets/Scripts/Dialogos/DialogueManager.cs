@@ -13,7 +13,8 @@ public class DialogueManager : MonoBehaviour
     public float typingpeed;
     AudioSource myAudio;
     public AudioClip speakSound;
-
+    public GameObject Dialogo1, Dialogo2, Cutscene;
+    public bool Enable = true;
     public void Start()
     {
         sentences = new Queue<string>();
@@ -35,13 +36,17 @@ public class DialogueManager : MonoBehaviour
         if (sentences.Count <= 0)
         {
             displayText.text = activeSentence;
+            Dialogo2.SetActive(true);
+            Enable = false;
+            Dialogo1.SetActive(false);
             return;
+            
         }
         activeSentence = sentences.Dequeue();
         displayText.text = activeSentence;
-
         StopAllCoroutines();
         StartCoroutine(TypeTheSentence(activeSentence));
+        
     }
     int cont;
     private void OnTriggerEnter2D(Collider2D collision)
