@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerSuper : MonoBehaviour
 {
@@ -121,6 +122,7 @@ public class PlayerSuper : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.E) && exit)
             {
                 Debug.Log("SALIDO");
+                SceneManager.LoadScene("Calle");
             }
         }
 
