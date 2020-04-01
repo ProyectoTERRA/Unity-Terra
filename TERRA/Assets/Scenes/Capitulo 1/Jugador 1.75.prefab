@@ -76,11 +76,12 @@ GameObject:
   - component: {fileID: 2544049821597462629}
   - component: {fileID: 2544049821597462634}
   - component: {fileID: 2544049821597462942}
+  - component: {fileID: 136636900018844198}
   - component: {fileID: 7912095530456474962}
-  - component: {fileID: 7912095530456474961}
   - component: {fileID: 2544049821597462626}
+  - component: {fileID: 136636900018844199}
   m_Layer: 8
-  m_Name: Jugador
+  m_Name: Jugador 1.75
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +95,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2544049821597462627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.4, y: 0.5, z: 0}
+  m_LocalPosition: {x: -3.81, y: -1.11, z: 0}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_Children:
   - {fileID: 2544049820561666395}
@@ -181,10 +182,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008918732, y: -0.11556566}
+  m_Offset: {x: 0.008918732, y: -0.1327951}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -195,7 +196,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9540488, y: 1.850179}
+  m_Size: {x: 0.9540488, y: 1.8846378}
   m_EdgeRadius: 0
 --- !u!50 &2544049821597462631
 Rigidbody2D:
@@ -231,11 +232,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 60
-  maxspeed: 3
+  maxspeed: 5
   SideVelocity: 10
   grounded: 0
   wall: 0
-  JumpPower: 5
+  JumpPower: 7
   x: 1.75
   y: 1.75
   z: 1.75
@@ -281,6 +282,39 @@ MonoBehaviour:
   mensaje2: {fileID: 0}
   mensaje3: {fileID: 0}
   interactionZone: {fileID: 6542835989117333188}
+--- !u!114 &136636900018844198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544049821597462627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97dfe314c4f498d429b514ce7a184ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  puerta: {fileID: 0}
+  Bloque: {fileID: 0}
+  Caja: {fileID: 0}
+  PC: {fileID: 0}
+  KEY: {fileID: 0}
+  KEY_inv: {fileID: 0}
+  interruptor: {fileID: 0}
+  LATA1: {fileID: 0}
+  LATA2: {fileID: 0}
+  AWA: {fileID: 0}
+  Mini: {fileID: 0}
+  Equip: {fileID: 1855756993844789015}
+  CajaA: {fileID: -7154481421594470171, guid: ac08c0af78eca5a49a2cd38de30ad4d3, type: 3}
+  CajaC: {fileID: -4055308256606978970, guid: 798e3c6e02b8d444882eebd1fe25474e, type: 3}
+  PCOff: {fileID: 1341951855039238538, guid: 7151c796e7e993240b0a2a3d2eabea0f, type: 3}
+  PCON: {fileID: 1252354279565329153, guid: 7151c796e7e993240b0a2a3d2eabea0f, type: 3}
+  IntON: {fileID: -4644485068513921068, guid: 86acd169393cc07438b2d4c7457eeb2f, type: 3}
+  s1: 0
+  s2: 0
+  cuarto: 0
 --- !u!114 &7912095530456474962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,21 +327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48dd375ef4e9b44a92be781f25ca9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7912095530456474961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2544049821597462627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1bf223a8942b4640bf6e61ec1c01be3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 0}
-  lucy: 0
-  linterna: 0
 --- !u!114 &2544049821597462626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +359,20 @@ MonoBehaviour:
   nombreEscena: 
   nombrePartida: 
   nombrePartida1: 
+--- !u!114 &136636900018844199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544049821597462627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da5d341614e4824eae88d6185edc410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MultiplicadorCaida: 1.5
+  Saltopequeno: 5
 --- !u!1 &6542835989117333189
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +417,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.24347764, y: 0.006311655}
+  m_Offset: {x: -0.24549386, y: 0.01806128}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -395,7 +428,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.873937, y: 2.1159496}
+  m_Size: {x: 0.8914394, y: 2.0924504}
   m_EdgeRadius: 0
 --- !u!1001 &7912095531986674390
 PrefabInstance:
@@ -466,6 +499,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 779b3acff1391d449ab84aaa16469507, type: 3}
+--- !u!1 &1855756993844789015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8362500405813697985, guid: 779b3acff1391d449ab84aaa16469507,
+    type: 3}
+  m_PrefabInstance: {fileID: 7912095531986674390}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1855756993844789008 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8362500405813697990, guid: 779b3acff1391d449ab84aaa16469507,
