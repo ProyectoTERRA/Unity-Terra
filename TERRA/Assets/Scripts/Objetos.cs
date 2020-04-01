@@ -6,6 +6,7 @@ public class Objetos : MonoBehaviour
     {
         GameObject go = GameObject.Find("InvFunc");
         radial radial = go.GetComponent<radial>();
+
         radial.basura[0] = GameController.pila;
         radial.basura[1] = GameController.bolsa;
         radial.basura[2] = GameController.carton;
@@ -33,8 +34,8 @@ public class Objetos : MonoBehaviour
         {
             GameController.pila++;
             string nombre = other.gameObject.name;
-            radial.basura[0]++;
             Destroy(GameObject.Find(nombre));
+            radial.basura[0]++;
         }
 
         if (other.gameObject.tag == "bolsa")
