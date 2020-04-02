@@ -46,7 +46,6 @@ public class Sedante : MonoBehaviour
     {
         if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "PlayerInteractionZone" || collision.gameObject.name == "Player")
         {
-            Debug.Log("Colision");
             Destroy(gameObject);
         }
     }

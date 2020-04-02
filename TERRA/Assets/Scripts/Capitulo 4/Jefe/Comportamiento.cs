@@ -46,9 +46,16 @@ public class Comportamiento : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
 
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Normal")
         {
-            col.SendMessage("EnemyKnockBack", transform.position.x + 1);
+            Debug.Log("Me diooooooooo");
+            GameObject vida = GameObject.Find("bossLive");
+            VidaBoss corazon = vida.GetComponent<VidaBoss>();
+            corazon.hearts--;
+        }
+        if (col.gameObject.tag == "Tranqui")
+        {
+            Debug.Log("Me diooooooooo");
         }
     }
     private void Update()
@@ -56,6 +63,12 @@ public class Comportamiento : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             jump = true;
+        }
+        GameObject vida = GameObject.Find("bossLive");
+        VidaBoss corazon = vida.GetComponent<VidaBoss>();
+        if (corazon.hearts == 0)
+        {
+            Destroy(gameObject);
         }
     }
     void FixedUpdate()
@@ -86,7 +99,6 @@ public class Comportamiento : MonoBehaviour
         }
         if (distanciaJugador <= DistanciaVision)
         {
-            Debug.Log("Disparar " + disparar);
             var pl = GameObject.Find("JefeMisterioso");
             if (pl != null)
             {
