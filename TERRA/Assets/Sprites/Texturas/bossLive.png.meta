@@ -1,0 +1,739 @@
+fileFormatVersion: 2
+guid: 7ff590cc753bb8043ad0737d82570012
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2422317368405034155
+    second: bossLive_0
+  - first:
+      213: -6270628765570883222
+    second: bossLive_1
+  - first:
+      213: -6422456578585867791
+    second: bossLive_2
+  - first:
+      213: 3281400079465715410
+    second: bossLive_3
+  - first:
+      213: -6450441515974461295
+    second: bossLive_4
+  - first:
+      213: 1343072646621519656
+    second: bossLive_5
+  - first:
+      213: 4339010859929781045
+    second: bossLive_6
+  - first:
+      213: -3610216502758301985
+    second: bossLive_7
+  - first:
+      213: 7145030370225135644
+    second: bossLive_8
+  - first:
+      213: -2635675146834511628
+    second: bossLive_9
+  - first:
+      213: -7638010857232287162
+    second: bossLive_10
+  - first:
+      213: -5694803746028604928
+    second: bossLive_11
+  - first:
+      213: 7855916431281784055
+    second: bossLive_12
+  - first:
+      213: 8996214690314347511
+    second: bossLive_13
+  - first:
+      213: 7583132693463606588
+    second: bossLive_14
+  - first:
+      213: 8041635766734359703
+    second: bossLive_15
+  - first:
+      213: 3578834643351895080
+    second: bossLive_16
+  - first:
+      213: -6168789533049368639
+    second: bossLive_17
+  - first:
+      213: 335675163357580116
+    second: bossLive_18
+  - first:
+      213: 383592641470449540
+    second: bossLive_19
+  - first:
+      213: -4331587821092497187
+    second: bossLive_20
+  - first:
+      213: -7285230694176687925
+    second: bossLive_21
+  - first:
+      213: -4086858377693275125
+    second: bossLive_22
+  - first:
+      213: 4904931078375559704
+    second: bossLive_23
+  - first:
+      213: 8185382714419514059
+    second: bossLive_24
+  - first:
+      213: -1439978229290035042
+    second: bossLive_25
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bossLive_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 2709
+        width: 2974
+        height: 309
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 9, z: 8, w: 8}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd9313f1528dfe46a5d2aee2db19896
+      internalID: -2422317368405034155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_1
+      rect:
+        serializedVersion: 2
+        x: 3376
+        y: 2696
+        width: 2973
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caf319ff77cd210448d2230b446087b0
+      internalID: -6270628765570883222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_2
+      rect:
+        serializedVersion: 2
+        x: 6888
+        y: 2715
+        width: 2973
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d913f79bed0c8448c461e58c3c84f5
+      internalID: -6422456578585867791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_3
+      rect:
+        serializedVersion: 2
+        x: 10133
+        y: 2726
+        width: 2968
+        height: 310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d39eabf9c1bd6345b6bb9e773f5d78f
+      internalID: 3281400079465715410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_4
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 2266
+        width: 2968
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 7, z: 4, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96289b7915137ec4692e2a262373dd05
+      internalID: -6450441515974461295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_5
+      rect:
+        serializedVersion: 2
+        x: 3371
+        y: 2250
+        width: 2968
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8376d0c96ddf1d741bdf0996b8537bf6
+      internalID: 1343072646621519656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_6
+      rect:
+        serializedVersion: 2
+        x: 6899
+        y: 2257
+        width: 2968
+        height: 309
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f8cd4a3c0d52f4ba9e03e165d37e38
+      internalID: 4339010859929781045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_7
+      rect:
+        serializedVersion: 2
+        x: 10128
+        y: 2285
+        width: 2973
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3818d0983e2eeee40bb15dfd70bfba7c
+      internalID: -3610216502758301985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1809
+        width: 2965
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 4, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9242a3fbc86b63342a00339dee101953
+      internalID: 7145030370225135644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_9
+      rect:
+        serializedVersion: 2
+        x: 3358
+        y: 1792
+        width: 2974
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3835f169602e4c41b1e923919e2a392
+      internalID: -2635675146834511628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_10
+      rect:
+        serializedVersion: 2
+        x: 6869
+        y: 1811
+        width: 2974
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e9e0252b1f1b044a44f19f8b2e4bea
+      internalID: -7638010857232287162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_11
+      rect:
+        serializedVersion: 2
+        x: 10107
+        y: 1811
+        width: 3107
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a6c7c5bdb4fdd47b8956e4b202d481
+      internalID: -5694803746028604928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1336
+        width: 2951
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20df18fbb4ce63e4fa486c6cb0e88def
+      internalID: 7855916431281784055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_13
+      rect:
+        serializedVersion: 2
+        x: 3378
+        y: 1282
+        width: 2968
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcefa4e66bc3ad04e8c029442350ddca
+      internalID: 8996214690314347511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_14
+      rect:
+        serializedVersion: 2
+        x: 6901
+        y: 1340
+        width: 2974
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da40e20d1a74664cad43d6b3844e954
+      internalID: 7583132693463606588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_15
+      rect:
+        serializedVersion: 2
+        x: 10133
+        y: 1359
+        width: 2968
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f217ca81017ca7c4a8f2e742b02c4619
+      internalID: 8041635766734359703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_16
+      rect:
+        serializedVersion: 2
+        x: 8627
+        y: 1295
+        width: 35
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36e1fc4e3579b524abab9b04019b8a2f
+      internalID: 3578834643351895080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_17
+      rect:
+        serializedVersion: 2
+        x: 11866
+        y: 1295
+        width: 35
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 549aa6b6cb0d0be47bcc6a670380df0a
+      internalID: -6168789533049368639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_18
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 792
+        width: 2968
+        height: 309
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 9, y: 11, z: 0, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c34e5c137b4bf1418c94aa638f2ec5e
+      internalID: 335675163357580116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_19
+      rect:
+        serializedVersion: 2
+        x: 3378
+        y: 785
+        width: 2974
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f4e67964029d6c48b7e1d064fedcecb
+      internalID: 383592641470449540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_20
+      rect:
+        serializedVersion: 2
+        x: 6914
+        y: 797
+        width: 2967
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9353f4772a0d7ce42aa1b761a5d5a5df
+      internalID: -4331587821092497187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_21
+      rect:
+        serializedVersion: 2
+        x: 10152
+        y: 797
+        width: 2968
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a2e7a0214dbd84bb9e3ffe01dc004a
+      internalID: -7285230694176687925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_22
+      rect:
+        serializedVersion: 2
+        x: 5088
+        y: 720
+        width: 44
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db829bc79e181614a869c9d459fba01d
+      internalID: -4086858377693275125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_23
+      rect:
+        serializedVersion: 2
+        x: 8619
+        y: 733
+        width: 46
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779b62e67e94c0a49be53651ba1e5170
+      internalID: 4904931078375559704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_24
+      rect:
+        serializedVersion: 2
+        x: 11857
+        y: 733
+        width: 47
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a83669759547c14ca3e8ca8ec9ad0f4
+      internalID: 8185382714419514059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossLive_25
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 184
+        width: 2964
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 9, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be679ef31a631074dace590620a9e9be
+      internalID: -1439978229290035042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
