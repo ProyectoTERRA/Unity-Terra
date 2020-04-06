@@ -12,8 +12,9 @@ public class PlayerCeldas : MonoBehaviour
     [SerializeField] private GameObject c2;
     [SerializeField] private GameObject c3;
 
+    [SerializeField] private GameObject list;
 
-    public bool s1, s2, hide, h, jail;
+    public bool s1, s2, hide, h, jail, GUsed;
     public Sprite door;
     private float hx;
     // Start is called before the first frame update
@@ -23,11 +24,13 @@ public class PlayerCeldas : MonoBehaviour
         s2 = false;
         hide = false;
         jail = true;
+        GUsed = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKeyUp(KeyCode.E) && h)//compara si hizo la colision con el objeto correcto
         {
             Debug.Log("plop");
@@ -35,7 +38,7 @@ public class PlayerCeldas : MonoBehaviour
             //StartCoroutine(push());
             hide = !hide;
         }
-        Debug.Log(hide);
+        Debug.Log(PlayerController.Equip);
         if (hide)
         {
             GetComponent<SpriteRenderer>().sortingLayerName = "Level";
@@ -53,14 +56,23 @@ public class PlayerCeldas : MonoBehaviour
             Equip.GetComponent<SpriteRenderer>().sortingOrder = 1;
             GetComponent<PlayerController>().enabled = true;
         }
+
+        if (GUsed)
+        {
+            GameObject go = GameObject.Find("InvFunc");
+            radial radial = go.GetComponent<radial>();
+            radial.especiales[2]--;
+            string normal = "ganzua";
+            if (radial.especiales[2] <= 0) list.SendMessage("remove", normal);
+            GUsed = false;
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name == "DoorOpenPanel 1" || collision.gameObject.name == "DoorOpenPanel 2" || 
             collision.gameObject.name == "DoorOpenPanel 3" || collision.gameObject.name == "DoorOpenPanel 4" ||
-            collision.gameObject.name == "DoorOpenPanel 5" || collision.gameObject.name == "DoorOpenPanel 6" )//compara si hizo la colision con el objeto correcto
-        {
+            collision.gameObject.name == "DoorOpenPanel 5" || collision.gameObject.name == "DoorOpenPanel 6" ){
             h = false;
         }
         if (collision.gameObject.name == "Tran1" && s1)//compara si hizo la colision con el objeto correcto
@@ -86,7 +98,7 @@ public class PlayerCeldas : MonoBehaviour
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.name == "DoorLocked")//compara si hizo la colision con el objeto correcto
+        if (Input.GetKeyDown(KeyCode.J) && collision.gameObject.name == "DoorLocked" && PlayerController.Equip == "Especiales_2")//compara si hizo la colision con el objeto correcto
         {
            
             Door.GetComponent<SpriteRenderer>().sprite = door;
@@ -94,6 +106,7 @@ public class PlayerCeldas : MonoBehaviour
             Destroy(c2);
             Destroy(c3);
             jail = false;
+            GUsed = true;
         }
         if (collision.gameObject.name == "DoorOpenPanel 1")//compara si hizo la colision con el objeto correcto
         {
