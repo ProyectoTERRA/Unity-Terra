@@ -15,7 +15,7 @@ public class Cutscenes : MonoBehaviour
         trans = GetComponent<GameObject>();
         trans.SetActive(true);
 
-        if (collision.gameObject.tag == "Player" && collision.gameObject.name == "trans")
+        if (collision.gameObject.tag == "Player" && collision.gameObject.tag == "trans")
         {
             jugador.SetActive(false);
         }
