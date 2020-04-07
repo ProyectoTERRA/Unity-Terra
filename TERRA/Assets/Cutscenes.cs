@@ -12,21 +12,10 @@ public class Cutscenes : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        trans = GetComponent<GameObject>();
-        trans.SetActive(true);
-
-        if (collision.gameObject.tag == "Player" && collision.gameObject.tag == "trans")
-        {
-            jugador.SetActive(false);
-        }
+        
         if (collision.gameObject.tag == "Player")
         {
             LoadNextLevel();
-        }
-
-        if (collision.gameObject.name == "trans")
-        {
-            LoadNextLevel2();
         }
     }
 
