@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class CambioEscenas : MonoBehaviour
+public class CambioLab : MonoBehaviour
 {
     public void CargarJuego(string jugar)
     {
@@ -15,13 +14,13 @@ public class CambioEscenas : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        
+
         if (collision.gameObject.name == "Jugador")
         {
-            Debug.Log("Colision Puerta");
-            SceneManager.LoadScene("CalleLab");
+            Debug.Log("Colision Lab");
+            SceneManager.LoadScene("Lab");
         }
-        
+
     }
 
 }
