@@ -48,7 +48,6 @@ public class List : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = Resources.Load("Esferas_0", typeof(Sprite)) as Sprite;
         if (select[index].name == "Hand")
         {
-            Debug.Log("AHHH");
             Equipado.GetComponent<SpriteRenderer>().sprite = null;
         }
         else
