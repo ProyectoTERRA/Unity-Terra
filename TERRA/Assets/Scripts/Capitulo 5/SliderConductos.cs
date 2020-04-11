@@ -27,7 +27,7 @@ public class SliderConductos : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             active = false;
-            if(Bar.value >= 20 && Bar.value <= 26)
+            if(Bar.value >= 21 && Bar.value <= 25)
             {
                 StartCoroutine(win());
             }
