@@ -37,6 +37,7 @@ public class PlayerConductos : MonoBehaviour
                 GameObject go = GameObject.Find("InvFunc");
                 radial radial = go.GetComponent<radial>();
                 radial.especiales[2]--;
+                GameController.ganzua--;
                 string normal = "ganzua";
                 if (radial.especiales[2] <= 0) list.SendMessage("remove", normal);
                 flag = false;

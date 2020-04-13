@@ -34,6 +34,17 @@ public class List : MonoBehaviour
         select.Add(esf_D);
         select.Add(esf_T);
 
+        if(GameController.ganzua > 0)
+        {
+            select.Add(esp_G);
+        }
+        if (GameController.normal > 0)
+        {
+            select.Add(esf_N);
+        }
+
+
+
 
         hrr = new List<string>();
         hrr.Add("esf_N");
