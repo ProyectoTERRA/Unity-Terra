@@ -62,6 +62,16 @@ public class radial : MonoBehaviour
 
     public int latas_recharge;
 
+    static public string n_Normal;
+    static public string n_Paraliz;
+    static public string n_Desac;
+    static public string n_Tranqui;
+    static public string n_Pesada;
+    static public string n_Energy;
+    static public string n_Health;
+    static public string n_Ganzua;
+
+
     // Start is called before the first frame update
 
     void Start()
@@ -128,6 +138,15 @@ public class radial : MonoBehaviour
             checkPl();
         }
 
+        n_Normal = num_Normal.text;
+        n_Paraliz = num_Paralizante.text;
+        n_Tranqui = num_Tranquilizante.text;
+        n_Desac = num_Desactivadora.text;
+        n_Pesada = num_Pesada.text;
+
+        n_Energy = num_CelEnergia.text;
+        n_Health = num_ObjCuracion.text;
+        n_Ganzua = num_Ganzuas.text;
     }
 
     public void checkPl()

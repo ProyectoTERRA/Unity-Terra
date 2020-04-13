@@ -14,6 +14,7 @@ public class List : MonoBehaviour
     public GameObject esp_E;
     public GameObject Hand;
 
+    public Text Count;
 
     public GameObject Equipado;
 
@@ -22,6 +23,8 @@ public class List : MonoBehaviour
     public static List<GameObject> select;
     public static int index;
     public int i;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +37,18 @@ public class List : MonoBehaviour
         select.Add(esf_D);
         select.Add(esf_T);
 
-        if(GameController.ganzua > 0)
+
+        /*----- PRUEBAS --------         
+        select.Add(esf_N);
+        select.Add(esf_H);
+
+        select.Add(esp_E);
+        select.Add(esp_H);
+        select.Add(esp_G);
+        */
+
+
+        if (GameController.ganzua > 0)
         {
             select.Add(esp_G);
         }
@@ -71,6 +85,7 @@ public class List : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         i = select.Count;
         if (Input.GetKeyDown(KeyCode.V))
         {
@@ -111,12 +126,59 @@ public class List : MonoBehaviour
                 Equipado.GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
             }
 
-        
 
-       
+
         GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
         PlayerController.Equip = select[index].name;
         Debug.Log("Equipado: "+PlayerController.Equip);
+
+
+
+        if (PlayerController.Equip == "Esfera Normal")
+        {
+            Count.text = radial.n_Normal;
+            Count.enabled = true;
+            
+        }
+        else if (PlayerController.Equip == "Esfera Paraliz")
+        {
+            Count.text = radial.n_Paraliz;
+            Count.enabled = true;
+        }
+        else if (PlayerController.Equip == "Esfera Tranqui")
+        {
+            Count.text = radial.n_Tranqui;
+            Count.enabled = true;
+        }
+        else if (PlayerController.Equip == "Esfera Desac")
+        {
+            Count.text = radial.n_Desac;
+            Count.enabled = true;
+        }
+        else if (PlayerController.Equip == "Esfera Pesada")
+        {
+            Count.text = radial.n_Pesada;
+            Count.enabled = true;
+        }
+        else if (PlayerController.Equip == "Especiales_0")
+        {
+            Count.text = radial.n_Energy;
+            Count.enabled = true;
+        }
+        else if (PlayerController.Equip == "Especiales_1")
+        {
+            Count.text = radial.n_Health;
+            Count.enabled = true;
+        }
+        else if (PlayerController.Equip == "Especiales_2")
+        {
+            Count.text = radial.n_Ganzua;
+            Count.enabled = true;
+        }
+        else
+        {
+            Count.enabled = false;
+        }
     }
 
     public void add(string n)
