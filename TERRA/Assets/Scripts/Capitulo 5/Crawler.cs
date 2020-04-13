@@ -52,14 +52,5 @@ public class Crawler : MonoBehaviour
             col.SendMessage("RATAKnockBack", transform.position.x);
         }
     }
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.name == "EnemyCollider")
-        {
-            speed = -speed;
-            rbd2.velocity = new Vector2(speed, rbd2.velocity.y);
-            Debug.Log("RATA");
-        }
-       
-    }
+    
 }
