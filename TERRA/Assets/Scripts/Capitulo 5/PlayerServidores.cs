@@ -10,6 +10,8 @@ public class PlayerServidores : MonoBehaviour
     [SerializeField] private GameObject Guard;
     [SerializeField] private GameObject Door1;
     [SerializeField] private GameObject Door2;
+
+    [SerializeField] private GameObject Energy;
     public Sprite door;
     private bool ActM;
     static public bool dies;
@@ -43,6 +45,8 @@ public class PlayerServidores : MonoBehaviour
             radial.especiales[0]--;
             string normal = "energy";
             if (radial.especiales[0] <= 0) list.SendMessage("remove", normal);
+
+            Energy.GetComponent<SpriteRenderer>().color = Color.white;
 
             ActM = false;
         }
