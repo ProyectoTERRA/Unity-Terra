@@ -1,0 +1,34 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Beam_Turret : MonoBehaviour
+{
+    private float beam_speed;
+    // Start is called before the first frame update
+    void Start()
+    {
+        beam_speed = Random.Range(8f, 18f);
+        GetComponent<Rigidbody2D>().velocity = new Vector3(-beam_speed, 0, 0);
+        Debug.Log(GetComponent<Rigidbody2D>().velocity);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+            
+            collision.SendMessage("RATAKnockBack", transform.position.x);
+            Destroy(gameObject);
+        }
+    }
+}
