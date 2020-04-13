@@ -117,6 +117,8 @@ public class List : MonoBehaviour
         if (n == "tranqui") select.Add(esf_T);
         if (n == "heavy") select.Add(esf_H);
         if (n == "ganzua") { Debug.Log("Recibido"); select.Add(esp_G); }
+        if (n == "health") { Debug.Log("Recibido"); select.Add(esp_H); }
+        if (n == "energy") { Debug.Log("Recibido"); select.Add(esp_E); }
     }
 
     public void remove(string n)
@@ -127,6 +129,8 @@ public class List : MonoBehaviour
         if (n == "tranqui") select.Remove(esf_T);
         if (n == "heavy") select.Remove(esf_H);
         if (n == "ganzua") { Debug.Log("Recibido"); select.Remove(esp_G); }
+        if (n == "health") { Debug.Log("Recibido"); select.Remove(esp_H); }
+        if (n == "energy") { Debug.Log("Recibido"); select.Remove(esp_E); }
         index = 0;
         Equipado.GetComponent<SpriteRenderer>().sprite = null;
 

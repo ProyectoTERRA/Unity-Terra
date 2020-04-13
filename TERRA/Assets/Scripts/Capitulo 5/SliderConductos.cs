@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class SliderConductos : MonoBehaviour
 {
@@ -47,6 +47,22 @@ public class SliderConductos : MonoBehaviour
         }
 
     }
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+
+
+        if (collision.gameObject.name == "Exit")//compara si hizo la colision con el objeto correcto
+        {
+
+            Debug.Log("Salido");
+            SceneManager.LoadScene("Sala de Servidores");
+
+
+
+        }
+    }
+
     public IEnumerator reset()
     {
         yield return new WaitForSeconds(3f);

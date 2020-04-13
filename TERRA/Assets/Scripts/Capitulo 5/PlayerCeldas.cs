@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCeldas : MonoBehaviour
 {
@@ -168,6 +169,14 @@ public class PlayerCeldas : MonoBehaviour
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
+        if (collision.gameObject.name == "Exit")//compara si hizo la colision con el objeto correcto
+        {
+
+            Debug.Log("Salido");
+            SceneManager.LoadScene("Conductos");
+
+
+        }
         if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.name == "DoorLocked" && Complete_mini)//compara si hizo la colision con el objeto correcto
         {
             opening = true;

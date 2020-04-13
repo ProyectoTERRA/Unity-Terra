@@ -488,6 +488,9 @@ public class radial : MonoBehaviour
 
     public void Fab_CE()
     {
+        string normal = "energy";
+        Debug.Log("Enviar");
+        if (especiales[0] == 0) list.SendMessage("add", normal);
         basura[0] = basura[0] - 1;
         basura[4] = basura[4] - 1;
         basura[5] = basura[5] - 1;
@@ -501,6 +504,9 @@ public class radial : MonoBehaviour
 
     public void Fab_OC()
     {
+        string normal = "health";
+        Debug.Log("Enviar");
+        if (especiales[1] == 0) list.SendMessage("add", normal);
         basura[3] = basura[3] - 3;
         basura[4] = basura[4] - 1;
         basura[2] = basura[2] - 1;
@@ -515,7 +521,7 @@ public class radial : MonoBehaviour
     {
         string normal = "ganzua";
         Debug.Log("Enviar");
-        if (esfera[0] == 0) list.SendMessage("add", normal);
+        if (especiales[2] == 0) list.SendMessage("add", normal);
         basura[5] = basura[5] - 2;
         especiales[2]++;
         GameController.ganzua++;
