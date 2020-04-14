@@ -24,25 +24,23 @@ public class Turret : MonoBehaviour
 
     IEnumerator Active()
     {
-        Anim.Rebind();
-        Anim.enabled = true;
+        if (PlayerCorredores.turret)
+        {
+            Anim.Rebind();
+            Anim.enabled = true;
 
-        Anim.Play("Fire_Turret", -1, 0f);
+            Anim.Play("Fire_Turret", -1, 0f);
 
 
-        Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
-        yield return new WaitForSeconds(.4f);
-        Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
-        yield return new WaitForSeconds(.4f);
-        Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
-        yield return new WaitForSeconds(.4f);
-        Anim.enabled = false;
+            Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
+            yield return new WaitForSeconds(.4f);
+            Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
+            yield return new WaitForSeconds(.4f);
+            Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
+            yield return new WaitForSeconds(.4f);
+            Anim.enabled = false;
+        }
         yield return new WaitForSeconds(2.6f);
-
-
-
         StartCoroutine(Active());
-
-
     }
 }

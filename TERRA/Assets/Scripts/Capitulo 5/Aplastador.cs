@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Aplastador : MonoBehaviour
 {
+    [SerializeField] private GameObject YellowCard_OBJ;
     // Start is called before the first frame update
     public Transform target;
     public float speed;
@@ -45,6 +46,12 @@ public class Aplastador : MonoBehaviour
         {
             Debug.Log("Ha hecho colision con el jugador");
             col.SendMessage("RATAKnockBack", transform.position.x);
+        }
+        if (col.gameObject.name == "DummyGuard")
+        {
+
+            Destroy(col.gameObject);
+            YellowCard_OBJ.SetActive(true);
         }
     }
 
