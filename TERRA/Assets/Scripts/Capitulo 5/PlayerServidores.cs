@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerServidores : MonoBehaviour
 {
@@ -75,7 +76,9 @@ public class PlayerServidores : MonoBehaviour
         }
         if (collision.gameObject.name == "DoorOpenPanel 1" && Input.GetKeyDown(KeyCode.E) && MinijuegoServidores.win)
         {
+
             Debug.Log("NEEEEEEEEEEEEEXT");
+            SceneManager.LoadScene("Corredores");
 
         }
 

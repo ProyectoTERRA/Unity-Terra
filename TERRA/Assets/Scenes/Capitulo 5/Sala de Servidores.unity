@@ -5999,12 +5999,12 @@ MonoBehaviour:
     m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 4
-    m_AlignByGeometry: 1
-    m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_AlignByGeometry: 0
+    m_RichText: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 0
-  m_Text: 60
+  m_Text: 
 --- !u!222 &956423404
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16522,16 +16522,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1496034822}
     m_Modifications:
-    - target: {fileID: 1372617971661776522, guid: ae5784e8997662f49833c0d09ddfd43f,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1496034821}
     - target: {fileID: 6571940136628346499, guid: ae5784e8997662f49833c0d09ddfd43f,
         type: 3}
       propertyPath: m_Name
       value: Herramienta - HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 1372617971661776522, guid: ae5784e8997662f49833c0d09ddfd43f,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1496034821}
     - target: {fileID: 6571940136628346501, guid: ae5784e8997662f49833c0d09ddfd43f,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float SideVelocity = 10f;
 
     public bool grounded;
+    static public bool groundCAP5;
     public bool wall;
     public float JumpPower = 6.5f;
 
@@ -34,6 +35,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
+        groundCAP5 = true;
         transform.localScale = new Vector3(-x, y, z);
         scal = scale;
         side = SIDE;
@@ -54,7 +57,7 @@ public class PlayerController : MonoBehaviour
         //Doble Salto
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (grounded)
+            if (grounded && groundCAP5)
             {
                 jump = true;
                 doubleJump = true;

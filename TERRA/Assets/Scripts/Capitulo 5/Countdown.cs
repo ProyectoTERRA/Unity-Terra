@@ -14,7 +14,7 @@ public class Countdown : MonoBehaviour
     {
         Act = true;
         ZERO = false;
-        T = 99;
+        T = 150;
         
     }
 
