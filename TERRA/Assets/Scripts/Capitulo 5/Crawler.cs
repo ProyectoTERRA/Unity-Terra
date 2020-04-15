@@ -46,8 +46,9 @@ public class Crawler : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player"&& PlayerController.movement)
         {
+            Heart_Bar.Phearts--;
             Debug.Log("Ha hecho colision con el jugador");
             col.SendMessage("RATAKnockBack", transform.position.x);
         }

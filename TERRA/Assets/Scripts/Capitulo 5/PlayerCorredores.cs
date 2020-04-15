@@ -38,6 +38,7 @@ public class PlayerCorredores : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Heart_Bar.Phearts = 6;
         turret = false;
         s1 = true;
         s2 = false;

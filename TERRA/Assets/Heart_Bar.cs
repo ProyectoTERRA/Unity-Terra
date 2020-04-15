@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Heart_Bar : MonoBehaviour
 {
@@ -45,6 +47,7 @@ public class Heart_Bar : MonoBehaviour
     public int type;
     public int life;
     public int hearts;
+    public static int Phearts;
 
     private int Ls1 = 6;
     private int Ls2 = 8;
@@ -54,11 +57,32 @@ public class Heart_Bar : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(GameController.start);
+        if (GameController.start)
+        {
+            life = GameController.life;
 
+            
+        }
+        else
+        {
+            GameController.life = 3;
+            life = GameController.life;
+            GameController.start = true;
+        }
+
+        
 
     }
     void Update()
     {
+        hearts = Phearts;
+
+        if ( hearts == 0 )
+        {
+            StartCoroutine(DIE());
+            
+        }
 
         switch (type)
         {
@@ -78,11 +102,12 @@ public class Heart_Bar : MonoBehaviour
 
                     if (hearts <= 0 && life > 1)
                     {
-                        hearts = Ls1;
-                        life--;
+                        //hearts = Ls1;
+
                     }
                     else if (hearts <= 0 && life <= 1)
                     {
+
                         life = 0;
                     }
 
@@ -338,5 +363,13 @@ public class Heart_Bar : MonoBehaviour
         {
 
         }
+    }
+    public IEnumerator DIE()
+    {
+        yield return new WaitForSeconds(1f);
+        GameController.life--;
+        PlayerController.movement = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 }
