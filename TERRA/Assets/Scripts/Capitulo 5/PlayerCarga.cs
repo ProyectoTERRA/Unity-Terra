@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class PlayerCarga : MonoBehaviour
 {
     [SerializeField] private GameObject LIST;
@@ -328,6 +328,9 @@ public class PlayerCarga : MonoBehaviour
         yield return new WaitForSeconds(3f);
         BYE.SetActive(false);
         ExitGate.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Caída");
+
 
     }
     public IEnumerator PL1()
