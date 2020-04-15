@@ -91,6 +91,7 @@ public class PlayerServidores : MonoBehaviour
         Destroy(Mini);
         Guard.SetActive(true);
 
+
     }
   
     public IEnumerator push()
@@ -98,6 +99,9 @@ public class PlayerServidores : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
         gameObject.SetActive(false);
+        Debug.Log("puttt");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
 
     }
 }

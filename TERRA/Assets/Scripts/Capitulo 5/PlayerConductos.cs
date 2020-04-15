@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class PlayerConductos : MonoBehaviour
 {
     [SerializeField] private GameObject camera;
@@ -65,6 +65,14 @@ public class PlayerConductos : MonoBehaviour
             GetComponent<PlayerController>().enabled = false;
             ActS.enabled = true;
             Slider.SetActive(true);
+
+        }
+        if (collision.gameObject.name == "Die")//compara si hizo la colision con el objeto correcto
+        {
+
+            Debug.Log("Die");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
 
         }
     }

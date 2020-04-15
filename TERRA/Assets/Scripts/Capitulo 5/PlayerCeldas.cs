@@ -233,6 +233,7 @@ public class PlayerCeldas : MonoBehaviour
 
             Prueba.die = true;
             dies = true;
+
             GetComponent<PlayerController>().enabled = false;
             transform.position = new Vector3(transform.position.x, -1.4f);
 
@@ -279,6 +280,8 @@ public class PlayerCeldas : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
         gameObject.SetActive(false);
-   
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCaida : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class PlayerCaida : MonoBehaviour
         if (collision.gameObject.name == "FINISH")
         {
             Debug.Log("Adioooooos");
+            SceneManager.LoadScene("Aterrizaje");   
         }
     }
 
