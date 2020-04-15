@@ -56,6 +56,10 @@ public class List : MonoBehaviour
         {
             select.Add(esf_N);
         }
+        if (GameController.energia > 0)
+        {
+            select.Add(esp_E);
+        }
 
 
 
@@ -130,7 +134,7 @@ public class List : MonoBehaviour
 
         GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
         PlayerController.Equip = select[index].name;
-        Debug.Log("Equipado: "+PlayerController.Equip);
+        //Debug.Log("Equipado: "+PlayerController.Equip);
 
 
 

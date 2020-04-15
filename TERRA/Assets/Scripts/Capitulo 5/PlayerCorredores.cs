@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerCorredores : MonoBehaviour
 {
@@ -102,6 +104,7 @@ public class PlayerCorredores : MonoBehaviour
             GameObject go = GameObject.Find("InvFunc");
             radial radial = go.GetComponent<radial>();
             radial.especiales[0]--;
+            GameController.energia--;
             string normal = "energy";
             if (radial.especiales[0] <= 0) LIST.SendMessage("remove", normal);
 
@@ -182,6 +185,7 @@ public class PlayerCorredores : MonoBehaviour
         if (collision.gameObject.name == "FINAL" && FINAL && Input.GetKeyDown(KeyCode.E))//compara si hizo la colision con el objeto correcto
         {
             Debug.Log("A Dormir.............");
+            SceneManager.LoadScene("Sala de Carga");
         }
         //------------------ENERGY----------------------
         if (collision.gameObject.name == "Energy_ALMA" && Input.GetKeyDown(KeyCode.J) && PlayerController.Equip == "Especiales_0" && !Ener_Al)//compara si hizo la colision con el objeto correcto

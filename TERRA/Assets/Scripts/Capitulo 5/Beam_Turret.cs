@@ -10,7 +10,7 @@ public class Beam_Turret : MonoBehaviour
     {
         beam_speed = Random.Range(8f, 18f);
         GetComponent<Rigidbody2D>().velocity = new Vector3(-beam_speed, 0, 0);
-        Debug.Log(GetComponent<Rigidbody2D>().velocity);
+
     }
 
     // Update is called once per frame

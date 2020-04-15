@@ -15,9 +15,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rbd2;
     private Animator animacion;
     private SpriteRenderer spr;
-    private bool jump;
+    static public bool jump;
     private bool doubleJump;
-    private bool movement = true;
+    static public bool movement = true;
 
     public float x;
     public float y;
