@@ -91,7 +91,7 @@ public class List : MonoBehaviour
     {
 
         i = select.Count;
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (index >= 0 && index <= i)
             {
@@ -109,7 +109,7 @@ public class List : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
 
             if (index >= 0 && index <= i)
