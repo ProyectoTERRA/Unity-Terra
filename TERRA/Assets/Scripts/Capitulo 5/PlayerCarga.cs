@@ -9,6 +9,14 @@ public class PlayerCarga : MonoBehaviour
 
     [SerializeField] private GameObject ExitGate;
 
+    [SerializeField] private GameObject Key_Ener1;
+    [SerializeField] private GameObject Key_Ener2;
+    [SerializeField] private GameObject Key_Ener3;
+    [SerializeField] private GameObject Key_Pl1;
+    [SerializeField] private GameObject Key_Pl2;
+    [SerializeField] private GameObject Key_Pl3;
+    [SerializeField] private GameObject Key_Pack;
+
     [SerializeField] private GameObject Palanca_1;
     [SerializeField] private GameObject Palanca_2;
     [SerializeField] private GameObject Palanca_3;
@@ -46,6 +54,13 @@ public class PlayerCarga : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Key_Ener1.SetActive(false);
+        Key_Ener2.SetActive(false);
+        Key_Ener3.SetActive(false);
+        Key_Pl1.SetActive(false);
+        Key_Pl2.SetActive(false);
+        Key_Pl3.SetActive(false);
+
         Heart_Bar.Phearts = 6;
 
         countPL = 0;
@@ -121,6 +136,7 @@ public class PlayerCarga : MonoBehaviour
         }
         if(Slide_1.value >= 50 && !cAct1)
         {
+            Key_Pl1.SetActive(false);
             countPL++;
             PL1_Ready = true;
             SlideV_1.SetActive(false);
@@ -129,6 +145,7 @@ public class PlayerCarga : MonoBehaviour
         }
         if (Slide_2.value >= 50 && !cAct2)
         {
+            Key_Pl2.SetActive(false);
             countPL++;
             PL2_Ready = true;
             SlideV_2.SetActive(false);
@@ -137,6 +154,7 @@ public class PlayerCarga : MonoBehaviour
         }
         if (Slide_3.value >= 50 && !cAct3)
         {
+            Key_Pl3.SetActive(false);
             countPL++;
             PL3_Ready = true;
             SlideV_3.SetActive(false);
@@ -184,6 +202,8 @@ public class PlayerCarga : MonoBehaviour
         }
         if (collision.gameObject.name == "Energy_1" && Input.GetKeyDown(KeyCode.J) && PlayerController.Equip == "Especiales_0" && !Ener_1)//compara si hizo la colision con el objeto correcto
         {
+            Key_Ener1.SetActive(false);
+            Key_Pl3.SetActive(true);
             dEnergy = true;
             Energy_1.GetComponent<SpriteRenderer>().color = Color.white;
             Led_3.GetComponent<SpriteRenderer>().sprite = LED_ON;
@@ -192,6 +212,8 @@ public class PlayerCarga : MonoBehaviour
 
         if (collision.gameObject.name == "Energy_2" && Input.GetKeyDown(KeyCode.J) && PlayerController.Equip == "Especiales_0" && !Ener_2)//compara si hizo la colision con el objeto correcto
         {
+            Key_Ener2.SetActive(false);
+            Key_Pl2.SetActive(true);
             dEnergy = true;
             Energy_2.GetComponent<SpriteRenderer>().color = Color.white;
             Led_2.GetComponent<SpriteRenderer>().sprite = LED_ON;
@@ -199,6 +221,8 @@ public class PlayerCarga : MonoBehaviour
         }
         if (collision.gameObject.name == "Energy_3" && Input.GetKeyDown(KeyCode.J) && PlayerController.Equip == "Especiales_0" && !Ener_3)//compara si hizo la colision con el objeto correcto
         {
+            Key_Ener3.SetActive(false);
+            Key_Pl1.SetActive(true);
             dEnergy = true;
             Energy_3.GetComponent<SpriteRenderer>().color = Color.white;
             Led_1.GetComponent<SpriteRenderer>().sprite = LED_ON;
@@ -266,6 +290,12 @@ public class PlayerCarga : MonoBehaviour
             Energy_1.SetActive(true);
             Energy_2.SetActive(true);
             Energy_3.SetActive(true);
+
+            Key_Ener1.SetActive(true);
+            Key_Ener2.SetActive(true);
+            Key_Ener3.SetActive(true);
+
+            Key_Pack.SetActive(false);
 
             NoX.SetActive(true);
 
