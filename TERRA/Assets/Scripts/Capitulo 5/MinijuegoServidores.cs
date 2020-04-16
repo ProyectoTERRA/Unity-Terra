@@ -16,6 +16,10 @@ public class MinijuegoServidores : MonoBehaviour, IBeginDragHandler, IDragHandle
     [SerializeField] private GameObject Mini2;
 
     [SerializeField] private GameObject Mini3;
+
+    [SerializeField] private GameObject Key_Mouse1;
+    [SerializeField] private GameObject Key_Mouse2;
+    [SerializeField] private GameObject Key_Mouse3;
     public float Speed;
     Vector3 target;
 
@@ -35,6 +39,11 @@ public class MinijuegoServidores : MonoBehaviour, IBeginDragHandler, IDragHandle
         G1 = true;
         G2 = false;
         G3 = false;
+
+        Key_Mouse1.SetActive(true);
+        Key_Mouse2.SetActive(true);
+        Key_Mouse3.SetActive(true);
+
         Mini1.SetActive(true);
         Mini2.SetActive(false);
         Mini3.SetActive(false);
@@ -57,7 +66,9 @@ public class MinijuegoServidores : MonoBehaviour, IBeginDragHandler, IDragHandle
         {
             drag = true;
         }
-
+        Key_Mouse1.SetActive(false);
+        Key_Mouse2.SetActive(false);
+        Key_Mouse3.SetActive(false);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -76,16 +87,20 @@ public class MinijuegoServidores : MonoBehaviour, IBeginDragHandler, IDragHandle
             Point.GetComponent<CircleCollider2D>().radius = 0.02f;
             //Point.transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
             GetComponent<CircleCollider2D>().radius = 0.02f;
+            
         }
 
     }
     public void OnEndDrag(PointerEventData eventData)
     {
+        Key_Mouse1.SetActive(true);
+        Key_Mouse2.SetActive(true);
+        Key_Mouse3.SetActive(true);
         Point.transform.position = new Vector3(inx, iny, 0f);
         transform.position = new Vector3(inx, iny, 0f);
         Point.GetComponent<CircleCollider2D>().radius = 0.105f;
         GetComponent<CircleCollider2D>().radius = 0.105f;
-
+        
     }
     /*
     void OnMouseDrag()
@@ -101,6 +116,11 @@ public class MinijuegoServidores : MonoBehaviour, IBeginDragHandler, IDragHandle
     // Update is called once per frame
     void Update()
     {
+     
+   
+     
+            
+        
         Debug.Log("E: " + enable + " - D: " + drag);
         //Point.transform.position = transform.position;
         float distancia = Vector3.Distance(Point.transform.position, transform.position);
@@ -115,9 +135,8 @@ public class MinijuegoServidores : MonoBehaviour, IBeginDragHandler, IDragHandle
             transform.position = Vector3.MoveTowards(transform.position, target, (2f / (distancia)) * Time.deltaTime);
             Debug.Log((3f / (distancia)) * Time.deltaTime);
 
-
+           
         }
-
 
 
     }
@@ -136,7 +155,6 @@ public class MinijuegoServidores : MonoBehaviour, IBeginDragHandler, IDragHandle
         {
 
             enable = true;
-
 
         }
         else
@@ -203,6 +221,9 @@ public class MinijuegoServidores : MonoBehaviour, IBeginDragHandler, IDragHandle
         //Point.transform.position = new Vector3(inx, iny, 0f);
         Point.GetComponent<CircleCollider2D>().radius = 0.105f;
         GetComponent<CircleCollider2D>().radius = 0.105f;
+        Key_Mouse1.SetActive(true);
+        Key_Mouse2.SetActive(true);
+        Key_Mouse3.SetActive(true);
     }
     IEnumerator Dr()
     {

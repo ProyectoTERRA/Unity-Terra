@@ -7,6 +7,9 @@ public class PlayerServidores : MonoBehaviour
 {
     [SerializeField] private GameObject list;
 
+    [SerializeField] private GameObject Key_Energy;
+    [SerializeField] private GameObject Key_Door;
+
     [SerializeField] private GameObject Mini;
     [SerializeField] private GameObject Guard;
     [SerializeField] private GameObject Door1;
@@ -19,9 +22,11 @@ public class PlayerServidores : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Heart_Bar.Phearts = 6;
         ActM = false;
         dies = false;
 
+        Key_Door.SetActive(false);
         Mini.SetActive(false);
 
     }
@@ -37,6 +42,7 @@ public class PlayerServidores : MonoBehaviour
         }
         if (MinijuegoServidores.win)
         {
+            Key_Door.SetActive(true);
             Door2.GetComponent<SpriteRenderer>().sprite = door;
         }
         if (ActM)
@@ -57,6 +63,7 @@ public class PlayerServidores : MonoBehaviour
     {
         if(collision.gameObject.name == "Activator" && Input.GetKeyDown(KeyCode.J) && PlayerController.Equip == "Especiales_0")
         {
+            Key_Energy.SetActive(false);
             ActM = true;
            
             Mini.SetActive(true);
