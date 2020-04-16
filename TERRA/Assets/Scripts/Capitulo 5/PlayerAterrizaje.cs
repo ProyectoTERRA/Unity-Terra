@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerAterrizaje : MonoBehaviour
 {
+    [SerializeField] private GameObject Key_Diana;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Heart_Bar.Phearts = 6;
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class PlayerAterrizaje : MonoBehaviour
         {
             Debug.Log("Cap6");
 
-
+            Key_Diana.SetActive(false);
         }
       
     }
