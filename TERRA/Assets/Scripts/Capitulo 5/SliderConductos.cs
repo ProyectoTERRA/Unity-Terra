@@ -13,6 +13,7 @@ public class SliderConductos : MonoBehaviour
 
     void Start()
     {
+
         dir = true;
         Target = false;
         active = true;
