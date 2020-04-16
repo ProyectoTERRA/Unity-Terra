@@ -38,7 +38,7 @@ public class Prueba : MonoBehaviour
     {
 
 
-        if (!idle)
+        if (!idle )
         {
             rbd2.AddForce(Vector2.right * speed);
             float limetedSpeed = Mathf.Clamp(rbd2.velocity.x, -maxspeed, maxspeed);

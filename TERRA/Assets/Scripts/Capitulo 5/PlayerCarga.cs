@@ -46,6 +46,8 @@ public class PlayerCarga : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Heart_Bar.Phearts = 6;
+
         countPL = 0;
         cAct1= false;
         cAct2 = false;

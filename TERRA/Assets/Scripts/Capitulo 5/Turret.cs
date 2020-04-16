@@ -9,8 +9,11 @@ public class Turret : MonoBehaviour
     [SerializeField] private GameObject Bullet;
     [SerializeField] private GameObject canon;
     private Animator Anim;
+
+    static public bool act;
     void Start()
     {
+        act = true;
         Anim = GetComponent<Animator>();
         StartCoroutine(Active());
     }
@@ -24,7 +27,7 @@ public class Turret : MonoBehaviour
 
     IEnumerator Active()
     {
-        if (PlayerCorredores.turret)
+        if (PlayerCorredores.turret && !EnemigosEsferas.effecting && act)
         {
             Anim.Rebind();
             Anim.enabled = true;
@@ -32,11 +35,12 @@ public class Turret : MonoBehaviour
             Anim.Play("Fire_Turret", -1, 0f);
 
 
-            Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
+            
+            if (!EnemigosEsferas.effecting) Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
             yield return new WaitForSeconds(.4f);
-            Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
+            if (!EnemigosEsferas.effecting) Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
             yield return new WaitForSeconds(.4f);
-            Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
+            if (!EnemigosEsferas.effecting) Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
             yield return new WaitForSeconds(.4f);
             Anim.enabled = false;
         }

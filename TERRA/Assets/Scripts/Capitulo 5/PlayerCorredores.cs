@@ -13,6 +13,18 @@ public class PlayerCorredores : MonoBehaviour
     [SerializeField] private GameObject Fake_APL;
     [SerializeField] private GameObject Legit_APL;
 
+    [SerializeField] private GameObject Key_EnergyALMA;
+    [SerializeField] private GameObject Key_EnergyFinal;
+    [SerializeField] private GameObject Key_EnergyC1;
+    [SerializeField] private GameObject Key_EnergyC2;
+    [SerializeField] private GameObject Key_YellowCardOBJ;
+    [SerializeField] private GameObject Key_GreenCardOBJ;
+    [SerializeField] private GameObject Key_YellowCardACT;
+    [SerializeField] private GameObject Key_GreenCardACT;
+    [SerializeField] private GameObject Key_APL;
+    [SerializeField] private GameObject Key_Door1;
+    [SerializeField] private GameObject Key_Door2;
+    [SerializeField] private GameObject Key_Capsule;
 
     [SerializeField] private GameObject YellowCard_ACT;
     [SerializeField] private GameObject GreenCard_ACT;
@@ -34,10 +46,17 @@ public class PlayerCorredores : MonoBehaviour
     public Sprite Inter_ON, Door_ON, Door_Access, Capsule_OPEN, Door_OPEN;
 
     static public bool s1, s2, s3, turret;
-    private bool YellowPass, GreenPass, Ener_Al, Ener_Fi, Ener_C1, Ener_C2, Act_Guard, FINAL, ALMA, YT, GT, dYT, dGT, dEnergy, PassRoom, PassCorr, Capsule;
+    static public bool YellowPass, GreenPass, Ener_Al, Ener_Fi, Ener_C1, Ener_C2, Act_Guard, FINAL, ALMA, YT, GT, dYT, dGT, dEnergy, PassRoom, PassCorr, Capsule;
     // Start is called before the first frame update
     void Start()
     {
+        Key_EnergyALMA.SetActive(true);
+
+        Key_YellowCardOBJ.SetActive(false);
+        Key_Capsule.SetActive(false);
+        Key_Door1.SetActive(false);
+        Key_Door2.SetActive(false);
+
         Heart_Bar.Phearts = 6;
         turret = false;
         s1 = true;
@@ -68,37 +87,45 @@ public class PlayerCorredores : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Act_Guard)
         {
+            Key_APL.SetActive(false);
             Destroy(Fake_APL);
             Legit_APL.SetActive(true);
             Act_Guard = false;
         }
         if (YT)
         {
+            Key_YellowCardOBJ.SetActive(false);
             List.select.Add(YellowCard_INV);
             Destroy(YellowCard_OBJ);
             YT = false;
         }
         if (GT)
         {
+            Key_GreenCardOBJ.SetActive(false);
             List.select.Add(GreenCard_INV);
             Destroy(GreenCard_OBJ);
             GT = false;
         }
         if (dYT)
         {
+            Key_YellowCardACT.SetActive(false);
             YellowCard_ACT.GetComponent<SpriteRenderer>().color = Color.white; 
             List.select.Remove(YellowCard_INV);
             List.index = 0;
             dYT = false;
+
         }
         if (dGT)
         {
+            Key_GreenCardACT.SetActive(false);
             GreenCard_ACT.GetComponent<SpriteRenderer>().color = Color.white;
             List.select.Remove(GreenCard_INV);
             List.index = 0;
             dGT = false;
+            Key_Door1.SetActive(true);
         }
         if (dEnergy)
         {
@@ -116,6 +143,7 @@ public class PlayerCorredores : MonoBehaviour
 
         if(GreenPass && Ener_Fi)
         {
+            Key_Door2.SetActive(true);
             Door_FINAL.GetComponent<SpriteRenderer>().sprite = Door_Access;
             FINAL = true;
             GreenPass = false;
@@ -124,6 +152,7 @@ public class PlayerCorredores : MonoBehaviour
 
         if (YellowPass && Ener_Al)
         {
+            Key_Door1.SetActive(true);
             Door_ALMA.GetComponent<SpriteRenderer>().sprite = Door_Access;
             ALMA = true;
             YellowPass = false;
@@ -146,16 +175,28 @@ public class PlayerCorredores : MonoBehaviour
         if(Ener_C1 && Ener_C2)
         {
             CAPSULE.GetComponent<SpriteRenderer>().sprite = Capsule_OPEN;
+            Key_Capsule.SetActive(true);
+            Capsule = true;
             Ener_C1 = false;
             Ener_C2 = false;
         }
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
+        if (collision.gameObject.name == "DummyGuard")
+        {
+            EnemyKnockBack(transform.position.x);
+        }
         if (collision.gameObject.name == "SwitchAP" && Input.GetKeyDown(KeyCode.E))//compara si hizo la colision con el objeto correcto
         {
+            Key_YellowCardOBJ.SetActive(true);
             Inter_Guard.GetComponent<SpriteRenderer>().sprite = Inter_ON;
+            
             Act_Guard = true;
+        }
+        if (collision.gameObject.name == "Capsule" && Input.GetKeyDown(KeyCode.E) && Capsule)//compara si hizo la colision con el objeto correcto
+        {
+            Key_Capsule.SetActive(false);
         }
         if (collision.gameObject.name == "YellowCard_OBJ" && Input.GetKeyDown(KeyCode.E))//compara si hizo la colision con el objeto correcto
         {
@@ -194,6 +235,8 @@ public class PlayerCorredores : MonoBehaviour
             dEnergy = true;
             Energy_ALMA.GetComponent<SpriteRenderer>().color = Color.white;
             Door_ALMA.GetComponent<SpriteRenderer>().sprite = Door_ON;
+
+            Key_EnergyALMA.SetActive(false);
             Ener_Al = true;
         }
 
@@ -202,6 +245,8 @@ public class PlayerCorredores : MonoBehaviour
             dEnergy = true;
             Energy_FINAL.GetComponent<SpriteRenderer>().color = Color.white;
             Door_FINAL.GetComponent<SpriteRenderer>().sprite = Door_ON;
+
+            Key_EnergyFinal.SetActive(false);
             Ener_Fi = true;
         }
 
@@ -209,12 +254,14 @@ public class PlayerCorredores : MonoBehaviour
         {
             dEnergy = true;
             Energy_C1.GetComponent<SpriteRenderer>().color = Color.white;
+            Key_EnergyC1.SetActive(false);
             Ener_C1 = true;
         }
         if (collision.gameObject.name == "Energy_C2" && Input.GetKeyDown(KeyCode.J) && PlayerController.Equip == "Especiales_0" && !Ener_C2)//compara si hizo la colision con el objeto correcto
         {
             dEnergy = true;
             Energy_C2.GetComponent<SpriteRenderer>().color = Color.white;
+            Key_EnergyC2.SetActive(false);
             Ener_C2 = true;
         }
         //------------------------------------------------------------------------
@@ -261,5 +308,27 @@ public class PlayerCorredores : MonoBehaviour
 
 
         }
+    }
+
+    public void EnemyKnockBack(float enemyPosX)
+    {
+        PlayerController.jump = true;
+
+        float side = Mathf.Sign(enemyPosX - transform.position.x);
+
+        GetComponent<Rigidbody2D>().AddForce(Vector2.left * side * 1, ForceMode2D.Impulse);
+        PlayerController.movement = false;
+
+
+        Invoke("EnableMovement", 0.7f);
+
+
+
+        GetComponent<SpriteRenderer>().color = Color.red;
+    }
+    void EnableMovement()
+    {
+        PlayerController.movement = true;
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

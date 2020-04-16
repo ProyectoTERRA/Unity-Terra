@@ -41,6 +41,8 @@ public class PlayerCeldas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Heart_Bar.Phearts = 6;
+
         dies = false;
         Guard1.GetComponent<Prueba>().enabled = false;
         Guard2.GetComponent<Prueba>().enabled = false;
@@ -169,7 +171,7 @@ public class PlayerCeldas : MonoBehaviour
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Exit")//compara si hizo la colision con el objeto correcto
+        if (collision.gameObject.name == "Exit" && Input.GetKeyDown(KeyCode.E))//compara si hizo la colision con el objeto correcto
         {
 
             Debug.Log("Salido");

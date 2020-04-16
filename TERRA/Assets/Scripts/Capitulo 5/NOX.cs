@@ -50,6 +50,14 @@ public class NOX : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (EnemigosEsferas.effecting || hiting)
+        {
+            Back.SetActive(false);
+        }
+        if(!EnemigosEsferas.effecting && !hiting)
+        {
+            Back.SetActive(true);
+        }
 
         if(PlayerCarga.countPL >= 2 && !boost)
         {
@@ -65,14 +73,14 @@ public class NOX : MonoBehaviour
         if (distanciaJugador < DistanciaVision) target = Jugador.transform.position;
 
         //Movimiento del Enemigo
-        if (!hiting){
+        if (!EnemigosEsferas.effecting && !hiting){
             float fixedSpeed = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
             transform.position = new Vector3(transform.position.x, -2.73f);
             transform.localScale = new Vector3(side, 1);
             Debug.DrawLine(transform.position, target, Color.red);
 
-            if (distanciaJugador < 1)
+            if (distanciaJugador < 1 && !hiting)
             {
                 StartCoroutine(push());
             }

@@ -23391,6 +23391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1555712354}
   - component: {fileID: 1555712353}
+  - component: {fileID: 1555712355}
   - component: {fileID: 1555712352}
   - component: {fileID: 1555712351}
   - component: {fileID: 1555712350}
@@ -23398,7 +23399,7 @@ GameObject:
   - component: {fileID: 1555712348}
   m_Layer: 0
   m_Name: Guard2
-  m_TagString: Untagged
+  m_TagString: GuardsCap5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23569,6 +23570,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1555712355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555712347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7499e766ea1240a3a8833b602e3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NOX: {fileID: 0}
+  C1: {fileID: 5353238908233539484}
+  C2: {fileID: 1017130016}
+  C3: {fileID: 1801322169}
+  B1: {fileID: 1281199515}
+  B2: {fileID: 1132478232}
+  B3: {fileID: 235957845}
 --- !u!1 &1567759683
 GameObject:
   m_ObjectHideFlags: 0
@@ -29127,6 +29147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1929369975}
   - component: {fileID: 1929369974}
+  - component: {fileID: 1929369976}
   - component: {fileID: 1929369973}
   - component: {fileID: 1929369972}
   - component: {fileID: 1929369971}
@@ -29134,7 +29155,7 @@ GameObject:
   - component: {fileID: 1929369969}
   m_Layer: 0
   m_Name: Guard3
-  m_TagString: Untagged
+  m_TagString: GuardsCap5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29305,6 +29326,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1929369976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929369968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7499e766ea1240a3a8833b602e3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NOX: {fileID: 0}
+  C1: {fileID: 5353238908233539484}
+  C2: {fileID: 1017130016}
+  C3: {fileID: 1801322169}
+  B1: {fileID: 1281199515}
+  B2: {fileID: 1132478232}
+  B3: {fileID: 235957845}
 --- !u!1 &1943696445
 GameObject:
   m_ObjectHideFlags: 0
@@ -33649,6 +33689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5353238908542528044}
   - component: {fileID: 5353238908542528047}
+  - component: {fileID: 5353238908542528082}
   - component: {fileID: 5353238908542528081}
   - component: {fileID: 5353238908542528045}
   - component: {fileID: 5353238908542528083}
@@ -33656,7 +33697,7 @@ GameObject:
   - component: {fileID: 5353238908542528084}
   m_Layer: 0
   m_Name: Guard1
-  m_TagString: Untagged
+  m_TagString: GuardsCap5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33682,6 +33723,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5353238908542528082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353238908542528080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7499e766ea1240a3a8833b602e3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NOX: {fileID: 0}
+  C1: {fileID: 5353238908233539484}
+  C2: {fileID: 1017130016}
+  C3: {fileID: 1801322169}
+  B1: {fileID: 1281199515}
+  B2: {fileID: 1132478232}
+  B3: {fileID: 235957845}
 --- !u!114 &5353238908542528083
 MonoBehaviour:
   m_ObjectHideFlags: 0
