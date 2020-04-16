@@ -13,6 +13,8 @@ public class MinijuegoCeldas : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     [SerializeField] private GameObject list;
     [SerializeField] private GameObject Door;
 
+    [SerializeField] private GameObject Key_Mouse;
+
     public Sprite door;
     // Start is called before the first frame update
     void Start()
@@ -33,7 +35,7 @@ public class MinijuegoCeldas : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         {
             drag = true;
         }
-
+        Key_Mouse.SetActive(false);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -57,6 +59,7 @@ public class MinijuegoCeldas : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     }
     public void OnEndDrag(PointerEventData eventData)
     {
+        Key_Mouse.SetActive(true);
         transform.position = new Vector3(inx, iny, 10f);
         GetComponent<CircleCollider2D>().radius = 0.39f;
     }
@@ -118,7 +121,7 @@ public class MinijuegoCeldas : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
         if (collision.gameObject.name == "Minijuego 2-2")
         {
-
+            Key_Mouse.SetActive(true);
             transform.position = new Vector3(inx, iny, 10f);
             enable = false;
             GetComponent<CircleCollider2D>().radius = 0.39f;

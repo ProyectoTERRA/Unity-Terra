@@ -9,6 +9,9 @@ public class PlayerCeldas : MonoBehaviour
     [SerializeField] private GameObject Equip;
     [SerializeField] private GameObject Door;
 
+    [SerializeField] private GameObject Key_DoorG;
+    [SerializeField] private GameObject Key_DoorE;
+
     [SerializeField] private GameObject c1;
     [SerializeField] private GameObject c2;
     [SerializeField] private GameObject c3;
@@ -43,6 +46,8 @@ public class PlayerCeldas : MonoBehaviour
     {
         Heart_Bar.Phearts = 6;
 
+        Key_DoorE.SetActive(false);
+
         dies = false;
         Guard1.GetComponent<Prueba>().enabled = false;
         Guard2.GetComponent<Prueba>().enabled = false;
@@ -60,6 +65,10 @@ public class PlayerCeldas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Complete_mini)
+        {
+            Key_DoorE.SetActive(true);
+        }
         if (guards)
         {
             Guard1.GetComponent<Prueba>().enabled = true;
@@ -181,16 +190,19 @@ public class PlayerCeldas : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.name == "DoorLocked" && Complete_mini)//compara si hizo la colision con el objeto correcto
         {
+
+            Key_DoorE.SetActive(false);
             opening = true;
             Slider.SetActive(true);
             GetComponent<PlayerController>().enabled = false;
             GetComponent<SliderPrueba>().enabled = true;
+            Complete_mini = false;
         }
 
 
         if (Input.GetKeyDown(KeyCode.J) && collision.gameObject.name == "DoorLocked" && PlayerController.Equip == "Especiales_2")//compara si hizo la colision con el objeto correcto
         {
-
+            Key_DoorG.SetActive(false);
             if (!Complete_mini)
             {
                 Mini.SetActive(flag);
