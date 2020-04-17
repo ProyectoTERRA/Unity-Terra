@@ -4,6 +4,10 @@ public class GameController : MonoBehaviour
 {
     public static int pila, bolsa, carton, manzana, platano, lata, llave, formula, normal, paralizante, desactivadora, tranquilizante, pesada, energia, curacion, ganzua, life;
     public static bool start;
+
+    //----Variables CAP.1-----
+
+    public static bool linterna;
     // Start is called before the first frame update
     void Start()
     {

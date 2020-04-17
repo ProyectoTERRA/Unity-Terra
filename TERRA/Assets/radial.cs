@@ -16,6 +16,13 @@ public class radial : MonoBehaviour
     [SerializeField] private Text num_Lata;
     [SerializeField] private Text num_Pila;
 
+    [SerializeField] private Text num_ManzanaOBJ;
+    [SerializeField] private Text num_PlatanoOBJ;
+    [SerializeField] private Text num_CartonOBJ;
+    [SerializeField] private Text num_BolsaOBJ;
+    [SerializeField] private Text num_LataOBJ;
+    [SerializeField] private Text num_PilaOBJ;
+
     [SerializeField] private Text num_Normal;
     [SerializeField] private Text num_Paralizante;
     [SerializeField] private Text num_Desactivadora;
@@ -105,6 +112,13 @@ public class radial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        num_BolsaOBJ.text = num_Bolsa.text;
+        num_CartonOBJ.text = num_Carton.text;
+        num_LataOBJ.text = num_Lata.text;
+        num_ManzanaOBJ.text = num_Manzana.text;
+        num_PlatanoOBJ.text = num_Platano.text;
+        num_PilaOBJ.text = num_Pila.text;
+
         if (Input.GetKeyDown(KeyCode.I))
         {
             esc = !esc;

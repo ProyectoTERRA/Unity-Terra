@@ -32,6 +32,7 @@ public class PlayerCalle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Heart_Bar.Phearts = 6;
         camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
         camera.transform.localScale = new Vector3(1f, 1f, 1f);
 
