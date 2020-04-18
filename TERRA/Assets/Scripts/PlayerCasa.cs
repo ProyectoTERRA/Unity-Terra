@@ -15,14 +15,15 @@ public class PlayerCasa : MonoBehaviour
 
     public bool lucy;
     public bool linterna;
-    private bool basuraL, basuraB, basuraC;
+    private int basuraL, basuraP, basuraC, basuraM;
 
-    private bool agarrar;
+    private bool agarrar, trash;
     private string nombre, tag;
 
     // Start is called before the first frame update
     void Start()
     {
+        trash = false;
         Heart_Bar.Phearts = 6;
 
         Key_DoorPlayer.SetActive(false);
@@ -35,9 +36,10 @@ public class PlayerCasa : MonoBehaviour
         transform.position = new Vector3(-6.4f, 0.5f);
         transform.localScale = new Vector3(1.75f, 1.75f, 1.75f);
 
-        basuraL = false;
-        basuraB = false;
-        basuraC = false;
+        basuraL = 0;
+        basuraP = 0;
+        basuraC = 0;
+        basuraM = 0;
 
         lucy = false;
         linterna = false;
@@ -47,36 +49,44 @@ public class PlayerCasa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (basuraL && basuraC && basuraB)
+        if (basuraL >= 4 && basuraC >=2 && basuraP >= 2 && basuraM >=1 )
         {
             Key_DoorPlayer.SetActive(true);
+            trash = true;
         }
         if (agarrar)
         {
             GameObject go = GameObject.Find("InvFunc");
             radial radial = go.GetComponent<radial>();
-            if (tag == "lata")
+            if (tag == "LataFAKE")
             {
 
                 GameController.lata++;
                 radial.basura[5]++;
                 Destroy(GameObject.Find(nombre));
-                basuraL = true;
+                basuraL++;
 
             }
-            else if (tag == "carton")
+            else if (tag == "CartonFAKE")
             {
                 GameController.carton++;
                 radial.basura[2]++;
                 Destroy(GameObject.Find(nombre));
-                basuraC = true;
+                basuraC++;
             }
-            else if (tag == "bolsa")
+            else if (tag == "PlatanoFAKE")
             {
-                GameController.bolsa++;
-                radial.basura[1]++;
+                GameController.platano++;
+                radial.basura[4]++;
                 Destroy(GameObject.Find(nombre));
-                basuraB = true;
+                basuraP++;
+            }
+            else if (tag == "ManzanaFAKE")
+            {
+                GameController.manzana++;
+                radial.basura[3]++;
+                Destroy(GameObject.Find(nombre));
+                basuraM++;
             }
             agarrar = false;
         }
@@ -84,28 +94,36 @@ public class PlayerCasa : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "lata")
+        if (collision.gameObject.tag == "LataFAKE")
         {
 
-            tag = collision.gameObject.name;
+            tag = collision.gameObject.tag;
             nombre = collision.gameObject.name;
             agarrar = true;
         }
-        if (collision.gameObject.name == "bolsa")
+        if (collision.gameObject.tag == "PlatanoFAKE")
         {
 
-            tag = collision.gameObject.name;
+            tag = collision.gameObject.tag;
             nombre = collision.gameObject.name;
             agarrar = true;
         }
-        if (collision.gameObject.name == "carton")
+        if (collision.gameObject.tag == "CartonFAKE")
         {
 
-            tag = collision.gameObject.name;
+            tag = collision.gameObject.tag;
             nombre = collision.gameObject.name;
             agarrar = true;
         }
-        if (collision.gameObject.tag == "PuertaLucy" && basuraB && basuraC && basuraL)//compara si hizo la colision con el objeto correcto
+
+        if (collision.gameObject.tag == "ManzanaFAKE")
+        {
+
+            tag = collision.gameObject.tag;
+            nombre = collision.gameObject.name;
+            agarrar = true;
+        }
+        if (collision.gameObject.tag == "PuertaLucy" && trash)//compara si hizo la colision con el objeto correcto
         {
             Debug.Log("Has tocado la puerta3");
             if (Input.GetKeyDown(KeyCode.E))

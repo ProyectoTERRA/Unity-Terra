@@ -122,6 +122,7 @@ public class PlayerSuper : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.E) && exit)
             {
                 Debug.Log("SALIDO");
+                GameController.Return = true;
                 SceneManager.LoadScene("Calle");
             }
         }
