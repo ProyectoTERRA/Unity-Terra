@@ -13,6 +13,8 @@ public class Minijuego_2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     [SerializeField] private GameObject Mini;
     [SerializeField] private GameObject Jugador;
     [SerializeField] private GameObject list;
+
+    [SerializeField] private GameObject Key_Mouse;
     void Start()
     {
         
@@ -33,7 +35,7 @@ public class Minijuego_2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         {
             drag = true;
         }
-
+        Key_Mouse.SetActive(false);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -57,6 +59,7 @@ public class Minijuego_2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     }
     public void OnEndDrag(PointerEventData eventData)
     {
+        Key_Mouse.SetActive(true);
         transform.position = new Vector3(inx, iny, 10f);
         GetComponent<CircleCollider2D>().radius = 0.39f;
     }
@@ -116,7 +119,7 @@ public class Minijuego_2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
         if (collision.gameObject.name == "Minijuego 2-2")
         {
- 
+            Key_Mouse.SetActive(true);
             transform.position = new Vector3(inx, iny, 10f);
             enable = false;
             GetComponent<CircleCollider2D>().radius = 0.39f;

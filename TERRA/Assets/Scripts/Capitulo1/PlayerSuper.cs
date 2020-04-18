@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class PlayerSuper : MonoBehaviour
 {
     [SerializeField] private GameObject camera;
-    [SerializeField] private GameObject puerta;
 
-    [SerializeField] private GameObject Bloque;
+
+
     [SerializeField] private GameObject Caja;
     [SerializeField] private GameObject PC;
     [SerializeField] private GameObject KEY;
@@ -18,6 +18,15 @@ public class PlayerSuper : MonoBehaviour
     [SerializeField] private GameObject LATA1;
     [SerializeField] private GameObject LATA2;
     [SerializeField] private GameObject AWA;
+
+    [SerializeField] private GameObject Key_Caja;
+    [SerializeField] private GameObject Key_Key;
+    [SerializeField] private GameObject Key_Pc;
+    [SerializeField] private GameObject Key_Exit;
+    [SerializeField] private GameObject Key_Interruptor;
+    [SerializeField] private GameObject Key_Lata1;
+    [SerializeField] private GameObject Key_Lata2;
+    [SerializeField] private GameObject Key_Agua;
 
     [SerializeField] private GameObject Mini;
 
@@ -32,12 +41,18 @@ public class PlayerSuper : MonoBehaviour
 
     bool prexit, exit, key, pc, caja_fuerte;
 
-    bool lata1, lata2, awa, flag;
+    bool lata1, lata2, awa, flag, flag1;
     static public bool Complete_mini;
 
     public bool s1, s2, cuarto;
     void Start()
     {
+        Key_Key.SetActive(false);
+        Key_Pc.SetActive(false);
+        Key_Interruptor.SetActive(false);
+        Key_Exit.SetActive(false);
+        flag1 = false;
+        Heart_Bar.Phearts = 6;
         flag = true;
         Mini.SetActive(false);
         camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
@@ -55,6 +70,15 @@ public class PlayerSuper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(lata1 && lata2 && awa)
+        {
+            Key_Interruptor.SetActive(true);
+            lata1 = false;
+            lata2 = false;
+            awa = false;
+            flag1 = true;
+            
+        }
 
     }
 
@@ -89,8 +113,8 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.J) && PlayerController.Equip == "Ganzua")
             {
-               
 
+                Key_Caja.SetActive(false);
                 if (!Complete_mini)
                 {
                     Mini.SetActive(flag);
@@ -107,19 +131,26 @@ public class PlayerSuper : MonoBehaviour
                 if (!key)
                 {
                     KEY.SetActive(true);
-                    
+                    Key_Key.SetActive(true);
+
                 }
             }
         }
-        if (collision.gameObject.name == "Interruptor" && awa && lata1 && lata2)
+        if (collision.gameObject.name == "Interruptor" && flag1)
         {
             if (Input.GetKeyDown(KeyCode.E) && !prexit)
             {
+                Key_Interruptor.SetActive(false);
+                Key_Pc.SetActive(true);
                 interruptor.GetComponent<SpriteRenderer>().color = Color.white;
                 prexit = true;
                 PC.GetComponent<SpriteRenderer>().sprite = PCOff;
             }
-            else if (Input.GetKeyDown(KeyCode.E) && exit)
+        }
+
+        if (collision.gameObject.name == "Puerta SuperMercado 4")
+        {
+            if (Input.GetKeyDown(KeyCode.E) && exit)
             {
                 Debug.Log("SALIDO");
                 GameController.Return = true;
@@ -131,6 +162,8 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Key_Pc.SetActive(false);
+                Key_Exit.SetActive(true);
                 interruptor.GetComponent<SpriteRenderer>().sprite = IntON;
                 exit = true;
                 PC.GetComponent<SpriteRenderer>().sprite = PCON;
@@ -141,6 +174,7 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && !key)
             {
+                Key_Key.SetActive(false);
                 Debug.Log("key");
                 List.select.Add(KEY_inv);
                 Destroy(KEY);
@@ -152,6 +186,7 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Key_Lata1.SetActive(false);
                 Destroy(LATA1);
                 lata1 = true;
             }
@@ -161,6 +196,7 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Key_Lata2.SetActive(false);
                 Destroy(LATA2);
                 lata2 = true;
             }
@@ -170,6 +206,7 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Key_Agua.SetActive(false);
                 Destroy(AWA);
                 awa = true;
             }
@@ -179,35 +216,21 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log(cuarto);
+                camera.transform.position = new Vector3(18.0f, 0.0f, -10.0f);
+                this.transform.position = new Vector3(12f, -1.1f, 0.0f);
 
-                if (cuarto == false)
-                {
-                    Bloque.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
-                    puerta.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
-                    camera.transform.position = new Vector3(18.0f, 0.0f, -10.0f);
-                    puerta.transform.position = new Vector3(9.4f, -1f, 0f);
-                    puerta.transform.localScale = new Vector3(1f, 0.83f, 0f);
-                    this.transform.position = new Vector3(10.85f, -1.1f, 0.0f);
-
-                }
-
-                else if (cuarto == true)
-                {
-                    Bloque.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-                    puerta.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-                    puerta.transform.position = new Vector3(8.5f, -1f, 0f);
-                    camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
-                    puerta.transform.localScale = new Vector3(0.83f, 0.83f, 0f);
-                    this.transform.position = new Vector3(7.1f, -1.1f, 0.0f);
-
-
-                }
 
             }
-            if (Input.GetKeyUp(KeyCode.E))
+        }
+
+        if (collision.gameObject.name == "Puerta SuperMercado 12")//compara si hizo la colision con el objeto correcto
+        {
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                cuarto = !cuarto;
+                
+                camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
+                this.transform.position = new Vector3(6f, -1.1f, 0.0f);
+
             }
         }
 
