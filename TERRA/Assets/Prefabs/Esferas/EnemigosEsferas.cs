@@ -92,6 +92,25 @@ public class EnemigosEsferas : MonoBehaviour
                 StartCoroutine(NormalEffect());
             }
         }
+
+        if (gameObject.tag == "RAT")
+        {
+
+            if (CParalizantes >= 1 && !efecT)
+            {
+                Debug.Log("RAAAAAAAAAAAAT");
+                StartCoroutine(ParalizEffect());
+            }
+            if (CTranquilizantes >= 1 && !efecT)
+            {
+                StartCoroutine(TranquiEffect());
+            }
+            if (CNormales >= 2 && !efecT)
+            {
+                StartCoroutine(NormalEffect());
+            }
+        }
+
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -137,6 +156,14 @@ public class EnemigosEsferas : MonoBehaviour
             GetComponent<PolygonCollider2D>().enabled = false;
             GetComponent<Turret>().enabled = false;
         }
+        if(gameObject.tag == "RAT")
+        {
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<RATA>().enabled = false;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<BoxCollider2D>().enabled = false;
+
+        }
         if (gameObject.tag == "GuardsCap5")
         {
             if (gameObject.name == "Guard1") { C1.SetActive(false); B1.SetActive(false); GetComponent<Prueba>().enabled = false; GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static; }
@@ -165,6 +192,14 @@ public class EnemigosEsferas : MonoBehaviour
             if (gameObject.name == "Guard3") { C3.SetActive(false); B3.SetActive(false); GetComponent<Prueba>().enabled = false; GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static; }
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<CircleCollider2D>().enabled = false;
+
+        }
+        if (gameObject.tag == "RAT")
+        {
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<RATA>().enabled = false;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<BoxCollider2D>().enabled = false;
 
         }
         yield return new WaitForSeconds(1f);
@@ -221,6 +256,14 @@ public class EnemigosEsferas : MonoBehaviour
             GetComponent<PolygonCollider2D>().enabled = false;
             GetComponent<Crawler>().enabled = false;
         }
+        if (gameObject.tag == "RAT")
+        {
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<RATA>().enabled = false;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<BoxCollider2D>().enabled = false;
+
+        }
         if (gameObject.tag == "Turret")
         {
             GetComponent<PolygonCollider2D>().enabled = false;
@@ -243,6 +286,14 @@ public class EnemigosEsferas : MonoBehaviour
             GetComponent<CircleCollider2D>().enabled = true; 
             GetComponent<Crawler>().enabled = true;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        }
+        if (gameObject.tag == "RAT")
+        {
+            GetComponent<CircleCollider2D>().enabled = true;
+            GetComponent<RATA>().enabled = true;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            GetComponent<BoxCollider2D>().enabled = true;
+
         }
         if (gameObject.tag == "Turret")
         {

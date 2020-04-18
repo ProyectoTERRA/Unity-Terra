@@ -3996,7 +3996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &246965407
 Transform:
   m_ObjectHideFlags: 0
@@ -35941,9 +35941,11 @@ GameObject:
   - component: {fileID: 2127575734670522103}
   - component: {fileID: 2127575734670522102}
   - component: {fileID: 2127575734670522105}
+  - component: {fileID: 2127575734670522107}
+  - component: {fileID: 2127575734670522106}
   m_Layer: 0
   m_Name: Rata 2
-  m_TagString: Untagged
+  m_TagString: RAT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35957,11 +35959,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 2127575734670522104}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021515667, y: -0.29465532}
+  m_Offset: {x: 0.08043587, y: -0.24493152}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -35972,8 +35974,43 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7436312, y: 0.7419903}
+  m_Size: {x: 1.5786693, y: 0.8101369}
   m_EdgeRadius: 0
+--- !u!58 &2127575734670522106
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127575734670522104}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.17, y: -0.24896812}
+  serializedVersion: 2
+  m_Radius: 0.38332558
+--- !u!114 &2127575734670522107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127575734670522104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7499e766ea1240a3a8833b602e3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NOX: {fileID: 0}
+  C1: {fileID: 0}
+  C2: {fileID: 0}
+  C3: {fileID: 0}
+  B1: {fileID: 0}
+  B2: {fileID: 0}
+  B3: {fileID: 0}
 --- !u!61 &2127575734759471360
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35983,11 +36020,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 2127575734759471361}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021515667, y: -0.29465532}
+  m_Offset: {x: 0.08043587, y: -0.24493152}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -35998,7 +36035,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7436312, y: 0.7419903}
+  m_Size: {x: 1.5786693, y: 0.8101369}
   m_EdgeRadius: 0
 --- !u!1 &2127575734759471361
 GameObject:
@@ -36013,13 +36050,50 @@ GameObject:
   - component: {fileID: 2127575734759471374}
   - component: {fileID: 2127575734759471375}
   - component: {fileID: 2127575734759471360}
+  - component: {fileID: 2127575734759471363}
+  - component: {fileID: 2127575734759471362}
   m_Layer: 0
   m_Name: Rata 1
-  m_TagString: Untagged
+  m_TagString: RAT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!58 &2127575734759471362
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127575734759471361}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.17, y: -0.24896812}
+  serializedVersion: 2
+  m_Radius: 0.38332558
+--- !u!114 &2127575734759471363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127575734759471361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7499e766ea1240a3a8833b602e3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NOX: {fileID: 0}
+  C1: {fileID: 0}
+  C2: {fileID: 0}
+  C3: {fileID: 0}
+  B1: {fileID: 0}
+  B2: {fileID: 0}
+  B3: {fileID: 0}
 --- !u!4 &2127575734759471372
 Transform:
   m_ObjectHideFlags: 0

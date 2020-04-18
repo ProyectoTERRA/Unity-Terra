@@ -39,6 +39,17 @@ public class KAKA : MonoBehaviour
         }
     }
 
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Ha hecho colision con el jugador");
+            collision.SendMessage("RATAKnockBack", transform.position.x);
+
+
+        }
+    }
+
     IEnumerator lib()
     {
 

@@ -701,9 +701,11 @@ GameObject:
   - component: {fileID: 277452649}
   - component: {fileID: 277452648}
   - component: {fileID: 277452647}
+  - component: {fileID: 277452653}
+  - component: {fileID: 277452652}
   m_Layer: 0
   m_Name: Rata 2
-  m_TagString: Untagged
+  m_TagString: RAT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -717,11 +719,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 277452646}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021515667, y: -0.29465532}
+  m_Offset: {x: 0.08043587, y: -0.24493152}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -732,7 +734,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7436312, y: 0.7419903}
+  m_Size: {x: 1.5786693, y: 0.8101369}
   m_EdgeRadius: 0
 --- !u!50 &277452648
 Rigidbody2D:
@@ -836,6 +838,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &277452652
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277452646}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.17, y: -0.24896812}
+  serializedVersion: 2
+  m_Radius: 0.38332558
+--- !u!114 &277452653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277452646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7499e766ea1240a3a8833b602e3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NOX: {fileID: 0}
+  C1: {fileID: 0}
+  C2: {fileID: 0}
+  C3: {fileID: 0}
+  B1: {fileID: 0}
+  B2: {fileID: 0}
+  B3: {fileID: 0}
 --- !u!1 &286909555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,9 +1746,11 @@ GameObject:
   - component: {fileID: 463771115}
   - component: {fileID: 463771114}
   - component: {fileID: 463771113}
+  - component: {fileID: 463771119}
+  - component: {fileID: 463771118}
   m_Layer: 0
   m_Name: Rata 3
-  m_TagString: Untagged
+  m_TagString: RAT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1725,11 +1764,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 463771112}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021515667, y: -0.29465532}
+  m_Offset: {x: 0.08043587, y: -0.24493152}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1740,7 +1779,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7436312, y: 0.7419903}
+  m_Size: {x: 1.5786693, y: 0.8101369}
   m_EdgeRadius: 0
 --- !u!50 &463771114
 Rigidbody2D:
@@ -1844,6 +1883,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &463771118
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463771112}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.17, y: -0.24896812}
+  serializedVersion: 2
+  m_Radius: 0.38332558
+--- !u!114 &463771119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463771112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7499e766ea1240a3a8833b602e3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NOX: {fileID: 0}
+  C1: {fileID: 0}
+  C2: {fileID: 0}
+  C3: {fileID: 0}
+  B1: {fileID: 0}
+  B2: {fileID: 0}
+  B3: {fileID: 0}
 --- !u!1 &465005101
 GameObject:
   m_ObjectHideFlags: 0
@@ -9297,9 +9371,11 @@ GameObject:
   - component: {fileID: 2085774665}
   - component: {fileID: 2085774664}
   - component: {fileID: 2085774663}
+  - component: {fileID: 2085774669}
+  - component: {fileID: 2085774668}
   m_Layer: 0
   m_Name: Rata 4
-  m_TagString: Untagged
+  m_TagString: RAT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9313,11 +9389,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 2085774662}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021515667, y: -0.29465532}
+  m_Offset: {x: 0.08043587, y: -0.24493152}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9328,7 +9404,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7436312, y: 0.7419903}
+  m_Size: {x: 1.5786693, y: 0.8101369}
   m_EdgeRadius: 0
 --- !u!50 &2085774664
 Rigidbody2D:
@@ -9432,6 +9508,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2085774668
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085774662}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.17, y: -0.24896812}
+  serializedVersion: 2
+  m_Radius: 0.38332558
+--- !u!114 &2085774669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085774662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7499e766ea1240a3a8833b602e3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NOX: {fileID: 0}
+  C1: {fileID: 0}
+  C2: {fileID: 0}
+  C3: {fileID: 0}
+  B1: {fileID: 0}
+  B2: {fileID: 0}
+  B3: {fileID: 0}
 --- !u!1 &2087238310
 GameObject:
   m_ObjectHideFlags: 0
@@ -10827,11 +10938,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 2127575735064501255}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021515667, y: -0.29465532}
+  m_Offset: {x: 0.08043587, y: -0.24493152}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10842,7 +10953,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7436312, y: 0.7419903}
+  m_Size: {x: 1.5786693, y: 0.8101369}
   m_EdgeRadius: 0
 --- !u!1 &2127575735064501255
 GameObject:
@@ -10857,9 +10968,11 @@ GameObject:
   - component: {fileID: 2127575735064501256}
   - component: {fileID: 2127575735064501257}
   - component: {fileID: 2127575735064501254}
+  - component: {fileID: 2127575735064501261}
+  - component: {fileID: 2127575735064501260}
   m_Layer: 0
   m_Name: Rata 1
-  m_TagString: Untagged
+  m_TagString: RAT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10966,6 +11079,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &2127575735064501260
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127575735064501255}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.17, y: -0.24896812}
+  serializedVersion: 2
+  m_Radius: 0.38332558
+--- !u!114 &2127575735064501261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127575735064501255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7499e766ea1240a3a8833b602e3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NOX: {fileID: 0}
+  C1: {fileID: 0}
+  C2: {fileID: 0}
+  C3: {fileID: 0}
+  B1: {fileID: 0}
+  B2: {fileID: 0}
+  B3: {fileID: 0}
 --- !u!58 &2157213100700956928
 CircleCollider2D:
   m_ObjectHideFlags: 0

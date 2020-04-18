@@ -174,7 +174,15 @@ public class PlayerCalle : MonoBehaviour
             }
 
         }
+        if (collision.gameObject.name == "PuertaCasa")//compara si hizo la colision con el objeto correcto
+        {
+            if (Input.GetKeyDown(KeyCode.E) && GameController.Return)
+            {
+                Debug.Log("Salido");
+                SceneManager.LoadScene("CasaReturn");
+            }
 
+        }
         if (collision.gameObject.name == "Palanca2")//compara si hizo la colision con el objeto correcto
         {
             if (Input.GetKeyDown(KeyCode.E) && market)
