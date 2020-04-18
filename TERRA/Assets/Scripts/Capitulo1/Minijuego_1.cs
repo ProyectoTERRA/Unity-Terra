@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Minijuego_1 : MonoBehaviour
@@ -57,6 +58,8 @@ public class Minijuego_1 : MonoBehaviour
             Interruptor.GetComponent<SpriteRenderer>().sprite = I_On;
 
             Escalera.transform.position = new Vector3(1.0f, -2.0f);
+
+
         }
 
         if (fail)
@@ -185,4 +188,6 @@ public class Minijuego_1 : MonoBehaviour
             fail = true;
         }
     }
+
+   
 }
