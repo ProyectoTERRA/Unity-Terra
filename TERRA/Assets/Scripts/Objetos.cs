@@ -79,7 +79,7 @@ public class Objetos : MonoBehaviour
         GameObject go = GameObject.Find("InvFunc");
         radial radial = go.GetComponent<radial>();
 
-        if (other.gameObject.tag == "pila")
+        if (other.gameObject.tag == "pila" && PlayerController.Equip == "Recogedor")
         {
 
             tag = other.gameObject.tag;
@@ -87,7 +87,7 @@ public class Objetos : MonoBehaviour
             agarrar = true;
         }
 
-        if (other.gameObject.tag == "bolsa")
+        if (other.gameObject.tag == "bolsa" && PlayerController.Equip == "Recogedor")
         {
 
             tag = other.gameObject.tag;
@@ -96,15 +96,7 @@ public class Objetos : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "carton")
-        {
-            
-            tag = other.gameObject.tag;
-            nombre = other.gameObject.name;
-            agarrar = true;
-        }
-
-        if (other.gameObject.tag == "manzana")
+        if (other.gameObject.tag == "carton" && PlayerController.Equip == "Recogedor")
         {
             
             tag = other.gameObject.tag;
@@ -112,7 +104,7 @@ public class Objetos : MonoBehaviour
             agarrar = true;
         }
 
-        if (other.gameObject.tag == "platano")
+        if (other.gameObject.tag == "manzana" && PlayerController.Equip == "Recogedor")
         {
             
             tag = other.gameObject.tag;
@@ -120,7 +112,15 @@ public class Objetos : MonoBehaviour
             agarrar = true;
         }
 
-        if (other.gameObject.tag == "lata")
+        if (other.gameObject.tag == "platano" && PlayerController.Equip == "Recogedor")
+        {
+            
+            tag = other.gameObject.tag;
+            nombre = other.gameObject.name;
+            agarrar = true;
+        }
+
+        if (other.gameObject.tag == "lata" && PlayerController.Equip == "Recogedor")
         {
             tag = other.gameObject.tag;
             nombre = other.gameObject.name;

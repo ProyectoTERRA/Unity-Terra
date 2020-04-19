@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCasaReturn : MonoBehaviour
 {
     [SerializeField] private GameObject camera;
+
+    [SerializeField] private GameObject Linterna;
 
     [SerializeField] private GameObject FOOD;
 
@@ -15,7 +18,8 @@ public class PlayerCasaReturn : MonoBehaviour
 
     public bool lucy;
 
-
+    private Image spr;
+    public Sprite Flashlight;
 
     private bool Food;
 

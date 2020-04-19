@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerCasa : MonoBehaviour
 {
     [SerializeField] private GameObject camera;
+
+    [SerializeField] private GameObject Linterna;
 
     [SerializeField] private GameObject Key_DoorPlayer;
     [SerializeField] private GameObject Key_DoorLucySala;
@@ -12,6 +15,10 @@ public class PlayerCasa : MonoBehaviour
 
     [SerializeField] private GameObject Key_Lucy;
     [SerializeField] private GameObject Key_Linterna;
+
+
+    private Image spr;
+    public Sprite Flashlight;
 
     public bool lucy;
     public bool linterna;
@@ -54,7 +61,7 @@ public class PlayerCasa : MonoBehaviour
             Key_DoorPlayer.SetActive(true);
             trash = true;
         }
-        if (agarrar)
+        if (agarrar && PlayerController.Equip == "Recogedor")
         {
             GameObject go = GameObject.Find("InvFunc");
             radial radial = go.GetComponent<radial>();
@@ -179,6 +186,10 @@ public class PlayerCasa : MonoBehaviour
             Debug.Log("Has tocado a LINTERNA");
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Linterna.SetActive(true);
+
+                spr = Linterna.GetComponent<Image>();
+                spr.sprite = Flashlight;
                 Debug.Log("Has agarrado la linterna");
                 linterna = true;
                 Destroy(GameObject.Find("linterna"));

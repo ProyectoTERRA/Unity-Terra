@@ -434,6 +434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1593275b2840d47a93debaf6933381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Recogedor: {fileID: 2723028750601535708, guid: 2789132bbdebeaa42a791783a01ae2ae,
+    type: 3}
   esf_N: {fileID: 4315916757541250148, guid: 78c9b5aac88a1514791507f1c86b3f19, type: 3}
   esf_P: {fileID: 3077139853389278693, guid: 1d15aa45a327c0a45a064b1e80def78a, type: 3}
   esf_D: {fileID: 2754682376862866162, guid: c3b3d80fea09da94cb20b2608a707c89, type: 3}

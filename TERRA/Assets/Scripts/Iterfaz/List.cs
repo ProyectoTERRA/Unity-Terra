@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class List : MonoBehaviour
 {
+    public GameObject Recogedor;
     public GameObject esf_N;
     public GameObject esf_P;
     public GameObject esf_D;
@@ -32,11 +33,14 @@ public class List : MonoBehaviour
 
         select = new List<GameObject>();
 
+        
         select.Add(Hand);
+        select.Add(Recogedor);
         select.Add(esf_P);
         select.Add(esf_D);
         select.Add(esf_T);
 
+        //132
 
         /*----- PRUEBAS --------         
         select.Add(esf_N);
@@ -108,6 +112,15 @@ public class List : MonoBehaviour
                 Equipado.GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
             }
 
+            if(select[index].name == "Recogedor")
+            {
+                Equipado.transform.rotation = Quaternion.Euler(0f, 0f,PlayerController.side *132f);
+            }
+            else
+            {
+                Equipado.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            }
+
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -119,8 +132,6 @@ public class List : MonoBehaviour
 
 
             }
-
-            }
             if (select[index].name == "Hand")
             {
                 Equipado.GetComponent<SpriteRenderer>().sprite = null;
@@ -129,6 +140,17 @@ public class List : MonoBehaviour
             {
                 Equipado.GetComponent<SpriteRenderer>().sprite = select[index].GetComponent<SpriteRenderer>().sprite;
             }
+            if (select[index].name == "Recogedor")
+            {
+                Equipado.transform.rotation = Quaternion.Euler(0f, 0f, PlayerController.side * 132f);
+            }
+            else
+            {
+                Equipado.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            }
+
+        }
+           
 
 
 

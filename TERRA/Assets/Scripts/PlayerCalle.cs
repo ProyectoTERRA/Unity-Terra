@@ -147,6 +147,7 @@ public class PlayerCalle : MonoBehaviour
             {
                 spr = img_obj_1.GetComponent<Image>();
                 spr.sprite = Palanca1;
+                spr.preserveAspect = true;
                 Destroy(GameObject.Find("Palanca1"));
                 Key_Palanca1.SetActive(false);
                 radial.pl1 = true;

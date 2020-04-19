@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     //----Variables CAP.1-----
 
     public static bool linterna, Return;
+    
     // Start is called before the first frame update
     void Start()
     {
