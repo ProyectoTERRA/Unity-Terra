@@ -174,7 +174,7 @@ public class List : MonoBehaviour
             Count.text = radial.n_Health;
             Count.enabled = true;
         }
-        else if (PlayerController.Equip == "Especiales_2")
+        else if (PlayerController.Equip == "Especiales_2" || PlayerController.Equip == "Ganzua")
         {
             Count.text = radial.n_Ganzua;
             Count.enabled = true;

@@ -105,6 +105,7 @@ public class Minijuego_2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             GameObject go = GameObject.Find("InvFunc");
             radial radial = go.GetComponent<radial>();
             radial.especiales[2]--;
+            GameController.ganzua--;
             string normal = "ganzua";
             if (radial.especiales[2] <= 0) list.SendMessage("remove", normal);
 

@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
 
 
                     radial.esfera[0]--;
+                    GameController.normal--;
                     string normal = "normal";
                     if (radial.esfera[0] <= 0) list.SendMessage("remove", normal);
 
