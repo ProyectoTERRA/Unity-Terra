@@ -61,7 +61,7 @@ public class PlayerCasa : MonoBehaviour
             Key_DoorPlayer.SetActive(true);
             trash = true;
         }
-        if (agarrar && PlayerController.Equip == "Recogedor")
+        if (agarrar)
         {
             GameObject go = GameObject.Find("InvFunc");
             radial radial = go.GetComponent<radial>();
@@ -101,21 +101,21 @@ public class PlayerCasa : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "LataFAKE")
+        if (collision.gameObject.tag == "LataFAKE" && PlayerController.Equip == "Recogedor")
         {
 
             tag = collision.gameObject.tag;
             nombre = collision.gameObject.name;
             agarrar = true;
         }
-        if (collision.gameObject.tag == "PlatanoFAKE")
+        if (collision.gameObject.tag == "PlatanoFAKE" && PlayerController.Equip == "Recogedor")
         {
 
             tag = collision.gameObject.tag;
             nombre = collision.gameObject.name;
             agarrar = true;
         }
-        if (collision.gameObject.tag == "CartonFAKE")
+        if (collision.gameObject.tag == "CartonFAKE" && PlayerController.Equip == "Recogedor")
         {
 
             tag = collision.gameObject.tag;
@@ -123,7 +123,7 @@ public class PlayerCasa : MonoBehaviour
             agarrar = true;
         }
 
-        if (collision.gameObject.tag == "ManzanaFAKE")
+        if (collision.gameObject.tag == "ManzanaFAKE" && PlayerController.Equip == "Recogedor")
         {
 
             tag = collision.gameObject.tag;
