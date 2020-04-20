@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 public class Hability_1 : MonoBehaviour
 {
-
+    [SerializeField] private GameObject inv;
     public Sprite DoubleJump;
     public Sprite LongJump;
     public Sprite Invisible;
@@ -19,7 +19,7 @@ public class Hability_1 : MonoBehaviour
 
     public SpriteRenderer spr;
 
-    private string set = "Long_Jump";
+    public static string set = "Long_Jump";
 
     void Start()
     {
@@ -51,6 +51,8 @@ public class Hability_1 : MonoBehaviour
             dispD = 20;
             actD = 1;
         }
+
+        inv.GetComponent<Image>().sprite = spr.sprite;
 
         disp = true;
         act = false;

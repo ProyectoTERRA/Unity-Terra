@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a778fa3c203f7e249b392b20cca719f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inv: {fileID: 0}
   DoubleJump: {fileID: 4082591644369316254, guid: 6baffdb8341cffd479baf838c0294a72,
     type: 3}
   LongJump: {fileID: 5650257488868599521, guid: 6baffdb8341cffd479baf838c0294a72,
@@ -201,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbe91e6dd83f2e4fb31c51f77a65269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inv: {fileID: 0}
   DoubleJump: {fileID: 4082591644369316254, guid: 6baffdb8341cffd479baf838c0294a72,
     type: 3}
   LongJump: {fileID: 5650257488868599521, guid: 6baffdb8341cffd479baf838c0294a72,
@@ -238,8 +240,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786952540499391440}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: -4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7, y: 4, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6786952539793922046}
