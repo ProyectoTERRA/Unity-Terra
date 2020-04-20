@@ -40,6 +40,9 @@ public class PlayerCalle : MonoBehaviour
     public Sprite Palanca1;
     public Sprite Palanca2;
 
+    public Sprite Lata;
+    public Sprite AWA;
+
     private bool market;
 
     // Start is called before the first frame update
@@ -68,7 +71,18 @@ public class PlayerCalle : MonoBehaviour
             s2 = true;
             s1 = false;
             transform.position = new Vector3(24.8f, -.75f);
-            
+            img_obj_1.GetComponent<Image>().sprite = Lata;
+            img_obj_1.GetComponent<Image>().preserveAspect = true;
+            img_obj_1.SetActive(true);
+            img_obj_2.GetComponent<Image>().sprite = Lata;
+            img_obj_2.GetComponent<Image>().preserveAspect = true;
+            img_obj_2.SetActive(true);
+            img_obj_3.GetComponent<Image>().sprite = AWA;
+            img_obj_3.GetComponent<Image>().preserveAspect = true;
+            img_obj_3.SetActive(true);
+
+
+
         }
         else
         {
@@ -107,9 +121,10 @@ public class PlayerCalle : MonoBehaviour
     void Update()
     {
         Debug.Log(PlayerController.Equip);
-        if (GameController.Return)
+        if (radial.pl)
         {
-           
+            img_obj_1.SetActive(false);
+            img_obj_2.SetActive(false);
         }
     }
 
@@ -148,6 +163,7 @@ public class PlayerCalle : MonoBehaviour
                 spr = img_obj_1.GetComponent<Image>();
                 spr.sprite = Palanca1;
                 spr.preserveAspect = true;
+                img_obj_1.SetActive(true);
                 Destroy(GameObject.Find("Palanca1"));
                 Key_Palanca1.SetActive(false);
                 radial.pl1 = true;
@@ -190,6 +206,8 @@ public class PlayerCalle : MonoBehaviour
             {
                 spr = img_obj_2.GetComponent<Image>();
                 spr.sprite = Palanca2;
+                img_obj_2.GetComponent<Image>().preserveAspect = true;
+                img_obj_2.SetActive(true);
                 Destroy(GameObject.Find("Palanca2"));
                 Key_Palanca2.SetActive(false);
                 radial.pl2 = true;

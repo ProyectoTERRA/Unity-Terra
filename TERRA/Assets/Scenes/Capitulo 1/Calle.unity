@@ -3559,6 +3559,12 @@ Transform:
   m_Father: {fileID: 2087238311}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &737004670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8882235735624174761, guid: a72f4c8686a07504fbcf19c0072337c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8882235734599775835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &737229768
 GameObject:
   m_ObjectHideFlags: 0
@@ -11210,7 +11216,7 @@ MonoBehaviour:
   camera: {fileID: 432049862}
   img_obj_1: {fileID: 1106684237}
   img_obj_2: {fileID: 1241656907}
-  img_obj_3: {fileID: 0}
+  img_obj_3: {fileID: 737004670}
   img_obj_4: {fileID: 0}
   img_obj_5: {fileID: 0}
   img_obj_6: {fileID: 0}
@@ -11235,6 +11241,8 @@ MonoBehaviour:
     type: 3}
   Palanca2: {fileID: 6165080936698075638, guid: e0969b022ff69df4ca5734287c8696e4,
     type: 3}
+  Lata: {fileID: -9054112328481512976, guid: fe46ace72308b9c4ebae7cc600d081d6, type: 3}
+  AWA: {fileID: 9042999478521142772, guid: d15ef5ba9629cb5419120d7e8fbfd250, type: 3}
 --- !u!212 &5657417380142637786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11783,7 +11791,7 @@ PrefabInstance:
     - target: {fileID: 6744057169703323712, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5603017955528248132, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
