@@ -51,7 +51,10 @@ public class PlayerCalle : MonoBehaviour
         market = false;
 
         Heart_Bar.Phearts = 6;
-        
+
+        img_fab.SetActive(false);
+        img_fab_1.SetActive(false);
+        img_fab_2.SetActive(false);
 
         if (GameController.Return)
         {
@@ -174,6 +177,9 @@ public class PlayerCalle : MonoBehaviour
 
         if (collision.gameObject.name == "PuertaSuperMArket" && Input.GetKeyDown(KeyCode.E) && !market && !GameController.Return)
         {
+            img_fab.SetActive(true);
+            img_fab_1.SetActive(true);
+            img_fab_2.SetActive(true);
             Key_Palanca1.SetActive(true);
             Key_Palanca2.SetActive(true);
             market = true;

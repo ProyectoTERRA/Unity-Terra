@@ -46,7 +46,7 @@ public class PlayerSuper : MonoBehaviour
 
     // Start is called before the first frame update
 
-    bool prexit, exit, key, pc, caja_fuerte, usedkey;
+    bool prexit, exit, key, pc, caja_fuerte, usedkey, CRoom1, CRoom2;
 
     bool lata1, lata2, awa, flag, flag1;
     static public bool Complete_mini;
@@ -54,6 +54,8 @@ public class PlayerSuper : MonoBehaviour
     public bool s1, s2, cuarto;
     void Start()
     {
+        CRoom1 = false;
+        CRoom2 = false;
         Key_DoorFood.SetActive(false);
         Key_Key.SetActive(false);
         Key_Pc.SetActive(false);
@@ -99,7 +101,29 @@ public class PlayerSuper : MonoBehaviour
             usedkey = false;
         }
 
+        if (CRoom1)
+        {
+            camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
+            this.transform.position = new Vector3(6f, -1.1f, 0.0f);
+            CRoom1 = false;
+        }
+        if (CRoom2)
+        {
+            camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
+            this.transform.position = new Vector3(-7f, -1.1f, 0.0f);
+            CRoom2 = false;
+        }
 
+        if (Complete_mini)
+        {
+            Caja.GetComponent<SpriteRenderer>().sprite = CajaA;
+            if (!key)
+            {
+                KEY.SetActive(true);
+                Key_Key.SetActive(true);
+
+            }
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -129,32 +153,20 @@ public class PlayerSuper : MonoBehaviour
     public void OnTriggerStay2D(Collider2D collision)
     {
         
-        if (collision.gameObject.name == "Caja fuerte")
+        if (collision.gameObject.name == "Caja fuerte" &&Input.GetKeyDown(KeyCode.J) && PlayerController.Equip == "Ganzua")
         {
-            if (Input.GetKeyDown(KeyCode.J) && PlayerController.Equip == "Ganzua")
-            {
+           
 
-                Key_Caja.SetActive(false);
+               
                 if (!Complete_mini)
                 {
+                    Key_Caja.SetActive(false);
                     Mini.SetActive(flag);
-                    GetComponent<PlayerController>().enabled = !flag;
-                    flag = !flag;
+                    GetComponent<PlayerController>().enabled = false;
                     
                 }
 
-            }
-
-            if (Complete_mini)
-            {
-                Caja.GetComponent<SpriteRenderer>().sprite = CajaA;
-                if (!key)
-                {
-                    KEY.SetActive(true);
-                    Key_Key.SetActive(true);
-
-                }
-            }
+           
         }
         if (collision.gameObject.name == "Interruptor" && flag1)
         {
@@ -259,9 +271,8 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                CRoom1 = true;
                 
-                camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
-                this.transform.position = new Vector3(6f, -1.1f, 0.0f);
 
             }
         }
@@ -270,8 +281,8 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
-                this.transform.position = new Vector3(-7f, -1.1f, 0.0f);
+                CRoom2 = true;
+
             }
         }
         if (collision.gameObject.name == "Puerta SuperMercado3" && key == true)//compara si hizo la colision con el objeto correcto
