@@ -22,5 +22,7 @@ public class SaltoMejorado : MonoBehaviour
         {
             myrb.velocity += Vector2.up * Physics2D.gravity.y * (Saltopequeno - 1) * Time.deltaTime;
         }
+
+        Heart_Bar.Phearts = 6;
     }
 }
