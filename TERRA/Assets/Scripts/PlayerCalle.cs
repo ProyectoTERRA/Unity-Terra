@@ -10,9 +10,6 @@ public class PlayerCalle : MonoBehaviour
     [SerializeField] private GameObject img_obj_1;
     [SerializeField] private GameObject img_obj_2;
     [SerializeField] private GameObject img_obj_3;
-    [SerializeField] private GameObject img_obj_4;
-    [SerializeField] private GameObject img_obj_5;
-    [SerializeField] private GameObject img_obj_6;
 
     [SerializeField] private GameObject Key_Casa;
     [SerializeField] private GameObject Key_Palanca1;
@@ -43,7 +40,10 @@ public class PlayerCalle : MonoBehaviour
     public Sprite Lata;
     public Sprite AWA;
 
-    private bool market;
+    private bool market, agarrar;
+    private string nombre;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +58,39 @@ public class PlayerCalle : MonoBehaviour
 
         if (GameController.Return)
         {
+            if (GameController.bolsa1)
+            {
+                Destroy(GameObject.Find("bolsa1"));
+            }
+            if (GameController.bolsa2)
+            {
+                Destroy(GameObject.Find("bolsa2"));
+            }
+            if (GameController.bolsa3)
+            {
+                Destroy(GameObject.Find("bolsa3"));
+            }
+            if (GameController.lata1)
+            {
+                Destroy(GameObject.Find("lata1"));
+            }
+            if (GameController.lata2)
+            {
+                Destroy(GameObject.Find("lata2"));
+            }
+            if (GameController.lata3)
+            {
+                Destroy(GameObject.Find("lata3"));
+            }
+            if (GameController.carton1)
+            {
+                Destroy(GameObject.Find("carton1"));
+            }
+            if (GameController.carton2)
+            {
+                Destroy(GameObject.Find("carton2"));
+            }
+
             RAT1.SetActive(true);
             RAT2.SetActive(true);
             RAT3.SetActive(true);
@@ -128,6 +161,78 @@ public class PlayerCalle : MonoBehaviour
         {
             img_obj_1.SetActive(false);
             img_obj_2.SetActive(false);
+        }
+
+        if (agarrar)
+        {
+            GameObject go = GameObject.Find("InvFunc");
+            radial radial = go.GetComponent<radial>();
+            if (nombre == "lata1")
+            {
+
+                GameController.lata++;
+                radial.basura[5]++;
+                Destroy(GameObject.Find(nombre));
+                GameController.lata1 = true;
+
+
+            }
+            else if (nombre == "lata2")
+            {
+
+                GameController.lata++;
+                radial.basura[5]++;
+                Destroy(GameObject.Find(nombre));
+                GameController.lata2 = true;
+
+            }
+            else if (nombre == "lata3")
+            {
+
+                GameController.lata++;
+                radial.basura[5]++;
+                Destroy(GameObject.Find(nombre));
+                GameController.lata3 = true;
+
+
+            }
+            else if (nombre == "carton1")
+            {
+                GameController.carton++;
+                radial.basura[2]++;
+                Destroy(GameObject.Find(nombre));
+                GameController.carton1 = true;
+            }
+            else if (nombre == "carton2")
+            {
+                GameController.carton++;
+                radial.basura[2]++;
+                Destroy(GameObject.Find(nombre));
+                GameController.carton2 = true;
+            }
+            else if (nombre == "bolsa1")
+            {
+                GameController.bolsa++;
+                radial.basura[1]++;
+                Destroy(GameObject.Find(nombre));
+                GameController.bolsa1 = true;
+            }
+            else if (nombre == "bolsa2")
+            {
+                GameController.bolsa++;
+                radial.basura[1]++;
+                Destroy(GameObject.Find(nombre));
+                GameController.bolsa2 = true;
+            }
+            else if (nombre == "bolsa3")
+            {
+                GameController.bolsa++;
+                radial.basura[1]++;
+                Destroy(GameObject.Find(nombre));
+                GameController.bolsa3 = true;
+            }
+
+            agarrar = false;
         }
     }
 
@@ -220,6 +325,27 @@ public class PlayerCalle : MonoBehaviour
 
             }
 
+        }
+        if (collision.gameObject.tag == "BolsaFAKE" && PlayerController.Equip == "Recogedor")
+        {
+
+            nombre = collision.gameObject.name;
+            agarrar = true;
+
+        }
+
+        if (collision.gameObject.tag == "CartonFAKE" && PlayerController.Equip == "Recogedor")
+        {
+
+            nombre = collision.gameObject.name;
+            agarrar = true;
+        }
+
+
+        if (collision.gameObject.tag == "LataFAKE" && PlayerController.Equip == "Recogedor")
+        {
+            nombre = collision.gameObject.name;
+            agarrar = true;
         }
     }
 }

@@ -109,8 +109,8 @@ public class PlayerSuper : MonoBehaviour
         }
         if (CRoom2)
         {
-            camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
-            this.transform.position = new Vector3(-7f, -1.1f, 0.0f);
+            camera.transform.position = new Vector3(18.0f, 0.0f, -10.0f);
+            this.transform.position = new Vector3(12f, -1.1f, 0.0f);
             CRoom2 = false;
         }
 
@@ -260,10 +260,7 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                camera.transform.position = new Vector3(18.0f, 0.0f, -10.0f);
-                this.transform.position = new Vector3(12f, -1.1f, 0.0f);
-
-
+                CRoom2 = true;
             }
         }
 
@@ -272,8 +269,6 @@ public class PlayerSuper : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 CRoom1 = true;
-                
-
             }
         }
 
@@ -281,8 +276,8 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                CRoom2 = true;
-
+                camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
+                this.transform.position = new Vector3(-7f, -1.1f, 0.0f);
             }
         }
         if (collision.gameObject.name == "Puerta SuperMercado3" && key == true)//compara si hizo la colision con el objeto correcto

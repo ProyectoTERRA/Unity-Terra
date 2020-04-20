@@ -2718,7 +2718,7 @@ GameObject:
   - component: {fileID: 609470595}
   m_Layer: 0
   m_Name: bolsa3
-  m_TagString: bolsa
+  m_TagString: BolsaFAKE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4162,7 +4162,7 @@ GameObject:
   - component: {fileID: 866034563}
   m_Layer: 0
   m_Name: lata1
-  m_TagString: lata
+  m_TagString: LataFAKE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5292,7 +5292,7 @@ GameObject:
   - component: {fileID: 1128251905}
   m_Layer: 0
   m_Name: bolsa2
-  m_TagString: bolsa
+  m_TagString: BolsaFAKE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6548,7 +6548,7 @@ GameObject:
   - component: {fileID: 1399873289}
   m_Layer: 0
   m_Name: lata3
-  m_TagString: lata
+  m_TagString: LataFAKE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8021,6 +8021,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1849641672
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7258375289188444667, guid: 0c53ee7c6f53ad74096fc29e9886273c,
+        type: 3}
+      propertyPath: m_Name
+      value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258375289188444665, guid: 0c53ee7c6f53ad74096fc29e9886273c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -27.860085
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258375289188444665, guid: 0c53ee7c6f53ad74096fc29e9886273c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 68.478714
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258375289188444665, guid: 0c53ee7c6f53ad74096fc29e9886273c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2770.9832
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258375289188444665, guid: 0c53ee7c6f53ad74096fc29e9886273c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258375289188444665, guid: 0c53ee7c6f53ad74096fc29e9886273c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258375289188444665, guid: 0c53ee7c6f53ad74096fc29e9886273c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258375289188444665, guid: 0c53ee7c6f53ad74096fc29e9886273c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258375289188444665, guid: 0c53ee7c6f53ad74096fc29e9886273c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258375289188444665, guid: 0c53ee7c6f53ad74096fc29e9886273c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258375289188444665, guid: 0c53ee7c6f53ad74096fc29e9886273c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258375289188444665, guid: 0c53ee7c6f53ad74096fc29e9886273c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0c53ee7c6f53ad74096fc29e9886273c, type: 3}
 --- !u!1 &1874551669 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8882235734568711350, guid: a72f4c8686a07504fbcf19c0072337c4,
@@ -8259,7 +8328,7 @@ GameObject:
   - component: {fileID: 1960508709}
   m_Layer: 0
   m_Name: carton2
-  m_TagString: carton
+  m_TagString: CartonFAKE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10692,7 +10761,7 @@ GameObject:
   - component: {fileID: 1691700111591232417}
   m_Layer: 0
   m_Name: bolsa1
-  m_TagString: bolsa
+  m_TagString: BolsaFAKE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11033,7 +11102,7 @@ GameObject:
   - component: {fileID: 2157213100700956929}
   m_Layer: 0
   m_Name: carton1
-  m_TagString: carton
+  m_TagString: CartonFAKE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11217,9 +11286,6 @@ MonoBehaviour:
   img_obj_1: {fileID: 1106684237}
   img_obj_2: {fileID: 1241656907}
   img_obj_3: {fileID: 737004670}
-  img_obj_4: {fileID: 0}
-  img_obj_5: {fileID: 0}
-  img_obj_6: {fileID: 0}
   Key_Casa: {fileID: 678837184987782129}
   Key_Palanca1: {fileID: 479982316}
   Key_Palanca2: {fileID: 1202161085}
@@ -11617,7 +11683,7 @@ GameObject:
   - component: {fileID: 8727221671618901536}
   m_Layer: 0
   m_Name: lata2
-  m_TagString: lata
+  m_TagString: LataFAKE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
