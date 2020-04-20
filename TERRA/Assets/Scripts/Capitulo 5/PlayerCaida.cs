@@ -11,6 +11,7 @@ public class PlayerCaida : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Heart_Bar.Phearts = 6;
         move = true;
     }
 
