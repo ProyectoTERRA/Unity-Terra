@@ -45,7 +45,7 @@ public class Watcher : MonoBehaviour
         //Si la distancia al jugador es menor que el radio de vision del objetivo, el target pasa a ser el jugador
         float distanciaJugador = Vector3.Distance(Jugador.transform.position, transform.position);
         if (distanciaJugador < DistanciaVision) target = Jugador.transform.position;
-
+        
         //Movimiento del Enemigo
         float fixedSpeed = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
