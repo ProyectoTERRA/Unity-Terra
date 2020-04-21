@@ -45,7 +45,7 @@ public class Heart_Bar : MonoBehaviour
     public Sprite Lifesx05;
 
     public int type;
-    public int life;
+    public static int life;
     public int hearts;
     public static int Phearts;
 

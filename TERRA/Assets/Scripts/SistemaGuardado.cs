@@ -58,6 +58,8 @@ public class SistemaGuardado : MonoBehaviour
         dato.curacion = 0;
         dato.ganzua = 0;
         dato.formula = 0;
+        dato.vidas = 1;
+        dato.corazones = 6;
         Debug.Log("Nueva partida");
 
         //Serializara los archivos
@@ -94,6 +96,8 @@ public class SistemaGuardado : MonoBehaviour
         dato.curacion = radial.especiales[1];
         dato.ganzua = radial.especiales[2];
         dato.formula = GameController.formula;
+        dato.vidas = Heart_Bar.life;
+        dato.corazones = Heart_Bar.Phearts;
         Debug.Log("ACTUALIZAR PARTIDA");
         Debug.Log("Pila " + radial.basura[0]);
         Debug.Log("Bolsa " + radial.basura[1]);
@@ -150,6 +154,8 @@ public class SistemaGuardado : MonoBehaviour
             GameController.curacion = datos.curacion;
             GameController.ganzua = datos.ganzua;
             GameController.formula = datos.formula;
+            Heart_Bar.Phearts = datos.corazones;
+            Heart_Bar.life = datos.vidas;
             guardarContador();
             SceneManager.LoadScene(nombreEscena);
         }
@@ -426,6 +432,7 @@ class DatosJuego : System.Object
     public String nombrePartida, nombreEscena;
     public int pila, manzana, platano, bolsa, carton, lata, normal, paralizante, desactivadora, tranquilizante, pesada, energia, curacion, ganzua;
     public int formula;
+    public int vidas, corazones;
 }
 
 
@@ -438,5 +445,6 @@ class DatosPartidas : System.Object
     public int contador;
     public int pila, manzana, platano, bolsa, carton, lata, normal, paralizante, desactivadora, tranquilizante, pesada, energia, curazion, ganzua;
     public int formula;
+    public int vidas, corazones;
 }
 

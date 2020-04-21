@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-
         groundCAP5 = true;
         transform.localScale = new Vector3(-x, y, z);
         scal = scale;
