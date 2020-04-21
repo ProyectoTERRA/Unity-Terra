@@ -170,7 +170,7 @@ public class PlayerCalle : MonoBehaviour
             if (nombre == "lata1")
             {
 
-                GameController.lata++;
+                //GameController.lata++;
                 radial.basura[5]++;
                 Destroy(GameObject.Find(nombre));
                 GameController.lata1 = true;
@@ -180,7 +180,7 @@ public class PlayerCalle : MonoBehaviour
             else if (nombre == "lata2")
             {
 
-                GameController.lata++;
+                //GameController.lata++;
                 radial.basura[5]++;
                 Destroy(GameObject.Find(nombre));
                 GameController.lata2 = true;
@@ -189,7 +189,7 @@ public class PlayerCalle : MonoBehaviour
             else if (nombre == "lata3")
             {
 
-                GameController.lata++;
+                //GameController.lata++;
                 radial.basura[5]++;
                 Destroy(GameObject.Find(nombre));
                 GameController.lata3 = true;
@@ -198,35 +198,35 @@ public class PlayerCalle : MonoBehaviour
             }
             else if (nombre == "carton1")
             {
-                GameController.carton++;
+                //GameController.carton++;
                 radial.basura[2]++;
                 Destroy(GameObject.Find(nombre));
                 GameController.carton1 = true;
             }
             else if (nombre == "carton2")
             {
-                GameController.carton++;
+                //GameController.carton++;
                 radial.basura[2]++;
                 Destroy(GameObject.Find(nombre));
                 GameController.carton2 = true;
             }
             else if (nombre == "bolsa1")
             {
-                GameController.bolsa++;
+                //GameController.bolsa++;
                 radial.basura[1]++;
                 Destroy(GameObject.Find(nombre));
                 GameController.bolsa1 = true;
             }
             else if (nombre == "bolsa2")
             {
-                GameController.bolsa++;
+                //GameController.bolsa++;
                 radial.basura[1]++;
                 Destroy(GameObject.Find(nombre));
                 GameController.bolsa2 = true;
             }
             else if (nombre == "bolsa3")
             {
-                GameController.bolsa++;
+                //GameController.bolsa++;
                 radial.basura[1]++;
                 Destroy(GameObject.Find(nombre));
                 GameController.bolsa3 = true;
@@ -297,6 +297,24 @@ public class PlayerCalle : MonoBehaviour
             Debug.Log("S");
             if (Input.GetKeyDown(KeyCode.J) && radial.pl && PlayerController.Equip == "Image" && !GameController.Return && market)
             {
+                GameObject go = GameObject.Find("InvFunc");
+                radial radial = go.GetComponent<radial>();
+                GameController.pila = radial.basura[0];
+                GameController.bolsa = radial.basura[1];
+                GameController.carton = radial.basura[2];
+                GameController.manzana = radial.basura[3];
+                GameController.platano = radial.basura[4];
+                GameController.lata = radial.basura[5];
+
+                GameController.normal = radial.esfera[0];
+                GameController.paralizante = radial.esfera[1];
+                GameController.desactivadora = radial.esfera[2];
+                GameController.tranquilizante = radial.esfera[3];
+                GameController.pesada = radial.esfera[4];
+
+                GameController.energia = radial.especiales[0];
+                GameController.curacion = radial.especiales[1];
+                GameController.ganzua = radial.especiales[2];
                 Debug.Log("Salido");
                 SceneManager.LoadScene("Alcantarillas");
             }
@@ -306,6 +324,24 @@ public class PlayerCalle : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && GameController.Return)
             {
+                GameObject go = GameObject.Find("InvFunc");
+                radial radial = go.GetComponent<radial>();
+                GameController.pila = radial.basura[0];
+                GameController.bolsa = radial.basura[1];
+                GameController.carton = radial.basura[2];
+                GameController.manzana = radial.basura[3];
+                GameController.platano = radial.basura[4];
+                GameController.lata = radial.basura[5];
+
+                GameController.normal = radial.esfera[0];
+                GameController.paralizante = radial.esfera[1];
+                GameController.desactivadora = radial.esfera[2];
+                GameController.tranquilizante = radial.esfera[3];
+                GameController.pesada = radial.esfera[4];
+
+                GameController.energia = radial.especiales[0];
+                GameController.curacion = radial.especiales[1];
+                GameController.ganzua = radial.especiales[2];
                 Debug.Log("Salido");
                 SceneManager.LoadScene("CasaReturn");
             }
