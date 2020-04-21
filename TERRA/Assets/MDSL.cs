@@ -3,56 +3,44 @@ using UnityEngine;
 
 public class MDSL : MonoBehaviour
 {
-    public Transform target;
-    public float speed;
-    private Vector3 start, end;
-    private bool action;
+    private SpriteRenderer Beam;
+    private BoxCollider2D Burn;
     // Start is called before the first frame update
     void Start()
     {
-        action = true;
-        if (target != null)
-        {
-            target.parent = null;
-            start = transform.position;
-            end = target.position;
-        }
+        Beam = GetComponent<SpriteRenderer>();
+        Burn = GetComponent<BoxCollider2D>();
+        StartCoroutine(Active());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (target != null)
-        {
-            float fixedSpeed = speed * Time.fixedDeltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target.position, speed);
-        }
 
-        if (transform.position == target.position)
-        {
-            GetComponent<MDSL>().enabled = false;
-            StartCoroutine(lib());
-            target.position = (target.position == start) ? end : start;
-            action = !action;
-        }
     }
-
-    IEnumerator lib()
+    private void OnTriggerEnter2D(Collider2D col)
     {
-
-        float rWait = Random.Range(2, 5);
-        if (action)
+        if (col.gameObject.tag == "Player")
         {
-            yield return new WaitForSeconds(rWait);
-        }
 
-        else if (!action)
-        {
-            yield return new WaitForSeconds(2f);
-        }
 
-        GetComponent<KAKA>().enabled = true;
+            col.SendMessage("RATAKnockBack", transform.position.x);
+
+
+        }
     }
+    IEnumerator Active()
+    {
+        float rWait = 5f;
+        Beam.enabled = false;
+        Burn.enabled = false;
+        yield return new WaitForSeconds(rWait);
+        Beam.enabled = true;
+        Burn.enabled = true;
+        yield return new WaitForSeconds(5f);
 
+        StartCoroutine(Active());
+
+    }
 
 }

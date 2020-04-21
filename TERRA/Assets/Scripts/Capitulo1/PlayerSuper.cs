@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerSuper : MonoBehaviour
 {
@@ -18,7 +19,13 @@ public class PlayerSuper : MonoBehaviour
     [SerializeField] private GameObject LATA1;
     [SerializeField] private GameObject LATA2;
     [SerializeField] private GameObject AWA;
+    [SerializeField] private GameObject OBJ_Lata1Key;
+    [SerializeField] private GameObject OBJ_Lata2;
+    [SerializeField] private GameObject OBJ_Awa;
 
+
+    [SerializeField] private GameObject Key_DoorKey;
+    [SerializeField] private GameObject Key_DoorFood;
     [SerializeField] private GameObject Key_Caja;
     [SerializeField] private GameObject Key_Key;
     [SerializeField] private GameObject Key_Pc;
@@ -39,7 +46,7 @@ public class PlayerSuper : MonoBehaviour
 
     // Start is called before the first frame update
 
-    bool prexit, exit, key, pc, caja_fuerte;
+    bool prexit, exit, key, pc, caja_fuerte, usedkey, CRoom1, CRoom2;
 
     bool lata1, lata2, awa, flag, flag1;
     static public bool Complete_mini;
@@ -47,6 +54,9 @@ public class PlayerSuper : MonoBehaviour
     public bool s1, s2, cuarto;
     void Start()
     {
+        CRoom1 = false;
+        CRoom2 = false;
+        Key_DoorFood.SetActive(false);
         Key_Key.SetActive(false);
         Key_Pc.SetActive(false);
         Key_Interruptor.SetActive(false);
@@ -63,6 +73,7 @@ public class PlayerSuper : MonoBehaviour
         lata1 = false;
         lata2 = false;
         awa = false;
+        usedkey = false;
         Caja.GetComponent<SpriteRenderer>().sprite = CajaC;
         interruptor.GetComponent<SpriteRenderer>().color = Color.gray;
     }
@@ -76,10 +87,43 @@ public class PlayerSuper : MonoBehaviour
             lata1 = false;
             lata2 = false;
             awa = false;
+            Key_DoorFood.SetActive(true);
             flag1 = true;
             
         }
 
+        if (usedkey)
+        {
+            OBJ_Lata1Key.SetActive(false);
+            Key_DoorKey.SetActive(false);
+            List.select.Remove(KEY_inv);
+            List.index = 0;
+            usedkey = false;
+        }
+
+        if (CRoom1)
+        {
+            camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
+            this.transform.position = new Vector3(6f, -1.1f, 0.0f);
+            CRoom1 = false;
+        }
+        if (CRoom2)
+        {
+            camera.transform.position = new Vector3(18.0f, 0.0f, -10.0f);
+            this.transform.position = new Vector3(12f, -1.1f, 0.0f);
+            CRoom2 = false;
+        }
+
+        if (Complete_mini)
+        {
+            Caja.GetComponent<SpriteRenderer>().sprite = CajaA;
+            if (!key)
+            {
+                KEY.SetActive(true);
+                Key_Key.SetActive(true);
+
+            }
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -109,32 +153,20 @@ public class PlayerSuper : MonoBehaviour
     public void OnTriggerStay2D(Collider2D collision)
     {
         
-        if (collision.gameObject.name == "Caja fuerte")
+        if (collision.gameObject.name == "Caja fuerte" &&Input.GetKeyDown(KeyCode.J) && PlayerController.Equip == "Ganzua")
         {
-            if (Input.GetKeyDown(KeyCode.J) && PlayerController.Equip == "Ganzua")
-            {
+           
 
-                Key_Caja.SetActive(false);
+               
                 if (!Complete_mini)
                 {
+                    Key_Caja.SetActive(false);
                     Mini.SetActive(flag);
-                    GetComponent<PlayerController>().enabled = !flag;
-                    flag = !flag;
+                    GetComponent<PlayerController>().enabled = false;
                     
                 }
 
-            }
-
-            if (Complete_mini)
-            {
-                Caja.GetComponent<SpriteRenderer>().sprite = CajaA;
-                if (!key)
-                {
-                    KEY.SetActive(true);
-                    Key_Key.SetActive(true);
-
-                }
-            }
+           
         }
         if (collision.gameObject.name == "Interruptor" && flag1)
         {
@@ -177,6 +209,9 @@ public class PlayerSuper : MonoBehaviour
                 Key_Key.SetActive(false);
                 Debug.Log("key");
                 List.select.Add(KEY_inv);
+                OBJ_Lata1Key.GetComponent<Image>().sprite = KEY_inv.GetComponent<SpriteRenderer>().sprite;
+                OBJ_Lata1Key.GetComponent<Image>().preserveAspect = true;
+                OBJ_Lata1Key.SetActive(true);
                 Destroy(KEY);
                 key = true;
             }
@@ -186,6 +221,9 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                OBJ_Lata1Key.GetComponent<Image>().sprite = LATA1.GetComponent<SpriteRenderer>().sprite;
+                OBJ_Lata1Key.GetComponent<Image>().preserveAspect = true;
+                OBJ_Lata1Key.SetActive(true);
                 Key_Lata1.SetActive(false);
                 Destroy(LATA1);
                 lata1 = true;
@@ -196,6 +234,9 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                OBJ_Lata2.GetComponent<Image>().sprite = LATA2.GetComponent<SpriteRenderer>().sprite;
+                OBJ_Lata2.GetComponent<Image>().preserveAspect = true;
+                OBJ_Lata2.SetActive(true);
                 Key_Lata2.SetActive(false);
                 Destroy(LATA2);
                 lata2 = true;
@@ -206,6 +247,9 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                OBJ_Awa.GetComponent<Image>().sprite = AWA.GetComponent<SpriteRenderer>().sprite;
+                OBJ_Awa.GetComponent<Image>().preserveAspect = true;
+                OBJ_Awa.SetActive(true);
                 Key_Agua.SetActive(false);
                 Destroy(AWA);
                 awa = true;
@@ -216,10 +260,7 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                camera.transform.position = new Vector3(18.0f, 0.0f, -10.0f);
-                this.transform.position = new Vector3(12f, -1.1f, 0.0f);
-
-
+                CRoom2 = true;
             }
         }
 
@@ -227,14 +268,11 @@ public class PlayerSuper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                
-                camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
-                this.transform.position = new Vector3(6f, -1.1f, 0.0f);
-
+                CRoom1 = true;
             }
         }
 
-        if (collision.gameObject.name == "Puerta SuperMercado2")//compara si hizo la colision con el objeto correcto
+        if (collision.gameObject.name == "Puerta SuperMercado2" && flag1)//compara si hizo la colision con el objeto correcto
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -248,7 +286,7 @@ public class PlayerSuper : MonoBehaviour
             {
                 camera.transform.position = new Vector3(36f, 0.0f, -10.0f);
                 this.transform.position = new Vector3(30f, -1.1f, 0.0f);
-
+                usedkey = true;
             }
         }
     }

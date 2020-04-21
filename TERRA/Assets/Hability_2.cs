@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Hability_2 : MonoBehaviour
 {
+    [SerializeField] private GameObject inv;
     public Sprite DoubleJump;
     public Sprite LongJump;
     public Sprite Invisible;
@@ -18,7 +20,7 @@ public class Hability_2 : MonoBehaviour
 
     public SpriteRenderer spr;
 
-    private string set = "Dash";
+    public static string set = "Dash";
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,8 @@ public class Hability_2 : MonoBehaviour
             dispD = 20;
             actD = 1;
         }
+
+        inv.GetComponent<Image>().sprite = spr.sprite;
 
         disp = true;
         act = false;

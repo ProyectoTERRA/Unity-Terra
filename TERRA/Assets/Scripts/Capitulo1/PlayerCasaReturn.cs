@@ -11,6 +11,11 @@ public class PlayerCasaReturn : MonoBehaviour
 
     [SerializeField] private GameObject FOOD;
 
+    [SerializeField] private GameObject OBJ_LATA1;
+    [SerializeField] private GameObject OBJ_LATA2;
+    [SerializeField] private GameObject OBJ_AWA;
+
+
     [SerializeField] private GameObject Key_DoorSalaLucy;
 
     [SerializeField] private GameObject Key_Lucy;
@@ -79,6 +84,9 @@ public class PlayerCasaReturn : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                OBJ_LATA1.SetActive(false);
+                OBJ_LATA2.SetActive(false);
+                OBJ_AWA.SetActive(false);
                 FOOD.SetActive(true);
                 Food = true;
                 Key_DoorSalaLucy.SetActive(true);

@@ -24,12 +24,14 @@ public class PlayerCasa : MonoBehaviour
     public bool linterna;
     private int basuraL, basuraP, basuraC, basuraM;
 
-    private bool agarrar, trash;
+    private bool agarrar, trash, CRoom1, CRoom2;
     private string nombre, tag;
 
     // Start is called before the first frame update
     void Start()
     {
+        CRoom1 = false;
+        CRoom2 = false;
         trash = false;
         Heart_Bar.Phearts = 6;
 
@@ -97,6 +99,24 @@ public class PlayerCasa : MonoBehaviour
             }
             agarrar = false;
         }
+        if (CRoom1)
+        {
+            transform.position = new Vector3(16.8f, 0.5f);
+            transform.localScale = new Vector3(1.75f, 1.75f, 1.75f);
+
+            camera.transform.position = new Vector3(18.0f, 3.0f, -10.0f);
+            camera.transform.localScale = new Vector3(1f, 1f, 1f);
+            CRoom1 = false;
+        }
+        if (CRoom2)
+        {
+            transform.position = new Vector3(30.6f, 0.5f);
+            transform.localScale = new Vector3(1.75f, 1.75f, 1.75f);
+
+            camera.transform.position = new Vector3(36.0f, 3.0f, -10.0f);
+            camera.transform.localScale = new Vector3(1f, 1f, 1f);
+            CRoom2 = false;
+        }
     }
 
     public void OnTriggerStay2D(Collider2D collision)
@@ -136,11 +156,7 @@ public class PlayerCasa : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("Tecla e");
-                transform.position = new Vector3(16.8f, 0.5f);
-                transform.localScale = new Vector3(1.75f, 1.75f, 1.75f);
-
-                camera.transform.position = new Vector3(18.0f, 3.0f, -10.0f);
-                camera.transform.localScale = new Vector3(1f, 1f, 1f);
+                CRoom1 = true;
             }
         }
 
@@ -150,11 +166,7 @@ public class PlayerCasa : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && lucy)
             {
                 Debug.Log("Tecla e");
-                transform.position = new Vector3(30.6f, 0.5f);
-                transform.localScale = new Vector3(1.75f, 1.75f, 1.75f);
-
-                camera.transform.position = new Vector3(36.0f, 3.0f, -10.0f);
-                camera.transform.localScale = new Vector3(1f, 1f, 1f);
+                CRoom2 = true;
             }
         }
 
