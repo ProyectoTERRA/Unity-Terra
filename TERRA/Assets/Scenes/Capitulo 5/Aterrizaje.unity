@@ -282,18 +282,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &340943007 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8362500405813697985, guid: 779b3acff1391d449ab84aaa16469507,
-    type: 3}
-  m_PrefabInstance: {fileID: 849069885}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &340943009 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8362500405813697990, guid: 779b3acff1391d449ab84aaa16469507,
-    type: 3}
-  m_PrefabInstance: {fileID: 849069885}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &433873211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,6 +1296,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d53178f79fa588140a4124ce3bb8e545, type: 3}
+--- !u!1 &1366725928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7259724196119756038, guid: 779b3acff1391d449ab84aaa16469507,
+    type: 3}
+  m_PrefabInstance: {fileID: 849069885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1366725930 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7259724196119756033, guid: 779b3acff1391d449ab84aaa16469507,
+    type: 3}
+  m_PrefabInstance: {fileID: 849069885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1401659240
 GameObject:
   m_ObjectHideFlags: 0
@@ -2054,7 +2054,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Equipado
       value: 
-      objectReference: {fileID: 340943007}
+      objectReference: {fileID: 1366725928}
     - target: {fileID: 1372617971661776522, guid: ae5784e8997662f49833c0d09ddfd43f,
         type: 3}
       propertyPath: m_Camera
@@ -2332,7 +2332,7 @@ Transform:
   m_Children:
   - {fileID: 1662963395308519384}
   - {fileID: 7968729326417141831}
-  - {fileID: 340943009}
+  - {fileID: 1366725930}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

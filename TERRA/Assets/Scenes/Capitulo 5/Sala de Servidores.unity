@@ -858,18 +858,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 50.10774, y: 23.82077}
   m_EdgeRadius: 0
---- !u!1 &111256480 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8362500405813697985, guid: 779b3acff1391d449ab84aaa16469507,
-    type: 3}
-  m_PrefabInstance: {fileID: 961854069}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &111256482 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8362500405813697990, guid: 779b3acff1391d449ab84aaa16469507,
-    type: 3}
-  m_PrefabInstance: {fileID: 961854069}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &114466301
 GameObject:
   m_ObjectHideFlags: 0
@@ -14367,6 +14355,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1794783264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7259724196119756038, guid: 779b3acff1391d449ab84aaa16469507,
+    type: 3}
+  m_PrefabInstance: {fileID: 961854069}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1794783266 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7259724196119756033, guid: 779b3acff1391d449ab84aaa16469507,
+    type: 3}
+  m_PrefabInstance: {fileID: 961854069}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1823312288
 GameObject:
   m_ObjectHideFlags: 0
@@ -17195,7 +17195,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Equipado
       value: 
-      objectReference: {fileID: 111256480}
+      objectReference: {fileID: 1794783264}
     - target: {fileID: 1372617971661776522, guid: ae5784e8997662f49833c0d09ddfd43f,
         type: 3}
       propertyPath: m_Camera
@@ -31649,7 +31649,7 @@ Transform:
   m_Children:
   - {fileID: 6909267790793021650}
   - {fileID: 2765266304142640973}
-  - {fileID: 111256482}
+  - {fileID: 1794783266}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

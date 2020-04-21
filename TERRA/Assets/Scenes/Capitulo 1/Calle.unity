@@ -809,18 +809,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &296667995 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8362500405813697985, guid: 779b3acff1391d449ab84aaa16469507,
-    type: 3}
-  m_PrefabInstance: {fileID: 8362500406092961434}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &296667996 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8362500405813697990, guid: 779b3acff1391d449ab84aaa16469507,
-    type: 3}
-  m_PrefabInstance: {fileID: 8362500406092961434}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &311061235
 GameObject:
   m_ObjectHideFlags: 0
@@ -6534,6 +6522,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1396414999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7259724196119756038, guid: 779b3acff1391d449ab84aaa16469507,
+    type: 3}
+  m_PrefabInstance: {fileID: 8362500406092961434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1396415000 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7259724196119756033, guid: 779b3acff1391d449ab84aaa16469507,
+    type: 3}
+  m_PrefabInstance: {fileID: 8362500406092961434}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1399873288
 GameObject:
   m_ObjectHideFlags: 0
@@ -7355,7 +7355,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Equipado
       value: 
-      objectReference: {fileID: 296667995}
+      objectReference: {fileID: 1396414999}
     - target: {fileID: 1372617971661776522, guid: ae5784e8997662f49833c0d09ddfd43f,
         type: 3}
       propertyPath: m_Camera
@@ -11346,7 +11346,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 871274355
   m_SortingLayer: 4
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 045fd3d96959da347b754490b29671ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11411,7 +11411,7 @@ Transform:
   m_Children:
   - {fileID: 5657417381321565152}
   - {fileID: 3963654059151948927}
-  - {fileID: 296667996}
+  - {fileID: 1396415000}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

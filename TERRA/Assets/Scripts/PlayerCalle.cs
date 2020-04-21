@@ -341,7 +341,6 @@ public class PlayerCalle : MonoBehaviour
             agarrar = true;
         }
 
-
         if (collision.gameObject.tag == "LataFAKE" && PlayerController.Equip == "Recogedor")
         {
             nombre = collision.gameObject.name;

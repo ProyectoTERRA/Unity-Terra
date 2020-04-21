@@ -93,7 +93,10 @@ public class List : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (select[index].name == "Hand")
+        {
+            Equipado.GetComponent<SpriteRenderer>().sprite = null;
+        }
         i = select.Count;
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {

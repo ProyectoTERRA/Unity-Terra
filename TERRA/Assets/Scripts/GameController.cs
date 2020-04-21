@@ -17,11 +17,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
-=======
-     
-        
->>>>>>> c5853222c64693afcb9c93b44470ce568b0196e8
+
         /*
         Debug.Log("Pila en gameController " + pila);
         Debug.Log("Bolsa en gameController " + bolsa);
