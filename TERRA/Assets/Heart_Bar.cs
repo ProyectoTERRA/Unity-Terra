@@ -76,6 +76,7 @@ public class Heart_Bar : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(Phearts);
         hearts = Phearts;
 
         if ( hearts == 0 )
@@ -95,7 +96,7 @@ public class Heart_Bar : MonoBehaviour
                     {
                         if (hearts > 0 && life > 0)
                         {
-                            hearts--;
+                            Phearts--;
                         }
 
                     }
