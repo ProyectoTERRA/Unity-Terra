@@ -25,17 +25,8 @@ public class Watcher : MonoBehaviour
         rbd2 = GetComponent<Rigidbody2D>();
         Jugador = GameObject.FindGameObjectWithTag("Player");
         PosicionInicial = transform.position;
+      
     }
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-
-        if (col.gameObject.tag == "Player")
-        {
-            col.SendMessage("EnemyKnockBack", transform.position.x + 1);
-
-        }
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -45,13 +36,30 @@ public class Watcher : MonoBehaviour
         //Si la distancia al jugador es menor que el radio de vision del objetivo, el target pasa a ser el jugador
         float distanciaJugador = Vector3.Distance(Jugador.transform.position, transform.position);
         if (distanciaJugador < DistanciaVision) target = Jugador.transform.position;
-        
         //Movimiento del Enemigo
         float fixedSpeed = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
         Debug.DrawLine(transform.position, target, Color.red);
 
-
-
     }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+
+        if (col.gameObject.tag == "Player")
+        {
+            col.SendMessage("EnemyKnockBack", transform.position.x + 1);
+
+        }
+        if (col.gameObject.tag == "BE")
+        {
+            DistanciaVision = 0;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        DistanciaVision = 5;
+    }
+
+
 }

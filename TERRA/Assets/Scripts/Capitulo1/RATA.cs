@@ -74,7 +74,7 @@ public class RATA : MonoBehaviour
             else
             {
 
-                col.SendMessage("RATAKnockBack", transform.position.x);
+                col.SendMessage("RATAKnockBack", transform.position.x + 1);
             }
 
         }
