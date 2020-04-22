@@ -65,7 +65,7 @@ public class RATA : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             Debug.Log("Ha hecho colision con el jugador");
-            float yOffset = y+0.25f;
+            float yOffset = y+(y*(y*.8f));
             if (transform.position.y + yOffset < col.transform.position.y)
             {
                 col.SendMessage("EnemyJump");
