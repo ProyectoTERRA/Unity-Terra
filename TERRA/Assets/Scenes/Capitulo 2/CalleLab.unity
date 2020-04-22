@@ -5862,6 +5862,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 779b3acff1391d449ab84aaa16469507, type: 3}
+--- !u!1 &934513551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7259724196119756038, guid: 779b3acff1391d449ab84aaa16469507,
+    type: 3}
+  m_PrefabInstance: {fileID: 934513550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &941065255
 GameObject:
   m_ObjectHideFlags: 0
@@ -7148,7 +7154,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Equipado
       value: 
-      objectReference: {fileID: 1843777936}
+      objectReference: {fileID: 934513551}
     - target: {fileID: 1866795957216702754, guid: ae5784e8997662f49833c0d09ddfd43f,
         type: 3}
       propertyPath: m_Layer
@@ -11658,12 +11664,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1843777936 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8362500405813697985, guid: 779b3acff1391d449ab84aaa16469507,
-    type: 3}
-  m_PrefabInstance: {fileID: 934513550}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1855844177
 GameObject:
   m_ObjectHideFlags: 0
