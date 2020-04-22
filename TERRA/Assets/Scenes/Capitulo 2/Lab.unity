@@ -2796,12 +2796,12 @@ PrefabInstance:
     - target: {fileID: 5657417382059861989, guid: 7f7287315f8370442a9c7af9e038068a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.2
+      value: 36.6
       objectReference: {fileID: 0}
     - target: {fileID: 5657417382059861989, guid: 7f7287315f8370442a9c7af9e038068a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.82
+      value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 5657417382059861989, guid: 7f7287315f8370442a9c7af9e038068a,
         type: 3}
@@ -3191,7 +3191,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Equipado
       value: 
-      objectReference: {fileID: 2035988028}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae5784e8997662f49833c0d09ddfd43f, type: 3}
 --- !u!4 &1863322127 stripped
@@ -3452,12 +3452,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 779b3acff1391d449ab84aaa16469507, type: 3}
---- !u!1 &2035988028 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8362500405813697985, guid: 779b3acff1391d449ab84aaa16469507,
-    type: 3}
-  m_PrefabInstance: {fileID: 2035988027}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2115061591
 GameObject:
   m_ObjectHideFlags: 0
