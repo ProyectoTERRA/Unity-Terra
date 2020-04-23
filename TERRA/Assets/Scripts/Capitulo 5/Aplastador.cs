@@ -43,10 +43,10 @@ public class Aplastador : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player" && PlayerController.movement)
         {
             Debug.Log("Ha hecho colision con el jugador");
-            col.SendMessage("RATAKnockBack", transform.position.x);
+            col.SendMessage("UnCorazon", transform.position.x);
         }
         if (col.gameObject.name == "APLR")
         {

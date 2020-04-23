@@ -50,7 +50,7 @@ public class Crawler : MonoBehaviour
         {
 
             Debug.Log("Ha hecho colision con el jugador");
-            col.SendMessage("MedioCorazon", transform.position.x);
+            col.SendMessage("UnCorazon", transform.position.x);
         }
     }
     
