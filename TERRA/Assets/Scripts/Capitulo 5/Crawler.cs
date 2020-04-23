@@ -48,9 +48,8 @@ public class Crawler : MonoBehaviour
     {
         if (col.gameObject.tag == "Player"&& PlayerController.movement)
         {
-            Heart_Bar.Phearts--;
             Debug.Log("Ha hecho colision con el jugador");
-            col.SendMessage("RATAKnockBack", transform.position.x);
+            col.SendMessage("MedioCorazon", transform.position.x);
         }
     }
     
