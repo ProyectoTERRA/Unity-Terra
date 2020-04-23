@@ -274,6 +274,24 @@ public class PlayerController : MonoBehaviour
         movement = false;
 
 
+        Invoke("EnableMovement", 1.5f);
+
+
+
+        spr.color = Color.red;
+    }
+
+
+    public void RATA_1Corazon(float enemyPosX)
+    {
+        jump = true;
+        Heart_Bar.Phearts = Heart_Bar.Phearts-2;
+        float side = Mathf.Sign(enemyPosX - transform.position.x);
+        rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
+
+        movement = false;
+
+
         Invoke("EnableMovement", 2f);
 
 

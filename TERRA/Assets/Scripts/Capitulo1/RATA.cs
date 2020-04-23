@@ -66,17 +66,20 @@ public class RATA : MonoBehaviour
         {
             Debug.Log("Ha hecho colision con el jugador");
             float yOffset = y+(y*(y*.8f));
-            if (transform.position.y + yOffset < col.transform.position.y)
-            {
-                col.SendMessage("EnemyJump");
-                Destroy(gameObject);
-            }
-            else
-            {
+            if (PlayerController.movement) {
+                if (transform.position.y + yOffset < col.transform.position.y)
+                {
+                    col.SendMessage("EnemyJump");
+                    Destroy(gameObject);
+                }
+                else
+                {
 
-                col.SendMessage("RATAKnockBack", transform.position.x);
+                    col.SendMessage("RATA_1Corazon", transform.position.x);
+                }
             }
-
+            speed = -speed;
+            rbd2.velocity = new Vector2(speed, rbd2.velocity.y);
         }
     }
 }
