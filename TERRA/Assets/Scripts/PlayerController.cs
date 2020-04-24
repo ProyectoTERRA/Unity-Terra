@@ -202,7 +202,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "life")
         {
-            //GameObject vida = GameObject.Find("Heart Bar - HUD_0");
+            //  GameObject vida = GameObject.Find("Heart Bar - HUD_0");
             //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
             //heart_Bar.hearts--;
             Heart_Bar.Phearts--;
@@ -273,6 +273,23 @@ public class PlayerController : MonoBehaviour
     {
         jump = true;
         Heart_Bar.Phearts--;
+        float side = Mathf.Sign(enemyPosX - transform.position.x);
+        rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
+
+        movement = false;
+
+
+        Invoke("EnableMovement", 1.5f);
+
+
+
+        spr.color = Color.red;
+    }
+
+    public void BiriBiriBanBan(float enemyPosX)
+    {
+        jump = true;
+        Heart_Bar.Phearts = 0;
         float side = Mathf.Sign(enemyPosX - transform.position.x);
         rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
 
