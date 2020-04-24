@@ -36,38 +36,38 @@ public class Objetos : MonoBehaviour
             if (tag == "lata")
             {
                 
-                //GameController.lata++;
+                GameController.lata++;
                 radial.basura[5]++;
                 Destroy(GameObject.Find(nombre));
                 
             }
             else if(tag == "platano" )
             {
-                //GameController.platano++;
+                GameController.platano++;
                 radial.basura[4]++;
                 Destroy(GameObject.Find(nombre));
             }
             else if (tag == "manzana")
             {
-                //GameController.manzana++;
+                GameController.manzana++;
                 radial.basura[3]++;
                 Destroy(GameObject.Find(nombre));
             }
             else if (tag == "carton" )
             {
-                //GameController.carton++;
+                GameController.carton++;
                 radial.basura[2]++;
                 Destroy(GameObject.Find(nombre));
             }
             else if (tag == "bolsa" )
             {
-                //GameController.bolsa++;
+                GameController.bolsa++;
                 radial.basura[1]++;
                 Destroy(GameObject.Find(nombre));
             }
             else if (tag == "pila")
             {
-                //GameController.pila++;
+                GameController.pila++;
                 radial.basura[0]++;
                 Destroy(GameObject.Find(nombre));
             }

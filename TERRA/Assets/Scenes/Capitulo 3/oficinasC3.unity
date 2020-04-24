@@ -359,6 +359,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a72f4c8686a07504fbcf19c0072337c4, type: 3}
+--- !u!1 &339037394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1389857361567279542, guid: a72f4c8686a07504fbcf19c0072337c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 339037393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &339037395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6850839511866135696, guid: a72f4c8686a07504fbcf19c0072337c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 339037393}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &398889924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,7 +1080,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 7586683115344331513}
     m_Modifications:
     - target: {fileID: 8362500405813697990, guid: 779b3acff1391d449ab84aaa16469507,
         type: 3}
@@ -1135,8 +1147,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Equip
       objectReference: {fileID: 0}
+    - target: {fileID: 7259724196119756033, guid: 779b3acff1391d449ab84aaa16469507,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259724196119756033, guid: 779b3acff1391d449ab84aaa16469507,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259724196119756033, guid: 779b3acff1391d449ab84aaa16469507,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259724196119756033, guid: 779b3acff1391d449ab84aaa16469507,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259724196119756033, guid: 779b3acff1391d449ab84aaa16469507,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.93908507
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259724196119756033, guid: 779b3acff1391d449ab84aaa16469507,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 779b3acff1391d449ab84aaa16469507, type: 3}
+--- !u!1 &608217585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7259724196119756038, guid: 779b3acff1391d449ab84aaa16469507,
+    type: 3}
+  m_PrefabInstance: {fileID: 608217584}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &608217586 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7259724196119756033, guid: 779b3acff1391d449ab84aaa16469507,
+    type: 3}
+  m_PrefabInstance: {fileID: 608217584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &669355137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1726,8 +1780,8 @@ MonoBehaviour:
     name: Player
     sentenceList:
     - "La formula no esta\t\t"
-    - comleta, sigue adelanta
-    - y regresacuando lo este
+    - comleta, sigue adelante
+    - y regresa cuando lo este
   dialogPanel: {fileID: 1490218068}
   displayText: {fileID: 484820900}
   typingpeed: 0.1
@@ -1950,9 +2004,8 @@ MonoBehaviour:
   dialogue:
     name: Player
     sentenceList:
-    - "Noelany\t"
-    - esta muy
-    - bonitaaaaaaaa
+    - Has completado la formula
+    - "presiona la tecla \xB4E para continuar"
   dialogPanel: {fileID: 1490218068}
   displayText: {fileID: 484820900}
   typingpeed: 0.1
@@ -2048,7 +2101,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1223873121
 PrefabInstance:
@@ -2132,6 +2185,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.96043026
       objectReference: {fileID: 0}
+    - target: {fileID: 6786952539793922047, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: inv
+      value: 
+      objectReference: {fileID: 339037395}
+    - target: {fileID: 6786952540217478386, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: inv
+      value: 
+      objectReference: {fileID: 339037394}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56112751c76786142b615e3af4cdf7e9, type: 3}
 --- !u!1001 &1282030422
@@ -3007,8 +3070,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Equipado
       value: 
-      objectReference: {fileID: 8362500405813697985, guid: 779b3acff1391d449ab84aaa16469507,
-        type: 3}
+      objectReference: {fileID: 608217585}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae5784e8997662f49833c0d09ddfd43f, type: 3}
 --- !u!1 &2004651488
@@ -3362,6 +3424,7 @@ Transform:
   m_Children:
   - {fileID: 7586683114374726596}
   - {fileID: 1210277971726769243}
+  - {fileID: 608217586}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

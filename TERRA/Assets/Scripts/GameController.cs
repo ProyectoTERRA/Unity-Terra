@@ -18,13 +18,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
 
-        /*
-        Debug.Log("Pila en gameController " + pila);
-        Debug.Log("Bolsa en gameController " + bolsa);
-        Debug.Log("Carton en gameController " + carton);
-        Debug.Log("Manzana en gameController " + manzana);
-        Debug.Log("Platano en gameController " + platano);
-        Debug.Log("Lata en gameController " + lata);*/
+        
 
     }
     private void Awake()

@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Heart_Bar.Phearts = 6;
         groundCAP5 = true;
         transform.localScale = new Vector3(-x, y, z);
         scal = scale;
