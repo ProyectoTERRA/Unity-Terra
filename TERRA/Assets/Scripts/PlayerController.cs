@@ -177,21 +177,24 @@ public class PlayerController : MonoBehaviour
         //Animacion de Vida
         if (collision.gameObject.tag == "life")
         {
-            GameObject vida = GameObject.Find("Heart Bar - HUD_0");
-            Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
-            heart_Bar.hearts--;
+            //GameObject vida = GameObject.Find("Heart Bar - HUD_0");
+            //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
+            //heart_Bar.hearts--;
+            Heart_Bar.Phearts--;
+        }
+        if (collision.gameObject.tag == "enemigo1")
+        {
+            //GameObject vida = GameObject.Find("Heart Bar - HUD_0");
+            //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
+            //heart_Bar.hearts--;
+            Heart_Bar.Phearts--;
         }
         if (collision.gameObject.tag == "enemigo1")
         {
             GameObject vida = GameObject.Find("Heart Bar - HUD_0");
-            Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
-            heart_Bar.hearts--;
-        }
-        if (collision.gameObject.tag == "enemigo1")
-        {
-            GameObject vida = GameObject.Find("Heart Bar - HUD_0");
-            Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
-            heart_Bar.hearts-=2;
+            //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
+            //heart_Bar.hearts-=2;
+            Heart_Bar.Phearts-=2;
         }
     }
 
@@ -199,9 +202,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "life")
         {
-            GameObject vida = GameObject.Find("Heart Bar - HUD_0");
-            Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
-            heart_Bar.hearts--;
+            //GameObject vida = GameObject.Find("Heart Bar - HUD_0");
+            //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
+            //heart_Bar.hearts--;
+            Heart_Bar.Phearts--;
         }
     }
 
