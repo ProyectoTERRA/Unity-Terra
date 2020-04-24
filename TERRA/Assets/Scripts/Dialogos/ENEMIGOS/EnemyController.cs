@@ -45,7 +45,6 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        col.SendMessage("DosCorazones", transform.position.x);
         Debug.Log(col.gameObject.name);
         if (col.gameObject.name == "EnemyCollider1")
         {
@@ -65,6 +64,7 @@ public class EnemyController : MonoBehaviour
         }
         if (col.gameObject.tag == "Player")
         {
+            col.SendMessage("DosCorazones", transform.position.x);
             Debug.Log("Ha hecho colision con el jugador");
             float yOffset = y + 0.25f;
             if (transform.position.y + yOffset < col.transform.position.y)
@@ -74,7 +74,6 @@ public class EnemyController : MonoBehaviour
             }
             else
             {
-
                 col.SendMessage("RATAKnockBack", transform.position.x + 1);
             }
 
