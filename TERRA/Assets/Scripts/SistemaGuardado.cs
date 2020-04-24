@@ -105,6 +105,7 @@ public class SistemaGuardado : MonoBehaviour
         Debug.Log("Manzana " + radial.basura[3]);
         Debug.Log("Platano " + radial.basura[4]);
         Debug.Log("Lata " + radial.basura[5]);
+        Debug.Log("FORMULAS  " + dato.formula);
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
@@ -193,7 +194,6 @@ public class SistemaGuardado : MonoBehaviour
             nombre3 = dato.nombre3;
 
             Debug.Log("Linea 100 dato.contador: " + dato.contador);
-            Debug.Log("Contador " + contador);
             name = GameObject.Find("InputField").GetComponent<InputField>();
 
             if (contador == 1)
@@ -248,6 +248,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.nombre3 = nombre3;
         dato.contador = contador;
         Debug.Log("Nombre actual " + dato.nombreActual);
+        GameController.nombreActualPartida = dato.nombreActual;
         Debug.Log("dato contador " + dato.contador);
         //Serializara los archivos
         bf.Serialize(expediente, dato);

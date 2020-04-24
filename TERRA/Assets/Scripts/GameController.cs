@@ -5,6 +5,7 @@ public class GameController : MonoBehaviour
     public static int pila, bolsa, carton, manzana, platano, lata, llave, formula, normal, paralizante, desactivadora, tranquilizante, pesada, energia, curacion, ganzua, life;
     public static bool start;
     public static int vidas, corazones;
+    public static string nombreActualPartida;
 
 
     //----Variable Singleton--
@@ -17,7 +18,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Debug.Log("Game controller " + nombreActualPartida);
         
 
     }
