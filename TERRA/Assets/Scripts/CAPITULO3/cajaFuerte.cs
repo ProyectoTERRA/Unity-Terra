@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class cajaFuerte : MonoBehaviour
 {
@@ -20,6 +21,17 @@ public class cajaFuerte : MonoBehaviour
             Debug.Log("YA HAY 8 FORMULAS");
             cientifico.SetActive(false);
             cientifica1.SetActive(true);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(gameObject.name == "")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                SceneManager.LoadScene("playa");
+            }
         }
     }
 }

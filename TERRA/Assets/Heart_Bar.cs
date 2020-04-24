@@ -370,6 +370,7 @@ public class Heart_Bar : MonoBehaviour
         yield return new WaitForSeconds(1f);
         GameController.life--;
         PlayerController.movement = true;
+        Turret.act = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }

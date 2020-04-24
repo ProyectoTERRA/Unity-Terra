@@ -332,6 +332,8 @@ public class PlayerCorredores : MonoBehaviour
     {
         PlayerController.jump = true;
 
+        Heart_Bar.Phearts = Heart_Bar.Phearts - 2;
+
         float side = Mathf.Sign(enemyPosX - transform.position.x);
 
         GetComponent<Rigidbody2D>().AddForce(Vector2.left * side * 1, ForceMode2D.Impulse);

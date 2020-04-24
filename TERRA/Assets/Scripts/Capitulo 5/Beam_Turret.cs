@@ -24,10 +24,10 @@ public class Beam_Turret : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && PlayerController.movement)
         {
             
-            collision.SendMessage("RATAKnockBack", transform.position.x);
+            collision.SendMessage("Turret_1Corazon", transform.position.x);
             Destroy(gameObject);
         }
     }
