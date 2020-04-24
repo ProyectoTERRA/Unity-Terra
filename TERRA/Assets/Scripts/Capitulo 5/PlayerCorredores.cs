@@ -332,7 +332,7 @@ public class PlayerCorredores : MonoBehaviour
     {
         PlayerController.jump = true;
 
-        Heart_Bar.Phearts = Heart_Bar.Phearts - 2;
+        Heart_Bar.Phearts = 0;
 
         float side = Mathf.Sign(enemyPosX - transform.position.x);
 

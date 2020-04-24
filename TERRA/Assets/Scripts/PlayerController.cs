@@ -29,12 +29,15 @@ public class PlayerController : MonoBehaviour
     public int SIDE;
     public static int side;
 
+    private bool Machucado;
+
     [SerializeField] private GameObject list;
 
     public GameObject[] Esf;
 
     void Start()
     {
+        Machucado = false;
         Heart_Bar.Phearts = 6;
         groundCAP5 = true;
         transform.localScale = new Vector3(-x, y, z);
@@ -55,6 +58,13 @@ public class PlayerController : MonoBehaviour
         //animacion.SetBool("Grounded", grounded);
 
         //Doble Salto
+
+        if (Machucado)
+        {
+         GetComponent<Rigidbody2D>().AddForce(transform.right * -50f, ForceMode2D.Force);
+            
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (grounded && groundCAP5)
@@ -174,27 +184,41 @@ public class PlayerController : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
+
+        if (collision.gameObject.tag == "life" && movement)
+        {
+            Debug.Log("Atrrrr");
+            //GameObject vida = GameObject.Find("Heart Bar - HUD_0");
+            //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
+            //heart_Bar.hearts--;
+            //Heart_Bar.Phearts--;
+            MedioCorazon(collision.transform.position.x);
+        }
         //Animacion de Vida
-        if (collision.gameObject.tag == "life")
+        if (collision.gameObject.tag == "Car" && movement)
+        {
+            Debug.Log("Atrrrr");
+            //GameObject vida = GameObject.Find("Heart Bar - HUD_0");
+            //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
+            //heart_Bar.hearts--;
+            //Heart_Bar.Phearts--;
+            MedioCorazonCar(collision.transform.position.x);
+        }
+        if (collision.gameObject.tag == "enemigo1" && movement)
         {
             //GameObject vida = GameObject.Find("Heart Bar - HUD_0");
             //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
             //heart_Bar.hearts--;
-            Heart_Bar.Phearts--;
+            //Heart_Bar.Phearts--;
+            MedioCorazon(collision.transform.position.x);
         }
-        if (collision.gameObject.tag == "enemigo1")
+        if (collision.gameObject.tag == "enemigo1" && movement)
         {
             //GameObject vida = GameObject.Find("Heart Bar - HUD_0");
-            //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
-            //heart_Bar.hearts--;
-            Heart_Bar.Phearts--;
-        }
-        if (collision.gameObject.tag == "enemigo1")
-        {
-            GameObject vida = GameObject.Find("Heart Bar - HUD_0");
             //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
             //heart_Bar.hearts-=2;
-            Heart_Bar.Phearts-=2;
+            //Heart_Bar.Phearts-=2;
+            UnCorazon(collision.transform.position.x);
         }
     }
 
@@ -205,7 +229,8 @@ public class PlayerController : MonoBehaviour
             //  GameObject vida = GameObject.Find("Heart Bar - HUD_0");
             //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
             //heart_Bar.hearts--;
-            Heart_Bar.Phearts--;
+            //Heart_Bar.Phearts--;
+            MedioCorazon(collision.transform.position.x);
         }
     }
 
@@ -268,32 +293,37 @@ public class PlayerController : MonoBehaviour
 
         spr.color = Color.red;
     }
-
-    public void MedioCorazon(float enemyPosX)
+    public void MedioCorazonCar(float enemyPosX)
     {
+        movement = false;
         jump = true;
         Heart_Bar.Phearts--;
         float side = Mathf.Sign(enemyPosX - transform.position.x);
-        rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
 
-        movement = false;
+        Machucado = true;
+
+        //rbd2.AddForce(Vector2.left * side * (2 * JumpPower), ForceMode2D.Impulse);
+        //myrb.velocity += Vector2.up * Physics2D.gravity.y * (5 - 1) * Time.deltaTime;
+        //rbd2.AddForce(Vector2.up *JumpPower, ForceMode2D.Impulse);
 
 
-        Invoke("EnableMovement", 1.5f);
+        Invoke("EnableMovement", 0.5f);
 
 
 
         spr.color = Color.red;
     }
 
-    public void BiriBiriBanBan(float enemyPosX)
+    public void MedioCorazon(float enemyPosX)
     {
-        jump = true;
-        Heart_Bar.Phearts = 0;
-        float side = Mathf.Sign(enemyPosX - transform.position.x);
-        rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
 
         movement = false;
+        jump = true;
+        Heart_Bar.Phearts--;
+        float side = Mathf.Sign(enemyPosX - transform.position.x);
+        
+        rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
+
 
 
         Invoke("EnableMovement", 1.5f);
@@ -319,6 +349,60 @@ public class PlayerController : MonoBehaviour
 
         spr.color = Color.red;
     }
+
+    public void UnCorazonYMedio(float enemyPosX)
+    {
+        jump = true;
+        Heart_Bar.Phearts = Heart_Bar.Phearts - 3;
+        float side = Mathf.Sign(enemyPosX - transform.position.x);
+        rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
+
+        movement = false;
+
+
+        Invoke("EnableMovement", 1.5f);
+
+
+
+        spr.color = Color.red;
+    }
+
+    public void DosCorazones(float enemyPosX)
+    {
+        jump = true;
+        Heart_Bar.Phearts = Heart_Bar.Phearts - 4;
+        float side = Mathf.Sign(enemyPosX - transform.position.x);
+        rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
+
+        movement = false;
+
+
+        Invoke("EnableMovement", 1.5f);
+
+
+
+        spr.color = Color.red;
+    }
+
+
+    public void BiriBiriBanBan(float enemyPosX)
+    {
+        jump = true;
+        Heart_Bar.Phearts = 0;
+        float side = Mathf.Sign(enemyPosX - transform.position.x);
+        rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
+
+        movement = false;
+
+
+        Invoke("EnableMovement", 1.5f);
+
+
+
+        spr.color = Color.red;
+    }
+
+    
 
     public void Turret_1Corazon(float enemyPosX)
     {
@@ -357,6 +441,7 @@ public class PlayerController : MonoBehaviour
 
     void EnableMovement()
     {
+        Machucado = false;
         movement = true;
         spr.color = Color.white;
     }

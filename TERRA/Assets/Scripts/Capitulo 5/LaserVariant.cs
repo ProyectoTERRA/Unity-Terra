@@ -25,7 +25,7 @@ public class LaserVariant : MonoBehaviour
         {
 
 
-            col.SendMessage("RATAKnockBack", transform.position.x);
+            col.SendMessage("UnCorazon", transform.position.x);
 
 
         }
