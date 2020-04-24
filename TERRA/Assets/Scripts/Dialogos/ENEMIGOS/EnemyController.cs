@@ -45,6 +45,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        col.SendMessage("DosCorazones", transform.position.x);
         Debug.Log(col.gameObject.name);
         if (col.gameObject.name == "EnemyCollider1")
         {
@@ -68,8 +69,8 @@ public class EnemyController : MonoBehaviour
             float yOffset = y + 0.25f;
             if (transform.position.y + yOffset < col.transform.position.y)
             {
-                col.SendMessage("EnemyJump");
-                Destroy(gameObject);
+                col.SendMessage("RATAKnockBack", transform.position.x + 1);
+                Debug.Log("Los elotes no tienen maiz");
             }
             else
             {
