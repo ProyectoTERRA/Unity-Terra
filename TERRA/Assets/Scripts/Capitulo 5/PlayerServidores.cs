@@ -19,6 +19,7 @@ public class PlayerServidores : MonoBehaviour
     public Sprite door;
     private bool ActM;
     static public bool dies;
+    private GameObject name;
     // Start is called before the first frame update
     void Start()
     {
@@ -79,7 +80,7 @@ public class PlayerServidores : MonoBehaviour
             transform.position = new Vector3(transform.position.x, -1.4f);
 
 
-            StartCoroutine(push());
+            push();
         }
         if (collision.gameObject.name == "DoorOpenPanel 1" && Input.GetKeyDown(KeyCode.E) && MinijuegoServidores.win)
         {
@@ -118,13 +119,10 @@ public class PlayerServidores : MonoBehaviour
 
     }
   
-    public IEnumerator push()
+    public void push()
     {
-
-        yield return new WaitForSeconds(.5f);
-        gameObject.SetActive(false);
-        Debug.Log("puttt");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GetComponent<SpriteRenderer>().color = Color.red;
+        Heart_Bar.Phearts = 0;
 
 
     }

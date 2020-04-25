@@ -25,7 +25,7 @@ public class Laser : MonoBehaviour
         {
 
 
-            col.SendMessage("RATAKnockBack", transform.position.x);
+            col.SendMessage("BiriBiriBanBan", transform.position.x);
 
 
         }

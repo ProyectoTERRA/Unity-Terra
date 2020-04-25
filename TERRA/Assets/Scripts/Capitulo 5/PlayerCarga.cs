@@ -427,6 +427,7 @@ public class PlayerCarga : MonoBehaviour
 
     public void EnemyKnockBack(float enemyPosX)
     {
+        Heart_Bar.Phearts -= 4;
         X_support = transform.position.x;
         healing = true;
         PlayerController.jump = true;
@@ -442,6 +443,7 @@ public class PlayerCarga : MonoBehaviour
 
 
         GetComponent<SpriteRenderer>().color = Color.red;
+
     }
     public IEnumerator push()
     {

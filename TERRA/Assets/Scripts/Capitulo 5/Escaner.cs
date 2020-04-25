@@ -31,7 +31,7 @@ public class Escaner : MonoBehaviour
         {
 
 
-            col.SendMessage("RATAKnockBack", transform.position.x);
+            col.SendMessage("BiriBiriBanBan", transform.position.x);
 
 
         }

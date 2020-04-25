@@ -18,6 +18,7 @@ public class PlayerConductos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         Heart_Bar.Phearts = 6;
         flag = true;
  
@@ -70,14 +71,6 @@ public class PlayerConductos : MonoBehaviour
             Slider.SetActive(true);
 
             Key_Activator.SetActive(false);
-
-        }
-        if (collision.gameObject.name == "Die")//compara si hizo la colision con el objeto correcto
-        {
-
-            Debug.Log("Die");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
 
         }
     }

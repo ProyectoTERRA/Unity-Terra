@@ -79,8 +79,9 @@ public class Heart_Bar : MonoBehaviour
         Debug.Log(Phearts);
         hearts = Phearts;
 
-        if ( hearts == 0 )
+        if ( hearts <= 0 )
         {
+            hearts = 0 ;
             StartCoroutine(DIE());
             
         }

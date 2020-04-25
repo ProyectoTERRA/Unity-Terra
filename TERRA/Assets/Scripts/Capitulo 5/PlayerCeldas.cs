@@ -261,7 +261,7 @@ public class PlayerCeldas : MonoBehaviour
             transform.position = new Vector3(transform.position.x, -1.4f);
 
 
-            StartCoroutine(push());
+            push();
         }
         if (s2 && jail == false && collision.gameObject.name == "CargoElPayaso2" && !hide)
         {
@@ -273,7 +273,7 @@ public class PlayerCeldas : MonoBehaviour
             transform.position = new Vector3(transform.position.x, -1.4f);
 
 
-            StartCoroutine(push());
+            push();
         }
         if (s2 && jail == false && collision.gameObject.name == "CargoElPayaso3" && !hide)
         {
@@ -285,7 +285,7 @@ public class PlayerCeldas : MonoBehaviour
             transform.position = new Vector3(transform.position.x, -1.4f);
 
 
-            StartCoroutine(push());
+            push();
         }
         if(jail == false && collision.gameObject.name == "Back" && !hide)
         {
@@ -297,15 +297,9 @@ public class PlayerCeldas : MonoBehaviour
     }
 
 
-    public IEnumerator push()
+    public void push()
     {
-
-
-        yield return new WaitForSeconds(.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        gameObject.SetActive(false);
-        yield return new WaitForSeconds(1f);
-        
-
+        GetComponent<SpriteRenderer>().color = Color.red;
+        Heart_Bar.Phearts = 0;
     }
 }

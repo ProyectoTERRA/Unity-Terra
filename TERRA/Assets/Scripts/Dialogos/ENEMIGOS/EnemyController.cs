@@ -64,16 +64,16 @@ public class EnemyController : MonoBehaviour
         }
         if (col.gameObject.tag == "Player")
         {
+            col.SendMessage("DosCorazones", transform.position.x);
             Debug.Log("Ha hecho colision con el jugador");
             float yOffset = y + 0.25f;
             if (transform.position.y + yOffset < col.transform.position.y)
             {
-                col.SendMessage("EnemyJump");
-                Destroy(gameObject);
+                col.SendMessage("RATAKnockBack", transform.position.x + 1);
+                Debug.Log("Los elotes no tienen maiz");
             }
             else
             {
-
                 col.SendMessage("RATAKnockBack", transform.position.x + 1);
             }
 
