@@ -136,6 +136,18 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+            if (Equip == "Especiales_1")
+            {
+                if (!Heart_Bar.FULL)
+                {
+                    Heart_Bar.Phearts += 2;
+                    radial.especiales[1]--;
+                    GameController.curacion--;
+                    string normal = "health";
+                    if (radial.especiales[1] <= 0) list.SendMessage("remove", normal);
+                }
+            }
+
 
 
         }

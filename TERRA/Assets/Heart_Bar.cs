@@ -55,6 +55,8 @@ public class Heart_Bar : MonoBehaviour
 
     public static int Maxlife;
 
+    public static bool FULL;
+
     void Start()
     {
         Debug.Log(GameController.start);
@@ -72,7 +74,6 @@ public class Heart_Bar : MonoBehaviour
         }
 
         
-
     }
     void Update()
     {
@@ -113,9 +114,20 @@ public class Heart_Bar : MonoBehaviour
                         life = 0;
                     }
 
+                    if (hearts > 6)
+                    {
+                        hearts = 6;
+                    }
+
+                    if (hearts < 6)
+                    {
+                        FULL = false;
+                    }
+
                     if (hearts == 6)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_3x6;
+                        FULL = true;
                     }
 
                     else if (hearts == 5)
@@ -176,9 +188,20 @@ public class Heart_Bar : MonoBehaviour
                         life = 0;
                     }
 
+                    if (hearts > 8)
+                    {
+                        hearts = 8;
+                    }
+
+                    if (hearts < 8)
+                    {
+                        FULL = false;
+                    }
+
                     if (hearts == 8)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_4x8;
+                        FULL = true;
                     }
 
                     else if (hearts == 7)
@@ -249,9 +272,20 @@ public class Heart_Bar : MonoBehaviour
                         life = 0;
                     }
 
+                    if (hearts > 10)
+                    {
+                        hearts = 10;
+                    }
+
+                    if (hearts < 10)
+                    {
+                        FULL = false;
+                    }
+
                     if (hearts == 10)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_5x10;
+                        FULL = true;
                     }
                     else if (hearts == 9)
                     {
