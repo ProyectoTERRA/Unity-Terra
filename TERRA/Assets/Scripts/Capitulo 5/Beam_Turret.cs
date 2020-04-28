@@ -20,6 +20,10 @@ public class Beam_Turret : MonoBehaviour
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
+        if (collision.gameObject.name == "Tran2")
+        {
+            Destroy(gameObject);
+        }
         if (collision.gameObject.tag == "Wall")
         {
             Destroy(gameObject);
@@ -30,5 +34,13 @@ public class Beam_Turret : MonoBehaviour
             collision.SendMessage("Turret_1Corazon", transform.position.x);
             Destroy(gameObject);
         }
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Tran2")
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
