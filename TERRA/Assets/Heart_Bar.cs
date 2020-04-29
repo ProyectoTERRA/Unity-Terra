@@ -60,10 +60,11 @@ public class Heart_Bar : MonoBehaviour
     void Start()
     {
         Debug.Log(GameController.start);
+
+        /*
         if (GameController.start)
         {
             life = GameController.life;
-
             
         }
         else
@@ -71,20 +72,26 @@ public class Heart_Bar : MonoBehaviour
             GameController.life = 3;
             life = GameController.life;
             GameController.start = true;
-        }
+        }*/
 
         
     }
     void Update()
     {
+        
         Debug.Log(Phearts);
+        Debug.Log(life);
         hearts = Phearts;
 
-        if ( hearts <= 0 )
+        if (life <= 0)
         {
-            hearts = 0 ;
+            life = 0;
+            StartCoroutine(DIE2());
+        }
+        else if (hearts <= 0)
+        {
+            hearts = 0;
             StartCoroutine(DIE());
-            
         }
 
         switch (type)
@@ -406,7 +413,18 @@ public class Heart_Bar : MonoBehaviour
         GameController.life--;
         PlayerController.movement = true;
         Turret.act = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SistemaGuardado.perder = 1;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
+    public IEnumerator DIE2()
+    {
+        yield return new WaitForSeconds(1f);
+        GameController.life--;
+        PlayerController.movement = true;
+        Turret.act = false;
+        SistemaGuardado.morir = 1;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
 }

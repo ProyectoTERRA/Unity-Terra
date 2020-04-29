@@ -37,8 +37,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Heart_Bar.Phearts = GameController.corazones;
+        Heart_Bar.life = GameController.vidas;
         Machucado = false;
-        Heart_Bar.Phearts = 6;
         groundCAP5 = true;
         transform.localScale = new Vector3(-x, y, z);
         scal = scale;
@@ -210,7 +211,6 @@ public class PlayerController : MonoBehaviour
         //Animacion de Vida
         if (collision.gameObject.tag == "Car" && movement)
         {
-            Debug.Log("Atrrrr");
             //GameObject vida = GameObject.Find("Heart Bar - HUD_0");
             //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
             //heart_Bar.hearts--;
@@ -225,7 +225,7 @@ public class PlayerController : MonoBehaviour
             //Heart_Bar.Phearts--;
             MedioCorazon(collision.transform.position.x);
         }
-        if (collision.gameObject.tag == "enemigo1" && movement)
+        if (collision.gameObject.tag == "enemigo2" && movement)
         {
             //GameObject vida = GameObject.Find("Heart Bar - HUD_0");
             //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
@@ -233,6 +233,8 @@ public class PlayerController : MonoBehaviour
             //Heart_Bar.Phearts-=2;
             UnCorazon(collision.transform.position.x);
         }
+        GameController.vidas = Heart_Bar.life;
+        GameController.corazones = Heart_Bar.Phearts;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)

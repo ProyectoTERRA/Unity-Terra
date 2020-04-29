@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         Debug.Log("Game controller " + nombreActualPartida);
-        
+
 
     }
     private void Awake()
