@@ -7,6 +7,7 @@ public class MinigameManager : MonoBehaviour
 {
     int N1, N2, N3, N4;
     int C1, C2, C3, C4;
+    public string CC;
     public SpriteRenderer col1, col2, col3, col4;
     public GameObject D1, D2, D3, D4;
     public Sprite S1, S2, S3, S4, S5, S6, S7, S8, S9, S0;
@@ -27,6 +28,8 @@ public class MinigameManager : MonoBehaviour
         C2 = Random.Range(0, 10);
         C3 = Random.Range(0, 10);
         C4 = Random.Range(0, 10);
+
+        CC = "Valor 1: " + C1; 
         #endregion
         
 
@@ -48,6 +51,7 @@ public class MinigameManager : MonoBehaviour
         if (C1 == 0)
         {
             col1.color = Color.black;
+           
         }
         else if (C1 == 1)
         {
@@ -59,7 +63,7 @@ public class MinigameManager : MonoBehaviour
         }
         else if (C1 == 3)
         {
-            col1.color = Naranja;
+            col1.color = Naranja;          
         }
         else if (C1 == 4)
         {
@@ -219,8 +223,7 @@ public class MinigameManager : MonoBehaviour
 
         #region Numeros
 
-        //----------- N1 -----------------
-
+        #region N1
         if (N1 == 0)
         {
             D1.gameObject.GetComponent<SpriteRenderer>().sprite = S0;
@@ -261,9 +264,9 @@ public class MinigameManager : MonoBehaviour
         {
             D1.gameObject.GetComponent<SpriteRenderer>().sprite = S9;
         }
+        #endregion
 
-        //----------- N2 -----------------
-
+        #region N2
         if (N2 == 0)
         {
             D2.gameObject.GetComponent<SpriteRenderer>().sprite = S0;
@@ -304,9 +307,9 @@ public class MinigameManager : MonoBehaviour
         {
             D2.gameObject.GetComponent<SpriteRenderer>().sprite = S9;
         }
+        #endregion
 
-        //----------- N3 -----------------
-
+        #region N3
         if (N3 == 0)
         {
             D3.gameObject.GetComponent<SpriteRenderer>().sprite = S0;
@@ -347,9 +350,9 @@ public class MinigameManager : MonoBehaviour
         {
             D3.gameObject.GetComponent<SpriteRenderer>().sprite = S9;
         }
+        #endregion
 
-        //----------- N4 -----------------
-
+        #region N4
         if (N4 == 0)
         {
             D4.gameObject.GetComponent<SpriteRenderer>().sprite = S0;
@@ -390,10 +393,10 @@ public class MinigameManager : MonoBehaviour
         {
             D4.gameObject.GetComponent<SpriteRenderer>().sprite = S9;
         }
-
+        #endregion
         #endregion
 
-
+        //El panel pondrá el valor de los colores, no la combinacion
     }
 
     // Update is called once per frame
