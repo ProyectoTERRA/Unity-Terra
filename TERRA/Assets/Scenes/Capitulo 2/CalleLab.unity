@@ -2227,7 +2227,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb991f2c21090e846b775fdcaa7fdabf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Agujero: {fileID: 0}
+  interZ: {fileID: 0}
+  GroundC: {fileID: 0}
+  Equip: {fileID: 0}
 --- !u!114 &383925382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9185,7 +9187,7 @@ PrefabInstance:
     - target: {fileID: 1636799061650656841, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
@@ -10530,7 +10532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 153776849, guid: 7f7287315f8370442a9c7af9e038068a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 153776850, guid: 7f7287315f8370442a9c7af9e038068a, type: 3}
       propertyPath: m_Enabled

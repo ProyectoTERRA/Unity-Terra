@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Equip);
 
         //animacion.SetFloat("Velocidad",Mathf.Abs(rbd2.velocity.x));
         //animacion.SetBool("Grounded", grounded);
@@ -349,6 +350,7 @@ public class PlayerController : MonoBehaviour
 
     public void UnCorazon(float enemyPosX)
     {
+        Debug.Log("Ptup");
         jump = true;
         Heart_Bar.Phearts = Heart_Bar.Phearts - 2;
         float side = Mathf.Sign(enemyPosX - transform.position.x);
