@@ -33,6 +33,14 @@ public class Watcher : MonoBehaviour
         //Funciones para Seguimiento del Jugador
         Vector3 target = PosicionInicial;
 
+        if(Esconderse.hide == true)
+        {
+            DistanciaVision = 0;
+        }
+        else
+        {
+            DistanciaVision = 5;
+        }
         //Si la distancia al jugador es menor que el radio de vision del objetivo, el target pasa a ser el jugador
         float distanciaJugador = Vector3.Distance(Jugador.transform.position, transform.position);
         if (distanciaJugador < DistanciaVision) target = Jugador.transform.position;
