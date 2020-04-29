@@ -1585,12 +1585,10 @@ MonoBehaviour:
   col2: {fileID: 1758962733}
   col3: {fileID: 609403292}
   col4: {fileID: 1092894235}
-  col5: {fileID: 0}
   D1: {fileID: 703725459}
   D2: {fileID: 1758962731}
   D3: {fileID: 609403290}
   D4: {fileID: 1092894233}
-  D5: {fileID: 0}
   S1: {fileID: 1971215002202144706, guid: dfa510e4b5fdbe941a35dae9e42d31c4, type: 3}
   S2: {fileID: -458324453934649973, guid: dfa510e4b5fdbe941a35dae9e42d31c4, type: 3}
   S3: {fileID: -4120092022328117286, guid: dfa510e4b5fdbe941a35dae9e42d31c4, type: 3}
@@ -69923,14 +69921,19 @@ PrefabInstance:
     - target: {fileID: 1636799061650656841, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
+    - target: {fileID: 2671807527447435880, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 128289250247929000, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 128289250247929000, guid: a72f4c8686a07504fbcf19c0072337c4,
+    - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -70039,11 +70042,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2671807527447435880, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a72f4c8686a07504fbcf19c0072337c4, type: 3}
@@ -109595,7 +109593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1556574730
 AudioListener:
   m_ObjectHideFlags: 0
