@@ -19,6 +19,7 @@ public class SistemaGuardado : MonoBehaviour
     public string next, before;
     //Variables que guardaran los datos de las partidas
     public String nombreEscena, nombrePartida, nombrePartida1;
+    public static int perder, morir;
 
     void Start()
     {
@@ -32,6 +33,20 @@ public class SistemaGuardado : MonoBehaviour
     public void Update()
     {
         cargarContador();
+        if (perder == 1)
+        {
+            perder = 0;
+            Debug.Log("perdio una vida");
+            buscarNombre = GameController.nombreActualPartida;
+            cargar();
+        }
+        if(morir == 1)
+        {
+            morir = 0;
+            Debug.Log("Se nos murio");
+            buscarNombre = GameController.nombreActualPartida + "1";
+            cargar();
+        }
         //Debug.Log("Nombre actual " + nombrePartida);
     }
     public void crearPartida()
@@ -58,9 +73,39 @@ public class SistemaGuardado : MonoBehaviour
         dato.curacion = 0;
         dato.ganzua = 0;
         dato.formula = 0;
+        dato.vidas = 2;
+        dato.corazones = 3;
+        //Serializara los archivos
+        bf.Serialize(expediente, dato);
+        expediente.Close();
+        crearPartidaRespaldo();
+    }
+    public void crearPartidaRespaldo()
+    {
+        BinaryFormatter bf = new BinaryFormatter(); //Ayudante
+        FileStream expediente = File.Create(Application.persistentDataPath + "/" + nombrePartida1 + "1.d");//Crea archivo datos.d
+        DatosJuego dato = new DatosJuego(); //Dato es la variable de la clase que se serializa
+
+        //Variables a guardar        
+        dato.nombrePartida = nombrePartida1;
+        dato.nombreEscena = "edificio";
+        dato.pila = 0;
+        dato.bolsa = 0;
+        dato.carton = 0;
+        dato.manzana = 0;
+        dato.platano = 0;
+        dato.lata = 0;
+        dato.normal = 0;
+        dato.paralizante = 0;
+        dato.desactivadora = 0;
+        dato.tranquilizante = 0;
+        dato.pesada = 0;
+        dato.energia = 0;
+        dato.curacion = 0;
+        dato.ganzua = 0;
+        dato.formula = 0;
         dato.vidas = 1;
-        dato.corazones = 6;
-        Debug.Log("Nueva partida");
+        dato.corazones = 3;
 
         //Serializara los archivos
         bf.Serialize(expediente, dato);
@@ -99,6 +144,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.vidas = Heart_Bar.life;
         dato.corazones = Heart_Bar.Phearts;
         Debug.Log("ACTUALIZAR PARTIDA");
+        Debug.Log("Nombre de partida " + nombrePartida);
         Debug.Log("Pila " + radial.basura[0]);
         Debug.Log("Bolsa " + radial.basura[1]);
         Debug.Log("Carton " + radial.basura[2]);
@@ -155,6 +201,8 @@ public class SistemaGuardado : MonoBehaviour
             GameController.curacion = datos.curacion;
             GameController.ganzua = datos.ganzua;
             GameController.formula = datos.formula;
+            GameController.vidas = datos.vidas;
+            GameController.corazones = datos.corazones;
             Heart_Bar.Phearts = datos.corazones;
             Heart_Bar.life = datos.vidas;
             guardarContador();
@@ -169,6 +217,10 @@ public class SistemaGuardado : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/" + nombrePartida + ".d"))
         {
             File.Delete(Application.persistentDataPath + "/" + nombrePartida + ".d");
+        }
+        if (File.Exists(Application.persistentDataPath + "/" + nombrePartida + "1.d"))
+        {
+            File.Delete(Application.persistentDataPath + "/" + nombrePartida + "1.d");
         }
         else
         {
@@ -193,7 +245,6 @@ public class SistemaGuardado : MonoBehaviour
             nombre2 = dato.nombre2;
             nombre3 = dato.nombre3;
 
-            Debug.Log("Linea 100 dato.contador: " + dato.contador);
             name = GameObject.Find("InputField").GetComponent<InputField>();
 
             if (contador == 1)
@@ -201,7 +252,6 @@ public class SistemaGuardado : MonoBehaviour
                 nombre1 = name.text;
                 nombrePartida1 = name.text;
                 dato.nombre1 = nombre1;
-                Debug.Log("Partida 1");
                 contador += 1;
                 crearPartida();
             }
@@ -210,7 +260,6 @@ public class SistemaGuardado : MonoBehaviour
                 nombre2 = name.text;
                 nombrePartida1 = name.text;
                 dato.nombre2 = nombre2;
-                Debug.Log("Partida 2");
                 contador += 1;
                 crearPartida();
             }
@@ -218,7 +267,6 @@ public class SistemaGuardado : MonoBehaviour
             {
                 nombre3 = name.text;
                 nombrePartida1 = name.text;
-                Debug.Log("Partida 3");
                 dato.nombre3 = nombre3;
                 contador += 1;
                 crearPartida();
@@ -249,11 +297,9 @@ public class SistemaGuardado : MonoBehaviour
         dato.contador = contador;
         Debug.Log("Nombre actual " + dato.nombreActual);
         GameController.nombreActualPartida = dato.nombreActual;
-        Debug.Log("dato contador " + dato.contador);
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
-        Debug.Log("se guardo archivo contador partida");
 
     }
     //El método nos manda los nombres de las partidas creadas
@@ -421,6 +467,15 @@ public class SistemaGuardado : MonoBehaviour
         {
             Debug.Log("Checkpoint " + nombrePartida);
             nombreEscena = SceneManager.GetActiveScene().name;
+            guardar();
+        }
+        if(collision.gameObject.tag =="Checkpoint2")
+        {
+            Debug.Log("Chechkpoint 2 " + nombrePartida);
+            nombreEscena = SceneManager.GetActiveScene().name;
+            guardar();
+            nombrePartida = nombrePartida + "1";
+            Debug.Log("Chechkpoint 2 " + nombrePartida);
             guardar();
         }
     }

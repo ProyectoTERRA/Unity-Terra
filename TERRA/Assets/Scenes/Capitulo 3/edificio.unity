@@ -769,7 +769,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 136744633}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543880471c5cd1d4db5ddb3efae66853, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   x: 1
@@ -1880,7 +1880,7 @@ GameObject:
   - component: {fileID: 371111691}
   m_Layer: 0
   m_Name: Diana0 (2)
-  m_TagString: enemigo2
+  m_TagString: enemigo1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1921,7 +1921,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 371111688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543880471c5cd1d4db5ddb3efae66853, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   x: 1
@@ -2783,7 +2783,7 @@ GameObject:
   - component: {fileID: 601139561}
   m_Layer: 0
   m_Name: checkpoint2
-  m_TagString: Untagged
+  m_TagString: Checkpoint2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2871,7 +2871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601139560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.51, y: -4.16, z: 0}
+  m_LocalPosition: {x: -5.31, y: -4.16, z: 0}
   m_LocalScale: {x: 0.49192, y: 0.49192, z: 0.49192}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3507,7 +3507,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 723600338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543880471c5cd1d4db5ddb3efae66853, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   x: 1
@@ -4937,7 +4937,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1069552003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543880471c5cd1d4db5ddb3efae66853, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   x: 1
@@ -6102,7 +6102,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1291307380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543880471c5cd1d4db5ddb3efae66853, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   x: 1
@@ -6679,7 +6679,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1385774777}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543880471c5cd1d4db5ddb3efae66853, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   x: 1
