@@ -11,7 +11,7 @@ public class MinigameManager : MonoBehaviour
     public string CombinacionColores, CombCOLOR;
     int C1, C2, C3, C4;
     public SpriteRenderer col1, col2, col3, col4;
-    public GameObject D1, D2, D3, D4;
+    public GameObject D1, D2, D3, D4,Panel;
     public Sprite S1, S2, S3, S4, S5, S6, S7, S8, S9, S0;
     Color Cafe = new Color(0.6039216f, 0.2117647f, 0, 1);
     Color Naranja = new Color(0.9529412f, 0.6117647f, 0.07058824f, 1);
@@ -450,8 +450,17 @@ public class MinigameManager : MonoBehaviour
         #endregion
 
 
-        int[] Combinacion = new int[] {ValN1, ValN2, ValN3, ValN4};
+        
+       
+    
+    }
+
+
+
+    void CombinacionFinal()
+    {
         int[] CombinacionF = new int[] { N1, N2, N3, N4 };
+        int[] Combinacion = new int[] {ValN1, ValN2, ValN3, ValN4};
         for (int i = 0; i < Combinacion.Length - 1; i++)
         {
             for (int j = i+1; j < Combinacion.Length; j++)
@@ -483,27 +492,25 @@ public class MinigameManager : MonoBehaviour
             string CombCOLORF = string.Join(",", CombArr.Select(j => j.ToString()).ToArray());
             CombArr = new int[] { Combinacion[i] };
             string CombCOLOR = string.Join(",", CombArr.Select(j => j.ToString()).ToArray());
+            print(CombCOLOR);
             Debug.Log(i+" Color: " + CombCOLOR +" - Numero: "+ CombCOLORF);
 
         }
+
     }
-
-    // Update is called once per frame
-
-
-
 
     void Update()
-    {/* 
-        N1 = Random.Range(0, 10);
-        N2 = Random.Range(0, 10);
-        N3 = Random.Range(0, 10);
-        N4 = Random.Range(0, 10);
+    {
 
-        C1 = Random.Range(0, 10);
-        C2 = Random.Range(0, 10);
-        C3 = Random.Range(0, 10);
-        C4 = Random.Range(0, 10);
-        */
     }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.name == "Player")
+        {
+            Panel.SetActive(true);
+        }
+    }
+
+
 }
