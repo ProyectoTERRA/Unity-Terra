@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MinigameManager : MonoBehaviour
 {
     int N1, N2, N3, N4;
+    public int ValN1, ValN2, ValN3, ValN4;
+    public string CombinacionColores, CombCOLOR;
     int C1, C2, C3, C4;
-    public string CC;
     public SpriteRenderer col1, col2, col3, col4;
     public GameObject D1, D2, D3, D4;
     public Sprite S1, S2, S3, S4, S5, S6, S7, S8, S9, S0;
@@ -29,7 +31,7 @@ public class MinigameManager : MonoBehaviour
         C3 = Random.Range(0, 10);
         C4 = Random.Range(0, 10);
 
-        CC = "Valor 1: " + C1; 
+     
         #endregion
         
 
@@ -51,43 +53,53 @@ public class MinigameManager : MonoBehaviour
         if (C1 == 0)
         {
             col1.color = Color.black;
-           
+            ValN1 = 0;
+
         }
         else if (C1 == 1)
         {
             col1.color = Cafe;
+            ValN1 = 1;
         }
         else if (C1 == 2)
         {
             col1.color = Color.red;
+            ValN1 = 2;
         }
         else if (C1 == 3)
         {
-            col1.color = Naranja;          
+            col1.color = Naranja;
+            ValN1 = 3;
         }
         else if (C1 == 4)
         {
             col1.color = Color.yellow;
+            ValN1 = 4;
         }
         else if (C1 == 5)
         {
             col1.color = Color.green;
+            ValN1 = 5;
         }
         else if (C1 == 6)
         {
             col1.color = Color.blue;
+            ValN1 = 6;
         }
         else if (C1 == 7)
         {
             col1.color = Morado;
+            ValN1 = 7;
         }
         else if (C1 == 8)
         {
             col1.color = Color.gray;
+            ValN1 = 8;
         }
         else if (C1 == 9)
         {
             col1.color = Color.white;
+            ValN1 = 9;
         }
 
         //----------- C2 ----------------
@@ -95,42 +107,52 @@ public class MinigameManager : MonoBehaviour
         if (C2 == 0)
         {
             col2.color = Color.black;
+            ValN2 = 0;
         }
         else if (C2 == 1)
         {
             col2.color = Cafe;
+            ValN2 = 1;
         }
         else if (C2 == 2)
         {
             col2.color = Color.red;
+            ValN2 = 2;
         }
         else if (C2 == 3)
         {
             col2.color = Naranja;
+            ValN2 = 3;
         }
         else if (C2 == 4)
         {
             col2.color = Color.yellow;
+            ValN2 = 4;
         }
         else if (C2 == 5)
         {
             col2.color = Color.green;
+            ValN2 = 5;
         }
         else if (C2 == 6)
         {
             col2.color = Color.blue;
+            ValN2 = 6;
         }
         else if (C2 == 7)
         {
             col2.color = Morado;
+            ValN2 = 7;
         }
         else if (C2 == 8)
         {
             col2.color = Color.gray;
+            ValN2 = 8;
         }
         else if (C2 == 9)
         {
             col2.color = Color.white;
+            ValN2 = 9;
         }
 
         //----------- C3 ----------------
@@ -138,42 +160,53 @@ public class MinigameManager : MonoBehaviour
         if (C3 == 0)
         {
             col3.color = Color.black;
+            ValN3 = 0;
         }
         else if (C3 == 1)
         {
             col3.color = Cafe;
+            ValN3 = 1;
+
         }
         else if (C3 == 2)
         {
             col3.color = Color.red;
+            ValN3 = 2;
         }
         else if (C3 == 3)
         {
             col3.color = Naranja;
+            ValN3 = 3;
         }
         else if (C3 == 4)
         {
             col3.color = Color.yellow;
+            ValN3 = 4;
         }
         else if (C3 == 5)
         {
             col3.color = Color.green;
+            ValN3 = 5;
         }
         else if (C3 == 6)
         {
             col3.color = Color.blue;
+            ValN3 = 6;
         }
         else if (C3 == 7)
         {
             col3.color = Morado;
+            ValN3 = 7;
         }
         else if (C3 == 8)
         {
             col3.color = Color.gray;
+            ValN3 = 8;
         }
         else if (C3 == 9)
         {
             col3.color = Color.white;
+            ValN3 = 9;
         }
 
         //----------- C4 ----------------
@@ -181,42 +214,52 @@ public class MinigameManager : MonoBehaviour
         if (C4 == 0)
         {
             col4.color = Color.black;
+            ValN4 = 0;
         }
         else if (C4 == 1)
         {
             col4.color = Cafe;
+            ValN4 = 1;
         }
         else if (C4 == 2)
         {
             col4.color = Color.red;
+            ValN4 = 2;
         }
         else if (C4 == 3)
         {
             col4.color = Naranja;
+            ValN4 = 3;
         }
         else if (C4 == 4)
         {
             col4.color = Color.yellow;
+            ValN4 = 4;
         }
         else if (C4 == 5)
         {
             col4.color = Color.green;
+            ValN4 = 5;
         }
         else if (C4 == 6)
         {
             col4.color = Color.blue;
+            ValN4 = 6;
         }
         else if (C4 == 7)
         {
             col4.color = Morado;
+            ValN4 = 7;
         }
         else if (C4 == 8)
         {
             col4.color = Color.gray;
+            ValN4 = 8;
         }
         else if (C4 == 9)
         {
             col4.color = Color.white;
+            ValN4 = 9;
         }
 
         #endregion
@@ -396,7 +439,26 @@ public class MinigameManager : MonoBehaviour
         #endregion
         #endregion
 
-        //El panel pondrá el valor de los colores, no la combinacion
+        int[] Combinacion = new int[] {ValN1, ValN2, ValN3, ValN4};
+        for (int i = 0; i < Combinacion.Length - 1; i++)
+        {
+            for (int j = i+1; j < Combinacion.Length; j++)
+            {
+                if (Combinacion[i] > Combinacion[j])
+                {
+                    int comb = Combinacion[i];
+                    Combinacion[i] = Combinacion[j];
+                    Combinacion[j] = comb;
+                }
+            }
+        }
+        for (int i = 0; i < Combinacion.Length; i++)
+        {
+            int[] CombArr = new int[] { Combinacion[i] };
+            string CombCOLOR = string.Join(",", CombArr.Select(j => j.ToString()).ToArray());
+            Debug.Log("Combinacion Colores: " + CombCOLOR);
+
+        }
     }
 
     // Update is called once per frame
