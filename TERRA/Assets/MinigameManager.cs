@@ -21,6 +21,7 @@ public class MinigameManager : MonoBehaviour
     void Start()
     {
         #region RANDOM
+        
         N1 = Random.Range(0, 10);
         N2 = Random.Range(0, 10);
         N3 = Random.Range(0, 10);
@@ -30,20 +31,29 @@ public class MinigameManager : MonoBehaviour
         C2 = Random.Range(0, 10);
         C3 = Random.Range(0, 10);
         C4 = Random.Range(0, 10);
+        /*
+        N1 = 9;
+        N2 = 5;
+        N3 = 9;
+        N4 = 2;
 
-     
+        C1 = 9;
+        C2 = 5;
+        C3 = 1;
+        C4 = 6;
+        */
         #endregion
-        
 
-        Debug.Log(N1);
-        Debug.Log(N2);
-        Debug.Log(N3);
-        Debug.Log(N4);
 
-        Debug.Log(C1);
-        Debug.Log(C2);
-        Debug.Log(C3);
-        Debug.Log(C4);
+        Debug.Log("Numero1: "+N1);
+        Debug.Log("Numero2: " + N2);
+        Debug.Log("Numero3: " + N3);
+        Debug.Log("Numero4: " + N4);
+
+        Debug.Log("Color1: "+C1);
+        Debug.Log("Color2: " + C2);
+        Debug.Log("Color3: " + C3);
+        Debug.Log("Color4: " + C4);
 
 
         #region Colores
@@ -439,7 +449,9 @@ public class MinigameManager : MonoBehaviour
         #endregion
         #endregion
 
+
         int[] Combinacion = new int[] {ValN1, ValN2, ValN3, ValN4};
+        int[] CombinacionF = new int[] { N1, N2, N3, N4 };
         for (int i = 0; i < Combinacion.Length - 1; i++)
         {
             for (int j = i+1; j < Combinacion.Length; j++)
@@ -449,14 +461,29 @@ public class MinigameManager : MonoBehaviour
                     int comb = Combinacion[i];
                     Combinacion[i] = Combinacion[j];
                     Combinacion[j] = comb;
+                    int combF = CombinacionF[i];
+                    CombinacionF[i] = CombinacionF[j];
+                    CombinacionF[j] = combF;
+                }
+
+                if(Combinacion[i] == Combinacion[j])
+                {
+                    if (CombinacionF[i] > CombinacionF[j])
+                    {
+                        int combF = CombinacionF[i];
+                        CombinacionF[i] = CombinacionF[j];
+                        CombinacionF[j] = combF;
+                    }
                 }
             }
         }
-        for (int i = 0; i < Combinacion.Length; i++)
+        for (int i = 0; i < CombinacionF.Length; i++)
         {
-            int[] CombArr = new int[] { Combinacion[i] };
+            int[] CombArr = new int[] { CombinacionF[i] };
+            string CombCOLORF = string.Join(",", CombArr.Select(j => j.ToString()).ToArray());
+            CombArr = new int[] { Combinacion[i] };
             string CombCOLOR = string.Join(",", CombArr.Select(j => j.ToString()).ToArray());
-            Debug.Log("Combinacion Colores: " + CombCOLOR);
+            Debug.Log(i+" Color: " + CombCOLOR +" - Numero: "+ CombCOLORF);
 
         }
     }
