@@ -200,8 +200,13 @@ public class LoBbY : MonoBehaviour
     //------------- Refill ----------------
     public void Refiill()
     {
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+        radial.basura[3] -= 5;
+        radial.basura[4] -= 2;
+        radial.basura[2] -= 3;
         refill = true;
-        GameObject go = GameObject.Find("Heart Bar - HUD_0");
+        go = GameObject.Find("Heart Bar - HUD_0");
         Heart_Bar ToFiil = go.GetComponent<Heart_Bar>();
         ToFiil.Refill();
     }
@@ -210,26 +215,55 @@ public class LoBbY : MonoBehaviour
     #region Recicle
     public void UnlockDJump()
     {
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+        radial.basura[1] -= 6;
+        radial.basura[5] -= 3;
+        radial.basura[2] -= 4;
         GameController.DJumpUnlock = true;
     }
 
     public void UnlockLJump()
     {
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+        radial.basura[1] -= 3;
+        radial.basura[4] -= 3;
+        radial.basura[2] -= 4;
+        radial.basura[3] -= 4;
         GameController.LJumpUnlock = true;
     }
 
     public void UnlockDash()
     {
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+        radial.basura[1] -= 3;
+        radial.basura[5] -= 6;
+        radial.basura[4] -= 3;
+        radial.basura[2] -= 4;
         GameController.DashUnlock = true;
     }
 
     public void UnlockInvisible()
     {
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+        radial.basura[1] -= 4;
+        radial.basura[5] -= 5;
+        radial.basura[2] -= 4;
+        radial.basura[3] -= 2;
         GameController.InvisibleUnlock = true;
     }
 
     public void Unlock4Hearts()
     {
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+        radial.basura[5] -= 3;
+        radial.basura[4] -= 4;
+        radial.basura[3] -= 3;
+
         GameController.TypeLife = 2;
         GameController.HeartsMax = 8;
         GameController.corazones = GameController.HeartsMax;
@@ -241,6 +275,12 @@ public class LoBbY : MonoBehaviour
 
     public void Unlock5Hearts()
     {
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+        radial.basura[5] -= 4;
+        radial.basura[4] -= 5;
+        radial.basura[3] -= 6;
+
         GameController.TypeLife = 3;
         GameController.HeartsMax = 10;
         GameController.corazones = GameController.HeartsMax;
@@ -253,6 +293,12 @@ public class LoBbY : MonoBehaviour
 
     public void Unlock4Lifes()
     {
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+        radial.basura[4] -= 5;
+        radial.basura[2] -= 2;
+        radial.basura[3] -= 4;
+
         GameController.corazones = GameController.HeartsMax;
         Heart_Bar.Phearts = GameController.corazones;
         GameController.LifeMax = 4;
@@ -264,6 +310,12 @@ public class LoBbY : MonoBehaviour
 
     public void Unlock5Lifes()
     {
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+        radial.basura[4] -= 7;
+        radial.basura[2] -= 3;
+        radial.basura[3] -= 5;
+
         GameController.corazones = GameController.HeartsMax;
         Heart_Bar.Phearts = GameController.corazones;
         GameController.LifeMax = 5;

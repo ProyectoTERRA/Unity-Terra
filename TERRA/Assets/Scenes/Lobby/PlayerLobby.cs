@@ -16,9 +16,12 @@ public class PlayerLobby : MonoBehaviour
     public static bool ActH, ActR, ActE;
     private bool TH, TR, TE;
 
+    private bool exit;
+
     // Start is called before the first frame update
     void Start()
     {
+        exit = false;
         if (GameController.start)
         {
             Debug.Log("Continue");
@@ -55,6 +58,28 @@ public class PlayerLobby : MonoBehaviour
     {
         Debug.Log(ActH);
         Debug.Log(TH);
+
+
+        if (exit)
+        {
+            if(GameController.LobbyCAP == 2)
+            {
+                exit = false;
+                //SceneManager.LoadScene("");
+            }
+            if (GameController.LobbyCAP == 3)
+            {
+                exit = false;
+                //SceneManager.LoadScene("");
+            }
+            if (GameController.LobbyCAP == 5)
+            {
+                exit = false;
+                //SceneManager.LoadScene("");
+            }
+            exit = false;
+        }
+
         if (TH)
         {
             ActH = !ActH;
@@ -149,6 +174,11 @@ public class PlayerLobby : MonoBehaviour
         {
 
             TE = true;
+        }
+
+        if (collision.name == "Diana 2.0" && Input.GetKeyDown(KeyCode.E) && !exit)
+        {
+            exit = true;
         }
     }
 }
