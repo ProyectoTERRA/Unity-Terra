@@ -78,9 +78,11 @@ public class Heart_Bar : MonoBehaviour
     }
     void Update()
     {
+        type = GameController.TypeLife;
         
         Debug.Log(Phearts);
         Debug.Log(life);
+
         hearts = Phearts;
 
         if (life <= 0)
@@ -180,7 +182,7 @@ public class Heart_Bar : MonoBehaviour
                     {
                         if (hearts > 0 && life > 0)
                         {
-                            hearts--;
+                           Phearts--;
                         }
 
                     }
@@ -264,7 +266,7 @@ public class Heart_Bar : MonoBehaviour
                     {
                         if (hearts > 0 && life > 0)
                         {
-                            hearts--;
+                            Phearts--;
                         }
 
                     }
@@ -407,6 +409,15 @@ public class Heart_Bar : MonoBehaviour
 
         }
     }
+
+    public void Refill()
+    {
+        GameController.corazones = GameController.HeartsMax;
+        Phearts = GameController.corazones;   
+        GameController.vidas = GameController.LifeMax;
+        life = GameController.vidas;
+    }
+
     public IEnumerator DIE()
     {
         yield return new WaitForSeconds(1f);

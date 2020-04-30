@@ -7,6 +7,19 @@ public class GameController : MonoBehaviour
     public static int vidas, corazones;
     public static string nombreActualPartida;
 
+    //----- Equipment/Lobby------
+    public static bool LOBBY;
+    public static int LobbyCAP;
+
+    public static string H1Equip;
+    public static string H2Equip;
+
+
+    public static int LifeMax, TypeLife, HeartsMax;
+
+    public static bool DJumpUnlock, LJumpUnlock, DashUnlock, InvisibleUnlock, x4HeartsUnlock, x5HeartsUnlock, x4LifesUnlock, x5LifesUnlock;
+
+
 
     //----Variable Singleton--
     public static GameController instance = null;
@@ -18,12 +31,14 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         Debug.Log("Game controller " + nombreActualPartida);
 
 
     }
     private void Awake()
     {
+
         if (instance == null) instance = this;
         else if (instance != this) Destroy(gameObject); 
         DontDestroyOnLoad(gameObject);
