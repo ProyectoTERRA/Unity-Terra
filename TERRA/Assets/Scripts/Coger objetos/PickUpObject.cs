@@ -11,7 +11,6 @@ public class PickUpObject : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Objeto " + objectToPick.tag);
                 pickedObject = objectToPick;
                 pickedObject.GetComponent<Pickable>().coger = false;
                 pickedObject.transform.SetParent(interactionZone);
@@ -22,7 +21,6 @@ public class PickUpObject : MonoBehaviour
                 StartCoroutine(test());
                 if (objectToPick.tag == "lave")
                 {
-                    Debug.Log("Recogiste llave");
                     GameController.llave = 1;
                 }
             }

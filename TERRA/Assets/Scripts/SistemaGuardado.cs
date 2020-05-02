@@ -19,7 +19,7 @@ public class SistemaGuardado : MonoBehaviour
     public string next, before;
     //Variables que guardaran los datos de las partidas
     public String nombreEscena, nombrePartida, nombrePartida1;
-    public static int perder, morir;
+    public static int perder=0, morir=0;
 
     void Start()
     {
@@ -33,18 +33,16 @@ public class SistemaGuardado : MonoBehaviour
     public void Update()
     {
         cargarContador();
-        if (perder == 1)
+        if (perder == 1 )
         {
-            perder = 0;
             Debug.Log("perdio una vida");
             buscarNombre = GameController.nombreActualPartida;
             cargar();
         }
         if(morir == 1)
         {
-            morir = 0;
             Debug.Log("Se nos murio");
-            buscarNombre = GameController.nombreActualPartida + "1";
+            buscarNombre = GameController.nombreActualPartida;
             cargar();
         }
         //Debug.Log("Nombre actual " + nombrePartida);
@@ -75,38 +73,28 @@ public class SistemaGuardado : MonoBehaviour
         dato.formula = 0;
         dato.vidas = 2;
         dato.corazones = 3;
-        //Serializara los archivos
-        bf.Serialize(expediente, dato);
-        expediente.Close();
-        crearPartidaRespaldo();
-    }
-    public void crearPartidaRespaldo()
-    {
-        BinaryFormatter bf = new BinaryFormatter(); //Ayudante
-        FileStream expediente = File.Create(Application.persistentDataPath + "/" + nombrePartida1 + "1.d");//Crea archivo datos.d
-        DatosJuego dato = new DatosJuego(); //Dato es la variable de la clase que se serializa
+        dato.tipo = 2;
 
-        //Variables a guardar        
-        dato.nombrePartida = nombrePartida1;
-        dato.nombreEscena = "edificio";
-        dato.pila = 0;
-        dato.bolsa = 0;
-        dato.carton = 0;
-        dato.manzana = 0;
-        dato.platano = 0;
-        dato.lata = 0;
-        dato.normal = 0;
-        dato.paralizante = 0;
-        dato.desactivadora = 0;
-        dato.tranquilizante = 0;
-        dato.pesada = 0;
-        dato.energia = 0;
-        dato.curacion = 0;
-        dato.ganzua = 0;
-        dato.formula = 0;
-        dato.vidas = 1;
-        dato.corazones = 3;
-
+        //Respaldo
+        dato.nombreEscena1 = "";
+        dato.pila1 = 0;
+        dato.bolsa1 = 0;
+        dato.carton1 = 0;
+        dato.manzana1 = 0;
+        dato.platano1 = 0;
+        dato.lata1 = 0;
+        dato.normal1 = 0;
+        dato.paralizante1 = 0;
+        dato.desactivadora1 = 0;
+        dato.tranquilizante1 = 0;
+        dato.pesada1 = 0;
+        dato.energia1 = 0;
+        dato.curacion1 = 0;
+        dato.ganzua1 = 0;
+        dato.formula1 = 0;
+        dato.vidas1 = 2;
+        dato.corazones1 = 3;
+        dato.tipo1 = 2;
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
@@ -114,6 +102,51 @@ public class SistemaGuardado : MonoBehaviour
 
     // Este método se llama al momento de crear un archivo y también cada vez que se actualizan los datos para guardar
     public void guardar()
+    {
+
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+
+        BinaryFormatter bf = new BinaryFormatter(); //Ayudante
+        FileStream expediente = File.Create(Application.persistentDataPath + "/" + nombrePartida + ".d");//Crea archivo datos.d
+        DatosJuego dato = new DatosJuego(); //Dato es la variable de la clase que se serializa
+
+        //Variables a guardar        
+        Debug.Log("Nombre al guardar 1 " + dato.nombreEscena1);
+        dato.nombrePartida = nombrePartida;
+        dato.nombreEscena = nombreEscena;
+        dato.pila = radial.basura[0];
+        dato.bolsa = radial.basura[1];
+        dato.carton = radial.basura[2];
+        dato.manzana = radial.basura[3];
+        dato.platano = radial.basura[4];
+        dato.lata = radial.basura[5];
+        dato.normal = radial.esfera[0];
+        dato.paralizante = radial.esfera[1];
+        dato.desactivadora = radial.esfera[2];
+        dato.tranquilizante = radial.esfera[3];
+        dato.pesada = radial.esfera[4];
+        dato.energia = radial.especiales[0];
+        dato.curacion = radial.especiales[1];
+        dato.ganzua = radial.especiales[2];
+        dato.formula = GameController.formula;
+        dato.vidas = Heart_Bar.life;
+        dato.corazones = Heart_Bar.Phearts;
+        dato.tipo = GameController.TypeLife;
+        Debug.Log("ACTUALIZAR PARTIDA");
+        Debug.Log("Nombre de partida " + nombrePartida);
+        Debug.Log("Pila " + radial.basura[0]);
+        Debug.Log("Bolsa " + radial.basura[1]);
+        Debug.Log("Carton " + radial.basura[2]);
+        Debug.Log("Manzana " + radial.basura[3]);
+        Debug.Log("Platano " + radial.basura[4]);
+        Debug.Log("Lata " + radial.basura[5]);
+        Debug.Log("FORMULAS  " + dato.formula);
+        //Serializara los archivos
+        bf.Serialize(expediente, dato);
+        expediente.Close();
+    }
+    public void guardar1()
     {
 
         GameObject go = GameObject.Find("InvFunc");
@@ -143,15 +176,30 @@ public class SistemaGuardado : MonoBehaviour
         dato.formula = GameController.formula;
         dato.vidas = Heart_Bar.life;
         dato.corazones = Heart_Bar.Phearts;
-        Debug.Log("ACTUALIZAR PARTIDA");
-        Debug.Log("Nombre de partida " + nombrePartida);
-        Debug.Log("Pila " + radial.basura[0]);
-        Debug.Log("Bolsa " + radial.basura[1]);
-        Debug.Log("Carton " + radial.basura[2]);
-        Debug.Log("Manzana " + radial.basura[3]);
-        Debug.Log("Platano " + radial.basura[4]);
-        Debug.Log("Lata " + radial.basura[5]);
-        Debug.Log("FORMULAS  " + dato.formula);
+        dato.tipo = GameController.TypeLife; 
+
+        //Respaldo
+        dato.nombreEscena1 = nombreEscena;
+        dato.pila1 = radial.basura[0];
+        dato.bolsa1 = radial.basura[1];
+        dato.carton1 = radial.basura[2];
+        dato.manzana1 = radial.basura[3];
+        dato.platano1 = radial.basura[4];
+        dato.lata1 = radial.basura[5];
+        dato.normal1 = radial.esfera[0];
+        dato.paralizante1 = radial.esfera[1];
+        dato.desactivadora1 = radial.esfera[2];
+        dato.tranquilizante1 = radial.esfera[3];
+        dato.pesada1 = radial.esfera[4];
+        dato.energia1 = radial.especiales[0];
+        dato.curacion1 = radial.especiales[1];
+        dato.ganzua1 = radial.especiales[2];
+        dato.formula1 = GameController.formula;
+        dato.vidas1 = Heart_Bar.life;
+        dato.corazones1 = Heart_Bar.Phearts;
+        dato.tipo1 = GameController.TypeLife;
+        Debug.Log("Nombre de la escena 1 " + dato.nombreEscena1);
+
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
@@ -170,6 +218,40 @@ public class SistemaGuardado : MonoBehaviour
 
             datos = bf.Deserialize(expediente) as DatosJuego;
             Debug.Log("Nombre al cargar " + nombrePartida);
+            if (perder == 1)
+            {
+                Debug.Log("Al cargar vidas " + Heart_Bar.life + " En los datos " +datos.vidas);
+                datos.vidas = datos.vidas - 1;
+                perder = 0;
+            }
+            if(morir == 1)
+            {
+                //Datos sobre la vida
+                datos.vidas = Heart_Bar.life;
+                datos.corazones = Heart_Bar.Phearts;
+                datos.tipo = GameController.TypeLife;
+                //Datos de respaldo metidos a datos
+                Debug.Log("Cargar al morir");
+                Debug.Log("Nombre de escena" + datos.nombreEscena1);
+                Debug.Log("Bolsa " + datos.bolsa1);
+                datos.nombreEscena = datos.nombreEscena1;                
+                datos.pila = datos.pila1;
+                datos.bolsa = datos.bolsa1;
+                datos.carton = datos.carton1;
+                datos.manzana = datos.manzana1;
+                datos.platano = datos.platano1;
+                datos.lata = datos.lata1;
+                datos.normal = datos.normal1;
+                datos.paralizante = datos.paralizante1;
+                datos.desactivadora = datos.desactivadora1;
+                datos.tranquilizante = datos.tranquilizante1;
+                datos.pesada = datos.pesada1;
+                datos.energia = datos.energia1;
+                datos.curacion = datos.curacion1;
+                datos.ganzua = datos.ganzua1;
+                datos.formula = datos.formula1;
+                morir = 0;
+            }
             nombrePartida = datos.nombrePartida;
             nombreEscena = datos.nombreEscena;
             radial.basura[0] = datos.pila;
@@ -205,6 +287,7 @@ public class SistemaGuardado : MonoBehaviour
             GameController.corazones = datos.corazones;
             Heart_Bar.Phearts = datos.corazones;
             Heart_Bar.life = datos.vidas;
+            GameController.TypeLife = datos.tipo;
             guardarContador();
             SceneManager.LoadScene(nombreEscena);
         }
@@ -217,10 +300,6 @@ public class SistemaGuardado : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/" + nombrePartida + ".d"))
         {
             File.Delete(Application.persistentDataPath + "/" + nombrePartida + ".d");
-        }
-        if (File.Exists(Application.persistentDataPath + "/" + nombrePartida + "1.d"))
-        {
-            File.Delete(Application.persistentDataPath + "/" + nombrePartida + "1.d");
         }
         else
         {
@@ -473,10 +552,11 @@ public class SistemaGuardado : MonoBehaviour
         {
             Debug.Log("Chechkpoint 2 " + nombrePartida);
             nombreEscena = SceneManager.GetActiveScene().name;
-            guardar();
-            nombrePartida = nombrePartida + "1";
-            Debug.Log("Chechkpoint 2 " + nombrePartida);
-            guardar();
+            guardar1();
+        }
+        if (collision.gameObject.tag == "Checkpoint5")
+        {
+
         }
     }
 }
@@ -488,7 +568,11 @@ class DatosJuego : System.Object
     public String nombrePartida, nombreEscena;
     public int pila, manzana, platano, bolsa, carton, lata, normal, paralizante, desactivadora, tranquilizante, pesada, energia, curacion, ganzua;
     public int formula;
-    public int vidas, corazones;
+    public int vidas, corazones, tipo;
+    public String nombreEscena1;
+    public int pila1, manzana1, platano1, bolsa1, carton1, lata1, normal1, paralizante1, desactivadora1, tranquilizante1, pesada1, energia1, curacion1, ganzua1;
+    public int formula1;
+    public int vidas1, corazones1, tipo1;
 }
 
 
@@ -501,6 +585,6 @@ class DatosPartidas : System.Object
     public int contador;
     public int pila, manzana, platano, bolsa, carton, lata, normal, paralizante, desactivadora, tranquilizante, pesada, energia, curazion, ganzua;
     public int formula;
-    public int vidas, corazones;
+    public int vidas, corazones, tipo;
 }
 

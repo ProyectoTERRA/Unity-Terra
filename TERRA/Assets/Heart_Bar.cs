@@ -44,7 +44,7 @@ public class Heart_Bar : MonoBehaviour
     public Sprite Lifesx04;
     public Sprite Lifesx05;
 
-    public int type;
+    public static int type;
     public static int life;
     public int hearts;
     public static int Phearts;
@@ -425,6 +425,7 @@ public class Heart_Bar : MonoBehaviour
         PlayerController.movement = true;
         Turret.act = false;
         SistemaGuardado.perder = 1;
+        SistemaGuardado.morir = 0;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
@@ -435,6 +436,8 @@ public class Heart_Bar : MonoBehaviour
         PlayerController.movement = true;
         Turret.act = false;
         SistemaGuardado.morir = 1;
+        SistemaGuardado.perder = 0;
+        Refill();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }

@@ -8,12 +8,10 @@ public class PickUpPuerta : MonoBehaviour
     {
         if (collision.tag == "Chapa")
         {
-            Debug.Log("Chapa esta tocando la puerta");
             llave.SetActive(true);
         }
         if (collision.tag == "Llave")
         {
-            Debug.Log("LLave esta tocando la puerta");
             pasar.SetActive(true);
         }
     }
