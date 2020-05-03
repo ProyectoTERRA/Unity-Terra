@@ -4,7 +4,7 @@ public class GameController : MonoBehaviour
 {
     public static int pila, bolsa, carton, manzana, platano, lata, llave, formula, normal, paralizante, desactivadora, tranquilizante, pesada, energia, curacion, ganzua, life;
     public static bool start;
-    public static int vidas, corazones;
+    public static int vidas, corazones, tipo;
     public static string nombreActualPartida;
 
     //----- Equipment/Lobby------
