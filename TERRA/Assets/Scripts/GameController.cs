@@ -2,10 +2,16 @@
 
 public class GameController : MonoBehaviour
 {
-    public static int pila, bolsa, carton, manzana, platano, lata, llave, formula, normal, paralizante, desactivadora, tranquilizante, pesada, energia, curacion, ganzua, life;
+    public static int pila, bolsa, carton, manzana, platano, lata, llave, formula, normal, paralizante;
+    public static int desactivadora, tranquilizante, pesada, energia, curacion, ganzua, life;
     public static bool start;
     public static int vidas, corazones, tipo;
     public static string nombreActualPartida;
+
+    //Variables para el respaldo
+    public static string nombreEscena0;
+    public static int pila0, bolsa0, carton0, manzana0, platano0, lata0, normal0, paralizante0;
+    public static int desactivadora0, tranquilizante0, pesada0, energia0, curacion0, ganzua0, formula0;
 
     //----- Equipment/Lobby------
     public static bool LOBBY;

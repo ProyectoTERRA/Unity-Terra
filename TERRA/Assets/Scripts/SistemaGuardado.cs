@@ -37,7 +37,10 @@ public class SistemaGuardado : MonoBehaviour
         {
             Debug.Log("perdio una vida");
             buscarNombre = GameController.nombreActualPartida;
+            Debug.Log("Perder antes de cargar " + perder);
             cargar();
+            Debug.Log("Perder despues de cargar " + perder);
+            
         }
         if(morir == 1)
         {
@@ -45,7 +48,6 @@ public class SistemaGuardado : MonoBehaviour
             buscarNombre = GameController.nombreActualPartida;
             cargar();
         }
-        //Debug.Log("Nombre actual " + nombrePartida);
     }
     public void crearPartida()
     {
@@ -71,7 +73,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.curacion = 0;
         dato.ganzua = 0;
         dato.formula = 0;
-        dato.vidas = 2;
+        dato.vidas = 4;
         dato.corazones = 3;
         dato.tipo = 2;
 
@@ -92,7 +94,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.curacion1 = 0;
         dato.ganzua1 = 0;
         dato.formula1 = 0;
-        dato.vidas1 = 2;
+        dato.vidas1 = 4;
         dato.corazones1 = 3;
         dato.tipo1 = 2;
         //Serializara los archivos
@@ -133,15 +135,25 @@ public class SistemaGuardado : MonoBehaviour
         dato.vidas = Heart_Bar.life;
         dato.corazones = Heart_Bar.Phearts;
         dato.tipo = GameController.TypeLife;
-        Debug.Log("ACTUALIZAR PARTIDA");
-        Debug.Log("Nombre de partida " + nombrePartida);
-        Debug.Log("Pila " + radial.basura[0]);
-        Debug.Log("Bolsa " + radial.basura[1]);
-        Debug.Log("Carton " + radial.basura[2]);
-        Debug.Log("Manzana " + radial.basura[3]);
-        Debug.Log("Platano " + radial.basura[4]);
-        Debug.Log("Lata " + radial.basura[5]);
-        Debug.Log("FORMULAS  " + dato.formula);
+
+        //Datos para respaldo
+        dato.nombreEscena1 = GameController.nombreEscena0;
+        dato.pila1 = GameController.pila0;
+        dato.bolsa1 = GameController.bolsa0;
+        dato.carton1 = GameController.carton0;
+        dato.manzana1 = GameController.manzana0;
+        dato.platano1 = GameController.platano0;
+        dato.lata1 = GameController.lata0;
+        dato.normal1 = GameController.normal0;
+        dato.paralizante1 = GameController.paralizante0;
+        dato.desactivadora1 = GameController.desactivadora0;
+        dato.tranquilizante1 = GameController.tranquilizante0;
+        dato.pesada1 = GameController.pesada0;
+        dato.energia1 = GameController.energia0;
+        dato.curacion1 = GameController.curacion0;
+        dato.ganzua1 = GameController.ganzua0;
+        dato.formula1 = GameController.formula0;
+
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
@@ -200,6 +212,23 @@ public class SistemaGuardado : MonoBehaviour
         dato.tipo1 = GameController.TypeLife;
         Debug.Log("Nombre de la escena 1 " + dato.nombreEscena1);
 
+        //Guardando en gamecontroller
+        GameController.nombreEscena0 = dato.nombreEscena1;
+        GameController.pila0 = dato.pila1;
+        GameController.carton0 = dato.carton1;
+        GameController.bolsa0 = dato.bolsa1;
+        GameController.manzana0 = dato.manzana1;
+        GameController.platano0 = dato.platano1;
+        GameController.lata0 = dato.lata1;
+        GameController.normal0 = dato.normal1;
+        GameController.paralizante0 = dato.paralizante1;
+        GameController.desactivadora0 = dato.desactivadora1;
+        GameController.tranquilizante0 = dato.tranquilizante1;
+        GameController.pesada0 = dato.pesada1;
+        GameController.curacion0 = dato.curacion1;
+        GameController.ganzua0 = dato.ganzua1;
+        GameController.formula0 = dato.formula1;
+
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
@@ -221,7 +250,7 @@ public class SistemaGuardado : MonoBehaviour
             if (perder == 1)
             {
                 Debug.Log("Al cargar vidas " + Heart_Bar.life + " En los datos " +datos.vidas);
-                datos.vidas = datos.vidas - 1;
+                datos.vidas -= 1;
                 perder = 0;
             }
             if(morir == 1)

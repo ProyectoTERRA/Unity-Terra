@@ -87,11 +87,14 @@ public class Heart_Bar : MonoBehaviour
 
         if (life <= 0)
         {
+
+            Debug.Log("En heart bar perdio todas las vidas");
             life = 0;
             StartCoroutine(DIE2());
         }
-        else if (hearts <= 0)
+        else if (hearts <= 0 && life >=1)
         {
+            Debug.Log("En heart bar perdio una vida");
             hearts = 0;
             StartCoroutine(DIE());
         }
@@ -421,24 +424,21 @@ public class Heart_Bar : MonoBehaviour
     public IEnumerator DIE()
     {
         yield return new WaitForSeconds(1f);
-        GameController.life--;
+        //GameController.life--;
         PlayerController.movement = true;
         Turret.act = false;
         SistemaGuardado.perder = 1;
         SistemaGuardado.morir = 0;
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
     public IEnumerator DIE2()
     {
         yield return new WaitForSeconds(1f);
-        GameController.life--;
+        //GameController.life--;
         PlayerController.movement = true;
         Turret.act = false;
         SistemaGuardado.morir = 1;
         SistemaGuardado.perder = 0;
         Refill();
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
     }
 }
