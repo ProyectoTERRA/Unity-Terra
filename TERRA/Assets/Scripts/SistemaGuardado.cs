@@ -158,6 +158,100 @@ public class SistemaGuardado : MonoBehaviour
         bf.Serialize(expediente, dato);
         expediente.Close();
     }
+    public void guardarCap5()
+    {
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+
+        BinaryFormatter bf = new BinaryFormatter(); //Ayudante
+        FileStream expediente = File.Create(Application.persistentDataPath + "/" + nombrePartida + ".d");//Crea archivo datos.d
+        DatosJuego dato = new DatosJuego(); //Dato es la variable de la clase que se serializa
+        //Respaldo
+        dato.nombreEscena1 = nombreEscena;
+        dato.pila1 = radial.basura[0];
+        dato.bolsa1 = radial.basura[1];
+        dato.carton1 = radial.basura[2];
+        dato.manzana1 = radial.basura[3];
+        dato.platano1 = radial.basura[4];
+        dato.lata1 = radial.basura[5];
+        dato.normal1 = radial.esfera[0];
+        dato.paralizante1 = radial.esfera[1];
+        dato.desactivadora1 = radial.esfera[2];
+        dato.tranquilizante1 = radial.esfera[3];
+        dato.pesada1 = radial.esfera[4];
+        dato.energia1 = radial.especiales[0];
+        dato.curacion1 = radial.especiales[1];
+        dato.ganzua1 = radial.especiales[2];
+        dato.formula1 = GameController.formula;
+        dato.vidas1 = Heart_Bar.life;
+        dato.corazones1 = Heart_Bar.Phearts;
+        dato.tipo1 = GameController.TypeLife;
+        Debug.Log("Nombre de la escena 1 " + dato.nombreEscena1);
+
+        //Guardando en gamecontroller
+        GameController.nombreEscena0 = dato.nombreEscena1;
+        GameController.pila0 = dato.pila1;
+        GameController.carton0 = dato.carton1;
+        GameController.bolsa0 = dato.bolsa1;
+        GameController.manzana0 = dato.manzana1;
+        GameController.platano0 = dato.platano1;
+        GameController.lata0 = dato.lata1;
+        GameController.normal0 = dato.normal1;
+        GameController.paralizante0 = dato.paralizante1;
+        GameController.desactivadora0 = dato.desactivadora1;
+        GameController.tranquilizante0 = dato.tranquilizante1;
+        GameController.pesada0 = dato.pesada1;
+        GameController.curacion0 = dato.curacion1;
+        GameController.ganzua0 = dato.ganzua1;
+        GameController.formula0 = dato.formula1;
+
+        //Variables a modificar porel cap
+        radial.basura[0] = 0;
+        radial.basura[1] = 0;
+        radial.basura[2] = 0;
+        radial.basura[3] = 0;
+        radial.basura[4] = 0;
+        radial.basura[5] = 0;
+        radial.esfera[1] = 0;
+        radial.esfera[2] = 0;
+        radial.esfera[3] = 0;
+        radial.esfera[4] = 0;
+        radial.especiales[0] = 0;
+        radial.especiales[1] = 0;
+        radial.especiales[2] = 0;
+        Heart_Bar.life = 3;
+        Heart_Bar.Phearts = 2;
+        GameController.TypeLife = 1;
+
+
+        //Variables a guardar        
+        dato.nombrePartida = nombrePartida;
+        dato.nombreEscena = nombreEscena;        
+        dato.pila = radial.basura[0];
+        dato.bolsa = radial.basura[1];
+        dato.carton = radial.basura[2];
+        dato.manzana = radial.basura[3];
+        dato.platano = radial.basura[4];
+        dato.lata = radial.basura[5];
+        dato.normal = radial.esfera[0];
+        dato.paralizante = radial.esfera[1];
+        dato.desactivadora = radial.esfera[2];
+        dato.tranquilizante = radial.esfera[3];
+        dato.pesada = radial.esfera[4];
+        dato.energia = radial.especiales[0];
+        dato.curacion = radial.especiales[1];
+        dato.ganzua = radial.especiales[2];
+        dato.formula = GameController.formula;
+        dato.vidas = Heart_Bar.life;
+        dato.corazones = Heart_Bar.Phearts;
+        dato.tipo = GameController.TypeLife; 
+
+        
+
+        //Serializara los archivos
+        bf.Serialize(expediente, dato);
+        expediente.Close();
+    }
     public void guardar1()
     {
 
@@ -585,7 +679,9 @@ public class SistemaGuardado : MonoBehaviour
         }
         if (collision.gameObject.tag == "Checkpoint5")
         {
-
+            Debug.Log("Chechkpoint 5 " + nombrePartida);
+            nombreEscena = SceneManager.GetActiveScene().name;
+            guardarCap5();
         }
     }
 }

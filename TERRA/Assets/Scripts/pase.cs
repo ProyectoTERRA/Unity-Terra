@@ -24,6 +24,11 @@ public class pase : MonoBehaviour
             Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
             heart_Bar.hearts--;
         }
+        if (collision.gameObject.tag == "Pared")
+        {
+            transform.position = new Vector2(-11.36f, 0.3f);
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        }
     }
 
 }

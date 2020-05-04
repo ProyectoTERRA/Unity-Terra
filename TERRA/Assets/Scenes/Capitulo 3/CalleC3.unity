@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 195233457}
   - component: {fileID: 195233456}
   - component: {fileID: 195233458}
+  - component: {fileID: 195233459}
   m_Layer: 0
   m_Name: cap3_calle
   m_TagString: Pared
@@ -564,6 +565,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.9387512, y: 12}
+  m_EdgeRadius: 0
+--- !u!61 &195233459
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195233455}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -17.6, y: -1.6030157}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16, y: 12}
+    newSize: {x: 16, y: 12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 16, y: 0.4733163}
   m_EdgeRadius: 0
 --- !u!1 &203163833
 GameObject:
@@ -2314,6 +2341,7 @@ GameObject:
   - component: {fileID: 890781730}
   - component: {fileID: 890781731}
   - component: {fileID: 890781726}
+  - component: {fileID: 890781729}
   m_Layer: 0
   m_Name: carro
   m_TagString: Ground
@@ -2469,6 +2497,24 @@ Transform:
   m_Father: {fileID: 81972522}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &890781729
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890781725}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.3507271, y: 0.3264711}
+  - {x: -0.83527946, y: 0.8731146}
 --- !u!50 &890781730
 Rigidbody2D:
   serializedVersion: 4
@@ -3491,6 +3537,7 @@ GameObject:
   - component: {fileID: 1168965892}
   - component: {fileID: 1168965890}
   - component: {fileID: 1168965891}
+  - component: {fileID: 1168965893}
   m_Layer: 0
   m_Name: carro (2)
   m_TagString: Ground
@@ -3636,6 +3683,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!68 &1168965893
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168965888}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.3422308, y: 0.33355442}
+  - {x: -0.8140135, y: 0.86988914}
 --- !u!212 &1168965894
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5549,6 +5614,7 @@ GameObject:
   - component: {fileID: 1738467218}
   - component: {fileID: 1738467216}
   - component: {fileID: 1738467217}
+  - component: {fileID: 1738467219}
   m_Layer: 0
   m_Name: carro (1)
   m_TagString: Ground
@@ -5693,6 +5759,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!68 &1738467219
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738467214}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 3cc1bf88c3472994db2acde44e7dc06c, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.3632164, y: 0.31988335}
+  - {x: -0.8063965, y: 0.87654686}
 --- !u!212 &1738467220
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7328,7 +7412,7 @@ Transform:
   m_GameObject: {fileID: 8474523579320546411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.36, y: -4.1, z: 0}
-  m_LocalScale: {x: 1.012, y: 0.995, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8474523580432758099}
   - {fileID: 871757915103308492}
