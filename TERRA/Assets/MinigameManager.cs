@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-
+//using System;
 public class MinigameManager : MonoBehaviour
 {
     int N1, N2, N3, N4;
@@ -11,7 +11,8 @@ public class MinigameManager : MonoBehaviour
     public string CombinacionColores, CombCOLOR;
     int C1, C2, C3, C4;
     public SpriteRenderer col1, col2, col3, col4;
-    public GameObject D1, D2, D3, D4,Panel;
+    public InputField Clave;
+    public GameObject D1, D2, D3, D4,Panel, INPUT;
     public Sprite S1, S2, S3, S4, S5, S6, S7, S8, S9, S0;
     Color Cafe = new Color(0.6039216f, 0.2117647f, 0, 1);
     Color Naranja = new Color(0.9529412f, 0.6117647f, 0.07058824f, 1);
@@ -20,6 +21,7 @@ public class MinigameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         #region RANDOM
         
         N1 = Random.Range(0, 10);
@@ -43,18 +45,6 @@ public class MinigameManager : MonoBehaviour
         C4 = 6;
         */
         #endregion
-
-
-        Debug.Log("Numero1: "+N1);
-        Debug.Log("Numero2: " + N2);
-        Debug.Log("Numero3: " + N3);
-        Debug.Log("Numero4: " + N4);
-
-        Debug.Log("Color1: "+C1);
-        Debug.Log("Color2: " + C2);
-        Debug.Log("Color3: " + C3);
-        Debug.Log("Color4: " + C4);
-
 
         #region Colores
 
@@ -448,15 +438,11 @@ public class MinigameManager : MonoBehaviour
         }
         #endregion
         #endregion
-
-
+        Clave = GetComponent<InputField>();
+        CombinacionFinal();
         
-       
-    
     }
-
-
-
+    
     void CombinacionFinal()
     {
         int[] CombinacionF = new int[] { N1, N2, N3, N4 };
@@ -496,20 +482,38 @@ public class MinigameManager : MonoBehaviour
             Debug.Log(i+" Color: " + CombCOLOR +" - Numero: "+ CombCOLORF);
 
         }
-
+        ComparacionCLAVES();
     }
 
     void Update()
     {
-
+        Debug.Log("Combinacion: " + CombCOLOR);
+        ComparacionCLAVES();
+    }
+    void ComparacionCLAVES()
+    {
+        string Contra;
+        Contra = Clave.text;
+ 
+        Debug.Log("VALOR INPUTFIELD: " + Contra);
+        if(Contra == CombCOLOR)
+        {
+            Panel.SetActive(false);
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "Player")
+        if(collision.gameObject.tag == "Player")
         {
             Panel.SetActive(true);
+            INPUT.SetActive(true);
         }
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        Panel.SetActive(false);
+        INPUT.SetActive(false);
     }
 
 
