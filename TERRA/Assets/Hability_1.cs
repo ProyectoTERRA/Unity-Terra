@@ -56,8 +56,6 @@ public class Hability_1 : MonoBehaviour
     private void FixedUpdate()
     {
 
-        Debug.Log(set);
-
         set = GameController.H1Equip;
 
         if (GameController.LOBBY)

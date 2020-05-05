@@ -133,8 +133,8 @@ GameObject:
   - component: {fileID: 109461089}
   - component: {fileID: 109461088}
   - component: {fileID: 109461087}
-  - component: {fileID: 109461086}
   - component: {fileID: 109461085}
+  - component: {fileID: 109461086}
   m_Layer: 0
   m_Name: Diana0 (6)
   m_TagString: enemigo1
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 109461083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d5bb24693db3b4883b0ed094f95931, type: 3}
+  m_Script: {fileID: 11500000, guid: 08f0424b54126d6498d2d5e037f33ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
@@ -629,8 +629,8 @@ GameObject:
   - component: {fileID: 335734147}
   - component: {fileID: 335734146}
   - component: {fileID: 335734145}
-  - component: {fileID: 335734144}
   - component: {fileID: 335734143}
+  - component: {fileID: 335734144}
   m_Layer: 0
   m_Name: Diana0 (3)
   m_TagString: enemigo1
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 335734141}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d5bb24693db3b4883b0ed094f95931, type: 3}
+  m_Script: {fileID: 11500000, guid: 08f0424b54126d6498d2d5e037f33ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
@@ -968,46 +968,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.2737339
       objectReference: {fileID: 0}
-    - target: {fileID: 6786952540499391441, guid: 56112751c76786142b615e3af4cdf7e9,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1919176187
-      objectReference: {fileID: 0}
-    - target: {fileID: 6786952540499391441, guid: 56112751c76786142b615e3af4cdf7e9,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6786952539793922044, guid: 56112751c76786142b615e3af4cdf7e9,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1919176187
-      objectReference: {fileID: 0}
-    - target: {fileID: 6786952539793922044, guid: 56112751c76786142b615e3af4cdf7e9,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6786952539793922044, guid: 56112751c76786142b615e3af4cdf7e9,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6786952540217478381, guid: 56112751c76786142b615e3af4cdf7e9,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1919176187
-      objectReference: {fileID: 0}
-    - target: {fileID: 6786952540217478381, guid: 56112751c76786142b615e3af4cdf7e9,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6786952540217478381, guid: 56112751c76786142b615e3af4cdf7e9,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6786952539793922047, guid: 56112751c76786142b615e3af4cdf7e9,
         type: 3}
       propertyPath: inv
@@ -1018,6 +978,46 @@ PrefabInstance:
       propertyPath: inv
       value: 
       objectReference: {fileID: 1127508387}
+    - target: {fileID: 6786952540499391441, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1919176187
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952540499391441, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952539793922044, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1919176187
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952539793922044, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952539793922044, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952540217478381, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1919176187
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952540217478381, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952540217478381, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56112751c76786142b615e3af4cdf7e9, type: 3}
 --- !u!1 &397741314
@@ -1250,8 +1250,8 @@ GameObject:
   - component: {fileID: 440238689}
   - component: {fileID: 440238688}
   - component: {fileID: 440238687}
-  - component: {fileID: 440238686}
   - component: {fileID: 440238685}
+  - component: {fileID: 440238686}
   m_Layer: 0
   m_Name: Diana0 (1)
   m_TagString: enemigo1
@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 440238683}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d5bb24693db3b4883b0ed094f95931, type: 3}
+  m_Script: {fileID: 11500000, guid: 08f0424b54126d6498d2d5e037f33ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
@@ -1440,8 +1440,8 @@ GameObject:
   - component: {fileID: 524685075}
   - component: {fileID: 524685074}
   - component: {fileID: 524685073}
-  - component: {fileID: 524685072}
   - component: {fileID: 524685071}
+  - component: {fileID: 524685072}
   m_Layer: 0
   m_Name: Diana0 (5)
   m_TagString: enemigo1
@@ -1491,7 +1491,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 524685069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d5bb24693db3b4883b0ed094f95931, type: 3}
+  m_Script: {fileID: 11500000, guid: 08f0424b54126d6498d2d5e037f33ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
@@ -1880,8 +1880,8 @@ GameObject:
   - component: {fileID: 837623328}
   - component: {fileID: 837623327}
   - component: {fileID: 837623326}
-  - component: {fileID: 837623325}
   - component: {fileID: 837623324}
+  - component: {fileID: 837623325}
   m_Layer: 0
   m_Name: Diana0 (4)
   m_TagString: enemigo1
@@ -1931,7 +1931,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 837623322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d5bb24693db3b4883b0ed094f95931, type: 3}
+  m_Script: {fileID: 11500000, guid: 08f0424b54126d6498d2d5e037f33ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
@@ -2387,8 +2387,8 @@ GameObject:
   - component: {fileID: 1073342742}
   - component: {fileID: 1073342741}
   - component: {fileID: 1073342740}
-  - component: {fileID: 1073342739}
   - component: {fileID: 1073342738}
+  - component: {fileID: 1073342739}
   m_Layer: 0
   m_Name: Diana0 (2)
   m_TagString: enemigo1
@@ -2438,7 +2438,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1073342736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d5bb24693db3b4883b0ed094f95931, type: 3}
+  m_Script: {fileID: 11500000, guid: 08f0424b54126d6498d2d5e037f33ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
@@ -2660,6 +2660,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4436905505232760048}
     m_Modifications:
+    - target: {fileID: 8362500405813697985, guid: 779b3acff1391d449ab84aaa16469507,
+        type: 3}
+      propertyPath: m_Name
+      value: Equip
+      objectReference: {fileID: 0}
     - target: {fileID: 8362500405813697990, guid: 779b3acff1391d449ab84aaa16469507,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2714,11 +2719,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8362500405813697985, guid: 779b3acff1391d449ab84aaa16469507,
-        type: 3}
-      propertyPath: m_Name
-      value: Equip
       objectReference: {fileID: 0}
     - target: {fileID: 7259724196119756033, guid: 779b3acff1391d449ab84aaa16469507,
         type: 3}
@@ -2796,61 +2796,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 128289250247929000, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6214826627960804926, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3785523923685326970, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3569727586052135697, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5225394894740060154, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828124217946342183, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3277342572515588529, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5750229917714460661, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5390300800423343262, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888325355320331725, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: list
-      value: 
-      objectReference: {fileID: 1230692858}
     - target: {fileID: 8905631315678066389, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_Name
@@ -2932,6 +2877,61 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6677154069757846413, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888325355320331725, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: list
+      value: 
+      objectReference: {fileID: 1230692858}
+    - target: {fileID: 128289250247929000, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214826627960804926, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785523923685326970, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569727586052135697, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5225394894740060154, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828124217946342183, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277342572515588529, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750229917714460661, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390300800423343262, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -3747,8 +3747,8 @@ GameObject:
   - component: {fileID: 1771280623}
   - component: {fileID: 1771280622}
   - component: {fileID: 1771280621}
-  - component: {fileID: 1771280620}
   - component: {fileID: 1771280619}
+  - component: {fileID: 1771280620}
   m_Layer: 0
   m_Name: Diana0
   m_TagString: enemigo1
@@ -3784,7 +3784,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1771280618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d5bb24693db3b4883b0ed094f95931, type: 3}
+  m_Script: {fileID: 11500000, guid: 08f0424b54126d6498d2d5e037f33ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
