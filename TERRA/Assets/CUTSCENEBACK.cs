@@ -1,41 +1,37 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Cutscenes : MonoBehaviour
+public class CUTSCENEBACK : MonoBehaviour
 {
     public Animator transicion;
     public float transitionTime = 1;
     public GameObject jugador;
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        //Esto se personaliza
         if (collision.gameObject.tag == "Player")
         {
-            LoadNextLevel();
+          LoadNextLevel();
         }
     }
+    public void LoadNextLevel()
+    {
+        StartCoroutine(CargarNivel2(SceneManager.GetActiveScene().buildIndex + 1));
 
+    }
 
-    IEnumerator CargarNivel()
+    IEnumerator CargarNivel2(int levelIndex)
     {
         //Reproducir Animacion
-        transicion.SetTrigger("inicio");
-
+        transicion.SetTrigger("Start");
         //Esperar a que termine
         yield return new WaitForSeconds(transitionTime);
         //Cargar Escena
-        SceneManager.LoadScene("LABCUTSCENE");
+        Debug.Log("CARGANDO ESCENA...");
+        SceneManager.LoadScene(levelIndex);
     }
 
-    public void LoadNextLevel()
-    {
-        StartCoroutine(CargarNivel());
-
-    }
 }
-   
-

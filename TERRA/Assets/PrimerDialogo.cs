@@ -15,12 +15,13 @@ public class PrimerDialogo : MonoBehaviour
     public float typingpeed;
     AudioSource myAudio;
     public AudioClip speakSound;
-    public GameObject Dialogo1, Dialogo2, Cutscene;
+    public GameObject Dialogo1, Dialogo2, Cutscene,jugador;
     public bool Enable = true;
     public void Start()
     {
         sentences = new Queue<string>();
         myAudio = GetComponent<AudioSource>();
+        jugador = GetComponent<GameObject>();
     }
     void StartDialogue()
     {
@@ -42,6 +43,8 @@ public class PrimerDialogo : MonoBehaviour
             //Dialogo2.SetActive(true);
             Enable = false;
             Dialogo1.SetActive(false);
+            jugador.transform.position = new Vector3(36.47f,-5.2f, 0);
+            
             return;
 
         }
@@ -51,7 +54,7 @@ public class PrimerDialogo : MonoBehaviour
         StartCoroutine(TypeTheSentence(activeSentence));
 
     }
-    int cont;
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

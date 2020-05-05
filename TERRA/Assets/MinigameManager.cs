@@ -33,17 +33,7 @@ public class MinigameManager : MonoBehaviour
         C2 = Random.Range(0, 10);
         C3 = Random.Range(0, 10);
         C4 = Random.Range(0, 10);
-        /*
-        N1 = 9;
-        N2 = 5;
-        N3 = 9;
-        N4 = 2;
 
-        C1 = 9;
-        C2 = 5;
-        C3 = 1;
-        C4 = 6;
-        */
         #endregion
 
         #region Colores
