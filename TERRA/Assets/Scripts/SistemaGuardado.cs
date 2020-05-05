@@ -135,6 +135,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.vidas = Heart_Bar.life;
         dato.corazones = Heart_Bar.Phearts;
         dato.tipo = GameController.TypeLife;
+        Debug.Log("Datos vidas al guardar " + dato.vidas);
 
         //Datos para respaldo
         dato.nombreEscena1 = GameController.nombreEscena0;
@@ -343,8 +344,8 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("Nombre al cargar " + nombrePartida);
             if (perder == 1)
             {
-                Debug.Log("Al cargar vidas " + Heart_Bar.life + " En los datos " +datos.vidas);
-                datos.vidas -= 1;
+                Debug.Log("Al cargar vidas " + Heart_Bar.life + " En los datos " + datos.vidas);
+                datos.vidas = datos.vidas - 1;
                 perder = 0;
             }
             if(morir == 1)

@@ -1,7 +1,8 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Guards : MonoBehaviour
+public class Guardsc3 : MonoBehaviour
 {
     public int life;
     void Start()
@@ -14,8 +15,8 @@ public class Guards : MonoBehaviour
     {
         if (life <= 0)
         {
-            Botones.enemigos++;
-            Debug.Log("Guardias eliminados " + Botones.enemigos);
+            eliminarEnemyesC3.guardias++;
+            Debug.Log("Guardias eliminados " + eliminarEnemyesC3.guardias);
             Destroy(gameObject);
         }
     }
@@ -53,5 +54,4 @@ public class Guards : MonoBehaviour
         yield return new WaitForSeconds(5f);
         GetComponent<Watcher>().enabled = true;
     }
-
 }
