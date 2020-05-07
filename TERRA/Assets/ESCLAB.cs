@@ -11,6 +11,7 @@ public class ESCLAB : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("Lab");
+            
         }
     }
 }
