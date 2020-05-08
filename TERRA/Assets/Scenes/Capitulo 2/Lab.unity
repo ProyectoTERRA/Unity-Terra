@@ -3951,10 +3951,12 @@ MonoBehaviour:
     isActive: 0
     NombreMision: La chulada
     Descripcion: Diana te pidio que fueras a la fabrica por un componente
-  Jugador: {fileID: 1831024604}
+  Jugador: {fileID: 1831024614}
   MenuObj: {fileID: 153934987}
   animador: {fileID: 153934991}
   MenuAbierto: 0
+  NombreTxt: {fileID: 1843691680}
+  descripcionTxt: {fileID: 780433983}
 --- !u!4 &67776089
 Transform:
   m_ObjectHideFlags: 0
@@ -53738,7 +53740,7 @@ PrefabInstance:
     - target: {fileID: 1636799061650656841, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2671807527447435880, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
@@ -114286,6 +114288,18 @@ PolygonCollider2D:
       - {x: 0.25333276, y: -0.20564806}
       - {x: 0.42465845, y: -0.15672457}
       - {x: 0.31479517, y: 0.22748029}
+--- !u!114 &1831024614 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5657417382059861990, guid: 7f7287315f8370442a9c7af9e038068a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1831024603}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831024604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82041649fd2c424479c9b01f44c6911d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1832444508
 GameObject:
   m_ObjectHideFlags: 0

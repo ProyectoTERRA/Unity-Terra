@@ -10,4 +10,7 @@ public class Objetivos
     public string NombreMision;
     public string Descripcion;
 
+    public ObjetivosGoal goal;
+
+
 }
