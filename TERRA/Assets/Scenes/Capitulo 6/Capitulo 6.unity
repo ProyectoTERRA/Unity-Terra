@@ -4251,7 +4251,7 @@ GameObject:
   - component: {fileID: 112848583}
   m_Layer: 0
   m_Name: sprites_741 (2)
-  m_TagString: Wall
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11863,7 +11863,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Equipado
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1157194854}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae5784e8997662f49833c0d09ddfd43f, type: 3}
 --- !u!1 &312907961
@@ -16175,7 +16175,7 @@ GameObject:
   - component: {fileID: 450003257}
   m_Layer: 0
   m_Name: sprites_741 (7)
-  m_TagString: Wall
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24011,7 +24011,7 @@ GameObject:
   - component: {fileID: 636521029}
   m_Layer: 0
   m_Name: sprites_741 (64)
-  m_TagString: Wall
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45120,6 +45120,12 @@ Transform:
   m_Father: {fileID: 1126866333}
   m_RootOrder: 400
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1157194854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7259724196119756038, guid: 779b3acff1391d449ab84aaa16469507,
+    type: 3}
+  m_PrefabInstance: {fileID: 67998317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1157314140
 GameObject:
   m_ObjectHideFlags: 0
@@ -61677,7 +61683,7 @@ GameObject:
   - component: {fileID: 1576812493}
   m_Layer: 0
   m_Name: sprites_741 (8)
-  m_TagString: Wall
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77747,7 +77753,7 @@ GameObject:
   - component: {fileID: 1960760208}
   m_Layer: 0
   m_Name: sprites_741 (6)
-  m_TagString: Wall
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

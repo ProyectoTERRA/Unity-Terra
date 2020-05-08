@@ -4,34 +4,65 @@ public class ChangeGravity : MonoBehaviour
 {
     Rigidbody2D myRB;
     Player player;
-    private bool top;
+    private bool top, Cgravity, TTrigger, DTrigger;
+    public static int VG;
     // Start is called before the first frame update
     void Start()
     {
+        TTrigger = false;
+        DTrigger = false;
         player = GetComponent<Player>();
         myRB = GetComponent<Rigidbody2D>();
     }
+    void Update()
+    {
+        Debug.Log(myRB.gravityScale);
+
+        if (TTrigger)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 180f);
+            transform.localScale = new Vector3(PlayerController.side*-1, 1, 0);
+            myRB.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+            myRB.velocity = new Vector2(0, 0);
+            Debug.Log("Funciona");
+            
+            Cgravity = true;
+            TTrigger = false;
+        }
+        if (DTrigger)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 360f);
+            transform.localScale = new Vector3(PlayerController.side * -1, 1, 0);
+            myRB.velocity = new Vector2(0, 0);
+            Debug.Log("Funciona");
+           
+            Cgravity = false;
+            DTrigger = false;
+        }
+
+        if (Cgravity)
+        {
+            VG = -1;
+            myRB.gravityScale = -0.5f;
+        }
+        else
+        {
+            VG = 1;
+            myRB.gravityScale = 1f;
+        }
+    }
 
 
-
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.name == "GArriba" && Input.GetKey(KeyCode.E))
         {
-            myRB.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
-            myRB.velocity = new Vector2(0 , 0);
-            Debug.Log("Funciona");
-            myRB.gravityScale *= -1;
-            Rotation();
-            
+            TTrigger = true;
         }
 
         if (collision.name == "GAbajo" && Input.GetKey(KeyCode.E))
         {
-            myRB.velocity = new Vector2(0, 0);
-            Debug.Log("Funciona");
-            myRB.gravityScale *= -1;
-           
+            DTrigger = true;
         }
     }
 
@@ -41,8 +72,7 @@ public class ChangeGravity : MonoBehaviour
     {
         if(top == false)
         {
-            transform.eulerAngles = new Vector3(0, 0, 180f);
-            transform.localScale = new Vector3(-1, 0, 0);
+            
             
         }
         else

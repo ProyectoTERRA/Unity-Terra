@@ -18,10 +18,10 @@ public class SaltoMejorado : MonoBehaviour
     {
         if(myrb.velocity.y < 0)
         {
-            myrb.velocity += Vector2.up * Physics2D.gravity.y * (MultiplicadorCaida - 1) * Time.deltaTime;
+            myrb.velocity += Vector2.up * Physics2D.gravity.y * (MultiplicadorCaida - 1) * Time.deltaTime * ChangeGravity.VG;
         }else if(myrb.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
         {
-            myrb.velocity += Vector2.up * Physics2D.gravity.y * (Saltopequeno - 1) * Time.deltaTime;
+            myrb.velocity += Vector2.up * Physics2D.gravity.y * (Saltopequeno - 1) * Time.deltaTime * ChangeGravity.VG;
         }
     }
 }
