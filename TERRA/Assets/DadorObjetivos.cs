@@ -29,7 +29,7 @@ public class DadorObjetivos : MonoBehaviour
             MenuAbierto = false;
             animador.SetTrigger("StayClose");
             Debug.Log("menu cerrado");
-          
+            MenuObj.SetActive(false); 
         }
     }
 
