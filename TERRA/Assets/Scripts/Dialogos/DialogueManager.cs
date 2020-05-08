@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour
         if (sentences.Count <= 0)
         {
             displayText.text = activeSentence;
-            Dialogo2.SetActive(true);
+            //Dialogo2.SetActive(true);
             Enable = false;
             Dialogo1.SetActive(false);
             return;

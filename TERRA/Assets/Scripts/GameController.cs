@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     public static int vidas, corazones, tipo;
     public static string nombreActualPartida;
 
+    
+
     //Variables para el respaldo
     public static string nombreEscena0;
     public static int pila0, bolsa0, carton0, manzana0, platano0, lata0, normal0, paralizante0;
@@ -24,7 +26,6 @@ public class GameController : MonoBehaviour
     public static int LifeMax, TypeLife, HeartsMax;
 
     public static bool DJumpUnlock, LJumpUnlock, DashUnlock, InvisibleUnlock, x4HeartsUnlock, x5HeartsUnlock, x4LifesUnlock, x5LifesUnlock;
-
 
 
     //----Variable Singleton--

@@ -3,18 +3,29 @@ using UnityEngine;
 
 public class oracion : MonoBehaviour
 {
+    public GameObject llave;
     public static string frase;
     public static int contador;
     public GameObject hoja, mensaje, mensaje1;
+    int i = 0;
 
     void Update()
     {
+        if (GameController.llave > 1)
+        {
+            llave.SetActive(false);
+        }
         if (contador == 15)
         {
             Debug.Log(frase + " " + contador);
             if (frase == "bbcddcbaggabbaa")
             {
-                hoja.SetActive(true);
+                
+                if (i == 0)
+                {
+                    hoja.SetActive(true);                    
+                    i++;
+                }
                 Debug.Log("Logrado");
             }
             else
