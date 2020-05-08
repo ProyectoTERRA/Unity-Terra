@@ -45,6 +45,15 @@ public class PuertaLab : MonoBehaviour
         {
             transform.position = new Vector3(366.5f, -10f, 0);
         }
+
+        if (collision.name == "EscP23")
+        {
+            transform.position = new Vector3(195.92f, 65.97f, 0);
+        }
+        if (collision.name == "EscP32")
+        {
+            transform.position = new Vector3(196.4f, 24.5f, 0);
+        }
     }
 
     public void OnTriggerExit2D(Collider2D LabDoor)
