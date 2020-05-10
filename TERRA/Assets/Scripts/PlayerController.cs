@@ -180,12 +180,12 @@ public class PlayerController : MonoBehaviour
         if (h > 0.1f)
         {
 
-            transform.localScale = new Vector3(-x * ChangeGravity.VG, y, z);
+            transform.localScale = new Vector3(-x, y, z);
             side = ChangeGravity.VG * -1;
         }
         if (h < -0.1f)
         {
-            transform.localScale = new Vector3(x * ChangeGravity.VG, y, z);
+            transform.localScale = new Vector3(x, y, z);
             side = ChangeGravity.VG * 1;
         }
 
