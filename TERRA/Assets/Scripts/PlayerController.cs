@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
             }
             */
         }
-
+        #region Esferas
         //Esferas
         if (Input.GetKeyDown(KeyCode.J))
         {
@@ -156,6 +156,7 @@ public class PlayerController : MonoBehaviour
 
 
         }
+        #endregion
     }
 
     void FixedUpdate()
