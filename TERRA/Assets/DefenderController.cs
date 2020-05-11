@@ -7,48 +7,60 @@ public class DefenderController : MonoBehaviour
 
     [SerializeField] private GameObject Bullet;
     [SerializeField] private GameObject canon;
-    private Animator Anim;
-
-    static public bool act;
-    private float timer;
-    public float minTime;
-    public float maxTime;
-
-    private Transform playerPos;
+    GameObject Jugador;
+    public Rigidbody2D RBD;
+    public float moverse = 15f;
     public float speed;
+    private Transform target;
+    static public bool act;
+    public bool FlagMove;
     void Start()
     {
         act = true;
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        RBD = GetComponent<Rigidbody2D>();
         StartCoroutine(Perseguir());
-        StartCoroutine(Active());
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        timer = 20f;
 
+      transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+    
     }
 
-    IEnumerator Active()
-    {
 
+        IEnumerator Active()
+    {
+        Debug.Log("Iniciando disparos");
             Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
-            yield return new WaitForSeconds(.4f);
+            yield return new WaitForSeconds(4f);
             Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
-            yield return new WaitForSeconds(.4f);
+            yield return new WaitForSeconds(4f);
            Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
-            yield return new WaitForSeconds(.4f);
+            yield return new WaitForSeconds(4f);
         StartCoroutine(Perseguir());
         yield return new WaitForSeconds(20f);
         StartCoroutine(Active());
     }
     IEnumerator Perseguir()
     {
-        Vector2 target = new Vector2(playerPos.position.x, gameObject.transform.position.y);
-        gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, target, speed * Time.deltaTime);
+        yield return new WaitForSeconds(6f);
+        FlagMove = true;
         StartCoroutine(Active());
-        yield return new WaitForSeconds(10f);
+        do
+        {
+            moverse -= Time.deltaTime;
+
+            if (FlagMove == true)
+            {
+                
+                Debug.Log("HACIA ABAJO!");
+                yield return new WaitForSeconds(5f);
+            }
+        } while (moverse > 0);
+
     }
 }
