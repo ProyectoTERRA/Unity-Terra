@@ -20,6 +20,7 @@ public class DefenderController : MonoBehaviour
     {
         act = true;
         StartCoroutine(Perseguir());
+        StartCoroutine(Active());
     }
 
     // Update is called once per frame
