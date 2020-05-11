@@ -3949,8 +3949,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivo:
     isActive: 0
-    NombreMision: La chulada
-    Descripcion: Diana te pidio que fueras a la fabrica por un componente
+    NombreMision: Prueba2
+    Descripcion: AaAAH
+    goal:
+      TipoObj: 0
+      MontoRequerido: 0
+      MontoActual: 0
+      ObjetivoPers: 0
   Jugador: {fileID: 1831024614}
   MenuObj: {fileID: 153934987}
   animador: {fileID: 153934991}
@@ -114160,7 +114165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 153776849, guid: 7f7287315f8370442a9c7af9e038068a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 153776850, guid: 7f7287315f8370442a9c7af9e038068a, type: 3}
       propertyPath: m_Enabled
@@ -114288,6 +114293,27 @@ PolygonCollider2D:
       - {x: 0.25333276, y: -0.20564806}
       - {x: 0.42465845, y: -0.15672457}
       - {x: 0.31479517, y: 0.22748029}
+--- !u!114 &1831024612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831024604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf395ede96257440afd720fd2671733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj:
+    isActive: 0
+    NombreMision: 
+    Descripcion: 
+    goal:
+      TipoObj: 0
+      MontoRequerido: 0
+      MontoActual: 0
+      ObjetivoPers: 0
 --- !u!114 &1831024614 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5657417382059861990, guid: 7f7287315f8370442a9c7af9e038068a,

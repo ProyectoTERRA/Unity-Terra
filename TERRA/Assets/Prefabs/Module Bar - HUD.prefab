@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inv: {fileID: 0}
+  Lobby_Equip1: {fileID: 0}
   DoubleJump: {fileID: 4082591644369316254, guid: 6baffdb8341cffd479baf838c0294a72,
     type: 3}
   LongJump: {fileID: 5650257488868599521, guid: 6baffdb8341cffd479baf838c0294a72,
@@ -203,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inv: {fileID: 0}
+  Lobby_Equip2: {fileID: 0}
   DoubleJump: {fileID: 4082591644369316254, guid: 6baffdb8341cffd479baf838c0294a72,
     type: 3}
   LongJump: {fileID: 5650257488868599521, guid: 6baffdb8341cffd479baf838c0294a72,

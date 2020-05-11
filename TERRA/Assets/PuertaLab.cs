@@ -10,21 +10,55 @@ public class PuertaLab : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "PuertaDer")//compara si hizo la colision con el objeto correcto
+        if(collision.name == "PuertaFI1")
         {
-            puertaDer = true;
+            transform.position = new Vector3(328f, -10f, 0);
+        }
+        if (collision.name == "PuertaFD1")
+        {
+            transform.position = new Vector3(322f, -10f, 0);
         }
 
-        if (collision.name == "PuertaIzq")//compara si hizo la colision con el objeto correcto
+        if (collision.name == "PuertaFI2")
         {
-            puertaIzq = true;
+            transform.position = new Vector3(351.5f, -10f, 0);
+        }
+        if (collision.name == "PuertaFD2")
+        {
+            transform.position = new Vector3(346f, -10f, 0);
+        }
+
+        if (collision.name == "PuertaFI3")
+        {
+            transform.position = new Vector3(364.5f, -10f, 0);
+        }
+        if (collision.name == "PuertaFD3")
+        {
+            transform.position = new Vector3(359f, -10f, 0);
+        }
+
+        if (collision.name == "EscP12")
+        {
+            transform.position = new Vector3(424.89f, 26.98f, 0);
+        }
+        if (collision.name == "EscP21")
+        {
+            transform.position = new Vector3(366.5f, -10f, 0);
+        }
+
+        if (collision.name == "EscP23")
+        {
+            transform.position = new Vector3(195.92f, 65.97f, 0);
+        }
+        if (collision.name == "EscP32")
+        {
+            transform.position = new Vector3(196.4f, 24.5f, 0);
         }
     }
 
     public void OnTriggerExit2D(Collider2D LabDoor)
     {
-        puertaDer = false;
-        puertaIzq = false;
+        
     }
 
     // Update is called once per frame

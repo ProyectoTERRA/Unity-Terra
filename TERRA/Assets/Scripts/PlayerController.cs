@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
+        ChangeGravity.VG = 1;
         Heart_Bar.Phearts = GameController.corazones;
         Heart_Bar.life = GameController.vidas;
         Heart_Bar.Phearts = 3;
@@ -85,7 +87,7 @@ public class PlayerController : MonoBehaviour
             }
             */
         }
-
+        #region Esferas
         //Esferas
         if (Input.GetKeyDown(KeyCode.J))
         {
@@ -156,6 +158,7 @@ public class PlayerController : MonoBehaviour
 
 
         }
+        #endregion
     }
 
     void FixedUpdate()
@@ -180,19 +183,19 @@ public class PlayerController : MonoBehaviour
         if (h > 0.1f)
         {
 
-            transform.localScale = new Vector3(-x, y, z);
-            side = -1;
+            transform.localScale = new Vector3(-x * ChangeGravity.VG, y, z);
+            side = ChangeGravity.VG * -1;
         }
         if (h < -0.1f)
         {
-            transform.localScale = new Vector3(x, y, z);
-            side = 1;
+            transform.localScale = new Vector3(x * ChangeGravity.VG, y, z);
+            side = ChangeGravity.VG * 1;
         }
 
         if (jump)
         {
             rbd2.velocity = new Vector2(rbd2.velocity.x, 0);
-            rbd2.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
+            rbd2.AddForce(Vector2.up * JumpPower * ChangeGravity.VG, ForceMode2D.Impulse);
             jump = false;
         }
 

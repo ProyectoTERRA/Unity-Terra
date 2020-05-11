@@ -428,8 +428,8 @@ public class MinigameManager : MonoBehaviour
         }
         #endregion
         #endregion
-        Clave = GetComponent<InputField>();
         CombinacionFinal();
+        Clave = GetComponent<InputField>();
         
     }
     
