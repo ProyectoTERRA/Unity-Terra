@@ -10,11 +10,7 @@ public class SaltoMejorado : MonoBehaviour
 
     void Awake()
     {
-        Heart_Bar.life = 3;
-        Heart_Bar.life = GameController.vidas;
-        Heart_Bar.Phearts = 3;
-        Heart_Bar.Phearts = GameController.corazones;
-
+        Heart_Bar.Phearts = 3; 
         myrb = GetComponent<Rigidbody2D>();
     }
 
