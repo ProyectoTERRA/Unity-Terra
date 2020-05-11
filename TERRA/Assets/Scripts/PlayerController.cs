@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
+        ChangeGravity.VG = 1;
         Heart_Bar.Phearts = GameController.corazones;
         Heart_Bar.life = GameController.vidas;
         Heart_Bar.Phearts = 3;
@@ -181,12 +183,12 @@ public class PlayerController : MonoBehaviour
         if (h > 0.1f)
         {
 
-            transform.localScale = new Vector3(-x, y, z);
+            transform.localScale = new Vector3(-x * ChangeGravity.VG, y, z);
             side = ChangeGravity.VG * -1;
         }
         if (h < -0.1f)
         {
-            transform.localScale = new Vector3(x, y, z);
+            transform.localScale = new Vector3(x * ChangeGravity.VG, y, z);
             side = ChangeGravity.VG * 1;
         }
 

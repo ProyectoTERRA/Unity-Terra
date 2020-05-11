@@ -38246,7 +38246,7 @@ PrefabInstance:
     - target: {fileID: 1828675243185218305, guid: 1e8dd50ac9659994da1fa4f03ffed099,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1828675243185218317, guid: 1e8dd50ac9659994da1fa4f03ffed099,
         type: 3}
@@ -62400,7 +62400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1624960942837945773
 Transform:
   m_ObjectHideFlags: 0
@@ -62437,12 +62437,12 @@ MonoBehaviour:
       esta arriba de aqui...
     - Podrias ir por ellos?
     - Cuento contigo, suerte.
-  dialogPanel: {fileID: 0}
-  displayText: {fileID: 0}
+  dialogPanel: {fileID: 1638365763}
+  displayText: {fileID: 279375944}
   typingpeed: 0.05
   speakSound: {fileID: 0}
-  Dialogo1: {fileID: 0}
-  Dialogo2: {fileID: 0}
+  Dialogo1: {fileID: 8017512132887162588}
+  Dialogo2: {fileID: 1624960942837945772}
   Cutscene: {fileID: 0}
   Enable: 1
 --- !u!58 &1624960942837945775
