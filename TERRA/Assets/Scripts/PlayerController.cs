@@ -406,6 +406,23 @@ public class PlayerController : MonoBehaviour
         spr.color = Color.red;
     }
 
+    public void TresCorazones(float enemyPosX)
+    {
+        jump = true;
+        Heart_Bar.Phearts = Heart_Bar.Phearts - 6;
+        float side = Mathf.Sign(enemyPosX - transform.position.x);
+        rbd2.AddForce(Vector2.left * side * JumpPower, ForceMode2D.Impulse);
+
+        movement = false;
+
+
+        Invoke("EnableMovement", 1.5f);
+
+
+
+        spr.color = Color.red;
+    }
+
 
     public void BiriBiriBanBan(float enemyPosX)
     {

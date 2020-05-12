@@ -1913,6 +1913,10 @@ GameObject:
   m_Component:
   - component: {fileID: 276504532}
   - component: {fileID: 276504531}
+  - component: {fileID: 276504534}
+  - component: {fileID: 276504533}
+  - component: {fileID: 276504536}
+  - component: {fileID: 276504535}
   m_Layer: 0
   m_Name: Subcomandante
   m_TagString: Untagged
@@ -1977,13 +1981,96 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276504530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 326.59, y: 3.21, z: 0}
+  m_LocalPosition: {x: 368.92, y: 3.72, z: 0}
   m_LocalScale: {x: 1.2, y: 1.15, z: 1}
   m_Children:
   - {fileID: 1929136768}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &276504533
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276504530}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
+--- !u!114 &276504534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276504530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8bf1cbc4c44c041baf05428aa3f3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RBS: {fileID: 0}
+  Bufanda: {fileID: 0}
+  life: 0
+  speed: 0
+  DistanciaVision: 0
+--- !u!114 &276504535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276504530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7499e766ea1240a3a8833b602e3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NOX: {fileID: 0}
+  C1: {fileID: 0}
+  C2: {fileID: 0}
+  C3: {fileID: 0}
+  B1: {fileID: 0}
+  B2: {fileID: 0}
+  B3: {fileID: 0}
+--- !u!61 &276504536
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276504530}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.96, y: 2.14}
+    newSize: {x: 0.96, y: 2.14}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.96, y: 2.14}
+  m_EdgeRadius: 0
 --- !u!1 &294483253
 GameObject:
   m_ObjectHideFlags: 0
@@ -10645,6 +10732,7 @@ GameObject:
   - component: {fileID: 1929136768}
   - component: {fileID: 1929136770}
   - component: {fileID: 1929136769}
+  - component: {fileID: 1929136771}
   m_Layer: 0
   m_Name: BUFANDA
   m_TagString: Untagged
@@ -10741,6 +10829,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1929136771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929136767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db52bad83a0832045955be36f87ec07e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1952506220
 GameObject:
   m_ObjectHideFlags: 0
