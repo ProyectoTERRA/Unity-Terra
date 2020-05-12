@@ -30,9 +30,20 @@ public class DefenderController : MonoBehaviour
       transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     
     }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+
+        if (col.gameObject.tag == "Player")
+        {
+            col.SendMessage("EnemyKnockBack", transform.position.x + 1);
+
+        }
+    }
+    
+    
 
 
-        IEnumerator Active()
+    IEnumerator Active()
     {
         Debug.Log("Iniciando disparos");
             Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
@@ -49,18 +60,18 @@ public class DefenderController : MonoBehaviour
     {
         yield return new WaitForSeconds(6f);
         FlagMove = true;
-        StartCoroutine(Active());
         do
         {
             moverse -= Time.deltaTime;
 
             if (FlagMove == true)
             {
-                
+                transform.position += Vector3.down * speed * Time.deltaTime;
                 Debug.Log("HACIA ABAJO!");
                 yield return new WaitForSeconds(5f);
             }
         } while (moverse > 0);
+        StartCoroutine(Active());
 
     }
 }
