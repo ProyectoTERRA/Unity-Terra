@@ -73,7 +73,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.curacion = 0;
         dato.ganzua = 0;
         dato.formula = 0;
-        dato.vidas = 4;
+        dato.vidas = 3;
         dato.corazones = 3;
         dato.tipo = 2;
 
@@ -94,7 +94,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.curacion1 = 0;
         dato.ganzua1 = 0;
         dato.formula1 = 0;
-        dato.vidas1 = 4;
+        dato.vidas1 = 3;
         dato.corazones1 = 3;
         dato.tipo1 = 2;
         //Serializara los archivos
