@@ -3,7 +3,48 @@ guid: d3d5f7ba2f1dac04698a3ed527af9fda
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Key1: {fileID: 21300000, guid: c17fe634eb912874a9fdca8947284057, type: 3}
+  - Key2: {fileID: 21300000, guid: b82f544382aa17b4788cd17a2ea81077, type: 3}
+  - Key3: {fileID: 21300000, guid: 4e80553199cca2e4b9d1628400ae37d6, type: 3}
+  - Key4: {fileID: 21300000, guid: 56d41a6bf946d9d45811aa3675f3f03f, type: 3}
+  - Key5: {fileID: 21300000, guid: e803a890b346ba142b37e71471e77dd7, type: 3}
+  - Key6: {fileID: 21300000, guid: ebd7f6fcecfea8c44a93707daca2ba12, type: 3}
+  - Key7: {fileID: 21300000, guid: 8eae8781ce819774188c431e68ead58c, type: 3}
+  - Key8: {fileID: 21300000, guid: b1bc95af32274ec4794aeade0cfd55a4, type: 3}
+  - Key9: {fileID: 21300000, guid: 204bb0c9f6a97a54781a26027ef93d89, type: 3}
+  - Key0: {fileID: 21300000, guid: a86f43e4865198d4c8150753c1e72427, type: 3}
+  - KeyQ: {fileID: 21300000, guid: 1ccc9eb92bb40624fa1c2032b1b8cbd9, type: 3}
+  - KeyW: {fileID: 21300000, guid: 0887c5b0723a07a4eaceebdf37803591, type: 3}
+  - KeyE: {fileID: 21300000, guid: dc09ba2487cd56f40afd7213ef12912b, type: 3}
+  - KeyR: {fileID: 21300000, guid: 1cbab01aec2732443ae96512584ee1b3, type: 3}
+  - KeyT: {fileID: 21300000, guid: 2fb69fde104376943aac1be2887f6532, type: 3}
+  - KeyY: {fileID: 21300000, guid: 665314d52f88ad14890c82f08f213bc9, type: 3}
+  - KeyU: {fileID: 21300000, guid: a46b3d015d0153948913f1eaf9c21116, type: 3}
+  - KeyI: {fileID: 21300000, guid: 7aad05f7931ac474b88d6a0a7b55d0be, type: 3}
+  - KeyO: {fileID: 21300000, guid: 790a983027823224186d94ab0965c978, type: 3}
+  - KeyP: {fileID: 21300000, guid: d2cc6fb88bc18fd4da0d10ee1d151f81, type: 3}
+  - KeyA: {fileID: 21300000, guid: a3be1cce91becfb4e928e6b967d06f61, type: 3}
+  - KeyS: {fileID: 21300000, guid: d6a1e22e61f8eb14c8f17cb3093821cc, type: 3}
+  - KeyD: {fileID: 21300000, guid: 73bc5f18b4670b44ebe029bc55aad359, type: 3}
+  - KeyF: {fileID: 21300000, guid: d23112e6bd07c244b9b1097976aa5275, type: 3}
+  - KeyG: {fileID: 21300000, guid: 943603477cc1a3549a568c9a118d6932, type: 3}
+  - KeyH: {fileID: 21300000, guid: 41d81d50e44c7b543ae610550b5b1c41, type: 3}
+  - KeyJ: {fileID: 21300000, guid: 4c10ee8b826b03b4ab709eefd156b1ed, type: 3}
+  - KeyK: {fileID: 21300000, guid: d2a413fd105bc6c4dba6bf500981d24f, type: 3}
+  - KeyL: {fileID: 21300000, guid: 08ddb612ce07dd24094e2fa7414eca2c, type: 3}
+  - KeyTab: {fileID: 21300000, guid: c480ddaa2d4032e4693b84a95186da93, type: 3}
+  - KeyZ: {fileID: 21300000, guid: cca46ca560d69db44938c199bbe36d5f, type: 3}
+  - KeyX: {fileID: 21300000, guid: 33eea1c6dc9c67d4b923e2fcee2f0a78, type: 3}
+  - KeyC: {fileID: 21300000, guid: a4f4148479397e64f8cdbbf2a161719e, type: 3}
+  - KeyV: {fileID: 21300000, guid: 5ca24db95a629d544bf5ad5ff702f9b3, type: 3}
+  - KeyB: {fileID: 21300000, guid: 6c5295c41c0319e41b0456e16dad3282, type: 3}
+  - KeyN: {fileID: 21300000, guid: 39fa60f32f1a7c84abe4980a013a7c7b, type: 3}
+  - KeyM: {fileID: 21300000, guid: 1504dd14c8761324eb5bfb498906a6b6, type: 3}
+  - KeySpace: {fileID: 21300000, guid: 09bb0dfe40b83d840975bedf15a04f3a, type: 3}
+  - KeyDel: {fileID: 21300000, guid: 1131e776dd65c36498888264b9b8c881, type: 3}
+  - KeyEnter: {fileID: 21300000, guid: 1806222270adb69438e7c638bc635d67, type: 3}
+  - KeyM1: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

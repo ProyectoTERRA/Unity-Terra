@@ -56,6 +56,10 @@ public class SubControler : MonoBehaviour
             col.SendMessage("UnCorazon", transform.position.x);
             
         }
+        if (col.gameObject.tag == "BE")
+        {
+            DistanciaVision = 0;
+        }
     }
     // Update is called once per frame
     
