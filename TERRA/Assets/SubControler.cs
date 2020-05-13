@@ -31,7 +31,7 @@ public class SubControler : MonoBehaviour
         float fixedSpeed = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
         
-        ///if(System.Math.Abs(DistanciaVision - distanciaJugador) == 4f)
+        ///if(System.Math.Abs(DistanciaVision - distanciaJugador) == 4f) Si está a 4 o menos de 4 unidades de distancia ataca
         //{
         //}
         Debug.DrawLine(transform.position, target, Color.red);
