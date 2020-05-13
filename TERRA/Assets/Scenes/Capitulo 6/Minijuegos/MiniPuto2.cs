@@ -52,52 +52,78 @@ public class MiniPuto2 : MonoBehaviour
     [SerializeField] private GameObject KeyM1;
     [SerializeField] private GameObject BackKey;
 
+    [SerializeField] private GameObject Lvl1;
+    [SerializeField] private GameObject Lvl2;
+    [SerializeField] private GameObject Lvl3;
+
+
+
     public Color verd, roj, bl;
-    public static bool active, Plvl1, Plvl2, Plvl3, start;
+    public static bool active, Plvl1, Plvl2, Plvl3, start1, start2, start3, start4, start5, start6, start7, start8, start9;
     private bool CorrectKey1;
     private int randKey1;
     private string State;
     public SliderPuto2 sl;
+    private int countF;
+    private float segs5, segs3;
+    public Sprite stay, pass, fail;
     // Start is called before the first frame update
     void Start()
     {
-       
-        start = true;
+        segs5 = 0.04f;
+        segs5 = 0.024f;
+
+        SliderPuto2.speed = segs5;
+
+        State = "C";
+        countF = 0;
+        sl = GetComponent<SliderPuto2>();
+        start1 = true;
         Plvl1 = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Plvl1 && start)
+        Debug.Log(countF);
+        if (Plvl1 && start1)
         {
             BackKey.GetComponent<SpriteRenderer>().color = bl;
             lvl1();
-            State = "C";
-            start = false;
+            
+            start1 = false;
             active = true;
         }
+
         if (Plvl1 && active)
         {
             if (State == "C" ) State = checkKey(randKey1, KeyM1);
             else if (State == "F")
             {
+                Lvl1.GetComponent<SpriteRenderer>().sprite = fail;
+                Lvl2.GetComponent<SpriteRenderer>().sprite = fail;
+                Lvl3.GetComponent<SpriteRenderer>().sprite = fail;
                 SliderPuto2.active = false;
                 active = false;
                 BackKey.GetComponent<SpriteRenderer>().color = roj;
             }
             else if (State == "T")
             {
-                SliderPuto2.active = false;
-                active = false;
-                BackKey.GetComponent<SpriteRenderer>().color = verd;
+                StartCoroutine(next());
+                
             }
         }
-        if (!start && !active && Input.GetKeyDown(KeyCode.Return))
+        if (!start1 && !active && Input.GetKeyDown(KeyCode.Return))
         {
-            sl = GetComponent<SliderPuto2>();
+            countF = 0;
+            State = "C";
             sl.reset();
-            start = true;
+            start1 = true;
+            start2 = false;
+            start3 = false;
+            Lvl1.GetComponent<SpriteRenderer>().sprite = stay;
+            Lvl2.GetComponent<SpriteRenderer>().sprite = stay;
+            Lvl3.GetComponent<SpriteRenderer>().sprite = stay;
         }
     }
 
@@ -496,9 +522,23 @@ public class MiniPuto2 : MonoBehaviour
         randomkey(randKey1, KeyM1);
     }
 
-    IEnumerator p()
+    IEnumerator next()
     {
-        yield return new WaitForSeconds(5f);
-        StartCoroutine(p());
+        State = "C";
+        SliderPuto2.active = false;
+        BackKey.GetComponent<SpriteRenderer>().color = verd;
+        countF++;
+        if (Plvl1 && countF == 3)
+        {
+            active = false;
+            Lvl1.GetComponent<SpriteRenderer>().sprite = pass;
+        }
+        yield return new WaitForSeconds(2f);
+
+        if (Plvl1 && countF < 3 && countF > 0)
+        {
+            start1 = true;
+            sl.reset();
+        }    
     }
 }
