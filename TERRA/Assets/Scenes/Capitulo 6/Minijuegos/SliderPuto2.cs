@@ -67,7 +67,7 @@ public class SliderPuto2 : MonoBehaviour
     public void push()
     {
         time += Time.deltaTime;
-        if (time >= 0.017f)
+        if (time >= speed)
         {
             if (dir)
             {
