@@ -50,13 +50,18 @@ public class MiniPuto2 : MonoBehaviour
     [SerializeField] private Sprite KeyEnter;
 
     [SerializeField] private GameObject KeyM1;
+    [SerializeField] private GameObject BackKey;
 
-    public static bool waitkeys, Plvl1, Plvl2, Plvl3, start;
+    public Color verd, roj, bl;
+    public static bool active, Plvl1, Plvl2, Plvl3, start;
     private bool CorrectKey1;
     private int randKey1;
+    private string State;
+    public SliderPuto2 sl;
     // Start is called before the first frame update
     void Start()
     {
+       
         start = true;
         Plvl1 = true;
     }
@@ -66,16 +71,32 @@ public class MiniPuto2 : MonoBehaviour
     {
         if (Plvl1 && start)
         {
+            BackKey.GetComponent<SpriteRenderer>().color = bl;
             lvl1();
+            State = "C";
             start = false;
+            active = true;
         }
-        if (Plvl1 && waitkeys)
+        if (Plvl1 && active)
         {
-            if (KeyM1.activeSelf) checkKey(randKey1, KeyM1);
+            if (State == "C" ) State = checkKey(randKey1, KeyM1);
+            else if (State == "F")
+            {
+                SliderPuto2.active = false;
+                active = false;
+                BackKey.GetComponent<SpriteRenderer>().color = roj;
+            }
+            else if (State == "T")
+            {
+                SliderPuto2.active = false;
+                active = false;
+                BackKey.GetComponent<SpriteRenderer>().color = verd;
+            }
         }
-        if (!start && !waitkeys && Input.GetKeyDown(KeyCode.Return))
+        if (!start && !active && Input.GetKeyDown(KeyCode.Return))
         {
-            KeyM1.SetActive(true);
+            sl = GetComponent<SliderPuto2>();
+            sl.reset();
             start = true;
         }
     }
@@ -254,171 +275,218 @@ public class MiniPuto2 : MonoBehaviour
         }
     }
 
-    void checkKey(int val, GameObject key)
+    string checkKey(int val, GameObject key)
     {
         if (val == 1 && Input.GetKeyDown(KeyCode.Alpha1))
         {
-
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 2 && Input.GetKeyDown(KeyCode.Alpha2))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 3 && Input.GetKeyDown(KeyCode.Alpha3))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 4 && Input.GetKeyDown(KeyCode.Alpha4))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 5 && Input.GetKeyDown(KeyCode.Alpha5))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 6 && Input.GetKeyDown(KeyCode.Alpha6))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 7 && Input.GetKeyDown(KeyCode.Alpha7))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 8 && Input.GetKeyDown(KeyCode.Alpha8))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 9 && Input.GetKeyDown(KeyCode.Alpha9))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 10 && Input.GetKeyDown(KeyCode.Alpha0))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
 
         else if (val == 11 && Input.GetKeyDown(KeyCode.Q))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 12 && Input.GetKeyDown(KeyCode.W))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 13 && Input.GetKeyDown(KeyCode.E))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 14 && Input.GetKeyDown(KeyCode.R))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 15 && Input.GetKeyDown(KeyCode.T))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 16 && Input.GetKeyDown(KeyCode.Y))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 17 && Input.GetKeyDown(KeyCode.U))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 18 && Input.GetKeyDown(KeyCode.I))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 19 && Input.GetKeyDown(KeyCode.O))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 20 && Input.GetKeyDown(KeyCode.P))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
 
         else if (val == 21 && Input.GetKeyDown(KeyCode.A))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 22 && Input.GetKeyDown(KeyCode.S))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 23 && Input.GetKeyDown(KeyCode.D))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 24 && Input.GetKeyDown(KeyCode.F))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 25 && Input.GetKeyDown(KeyCode.G))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 26 && Input.GetKeyDown(KeyCode.H))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 27 && Input.GetKeyDown(KeyCode.J))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 28 && Input.GetKeyDown(KeyCode.K))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 29 && Input.GetKeyDown(KeyCode.L))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 30 && Input.GetKeyDown(KeyCode.Tab))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
 
         else if (val == 31 && Input.GetKeyDown(KeyCode.Z))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 32 && Input.GetKeyDown(KeyCode.X))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 33 && Input.GetKeyDown(KeyCode.C))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 34 && Input.GetKeyDown(KeyCode.V))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 35 && Input.GetKeyDown(KeyCode.B))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 36 && Input.GetKeyDown(KeyCode.N))
         {
-            key.SetActive(false);
+            if(SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 37 && Input.GetKeyDown(KeyCode.M))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 38 && Input.GetKeyDown(KeyCode.Space))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
-        else if (val == 39 && Input.GetKeyDown(KeyCode.Delete))
+        else if (val == 39 && Input.GetKeyDown(KeyCode.Backspace))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
         }
         else if (val == 40 && Input.GetKeyDown(KeyCode.Return))
         {
-            key.SetActive(false);
+            if (SliderPuto2.Target) return "T";
+            else return "F";
+        }
+        else if (Input.anyKeyDown)
+        {
+            return "F";
+        }
+        else
+        {
+            return "C";
         }
     }
 
@@ -426,13 +494,11 @@ public class MiniPuto2 : MonoBehaviour
     {
         randKey1 = Random.Range(1, 40);
         randomkey(randKey1, KeyM1);
-        StartCoroutine(waitLvl1());
     }
 
-    IEnumerator waitLvl1()
+    IEnumerator p()
     {
-        waitkeys = true;
         yield return new WaitForSeconds(5f);
-        waitkeys = false;
+        StartCoroutine(p());
     }
 }

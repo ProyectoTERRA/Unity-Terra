@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: -4437138239322190647
     second: audioknobs-all_2
+  - first:
+      213: 1743869435921933786
+    second: audioknobs-all_3
+  - first:
+      213: -2391445894281760124
+    second: audioknobs-all_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -165,6 +171,48 @@ TextureImporter:
       bones: []
       spriteID: 1dff0ff34dbc9c7439a6803a45e02915
       internalID: -4437138239322190647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audioknobs-all_3
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 468
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b45c965f29f6b47a6e72e20509e099
+      internalID: 1743869435921933786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audioknobs-all_4
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 484
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4831fa0be482934d853797f3e3d7ed7
+      internalID: -2391445894281760124
       vertices: []
       indices: 
       edges: []
