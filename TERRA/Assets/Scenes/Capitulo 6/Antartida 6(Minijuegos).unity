@@ -2377,10 +2377,34 @@ MonoBehaviour:
   KeyEnter: {fileID: 21300000, guid: 1806222270adb69438e7c638bc635d67, type: 3}
   KeyM1: {fileID: 0}
   BackKey: {fileID: 0}
+  Lvl1: {fileID: 0}
+  Lvl2: {fileID: 0}
+  Lvl3: {fileID: 0}
+  View: {fileID: 0}
+  F1: {fileID: 0}
+  F2: {fileID: 0}
+  F3: {fileID: 0}
+  F4: {fileID: 0}
+  P1: {fileID: 0}
+  P2: {fileID: 0}
+  P3: {fileID: 0}
+  P4: {fileID: 0}
+  P5: {fileID: 0}
+  P6: {fileID: 0}
+  P7: {fileID: 0}
+  P8: {fileID: 0}
+  P9: {fileID: 0}
   verd: {r: 0, g: 0, b: 0, a: 0}
   roj: {r: 0, g: 0, b: 0, a: 0}
   bl: {r: 0, g: 0, b: 0, a: 0}
   sl: {fileID: 0}
+  stay: {fileID: 0}
+  pass: {fileID: 0}
+  fail: {fileID: 0}
+  FPstay: {fileID: 0}
+  FPpass: {fileID: 0}
+  FPfail: {fileID: 0}
+  BS: {fileID: 0}
 --- !u!1 &277247478
 GameObject:
   m_ObjectHideFlags: 0
@@ -8357,7 +8381,7 @@ GameObject:
   - component: {fileID: 1103492786}
   - component: {fileID: 1103492785}
   m_Layer: 0
-  m_Name: sprites_72
+  m_Name: DivIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
