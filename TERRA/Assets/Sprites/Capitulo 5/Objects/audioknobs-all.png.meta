@@ -17,6 +17,12 @@ TextureImporter:
   - first:
       213: -2391445894281760124
     second: audioknobs-all_4
+  - first:
+      213: 2339509933840536254
+    second: audioknobs-all_5
+  - first:
+      213: -3675822786397635743
+    second: audioknobs-all_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -205,7 +211,7 @@ TextureImporter:
         width: 25
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,6 +219,48 @@ TextureImporter:
       bones: []
       spriteID: b4831fa0be482934d853797f3e3d7ed7
       internalID: -2391445894281760124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audioknobs-all_5
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 484
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e70c12506188948baabdcf71132e6b
+      internalID: 2339509933840536254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: audioknobs-all_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 484
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2905b49978db6d543a342fddf84e2daa
+      internalID: -3675822786397635743
       vertices: []
       indices: 
       edges: []
