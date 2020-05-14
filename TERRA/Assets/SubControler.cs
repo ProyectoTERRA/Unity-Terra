@@ -13,8 +13,11 @@ public class SubControler : MonoBehaviour
     public float DistanciaVision;
     GameObject Jugador;
     Vector3 PosicionInicial;
+    private Transform MyTransform;
+    public int rotationSpeed;
     void Start()
     {
+        MyTransform = transform;
         RBS = GetComponent<Rigidbody2D>();
         Jugador = GameObject.FindGameObjectWithTag("Player");
         PosicionInicial = transform.position;
@@ -27,10 +30,26 @@ public class SubControler : MonoBehaviour
         if (distanciaJugador < DistanciaVision)
         {
             target = Jugador.transform.position;
+            StopAllCoroutines();
+            if(DistanciaVision - distanciaJugador < 2)
+            {
+                DistanciaVision = 0;
+            }
+            else
+            {
+                DistanciaVision = 20;
+            }
         }    
         float fixedSpeed = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
         
+        if(distanciaJugador < 10)
+        {
+            StartCoroutine(AtaqueBufanda());
+        }else if(distanciaJugador > 10)
+        {
+            StopAllCoroutines();
+        }
         ///if(System.Math.Abs(DistanciaVision - distanciaJugador) == 4f) Si está a 4 o menos de 4 unidades de distancia ataca
         //{
         //}
@@ -40,9 +59,9 @@ public class SubControler : MonoBehaviour
         {
             //Aumentar Velocidad
             speed = speed * 1.5f;
-        }
-
-        if (life <= 8)
+        } 
+        else if (life <= 8)
+        
         {
             //Iniciar Segundo ataque
 
@@ -56,31 +75,25 @@ public class SubControler : MonoBehaviour
             col.SendMessage("UnCorazon", transform.position.x);
             
         }
-        if (col.gameObject.tag == "BE")
+        else if (col.gameObject.tag == "BE")
         {
             DistanciaVision = 0;
         }
+        else if (col.gameObject.tag == "BEReturn")
+        {
+            DistanciaVision = 20;
+        }
+
     }
     // Update is called once per frame
     
     
     IEnumerator AtaqueBufanda()
     {
-            
         Bufanda.SetActive(true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         Bufanda.SetActive(false);
-        yield return new WaitForSeconds(5f);
-        
-        Bufanda.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        Bufanda.SetActive(false);
-
-        Bufanda.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        Bufanda.SetActive(false);
-
-        yield return new WaitForSeconds(tiempo);
+        yield return new WaitForSeconds(2f);
         StopAllCoroutines();
     }
 
