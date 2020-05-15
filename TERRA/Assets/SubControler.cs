@@ -31,19 +31,12 @@ public class SubControler : MonoBehaviour
         {
             target = Jugador.transform.position;
             StopAllCoroutines();
-            if(DistanciaVision - distanciaJugador < 2)
-            {
-                DistanciaVision = 0;
-            }
-            else
-            {
-                DistanciaVision = 20;
-            }
         }    
         float fixedSpeed = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
         
-        if(distanciaJugador < 10)
+
+        if((distanciaJugador - DistanciaVision) < 6)
         {
             StartCoroutine(AtaqueBufanda());
         }else if(distanciaJugador > 10)
