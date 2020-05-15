@@ -31,15 +31,15 @@ public class SubControler : MonoBehaviour
         {
             target = Jugador.transform.position;
             StopAllCoroutines();
-        }    
+        }
         float fixedSpeed = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
-        
 
-        if((distanciaJugador - DistanciaVision) < 6)
+
+        if ((distanciaJugador - DistanciaVision) < 6)
         {
             StartCoroutine(AtaqueBufanda());
-        }else if(distanciaJugador > 10)
+        } else if (distanciaJugador > 10)
         {
             StopAllCoroutines();
         }
@@ -52,21 +52,21 @@ public class SubControler : MonoBehaviour
         {
             //Aumentar Velocidad
             speed = speed * 1.5f;
-        } 
+        }
         else if (life <= 8)
-        
+
         {
             //Iniciar Segundo ataque
 
-         }
-   }
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
             col.SendMessage("UnCorazon", transform.position.x);
-            
+
         }
         else if (col.gameObject.tag == "BE")
         {
@@ -79,8 +79,8 @@ public class SubControler : MonoBehaviour
 
     }
     // Update is called once per frame
-    
-    
+
+
     IEnumerator AtaqueBufanda()
     {
         Bufanda.SetActive(true);
