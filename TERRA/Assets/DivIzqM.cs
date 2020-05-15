@@ -11,11 +11,24 @@ public class DivIzqM : MonoBehaviour
     int ContadorLv1, ContadorLv2, ContadorLv3, ContFin, IndexLvl = 0;
     float RedSeg1 = 2.0f, RedSeg2, RedSeg3, Contador, currValue, finalW, Delay;
     public float countdownTime = 50;
-    public bool Lvl1, Lvl2, Lvl3, Completo, Resta;
+    public bool Lvl1, Lvl2, Lvl3, Completo, Resta, Trigger;
     public TextMeshProUGUI Instruccion, Nivel;
     public Text TxtLvl;
+    public static bool active;
+
+    public static float segs2 = 0.03f, segs4 = 0.069f, segs3 = 0.052f;
+
+    [SerializeField] private GameObject L1;
+    [SerializeField] private GameObject L2;
+    [SerializeField] private GameObject L3;
+    public Sprite stay, pass, fail;
+
+    private BSliderPuto3 sl;
+
     void Start()
     {
+        BSliderPuto3.speed = segs2;
+        sl = GetComponent<BSliderPuto3>();
         Instruccion = GetComponent<TextMeshProUGUI>();
         Nivel = GetComponent<TextMeshProUGUI>();
     }
@@ -27,6 +40,7 @@ public class DivIzqM : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && IndexLvl == 0)
         {
+            BSliderPuto3.start = true;
             Slide.SetActive(true);
             //Barra.value = 50;
             IndexLvl = 1;
@@ -60,10 +74,10 @@ public class DivIzqM : MonoBehaviour
         Delay = Delay - Time.deltaTime;
         if(Delay <= 0 && IndexLvl == 1)
         {
-            Debug.Log("IniciaCorutina");
+            Debug.Log("IniciaCorutina");            
             StartCoroutine(RedLvl1());
         }
-
+        /*
          if (IndexLvl == 2)
          {
             StopAllCoroutines(); 
@@ -76,71 +90,132 @@ public class DivIzqM : MonoBehaviour
             StopAllCoroutines(); 
             NivelTres();
 
+
          }
- 
+
+       */
 
     }
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private void Update()
     {
-        if (collision.gameObject.tag == "Player" && IndexLvl == 1)
-        {         
-            NivelUno();
+        if (Input.GetKeyDown(KeyCode.E) && Trigger)
+        {
+            if (IndexLvl == 1) NivelUno();
+            if (IndexLvl == 2 && active) NivelDos();
+            if (IndexLvl == 3 && active) NivelTres();
+            Trigger = false;
         }
 
-        if (collision.gameObject.tag == "Player" && IndexLvl == 2)
+        if (IndexLvl == 3 && Completo == true && active)
         {
-            NivelDos();
-        }
-
-        if (collision.gameObject.tag == "Player" && IndexLvl == 3)
-        {
-            NivelTres();
-        }
-        if (IndexLvl == 3 && Completo == true)
-        {
+            Slide.SetActive(false);
+            TextoInstruccion.SetActive(false);
             Finalizado.SetActive(true);
         }
     }
 
-    //Deshabilitar el minijuego por cada nivel 
-    
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && IndexLvl == 1 && !Trigger)
+        {
+            Trigger = true;
+            
+        }
 
-   public void NivelUno()
+        if (collision.gameObject.tag == "Player" && IndexLvl == 2 && !Trigger)
+        {
+            Trigger = true;
+        }
+
+        if (collision.gameObject.tag == "Player" && IndexLvl == 3 && !Trigger)
+        {
+            Trigger = true;
+        }
+        
+    }
+
+    //Deshabilitar el minijuego por cada nivel 
+
+
+    public void MINUS()
+    {
+        if (IndexLvl == 1)
+        {
+
+            if (ContFin >= 2 && Contador >= (2 * 3.33f))
+            {
+                ContFin -= 2;
+                Contador = Contador - (2 * 3.33f);
+                Barra.value = Contador;
+            }
+           
+        }
+        else if(IndexLvl == 2)
+        {
+            if (ContFin >= 5 && Contador >= (5 * 2.5f))
+            {
+                ContFin -= 5;
+                Contador = Contador- (5 * 2.5f);
+                Barra.value = Contador;
+            }
+        }
+        else if (IndexLvl == 3)
+        {
+            if (ContFin >= 6 && Contador >= (6 * 2f))
+            {
+                ContFin -= 6;
+                Contador = Contador - (6 * 2f);
+                Barra.value = Contador;
+            }
+        }
+
+        sl.Refill();
+    }
+
+    public void NivelUno()
     {
         //while (Completo == false)
         //{
         //StartCoroutine(RedLvl1());
-        if (Input.GetKeyDown(KeyCode.E) && Barra.value <= 99 && IndexLvl == 1)
-        {
-            ContFin++;
-            Debug.Log("Clicks: " + ContFin);
-            Contador = Contador + 3.33f;
-            Barra.value = Contador;
-        }
-        else if (Barra.value > 99)
+
+        if (Barra.value >= 96 && IndexLvl == 1)
         {
             Completo = true;
             Debug.Log("Condicion: " + Completo);
             IndexLvl = 2;
             Debug.Log("Nivel: " + IndexLvl);
-            Barra.value = 0;
+            Barra.value = 100;
             ContFin = 0;
             Contador = 0;
             currValue = 0;
+            active = false;
+            StartCoroutine(Tran());
+            L1.GetComponent<SpriteRenderer>().sprite = pass;
+            BSliderPuto3.speed = segs4;
+        }
+        else if (Barra.value < 96 && IndexLvl == 1)
+        {
+            ContFin++;
+            Debug.Log("Clicks: " + ContFin);
+            Contador = Contador + 3.33f;
+            Barra.value = Contador;
+
         }
 
         //}
     }
-        public void NivelDos()
-        {
-             //StartCoroutine(RedLvl2());
-        if (Input.GetKeyDown(KeyCode.E) && Contador <= 100 && IndexLvl == 2)
+    public void NivelDos()
+    {
+        //StartCoroutine(RedLvl2());
+        
+        if (Contador < 100 && IndexLvl == 2)
         {
             Barra.value = 0;
             ContFin++;
             Contador = Contador + 2.5f;
+            Debug.Log("Clicks: " + ContFin);
             Barra.value = Contador;
-
             if (Contador >= 100)
             {
                 Completo = true;
@@ -148,14 +223,20 @@ public class DivIzqM : MonoBehaviour
                 Contador = 0;
                 IndexLvl = 3;
                 Debug.Log("Nivel: " + IndexLvl);
-                Barra.value = 0;
+                Barra.value = 100;
                 ContFin = 0;
                 Completo = false;
-                
+                active = false;
+                L2.GetComponent<SpriteRenderer>().sprite = pass;
+                BSliderPuto3.speed = segs3;
+                StartCoroutine(Tran());
+
             }
+
+
         }
 
-         }
+    }
 
 
     public void NivelTres()
@@ -174,19 +255,30 @@ public class DivIzqM : MonoBehaviour
                 Completo = true;
                 Debug.Log("Condicion: " + Completo);
                 Debug.Log("Nivel: " + IndexLvl);
-                Barra.value = 0;
+                Barra.value = 100;
                 ContFin = 0;
-                Slide.SetActive(false);
-                TextoInstruccion.SetActive(false);
+                L3.GetComponent<SpriteRenderer>().sprite = pass;
                 TxtLvl = GetComponent<Text>();
+                active = false;
+                StartCoroutine(Tran());
                 //TxtLvl.text = "Completado!";
             }
         }
 
     }
-
+    IEnumerator Tran()
+    {
+        active = false;
+       
+        BSliderPuto3.active = false;
+        yield return new WaitForSeconds(2f);
+        sl.Refill();
+        Barra.value = 0;
+        active = true;
+    }
     IEnumerator RedLvl1()
     {
+        /*
         Debug.Log("Inicia Corutina");
         if(Delay <= 0)
         {
@@ -202,6 +294,7 @@ public class DivIzqM : MonoBehaviour
             Contador -= 2;
             Barra.value = Contador;
         }
+        */
         //Debug.Log("Resta - 2");
         yield return new WaitForSeconds(15f);
     }
