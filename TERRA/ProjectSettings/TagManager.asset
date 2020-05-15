@@ -85,6 +85,8 @@ TagManager:
   - Checkpoint2
   - Watcher
   - ROBOT
+  - BEReturn
+  - SUBCOM
   layers:
   - Default
   - TransparentFX

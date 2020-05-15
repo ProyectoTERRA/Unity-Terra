@@ -15,8 +15,7 @@ public class Locker : MonoBehaviour
 
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("ColisionLocker" +
-                "");
+            Debug.Log("ColisionLocker");
             LockerAbierto.SetActive(true);
 
         }

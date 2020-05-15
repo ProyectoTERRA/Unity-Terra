@@ -93,6 +93,18 @@ public class EnemigosEsferas : MonoBehaviour
             }
         }
 
+        if (gameObject.tag == "SUBCOM")
+        {
+            if (CParalizantes >= 4 && !efecT)
+            {
+                StartCoroutine(ParalizEffect());
+            }
+            if (CNormales >= 2 && !efecT)
+            {
+                StartCoroutine(NormalEffect());
+            }
+        }
+
         if (gameObject.tag == "RAT")
         {
 
@@ -110,6 +122,7 @@ public class EnemigosEsferas : MonoBehaviour
                 StartCoroutine(NormalEffect());
             }
         }
+
 
     }
     public void OnTriggerStay2D(Collider2D collision)
@@ -141,8 +154,14 @@ public class EnemigosEsferas : MonoBehaviour
         efecT = true;
         effecting = true;
         
-        
-
+        if (gameObject.tag == "SUBCOM")
+        {
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<SubControler>().life--;
+            GetComponent<PolygonCollider2D>().enabled = false;
+            GetComponent<SubControler>().enabled = false;
+        }
         if (gameObject.tag == "Crawler")
         {
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
@@ -247,9 +266,14 @@ public class EnemigosEsferas : MonoBehaviour
         effecting = true;
         efecT = true;
         GetComponent<SpriteRenderer>().color = Color.yellow;
-        
 
-        if(gameObject.tag == "Crawler")
+        if (gameObject.tag == "SUBCOM")
+        {
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<SubControler>().enabled = false;
+        }
+        if (gameObject.tag == "Crawler")
         {
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             GetComponent<CircleCollider2D>().enabled = false;
