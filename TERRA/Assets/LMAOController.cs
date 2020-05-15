@@ -12,6 +12,12 @@ public class LMAOController : MonoBehaviour
     float Cooldown = 6;
     public float speed;
     bool AtHoyo = false;
+    bool Hiting;
+    [SerializeField] private GameObject Punch;
+    [SerializeField] private GameObject Back;
+    static public float side;
+    public bool hiting;
+
     public float DistanciaVision;
     void Start()
     {
@@ -19,11 +25,27 @@ public class LMAOController : MonoBehaviour
         Jugador = GameObject.FindGameObjectWithTag("Player");
         PosicionInicial = transform.position;
         targetRet = transform.position;
+        
+        Punch.SetActive(false);
+        hiting = false;
+        side = 1;
+    
     }
+
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        /*
+        if (EnemigosEsferas.effecting || hiting)
+        {
+            Back.SetActive(false);
+        }
+        if (!EnemigosEsferas.effecting && !hiting)
+        {
+            Back.SetActive(true);
+        }
+        */
         #region SEGUIMIENTO
         /*
         Vector3 target = PosicionInicial;
@@ -36,7 +58,7 @@ public class LMAOController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
         */
         #endregion
-        
+
         THoyo -= Time.deltaTime;
 
         Debug.Log("T -: " + THoyo + " Para el Putazo");
@@ -47,6 +69,7 @@ public class LMAOController : MonoBehaviour
             DistanciaVision = 100;
             AtHoyo = true;
         }
+        
         if (AtHoyo == true)
         {
             Vector3 target = PosicionInicial;
@@ -58,7 +81,7 @@ public class LMAOController : MonoBehaviour
             }
             float fixedSpeed = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
-
+            //transform.position = Vector3.MoveTowards(transform.position, PosicionInicial, fixedSpeed);
             Cooldown -= Time.deltaTime;
         }
     
@@ -84,3 +107,4 @@ public class LMAOController : MonoBehaviour
     */
 
 
+//3310064114
