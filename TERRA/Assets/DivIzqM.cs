@@ -14,7 +14,7 @@ public class DivIzqM : MonoBehaviour
     public bool Lvl1, Lvl2, Lvl3, Completo, Resta, Trigger, TriggerACT, TriggerREACT;
     public TextMeshProUGUI Instruccion, Nivel;
     public Text TxtLvl;
-    public static bool active, activeMain, WIN;
+    public static bool active, activeMain, WIN, bridge;
 
     public static float segs2 = 0.03f, segs4 = 0.069f, segs3 = 0.052f;
 
@@ -94,7 +94,10 @@ public class DivIzqM : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && Trigger)
+        Debug.Log("PUTO: " + Contador);
+        Debug.Log("PUTO: " + ContFin);
+
+        if (Input.GetKeyDown(KeyCode.E) && Trigger && !bridge)
         {
             
             if (IndexLvl == 1 && active) NivelUno();
@@ -127,6 +130,14 @@ public class DivIzqM : MonoBehaviour
 
         if (TriggerREACT)
         {
+            if (IndexLvl == 3)
+            {
+                ContFin = 0;
+                Contador = 0;
+                currValue = 0;
+                bridge = false;
+                BSliderPuto3.speed = segs3;
+            }
             sl.Refill();
             Barra.value = 0;
             active = true;
@@ -136,6 +147,9 @@ public class DivIzqM : MonoBehaviour
             slide2.SetActive(true);
             TriggerREACT = false;
             activeMain = true;
+            
+
+           
         }
     }
 
@@ -198,6 +212,7 @@ public class DivIzqM : MonoBehaviour
                 ContFin -= 5;
                 Contador = Contador- (5 * 2.5f);
                 Barra.value = Contador;
+               
             }
             else if (ContFin >= 0 && ContFin < 5 && Contador >= 0 && Contador < (5 * 2.5f))
             {
@@ -214,6 +229,10 @@ public class DivIzqM : MonoBehaviour
                 ContFin -= 6;
                 Contador = Contador - (6 * 2f);
                 Barra.value = Contador;
+                if (Barra.value <= 40 && bridge)
+                {
+                    StartCoroutine(LOSE());
+                }
             }
             else if (ContFin >= 0 && ContFin < 6 && Contador >= 0 && Contador < (6 * 2f))
             {
@@ -280,6 +299,7 @@ public class DivIzqM : MonoBehaviour
             Barra.value = Contador;
             if (Contador >= 100)
             {
+                bridge = true;
                 Completo = true;
                 Debug.Log("Condicion: " + Completo);
                 Contador = 0;
@@ -288,9 +308,8 @@ public class DivIzqM : MonoBehaviour
                 Barra.value = 100;
                 ContFin = 40;
                 Completo = false;
-                active = false;
                 L2.GetComponent<SpriteRenderer>().sprite = pass;
-                BSliderPuto3.speed = segs3;
+
                 StartCoroutine(Tran());
 
             }
@@ -330,21 +349,39 @@ public class DivIzqM : MonoBehaviour
         }
 
     }
+
+
+
     IEnumerator Tran()
     {
         active = false;
         if (!WIN)
         {
 
-            if (IndexLvl == 2)
-            {
-                slide2.SetActive(false);
-            }
+           
             GetComponent<SpriteRenderer>().color = Color.gray;
             BSliderPuto3.active = false;
             yield return new WaitForSeconds(1f);
             Slide.transform.localPosition = new Vector3(76f, 329);
             MINIBACK.SetActive(false);
+            if (IndexLvl == 2)
+            {
+
+                slide2.SetActive(false);
+            }
+            else if(IndexLvl == 3)
+            {
+                BSliderPuto3.active = true;
+                bridge = true;
+                sl.Refill();
+                ContFin = 40;
+                Contador = 100;
+                Barra.value = 100;
+                active = true;
+                Slide.SetActive(true);
+                slide2.SetActive(true);
+                activeMain = true;
+            }
 
         }
         else
@@ -355,6 +392,7 @@ public class DivIzqM : MonoBehaviour
             Finalizado.SetActive(false);
             Slide.SetActive(false);
             MINIBACK.SetActive(false);
+            slide2.SetActive(false);
         }
 
         
@@ -363,14 +401,28 @@ public class DivIzqM : MonoBehaviour
             yield return new WaitForSeconds(10f);
             GetComponent<SpriteRenderer>().color = Color.white;
 
-            ContFin = 0;
-            Contador = 0;
-            currValue = 0;  
+            if(IndexLvl != 3)
+            {
+                ContFin = 0;
+                Contador = 0;
+                currValue = 0;
+            }
+            
             activeMain = false;
         }
        
     }
-
+    IEnumerator LOSE()
+    {
+        Slide.SetActive(false);
+        slide2.SetActive(false);
+        active = false;
+        GetComponent<SpriteRenderer>().color = Color.gray;
+        BSliderPuto3.active = false;
+        yield return new WaitForSeconds(1f);
+        MINIBACK.SetActive(false);
+        
+    }
     IEnumerator Fail()
     {
         active = false;

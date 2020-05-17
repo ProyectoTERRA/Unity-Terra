@@ -26,6 +26,7 @@ public class BSliderPuto3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("PUTO: " + Barempty);
         Debug.Log("Barra:" + active);
         if (start)
         {
@@ -53,7 +54,7 @@ public class BSliderPuto3 : MonoBehaviour
 
         if (Trigger)
         {
-           
+            Debug.Log("STAAAAAAAAAAAAAART");
             DV.MINUS();
             Trigger = false;
         }
@@ -62,7 +63,7 @@ public class BSliderPuto3 : MonoBehaviour
 
     public void Refill()
     {
-        Debug.Log("STAAAAAAAAAAAAAART");
+        
         Bar.value = valF;
         StartCoroutine(WAIT());
         
