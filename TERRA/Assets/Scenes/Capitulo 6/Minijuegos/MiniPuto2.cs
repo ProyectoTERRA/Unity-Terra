@@ -52,55 +52,371 @@ public class MiniPuto2 : MonoBehaviour
     [SerializeField] private GameObject KeyM1;
     [SerializeField] private GameObject BackKey;
 
+    [SerializeField] private GameObject Lvl1;
+    [SerializeField] private GameObject Lvl2;
+    [SerializeField] private GameObject Lvl3;
+
+    [SerializeField] private GameObject View;
+
+    [SerializeField] private GameObject F1;
+    [SerializeField] private GameObject F2;
+    [SerializeField] private GameObject F3;
+    [SerializeField] private GameObject F4;
+
+    [SerializeField] private GameObject P1;
+    [SerializeField] private GameObject P2;
+    [SerializeField] private GameObject P3;
+    [SerializeField] private GameObject P4;
+    [SerializeField] private GameObject P5;
+    [SerializeField] private GameObject P6;
+    [SerializeField] private GameObject P7;
+    [SerializeField] private GameObject P8;
+    [SerializeField] private GameObject P9;
+
+
     public Color verd, roj, bl;
-    public static bool active, Plvl1, Plvl2, Plvl3, start;
+    public static bool active, Plvl1, Plvl2, Plvl3, start1, c1, c2, c3, Lose, enable;
     private bool CorrectKey1;
     private int randKey1;
     private string State;
     public SliderPuto2 sl;
+    public static int countF, countE;
+    private float segs5 = 0.04f, segs3 = 0.024f
+        , xFail1 = 216 + 36
+        , xFail2_1 = 216, xFail2_2 = 288
+        , xFail3_1 = 144, xFail3_2 = 216, xFail3_3 = 288
+        , yPush1 = -130
+        , yPush2_1 = -130 + 27, yPush2_2 = -130 - 27
+        , yPush3_1 =  -75, yPush3_2 = -130, yPush3_3 = -184;
+    public Sprite stay, pass, fail, FPstay, FPpass, FPfail;
+    public BSliderPuto2 BS;
     // Start is called before the first frame update
     void Start()
     {
-       
-        start = true;
+        View.SetActive(false);
+        if (!c1)
+        { 
+            SliderPuto2.speed = segs5;
+        }
+        enable = true;
+
+        SliderPuto2.speed = segs5;
+
+        BS = GetComponent<BSliderPuto2>();
+
+        State = "C";
+        countF = 0;
+        countE = 0;
+        sl = GetComponent<SliderPuto2>();
         Plvl1 = true;
+
+        FPcheckCount();
+        FPcheckEn();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Plvl1 && start)
+        Debug.Log(SliderPuto2.speed);
+        Debug.Log(countE);
+        if (Plvl1 && start1)
         {
             BackKey.GetComponent<SpriteRenderer>().color = bl;
             lvl1();
-            State = "C";
-            start = false;
+            //BSliderPuto2.start = true;
+            
+            start1 = false;
             active = true;
         }
+
         if (Plvl1 && active)
         {
-            if (State == "C" ) State = checkKey(randKey1, KeyM1);
+            if (State == "C" && active ) State = checkKey(randKey1, KeyM1);
             else if (State == "F")
             {
-                SliderPuto2.active = false;
-                active = false;
-                BackKey.GetComponent<SpriteRenderer>().color = roj;
+                StartCoroutine(FAIL());
             }
             else if (State == "T")
             {
-                SliderPuto2.active = false;
-                active = false;
-                BackKey.GetComponent<SpriteRenderer>().color = verd;
+                if (active)
+                {
+                    StartCoroutine(next());
+                }
+               
+                
             }
         }
-        if (!start && !active && Input.GetKeyDown(KeyCode.Return))
+        /*
+        if (enable && !start1 && !active && Input.GetKeyDown(KeyCode.Return))
         {
-            sl = GetComponent<SliderPuto2>();
-            sl.reset();
-            start = true;
+            Renabled();
+        }
+        */
+    }
+
+    public void FPcheckEn()
+    {
+        if (!c1)
+        {
+            F1.SetActive(true);
+            F2.SetActive(false);
+            F3.SetActive(false);
+            F4.SetActive(false);
+
+            P1.SetActive(true);
+            P2.SetActive(true);
+            P3.SetActive(true);
+            P4.SetActive(false);
+            P5.SetActive(false);
+            P6.SetActive(false);
+            P7.SetActive(false);
+            P8.SetActive(false);
+            P9.SetActive(false);
+
+            F1.transform.localPosition = new Vector3(xFail1, F1.transform.localPosition.y);
+
+            P1.transform.localPosition = new Vector3(P1.transform.localPosition.x, yPush1);
+            P2.transform.localPosition = new Vector3(P2.transform.localPosition.x, yPush1);
+            P3.transform.localPosition = new Vector3(P3.transform.localPosition.x, yPush1);
+        }
+        else if (c1 && !c2)
+        {
+            F1.SetActive(true);
+            F2.SetActive(true);
+            F3.SetActive(false);
+            F4.SetActive(false);
+
+            P1.SetActive(true);
+            P2.SetActive(true);
+            P3.SetActive(true);
+            P4.SetActive(true);
+            P5.SetActive(true);
+            P6.SetActive(true);
+            P7.SetActive(false);
+            P8.SetActive(false);
+            P9.SetActive(false);
+
+            F1.transform.localPosition = new Vector3(xFail2_1, F1.transform.localPosition.y);
+            F2.transform.localPosition = new Vector3(xFail2_2, F2.transform.localPosition.y);
+
+            P1.transform.localPosition = new Vector3(P1.transform.localPosition.x, yPush2_1);
+            P2.transform.localPosition = new Vector3(P2.transform.localPosition.x, yPush2_1);
+            P3.transform.localPosition = new Vector3(P3.transform.localPosition.x, yPush2_1);
+            P4.transform.localPosition = new Vector3(P4.transform.localPosition.x, yPush2_2);
+            P5.transform.localPosition = new Vector3(P5.transform.localPosition.x, yPush2_2);
+            P6.transform.localPosition = new Vector3(P6.transform.localPosition.x, yPush2_2);
+        }
+        else if (c1 && c2)
+        {
+            F1.SetActive(true);
+            F2.SetActive(true);
+            F3.SetActive(true);
+            F4.SetActive(true);
+
+            P1.SetActive(true);
+            P2.SetActive(true);
+            P3.SetActive(true);
+            P4.SetActive(true);
+            P4.SetActive(true);
+            P6.SetActive(true);
+            P7.SetActive(true);
+            P8.SetActive(true);
+            P9.SetActive(true);
+
+            F1.transform.localPosition = new Vector3(xFail3_1, F1.transform.localPosition.y);
+            F2.transform.localPosition = new Vector3(xFail3_2, F2.transform.localPosition.y);
+            F3.transform.localPosition = new Vector3(xFail3_3, F3.transform.localPosition.y);
+
+            P1.transform.localPosition = new Vector3(P1.transform.localPosition.x, yPush3_1);
+            P2.transform.localPosition = new Vector3(P2.transform.localPosition.x, yPush3_1);
+            P3.transform.localPosition = new Vector3(P3.transform.localPosition.x, yPush3_1);
+            P4.transform.localPosition = new Vector3(P4.transform.localPosition.x, yPush3_2);
+            P5.transform.localPosition = new Vector3(P5.transform.localPosition.x, yPush3_2);
+            P6.transform.localPosition = new Vector3(P6.transform.localPosition.x, yPush3_2);
+            P7.transform.localPosition = new Vector3(P7.transform.localPosition.x, yPush3_3);
+            P8.transform.localPosition = new Vector3(P8.transform.localPosition.x, yPush3_3);
+            P9.transform.localPosition = new Vector3(P9.transform.localPosition.x, yPush3_3);
+
         }
     }
 
+    public void FPcheckCount()
+    {
+        if (countE == 0)
+        {
+            F1.GetComponent<SpriteRenderer>().sprite = FPstay;
+            F2.GetComponent<SpriteRenderer>().sprite = FPstay;
+            F3.GetComponent<SpriteRenderer>().sprite = FPstay;
+            F4.GetComponent<SpriteRenderer>().sprite = FPstay;
+        }
+        else if(countE == 1)
+        {
+            F1.GetComponent<SpriteRenderer>().sprite = FPfail;
+            F2.GetComponent<SpriteRenderer>().sprite = FPstay;
+            F3.GetComponent<SpriteRenderer>().sprite = FPstay;
+            F4.GetComponent<SpriteRenderer>().sprite = FPstay;
+        }
+        else if (countE == 2)
+        {
+            F1.GetComponent<SpriteRenderer>().sprite = FPfail;
+            F2.GetComponent<SpriteRenderer>().sprite = FPfail;
+            F3.GetComponent<SpriteRenderer>().sprite = FPstay;
+            F4.GetComponent<SpriteRenderer>().sprite = FPstay;
+        }
+        else if (countE == 3)
+        {
+            F1.GetComponent<SpriteRenderer>().sprite = FPfail;
+            F2.GetComponent<SpriteRenderer>().sprite = FPfail;
+            F3.GetComponent<SpriteRenderer>().sprite = FPfail;
+            F4.GetComponent<SpriteRenderer>().sprite = FPstay;
+        }
+        else if (countE == 4)
+        {
+            F1.GetComponent<SpriteRenderer>().sprite = FPfail;
+            F2.GetComponent<SpriteRenderer>().sprite = FPfail;
+            F3.GetComponent<SpriteRenderer>().sprite = FPfail;
+            F4.GetComponent<SpriteRenderer>().sprite = FPfail;
+        }
+
+        if (countF == 0)
+        {
+            P1.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P2.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P3.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P4.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P5.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P6.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P7.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P8.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P9.GetComponent<SpriteRenderer>().sprite = FPstay;
+        }
+        else if (countF == 1)
+        {
+            P1.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P2.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P3.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P4.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P5.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P6.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P7.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P8.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P9.GetComponent<SpriteRenderer>().sprite = FPstay;
+        }
+        else if (countF == 2)
+        {
+            P1.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P2.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P3.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P4.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P5.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P6.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P7.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P8.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P9.GetComponent<SpriteRenderer>().sprite = FPstay;
+        }
+        else if (countF == 3)
+        {
+            P1.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P2.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P3.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P4.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P5.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P6.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P7.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P8.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P9.GetComponent<SpriteRenderer>().sprite = FPstay;
+        }
+        else if (countF == 4)
+        {
+            P1.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P2.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P3.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P4.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P5.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P6.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P7.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P8.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P9.GetComponent<SpriteRenderer>().sprite = FPstay;
+        }
+        else if (countF == 5)
+        {
+            P1.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P2.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P3.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P4.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P5.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P6.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P7.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P8.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P9.GetComponent<SpriteRenderer>().sprite = FPstay;
+        }
+        else if (countF == 6)
+        {
+            P1.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P2.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P3.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P4.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P5.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P6.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P7.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P8.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P9.GetComponent<SpriteRenderer>().sprite = FPstay;
+        }
+        else if (countF == 7)
+        {
+            P1.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P2.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P3.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P4.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P5.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P6.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P7.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P8.GetComponent<SpriteRenderer>().sprite = FPstay;
+            P9.GetComponent<SpriteRenderer>().sprite = FPstay;
+        }
+        else if (countF == 8)
+        {
+            P1.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P2.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P3.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P4.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P5.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P6.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P7.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P8.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P9.GetComponent<SpriteRenderer>().sprite = FPstay;
+        }
+        else if (countF == 9)
+        {
+            P1.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P2.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P3.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P4.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P5.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P6.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P7.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P8.GetComponent<SpriteRenderer>().sprite = FPpass;
+            P9.GetComponent<SpriteRenderer>().sprite = FPpass;
+        }
+
+    }
+
+    public IEnumerator Renabled()
+    {
+
+        yield return new WaitForSeconds(0.1f);
+        sl.reset();
+        countE = 0;
+        countF = 0;
+        State = "C";
+        start1 = true;
+        FPcheckCount();
+        FPcheckEn();
+        yield return new WaitForSeconds(0.3f);
+        View.SetActive(true);
+        BSliderPuto2.start = true;
+        BSliderPuto2.Barempty = false;
+    }
     void randomkey(int val, GameObject key)
     {
         Debug.Log(val);
@@ -495,10 +811,200 @@ public class MiniPuto2 : MonoBehaviour
         randKey1 = Random.Range(1, 40);
         randomkey(randKey1, KeyM1);
     }
-
-    IEnumerator p()
+    public IEnumerator FAIL()
     {
-        yield return new WaitForSeconds(5f);
-        StartCoroutine(p());
+        SliderPuto2.active = false;
+        active = false;
+        BackKey.GetComponent<SpriteRenderer>().color = roj;
+
+        countE++;
+        FPcheckCount();
+
+        if (!c1 && !c2 && !c3 && countE == 1)
+        {
+            Lvl1.GetComponent<SpriteRenderer>().sprite = fail;
+            Lvl2.GetComponent<SpriteRenderer>().sprite = fail;
+            Lvl3.GetComponent<SpriteRenderer>().sprite = fail;
+            BSliderPuto2.active = false;
+            Lose = true;
+        }
+        else if (c1 && !c2 && !c3 && countE == 2)
+        {
+            Lvl1.GetComponent<SpriteRenderer>().sprite = fail;
+            Lvl2.GetComponent<SpriteRenderer>().sprite = fail;
+            Lvl3.GetComponent<SpriteRenderer>().sprite = fail;
+            BSliderPuto2.active = false;
+            Lose = true;
+        }
+        else if (c1 && c2 && !c3 && countE == 4)
+        {
+            Lvl1.GetComponent<SpriteRenderer>().sprite = fail;
+            Lvl2.GetComponent<SpriteRenderer>().sprite = fail;
+            Lvl3.GetComponent<SpriteRenderer>().sprite = fail;
+            BSliderPuto2.active = false;
+            Lose = true;
+        }
+        if (!Lose)
+        {
+            yield return new WaitForSeconds(0.2f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(2f);
+        }
+        State = "C";
+        FPcheckEn();
+        if (Lose)
+        {
+            StartCoroutine(LOSE());
+        }
+        else
+        {
+            sl.reset();
+            start1 = true;
+            if (!c1 && !c2 && !c3)
+            {
+                Lvl1.GetComponent<SpriteRenderer>().sprite = stay;
+                Lvl2.GetComponent<SpriteRenderer>().sprite = stay;
+                Lvl3.GetComponent<SpriteRenderer>().sprite = stay;
+                SliderPuto2.speed = segs5;
+            }
+            else if (c1 && !c2 && !c3)
+            {
+                Lvl1.GetComponent<SpriteRenderer>().sprite = pass;
+                Lvl2.GetComponent<SpriteRenderer>().sprite = stay;
+                Lvl3.GetComponent<SpriteRenderer>().sprite = stay;
+                SliderPuto2.speed = segs3;
+            }
+            else if (c1 && c2 && !c3)
+            {
+
+                Lvl1.GetComponent<SpriteRenderer>().sprite = pass;
+                Lvl2.GetComponent<SpriteRenderer>().sprite = pass;
+                Lvl3.GetComponent<SpriteRenderer>().sprite = stay;
+                SliderPuto2.speed = segs3;
+            }
+        }
+            
+        
+       
+        
+    }
+    IEnumerator LOSE()
+    {
+        SliderPuto2.active = false;
+        BS.Refill();
+
+        active = false;
+        enable = false;
+        View.SetActive(false);
+        BackKey.GetComponent<SpriteRenderer>().color = roj;
+        yield return new WaitForSeconds(10f);
+        Lose = false;
+        enable = true;
+        countE = 0;
+        if (!c1 && !c2 && !c3)
+        {
+            Lvl1.GetComponent<SpriteRenderer>().sprite = stay;
+            Lvl2.GetComponent<SpriteRenderer>().sprite = stay;
+            Lvl3.GetComponent<SpriteRenderer>().sprite = stay;
+            SliderPuto2.speed = segs5;
+        }
+        else if (c1 && !c2 && !c3)
+        {
+            Lvl1.GetComponent<SpriteRenderer>().sprite = pass;
+            Lvl2.GetComponent<SpriteRenderer>().sprite = stay;
+            Lvl3.GetComponent<SpriteRenderer>().sprite = stay;
+            SliderPuto2.speed = segs3;
+        }
+        else if (c1 && c2 && !c3)
+        {
+            Lvl1.GetComponent<SpriteRenderer>().sprite = pass;
+            Lvl2.GetComponent<SpriteRenderer>().sprite = pass;
+            Lvl3.GetComponent<SpriteRenderer>().sprite = stay;
+            SliderPuto2.speed = segs3;
+        }
+
+    }
+    IEnumerator next()
+    {
+        bool tr = false;
+        active = false;
+        State = "C";
+        SliderPuto2.active = false;
+        BackKey.GetComponent<SpriteRenderer>().color = verd;
+        countF++;
+        FPcheckCount();
+        if ( !c1 && !c2 && !c3 && Plvl1 && countF == 3)
+        {
+            tr = true;
+            BSliderPuto2.active = false;
+            c1 = true;
+            active = false;
+            Lvl1.GetComponent<SpriteRenderer>().sprite = pass;
+            SliderPuto2.speed = segs3;
+            countF = 0;
+        }
+        else if (c1 && !c2 && !c3 && Plvl1 && countF == 6)
+        {
+            tr = true;
+            BSliderPuto2.active = false;
+            c2 = true;
+            active = false;
+            Lvl2.GetComponent<SpriteRenderer>().sprite = pass;
+            countF = 0;
+        }
+        else if (c1 && c2 && !c3 && Plvl1 && countF == 9)
+        {
+            tr = true;
+            BSliderPuto2.active = false;
+            c3 = true;
+            active = false;
+            Lvl3.GetComponent<SpriteRenderer>().sprite = pass;
+            countF = 0;
+        }
+        if (c3 && c2 && c1)
+        {
+            yield return new WaitForSeconds(2f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.2f);
+        }
+       
+        
+        if (tr)
+        {
+            BSliderPuto2.start = true;
+            BS.Refill();
+            tr = false;
+        }
+        
+        FPcheckEn();
+        FPcheckCount();
+        if (countF == 0 && !c3)
+        {
+            start1 = true;
+            sl.reset();
+        }
+        if (c3)
+        {
+            View.SetActive(false);
+        }
+        if (!c1 && !c2 && !c3 && Plvl1 && countF < 3 && countF > 0)
+        {
+            start1 = true;
+            sl.reset();
+        }
+        else if (c1 && !c2 && !c3 && Plvl1 && countF < 6 && countF > 0)
+        {
+            start1 = true;
+            sl.reset();
+        }
+        else if (c1 && c2 && !c3 && Plvl1 && countF < 9 && countF > 0)
+        {
+            start1 = true;
+            sl.reset();
+        }
     }
 }

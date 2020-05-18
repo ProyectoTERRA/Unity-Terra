@@ -85,6 +85,13 @@ TagManager:
   - Checkpoint2
   - Watcher
   - ROBOT
+  - BEReturn
+  - SUBCOM
+  - Lock1
+  - Lock2
+  - Lock3
+  - Lock4
+  - Lock5
   layers:
   - Default
   - TransparentFX

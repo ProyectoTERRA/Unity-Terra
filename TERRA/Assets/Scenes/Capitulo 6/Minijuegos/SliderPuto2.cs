@@ -10,6 +10,7 @@ public class SliderPuto2 : MonoBehaviour
     public Slider Bar;
     public int cont;
     private float time;
+    public static float speed;
 
     void Start()
     {
@@ -53,6 +54,7 @@ public class SliderPuto2 : MonoBehaviour
     public void reset()
     {
         active = true;
+        Bar.value = 0;
         //StartCoroutine(push());
     }
     public IEnumerator win()
@@ -65,7 +67,7 @@ public class SliderPuto2 : MonoBehaviour
     public void push()
     {
         time += Time.deltaTime;
-        if (time >= 0.04f)
+        if (time >= speed)
         {
             if (dir)
             {
