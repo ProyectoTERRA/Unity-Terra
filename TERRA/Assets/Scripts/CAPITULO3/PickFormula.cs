@@ -16,9 +16,10 @@ public class PickFormula : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Formula 1" + collision.gameObject.tag);
+                Debug.Log("FORMULA 1");
                 GameController.formula++;
                 Destroy(GameObject.Find(collision.gameObject.tag));
+                Debug.Log("GAME OBJECT " + collision.gameObject.tag);
             }
         }
         Debug.Log("Totalde formula "+ GameController.formula);

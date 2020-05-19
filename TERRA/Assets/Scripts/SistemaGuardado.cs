@@ -20,7 +20,7 @@ public class SistemaGuardado : MonoBehaviour
     //Variables que guardaran los datos de las partidas
     public String nombreEscena, nombrePartida, nombrePartida1;
     public static int perder=0, morir=0;
-
+    public int corazoncitos;
     void Start()
     {
         contador = 1;
@@ -328,7 +328,16 @@ public class SistemaGuardado : MonoBehaviour
         bf.Serialize(expediente, dato);
         expediente.Close();
     }
-
+    public void enemigosFalse()
+    {
+        GameController.e1 = false;
+        GameController.e2 = false;
+        GameController.e3 = false;
+        GameController.e4 = false;
+        GameController.e5 = false;
+        GameController.e6 = false;
+        GameController.e7 = false;
+    }
     //Este método nos carga el progreso de un archivo
     public void cargar()
     {
@@ -346,13 +355,16 @@ public class SistemaGuardado : MonoBehaviour
             {
                 Debug.Log("Al cargar vidas " + Heart_Bar.life + " En los datos " + datos.vidas);
                 datos.vidas = datos.vidas - 1;
+                datos.corazones = corazoncitos;
                 perder = 0;
+                enemigosFalse();
             }
             if(morir == 1)
             {
                 //Datos sobre la vida
+                enemigosFalse();
                 datos.vidas = Heart_Bar.life;
-                datos.corazones = Heart_Bar.Phearts;
+                datos.corazones = corazoncitos;
                 datos.tipo = GameController.TypeLife;
                 //Datos de respaldo metidos a datos
                 Debug.Log("Cargar al morir");
