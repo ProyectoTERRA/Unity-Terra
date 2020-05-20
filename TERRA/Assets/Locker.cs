@@ -8,11 +8,7 @@ public class Locker : MonoBehaviour
     public bool L1, L2, L3, L4, L5;
     void Start()
     {
-        Lk1 = GetComponent<GameObject>();
-        Lk2 = GetComponent<GameObject>();
-        Lk3 = GetComponent<GameObject>();
-        Lk4 = GetComponent<GameObject>();
-        Lk5 = GetComponent<GameObject>();
+     
     }
 
     private void Update()
@@ -23,25 +19,25 @@ public class Locker : MonoBehaviour
             L1 = false;
         }
 
-        else if (L2 == true && Input.GetKey(KeyCode.E))
+       if (L2 == true && Input.GetKey(KeyCode.E))
         {
             Lk2.SetActive(true);
             L2 = false;
         }
 
-        else if (L3 == true && Input.GetKey(KeyCode.E))
+         if (L3 == true && Input.GetKey(KeyCode.E))
         {
             Lk3.SetActive(true);
             L3 = false;
         }
 
-        else if (L4 == true && Input.GetKey(KeyCode.E))
+       if (L4 == true && Input.GetKey(KeyCode.E))
         {
             Lk4.SetActive(true);
             L4 = false;
         }
 
-        else if (L5 == true && Input.GetKey(KeyCode.E))
+       if (L5 == true && Input.GetKey(KeyCode.E))
         {
             Lk5.SetActive(true);
             L5 = false;
@@ -75,5 +71,14 @@ public class Locker : MonoBehaviour
         {
             L5 = true;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        L1 = false;
+        L2 = false;
+        L3 = false;
+        L4 = false;
+        L5 = false;
     }
 }
