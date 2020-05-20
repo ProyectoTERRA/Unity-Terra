@@ -4,9 +4,8 @@ using UnityEngine;
 public class LimiteBomba : MonoBehaviour
 {
     public GameObject c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20;
-    public GameObject bombas, latas, mensaje1, mensaje2, mensaje3, counter;
+    public GameObject bombas, latas, mensaje1, mensaje2, mensaje3, counter, check;
     int contador = 0;
-
     private void Update()
     {
         if (contador == 0) { StartCoroutine(men1()); }
@@ -39,6 +38,7 @@ public class LimiteBomba : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         mensaje3.SetActive(false);
+        check.SetActive(false);
         counter.SetActive(true);
         latas.SetActive(true);
         contador = 4;

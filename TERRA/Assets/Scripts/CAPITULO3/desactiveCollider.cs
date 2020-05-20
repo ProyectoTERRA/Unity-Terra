@@ -30,7 +30,6 @@ public class desactiveCollider : MonoBehaviour
         collider.enabled = true;
         desactive.SetActive(false);
         contador = 0;
-        Debug.Log("TRUE");
     }
     IEnumerator falseCollider()
     {
@@ -38,6 +37,5 @@ public class desactiveCollider : MonoBehaviour
         collider.enabled = false;
         desactive.SetActive(true);
         contador = 1;
-        Debug.Log("FALSE");
     }
 }

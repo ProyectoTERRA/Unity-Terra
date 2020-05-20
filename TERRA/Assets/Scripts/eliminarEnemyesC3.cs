@@ -27,7 +27,6 @@ public class eliminarEnemyesC3 : MonoBehaviour
         }
         if (inicia)
         {
-            Debug.Log("iniciaaaaa");
             if (GameController.e1)
             {
                 Destroy(GameObject.Find("e1"));

@@ -36,15 +36,12 @@ public class GameController : MonoBehaviour
     public static bool linterna, Return, bolsa1, bolsa2, bolsa3, lata1, lata2, lata3, carton1, carton2;
 
     //-----Variables CAP.2-----Escena Refrigeracion-----------
-    public static bool e1, e2, e3, e4, e5, e6, e7, b1, b2, b3, b4, b5, formula1, formula2;
+    public static bool e1, e2, e3, e4, e5, e6, e7, b1, b2, b3, b4, b5, l1, l2, l3,l4, l5, m1, m2, m3, m4, m5;
     
     // Start is called before the first frame update
     void Start()
     {
-
         Debug.Log("Game controller " + nombreActualPartida);
-
-
     }
     private void Awake()
     {

@@ -8,10 +8,6 @@ public class LatasMar : MonoBehaviour
     public GameObject lata16, lata17, lata18, lata19, lata20, lata21, lata22, lata23, lata24, lata25, lata26, lata27, lata28, lata29;
     public GameObject mensaje4;
     int x = 0;
-    void Start()
-    {
-
-    }
 
     void Update()
     {

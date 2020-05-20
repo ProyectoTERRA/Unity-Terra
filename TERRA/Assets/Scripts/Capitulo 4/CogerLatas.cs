@@ -4,6 +4,15 @@ public class CogerLatas : MonoBehaviour
 {
     public GameObject objectToPick, pickedObject;
     public Transform interactionZone;
+
+    private void Start()
+    {
+        Heart_Bar.Phearts = GameController.corazones;
+        Heart_Bar.life = GameController.vidas;
+        //Heart_Bar.Phearts = 3;
+        //Heart_Bar.life = 2;
+        //GameController.TypeLife = 2;
+    }
     void Update()
     {
         if (objectToPick != null && objectToPick.GetComponent<Cogible>().coger == true && pickedObject == null)
@@ -28,11 +37,9 @@ public class CogerLatas : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "coco")
+        if (collision.gameObject.tag == "coco")
         {
-            GameObject vida = GameObject.Find("Heart Bar - HUD_0");
-            Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
-            heart_Bar.hearts--;
+            Heart_Bar.Phearts--;
         }
     }
 }

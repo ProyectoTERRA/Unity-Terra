@@ -43,6 +43,6 @@ public class EnemyMove : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        DistanciaVision = 5;
+        //DistanciaVision = 5;
     }
 }

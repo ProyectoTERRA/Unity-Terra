@@ -57,7 +57,7 @@ public class SistemaGuardado : MonoBehaviour
 
         //Variables a guardar        
         dato.nombrePartida = nombrePartida1;
-        dato.nombreEscena = "edificio";
+        dato.nombreEscena = "Playa";
         dato.pila = 0;
         dato.bolsa = 0;
         dato.carton = 0;
@@ -680,8 +680,9 @@ public class SistemaGuardado : MonoBehaviour
     {
         if (collision.gameObject.tag == "Checkpoint")
         {
-            Debug.Log("Checkpoint " + nombrePartida);
+            Debug.Log("Checkpoint 1 " + nombrePartida);
             nombreEscena = SceneManager.GetActiveScene().name;
+            Debug.Log("Nombre de la escena");
             guardar();
         }
         if(collision.gameObject.tag =="Checkpoint2")

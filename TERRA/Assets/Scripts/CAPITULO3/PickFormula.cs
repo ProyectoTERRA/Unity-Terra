@@ -1,8 +1,20 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PickFormula : MonoBehaviour
 {
     public static string nombre;
+    public void Update()
+    {
+        if(PlayerController.Equip == "Recogedor")
+        {
+            GetComponent<CapsuleCollider2D>().enabled = true;
+        }
+        else
+        {
+            GetComponent<CapsuleCollider2D>().enabled = false;
+        }
+    }
     public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "formula")
@@ -13,24 +25,41 @@ public class PickFormula : MonoBehaviour
                 Destroy(GameObject.Find(collision.gameObject.tag));
             }
         }
-        if (collision.gameObject.tag == "bolsa" && PlayerController.Equip == "Recogedor")
+        if (collision.gameObject.tag == "formula1")
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("FORMULA 1");
                 GameController.formula++;
                 Destroy(GameObject.Find(collision.gameObject.tag));
             }
         }
-        if (collision.gameObject.tag == "BolsaFAKE" && PlayerController.Equip == "Recogedor")
+        if(collision.gameObject.name == "cientifico1")
         {
-
-            nombre = collision.gameObject.name;
-            agarrar = true;
-
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                SceneManager.LoadScene("LOBBY");
+            }
         }
 
         Debug.Log("Totalde formula "+ GameController.formula);
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "bolsa" && PlayerController.Equip == "Recogedor")
+        {
+            nombre = collision.gameObject.name;
+            codificador();
+        }
+        if (collision.gameObject.tag == "lata" && PlayerController.Equip == "Recogedor")
+        {
+            nombre = collision.gameObject.name;
+            codificador();
+        }
+        if (collision.gameObject.tag == "manzana" && PlayerController.Equip == "Recogedor")
+        {
+            nombre = collision.gameObject.name;
+            codificador();
+        }
     }
     private void codificador()
     {
@@ -54,6 +83,48 @@ public class PickFormula : MonoBehaviour
         if (nombre == "b5")
         {
             GameController.b5 = true;
+        }
+
+        if (nombre == "l1")
+        {
+            GameController.l1 = true;
+        }
+        if (nombre == "l2")
+        {
+            GameController.l2 = true;
+        }
+        if (nombre == "l3")
+        {
+            GameController.l3 = true;
+        }
+        if (nombre == "l4")
+        {
+            GameController.l4 = true;
+        }
+        if (nombre == "l5")
+        {
+            GameController.l5 = true;
+        }
+
+        if (nombre == "m1")
+        {
+            GameController.m1 = true;
+        }
+        if (nombre == "m2")
+        {
+            GameController.m2 = true;
+        }
+        if (nombre == "m3")
+        {
+            GameController.m3 = true;
+        }
+        if (nombre == "m4")
+        {
+            GameController.m4 = true;
+        }
+        if (nombre == "m5")
+        {
+            GameController.m5 = true;
         }
     }
 }
