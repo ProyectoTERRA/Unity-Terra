@@ -159,6 +159,7 @@ public class PlayerController : MonoBehaviour
 
         }
         #endregion
+        //Physics2D.IgnoreLayerCollision(8, 10);
     }
 
     void FixedUpdate()
