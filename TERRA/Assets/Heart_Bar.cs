@@ -80,7 +80,7 @@ public class Heart_Bar : MonoBehaviour
     {
         type = GameController.TypeLife;
         
-        Debug.Log(Phearts);
+        Debug.Log(Phearts);a
         Debug.Log(life);
 
         hearts = Phearts;
