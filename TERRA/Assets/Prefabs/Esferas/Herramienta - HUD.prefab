@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8262363880394095378}
   - component: {fileID: 1475032202125373309}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7586072082896366965}
   - component: {fileID: 374827624271332952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 6571940136628346501}
   - component: {fileID: 6571940136628346500}
   - component: {fileID: 6571940136628346502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Herramienta - HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,6 @@ MonoBehaviour:
   esp_E: {fileID: 575973771268960048, guid: 2c16d9318334768418c2ead10962ee89, type: 3}
   Hand: {fileID: 1773209889932987067, guid: af0f8c328c0e6e14b91ac51b5939f595, type: 3}
   Count: {fileID: 3692228024566875477}
-  Equipado: {fileID: 8362500405813697985, guid: 779b3acff1391d449ab84aaa16469507,
-    type: 3}
+  Equipado: {fileID: 0}
   hrr: []
   i: 0
