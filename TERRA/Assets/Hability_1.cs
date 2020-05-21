@@ -12,6 +12,7 @@ public class Hability_1 : MonoBehaviour
     public bool disp;
     public bool act;
 
+  
     public float actD;
     public float dispD;
 
@@ -22,6 +23,10 @@ public class Hability_1 : MonoBehaviour
 
     public SpriteRenderer spr;
 
+    private GameObject Player;
+    public static bool Tact, Tdact;
+    public Color invisible;
+
     private string set = "";
 
     void Start()
@@ -29,6 +34,7 @@ public class Hability_1 : MonoBehaviour
         set = GameController.H1Equip;
         spr = GetComponent<SpriteRenderer>();
 
+        Player = GameObject.Find("Jugador");
 
         if (set == null)
         {
@@ -49,8 +55,6 @@ public class Hability_1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
     }
 
     private void FixedUpdate()
@@ -119,22 +123,35 @@ public class Hability_1 : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.N))
             {
+
                 act = true;
                 disp = false;
+                Tact = true;
                 Invoke("Activate", actD);
             }
             spr.color = Color.white;
         }
-        else if (act)
+        else if (act && Tact)
         {
 
-
+            Tact = false;
             spr.color = ac;
-            Debug.Log(spr.color);
+            if (set == "Invisible")
+            {
+                Physics2D.IgnoreLayerCollision(8, 10, true);
+                Player.GetComponent<SpriteRenderer>().color = invisible;
+            }
         }
-        else if (!act && !disp)
+        else if (!act && !disp && Tdact)
         {
+
+            Tdact = false;
             spr.color = Color.gray;
+            if (set == "Invisible")
+            {
+                Physics2D.IgnoreLayerCollision(8, 10, false);
+                Player.GetComponent<SpriteRenderer>().color = Color.white;
+            }
         }
 
 
@@ -145,6 +162,7 @@ public class Hability_1 : MonoBehaviour
     {
         act = false;
         disp = false;
+        Tdact = true;
         Invoke("Dispo", dispD);
 
     }
