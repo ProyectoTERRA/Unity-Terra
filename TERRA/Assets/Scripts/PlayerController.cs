@@ -3,9 +3,15 @@
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float velocidad = 2f;
+    public float velocidad;
     public float maxspeed = 5f;
     public float SideVelocity = 10f;
+
+    public float SavedVel;
+    public float SavedMax;
+
+    public float RunVelocity;
+    public float maxSpeedVel;
 
     public bool grounded;
     static public bool groundCAP5, DASH, HabilityDJ, ActHabilityLJ, DactHabilityLJ;
@@ -53,6 +59,9 @@ public class PlayerController : MonoBehaviour
         animacion = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
         wall = false;
+
+        SavedVel = velocidad;
+        SavedMax = maxspeed;
     }
 
 
@@ -214,13 +223,13 @@ public class PlayerController : MonoBehaviour
             //Correr
             if (Input.GetKey(KeyCode.LeftControl))
             {
-                velocidad = 70;
-                maxspeed = 4.5f;
+                velocidad = RunVelocity;
+                maxspeed = maxSpeedVel;
             }
             else
             {
-                velocidad = 60;
-                maxspeed = 3;
+                velocidad = SavedVel;
+                maxspeed = SavedMax;
             }
 
             if (jump)
