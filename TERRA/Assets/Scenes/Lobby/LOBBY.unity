@@ -150878,9 +150878,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82041649fd2c424479c9b01f44c6911d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 160
+  velocidad: 100
   maxspeed: 8
-  SideVelocity: 10
+  SideVelocity: 8
+  SavedVel: 0
+  SavedMax: 0
+  RunVelocity: 160
+  maxSpeedVel: 10
   grounded: 0
   wall: 0
   JumpPower: 8
