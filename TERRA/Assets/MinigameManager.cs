@@ -8,7 +8,7 @@ public class MinigameManager : MonoBehaviour
 {
     int N1, N2, N3, N4;
     public int ValN1, ValN2, ValN3, ValN4;
-    public string CombinacionColores, CombCOLOR;
+    public string CombinacionColores, CombCOLORFin;
     int C1, C2, C3, C4;
     public SpriteRenderer col1, col2, col3, col4;
     public InputField Clave;
@@ -429,7 +429,6 @@ public class MinigameManager : MonoBehaviour
         #endregion
         #endregion
         CombinacionFinal();
-        Clave = GetComponent<InputField>();
         
     }
     
@@ -470,23 +469,25 @@ public class MinigameManager : MonoBehaviour
             string CombCOLOR = string.Join(",", CombArr.Select(j => j.ToString()).ToArray());
             print(CombCOLOR);
             Debug.Log(i+" Color: " + CombCOLOR +" - Numero: "+ CombCOLORF);
+            CombCOLORFin = CombCOLORFin + CombCOLOR;
 
         }
+        
         ComparacionCLAVES();
     }
 
     void Update()
     {
-        Debug.Log("Combinacion: " + CombCOLOR);
+        Debug.Log("Combinacion: " + CombCOLORFin);
         ComparacionCLAVES();
     }
     void ComparacionCLAVES()
     {
-        string Contra;
+        string Contra = "";
         Contra = Clave.text;
  
         Debug.Log("VALOR INPUTFIELD: " + Contra);
-        if(Contra == CombCOLOR)
+        if(Contra == CombCOLORFin)
         {
             Panel.SetActive(false);
         }

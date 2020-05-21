@@ -21,7 +21,7 @@ public class DefenderController : MonoBehaviour
         act = true;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         RBD = GetComponent<Rigidbody2D>();
-        StartCoroutine(Perseguir());
+        StartCoroutine(Active());
     }
 
     // Update is called once per frame
@@ -54,7 +54,7 @@ public class DefenderController : MonoBehaviour
 
     IEnumerator Active()
     {
-        Debug.Log("Iniciando disparos");
+        Debug.Log("PUTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
             Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
             yield return new WaitForSeconds(4f);
             Instantiate(Bullet, canon.transform.position, Quaternion.Euler(0f, 0f, 90f));
