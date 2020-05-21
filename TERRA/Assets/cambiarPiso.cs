@@ -5,12 +5,6 @@ public class cambiarPiso : MonoBehaviour
 {
 
     public GameObject mensaje1, panel;
-    bool panelSolar;
-
-    private void Start()
-    {
-        panelSolar = true;
-    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {

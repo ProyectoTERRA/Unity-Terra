@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
 
     //-----Variables CAP.2-----Escena Refrigeracion-----------
     public static bool e1, e2, e3, e4, e5, e6, e7, b1, b2, b3, b4, b5, l1, l2, l3,l4, l5, m1, m2, m3, m4, m5;
+    public static bool t1, t2, t3, t4, t5, t6, t7;
     
     // Start is called before the first frame update
     void Start()

@@ -57,7 +57,7 @@ public class SistemaGuardado : MonoBehaviour
 
         //Variables a guardar        
         dato.nombrePartida = nombrePartida1;
-        dato.nombreEscena = "Playa";
+        dato.nombreEscena = "Edificio";
         dato.pila = 0;
         dato.bolsa = 0;
         dato.carton = 0;

@@ -4,52 +4,116 @@ using UnityEngine;
 
 public class Guard1 : MonoBehaviour
 {
-    public int life;
+    private int CNormales;
+    private int CTranquilizantes;
+    private int CDesactivadoras;
+    private int CParalizantes;
+
+    public static bool effecting;
+    private bool efecT;
+    // Start is called before the first frame update
     void Start()
     {
-        life = 100;
-
+        efecT = false;
+        effecting = false;
+        CNormales = 0;
+        CTranquilizantes = 0;
+        CParalizantes = 0;
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (life <= 0)
+        Debug.Log("N: " + CNormales);
+        Debug.Log("T: " + CTranquilizantes);
+        Debug.Log("D: " + CDesactivadoras);
+        Debug.Log("P: " + CParalizantes);
+
+        if (gameObject.tag == "enemigo1")
         {
-            Destroy(gameObject);
+            if (CParalizantes >= 1 && !efecT)
+            {
+                StartCoroutine(ParalizEffect());
+            }
+            if (CTranquilizantes >= 1 && !efecT)
+            {
+                StartCoroutine(TranquiEffect());
+            }
+            if (CNormales >= 2 && !efecT)
+            {
+                StartCoroutine(NormalEffect());
+            }
         }
     }
-
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Normal")
         {
-            life = life - 50;
-            string nombre = collision.gameObject.name;
-            Destroy(GameObject.Find(nombre));
+            CNormales++;
+            Destroy(collision.gameObject);
         }
-
         if (collision.gameObject.tag == "Tranqui")
         {
-            life = life - 100;
-            string nombre = collision.gameObject.name;
-            Destroy(GameObject.Find(nombre));
+            CTranquilizantes++;
+            Destroy(collision.gameObject);
         }
-
         if (collision.gameObject.tag == "Paraliz")
         {
-            Debug.Log("ahhh");
-            GetComponent<Watcher>().enabled = false;
-            string nombre = collision.gameObject.name;
-            StartCoroutine(lib());
-            Destroy(GameObject.Find(nombre));
+            CParalizantes++;
+            Destroy(collision.gameObject);
+        }
+    }
+    public IEnumerator NormalEffect()
+    {
+        Color deafault = GetComponent<SpriteRenderer>().color;
+        efecT = true;
+        effecting = true;
+        if (gameObject.tag == "enemigo1")
+        {
+            GetComponent<EnemyMove>().enabled = false;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
+        yield return new WaitForSeconds(1f);
+    }
+    public IEnumerator TranquiEffect()
+    {
+        efecT = true;
+        effecting = true;
+        GetComponent<SpriteRenderer>().color = Color.red;
+        if (gameObject.tag == "enemigo1")
+        {
+            GetComponent<EnemyMove>().enabled = false;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
+        yield return new WaitForSeconds(1f);
+    }
+    public IEnumerator ParalizEffect()
+    {
+        Color deafault = GetComponent<SpriteRenderer>().color;
+        effecting = true;
+        efecT = true;
+        GetComponent<SpriteRenderer>().color = Color.yellow;
 
+        if (gameObject.tag == "enemigo1")
+        {
+            GetComponent<EnemyMove>().enabled = false;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<BoxCollider2D>().enabled = false;
 
         }
-
-    }
-    IEnumerator lib()
-    {
         yield return new WaitForSeconds(5f);
-        GetComponent<Watcher>().enabled = true;
+        GetComponent<SpriteRenderer>().color = deafault;
+        if (gameObject.tag == "enemigo1")
+        {
+            GetComponent<EnemyMove>().enabled = true;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            GetComponent<BoxCollider2D>().enabled = true;
+
+        }
+        efecT = false;
+        effecting = false;
+        CParalizantes = 0;
     }
 }

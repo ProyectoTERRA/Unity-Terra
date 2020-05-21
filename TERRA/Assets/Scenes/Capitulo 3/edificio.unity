@@ -759,7 +759,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d3a105045afaf4c880aebc27c8efbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
 --- !u!114 &136744636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1911,7 +1910,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d3a105045afaf4c880aebc27c8efbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
 --- !u!114 &371111691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3357,7 +3355,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.019548655, y: 0.1323154}
+  m_Offset: {x: 0.030094862, y: 0.1323154}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3368,7 +3366,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.66025496, y: 1.8753691}
+  m_Size: {x: 0.765717, y: 1.8753691}
   m_EdgeRadius: 0
 --- !u!50 &723600340
 Rigidbody2D:
@@ -3511,7 +3509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d3a105045afaf4c880aebc27c8efbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
 --- !u!1 &724883135
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,7 +3623,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.92, y: -0.34}
@@ -4944,7 +4941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d3a105045afaf4c880aebc27c8efbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
 --- !u!114 &1069552006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6109,7 +6105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d3a105045afaf4c880aebc27c8efbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
 --- !u!114 &1291307383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6686,7 +6681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d3a105045afaf4c880aebc27c8efbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
 --- !u!114 &1385774780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7280,27 +7274,32 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 128289250247929000, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6214826627960804926, guid: a72f4c8686a07504fbcf19c0072337c4,
+    - target: {fileID: 1888325355320331725, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: list
+      value: 
+      objectReference: {fileID: 1527938418}
     - target: {fileID: 3785523923685326970, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3569727586052135697, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214826627960804926, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -7390,11 +7389,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1888325355320331725, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: list
-      value: 
-      objectReference: {fileID: 1527938418}
     - target: {fileID: 5225394894740060154, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z

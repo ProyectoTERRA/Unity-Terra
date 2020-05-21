@@ -4,52 +4,127 @@ using UnityEngine;
 
 public class Guardsc3 : MonoBehaviour
 {
-    public int life;
+    string nombre1;
+
+    private int CNormales;
+    private int CTranquilizantes;
+    private int CDesactivadoras;
+    private int CParalizantes;
+
+    public static bool effecting;
+    private bool efecT;
+    // Start is called before the first frame update
     void Start()
     {
-        life = 100;
-
+        efecT = false;
+        effecting = false;
+        CNormales = 0;
+        CTranquilizantes = 0;
+        CParalizantes = 0;
     }
-    string nombre1;
+
+    // Update is called once per frame
     void Update()
     {
-        if (life <= 0)
+        Debug.Log("N: " + CNormales);
+        Debug.Log("T: " + CTranquilizantes);
+        Debug.Log("D: " + CDesactivadoras);
+        Debug.Log("P: " + CParalizantes);
+
+        if (gameObject.tag == "enemigo1")
         {
-            eliminarEnemyesC3.guardias++;
-            Debug.Log("Guardias eliminados " + eliminarEnemyesC3.guardias);
-            Destroy(gameObject);
-            nombre1 = gameObject.name;
-            codificador();
+            if (CParalizantes >= 1 && !efecT)
+            {
+                StartCoroutine(ParalizEffect());
+            }
+            if (CTranquilizantes >= 1 && !efecT)
+            {
+                StartCoroutine(TranquiEffect());
+            }
+            if (CNormales >= 2 && !efecT)
+            {
+                StartCoroutine(NormalEffect());
+            }
         }
     }
-
-    
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Normal")
         {
-            life = life - 50;
-            string nombre = collision.gameObject.name;
-            Destroy(GameObject.Find(nombre));
+            CNormales++;
+            Destroy(collision.gameObject);
         }
-
         if (collision.gameObject.tag == "Tranqui")
         {
-            life = life - 100;
-            string nombre = collision.gameObject.name;
-            Destroy(GameObject.Find(nombre));
+            CTranquilizantes++;
+            Destroy(collision.gameObject);
         }
-
         if (collision.gameObject.tag == "Paraliz")
         {
-            Debug.Log("ahhh");
-            GetComponent<Watcher>().enabled = false;
-            string nombre = collision.gameObject.name;
-            StartCoroutine(lib());
-            Destroy(GameObject.Find(nombre));
+            CParalizantes++;
+            Destroy(collision.gameObject);
         }
     }
-    private void codificador()
+    public IEnumerator NormalEffect()
+    {
+        Color deafault = GetComponent<SpriteRenderer>().color;
+        efecT = true;
+        effecting = true;
+        if (gameObject.tag == "enemigo1")
+        {
+            GetComponent<EnemyMove>().enabled = false;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<BoxCollider2D>().enabled = false;
+            eliminarEnemyesC3.guardias++;
+            nombre1 = gameObject.name;
+            codificadorNormal();
+        }
+        yield return new WaitForSeconds(1f);
+    }
+    public IEnumerator TranquiEffect()
+    {
+        efecT = true;
+        effecting = true;
+        GetComponent<SpriteRenderer>().color = Color.red;
+        if (gameObject.tag == "enemigo1")
+        {
+            GetComponent<EnemyMove>().enabled = false;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<BoxCollider2D>().enabled = false;
+            eliminarEnemyesC3.guardias++;
+            nombre1 = gameObject.name;
+            codificadorTranquilizante();
+        }
+        yield return new WaitForSeconds(1f);
+    }
+    public IEnumerator ParalizEffect()
+    {
+        Color deafault = GetComponent<SpriteRenderer>().color;
+        effecting = true;
+        efecT = true;
+        GetComponent<SpriteRenderer>().color = Color.yellow;
+
+        if (gameObject.tag == "enemigo1")
+        {
+            GetComponent<EnemyMove>().enabled = false;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<BoxCollider2D>().enabled = false;
+
+        }
+        yield return new WaitForSeconds(5f);
+        GetComponent<SpriteRenderer>().color = deafault;
+        if (gameObject.tag == "enemigo1")
+        {
+            GetComponent<EnemyMove>().enabled = true;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            GetComponent<BoxCollider2D>().enabled = true;
+
+        }
+        efecT = false;
+        effecting = false;
+        CParalizantes = 0;
+    }
+    private void codificadorNormal()
     {
         if(nombre1 == "e1")
         {
@@ -80,10 +155,37 @@ public class Guardsc3 : MonoBehaviour
             GameController.e7 = true;
         }
     }
-
-    IEnumerator lib()
+    private void codificadorTranquilizante()
     {
-        yield return new WaitForSeconds(5f);
-        GetComponent<Watcher>().enabled = true;
+            if (nombre1 == "t1")
+            {
+                GameController.t1 = true;
+            }
+            if (nombre1 == "t2")
+            {
+                GameController.t2 = true;
+            }
+            if (nombre1 == "t3")
+            {
+                GameController.t3 = true;
+            }
+            if (nombre1 == "t4")
+            {
+                GameController.t4 = true;
+            }
+            if (nombre1 == "t5")
+            {
+                GameController.t5 = true;
+            }
+            if (nombre1 == "t6")
+            {
+                GameController.t6 = true;
+            }
+            if (nombre1 == "t7")
+            {
+                GameController.t7 = true;
+            }
+        
     }
+
 }
