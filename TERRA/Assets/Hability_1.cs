@@ -115,7 +115,7 @@ public class Hability_1 : MonoBehaviour
             LoBbY.DEquip = true;
             spr.sprite = Dash;
             dispD = 20;
-            actD = 1;
+            actD = 0.1f;
         }
 
 
@@ -141,6 +141,18 @@ public class Hability_1 : MonoBehaviour
                 Physics2D.IgnoreLayerCollision(8, 10, true);
                 Player.GetComponent<SpriteRenderer>().color = invisible;
             }
+            if (set == "Dash")
+            {
+                PlayerController.DASH = true;
+            }
+            if (set == "Double_Jump")
+            {
+                PlayerController.HabilityDJ = true;
+            }
+            else if (set == "Long_Jump")
+            {
+                PlayerController.ActHabilityLJ = true;
+            }
         }
         else if (!act && !disp && Tdact)
         {
@@ -151,6 +163,18 @@ public class Hability_1 : MonoBehaviour
             {
                 Physics2D.IgnoreLayerCollision(8, 10, false);
                 Player.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            if (set == "Dash")
+            {
+                PlayerController.DASH = false;
+            }
+            if (set == "Double_Jump")
+            {
+                PlayerController.HabilityDJ = false;
+            }
+            else if (set == "Long_Jump")
+            {
+                PlayerController.DactHabilityLJ = true;
             }
         }
 

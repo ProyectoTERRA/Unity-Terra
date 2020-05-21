@@ -22,6 +22,10 @@ public class Hability_2 : MonoBehaviour
 
     public SpriteRenderer spr;
 
+    private GameObject Player;
+    public static bool Tact, Tdact;
+    public Color invisible;
+
     private string set = "";
 
     // Start is called before the first frame update
@@ -30,7 +34,9 @@ public class Hability_2 : MonoBehaviour
         set = GameController.H2Equip;
         spr = GetComponent<SpriteRenderer>();
 
-        if(set == null)
+        Player = GameObject.Find("Jugador");
+
+        if (set == null)
         {
             inv.SetActive(false);
         }
@@ -110,7 +116,7 @@ public class Hability_2 : MonoBehaviour
             LoBbY.DEquip = true;
             spr.sprite = Dash;
             dispD = 20;
-            actD = 1;
+            actD = 0.1f;
         }
 
         if (disp && !HNull)
@@ -119,20 +125,54 @@ public class Hability_2 : MonoBehaviour
             {
                 act = true;
                 disp = false;
+                Tact = true;
                 Invoke("Activate", actD);
             }
             spr.color = Color.white;
         }
-        else if (act)
+        else if (act && Tact)
         {
-
-
+            Tact = false;
             spr.color = ac;
-            Debug.Log(spr.color);
+            if (set == "Invisible")
+            {
+                Physics2D.IgnoreLayerCollision(8, 10, true);
+                Player.GetComponent<SpriteRenderer>().color = invisible;
+            }
+            if (set == "Dash")
+            {
+                PlayerController.DASH = true;
+            }
+            if (set == "Double_Jump")
+            {
+                PlayerController.HabilityDJ = true;
+            }
+            else if (set == "Long_Jump")
+            {
+                PlayerController.ActHabilityLJ = true;
+            }
         }
-        else if (!act && !disp)
+        else if (!act && !disp && Tdact)
         {
+            Tdact = false;
             spr.color = Color.gray;
+            if (set == "Invisible")
+            {
+                Physics2D.IgnoreLayerCollision(8, 10, false);
+                Player.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            if (set == "Dash")
+            {
+                PlayerController.DASH = false;
+            }
+            if (set == "Double_Jump")
+            {
+                PlayerController.HabilityDJ = false;
+            }
+            else if (set == "Long_Jump")
+            {
+                PlayerController.DactHabilityLJ = true;
+            }
         }
 
 
@@ -143,6 +183,7 @@ public class Hability_2 : MonoBehaviour
     {
         act = false;
         disp = false;
+        Tdact = true;
         Invoke("Dispo", dispD);
 
     }

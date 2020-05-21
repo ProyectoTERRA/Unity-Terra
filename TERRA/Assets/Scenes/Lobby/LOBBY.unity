@@ -94357,6 +94357,26 @@ PrefabInstance:
       propertyPath: Lobby_Equip2
       value: 
       objectReference: {fileID: 1005123791}
+    - target: {fileID: 6786952540217478386, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: invisible.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952540217478386, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: invisible.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952540217478386, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: invisible.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786952540217478386, guid: 56112751c76786142b615e3af4cdf7e9,
+        type: 3}
+      propertyPath: invisible.a
+      value: 0.32941177
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56112751c76786142b615e3af4cdf7e9, type: 3}
 --- !u!4 &1363003703 stripped
