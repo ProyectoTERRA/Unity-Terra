@@ -22,6 +22,12 @@ public class DerrotarWatcher : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        PressA = false;
+        PressD = false;
+    }
+
     void Start()
     {
         Act = true;

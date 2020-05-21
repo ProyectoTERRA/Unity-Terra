@@ -31,7 +31,7 @@ public class MDSL : MonoBehaviour
     }
     IEnumerator Active()
     {
-        float rWait = 6f;
+        float rWait = 8f;
         Beam.enabled = false;
         Burn.enabled = false;
         yield return new WaitForSeconds(rWait);

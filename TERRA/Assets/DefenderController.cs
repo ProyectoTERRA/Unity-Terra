@@ -14,13 +14,14 @@ public class DefenderController : MonoBehaviour
     private Transform target;
     static public bool act;
     public bool FlagMove;
+    public Animator anim;
     void Start()
     {
+        anim.enabled = false;
         act = true;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         RBD = GetComponent<Rigidbody2D>();
         StartCoroutine(Perseguir());
-
     }
 
     // Update is called once per frame
@@ -36,6 +37,14 @@ public class DefenderController : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             col.SendMessage("EnemyKnockBack", transform.position.x + 1);
+
+        }
+        if (col.gameObject.tag == "DEFEND")
+        {
+            anim.enabled = true;
+            anim.SetTrigger("End");
+            anim.SetTrigger("Adios");
+            StartCoroutine(MuerteDestruccion());
 
         }
     }
@@ -73,5 +82,10 @@ public class DefenderController : MonoBehaviour
         } while (moverse > 0);
         StartCoroutine(Active());
 
+    }
+    IEnumerator MuerteDestruccion()
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
     }
 }

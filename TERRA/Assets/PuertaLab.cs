@@ -55,7 +55,7 @@ public class PuertaLab : MonoBehaviour
         }
         if (collision.name == "EscP32")
         {
-            P2Ab = false;
+            P2Ab = true;
             
         }
         #endregion
@@ -63,7 +63,10 @@ public class PuertaLab : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D LabDoor)
     {
-        
+        P1Ar = false;
+        P1Ab = false;
+        P2Ar = false;
+        P2Ab = false;
     }
 
     // Update is called once per frame
@@ -71,38 +74,29 @@ public class PuertaLab : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(P1Ar == true && Input.GetKey(KeyCode.E))
+        if(P1Ar == true && Input.GetKeyDown(KeyCode.E))
         {
             transform.position = new Vector3(424.89f, 26.98f, 0);
             P1Ar = false;
         }
 
-        if (P1Ab == true && Input.GetKey(KeyCode.E))
+        if (P1Ab == true && Input.GetKeyDown(KeyCode.E))
         {
             transform.position = new Vector3(366.5f, -10f, 0);
             P1Ab = false;
         }
 
-        if (P2Ar == true && Input.GetKey(KeyCode.E))
+        if (P2Ar == true && Input.GetKeyDown(KeyCode.E))
         {
-            transform.position = new Vector3(195.92f, 65.97f, 0);
+            transform.position = new Vector3(193.92f, 65.97f, 0);
             P2Ar = false;
         }
 
-        if (P2Ab == true && Input.GetKey(KeyCode.E))
+        if (P2Ab == true && Input.GetKeyDown(KeyCode.E))
         {
             transform.position = new Vector3(196.4f, 24.5f, 0);
             P2Ab = false;
         }
-
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        P1Ar = false;
-        P1Ab = false;
-        P2Ar = false;
-        P2Ab = false;
 
     }
 
