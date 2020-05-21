@@ -3,12 +3,11 @@
 public class Estalactitas : MonoBehaviour
 {
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Estalactita")
         {
-            Debug.Log("Colision Jugador");
-            SendMessage("Knockback");
+            collision.SendMessage("EnemyKnockBack", transform.position.x + 1);
         }
     }
 }
