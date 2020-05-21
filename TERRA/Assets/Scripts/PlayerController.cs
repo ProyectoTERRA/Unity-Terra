@@ -192,6 +192,17 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(x * ChangeGravity.VG, y, z);
             side = ChangeGravity.VG * 1;
         }
+        //Correr
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            velocidad = 70;
+            maxspeed = 4.5f;
+        }
+        else
+        {
+            velocidad = 60;
+            maxspeed = 3;
+        }
 
         if (jump)
         {
