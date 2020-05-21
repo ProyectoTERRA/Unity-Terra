@@ -5,12 +5,13 @@
 public class PuertaLab : MonoBehaviour
 {
 
-    public bool puertaIzq, puertaDer;
+    public bool P1Ar, P2Ar, P3Ar, P1Ab, P2Ab, P3Ab;
     // Start is called before the first frame update
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "PuertaFI1")
+        #region Puertas
+        if (collision.name == "PuertaFI1")
         {
             transform.position = new Vector3(328f, -10f, 0);
         }
@@ -36,24 +37,28 @@ public class PuertaLab : MonoBehaviour
         {
             transform.position = new Vector3(359f, -10f, 0);
         }
+        #endregion
 
+        #region Escaleras
         if (collision.name == "EscP12")
         {
-            transform.position = new Vector3(424.89f, 26.98f, 0);
+            P1Ar = true;
         }
         if (collision.name == "EscP21")
         {
-            transform.position = new Vector3(366.5f, -10f, 0);
+            P1Ab = true;
         }
 
         if (collision.name == "EscP23")
         {
-            transform.position = new Vector3(195.92f, 65.97f, 0);
+            P2Ar = true;
         }
         if (collision.name == "EscP32")
         {
-            transform.position = new Vector3(196.4f, 24.5f, 0);
+            P2Ab = false;
+            
         }
+        #endregion
     }
 
     public void OnTriggerExit2D(Collider2D LabDoor)
@@ -66,21 +71,38 @@ public class PuertaLab : MonoBehaviour
 
     void FixedUpdate()
     {
-
-        //Puertas Laboratorio
-        if (puertaIzq == true & Input.GetKey(KeyCode.E) & Input.GetKey(KeyCode.D))
+        if(P1Ar == true && Input.GetKey(KeyCode.E))
         {
-            transform.position = new Vector3(24.75f, -2.82f, 0);
-            transform.localScale = new Vector3(1f, 1f, 1f);
-            puertaIzq = false;
+            transform.position = new Vector3(424.89f, 26.98f, 0);
+            P1Ar = false;
+        }
 
-        }
-        if (puertaDer == true & Input.GetKey(KeyCode.E) & Input.GetKey(KeyCode.A))
+        if (P1Ab == true && Input.GetKey(KeyCode.E))
         {
-            transform.position = new Vector3(19.5f, -2.82f, 0);
-            transform.localScale = new Vector3(1f, 1f, 1f);
-            puertaDer = false;
+            transform.position = new Vector3(366.5f, -10f, 0);
+            P1Ab = false;
         }
+
+        if (P2Ar == true && Input.GetKey(KeyCode.E))
+        {
+            transform.position = new Vector3(195.92f, 65.97f, 0);
+            P2Ar = false;
+        }
+
+        if (P2Ab == true && Input.GetKey(KeyCode.E))
+        {
+            transform.position = new Vector3(196.4f, 24.5f, 0);
+            P2Ab = false;
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        P1Ar = false;
+        P1Ab = false;
+        P2Ar = false;
+        P2Ab = false;
 
     }
 
