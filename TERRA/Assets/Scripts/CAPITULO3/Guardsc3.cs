@@ -162,8 +162,6 @@ public class Guardsc3 : MonoBehaviour
         if (nombre1 == "e1")
         {
             GameController.t1 = true;
-            Debug.Log("Codificador tranquilizante");
-
         }
         if (nombre1 == "e2")
         {
@@ -189,8 +187,5 @@ public class Guardsc3 : MonoBehaviour
         {
             GameController.t7 = true;
         }
-
-
     }
-
 }

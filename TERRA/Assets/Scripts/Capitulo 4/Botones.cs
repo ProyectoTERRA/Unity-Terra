@@ -15,15 +15,14 @@ public class Botones : MonoBehaviour
         if (collision.gameObject.name == "Limit")
         {
             jugador.transform.position = new Vector2(-6f, -0.3f);
-            GameObject vida = GameObject.Find("Heart Bar - HUD_0");
-            Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
-            heart_Bar.hearts--;
+            Heart_Bar.Phearts--;
         }
 
     }
     private void Update()
     {
-        if (enemigos == 8)
+        Debug.Log("Enemigos eliminados " + enemigos);
+        if (enemigos >= 8)
         {
             puertaA2.SetActive(true);
             puertaC2.SetActive(false);

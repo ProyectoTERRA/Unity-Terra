@@ -9269,7 +9269,7 @@ PrefabInstance:
     - target: {fileID: 7603211905305346091, guid: b4bf47ce177a23345a1e13aaac07a945,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.16
+      value: -3.89
       objectReference: {fileID: 0}
     - target: {fileID: 7603211905305346091, guid: b4bf47ce177a23345a1e13aaac07a945,
         type: 3}
@@ -9315,6 +9315,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603211905305346091, guid: b4bf47ce177a23345a1e13aaac07a945,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.72825
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603211905305346091, guid: b4bf47ce177a23345a1e13aaac07a945,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.72825
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603211905305346091, guid: b4bf47ce177a23345a1e13aaac07a945,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.35824075
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4bf47ce177a23345a1e13aaac07a945, type: 3}
@@ -9645,6 +9660,10 @@ MonoBehaviour:
   velocidad: 60
   maxspeed: 3
   SideVelocity: 10
+  SavedVel: 0
+  SavedMax: 0
+  RunVelocity: 0
+  maxSpeedVel: 0
   grounded: 0
   wall: 0
   JumpPower: 6
