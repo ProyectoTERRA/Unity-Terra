@@ -8,7 +8,7 @@ public class enemigos4 : MonoBehaviour
     {
         if (guardias == 7)
         {
-            Debug.Log(guardias);
+            Debug.Log("Estorbooooooooooooooooooooo " + guardias);
             puerta.SetActive(true);
         }
     }

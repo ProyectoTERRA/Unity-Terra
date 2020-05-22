@@ -308,7 +308,6 @@ GameObject:
   - component: {fileID: 70191344}
   - component: {fileID: 70191346}
   - component: {fileID: 70191345}
-  - component: {fileID: 70191347}
   m_Layer: 0
   m_Name: enemigo_erizo (2)
   m_TagString: enemigo1
@@ -405,18 +404,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &70191347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70191343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44dcef5b756e6c46852508bba191b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &71145504
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,7 +878,6 @@ GameObject:
   - component: {fileID: 242513346}
   - component: {fileID: 242513348}
   - component: {fileID: 242513347}
-  - component: {fileID: 242513349}
   m_Layer: 0
   m_Name: enemigo_erizo (9)
   m_TagString: enemigo1
@@ -988,18 +974,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &242513349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242513345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44dcef5b756e6c46852508bba191b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &286649300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,7 +1384,6 @@ GameObject:
   - component: {fileID: 371339863}
   - component: {fileID: 371339865}
   - component: {fileID: 371339864}
-  - component: {fileID: 371339866}
   m_Layer: 0
   m_Name: enemigo_erizo
   m_TagString: enemigo1
@@ -1507,18 +1480,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &371339866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371339862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44dcef5b756e6c46852508bba191b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &374349198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1691,7 +1652,6 @@ GameObject:
   - component: {fileID: 413795020}
   - component: {fileID: 413795022}
   - component: {fileID: 413795021}
-  - component: {fileID: 413795023}
   m_Layer: 0
   m_Name: enemigo_erizo (8)
   m_TagString: enemigo1
@@ -1788,18 +1748,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &413795023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413795019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44dcef5b756e6c46852508bba191b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &456770981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2422,7 +2370,6 @@ GameObject:
   - component: {fileID: 639745116}
   - component: {fileID: 639745118}
   - component: {fileID: 639745117}
-  - component: {fileID: 639745119}
   m_Layer: 0
   m_Name: enemigo_erizo (5)
   m_TagString: enemigo1
@@ -2519,18 +2466,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &639745119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 639745115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44dcef5b756e6c46852508bba191b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &647275587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2637,7 +2572,6 @@ GameObject:
   - component: {fileID: 684322159}
   - component: {fileID: 684322161}
   - component: {fileID: 684322160}
-  - component: {fileID: 684322162}
   m_Layer: 0
   m_Name: enemigo_erizo (3)
   m_TagString: enemigo1
@@ -2734,18 +2668,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &684322162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684322158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44dcef5b756e6c46852508bba191b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &718918561
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,7 +2937,6 @@ GameObject:
   - component: {fileID: 907369460}
   - component: {fileID: 907369462}
   - component: {fileID: 907369461}
-  - component: {fileID: 907369463}
   m_Layer: 0
   m_Name: enemigo_erizo (6)
   m_TagString: enemigo1
@@ -3112,18 +3033,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &907369463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907369459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44dcef5b756e6c46852508bba191b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &918844534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3835,7 +3744,6 @@ GameObject:
   - component: {fileID: 1139014922}
   - component: {fileID: 1139014924}
   - component: {fileID: 1139014923}
-  - component: {fileID: 1139014925}
   m_Layer: 0
   m_Name: enemigo_erizo (7)
   m_TagString: enemigo1
@@ -3932,18 +3840,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1139014925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139014921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44dcef5b756e6c46852508bba191b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1240468967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3955,7 +3851,6 @@ GameObject:
   - component: {fileID: 1240468968}
   - component: {fileID: 1240468970}
   - component: {fileID: 1240468969}
-  - component: {fileID: 1240468971}
   m_Layer: 0
   m_Name: enemigo_erizo (4)
   m_TagString: enemigo1
@@ -4052,18 +3947,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1240468971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240468967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44dcef5b756e6c46852508bba191b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1280822987
 GameObject:
   m_ObjectHideFlags: 0
@@ -5218,7 +5101,6 @@ GameObject:
   - component: {fileID: 1788060901}
   - component: {fileID: 1788060903}
   - component: {fileID: 1788060902}
-  - component: {fileID: 1788060904}
   m_Layer: 0
   m_Name: enemigo_erizo (1)
   m_TagString: enemigo1
@@ -5315,18 +5197,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1788060904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788060900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44dcef5b756e6c46852508bba191b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1816675789
 GameObject:
   m_ObjectHideFlags: 0
@@ -6450,6 +6320,10 @@ MonoBehaviour:
   velocidad: 60
   maxspeed: 3
   SideVelocity: 10
+  SavedVel: 0
+  SavedMax: 0
+  RunVelocity: 0
+  maxSpeedVel: 0
   grounded: 0
   wall: 0
   JumpPower: 5
