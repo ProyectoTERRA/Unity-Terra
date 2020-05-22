@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DefenderController : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class DefenderController : MonoBehaviour
     public float speed;
     private Transform target;
     static public bool act;
-    public bool FlagMove;
+    public bool FlagMove, IsDead;
     public Animator anim;
     void Start()
     {
@@ -44,6 +45,7 @@ public class DefenderController : MonoBehaviour
             anim.enabled = true;
             anim.SetTrigger("End");
             anim.SetTrigger("Adios");
+            IsDead = true;
             StartCoroutine(MuerteDestruccion());
 
         }
@@ -86,6 +88,7 @@ public class DefenderController : MonoBehaviour
     IEnumerator MuerteDestruccion()
     {
         yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Lab");
         Destroy(gameObject);
     }
 }
