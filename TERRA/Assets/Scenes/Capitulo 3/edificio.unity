@@ -723,9 +723,9 @@ GameObject:
   - component: {fileID: 136744640}
   - component: {fileID: 136744639}
   - component: {fileID: 136744638}
-  - component: {fileID: 136744637}
   - component: {fileID: 136744636}
   - component: {fileID: 136744635}
+  - component: {fileID: 136744637}
   m_Layer: 0
   m_Name: Diana0 (5)
   m_TagString: enemigo1
@@ -778,8 +778,8 @@ MonoBehaviour:
   maxspeed: 4
   DistanciaVision: 5
   matchPanel: {fileID: 8755725002330985212}
---- !u!61 &136744637
-BoxCollider2D:
+--- !u!58 &136744637
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -791,19 +791,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.044297457, y: -0.93645835}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 2.14}
-    newSize: {x: 0.96, y: 2.14}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.1, y: -0.8}
   serializedVersion: 2
-  m_Size: {x: 0.5830207, y: 0.25978088}
-  m_EdgeRadius: 0
+  m_Radius: 0.27
 --- !u!61 &136744638
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1874,9 +1864,9 @@ GameObject:
   - component: {fileID: 371111695}
   - component: {fileID: 371111694}
   - component: {fileID: 371111693}
-  - component: {fileID: 371111692}
   - component: {fileID: 371111691}
   - component: {fileID: 371111690}
+  - component: {fileID: 371111692}
   m_Layer: 0
   m_Name: Diana0 (2)
   m_TagString: enemigo1
@@ -1929,8 +1919,8 @@ MonoBehaviour:
   maxspeed: 4
   DistanciaVision: 5
   matchPanel: {fileID: 8755725002330985212}
---- !u!61 &371111692
-BoxCollider2D:
+--- !u!58 &371111692
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1942,19 +1932,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.044297457, y: -0.93645835}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 2.14}
-    newSize: {x: 0.96, y: 2.14}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.1, y: -0.8}
   serializedVersion: 2
-  m_Size: {x: 0.5830207, y: 0.25978088}
-  m_EdgeRadius: 0
+  m_Radius: 0.27
 --- !u!61 &371111693
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3332,9 +3312,9 @@ GameObject:
   - component: {fileID: 723600342}
   - component: {fileID: 723600340}
   - component: {fileID: 723600339}
-  - component: {fileID: 723600344}
   - component: {fileID: 723600341}
   - component: {fileID: 723600345}
+  - component: {fileID: 723600344}
   m_Layer: 0
   m_Name: Diana0
   m_TagString: enemigo1
@@ -3471,8 +3451,8 @@ Transform:
   m_Father: {fileID: 183673201}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &723600344
-BoxCollider2D:
+--- !u!58 &723600344
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3484,19 +3464,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.044297457, y: -0.93645835}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 2.14}
-    newSize: {x: 0.96, y: 2.14}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.1, y: -0.8}
   serializedVersion: 2
-  m_Size: {x: 0.5830207, y: 0.25978088}
-  m_EdgeRadius: 0
+  m_Radius: 0.27
 --- !u!114 &723600345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4905,9 +4875,9 @@ GameObject:
   - component: {fileID: 1069552010}
   - component: {fileID: 1069552009}
   - component: {fileID: 1069552008}
-  - component: {fileID: 1069552007}
   - component: {fileID: 1069552006}
   - component: {fileID: 1069552005}
+  - component: {fileID: 1069552007}
   m_Layer: 0
   m_Name: Diana0 (3)
   m_TagString: enemigo1
@@ -4960,8 +4930,8 @@ MonoBehaviour:
   maxspeed: 4
   DistanciaVision: 5
   matchPanel: {fileID: 8755725002330985212}
---- !u!61 &1069552007
-BoxCollider2D:
+--- !u!58 &1069552007
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4973,19 +4943,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.044297457, y: -0.93645835}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 2.14}
-    newSize: {x: 0.96, y: 2.14}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.1, y: -0.8}
   serializedVersion: 2
-  m_Size: {x: 0.5830207, y: 0.25978088}
-  m_EdgeRadius: 0
+  m_Radius: 0.27
 --- !u!61 &1069552008
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6069,9 +6029,9 @@ GameObject:
   - component: {fileID: 1291307387}
   - component: {fileID: 1291307386}
   - component: {fileID: 1291307385}
-  - component: {fileID: 1291307384}
   - component: {fileID: 1291307383}
   - component: {fileID: 1291307382}
+  - component: {fileID: 1291307384}
   m_Layer: 0
   m_Name: Diana0 (4)
   m_TagString: enemigo1
@@ -6124,8 +6084,8 @@ MonoBehaviour:
   maxspeed: 4
   DistanciaVision: 5
   matchPanel: {fileID: 8755725002330985212}
---- !u!61 &1291307384
-BoxCollider2D:
+--- !u!58 &1291307384
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6137,19 +6097,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.044297457, y: -0.93645835}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 2.14}
-    newSize: {x: 0.96, y: 2.14}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.1, y: -0.8}
   serializedVersion: 2
-  m_Size: {x: 0.5830207, y: 0.25978088}
-  m_EdgeRadius: 0
+  m_Radius: 0.27
 --- !u!61 &1291307385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6645,9 +6595,9 @@ GameObject:
   - component: {fileID: 1385774784}
   - component: {fileID: 1385774783}
   - component: {fileID: 1385774782}
-  - component: {fileID: 1385774781}
   - component: {fileID: 1385774780}
   - component: {fileID: 1385774779}
+  - component: {fileID: 1385774781}
   m_Layer: 0
   m_Name: Diana0 (1)
   m_TagString: enemigo1
@@ -6700,8 +6650,8 @@ MonoBehaviour:
   maxspeed: 4
   DistanciaVision: 5
   matchPanel: {fileID: 8755725002330985212}
---- !u!61 &1385774781
-BoxCollider2D:
+--- !u!58 &1385774781
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6713,19 +6663,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.044297457, y: -0.93645835}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 2.14}
-    newSize: {x: 0.96, y: 2.14}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.1, y: -0.8}
   serializedVersion: 2
-  m_Size: {x: 0.5830207, y: 0.25978088}
-  m_EdgeRadius: 0
+  m_Radius: 0.27
 --- !u!61 &1385774782
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7274,61 +7214,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 128289250247929000, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3785523923685326970, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3569727586052135697, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6214826627960804926, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5225394894740060154, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828124217946342183, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3277342572515588529, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5750229917714460661, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5390300800423343262, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888325355320331725, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: list
-      value: 
-      objectReference: {fileID: 1527938418}
     - target: {fileID: 8905631315678066389, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_Name
@@ -7410,6 +7295,61 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6677154069757846413, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 128289250247929000, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214826627960804926, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785523923685326970, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569727586052135697, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888325355320331725, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: list
+      value: 
+      objectReference: {fileID: 1527938418}
+    - target: {fileID: 5225394894740060154, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828124217946342183, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277342572515588529, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750229917714460661, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390300800423343262, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -9329,7 +9269,7 @@ PrefabInstance:
     - target: {fileID: 7603211905305346091, guid: b4bf47ce177a23345a1e13aaac07a945,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.42
+      value: -4.16
       objectReference: {fileID: 0}
     - target: {fileID: 7603211905305346091, guid: b4bf47ce177a23345a1e13aaac07a945,
         type: 3}

@@ -73,6 +73,7 @@ public class Guard1 : MonoBehaviour
             GetComponent<EnemyMove>().enabled = false;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<CircleCollider2D>().enabled = false;
         }
         yield return new WaitForSeconds(1f);
     }
@@ -86,6 +87,7 @@ public class Guard1 : MonoBehaviour
             GetComponent<EnemyMove>().enabled = false;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<CircleCollider2D>().enabled = false;
         }
         yield return new WaitForSeconds(1f);
     }
@@ -101,7 +103,7 @@ public class Guard1 : MonoBehaviour
             GetComponent<EnemyMove>().enabled = false;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             GetComponent<BoxCollider2D>().enabled = false;
-
+            GetComponent<CircleCollider2D>().enabled = false;
         }
         yield return new WaitForSeconds(5f);
         GetComponent<SpriteRenderer>().color = deafault;
@@ -110,7 +112,7 @@ public class Guard1 : MonoBehaviour
             GetComponent<EnemyMove>().enabled = true;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             GetComponent<BoxCollider2D>().enabled = true;
-
+            GetComponent<CircleCollider2D>().enabled = true;
         }
         efecT = false;
         effecting = false;
