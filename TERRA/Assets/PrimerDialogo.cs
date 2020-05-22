@@ -43,8 +43,6 @@ public class PrimerDialogo : MonoBehaviour
             //Dialogo2.SetActive(true);
             Enable = false;
             Dialogo1.SetActive(false);
-            jugador.transform.position = new Vector3(36.47f,-5.2f, 0);
-            
             return;
 
         }

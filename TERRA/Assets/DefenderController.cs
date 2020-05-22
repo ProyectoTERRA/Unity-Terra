@@ -8,6 +8,7 @@ public class DefenderController : MonoBehaviour
 
     [SerializeField] private GameObject Bullet;
     [SerializeField] private GameObject canon;
+    public string Cambio;
     GameObject Jugador;
     public Rigidbody2D RBD;
     public float moverse = 15f;
@@ -88,7 +89,8 @@ public class DefenderController : MonoBehaviour
     IEnumerator MuerteDestruccion()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("Lab");
+       
+        SceneManager.LoadScene(Cambio);
         Destroy(gameObject);
     }
 }

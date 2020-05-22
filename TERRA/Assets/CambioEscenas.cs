@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class CambioEscenas : MonoBehaviour
 {
-    public void CargarJuego(string jugar)
+    public string Cambio;
+    public void CargarJuego(string Cambio)
     {
-        SceneManager.LoadScene(jugar);
+        SceneManager.LoadScene(Cambio);
     }
 
 
