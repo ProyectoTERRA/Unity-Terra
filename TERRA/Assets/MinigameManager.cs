@@ -12,7 +12,7 @@ public class MinigameManager : MonoBehaviour
     int C1, C2, C3, C4;
     public SpriteRenderer col1, col2, col3, col4;
     public InputField Clave;
-    public GameObject D1, D2, D3, D4,Panel, INPUT;
+    public GameObject D1, D2, D3, D4,Panel, INPUT,Bloq;
     public Sprite S1, S2, S3, S4, S5, S6, S7, S8, S9, S0;
     Color Cafe = new Color(0.6039216f, 0.2117647f, 0, 1);
     Color Naranja = new Color(0.9529412f, 0.6117647f, 0.07058824f, 1);
@@ -469,7 +469,7 @@ public class MinigameManager : MonoBehaviour
             string CombCOLOR = string.Join(",", CombArr.Select(j => j.ToString()).ToArray());
             print(CombCOLOR);
             Debug.Log(i+" Color: " + CombCOLOR +" - Numero: "+ CombCOLORF);
-            CombCOLORFin = CombCOLORFin + CombCOLOR;
+            CombCOLORFin = CombCOLORFin + CombCOLORF;
 
         }
         
@@ -490,6 +490,9 @@ public class MinigameManager : MonoBehaviour
         if(Contra == CombCOLORFin)
         {
             Panel.SetActive(false);
+            INPUT.SetActive(false);
+            Bloq.SetActive(false);
+            
         }
     }
 

@@ -5,7 +5,7 @@
 public class PuertaLab : MonoBehaviour
 {
 
-    public bool P1Ar, P2Ar, P3Ar, P1Ab, P2Ab, P3Ab;
+    public bool P1Ar, P2Ar, P3Ar, P1Ab, P2Ab, P3Ab, PI1,PD1;
     // Start is called before the first frame update
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -37,6 +37,15 @@ public class PuertaLab : MonoBehaviour
         {
             transform.position = new Vector3(359f, -10f, 0);
         }
+        if(collision.name == "PD1")
+        {
+            PD1 = true;
+        }
+        if (collision.name == "PI1")
+        {
+            PI1 = true;
+        }
+
         #endregion
 
         #region Escaleras
@@ -67,6 +76,8 @@ public class PuertaLab : MonoBehaviour
         P1Ab = false;
         P2Ar = false;
         P2Ab = false;
+        PD1 = false;
+        PI1 = false;
     }
 
     // Update is called once per frame
@@ -96,6 +107,18 @@ public class PuertaLab : MonoBehaviour
         {
             transform.position = new Vector3(196.4f, 24.5f, 0);
             P2Ab = false;
+        }
+        
+        if (PD1 == true && Input.GetKeyDown(KeyCode.E))
+        {
+            transform.position = new Vector3(197.4f, 24.5f, 0);
+            PD1 = false;
+        }
+
+        if (PI1 == true && Input.GetKeyDown(KeyCode.E))
+        {
+            transform.position = new Vector3(201f, 24.5f, 0);
+            PI1 = false;
         }
 
     }

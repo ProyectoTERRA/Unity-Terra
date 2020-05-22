@@ -3,12 +3,18 @@
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float velocidad = 2f;
+    public float velocidad;
     public float maxspeed = 5f;
     public float SideVelocity = 10f;
 
+    public float SavedVel;
+    public float SavedMax;
+
+    public float RunVelocity;
+    public float maxSpeedVel;
+
     public bool grounded;
-    static public bool groundCAP5;
+    static public bool groundCAP5, DASH, HabilityDJ, ActHabilityLJ, DactHabilityLJ;
     public bool wall;
     public float JumpPower = 6.5f;
 
@@ -28,7 +34,7 @@ public class PlayerController : MonoBehaviour
     public static float scal;
     public int SIDE;
     public static int side;
-
+    private float Jumpback;
     private bool Machucado;
 
     [SerializeField] private GameObject list;
@@ -37,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-
+        Jumpback = JumpPower;
         ChangeGravity.VG = 1;
         Heart_Bar.Phearts = GameController.corazones;
         Heart_Bar.life = GameController.vidas;
@@ -53,6 +59,9 @@ public class PlayerController : MonoBehaviour
         animacion = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
         wall = false;
+
+        SavedVel = velocidad;
+        SavedMax = maxspeed;
     }
 
 
@@ -72,20 +81,38 @@ public class PlayerController : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (DASH)
+        {
+            GetComponent<Rigidbody2D>().AddForce(transform.right * (-500f * scal) * side);
+
+        }
+
+        if (ActHabilityLJ)
+        {
+            ActHabilityLJ = false;
+            JumpPower = JumpPower + (JumpPower * 0.25f);
+        }
+        else if(DactHabilityLJ)
+        {
+            DactHabilityLJ = false;
+            JumpPower = Jumpback;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && !DASH)
         {
             if (grounded && groundCAP5)
             {
                 jump = true;
                 doubleJump = true;
             }
-            /*
-            else if (doubleJump)
-            {
-                jump = true;
-                doubleJump = false;
+            else if (HabilityDJ) {
+            if (doubleJump)
+                {
+                    jump = true;
+                    doubleJump = false;
+                }
             }
-            */
+            
         }
         #region Esferas
         //Esferas
@@ -173,44 +200,45 @@ public class PlayerController : MonoBehaviour
             rbd2.velocity = fixedVelocity;
         }
 
-
-        float h = Input.GetAxis("Horizontal");
-        if (!movement) h = 0;
-
-        rbd2.AddForce(Vector2.right * velocidad * h);
-
-        float limetedSpeed = Mathf.Clamp(rbd2.velocity.x, -maxspeed, maxspeed);
-        rbd2.velocity = new Vector2(limetedSpeed, rbd2.velocity.y);
-        if (h > 0.1f)
+        if (!DASH)
         {
+            float h = Input.GetAxis("Horizontal");
+            if (!movement) h = 0;
 
-            transform.localScale = new Vector3(-x * ChangeGravity.VG, y, z);
-            side = ChangeGravity.VG * -1;
-        }
-        if (h < -0.1f)
-        {
-            transform.localScale = new Vector3(x * ChangeGravity.VG, y, z);
-            side = ChangeGravity.VG * 1;
-        }
-        //Correr
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            velocidad = 70;
-            maxspeed = 4.5f;
-        }
-        else
-        {
-            velocidad = 60;
-            maxspeed = 3;
-        }
+            rbd2.AddForce(Vector2.right * velocidad * h);
 
-        if (jump)
-        {
-            rbd2.velocity = new Vector2(rbd2.velocity.x, 0);
-            rbd2.AddForce(Vector2.up * JumpPower * ChangeGravity.VG, ForceMode2D.Impulse);
-            jump = false;
-        }
+            float limetedSpeed = Mathf.Clamp(rbd2.velocity.x, -maxspeed, maxspeed);
+            rbd2.velocity = new Vector2(limetedSpeed, rbd2.velocity.y);
+            if (h > 0.1f)
+            {
 
+                transform.localScale = new Vector3(-x * ChangeGravity.VG, y, z);
+                side = ChangeGravity.VG * -1;
+            }
+            if (h < -0.1f)
+            {
+                transform.localScale = new Vector3(x * ChangeGravity.VG, y, z);
+                side = ChangeGravity.VG * 1;
+            }
+            //Correr
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                velocidad = RunVelocity;
+                maxspeed = maxSpeedVel;
+            }
+            else
+            {
+                velocidad = SavedVel;
+                maxspeed = SavedMax;
+            }
+
+            if (jump)
+            {
+                rbd2.velocity = new Vector2(rbd2.velocity.x, 0);
+                rbd2.AddForce(Vector2.up * JumpPower * ChangeGravity.VG, ForceMode2D.Impulse);
+                jump = false;
+            }
+        }
         //Habilidades
 
     }
