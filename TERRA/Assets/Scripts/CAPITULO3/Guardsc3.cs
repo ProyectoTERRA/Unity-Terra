@@ -75,6 +75,7 @@ public class Guardsc3 : MonoBehaviour
             GetComponent<EnemyMove>().enabled = false;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<CircleCollider2D>().enabled = false;
             eliminarEnemyesC3.guardias++;
             nombre1 = gameObject.name;
             codificadorNormal();
@@ -91,6 +92,7 @@ public class Guardsc3 : MonoBehaviour
             GetComponent<EnemyMove>().enabled = false;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<CircleCollider2D>().enabled = false;
             eliminarEnemyesC3.guardias++;
             nombre1 = gameObject.name;
             codificadorTranquilizante();
@@ -109,7 +111,7 @@ public class Guardsc3 : MonoBehaviour
             GetComponent<EnemyMove>().enabled = false;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             GetComponent<BoxCollider2D>().enabled = false;
-
+            GetComponent<CircleCollider2D>().enabled = false;
         }
         yield return new WaitForSeconds(5f);
         GetComponent<SpriteRenderer>().color = deafault;
@@ -118,7 +120,7 @@ public class Guardsc3 : MonoBehaviour
             GetComponent<EnemyMove>().enabled = true;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             GetComponent<BoxCollider2D>().enabled = true;
-
+            GetComponent<CircleCollider2D>().enabled = true;
         }
         efecT = false;
         effecting = false;
@@ -157,35 +159,38 @@ public class Guardsc3 : MonoBehaviour
     }
     private void codificadorTranquilizante()
     {
-            if (nombre1 == "t1")
-            {
-                GameController.t1 = true;
-            }
-            if (nombre1 == "t2")
-            {
-                GameController.t2 = true;
-            }
-            if (nombre1 == "t3")
-            {
-                GameController.t3 = true;
-            }
-            if (nombre1 == "t4")
-            {
-                GameController.t4 = true;
-            }
-            if (nombre1 == "t5")
-            {
-                GameController.t5 = true;
-            }
-            if (nombre1 == "t6")
-            {
-                GameController.t6 = true;
-            }
-            if (nombre1 == "t7")
-            {
-                GameController.t7 = true;
-            }
-        
+        if (nombre1 == "e1")
+        {
+            GameController.t1 = true;
+            Debug.Log("Codificador tranquilizante");
+
+        }
+        if (nombre1 == "e2")
+        {
+            GameController.t2 = true;
+        }
+        if (nombre1 == "e3")
+        {
+            GameController.t3 = true;
+        }
+        if (nombre1 == "e4")
+        {
+            GameController.t4 = true;
+        }
+        if (nombre1 == "e5")
+        {
+            GameController.t5 = true;
+        }
+        if (nombre1 == "e6")
+        {
+            GameController.t6 = true;
+        }
+        if (nombre1 == "e7")
+        {
+            GameController.t7 = true;
+        }
+
+
     }
 
 }
