@@ -17,7 +17,7 @@ public class Sedante : MonoBehaviour
     void Start()
     {
         //scale = Comportamiento.scal * 0.5714f;
-        float SL = .15f;
+        float SL = .7f;
         transform.localScale = new Vector3(SL, SL);
         if(Comportamiento.side > 0)
         {
@@ -39,7 +39,7 @@ public class Sedante : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localScale = new Vector3(transform.localScale.x - (0.01f * scale), transform.localScale.x - (0.01f * scale));
+        transform.localScale = new Vector3(transform.localScale.x - (5f * scale), transform.localScale.x - (5f * scale));
         Destroy(gameObject, 1f);
     }
     private void OnCollisionEnter2D(Collision2D collision)

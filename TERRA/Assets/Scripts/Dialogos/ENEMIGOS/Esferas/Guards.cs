@@ -25,11 +25,6 @@ public class Guards : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("N: " + CNormales);
-        Debug.Log("T: " + CTranquilizantes);
-        Debug.Log("D: " + CDesactivadoras);
-        Debug.Log("P: " + CParalizantes);
-
         if (gameObject.tag == "enemigo2")
         {
             if (CParalizantes >= 1 && !efecT)

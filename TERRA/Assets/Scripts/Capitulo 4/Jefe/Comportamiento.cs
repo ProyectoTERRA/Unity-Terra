@@ -132,6 +132,7 @@ public class Comportamiento : MonoBehaviour
         }
 
         Debug.DrawLine(transform.position, target, Color.red);
+
     }
     IEnumerator lib()
     {

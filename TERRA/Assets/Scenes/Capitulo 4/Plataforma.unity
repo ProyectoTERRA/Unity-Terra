@@ -2611,7 +2611,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &177903316
 Transform:
   m_ObjectHideFlags: 0
@@ -2650,13 +2650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  z: 1
-  speed: 4
+  speed: 40
   maxspeed: 4
-  DistanciaVision: 40
-  matchPanel: {fileID: 5657417380033990137}
+  DistanciaVision: 283.2
 --- !u!58 &177903319
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7573,7 +7569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &576084269
 Transform:
   m_ObjectHideFlags: 0
@@ -7582,11 +7578,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576084268}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.419, y: -0.425, z: 80.505264}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.43765}
+  m_LocalPosition: {x: -1.419, y: -0.42500013, z: 80.505264}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.43765002}
   m_Children: []
   m_Father: {fileID: 1089036562}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &576084270
 MonoBehaviour:
@@ -7600,13 +7596,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  z: 1
-  speed: 10
-  maxspeed: 10
-  DistanciaVision: 250
-  matchPanel: {fileID: 5657417380033990137}
+  speed: 40
+  maxspeed: 4
+  DistanciaVision: 284
 --- !u!114 &576084271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8822,7 +8814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &655525153
 Transform:
   m_ObjectHideFlags: 0
@@ -8861,13 +8853,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  z: 1
-  speed: 4
+  speed: 40
   maxspeed: 4
   DistanciaVision: 40
-  matchPanel: {fileID: 5657417380033990137}
 --- !u!58 &655525156
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11171,7 +11159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &898435078
 Transform:
   m_ObjectHideFlags: 0
@@ -11198,13 +11186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  z: 1
-  speed: 4
+  speed: 40
   maxspeed: 4
-  DistanciaVision: 40
-  matchPanel: {fileID: 5657417380033990137}
+  DistanciaVision: 283.2
 --- !u!114 &898435080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12534,7 +12518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &961977587
 Transform:
   m_ObjectHideFlags: 0
@@ -12573,13 +12557,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  z: 1
-  speed: 4
+  speed: 40
   maxspeed: 4
-  DistanciaVision: 40
-  matchPanel: {fileID: 5657417380033990137}
+  DistanciaVision: 283.2
 --- !u!58 &961977590
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13946,7 +13926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1062158772
 Transform:
   m_ObjectHideFlags: 0
@@ -13985,13 +13965,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  z: 1
-  speed: 4
+  speed: 40
   maxspeed: 4
-  DistanciaVision: 40
-  matchPanel: {fileID: 5657417380033990137}
+  DistanciaVision: 283.2
 --- !u!58 &1062158775
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14382,8 +14358,8 @@ Transform:
   m_LocalPosition: {x: -16.55, y: -0.82, z: -40.519947}
   m_LocalScale: {x: 4.0203376, y: 4.0203376, z: 4.0203376}
   m_Children:
-  - {fileID: 3232130542274315914}
   - {fileID: 576084269}
+  - {fileID: 3232130542274315914}
   - {fileID: 1522751018}
   - {fileID: 898435078}
   - {fileID: 1779974578}
@@ -16776,7 +16752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1245190721
 Transform:
   m_ObjectHideFlags: 0
@@ -16815,13 +16791,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  z: 1
-  speed: 4
+  speed: 40
   maxspeed: 4
-  DistanciaVision: 40
-  matchPanel: {fileID: 5657417380033990137}
+  DistanciaVision: 283.2
 --- !u!58 &1245190724
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17512,7 +17484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1326261684
 Transform:
   m_ObjectHideFlags: 0
@@ -17551,13 +17523,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  z: 1
-  speed: 4
+  speed: 40
   maxspeed: 4
   DistanciaVision: 40
-  matchPanel: {fileID: 5657417380033990137}
 --- !u!58 &1326261687
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18182,14 +18150,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51285c1b3d201c948952631c136695cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0.25
-  y: 0.25
+  x: 1
+  y: 1
   z: 1
   speed: 0.8
   maxspeed: 0.5
-  DistanciaVision: 1
-  Jumpower: 8
-  distancia: 0.5
+  DistanciaVision: 5
+  Jumpower: 13
+  distancia: 1
   disparar: 0
   scale: 1
   SIDE: 0
@@ -18339,7 +18307,7 @@ Transform:
   m_GameObject: {fileID: 1381413155}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 128.93, y: -2.23, z: 39.985317}
-  m_LocalScale: {x: 1.0050844, y: 1.0050844, z: 17.174934}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -20045,7 +20013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1522751018
 Transform:
   m_ObjectHideFlags: 0
@@ -20072,13 +20040,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  z: 1
-  speed: 4
+  speed: 40
   maxspeed: 4
-  DistanciaVision: 40
-  matchPanel: {fileID: 5657417380033990137}
+  DistanciaVision: 283.2
 --- !u!114 &1522751020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21884,7 +21848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1662702664
 Transform:
   m_ObjectHideFlags: 0
@@ -21923,13 +21887,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  z: 1
-  speed: 4
+  speed: 40
   maxspeed: 4
-  DistanciaVision: 40
-  matchPanel: {fileID: 5657417380033990137}
+  DistanciaVision: 283.2
 --- !u!58 &1662702667
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -22908,7 +22868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1779974578
 Transform:
   m_ObjectHideFlags: 0
@@ -22935,13 +22895,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  z: 1
-  speed: 4
+  speed: 40
   maxspeed: 4
-  DistanciaVision: 40
-  matchPanel: {fileID: 5657417380033990137}
+  DistanciaVision: 283.2
 --- !u!114 &1779974580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23531,7 +23487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1854828896
 Transform:
   m_ObjectHideFlags: 0
@@ -23570,13 +23526,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  z: 1
-  speed: 4
+  speed: 40
   maxspeed: 4
-  DistanciaVision: 40
-  matchPanel: {fileID: 5657417380033990137}
+  DistanciaVision: 283
 --- !u!58 &1854828899
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -26803,7 +26755,7 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.43765}
   m_Children: []
   m_Father: {fileID: 1089036562}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3232130542274315915
 SpriteRenderer:
@@ -26901,7 +26853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3232130542274315920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26914,13 +26866,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b97111fdbaeb354cb3505e312af850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 1
-  z: 1
-  speed: 4
+  speed: 40
   maxspeed: 4
-  DistanciaVision: 40
-  matchPanel: {fileID: 5657417380033990137}
+  DistanciaVision: 150
 --- !u!58 &3232130542274315921
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -27463,7 +27411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5657417380033990137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.07, y: -2.52, z: 0}
+  m_LocalPosition: {x: 106.6, y: -2.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5657417381144890561}
