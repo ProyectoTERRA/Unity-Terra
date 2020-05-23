@@ -2931,84 +2931,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &562568424
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 562568425}
-  - component: {fileID: 562568427}
-  - component: {fileID: 562568426}
-  m_Layer: 0
-  m_Name: Dialogo 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &562568425
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562568424}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 334268310}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &562568426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562568424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 823473bcd57608542bd3c624185a94c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Diana2
-    sentenceList:
-    - 'Ahi lo tienes...
-
-'
-    - Todo podria arreglarse, solo necesito algunos componentes de la fabrica que
-      esta arriba de aqui...
-    - Podrias ir por ellos?
-    - Cuento contigo, suerte.
-  dialogPanel: {fileID: 1601693506}
-  displayText: {fileID: 327077523}
-  typingpeed: 0.05
-  speakSound: {fileID: 0}
-  Dialogo1: {fileID: 0}
-  Dialogo2: {fileID: 0}
-  Cutscene: {fileID: 0}
-  Enable: 1
---- !u!58 &562568427
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562568424}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.1206615}
-  serializedVersion: 2
-  m_Radius: 1.4365637
 --- !u!1 &568012983
 GameObject:
   m_ObjectHideFlags: 0
@@ -5727,7 +5649,7 @@ MonoBehaviour:
   typingpeed: 0.065
   speakSound: {fileID: 0}
   Dialogo1: {fileID: 1146236457}
-  Dialogo2: {fileID: 562568424}
+  Dialogo2: {fileID: 0}
   Cutscene: {fileID: 793955180}
   jugador: {fileID: 0}
   Enable: 1
