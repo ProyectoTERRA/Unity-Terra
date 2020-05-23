@@ -518,7 +518,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.1
+  orthographic size: 3.3790853
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -542,8 +542,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60950466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.4, y: 0.19, z: -10}
-  m_LocalScale: {x: 0.8040675, y: 0.68345743, z: 0.8040675}
+  m_LocalPosition: {x: -27.1, y: -2.2, z: -10}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.51482886}
   m_Children:
   - {fileID: 505459601}
   - {fileID: 439835956}
@@ -567,8 +567,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   follow: {fileID: 5657417380033990137}
-  minCamPos: {x: -5.2, y: -0.3}
-  maxCamPos: {x: 50, y: 7}
+  minCamPos: {x: -29, y: -3}
+  maxCamPos: {x: 140, y: 7}
   smoothTime: 0
 --- !u!1001 &72405822
 PrefabInstance:
@@ -7603,9 +7603,9 @@ MonoBehaviour:
   x: 1
   y: 1
   z: 1
-  speed: 4
-  maxspeed: 4
-  DistanciaVision: 40
+  speed: 10
+  maxspeed: 10
+  DistanciaVision: 250
   matchPanel: {fileID: 5657417380033990137}
 --- !u!114 &576084271
 MonoBehaviour:
@@ -17985,12 +17985,12 @@ PrefabInstance:
     - target: {fileID: 962409568283309044, guid: d53178f79fa588140a4124ce3bb8e545,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8
+      value: -6.08
       objectReference: {fileID: 0}
     - target: {fileID: 962409568283309044, guid: d53178f79fa588140a4124ce3bb8e545,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.59
+      value: 3.85
       objectReference: {fileID: 0}
     - target: {fileID: 962409568283309044, guid: d53178f79fa588140a4124ce3bb8e545,
         type: 3}
@@ -18040,17 +18040,17 @@ PrefabInstance:
     - target: {fileID: 962409568283309044, guid: d53178f79fa588140a4124ce3bb8e545,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.77539
       objectReference: {fileID: 0}
     - target: {fileID: 962409568283309044, guid: d53178f79fa588140a4124ce3bb8e545,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.77539
       objectReference: {fileID: 0}
     - target: {fileID: 962409568283309044, guid: d53178f79fa588140a4124ce3bb8e545,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3321225
+      value: 0.2575245
       objectReference: {fileID: 0}
     - target: {fileID: 3535639125460454438, guid: d53178f79fa588140a4124ce3bb8e545,
         type: 3}
@@ -22729,12 +22729,12 @@ PrefabInstance:
     - target: {fileID: 6571940136628346501, guid: ae5784e8997662f49833c0d09ddfd43f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.349999
+      value: -6.8
       objectReference: {fileID: 0}
     - target: {fileID: 6571940136628346501, guid: ae5784e8997662f49833c0d09ddfd43f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -3.41
       objectReference: {fileID: 0}
     - target: {fileID: 6571940136628346501, guid: ae5784e8997662f49833c0d09ddfd43f,
         type: 3}
@@ -27463,7 +27463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5657417380033990137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.22, y: -2.52, z: 0}
+  m_LocalPosition: {x: -29.07, y: -2.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5657417381144890561}
@@ -27531,16 +27531,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82041649fd2c424479c9b01f44c6911d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 4
-  maxspeed: 1
-  SideVelocity: 10
+  velocidad: 100
+  maxspeed: 50
+  SideVelocity: 2
   SavedVel: 0
   SavedMax: 0
   RunVelocity: 0
   maxSpeedVel: 0
   grounded: 0
   wall: 0
-  JumpPower: 0.5
+  JumpPower: 13
   x: 1
   y: 1
   z: 1
@@ -27565,8 +27565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da5d341614e4824eae88d6185edc410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MultiplicadorCaida: 2.5
-  Saltopequeno: 3
+  MultiplicadorCaida: 1
+  Saltopequeno: 12
 --- !u!1 &5657417381144890560
 GameObject:
   m_ObjectHideFlags: 0
