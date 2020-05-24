@@ -4,6 +4,11 @@ using UnityEngine.SceneManagement;
 public class PickFormula : MonoBehaviour
 {
     public static string nombre;
+    int contador;
+    private void Start()
+    {
+        contador = 0;
+    }
     public void Update()
     {
         if(PlayerController.Equip == "Recogedor")
@@ -37,7 +42,12 @@ public class PickFormula : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                SceneManager.LoadScene("LOBBY");
+                contador++;
+                if(contador >= 3)
+                {
+                    GameController.LobbyCAP = 3;
+                    SceneManager.LoadScene("LOBBY");
+                }                
             }
         }
 

@@ -70,7 +70,7 @@ public class PlayerLobby : MonoBehaviour
             if (GameController.LobbyCAP == 3)
             {
                 exit = false;
-                //SceneManager.LoadScene("");
+                //SceneManager.LoadScene("Playa");
             }
             if (GameController.LobbyCAP == 5)
             {

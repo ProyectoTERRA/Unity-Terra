@@ -47,18 +47,10 @@ public class cambiarPiso : MonoBehaviour
                 transform.localScale = new Vector3(1f, 1f, 1f);
             }
         }
-        if (collision.gameObject.tag == "florero")
-        {
-            mensaje1.SetActive(true);
-        }
 
     }
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "florero")
-        {
-            mensaje1.SetActive(false);
-        }
         if (collision.gameObject.tag == "Next")
         {
             mensaje1.SetActive(false);

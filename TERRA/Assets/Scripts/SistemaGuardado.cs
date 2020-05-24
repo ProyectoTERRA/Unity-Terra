@@ -20,7 +20,6 @@ public class SistemaGuardado : MonoBehaviour
     //Variables que guardaran los datos de las partidas
     public String nombreEscena, nombrePartida, nombrePartida1;
     public static int perder=0, morir=0;
-    public int corazoncitos;
     void Start()
     {
         contador = 1;
@@ -74,8 +73,10 @@ public class SistemaGuardado : MonoBehaviour
         dato.ganzua = 0;
         dato.formula = 0;
         dato.vidas = 3;
-        dato.corazones = 3;
-        dato.tipo = 2;
+        dato.corazones = 6;
+        dato.tipo = 1;
+        dato.vidasMax = 3;
+        dato.corazonesMax = 6;
 
         //Respaldo
         dato.nombreEscena1 = "";
@@ -95,8 +96,10 @@ public class SistemaGuardado : MonoBehaviour
         dato.ganzua1 = 0;
         dato.formula1 = 0;
         dato.vidas1 = 3;
-        dato.corazones1 = 3;
-        dato.tipo1 = 2;
+        dato.corazones1 = 6;
+        dato.tipo1 = 1;
+        dato.vidasMax1 = 3;
+        dato.corazonesMax1 = 6;
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
@@ -135,6 +138,8 @@ public class SistemaGuardado : MonoBehaviour
         dato.vidas = Heart_Bar.life;
         dato.corazones = Heart_Bar.Phearts;
         dato.tipo = GameController.TypeLife;
+        dato.vidasMax = GameController.LifeMax;
+        dato.corazonesMax = GameController.HeartsMax;
         Debug.Log("Datos vidas al guardar " + dato.vidas);
 
         //Datos para respaldo
@@ -154,6 +159,8 @@ public class SistemaGuardado : MonoBehaviour
         dato.curacion1 = GameController.curacion0;
         dato.ganzua1 = GameController.ganzua0;
         dato.formula1 = GameController.formula0;
+        dato.vidasMax1 = GameController.LifeMax;
+        dato.corazonesMax1 = GameController.HeartsMax;
 
         //Serializara los archivos
         bf.Serialize(expediente, dato);
@@ -187,6 +194,8 @@ public class SistemaGuardado : MonoBehaviour
         dato.vidas1 = Heart_Bar.life;
         dato.corazones1 = Heart_Bar.Phearts;
         dato.tipo1 = GameController.TypeLife;
+        dato.vidasMax = GameController.LifeMax;
+        dato.corazonesMax = GameController.HeartsMax;
         Debug.Log("Nombre de la escena 1 " + dato.nombreEscena1);
 
         //Guardando en gamecontroller
@@ -205,6 +214,8 @@ public class SistemaGuardado : MonoBehaviour
         GameController.curacion0 = dato.curacion1;
         GameController.ganzua0 = dato.ganzua1;
         GameController.formula0 = dato.formula1;
+        GameController.LifeMax = dato.vidasMax;
+        GameController.HeartsMax = dato.corazonesMax;
 
         //Variables a modificar porel cap
         radial.basura[0] = 0;
@@ -283,7 +294,9 @@ public class SistemaGuardado : MonoBehaviour
         dato.formula = GameController.formula;
         dato.vidas = Heart_Bar.life;
         dato.corazones = Heart_Bar.Phearts;
-        dato.tipo = GameController.TypeLife; 
+        dato.tipo = GameController.TypeLife;
+        dato.vidasMax = GameController.LifeMax;
+        dato.corazonesMax = GameController.HeartsMax;
 
         //Respaldo
         dato.nombreEscena1 = nombreEscena;
@@ -305,6 +318,8 @@ public class SistemaGuardado : MonoBehaviour
         dato.vidas1 = Heart_Bar.life;
         dato.corazones1 = Heart_Bar.Phearts;
         dato.tipo1 = GameController.TypeLife;
+        dato.vidasMax1 = GameController.LifeMax;
+        dato.corazonesMax1 = GameController.HeartsMax;
         Debug.Log("Nombre de la escena 1 " + dato.nombreEscena1);
 
         //Guardando en gamecontroller
@@ -323,6 +338,9 @@ public class SistemaGuardado : MonoBehaviour
         GameController.curacion0 = dato.curacion1;
         GameController.ganzua0 = dato.ganzua1;
         GameController.formula0 = dato.formula1;
+        GameController.HeartsMax = dato.corazonesMax1;
+        GameController.LifeMax = dato.vidasMax1;
+
 
         //Serializara los archivos
         bf.Serialize(expediente, dato);
@@ -355,7 +373,7 @@ public class SistemaGuardado : MonoBehaviour
             {
                 Debug.Log("Al cargar vidas " + Heart_Bar.life + " En los datos " + datos.vidas);
                 datos.vidas = datos.vidas - 1;
-                datos.corazones = corazoncitos;
+                datos.corazones = GameController.HeartsMax;
                 perder = 0;
                 enemigosFalse();
             }
@@ -363,8 +381,8 @@ public class SistemaGuardado : MonoBehaviour
             {
                 //Datos sobre la vida
                 enemigosFalse();
-                datos.vidas = Heart_Bar.life;
-                datos.corazones = corazoncitos;
+                datos.vidas = GameController.LifeMax;
+                datos.corazones = GameController.HeartsMax;
                 datos.tipo = GameController.TypeLife;
                 //Datos de respaldo metidos a datos
                 Debug.Log("Cargar al morir");
@@ -707,11 +725,11 @@ class DatosJuego : System.Object
     public String nombrePartida, nombreEscena;
     public int pila, manzana, platano, bolsa, carton, lata, normal, paralizante, desactivadora, tranquilizante, pesada, energia, curacion, ganzua;
     public int formula;
-    public int vidas, corazones, tipo;
+    public int vidas, corazones, tipo, corazonesMax, vidasMax;
     public String nombreEscena1;
     public int pila1, manzana1, platano1, bolsa1, carton1, lata1, normal1, paralizante1, desactivadora1, tranquilizante1, pesada1, energia1, curacion1, ganzua1;
     public int formula1;
-    public int vidas1, corazones1, tipo1;
+    public int vidas1, corazones1, tipo1, corazonesMax1, vidasMax1;
 }
 
 
@@ -724,6 +742,6 @@ class DatosPartidas : System.Object
     public int contador;
     public int pila, manzana, platano, bolsa, carton, lata, normal, paralizante, desactivadora, tranquilizante, pesada, energia, curazion, ganzua;
     public int formula;
-    public int vidas, corazones, tipo;
+    public int vidas, corazones, tipo, corazonesMax, vidasMax;
 }
 

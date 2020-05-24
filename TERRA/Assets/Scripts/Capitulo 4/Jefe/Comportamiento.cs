@@ -35,7 +35,7 @@ public class Comportamiento : MonoBehaviour
     private Rigidbody2D rbd2;
     void Start()
     {
-        //transform.localScale = new Vector3(-x, y, z);
+        //transform.localScale = new Vector3(-x, y, z);        
         scal = scale;
         side = SIDE;
         movimiento = 1;
@@ -43,33 +43,13 @@ public class Comportamiento : MonoBehaviour
         Jugador = GameObject.FindGameObjectWithTag("Player");
         PosicionInicial = transform.position;
     }
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-
-        if (col.gameObject.tag == "Normal")
-        {
-            Debug.Log("Me diooooooooo");
-            GameObject vida = GameObject.Find("bossLive");
-            VidaBoss corazon = vida.GetComponent<VidaBoss>();
-            corazon.hearts--;
-        }
-        if (col.gameObject.tag == "Tranqui")
-        {
-            Debug.Log("Me diooooooooo");
-        }
-    }
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
             jump = true;
-        }
-        GameObject vida = GameObject.Find("bossLive");
-        VidaBoss corazon = vida.GetComponent<VidaBoss>();
-        if (corazon.hearts == 0)
-        {
-            Destroy(gameObject);
-        }
+        }        
     }
     void FixedUpdate()
     {
@@ -144,4 +124,6 @@ public class Comportamiento : MonoBehaviour
         yield return new WaitForSeconds(3);
         movimiento = 2;
     }
+    
+
 }

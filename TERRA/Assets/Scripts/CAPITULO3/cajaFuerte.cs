@@ -18,7 +18,7 @@ public class cajaFuerte : MonoBehaviour
                 Debug.Log("Llave   " + GameController.llave);
             }
         }
-
+        
         if (GameController.formula >= 8)
         {
             Debug.Log("YA HAY 8 FORMULAS");
@@ -29,13 +29,6 @@ public class cajaFuerte : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(gameObject.name == "")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                SceneManager.LoadScene("playa");
-            }
-        }
         if (collision.gameObject.name == "cajaFuerte")
         {
             Debug.Log("Colision con caja fuerte");
