@@ -13,8 +13,6 @@ public class LMAOController : MonoBehaviour
     public float speed;
     bool AtHoyo = false;
     bool Hiting;
-    [SerializeField] private GameObject Punch;
-    [SerializeField] private GameObject Back;
     static public float side;
     public bool hiting;
 
@@ -25,17 +23,18 @@ public class LMAOController : MonoBehaviour
         Jugador = GameObject.FindGameObjectWithTag("Player");
         PosicionInicial = transform.position;
         targetRet = transform.position;
-        
-        Punch.SetActive(false);
+
         hiting = false;
         side = 1;
-    
+
     }
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        
+        
         /*
         if (EnemigosEsferas.effecting || hiting)
         {
@@ -46,6 +45,7 @@ public class LMAOController : MonoBehaviour
             Back.SetActive(true);
         }
         */
+
         #region SEGUIMIENTO
         /*
         Vector3 target = PosicionInicial;
@@ -69,7 +69,7 @@ public class LMAOController : MonoBehaviour
             DistanciaVision = 100;
             AtHoyo = true;
         }
-        
+
         if (AtHoyo == true)
         {
             Vector3 target = PosicionInicial;
@@ -84,17 +84,16 @@ public class LMAOController : MonoBehaviour
             //transform.position = Vector3.MoveTowards(transform.position, PosicionInicial, fixedSpeed);
             Cooldown -= Time.deltaTime;
         }
-    
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             collision.SendMessage("EnemyKnockBack", transform.position.x + 1);
         }
     }
-}
     /*
     IEnumerator AtaqueHoyo()
     {
@@ -106,5 +105,5 @@ public class LMAOController : MonoBehaviour
     }
     */
 
-
+}
 //3310064114

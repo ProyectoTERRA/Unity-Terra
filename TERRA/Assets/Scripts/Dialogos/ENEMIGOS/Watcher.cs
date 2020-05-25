@@ -49,24 +49,7 @@ public class Watcher : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
         Debug.DrawLine(transform.position, target, Color.red);
         #region Rotacion
-        /*
-         var rotationSpeed = 3; //speed of turning
-         var range : float=10f; //Range within target will be detected
-         var stop : float=0;
-         var myTransform : Transform;
-        var distance = Vector3.Distance(myTransform.position, target.position);
-        if (distance <= range)
-        {
-            //look
-            myTransform.rotation = Quaternion.Slerp(myTransform.rotation,
-            Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
-            //move
-            if (distance > stop)
-            {
-                myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
-            }
-        }
-        */
+   
         #endregion
     }
     private void OnTriggerEnter2D(Collider2D col)
@@ -82,6 +65,8 @@ public class Watcher : MonoBehaviour
         {
             DistanciaVision = 0;
         }
+
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)

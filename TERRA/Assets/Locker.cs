@@ -13,39 +13,41 @@ public class Locker : MonoBehaviour
 
     private void Update()
     {
-        if(L1 == true && Input.GetKey(KeyCode.E))
+        if(L1 == true && Input.GetKeyDown(KeyCode.E))
         {
             Lk1.SetActive(true);
             L1 = false;
         }
 
-       if (L2 == true && Input.GetKey(KeyCode.E))
+       if (L2 == true && Input.GetKeyDown(KeyCode.E))
         {
             Lk2.SetActive(true);
             L2 = false;
         }
 
-         if (L3 == true && Input.GetKey(KeyCode.E))
+         if (L3 == true && Input.GetKeyDown(KeyCode.E))
         {
             Lk3.SetActive(true);
             L3 = false;
         }
 
-       if (L4 == true && Input.GetKey(KeyCode.E))
+       if (L4 == true && Input.GetKeyDown(KeyCode.E))
         {
             Lk4.SetActive(true);
             L4 = false;
         }
 
-       if (L5 == true && Input.GetKey(KeyCode.E))
+       if (L5 == true && Input.GetKeyDown(KeyCode.E))
         {
             Lk5.SetActive(true);
             L5 = false;
         }
 
-        if (Key == true)
+        if (Key == true && Input.GetKeyDown(KeyCode.E)) 
         {
+            Destroy(KeyC);
             Bloqueo.SetActive(false);
+
         }
 
     }
@@ -81,7 +83,6 @@ public class Locker : MonoBehaviour
         if (col.gameObject.tag == "KeyCardTerra")
         {
             Key = true;
-            Destroy(KeyC);
         }
 
     }
