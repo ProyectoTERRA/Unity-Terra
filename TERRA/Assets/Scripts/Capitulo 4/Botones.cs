@@ -5,7 +5,7 @@ public class Botones : MonoBehaviour
 {
     string nombre = "";
     public GameObject cartel, boton1, boton2, boton3, boton4, boton5, bt1, bt2, bt3, bt4, bt5;
-    public GameObject puertaA1, puertaC1, puertaA2, puertaC2, puertA4, puertaC4, jugador;
+    public GameObject puertaA1, puertaC1, puertaA2, puertaC2, puertA4, puertaC4, jugador, key1, key2;
     public GameObject mensaje, interruptor1, interruptor2, interruptor3, interruptor4, interruptor5, interruptor6, jefe, bossLife;
     public static int enemigos = 0;
     // Start is called before the first frame update
@@ -24,6 +24,7 @@ public class Botones : MonoBehaviour
         Debug.Log("Enemigos eliminados " + enemigos);
         if (enemigos >= 8)
         {
+            key2.SetActive(false);
             puertaA2.SetActive(true);
             puertaC2.SetActive(false);
         }
@@ -32,6 +33,7 @@ public class Botones : MonoBehaviour
 
             if (nombre == "reusa")
             {
+                key1.SetActive(false);
                 Debug.Log("Nombre correcto " + nombre);
                 cartel.SetActive(true);
                 StartCoroutine(apagarcartel());
