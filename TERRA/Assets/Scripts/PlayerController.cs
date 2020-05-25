@@ -87,6 +87,11 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        if (Bufanda.AttackSub)
+        {
+            GetComponent<Rigidbody2D>().AddForce(transform.up * -500f);
+        }
+
         if (ActHabilityLJ)
         {
             ActHabilityLJ = false;

@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SubControler : MonoBehaviour
 {
     // Start is called before the first frame update
     public Rigidbody2D RBS;
-    public GameObject Bufanda;
+    public GameObject bufanda;
     public int life;
     public float tiempo = 15f;
     public float speed;
@@ -15,79 +16,165 @@ public class SubControler : MonoBehaviour
     Vector3 PosicionInicial;
     private Transform MyTransform;
     public int rotationSpeed;
+    private bool startT, DamageT, Defeat, halflife;
+    public static bool SecondAttack;
+
+    [SerializeField] private GameObject Esf1;
+    [SerializeField] private GameObject Esf2;
+    [SerializeField] private GameObject Launch;
+    [SerializeField] private GameObject LifeView;
+    [SerializeField] private GameObject Lock;
+
+    private Slider Life;
+
+    public static bool hiting;
     void Start()
     {
+        Life = LifeView.GetComponent<Slider>();
+        LifeView.SetActive(false);
         MyTransform = transform;
         RBS = GetComponent<Rigidbody2D>();
         Jugador = GameObject.FindGameObjectWithTag("Player");
         PosicionInicial = transform.position;
-
+        bufanda.SetActive(false);
+        Physics2D.IgnoreLayerCollision(4, 5, true);
+        Physics2D.IgnoreLayerCollision(4, 11, true);
+        Physics2D.IgnoreLayerCollision(11, 12, true);
     }
+
+    private void Update()
+    {
+        if (DamageT)
+        {
+            Life.value--;
+            DamageT = false;
+        }
+        if(Life.value <= 0 && !Defeat)
+        {
+            Destroy(Lock);
+            GetComponent<SpriteRenderer>().color = Color.gray;
+            RBS.bodyType = RigidbodyType2D.Static;
+            Defeat = true;
+        }
+        if (Bufanda.AttackSub)
+        {
+            RBS.bodyType = RigidbodyType2D.Static;
+        }
+        else
+        {
+            RBS.bodyType = RigidbodyType2D.Kinematic;
+        }
+    }
+
     private void FixedUpdate()
     {
-        Vector3 target = PosicionInicial;
-        float distanciaJugador = Vector3.Distance(Jugador.transform.position, transform.position);
-        if (distanciaJugador < DistanciaVision)
+        if (!Defeat)
         {
-            target = Jugador.transform.position;
-            StopAllCoroutines();
-        }
-        float fixedSpeed = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
+            Vector3 target = PosicionInicial;
+            float distanciaJugador = Vector3.Distance(Jugador.transform.position, transform.position);
+            if (distanciaJugador < DistanciaVision)
+            {
+                target = Jugador.transform.position;
+                //transform.position = new Vector3(transform.position.x, Jugador.transform.position.y);
+                if (!startT)
+                {
+                    LifeView.SetActive(true);
+                    startT = true;
+                    StartCoroutine(LaunchESF());
+                }
+            }
+            float fixedSpeed = speed * Time.deltaTime;
+            if (!hiting) transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
 
 
-        if ((distanciaJugador - DistanciaVision) < 6)
-        {
-            StartCoroutine(AtaqueBufanda());
-        } else if (distanciaJugador > 10)
-        {
-            StopAllCoroutines();
-        }
-        ///if(System.Math.Abs(DistanciaVision - distanciaJugador) == 4f) Si está a 4 o menos de 4 unidades de distancia ataca
-        //{
-        //}
-        Debug.DrawLine(transform.position, target, Color.red);
+            if (distanciaJugador < 3 && !hiting)
+            {
+                StartCoroutine(AtaqueBufanda());
+            }
+            ///if(System.Math.Abs(DistanciaVision - distanciaJugador) == 4f) Si está a 4 o menos de 4 unidades de distancia ataca
+            //{
+            //}
+            Debug.DrawLine(transform.position, target, Color.red);
 
-        if (life <= 15)
-        {
-            //Aumentar Velocidad
-            speed = speed * 1.5f;
-        }
-        else if (life <= 8)
+            if (Life.value <= 15 && !halflife)
+            {
+                //Aumentar Velocidad
+                halflife = true;
+                speed = speed * 1.5f;
+            }
+            else if (Life.value <= 8)
 
-        {
-            //Iniciar Segundo ataque
-
+            {
+                //Iniciar Segundo ataque
+                SecondAttack = true;
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
-        {
-            col.SendMessage("UnCorazon", transform.position.x);
 
-        }
-        else if (col.gameObject.tag == "BE")
+        if (col.gameObject.tag == "BE")
         {
             DistanciaVision = 0;
         }
         else if (col.gameObject.tag == "BEReturn")
         {
-            DistanciaVision = 20;
+            DistanciaVision = 10;
         }
 
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
+
+        if (col.gameObject.tag == "Paraliz" && !DamageT && !Defeat)
+        {
+            Destroy(col.gameObject);
+            DamageT = true;
+        }
     }
     // Update is called once per frame
 
 
     IEnumerator AtaqueBufanda()
     {
-        Bufanda.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        Bufanda.SetActive(false);
-        yield return new WaitForSeconds(2f);
-        StopAllCoroutines();
+        hiting = true;
+        yield return new WaitForSeconds(0.25f);
+        bufanda.SetActive(true);
+        if(!Bufanda.AttackSub) yield return new WaitForSeconds(1f);
+        else bufanda.SetActive(false);
+        bufanda.SetActive(false);
+        yield return new WaitForSeconds(0.3f);
+        Bufanda.AttackSub = false;
+        yield return new WaitForSeconds(0.7f);
+        hiting = false;
+        Bufanda.hit = false;
+    }
+
+    IEnumerator LaunchESF()
+    {
+        yield return new WaitForSeconds(30f);
+        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(Esf1, Launch.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(Esf1, Launch.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(Esf1, Launch.transform.position, Quaternion.identity);
+        if (!Defeat) StartCoroutine(LaunchESF());
     }
 
     /*

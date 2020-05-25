@@ -35,6 +35,7 @@ public class NOX : MonoBehaviour
         rbd2 = GetComponent<Rigidbody2D>();
         Jugador = GameObject.FindGameObjectWithTag("Player");
         PosicionInicial = transform.position;
+
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
