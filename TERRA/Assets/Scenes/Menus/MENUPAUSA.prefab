@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7744784579129645481}
   - component: {fileID: 7744784579129645494}
   - component: {fileID: 7744784579129645495}
-  - component: {fileID: 7744784579129645480}
+  - component: {fileID: 5909113778216917630}
   m_Layer: 5
   m_Name: Guardar
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Guardar y Salir
---- !u!114 &7744784579129645480
+--- !u!114 &5909113778216917630
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 3
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.990566, g: 0.9019608, b: 0.16353682, a: 1}
-    m_PressedColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
+    m_HighlightedColor: {r: 0.9852999, g: 0.990566, b: 0.11681201, a: 1}
+    m_PressedColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4506242427376016178}
+      - m_Target: {fileID: 1264999777}
         m_MethodName: MenuPrin
         m_Mode: 1
         m_Arguments:
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 7744784579353396236}
   - component: {fileID: 7744784579353396237}
   - component: {fileID: 7744784579353396238}
-  - component: {fileID: 4506242427376016178}
+  - component: {fileID: 1264999777}
   m_Layer: 5
   m_Name: MENUPAUSA
   m_TagString: Untagged
@@ -191,7 +191,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &7744784579353396237
 MonoBehaviour:
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4506242427376016178
+--- !u!114 &1264999777
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7744784579353396239}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c02899cca7f7784b813183cb1078f13, type: 3}
+  m_Script: {fileID: 11500000, guid: 9383710dc7e187841a99c3c7d7e14ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MenuPausa: {fileID: 7744784579987309930}
@@ -339,7 +339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7744784579987309929
 RectTransform:
   m_ObjectHideFlags: 0
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 7744784580916291788}
   - component: {fileID: 7744784580916291785}
   - component: {fileID: 7744784580916291786}
-  - component: {fileID: 7744784580916291787}
+  - component: {fileID: 1053018380}
   m_Layer: 5
   m_Name: Regresar
   m_TagString: Untagged
@@ -476,7 +476,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: REGRESAR
---- !u!114 &7744784580916291787
+--- !u!114 &1053018380
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 3
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -497,8 +497,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.990566, g: 0.9019608, b: 0.16353682, a: 1}
-    m_PressedColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
+    m_HighlightedColor: {r: 0.9622642, g: 0.94573957, b: 0.06808472, a: 1}
+    m_PressedColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -519,7 +519,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4506242427376016178}
+      - m_Target: {fileID: 1264999777}
         m_MethodName: Reanudar
         m_Mode: 1
         m_Arguments:

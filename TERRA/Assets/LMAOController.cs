@@ -6,6 +6,7 @@ public class LMAOController : MonoBehaviour
 {
     Rigidbody2D RBLM;
     GameObject Jugador;
+    public float SavedDV;
     Vector3 PosicionInicial;
     Vector3 targetRet;
     float THoyo = 6;
@@ -13,6 +14,7 @@ public class LMAOController : MonoBehaviour
     public float speed;
     bool AtHoyo = false;
     bool Hiting;
+    bool Return;
     static public float side;
     public bool hiting;
 
@@ -23,9 +25,7 @@ public class LMAOController : MonoBehaviour
         Jugador = GameObject.FindGameObjectWithTag("Player");
         PosicionInicial = transform.position;
         targetRet = transform.position;
-
-        hiting = false;
-        side = 1;
+        SavedDV = DistanciaVision;
 
     }
 
@@ -82,7 +82,19 @@ public class LMAOController : MonoBehaviour
             float fixedSpeed = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
             //transform.position = Vector3.MoveTowards(transform.position, PosicionInicial, fixedSpeed);
-            Cooldown -= Time.deltaTime;
+            AtHoyo = false;
+            Return = true;
+        }
+
+        if(Return == true)
+        {
+            DistanciaVision = 0;
+            Return = false;
+            AtHoyo = true;
+        }
+        else
+        {
+            DistanciaVision = SavedDV;
         }
 
     }
@@ -94,7 +106,7 @@ public class LMAOController : MonoBehaviour
             collision.SendMessage("EnemyKnockBack", transform.position.x + 1);
         }
     }
-    /*
+
     IEnumerator AtaqueHoyo()
     {
         AtHoyo = true;
@@ -103,7 +115,7 @@ public class LMAOController : MonoBehaviour
         yield return new WaitForSeconds(2);
         StopAllCoroutines();
     }
-    */
+
 
 }
 //3310064114
