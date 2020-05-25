@@ -33,7 +33,7 @@ public class MiniPuto1 : MonoBehaviour
     [SerializeField] private GameObject self;
 
     public Sprite ErrorOn, ErrorWin;
-
+    public GameObject Part2;
     public static bool active, win, fail;
     private int Errors;
     private bool Press1, Press2, Press3, Press4, Press5, Press6, Press7, Press8, Press9, Press10, Press11;
@@ -42,7 +42,7 @@ public class MiniPuto1 : MonoBehaviour
     {
         Errors = 0;
 
-        active = false;
+        active = true;
         win = false;
         fail = false;
     }
@@ -162,7 +162,11 @@ public class MiniPuto1 : MonoBehaviour
                 StartCoroutine(Win());
             }
         }
-
+        
+        if (win)
+        {
+            Part2.SetActive(true);
+        }
     }
 
     IEnumerator Lose()

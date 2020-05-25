@@ -77,6 +77,7 @@ public class MiniPuto2 : MonoBehaviour
     public Color verd, roj, bl;
     public static bool active, Plvl1, Plvl2, Plvl3, start1, c1, c2, c3, Lose, enable;
     private bool CorrectKey1;
+    public bool Finalizado;
     private int randKey1;
     private string State;
     public SliderPuto2 sl;
@@ -93,6 +94,7 @@ public class MiniPuto2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.SendMessage("DivDerDesact");
         View.SetActive(false);
         if (!c1)
         { 
@@ -990,6 +992,8 @@ public class MiniPuto2 : MonoBehaviour
         if (c3)
         {
             View.SetActive(false);
+            Finalizado = true;
+            
         }
         if (!c1 && !c2 && !c3 && Plvl1 && countF < 3 && countF > 0)
         {

@@ -30,6 +30,7 @@ public class DivIzqM : MonoBehaviour
 
     void Start()
     {
+        this.SendMessage("DivIzqDesact");
         Slide.transform.localPosition = new Vector3(76f, 125);
         BSliderPuto3.speed = segs2;
         sl = GetComponent<BSliderPuto3>();
