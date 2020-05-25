@@ -8,6 +8,7 @@ public class SubControler : MonoBehaviour
     // Start is called before the first frame update
     public Rigidbody2D RBS;
     public GameObject bufanda;
+    public GameObject ParteFormula;
     public int life;
     public float tiempo = 15f;
     public float speed;
@@ -16,7 +17,7 @@ public class SubControler : MonoBehaviour
     Vector3 PosicionInicial;
     private Transform MyTransform;
     public int rotationSpeed;
-    private bool startT, DamageT, Defeat, halflife;
+    private bool startT, DamageT, Defeat, halflife, Formula1;
     public static bool SecondAttack;
 
     [SerializeField] private GameObject Esf1;
@@ -68,6 +69,12 @@ public class SubControler : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Defeat)
+        {
+            ParteFormula.SetActive(true);
+            Formula1 = true;
+        }
+
         if (!Defeat)
         {
             Vector3 target = PosicionInicial;

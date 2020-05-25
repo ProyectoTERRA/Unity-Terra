@@ -11,7 +11,7 @@ public class DivIzqM : MonoBehaviour
     int ContadorLv1, ContadorLv2, ContadorLv3, ContFin, IndexLvl = 0;
     float RedSeg1 = 2.0f, RedSeg2, RedSeg3, Contador, currValue, finalW, Delay;
     public float countdownTime = 50;
-    public bool Lvl1, Lvl2, Lvl3, Completo, Resta, Trigger, TriggerACT, TriggerREACT;
+    public bool Lvl1, Lvl2, Lvl3, Completo, Resta, Trigger, TriggerACT, TriggerREACT, Final;
     public TextMeshProUGUI Instruccion, Nivel;
     public Text TxtLvl;
     public static bool active, activeMain, WIN, bridge;
@@ -112,6 +112,7 @@ public class DivIzqM : MonoBehaviour
             Slide.SetActive(false);
             TextoInstruccion.SetActive(false);
             Finalizado.SetActive(true);
+            Final = true;
         }
         if (TriggerACT)
         {
