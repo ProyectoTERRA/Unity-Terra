@@ -155,25 +155,27 @@ public class SubControler : MonoBehaviour
     IEnumerator LaunchESF()
     {
         yield return new WaitForSeconds(30f);
-        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
-        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
-        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
-        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
-        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
-        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
-        Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
-        Instantiate(Esf1, Launch.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
-        Instantiate(Esf1, Launch.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
-        Instantiate(Esf1, Launch.transform.position, Quaternion.identity);
+        if (!Defeat) {
+            Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.2f);
+            Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.2f);
+            Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.2f);
+            Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.2f);
+            Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.2f);
+            Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.2f);
+            Instantiate(Esf2, Launch.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.2f);
+            Instantiate(Esf1, Launch.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.2f);
+            Instantiate(Esf1, Launch.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.2f);
+            Instantiate(Esf1, Launch.transform.position, Quaternion.identity);
+        }
         if (!Defeat) StartCoroutine(LaunchESF());
     }
 
