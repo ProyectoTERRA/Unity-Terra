@@ -4,7 +4,6 @@
 public class cambiarPiso : MonoBehaviour
 {
 
-    public GameObject mensaje1, panel;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -40,7 +39,6 @@ public class cambiarPiso : MonoBehaviour
     {
         if (collision.gameObject.tag == "Pasar")
         {
-            mensaje1.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
                 transform.position = new Vector3(7f, 13.04f);
@@ -48,16 +46,5 @@ public class cambiarPiso : MonoBehaviour
             }
         }
 
-    }
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Next")
-        {
-            mensaje1.SetActive(false);
-        }
-        if (collision.gameObject.tag == "Pasar")
-        {
-            mensaje1.SetActive(false);
-        }
     }
 }

@@ -2977,11 +2977,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6795967696577525223, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8905631315678066389, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_Name
@@ -3066,6 +3061,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795967696577525223, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a72f4c8686a07504fbcf19c0072337c4, type: 3}
@@ -3173,7 +3173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gspr: {fileID: 210538378}
   Gspr_Special: {fileID: 599660777}
-  Spr: {fileID: 21300000, guid: dc09ba2487cd56f40afd7213ef12912b, type: 3}
+  Spr: {fileID: 21300000, guid: 9f618ac4f0be44348a298bae832e16a0, type: 3}
   especiales: 1
 --- !u!4 &1157972368
 Transform:
@@ -4184,6 +4184,7 @@ MonoBehaviour:
   puerta: {fileID: 124916493820960906}
   formula: {fileID: 1221297574}
   formula2: {fileID: 367834496}
+  key12: {fileID: 1157972364}
 --- !u!1001 &1764093264
 PrefabInstance:
   m_ObjectHideFlags: 0
