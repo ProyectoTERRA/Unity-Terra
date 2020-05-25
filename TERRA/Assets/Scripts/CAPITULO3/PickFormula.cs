@@ -73,7 +73,7 @@ public class PickFormula : MonoBehaviour
     }
     private void codificador()
     {
-        Debug.Log("NNNNNNNNNNNNNNNNNNNNNNNNNOMMMMMMBREEEE " + nombre);
+
         if (nombre == "b1")
         {
             GameController.b1 = true;

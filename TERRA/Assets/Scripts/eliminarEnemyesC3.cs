@@ -4,7 +4,7 @@ using System.Collections;
 public class eliminarEnemyesC3 : MonoBehaviour
 {
     public static int guardias;
-    public GameObject puerta, formula, formula2;
+    public GameObject puerta, formula, formula2, key12;
     private int x;
 
     private bool inicia;
@@ -25,6 +25,7 @@ public class eliminarEnemyesC3 : MonoBehaviour
         {
             Debug.Log(guardias);
             puerta.SetActive(true);
+            key12.SetActive(false);
             if (x == 0)
             {
                 formula.SetActive(true);
