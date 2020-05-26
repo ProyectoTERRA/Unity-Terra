@@ -30,7 +30,8 @@ public class DivIzqM : MonoBehaviour
 
     void Start()
     {
-        this.SendMessage("DivIzqDesact");
+
+   
         Slide.transform.localPosition = new Vector3(76f, 125);
         BSliderPuto3.speed = segs2;
         sl = GetComponent<BSliderPuto3>();
@@ -48,7 +49,7 @@ public class DivIzqM : MonoBehaviour
             TextoInstruccion.SetActive(true);
         if(IndexLvl == 3 && Completo == true)
         {
-            
+           
         }
 
     }
@@ -344,6 +345,7 @@ public class DivIzqM : MonoBehaviour
                 TxtLvl = GetComponent<Text>();
                 active = false;
                 WIN = true;
+                Final = WIN;
                 StartCoroutine(Tran());
 
                 //TxtLvl.text = "Completado!";

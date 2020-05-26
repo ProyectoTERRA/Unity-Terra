@@ -41,7 +41,7 @@ public class MiniPuto1 : MonoBehaviour
     void Start()
     {
         Errors = 0;
-
+        
         active = true;
         win = false;
         fail = false;
@@ -50,6 +50,8 @@ public class MiniPuto1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
         if (active && !win && !fail) {
             if (Input.GetKeyDown(KeyCode.D))
             {
