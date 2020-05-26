@@ -39,7 +39,7 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("Perder antes de cargar " + perder);
             cargar();
             Debug.Log("Perder despues de cargar " + perder);
-            
+            perder = 0;
         }
         if(morir == 1)
         {
@@ -74,7 +74,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.formula = 0;
         dato.vidas = 3;
         dato.corazones = 6;
-        dato.tipo = 1;
+        dato.tipo = 2;
         dato.vidasMax = 3;
         dato.corazonesMax = 6;
 
@@ -97,7 +97,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.formula1 = 0;
         dato.vidas1 = 3;
         dato.corazones1 = 6;
-        dato.tipo1 = 1;
+        dato.tipo1 = 2;
         dato.vidasMax1 = 3;
         dato.corazonesMax1 = 6;
         //Serializara los archivos
@@ -373,6 +373,7 @@ public class SistemaGuardado : MonoBehaviour
             {
                 Debug.Log("Al cargar vidas " + Heart_Bar.life + " En los datos " + datos.vidas);
                 datos.vidas = datos.vidas - 1;
+                Debug.Log("corazones maimos " + GameController.HeartsMax);
                 datos.corazones = GameController.HeartsMax;
                 perder = 0;
                 enemigosFalse();
@@ -442,7 +443,10 @@ public class SistemaGuardado : MonoBehaviour
             Heart_Bar.Phearts = datos.corazones;
             Heart_Bar.life = datos.vidas;
             GameController.TypeLife = datos.tipo;
+            GameController.HeartsMax = datos.corazonesMax;
+            GameController.LifeMax = datos.vidasMax;
             guardarContador();
+            Debug.Log("Noombre de escenaaaaaaaaaaaaaaaaaaa " + nombreEscena);
             SceneManager.LoadScene(nombreEscena);
         }
         else { Debug.Log("No se encontro el archivo"); }
