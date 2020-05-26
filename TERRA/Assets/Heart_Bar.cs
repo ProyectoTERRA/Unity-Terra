@@ -123,7 +123,7 @@ public class Heart_Bar : MonoBehaviour
                     else if (hearts <= 0 && life <= 1)
                     {
 
-                        life = 0;
+                        //life = 0;
                     }
 
                     if (hearts > 6)
@@ -189,16 +189,17 @@ public class Heart_Bar : MonoBehaviour
                         }
 
                     }
-
+                    /*
                     if (hearts <= 0 && life > 1)
                     {
-                        hearts = Ls2;
-                        life--;
+                        Debug.Log("que es esto" + Ls2);
+                        //hearts = Ls2;
+                        //life--;
                     }
                     else if (hearts <= 0 && life <= 1)
                     {
-                        life = 0;
-                    }
+                        //life = 0;
+                    }*/
 
                     if (hearts > 8)
                     {
@@ -277,11 +278,11 @@ public class Heart_Bar : MonoBehaviour
                     if (hearts <= 0 && life > 1)
                     {
                         hearts = Ls3;
-                        life--;
+                        //life--;
                     }
                     else if (hearts <= 0 && life <= 1)
                     {
-                        life = 0;
+                        //life = 0;
                     }
 
                     if (hearts > 10)
@@ -415,6 +416,7 @@ public class Heart_Bar : MonoBehaviour
 
     public void Refill()
     {
+        Debug.Log("aqui entro");
         GameController.corazones = GameController.HeartsMax;
         Phearts = GameController.corazones;   
         GameController.vidas = GameController.LifeMax;
