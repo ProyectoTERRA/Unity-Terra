@@ -6,38 +6,53 @@ public class GameCap6 : MonoBehaviour
 {
     public GameObject Compu;
     public bool Active, DI, DD;
-    DivIzqM DivI;
-    MiniPuto2 DivD;
+    public DivIzqM DivI;
+    public MiniPuto2 DivD;
+   
+
+    [SerializeField] private GameObject Esf2;
+    [SerializeField] private GameObject Esf3;
+    [SerializeField] private GameObject Esf4s;
+    [SerializeField] private GameObject Launch;
+
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (DI == true && DD == true && Active == true && Input.GetKeyDown(KeyCode.E))
+        DI = DivI.Final;
+        DD = DivD.Finalizado;
+        
+        if (DivI.Final == true && DivD.Finalizado == true && Active == true && Input.GetKeyDown(KeyCode.E))
         {
             Compu.SetActive(true);
         }
 
+        if (DivI.Completo == true)
+        {
+            DivI.Completo = false;
+            StopAllCoroutines();
+            StartCoroutine(LaunchESF());  
+        }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    IEnumerator LaunchESF()
+    {
+        Debug.Log("LanzandoBasuras");
+        Instantiate(Esf2, new Vector3(214,14f,0), Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(Esf3, new Vector3(214.5f, 14f, 0), Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(Esf4s, new Vector3(215, 14f, 0), Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+    }
+        private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
             Active = true;
         }
-    }
-
-    void DivIzqDesact()
-    {
-        DI = true;
-    }
-
-    void DivDerDesact()
-    {
-        DD = true;
     }
 }

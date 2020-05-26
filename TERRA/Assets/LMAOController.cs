@@ -72,6 +72,9 @@ public class LMAOController : MonoBehaviour
 
         if (AtHoyo == true)
         {
+
+            StartCoroutine(AtaqueHoyo());
+            /*
             Vector3 target = PosicionInicial;
             float distanciaJugador = Vector3.Distance(Jugador.transform.position, transform.position);
 
@@ -82,6 +85,7 @@ public class LMAOController : MonoBehaviour
             float fixedSpeed = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
             //transform.position = Vector3.MoveTowards(transform.position, PosicionInicial, fixedSpeed);
+            */
             AtHoyo = false;
             Return = true;
         }
@@ -91,6 +95,15 @@ public class LMAOController : MonoBehaviour
             DistanciaVision = 0;
             Return = false;
             AtHoyo = true;
+            Vector3 target = PosicionInicial;
+            float distanciaJugador = Vector3.Distance(Jugador.transform.position, transform.position);
+
+            if (distanciaJugador < DistanciaVision)
+            {
+                target = Jugador.transform.position;
+            }
+            float fixedSpeed = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
         }
         else
         {
@@ -109,9 +122,18 @@ public class LMAOController : MonoBehaviour
 
     IEnumerator AtaqueHoyo()
     {
-        AtHoyo = true;
-        Debug.Log("COMENZANDO PUTAZO");
+        Vector3 target = PosicionInicial;
+        float distanciaJugador = Vector3.Distance(Jugador.transform.position, transform.position);
+
+        if (distanciaJugador < DistanciaVision)
+        {
+            target = Jugador.transform.position;
+        }
+        float fixedSpeed = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
+        AtHoyo = false;
         THoyo = 6f;
+        Return = true;
         yield return new WaitForSeconds(2);
         StopAllCoroutines();
     }

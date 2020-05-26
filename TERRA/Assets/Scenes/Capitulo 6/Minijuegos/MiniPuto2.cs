@@ -94,7 +94,7 @@ public class MiniPuto2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.SendMessage("DivDerDesact");
+        
         View.SetActive(false);
         if (!c1)
         { 
