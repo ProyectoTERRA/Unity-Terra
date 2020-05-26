@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GameCap6 : MonoBehaviour
 {
-    public GameObject Compu;
+    public GameObject Compu, Puerta, ChangeScene, puertaOpen,Clock;
     public bool Active, DI, DD;
     public DivIzqM DivI;
+    public MiniPuto1 DivC;
     public MiniPuto2 DivD;
    
 
@@ -25,7 +26,10 @@ public class GameCap6 : MonoBehaviour
     {
         DI = DivI.Final;
         DD = DivD.Finalizado;
-        
+        if(DI == true && DD == true)
+        {
+            Clock.SetActive(false);
+        }
         if (DivI.Final == true && DivD.Finalizado == true && Active == true && Input.GetKeyDown(KeyCode.E))
         {
             Compu.SetActive(true);
@@ -36,6 +40,13 @@ public class GameCap6 : MonoBehaviour
             DivI.Completo = false;
             StopAllCoroutines();
             StartCoroutine(LaunchESF());  
+        }
+
+        if (DivC.PorLMAO)
+        {
+            Puerta.SetActive(false);
+            puertaOpen.SetActive(true);
+            ChangeScene.SetActive(true);
         }
     }
     IEnumerator LaunchESF()
@@ -49,10 +60,16 @@ public class GameCap6 : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
     }
         private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
         {
-            Active = true;
+            if(collision.gameObject.tag == "Player")
+            {
+                Active = true;
+            }
         }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        Active = false;
     }
+
 }

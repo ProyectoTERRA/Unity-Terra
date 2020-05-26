@@ -37,6 +37,7 @@ public class MiniPuto1 : MonoBehaviour
     public static bool active, win, fail;
     private int Errors;
     private bool Press1, Press2, Press3, Press4, Press5, Press6, Press7, Press8, Press9, Press10, Press11;
+    public bool PorLMAO;
     // Start is called before the first frame update
     void Start()
     {
@@ -168,6 +169,7 @@ public class MiniPuto1 : MonoBehaviour
         if (win)
         {
             Part2.SetActive(true);
+            PorLMAO = true;
         }
     }
 
@@ -181,6 +183,7 @@ public class MiniPuto1 : MonoBehaviour
     IEnumerator Win()
     {
         win = true;
+        PorLMAO = true;
         yield return new WaitForSeconds(2f);
         Destroy(self);
 
