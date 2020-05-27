@@ -75,7 +75,7 @@ public class PlayerLobby : MonoBehaviour
             if (GameController.LobbyCAP == 5)
             {
                 exit = false;
-                //SceneManager.LoadScene("");
+                SceneManager.LoadScene("Antartida 1");
             }
             exit = false;
         }
