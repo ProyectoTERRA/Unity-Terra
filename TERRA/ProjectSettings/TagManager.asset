@@ -3,7 +3,107 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlayerInteractionZone
+  - Pesada
+  - Paraliz
+  - Normal
+  - Tranqui
+  - Desac
+  - Puerta
+  - florero
+  - Ground
+  - Puerta3
+  - Llave
+  - panel
+  - formula
+  - Puerta2
+  - Chapa
+  - Pasar
+  - Next
+  - mensaje2
+  - bolsa
+  - lata
+  - platano
+  - before
+  - life
+  - Pared
+  - Wall
+  - Lucy
+  - linterna
+  - PuertaLucy
+  - PuertaSala
+  - PuertaCalle
+  - carton
+  - manzana
+  - alcantarilla
+  - limite
+  - Checkpoint
+  - cientifico
+  - lave
+  - Platform
+  - InteraccionWatcher
+  - PuertaIzq
+  - PuertaDer
+  - erizo
+  - coco
+  - LataInteractionZone
+  - interruptor
+  - GArriba
+  - A_4-5
+  - PlataformaImpulso
+  - BE_1-2
+  - A_2-3
+  - A_3-4
+  - A_1-2
+  - BE_Final
+  - BE_2-3
+  - A_5-6
+  - GAbajo
+  - pila
+  - enemigo1
+  - enemigo2
+  - Agujero
+  - PuertaLab
+  - trans
+  - Bullet
+  - Turret
+  - Nothing
+  - Shit
+  - Action
+  - Crawler
+  - NOX
+  - GuardsCap5
+  - LataFAKE
+  - PlatanoFAKE
+  - CartonFAKE
+  - ManzanaFAKE
+  - RAT
+  - BolsaFAKE
+  - BE
+  - Car
+  - Checkpoint2
+  - Watcher
+  - ROBOT
+  - BEReturn
+  - SUBCOM
+  - Lock1
+  - Lock2
+  - Lock3
+  - Lock4
+  - Lock5
+  - formula1
+  - KeyCardTerra
+  - BtnAct
+  - BtnDes
+  - DEFEND
+  - Estalactita
+  - Chulada
+  - Form1
+  - Form2
+  - Comp
+  - LataRECHARGED
+  - LMAO
   layers:
   - Default
   - TransparentFX
@@ -13,11 +113,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Fondo
+  - Frente
+  - Enemies
+  - Esferas
+  - Extra
   - 
   - 
   - 
@@ -40,4 +140,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Fondo
+    uniqueID: 882085237
+    locked: 0
+  - name: Level Fondo
+    uniqueID: 1638842355
+    locked: 0
+  - name: Level
+    uniqueID: 1473199511
+    locked: 0
+  - name: Player
+    uniqueID: 871274355
+    locked: 0
+  - name: Objetos
+    uniqueID: 2889764979
+    locked: 0
+  - name: HUD
+    uniqueID: 2375791109
     locked: 0
