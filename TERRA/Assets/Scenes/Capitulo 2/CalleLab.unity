@@ -7273,7 +7273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188385871}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 7.3, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 483024136}
@@ -10670,7 +10670,7 @@ PrefabInstance:
     - target: {fileID: 5657417382059861989, guid: 7f7287315f8370442a9c7af9e038068a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8
+      value: 10.68
       objectReference: {fileID: 0}
     - target: {fileID: 5657417382059861989, guid: 7f7287315f8370442a9c7af9e038068a,
         type: 3}
@@ -10766,6 +10766,16 @@ PrefabInstance:
         type: 3}
       propertyPath: JumpPower
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657417382059861990, guid: 7f7287315f8370442a9c7af9e038068a,
+        type: 3}
+      propertyPath: RunVelocity
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657417382059861990, guid: 7f7287315f8370442a9c7af9e038068a,
+        type: 3}
+      propertyPath: maxSpeedVel
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 153776850, guid: 7f7287315f8370442a9c7af9e038068a, type: 3}
       propertyPath: m_Enabled
@@ -12547,7 +12557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f6086cc3546884db812d44046ebd08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cambio: FAB
+  Cambio: FAB1
 --- !u!1 &1897256150
 GameObject:
   m_ObjectHideFlags: 0

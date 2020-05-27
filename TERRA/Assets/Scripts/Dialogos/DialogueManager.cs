@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour
 {
     public Dialog dialogue;
     Queue<string> sentences;
+    public bool Action;
     public GameObject dialogPanel;
     public TextMeshProUGUI displayText;
     string activeSentence;
@@ -39,9 +40,11 @@ public class DialogueManager : MonoBehaviour
             Dialogo2.SetActive(true);
             Enable = false;
             Dialogo1.SetActive(false);
+            Action = true;
             return;
-            
+
         }
+       
         activeSentence = sentences.Dequeue();
         displayText.text = activeSentence;
         StopAllCoroutines();
