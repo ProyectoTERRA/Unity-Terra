@@ -59,7 +59,7 @@ public class Heart_Bar : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(GameController.start);
+        Debug.Log(type);
 
         /*
         if (GameController.start)
@@ -346,6 +346,8 @@ public class Heart_Bar : MonoBehaviour
                 }
             default:
                 {
+                    transform.localPosition = new Vector3(-6f, 4f, 10f);
+                    LIFES.transform.localPosition = new Vector3(3.5f, 0f);
                     break;
                 }
 
