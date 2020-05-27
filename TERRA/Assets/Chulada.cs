@@ -7,7 +7,7 @@ public class Chulada : MonoBehaviour
 
     public GameObject Defender, PIC, BloqEle;
     public bool Recoger, DPIC;
-    DefenderController def;
+    public DefenderController def;
     void Start()
     {
         

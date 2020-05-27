@@ -981,7 +981,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &122632800
 GameObject:
@@ -1047,7 +1047,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &151831439
 GameObject:
@@ -3277,6 +3277,7 @@ MonoBehaviour:
     name: Diana2
     sentenceList:
     - Ve con cuidado
+  Action: 0
   dialogPanel: {fileID: 1888844614}
   displayText: {fileID: 165738486}
   typingpeed: 0.05
@@ -4295,6 +4296,7 @@ MonoBehaviour:
       esta arriba de aqui...
     - Podrias ir por ellos?
     - Cuento contigo, suerte.
+  Action: 0
   dialogPanel: {fileID: 1888844614}
   displayText: {fileID: 165738486}
   typingpeed: 0.05
@@ -5905,7 +5907,7 @@ PrefabInstance:
     - target: {fileID: 5657417382059861989, guid: 7f7287315f8370442a9c7af9e038068a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.04
+      value: 35.8
       objectReference: {fileID: 0}
     - target: {fileID: 5657417382059861989, guid: 7f7287315f8370442a9c7af9e038068a,
         type: 3}
@@ -10300,7 +10302,7 @@ RectTransform:
   m_Children:
   - {fileID: 851676958}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

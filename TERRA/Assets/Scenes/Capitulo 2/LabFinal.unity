@@ -161,25 +161,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 32367068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b295b8d17c68eb49920c404ea41aa32, type: 3}
+  m_Script: {fileID: 11500000, guid: 823473bcd57608542bd3c624185a94c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Diana Final
+    name: 
     sentenceList:
     - 'Se que la "La chulada" suena un poco tonto,
 
       pero ese nombre le puso un colega mio y simplemente se quedo...'
     - En fin, arreglemos esto y recuperemos el mundo que recordamos
-  clip: {fileID: 0}
+  Action: 0
   dialogPanel: {fileID: 72220321}
   displayText: {fileID: 72220320}
   typingpeed: 0
   speakSound: {fileID: 0}
   Dialogo1: {fileID: 32367068}
-  Dialogo2: {fileID: 0}
-  Cutscene: {fileID: 136611005}
-  jugador: {fileID: 0}
+  Dialogo2: {fileID: 1130557612}
+  Cutscene: {fileID: 0}
   Enable: 1
 --- !u!58 &32367071
 CircleCollider2D:
@@ -812,11 +811,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2671807527447435880, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -917,6 +911,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2671807527447435880, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a72f4c8686a07504fbcf19c0072337c4, type: 3}
 --- !u!1 &118535369 stripped
@@ -961,7 +960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f6086cc3546884db812d44046ebd08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cambio: edificio
+  Cambio: LOBBY
 --- !u!61 &136611007
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1000,7 +999,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &141157559
 GameObject:
@@ -6145,6 +6144,81 @@ MonoBehaviour:
   Gspr_Special: {fileID: 610564382}
   Spr: {fileID: 21300000, guid: dc09ba2487cd56f40afd7213ef12912b, type: 3}
   especiales: 0
+--- !u!1 &1130557612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1130557613}
+  - component: {fileID: 1130557615}
+  - component: {fileID: 1130557614}
+  m_Layer: 0
+  m_Name: Dialogo 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1130557613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130557612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1113213183}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1130557614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130557612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823473bcd57608542bd3c624185a94c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Diana Explicacion
+    sentenceList:
+    - Pero antes... Dejame darte algo para el viaje, unos "Modulos" que te ayudaran
+      a conseguir nuevas habilidades
+    - Lo tengo preparado para ti
+  Action: 0
+  dialogPanel: {fileID: 72220321}
+  displayText: {fileID: 72220320}
+  typingpeed: 0
+  speakSound: {fileID: 0}
+  Dialogo1: {fileID: 1130557612}
+  Dialogo2: {fileID: 2074793493}
+  Cutscene: {fileID: 0}
+  Enable: 1
+--- !u!58 &1130557615
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130557612}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000009536743, y: 0.009768724}
+  serializedVersion: 2
+  m_Radius: 1.7409868
 --- !u!1 &1131709751
 GameObject:
   m_ObjectHideFlags: 0
@@ -6473,6 +6547,7 @@ MonoBehaviour:
     - 'Porque la sonrisa en tu rostro?
 
       Traes algo para mi?'
+  Action: 0
   dialogPanel: {fileID: 72220321}
   displayText: {fileID: 72220320}
   typingpeed: 0
@@ -6655,6 +6730,7 @@ MonoBehaviour:
     - OH!
     - La chulada! Como la conseguiste?
     - Con esto podre darle poder a la maquina del tiempo!
+  Action: 0
   dialogPanel: {fileID: 72220321}
   displayText: {fileID: 72220320}
   typingpeed: 0
@@ -9291,7 +9367,7 @@ PrefabInstance:
     - target: {fileID: 7744784579353396235, guid: 302e2166f131ca544b51f169f8eaa3ab,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7744784579353396235, guid: 302e2166f131ca544b51f169f8eaa3ab,
         type: 3}
@@ -9358,6 +9434,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7744784579353396236, guid: 302e2166f131ca544b51f169f8eaa3ab,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 58106296}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 302e2166f131ca544b51f169f8eaa3ab, type: 3}
 --- !u!1 &1645480428
@@ -11076,6 +11157,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2074793493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074793494}
+  - component: {fileID: 2074793496}
+  - component: {fileID: 2074793495}
+  m_Layer: 0
+  m_Name: Dialogo 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2074793494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074793493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1113213183}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2074793495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074793493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b295b8d17c68eb49920c404ea41aa32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Diana Final
+    sentenceList:
+    - Adelante!
+  clip: {fileID: 0}
+  dialogPanel: {fileID: 72220321}
+  displayText: {fileID: 72220320}
+  typingpeed: 0
+  speakSound: {fileID: 0}
+  Dialogo1: {fileID: 2074793493}
+  Dialogo2: {fileID: 0}
+  Cutscene: {fileID: 136611005}
+  jugador: {fileID: 0}
+  Enable: 1
+--- !u!58 &2074793496
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074793493}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000009536743, y: 0.009768724}
+  serializedVersion: 2
+  m_Radius: 1.7409868
 --- !u!1 &2082527448
 GameObject:
   m_ObjectHideFlags: 0
@@ -11234,7 +11389,7 @@ PrefabInstance:
     - target: {fileID: 5657417382059861989, guid: 7f7287315f8370442a9c7af9e038068a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5657417382059861989, guid: 7f7287315f8370442a9c7af9e038068a,
         type: 3}
@@ -12095,3 +12250,82 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1002610115964186981
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1220450129660331759, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: m_Name
+      value: Obj1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970605896644042481, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 56.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970605896644042481, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970605896644042481, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -664.913
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970605896644042481, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970605896644042481, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970605896644042481, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970605896644042481, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970605896644042481, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970605896644042481, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970605896644042481, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970605896644042481, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330218484958742837, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: Dialog
+      value: 
+      objectReference: {fileID: 1130557614}
+    - target: {fileID: 330218484958742837, guid: 1dbf6476b32ba2d43b0437bab5db1c3d,
+        type: 3}
+      propertyPath: CHANGE
+      value: 
+      objectReference: {fileID: 136611005}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1dbf6476b32ba2d43b0437bab5db1c3d, type: 3}

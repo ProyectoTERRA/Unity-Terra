@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Locker : MonoBehaviour
 {
-    public GameObject Lk1, Lk2, Lk3, Lk4, Lk5, Bloqueo, KeyC;
-    public bool L1, L2, L3, L4, L5,Key;
+    public GameObject Lk1, Lk2, Lk3, Lk4, Lk5, Bloqueo, KeyC, Comp, trans1, trans2;
+    public bool L1, L2, L3, L4, L5,Key,CMP;
     void Start()
     {
         
@@ -50,6 +50,15 @@ public class Locker : MonoBehaviour
 
         }
 
+        if (CMP == true && Input.GetKeyDown(KeyCode.E))
+        {
+            Destroy(Comp);
+            trans1.SetActive(false);
+            trans2.SetActive(true);
+
+        }
+        
+
     }
 
     public void OnTriggerEnter2D(Collider2D col)
@@ -85,6 +94,11 @@ public class Locker : MonoBehaviour
             Key = true;
         }
 
+        if (col.gameObject.tag == "Comp")
+        {
+            CMP = true;
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -94,5 +108,6 @@ public class Locker : MonoBehaviour
         L3 = false;
         L4 = false;
         L5 = false;
+        CMP = false;
     }
 }
