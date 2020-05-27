@@ -56,7 +56,7 @@ public class SistemaGuardado : MonoBehaviour
 
         //Variables a guardar        
         dato.nombrePartida = nombrePartida1;
-        dato.nombreEscena = "Edificio";
+        dato.nombreEscena = "Casa";
         dato.pila = 0;
         dato.bolsa = 0;
         dato.carton = 0;
@@ -74,7 +74,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.formula = 0;
         dato.vidas = 3;
         dato.corazones = 6;
-        dato.tipo = 2;
+        dato.tipo = 1;
         dato.vidasMax = 3;
         dato.corazonesMax = 6;
 
@@ -97,7 +97,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.formula1 = 0;
         dato.vidas1 = 3;
         dato.corazones1 = 6;
-        dato.tipo1 = 2;
+        dato.tipo1 = 1;
         dato.vidasMax1 = 3;
         dato.corazonesMax1 = 6;
         //Serializara los archivos
