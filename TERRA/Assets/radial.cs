@@ -89,7 +89,7 @@ public class radial : MonoBehaviour
         obj.SetActive(false);
         herr.SetActive(false);
 
-
+        latas_recharge = 20;
         btn_fab.interactable = false;
 
         pl = false;

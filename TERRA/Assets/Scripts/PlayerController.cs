@@ -276,6 +276,15 @@ public class PlayerController : MonoBehaviour
             //Heart_Bar.Phearts-=2;
             UnCorazon(collision.transform.position.x);
         }
+        if (collision.gameObject.tag == "BadLata" && movement)
+        {
+            //GameObject vida = GameObject.Find("Heart Bar - HUD_0");
+            //Heart_Bar heart_Bar = vida.GetComponent<Heart_Bar>();
+            //heart_Bar.hearts--;
+            //Heart_Bar.Phearts--;
+            PlayerLMAO.Press = false;
+            MedioCorazon(collision.transform.position.x);
+        }
         GameController.vidas = Heart_Bar.life;
         GameController.corazones = Heart_Bar.Phearts;
     }

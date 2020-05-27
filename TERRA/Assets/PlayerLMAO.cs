@@ -14,7 +14,8 @@ public class PlayerLMAO : MonoBehaviour
     [SerializeField] private GameObject list;
 
 
-    private bool healing, cSide, Front, Press, Launch, SPT;
+    private bool healing, cSide, Front, Launch, SPT;
+    public static bool Press;
 
     public Sprite half, ept;
     // Start is called before the first frame update
@@ -28,7 +29,21 @@ public class PlayerLMAO : MonoBehaviour
         healing = false;
         StartCoroutine(PL());
     }
+    private void FixedUpdate()
+    {
+        if (healing)
+        {
+            if (X_support <= 210f)
+            {
+                GetComponent<Rigidbody2D>().AddForce(transform.right * 900f);
 
+            }
+            else if (X_support > 210)
+            {
+                GetComponent<Rigidbody2D>().AddForce(transform.right * -900f);
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -49,18 +64,7 @@ public class PlayerLMAO : MonoBehaviour
             cSide = false;
 
         }
-        if (healing)
-        {
-            if (X_support <= 0)
-            {
-                GetComponent<Rigidbody2D>().AddForce(transform.right * 700f);
-
-            }
-            else if (X_support > 0)
-            {
-                GetComponent<Rigidbody2D>().AddForce(transform.right * -700f);
-            }
-        }
+      
         if (PlayerController.Equip == "Esfera Pesada")
         {
             if (Input.GetKey(KeyCode.J))
@@ -142,12 +146,29 @@ public class PlayerLMAO : MonoBehaviour
 
         }
 
+        if (collision.gameObject.name == "Unground")//compara si hizo la colision con el objeto correcto
+        {
+            PlayerController.groundCAP5 = false;
+
+        }        
+     
+
         if (collision.gameObject.name == "PUNCH" && !healing)
         {
             EnemyKnockBack(transform.position.x);
+            SlideV.SetActive(false);
+            Slide.value = 0;
+            Press = false;
+        }
+
+        if (collision.gameObject.name == "LMAOINT" && !healing)
+        {
+            SlideV.SetActive(false);
+            Slide.value = 0;
+            Press = false;
         }
     }
-
+   
     public void EnemyKnockBack(float enemyPosX)
     {
         Heart_Bar.Phearts -= 4;
@@ -161,7 +182,7 @@ public class PlayerLMAO : MonoBehaviour
         PlayerController.movement = false;
 
 
-        Invoke("EnableMovement", 0.7f);
+        Invoke("EnableMovement", 1.5f);
 
 
 

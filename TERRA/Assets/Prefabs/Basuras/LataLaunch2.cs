@@ -10,12 +10,28 @@ public class LataLaunch2 : MonoBehaviour
     void Start()
     {
         rbd2 = GetComponent<Rigidbody2D>();
-        rbd2.AddForce(Vector2.left * JumpPower, ForceMode2D.Impulse);
+        if (gameObject.tag == "LataRECHARGED")
+        {
+            rbd2.AddForce(Vector2.left * JumpPower * -LMAO_Controller.side, ForceMode2D.Impulse);
+        }
+        else
+        {
+            rbd2.AddForce(Vector2.left * JumpPower, ForceMode2D.Impulse);
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Destroy(gameObject, 7f);
+        if (gameObject.tag == "LataRECHARGED")
+        {
+            Destroy(gameObject, 10f);
+        }
+        else
+        {
+            Destroy(gameObject, 7f);
+        }
+        
     }
 }

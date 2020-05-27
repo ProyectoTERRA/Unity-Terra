@@ -39,6 +39,7 @@ public class List : MonoBehaviour
         select.Add(esf_P);
         select.Add(esf_D);
         select.Add(esf_T);
+        
 
         //132
 
