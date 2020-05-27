@@ -1,0 +1,108 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LMAO_Controller : MonoBehaviour
+{
+
+    [SerializeField] private GameObject Back;
+    public float x;
+    public float y;
+    public float z;
+
+    public float speed;
+    public float maxspeed = 4f;
+    public float DistanciaVision;
+    public GameObject matchPanel;
+
+    static public float side;
+    private Color color;
+
+    GameObject Jugador;
+
+    Vector3 PosicionInicial;
+    private bool boost;
+    private bool hiting;
+    private Rigidbody2D rbd2;
+    // Start is called before the first frame update
+    void Start()
+    {
+        boost = false;
+
+        hiting = false;
+        side = 1;
+        rbd2 = GetComponent<Rigidbody2D>();
+        Jugador = GameObject.FindGameObjectWithTag("Player");
+        PosicionInicial = transform.position;
+
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        /*
+        if (col.gameObject.tag == "Player")
+        {
+            col.SendMessage("EnemyKnockBack", transform.position.x);
+
+        }
+        */
+    }
+    private void Update()
+    {
+        
+    }
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        if (EnemigosEsferas.effecting || hiting)
+        {
+            Back.SetActive(false);
+        }
+        if (!EnemigosEsferas.effecting && !hiting)
+        {
+            Back.SetActive(true);
+        }
+
+      
+        //Funciones para Seguimiento del Jugador
+        Vector3 target = PosicionInicial;
+        //Debug.Log(PlayerCarga.countPL);
+        //Si la distancia al jugador es menor que el radio de vision del objetivo, el target pasa a ser el jugador
+        float distanciaJugador = Vector3.Distance(Jugador.transform.position, transform.position);
+        if (distanciaJugador < DistanciaVision) target = Jugador.transform.position;
+
+        //Movimiento del Enemigo
+        if (!EnemigosEsferas.effecting && !hiting)
+        {
+            float fixedSpeed = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
+            transform.position = new Vector3(transform.position.x, 16.5f);
+            transform.localScale = new Vector3(side, 1);
+            Debug.DrawLine(transform.position, target, Color.red);
+            /*
+            if (distanciaJugador < 1 && !hiting)
+            {
+                StartCoroutine(push());
+            }
+            */
+        }
+
+
+
+
+
+    }
+    /*
+    public IEnumerator push()
+    {
+        hiting = true;
+        Back.SetActive(false);
+        yield return new WaitForSeconds(.25f);
+        Punch.SetActive(true);
+        yield return new WaitForSeconds(.5f);
+        Punch.SetActive(false);
+        hiting = false;
+        Back.SetActive(true);
+
+    }
+    */
+}

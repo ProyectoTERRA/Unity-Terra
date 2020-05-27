@@ -167,14 +167,6 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Equip == "Esfera Pesada")
-            {
-                if (pl != null)
-                {
-                    Instantiate(Esf[4], pl.transform.position, Quaternion.identity);
-                }
-            }
-
             if (Equip == "Especiales_1")
             {
                 if (!Heart_Bar.FULL)

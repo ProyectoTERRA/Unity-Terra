@@ -26,6 +26,8 @@ public class Objetos : MonoBehaviour
         radial.especiales[0] = GameController.energia;
         radial.especiales[1] = GameController.curacion;
         radial.especiales[2] = GameController.ganzua;
+
+
     }
     void Update()
     {
@@ -69,6 +71,11 @@ public class Objetos : MonoBehaviour
             {
                 GameController.pila++;
                 radial.basura[0]++;
+                Destroy(GameObject.Find(nombre));
+            }
+            else if (tag == "LataRECHARGED")
+            {
+                radial.latas_recharge++;
                 Destroy(GameObject.Find(nombre));
             }
             agarrar = false;
@@ -121,6 +128,13 @@ public class Objetos : MonoBehaviour
         }
 
         if (other.gameObject.tag == "lata" && PlayerController.Equip == "Recogedor")
+        {
+            tag = other.gameObject.tag;
+            nombre = other.gameObject.name;
+            agarrar = true;
+        }
+
+        if (other.gameObject.tag == "LataRECHARGED" && PlayerController.Equip == "Recogedor")
         {
             tag = other.gameObject.tag;
             nombre = other.gameObject.name;

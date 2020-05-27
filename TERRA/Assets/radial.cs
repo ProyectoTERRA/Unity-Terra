@@ -512,6 +512,9 @@ public class radial : MonoBehaviour
 
     public void Fab_Pd()
     {
+        string normal = "heavy";
+        Debug.Log("Enviar");
+        if (esfera[4] == 0) list.SendMessage("add", normal);
         latas_recharge = latas_recharge - 5;
         esfera[4]++;
         GameController.pesada++;

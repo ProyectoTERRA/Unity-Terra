@@ -9,12 +9,16 @@ public class Esferas : MonoBehaviour
 
     private float x, y;
 
-
+    public Sprite heavy;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        if (gameObject.tag == "Pesada")
+        {
+            GetComponent<SpriteRenderer>().sprite = heavy;
+        }
        
         scale = PlayerController.scal * 0.5714f;
         transform.localScale = new Vector3(scale, scale);

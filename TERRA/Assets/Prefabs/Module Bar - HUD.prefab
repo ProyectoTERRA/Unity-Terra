@@ -219,6 +219,7 @@ MonoBehaviour:
   dispD: 0
   ac: {r: 0.8679245, g: 0.3561766, b: 0.3814742, a: 1}
   spr: {fileID: 0}
+  invisible: {r: 1, g: 1, b: 1, a: 0.32941177}
 --- !u!1 &6786952540499391440
 GameObject:
   m_ObjectHideFlags: 0
