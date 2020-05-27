@@ -14675,6 +14675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cambio: CalleLab
+  LobCAP: 0
 --- !u!61 &661891533
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26297,7 +26298,7 @@ GameObject:
   - component: {fileID: 1213129319}
   m_Layer: 0
   m_Name: ROB-0T (2)
-  m_TagString: Untagged
+  m_TagString: ROBOT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29272,7 +29273,7 @@ GameObject:
   - component: {fileID: 1340774898}
   m_Layer: 0
   m_Name: ROB-0T (9)
-  m_TagString: Untagged
+  m_TagString: ROBOT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31489,7 +31490,7 @@ GameObject:
   - component: {fileID: 1418195359}
   m_Layer: 0
   m_Name: ROB-0T (3)
-  m_TagString: Untagged
+  m_TagString: ROBOT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32242,14 +32243,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 153776849, guid: 7f7287315f8370442a9c7af9e038068a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 153776850, guid: 7f7287315f8370442a9c7af9e038068a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5657417382059861990, guid: 7f7287315f8370442a9c7af9e038068a,
         type: 3}
       propertyPath: x
@@ -32290,9 +32283,17 @@ PrefabInstance:
       propertyPath: maxSpeedVel
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 153776850, guid: 7f7287315f8370442a9c7af9e038068a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3963654058375444806, guid: 7f7287315f8370442a9c7af9e038068a,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 153776849, guid: 7f7287315f8370442a9c7af9e038068a, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -37519,7 +37520,7 @@ GameObject:
   - component: {fileID: 1722942302}
   m_Layer: 0
   m_Name: ROB-0T (4)
-  m_TagString: Untagged
+  m_TagString: ROBOT
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43955,6 +43956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cambio: LabC
+  LobCAP: 0
 --- !u!61 &2011837441
 BoxCollider2D:
   m_ObjectHideFlags: 0
