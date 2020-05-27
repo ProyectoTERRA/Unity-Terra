@@ -43972,24 +43972,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1482007584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b295b8d17c68eb49920c404ea41aa32, type: 3}
+  m_Script: {fileID: 11500000, guid: 823473bcd57608542bd3c624185a94c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: NOOOOO
+    name: AAAH
     sentenceList:
     - 'Jake:
 
       Necesito encontrar comida... Y rapido'
-  clip: {fileID: 0}
+  Action: 0
   dialogPanel: {fileID: 1638365763}
   displayText: {fileID: 279375944}
   typingpeed: 0.065
   speakSound: {fileID: 0}
   Dialogo1: {fileID: 1482007584}
-  Dialogo2: {fileID: 0}
+  Dialogo2: {fileID: 1482007584}
   Cutscene: {fileID: 0}
-  jugador: {fileID: 0}
   Enable: 1
 --- !u!58 &1482007586
 CircleCollider2D:
@@ -61495,6 +61494,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603211905305346089, guid: b4bf47ce177a23345a1e13aaac07a945,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.534371
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603211905305346089, guid: b4bf47ce177a23345a1e13aaac07a945,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.7519233
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603211905305346089, guid: b4bf47ce177a23345a1e13aaac07a945,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.33659935
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603211905305346089, guid: b4bf47ce177a23345a1e13aaac07a945,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 4.1254454
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4bf47ce177a23345a1e13aaac07a945, type: 3}
