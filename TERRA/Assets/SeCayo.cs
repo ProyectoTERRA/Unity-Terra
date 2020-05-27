@@ -8,7 +8,7 @@ public class SeCayo : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.SendMessage("TresCorazones");
+            collision.SendMessage("BiriBiriBanBan", transform.position.x);
         }
     }
 
