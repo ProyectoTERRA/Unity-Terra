@@ -65,12 +65,12 @@ public class PlayerLobby : MonoBehaviour
             if(GameController.LobbyCAP == 2)
             {
                 exit = false;
-                //SceneManager.LoadScene("");
+                SceneManager.LoadScene("edificio");
             }
             if (GameController.LobbyCAP == 3)
             {
                 exit = false;
-                //SceneManager.LoadScene("Playa");
+                SceneManager.LoadScene("Playa");
             }
             if (GameController.LobbyCAP == 5)
             {
