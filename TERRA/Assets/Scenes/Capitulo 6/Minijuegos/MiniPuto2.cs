@@ -82,6 +82,7 @@ public class MiniPuto2 : MonoBehaviour
     private string State;
     public SliderPuto2 sl;
     public static int countF, countE;
+    public GameObject Inv, Obj;
     private float segs5 = 0.04f, segs3 = 0.024f
         , xFail1 = 216 + 36
         , xFail2_1 = 216, xFail2_2 = 288
@@ -119,6 +120,16 @@ public class MiniPuto2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (active)
+        {
+            Inv.SetActive(false);
+            Obj.SetActive(false);
+        }
+        else
+        {
+            Inv.SetActive(true);
+            Obj.SetActive(true);
+        }
         Debug.Log(SliderPuto2.speed);
         Debug.Log(countE);
         if (Plvl1 && start1)
