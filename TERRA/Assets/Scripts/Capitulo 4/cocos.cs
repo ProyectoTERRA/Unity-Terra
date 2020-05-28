@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class cocos : MonoBehaviour
 {
     public GameObject coco1, coco2, coco3, coco4, coco5, coco6, coco7, coco8, coco9, coco10;
     float x;
     int entrar = 0, contador = 0, total = 0;
+    public Text CocosText;
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class cocos : MonoBehaviour
             SceneManager.LoadScene("Mar");
         }
         Debug.Log("Total de cocos " + total);
+        CocosText.text = total.ToString();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -132,7 +135,7 @@ public class cocos : MonoBehaviour
     }
     IEnumerator caidaWait()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3f);
         x = Random.Range(0, 10);
         entrar = 0;
         contador = 1;

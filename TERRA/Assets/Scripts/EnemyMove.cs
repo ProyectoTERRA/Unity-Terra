@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    public float speed = 4f;
-    public float maxspeed = 4f;
+    public float speed;
+    public float maxspeed;
     public float DistanciaVision;
 
     GameObject Jugador;
@@ -25,17 +25,10 @@ public class EnemyMove : MonoBehaviour
     void FixedUpdate()
     {
         //Funciones para Seguimiento del Jugador
-        
+        Vector3 target = PosicionInicial;
         //Si la distancia al jugador es menor que el radio de vision del objetivo, el target pasa a ser el jugador
         float distanciaJugador = Vector3.Distance(Jugador.transform.position, transform.position);
-        if (distanciaJugador < DistanciaVision)
-        {
-            target = Jugador.transform.position;
-        }
-        else if(distanciaJugador > DistanciaVision)
-        {
-            target = PosicionInicial;
-        }
+        if (distanciaJugador < DistanciaVision) target = Jugador.transform.position;
         //Movimiento del Enemigo
         float fixedSpeed = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
@@ -43,6 +36,22 @@ public class EnemyMove : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        //DistanciaVision = 5;
+        DistanciaVision = 5;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+
+        if (col.gameObject.tag == "Player" && PlayerController.movement)
+        {
+            col.SendMessage("EnemyKnockBack", transform.position.x + 1);
+
+        }
+        if (col.gameObject.tag == "BE")
+        {
+            DistanciaVision = 0;
+        }
+
+
     }
 }
