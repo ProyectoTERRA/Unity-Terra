@@ -687,7 +687,7 @@ MonoBehaviour:
   Action: 0
   dialogPanel: {fileID: 1134099046}
   displayText: {fileID: 1178956380}
-  typingpeed: 0.02
+  typingpeed: 0.065
   speakSound: {fileID: 0}
   Dialogo1: {fileID: 672094341}
   Dialogo2: {fileID: 1203604648}
@@ -862,7 +862,7 @@ MonoBehaviour:
   Action: 0
   dialogPanel: {fileID: 1134099046}
   displayText: {fileID: 1178956380}
-  typingpeed: 0.02
+  typingpeed: 0.065
   speakSound: {fileID: 0}
   Dialogo1: {fileID: 968461577}
   Dialogo2: {fileID: 672094341}
@@ -1177,7 +1177,7 @@ MonoBehaviour:
   Action: 0
   dialogPanel: {fileID: 1134099046}
   displayText: {fileID: 1178956380}
-  typingpeed: 0.02
+  typingpeed: 0.065
   speakSound: {fileID: 0}
   Dialogo1: {fileID: 1018509346}
   Dialogo2: {fileID: 1281270617}
@@ -1193,7 +1193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1036447191}
   - component: {fileID: 1036447192}
-  - component: {fileID: 1036447193}
+  - component: {fileID: 1036447194}
   m_Layer: 0
   m_Name: Dialogo 7
   m_TagString: Untagged
@@ -1243,7 +1243,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.772034, y: 10.015876}
   m_EdgeRadius: 0
---- !u!114 &1036447193
+--- !u!114 &1036447194
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1252,7 +1252,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1036447190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b295b8d17c68eb49920c404ea41aa32, type: 3}
+  m_Script: {fileID: 11500000, guid: 823473bcd57608542bd3c624185a94c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
@@ -1262,15 +1262,14 @@ MonoBehaviour:
       algo...
     - Una maquina que nos ayudara a prevenir todos los errores que alguna vez cometimos
     - No queria utilizarla, pero la humanidad estaria perdida sin ella...
-  clip: {fileID: 0}
+  Action: 0
   dialogPanel: {fileID: 1134099046}
   displayText: {fileID: 1178956380}
-  typingpeed: 0.01
+  typingpeed: 0.065
   speakSound: {fileID: 0}
   Dialogo1: {fileID: 1036447190}
-  Dialogo2: {fileID: 0}
-  Cutscene: {fileID: 704704770}
-  jugador: {fileID: 0}
+  Dialogo2: {fileID: 704704770}
+  Cutscene: {fileID: 0}
   Enable: 1
 --- !u!1 &1088010238
 GameObject:
@@ -1600,7 +1599,7 @@ MonoBehaviour:
   Action: 0
   dialogPanel: {fileID: 1134099046}
   displayText: {fileID: 1178956380}
-  typingpeed: 0.02
+  typingpeed: 0.065
   speakSound: {fileID: 0}
   Dialogo1: {fileID: 1203604648}
   Dialogo2: {fileID: 1018509346}
@@ -1686,7 +1685,7 @@ MonoBehaviour:
   Action: 0
   dialogPanel: {fileID: 1134099046}
   displayText: {fileID: 1178956380}
-  typingpeed: 0.02
+  typingpeed: 0.065
   speakSound: {fileID: 0}
   Dialogo1: {fileID: 1281270617}
   Dialogo2: {fileID: 1971120681}
@@ -2581,7 +2580,7 @@ MonoBehaviour:
   Action: 0
   dialogPanel: {fileID: 1134099046}
   displayText: {fileID: 1178956380}
-  typingpeed: 0.02
+  typingpeed: 0.065
   speakSound: {fileID: 0}
   Dialogo1: {fileID: 1971120681}
   Dialogo2: {fileID: 1036447190}

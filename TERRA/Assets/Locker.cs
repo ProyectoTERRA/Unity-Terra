@@ -52,9 +52,9 @@ public class Locker : MonoBehaviour
 
         if (CMP == true && Input.GetKeyDown(KeyCode.E))
         {
-            Destroy(Comp);
             trans1.SetActive(false);
             trans2.SetActive(true);
+            Destroy(Comp);
 
         }
         
