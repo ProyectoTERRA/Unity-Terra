@@ -56,7 +56,6 @@ public class Heart_Bar : MonoBehaviour
     public static int Maxlife;
 
     public static bool FULL;
-
     void Start()
     {
         Debug.Log(type);

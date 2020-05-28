@@ -55,7 +55,7 @@ public class SistemaGuardado : MonoBehaviour
 
         //Variables a guardar        
         dato.nombrePartida = nombrePartida1;
-        dato.nombreEscena = "Edificio";
+        dato.nombreEscena = "Casa";
         dato.pila = 0;
         dato.bolsa = 0;
         dato.carton = 0;
@@ -78,7 +78,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.corazonesMax = 6;
 
         //Respaldo
-        dato.nombreEscena1 = "Edificio";
+        dato.nombreEscena1 = "Casa";
         dato.pila1 = 0;
         dato.bolsa1 = 0;
         dato.carton1 = 0;
@@ -356,6 +356,7 @@ public class SistemaGuardado : MonoBehaviour
         GameController.e6 = false;
         GameController.e7 = false;
     }
+    int x = 0, y=0;
     public void cargar1()
     {
         GameObject go = GameObject.Find("InvFunc");
@@ -369,23 +370,17 @@ public class SistemaGuardado : MonoBehaviour
             datos = bf.Deserialize(expediente) as DatosJuego;
             Debug.Log("Nombre al cargar " + nombrePartida);
             
-            if (perder == 1)
-            {
-                Debug.Log("Al cargar vidas " + Heart_Bar.life + " En los datos " + datos.vidas);
-                datos.vidas = datos.vidas - 1;
-                Debug.Log(datos.vidas);
-                Debug.Log("corazones maimos " + GameController.HeartsMax);
-                datos.corazones = GameController.HeartsMax;
-                perder = 0;
-                enemigosFalse();
-                nombreEscena = datos.nombreEscena;
-                SceneManager.LoadScene(nombreEscena);
-            }
+            
             if (morir == 1)
             {
                 datos.nombreEscena = datos.nombreEscena1;
                 nombreEscena = datos.nombreEscena;
-                SceneManager.LoadScene(nombreEscena);
+                if(y==0)
+                {
+                    SceneManager.LoadScene(nombreEscena);
+                    y++;
+                }
+                
                 //Datos sobre la vida
                 enemigosFalse();
                 datos.vidas = GameController.LifeMax;
@@ -412,6 +407,23 @@ public class SistemaGuardado : MonoBehaviour
                 datos.ganzua = datos.ganzua1;
                 datos.formula = datos.formula1;
                 morir = 0;
+            }
+            if (perder == 1)
+            {
+                Debug.Log("Al cargar vidas " + Heart_Bar.life + " En los datos " + datos.vidas);
+                datos.vidas = datos.vidas - 1;
+                Debug.Log(datos.vidas);
+                Debug.Log("corazones maimos " + GameController.HeartsMax);
+                datos.corazones = GameController.HeartsMax;
+                
+                enemigosFalse();
+                nombreEscena = datos.nombreEscena;
+                if (x == 0)
+                {
+                    SceneManager.LoadScene(nombreEscena);
+                    x++;
+                }
+                perder = 0;
             }
             nombrePartida = datos.nombrePartida;
             
