@@ -81,6 +81,7 @@ public class WatcherEsferas : MonoBehaviour
         if (gameObject.tag == "Watcher")
         {
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<Rigidbody2D>().simulated = false; ;
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<Watcher>().enabled = false;
         }
