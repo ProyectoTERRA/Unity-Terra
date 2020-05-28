@@ -7260,8 +7260,8 @@ MonoBehaviour:
   SideVelocity: 10
   SavedVel: 0
   SavedMax: 0
-  RunVelocity: 0
-  maxSpeedVel: 0
+  RunVelocity: 70
+  maxSpeedVel: 4
   grounded: 0
   wall: 0
   JumpPower: 5

@@ -2105,6 +2105,13 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+
+    - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+
     - target: {fileID: 3785523923685326970, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2120,6 +2127,8 @@ PrefabInstance:
       propertyPath: list
       value: 
       objectReference: {fileID: 2132987466}
+
+
     - target: {fileID: 2671807527447435880, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2175,6 +2184,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+
+    - target: {fileID: 1888325355320331725, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: list
+      value: 
+      objectReference: {fileID: 2132987466}
+
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a72f4c8686a07504fbcf19c0072337c4, type: 3}
 --- !u!1 &1708171298 stripped
@@ -3163,8 +3179,8 @@ MonoBehaviour:
   SideVelocity: 10
   SavedVel: 0
   SavedMax: 0
-  RunVelocity: 0
-  maxSpeedVel: 0
+  RunVelocity: 70
+  maxSpeedVel: 6
   grounded: 0
   wall: 0
   JumpPower: 7
