@@ -64088,8 +64088,8 @@ MonoBehaviour:
   SideVelocity: 10
   SavedVel: 0
   SavedMax: 0
-  RunVelocity: 0
-  maxSpeedVel: 0
+  RunVelocity: 80
+  maxSpeedVel: 7.5
   grounded: 0
   wall: 0
   JumpPower: 7
