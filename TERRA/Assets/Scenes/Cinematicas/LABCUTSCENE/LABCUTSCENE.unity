@@ -2602,7 +2602,7 @@ PrefabInstance:
     - target: {fileID: 1828675242994047877, guid: 1e8dd50ac9659994da1fa4f03ffed099,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1828675243185218317, guid: 1e8dd50ac9659994da1fa4f03ffed099,
         type: 3}
@@ -2709,96 +2709,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_margin.w
-      value: -84.326035
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_margin.y
-      value: 2.0556355
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_textAlignment
-      value: 514
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243185218316, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1828675243185218316, guid: 1e8dd50ac9659994da1fa4f03ffed099,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 529830219}
-    - target: {fileID: 1828675243185218319, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1280
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675242994047874, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675242994047874, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 74
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675242994047874, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675242994047874, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675242994047874, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675242994047874, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 137.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025086, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 44
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675242994047875, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.4745098
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e8dd50ac9659994da1fa4f03ffed099, type: 3}
 --- !u!1 &2044630451

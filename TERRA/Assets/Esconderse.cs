@@ -77,7 +77,7 @@ public class Esconderse : MonoBehaviour
     {
         if (collision.gameObject.name == "DoorOpenPanel 1")//compara si hizo la colision con el objeto correcto
         {
-            hx = 231.36f;
+            hx = 231.33f;
             hy = 24.45f;
             h = true;
             //spr.color = Color.black;
@@ -117,15 +117,15 @@ public class Esconderse : MonoBehaviour
         }
         if (collision.gameObject.name == "DoorOpenPanel 6")//compara si hizo la colision con el objeto correcto
         {
-            hx = 410.82f;
-            hy = 26.85f;
+            hx = 421.02f;
+            hy = 26.9f;
             h = true;
             //spr.color = Color.black;
             PlayerController.movement = false;
         }
         if (collision.gameObject.name == "DoorOpenPanel 7")//compara si hizo la colision con el objeto correcto
         {
-            hx = 207.48f;
+            hx = 244.45f;
             hy = 24.45f;
             h = true;
             //spr.color = Color.black;

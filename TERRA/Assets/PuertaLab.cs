@@ -68,19 +68,18 @@ public class PuertaLab : MonoBehaviour
             P1Ab = true;
         }
 
-        if (collision.name == "EscP23")
+        if (collision.gameObject.tag == "EscP23")
         {
             P2Ar = true;
         }
         if (collision.name == "EscP32")
         {
             P2Ab = true;
-            
         }
         #endregion
     }
 
-    public void OnTriggerExit2D(Collider2D LabDoor)
+    public void OnTriggerExit2D(Collider2D collision)
     {
         P1Ar = false;
         P1Ab = false;
