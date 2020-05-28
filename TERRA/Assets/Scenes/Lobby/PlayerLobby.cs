@@ -65,16 +65,19 @@ public class PlayerLobby : MonoBehaviour
             if(GameController.LobbyCAP == 2)
             {
                 exit = false;
+                GameController.LOBBY = false;
                 SceneManager.LoadScene("edificio");
             }
             if (GameController.LobbyCAP == 3)
             {
                 exit = false;
+                GameController.LOBBY = false;
                 SceneManager.LoadScene("Playa");
             }
             if (GameController.LobbyCAP == 5)
             {
                 exit = false;
+                GameController.LOBBY = false;
                 SceneManager.LoadScene("Antartida 1");
             }
             exit = false;
