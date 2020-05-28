@@ -684,6 +684,7 @@ MonoBehaviour:
     - El punto de no retorno, habia llegado.
     - Salimos a advertir a todo el mundo, que, de seguir asi las consecuencias serian
       catastroficas, pero ninguno... NINGUNO! hizo caso
+  Action: 0
   dialogPanel: {fileID: 1134099046}
   displayText: {fileID: 1178956380}
   typingpeed: 0.02
@@ -858,6 +859,7 @@ MonoBehaviour:
       trabajo, reuniones sociales, como invertir el tiempo libre, tener una vida,
       sabes?"
     - Pero, todo eso cambio...
+  Action: 0
   dialogPanel: {fileID: 1134099046}
   displayText: {fileID: 1178956380}
   typingpeed: 0.02
@@ -1172,6 +1174,7 @@ MonoBehaviour:
     - "Las Guerras fueron inevitables y de gran escala, pasaron meses, a\xF1os, y
       con ello nuestros sistemas escenciales colapsaron"
     - Electricidad, agua, internet, alimento, hospitales...
+  Action: 0
   dialogPanel: {fileID: 1134099046}
   displayText: {fileID: 1178956380}
   typingpeed: 0.02
@@ -1267,6 +1270,7 @@ MonoBehaviour:
   Dialogo1: {fileID: 1036447190}
   Dialogo2: {fileID: 0}
   Cutscene: {fileID: 704704770}
+  jugador: {fileID: 0}
   Enable: 1
 --- !u!1 &1088010238
 GameObject:
@@ -1593,6 +1597,7 @@ MonoBehaviour:
       salio de control
     - 'La poblacion no tardo en caer en el panico, la ciudad, antes vibrante... Estaba
       vacia '
+  Action: 0
   dialogPanel: {fileID: 1134099046}
   displayText: {fileID: 1178956380}
   typingpeed: 0.02
@@ -1678,6 +1683,7 @@ MonoBehaviour:
     sentenceList:
     - 'Al final, El silencio regreso.... '
     - Ya no quedaba casi nadie para hacer ruido
+  Action: 0
   dialogPanel: {fileID: 1134099046}
   displayText: {fileID: 1178956380}
   typingpeed: 0.02
@@ -2572,6 +2578,7 @@ MonoBehaviour:
 
       Los humanos, en vez de unirnos, nos aislamos'
     - Y la vida, empezo a apagarse de nuevo.
+  Action: 0
   dialogPanel: {fileID: 1134099046}
   displayText: {fileID: 1178956380}
   typingpeed: 0.02
@@ -2591,41 +2598,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SistemaDialogos
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_margin.w
-      value: -84.326035
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_margin.y
-      value: 2.0556355
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_textAlignment
-      value: 514
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1828675242994047877, guid: 1e8dd50ac9659994da1fa4f03ffed099,
         type: 3}
@@ -2736,6 +2708,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -84.326035
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 2.0556355
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 514
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828675243129025087, guid: 1e8dd50ac9659994da1fa4f03ffed099,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828675243185218319, guid: 1e8dd50ac9659994da1fa4f03ffed099,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1280
       objectReference: {fileID: 0}
     - target: {fileID: 1828675242994047874, guid: 1e8dd50ac9659994da1fa4f03ffed099,
         type: 3}
