@@ -55,10 +55,9 @@ public class Watcher : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
 
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player" && PlayerController.movement)
         {
             col.SendMessage("EnemyKnockBack", transform.position.x + 1);
-            col.SendMessage("BiriBiriBanBan", transform.position.x);
 
         }
         if (col.gameObject.tag == "BE")
