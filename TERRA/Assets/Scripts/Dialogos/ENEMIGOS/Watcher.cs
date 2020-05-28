@@ -58,6 +58,7 @@ public class Watcher : MonoBehaviour
         if (col.gameObject.tag == "Player" && PlayerController.movement)
         {
             col.SendMessage("EnemyKnockBack", transform.position.x + 1);
+            col.SendMessage("BiriBiriBanBan", transform.position.x);
 
         }
         if (col.gameObject.tag == "BE")
