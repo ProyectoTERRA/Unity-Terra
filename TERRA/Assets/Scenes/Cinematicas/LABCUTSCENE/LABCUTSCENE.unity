@@ -2602,7 +2602,7 @@ PrefabInstance:
     - target: {fileID: 1828675242994047877, guid: 1e8dd50ac9659994da1fa4f03ffed099,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1828675243185218317, guid: 1e8dd50ac9659994da1fa4f03ffed099,
         type: 3}
@@ -2744,6 +2744,16 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 1828675243185218316, guid: 1e8dd50ac9659994da1fa4f03ffed099,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828675243185218316, guid: 1e8dd50ac9659994da1fa4f03ffed099,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 529830219}
     - target: {fileID: 1828675243185218319, guid: 1e8dd50ac9659994da1fa4f03ffed099,
         type: 3}
       propertyPath: m_ReferenceResolution.x
@@ -2757,7 +2767,7 @@ PrefabInstance:
     - target: {fileID: 1828675242994047874, guid: 1e8dd50ac9659994da1fa4f03ffed099,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 68.8
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 1828675242994047874, guid: 1e8dd50ac9659994da1fa4f03ffed099,
         type: 3}
@@ -2778,6 +2788,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 137.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828675243129025086, guid: 1e8dd50ac9659994da1fa4f03ffed099,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1828675242994047875, guid: 1e8dd50ac9659994da1fa4f03ffed099,
         type: 3}
