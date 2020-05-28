@@ -48,9 +48,6 @@ public class Watcher : MonoBehaviour
         float fixedSpeed = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
         Debug.DrawLine(transform.position, target, Color.red);
-        #region Rotacion
-   
-        #endregion
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
