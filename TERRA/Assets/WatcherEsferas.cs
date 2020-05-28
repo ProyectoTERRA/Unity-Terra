@@ -52,6 +52,7 @@ public class WatcherEsferas : MonoBehaviour
         {
             if (CDesactivadoras >= 1 && !efecT)
             {
+                Debug.Log("Puto");
                 StartCoroutine(DesacEffect());
             }
         }
