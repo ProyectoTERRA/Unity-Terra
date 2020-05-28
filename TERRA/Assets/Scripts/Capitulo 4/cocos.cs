@@ -8,7 +8,7 @@ public class cocos : MonoBehaviour
     public GameObject coco1, coco2, coco3, coco4, coco5, coco6, coco7, coco8, coco9, coco10;
     float x;
     int entrar = 0, contador = 0, total = 0;
-    public Text CocosText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class cocos : MonoBehaviour
             SceneManager.LoadScene("Mar");
         }
         Debug.Log("Total de cocos " + total);
-        CocosText.text = total.ToString();
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

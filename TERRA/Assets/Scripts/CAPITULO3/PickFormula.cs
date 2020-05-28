@@ -7,7 +7,7 @@ public class PickFormula : MonoBehaviour
     int contador;
     private void Start()
     {
-        contador = 0;
+        contador = 8;
     }
     public void Update()
     {
