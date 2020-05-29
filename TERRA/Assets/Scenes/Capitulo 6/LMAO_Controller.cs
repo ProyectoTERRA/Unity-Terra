@@ -12,6 +12,8 @@ public class LMAO_Controller : MonoBehaviour
     [SerializeField] private GameObject Lata2;
     [SerializeField] private GameObject Launch;
 
+    public GameObject DialogoMuerte;
+
     public float x;
     public float y;
     public float z;
@@ -103,6 +105,7 @@ public class LMAO_Controller : MonoBehaviour
             AT2 = false;
             AT3 = false;
             Defeat = true;
+            DialogoMuerte.SetActive(true);
             GetComponent<SpriteRenderer>().color = Color.gray;
         }
 
