@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 46905447}
   - component: {fileID: 46905446}
   m_Layer: 0
-  m_Name: Dialogo 1 (1)
+  m_Name: Dialogo Final
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2110,7 +2110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ac993db5a1618488d4abfa4229bbf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dialog: {fileID: 0}
+  Dialog: {fileID: 46905447}
   CHANGE: {fileID: 392871481}
 --- !u!4 &557993037
 Transform:
@@ -7430,6 +7430,7 @@ MonoBehaviour:
   Lata1: {fileID: 779096205126132861, guid: 96942fd08a23af743a6bae9c74bbc3bc, type: 3}
   Lata2: {fileID: 3132049652541974536, guid: 18eab74d3c42cec418e726bac1dfeb41, type: 3}
   Launch: {fileID: 1538178584}
+  DialogoMuerte: {fileID: 46905445}
   x: 0
   y: 0
   z: 0
