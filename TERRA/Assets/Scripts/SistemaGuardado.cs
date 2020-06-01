@@ -38,7 +38,6 @@ public class SistemaGuardado : MonoBehaviour
             buscarNombre = GameController.nombreActualPartida;
             Debug.Log("Perder antes de cargar " + perder);
             cargar1();
-            Debug.Log("Perder despues de cargar " + perder);
         }
         if(morir == 1)
         {
@@ -375,7 +374,10 @@ public class SistemaGuardado : MonoBehaviour
             {
                 datos.nombreEscena = datos.nombreEscena1;
                 nombreEscena = datos.nombreEscena;
-                if(y==0)
+                Debug.Log("Nombre escena datos " + datos.nombreEscena);
+                Debug.Log("Nombre escena datos 1 " + datos.nombreEscena1);
+                Debug.Log("Nombre escena " + nombreEscena);
+                if (y==0)
                 {
                     SceneManager.LoadScene(nombreEscena);
                     y++;

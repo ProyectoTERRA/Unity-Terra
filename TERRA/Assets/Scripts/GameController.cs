@@ -44,6 +44,10 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Game controller " + nombreActualPartida);
     }
+    private void Update()
+    {
+        Debug.Log("Game controller nombre escena 0 " + nombreEscena0);
+    }
     private void Awake()
     {
 
