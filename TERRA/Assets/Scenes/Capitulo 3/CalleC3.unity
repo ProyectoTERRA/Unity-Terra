@@ -6036,11 +6036,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8474523579320546414}
     m_Modifications:
-    - target: {fileID: 7259724196119756032, guid: 779b3acff1391d449ab84aaa16469507,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8362500405813697985, guid: 779b3acff1391d449ab84aaa16469507,
         type: 3}
       propertyPath: m_Name
@@ -6111,6 +6106,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.5025126
       objectReference: {fileID: 0}
+    - target: {fileID: 7259724196119756032, guid: 779b3acff1391d449ab84aaa16469507,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 779b3acff1391d449ab84aaa16469507, type: 3}
 --- !u!4 &1631262317 stripped
@@ -6137,17 +6137,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 128289250247929000, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6214826627960804926, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888325355320331725, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: list
+      value: 
+      objectReference: {fileID: 1488276095}
+    - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -6162,11 +6167,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1888325355320331725, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: list
-      value: 
-      objectReference: {fileID: 1488276095}
     - target: {fileID: 5225394894740060154, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -7982,6 +7982,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MENUPAUSA
       objectReference: {fileID: 0}
+    - target: {fileID: 7744784579987309930, guid: 302e2166f131ca544b51f169f8eaa3ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7744784579353396235, guid: 302e2166f131ca544b51f169f8eaa3ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8085,11 +8090,6 @@ PrefabInstance:
     - target: {fileID: 7744784579353396235, guid: 302e2166f131ca544b51f169f8eaa3ab,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7744784579987309930, guid: 302e2166f131ca544b51f169f8eaa3ab,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8622,8 +8622,8 @@ MonoBehaviour:
   SideVelocity: 10
   SavedVel: 0
   SavedMax: 0
-  RunVelocity: 0
-  maxSpeedVel: 0
+  RunVelocity: 80
+  maxSpeedVel: 4
   grounded: 0
   wall: 0
   JumpPower: 6
