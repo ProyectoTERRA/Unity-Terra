@@ -17,7 +17,6 @@ public class PlayerAlcantarilla : MonoBehaviour
     void Start()
     {
         Key_Escaleras.SetActive(false);
-        Heart_Bar.Phearts = 6;
         minijuego.SetActive(false);
         camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);
         camera.transform.localScale = new Vector3(1f, 1f, 1f);

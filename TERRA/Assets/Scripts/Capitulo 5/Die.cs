@@ -20,6 +20,10 @@ public class Die : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")//compara si hizo la colision con el objeto correcto
         {
+            Minijuego_1.start = false;
+            Minijuego_1.win = false;
+
+
             collision.SendMessage("BiriBiriBanBan", transform.position.x);
         }
     }

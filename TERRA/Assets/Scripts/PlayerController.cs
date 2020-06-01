@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         Heart_Bar.life = GameController.vidas;
         //Heart_Bar.Phearts = 6;
         //Heart_Bar.life = 3;
-        GameController.TypeLife = 1;
+        //GameController.TypeLife = 1;
         Machucado = false;
         groundCAP5 = true;
         transform.localScale = new Vector3(-x, y, z);
