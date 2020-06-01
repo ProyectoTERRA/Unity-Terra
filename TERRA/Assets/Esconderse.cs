@@ -69,6 +69,7 @@ public class Esconderse : MonoBehaviour
             collision.gameObject.name == "DoorOpenPanel 5" || collision.gameObject.name == "DoorOpenPanel 6" || collision.gameObject.name == "DoorOpenPanel 6"))
         {
             h = false;
+            hide = false;
         }
 
     }
