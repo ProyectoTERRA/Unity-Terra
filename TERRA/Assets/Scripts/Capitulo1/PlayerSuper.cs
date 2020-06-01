@@ -62,7 +62,7 @@ public class PlayerSuper : MonoBehaviour
         Key_Interruptor.SetActive(false);
         Key_Exit.SetActive(false);
         flag1 = false;
-        Heart_Bar.Phearts = 6;
+       
         flag = true;
         Mini.SetActive(false);
         camera.transform.position = new Vector3(0.0f, 0.0f, -10.0f);

@@ -50,7 +50,7 @@ public class PlayerCalle : MonoBehaviour
     {
         market = false;
 
-        Heart_Bar.Phearts = 6;
+       
 
         img_fab.SetActive(false);
         img_fab_1.SetActive(false);

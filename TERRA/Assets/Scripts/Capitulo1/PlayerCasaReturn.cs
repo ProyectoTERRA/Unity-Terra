@@ -34,7 +34,7 @@ public class PlayerCasaReturn : MonoBehaviour
         FOOD.SetActive(false);
         Food = false;
      
-        Heart_Bar.Phearts = 6;
+        //Heart_Bar.Phearts = 6;
 
         Key_DoorSalaLucy.SetActive(false);
 
