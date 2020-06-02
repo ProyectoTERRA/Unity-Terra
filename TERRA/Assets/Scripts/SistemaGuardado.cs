@@ -971,7 +971,7 @@ public class SistemaGuardado : MonoBehaviour
             GameController.LobbyCAP = 5;
             guardarCap5();
         }
-        if (collision.gameObject.tag == "Checkpoint4")
+        if (collision.gameObject.tag == "Checkpoint4" && PlayerCorredores.Capsule)
         {
             paso = 1;
             Debug.Log("Checkpoint recuperar cap  5 " + nombrePartida);
