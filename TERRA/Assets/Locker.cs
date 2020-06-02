@@ -13,7 +13,7 @@ public class Locker : MonoBehaviour
 
     private void Update()
     {
-        if(L1 == true && Input.GetKeyDown(KeyCode.E))
+        if(L1 == true && Input.GetKeyDown(KeyCode.J))
         {
             Lk1.SetActive(true);
             L1 = false;
