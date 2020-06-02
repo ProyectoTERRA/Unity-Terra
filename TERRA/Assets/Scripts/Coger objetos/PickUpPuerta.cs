@@ -3,7 +3,7 @@
 public class PickUpPuerta : MonoBehaviour
 {
     public GameObject llave;
-    public GameObject pasar, key12;
+    public GameObject pasar, key12, key13;
     public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Chapa")
@@ -14,6 +14,7 @@ public class PickUpPuerta : MonoBehaviour
         {
             pasar.SetActive(true);
             key12.SetActive(false);
+            key13.SetActive(true);
         }
     }
 }
