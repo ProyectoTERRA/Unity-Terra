@@ -1725,7 +1725,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.9914207, y: -0.52913094}
+  m_Offset: {x: 2.3755264, y: 6.3267756}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1736,7 +1736,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 39.265793, y: 9.314957}
+  m_Size: {x: 47.277023, y: 23.02677}
   m_EdgeRadius: 0
 --- !u!114 &392871483
 MonoBehaviour:
@@ -1750,7 +1750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f6086cc3546884db812d44046ebd08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cambio: FINAL
+  Cambio: Antartida Cine FINAL
   LobCAP: 0
 --- !u!4 &392871484
 Transform:
@@ -1760,7 +1760,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392871481}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.9, y: 2.42, z: -20.90625}
+  m_LocalPosition: {x: 206.9, y: 17.8, z: -20.90625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2120,7 +2120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557993035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.007765, y: 12.28658, z: -15.6436205}
+  m_LocalPosition: {x: 228.3, y: 17.2, z: -15.6436205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2884,6 +2884,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7744784579987309930, guid: 302e2166f131ca544b51f169f8eaa3ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7744784579353396235, guid: 302e2166f131ca544b51f169f8eaa3ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2998,11 +3003,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayerID
       value: -1919176187
-      objectReference: {fileID: 0}
-    - target: {fileID: 7744784579987309930, guid: 302e2166f131ca544b51f169f8eaa3ab,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5909113778216917630, guid: 302e2166f131ca544b51f169f8eaa3ab,
         type: 3}
@@ -4254,7 +4254,7 @@ MonoBehaviour:
   Action: 0
   dialogPanel: {fileID: 604545870}
   displayText: {fileID: 604545869}
-  typingpeed: 0.05
+  typingpeed: 0.03
   speakSound: {fileID: 0}
   Dialogo1: {fileID: 1243221717}
   Dialogo2: {fileID: 1243221717}
