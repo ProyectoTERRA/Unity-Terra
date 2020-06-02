@@ -22,6 +22,9 @@ public class PlayerLobby : MonoBehaviour
     void Start()
     {
         GameController.LobbyCAP = 4;
+        Heart_Bar.Phearts = 6;
+        Heart_Bar.life = 3;
+        GameController.TypeLife = 1;
         exit = false;
         /*
         if (GameController.start)
