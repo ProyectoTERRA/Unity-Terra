@@ -691,7 +691,7 @@ MonoBehaviour:
   dialogue:
     name: Dialogo 2
     sentenceList:
-    - Gracias
+    - Gracias por jugar
   Action: 0
   dialogPanel: {fileID: 2140288747}
   displayText: {fileID: 2140288746}
@@ -1342,9 +1342,7 @@ MonoBehaviour:
     sentenceList:
     - '
 
-      Programadores:
-
-'
+      Programadores:'
     - '-------------------------------------
 
       Gabriel Alejandro Rodriguez Martinez
