@@ -95,6 +95,8 @@ public class SistemaGuardado : MonoBehaviour
         dato.tipo = 1;
         dato.vidasMax = 3;
         dato.corazonesMax = 6;
+        dato.equip1 = null;
+        dato.equip2 = null;
 
         //Respaldo
         dato.nombreEscena1 = "Casa";
@@ -1001,6 +1003,7 @@ class DatosJuego : System.Object
     public int pila1, manzana1, platano1, bolsa1, carton1, lata1, normal1, paralizante1, desactivadora1, tranquilizante1, pesada1, energia1, curacion1, ganzua1;
     public int formula1;
     public int vidas1, corazones1, tipo1, corazonesMax1, vidasMax1;
+    public String equip1, equip2;
 }
 
 
