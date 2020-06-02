@@ -20,9 +20,13 @@ public class SistemaGuardado : MonoBehaviour
     //Variables que guardaran los datos de las partidas
     public String nombreEscena, nombrePartida, nombrePartida1;
     public static int perder=0, morir=0;
+
+    private bool Tsave;
     void Start()
     {
         contador = 1;
+        Tsave = false;
+
         //La primera vez que se abre laescena, se crea el archivo donde se iran contadno las partidas
         if (!File.Exists(Application.persistentDataPath + "/contandoPartida.d"))
         {
@@ -59,6 +63,7 @@ public class SistemaGuardado : MonoBehaviour
                 cargar1();
             }
         }
+
     }
     int paso = 0;
     public void crearPartida()
@@ -237,6 +242,9 @@ public class SistemaGuardado : MonoBehaviour
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
+
+        PlayerCorredores.Capsule = false;
+        Debug.Log("ReLoot");
     }
     public void guardarCap5()
     {
@@ -335,6 +343,8 @@ public class SistemaGuardado : MonoBehaviour
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
+
+        Tsave = true;
     }
     public void guardar1()
     {
@@ -962,7 +972,7 @@ public class SistemaGuardado : MonoBehaviour
             nombreEscena = SceneManager.GetActiveScene().name;
             guardar1();
         }
-        if (collision.gameObject.tag == "Checkpoint3")
+        if (collision.gameObject.tag == "Checkpoint3" && !Tsave)
         {
             Debug.Log("Chechkpoint 5 " + nombrePartida);
             nombreEscena = SceneManager.GetActiveScene().name;
