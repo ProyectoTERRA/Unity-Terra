@@ -21,7 +21,7 @@ public class PlayerLobby : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameController.LobbyCAP = 5;
+        GameController.LobbyCAP = 4;
         exit = false;
         /*
         if (GameController.start)
@@ -75,6 +75,12 @@ public class PlayerLobby : MonoBehaviour
                 exit = false;
                 GameController.LOBBY = false;
                 SceneManager.LoadScene("Playa");
+            }
+            if (GameController.LobbyCAP == 4)
+            {
+                exit = false;
+                GameController.LOBBY = false;
+                SceneManager.LoadScene("Celdas");
             }
             if (GameController.LobbyCAP == 5)
             {
