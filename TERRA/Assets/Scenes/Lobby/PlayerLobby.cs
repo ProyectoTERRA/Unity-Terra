@@ -21,7 +21,9 @@ public class PlayerLobby : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameController.LobbyCAP = 5;
         exit = false;
+        /*
         if (GameController.start)
         {
             Debug.Log("Continue");
@@ -41,7 +43,7 @@ public class PlayerLobby : MonoBehaviour
 
             GameController.start = true;
         }
-       
+        */
         ActH = false;
         ActR = false;
         ActE = false;
