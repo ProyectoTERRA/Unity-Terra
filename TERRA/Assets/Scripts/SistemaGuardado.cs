@@ -43,9 +43,17 @@ public class SistemaGuardado : MonoBehaviour
         {
             Debug.Log("Se nos murio");
             buscarNombre = GameController.nombreActualPartida;
-            cargar1();
+            if(GameController.LobbyCAP == 5 && paso != 0)
+            {
+                cargar5();
+            }
+            else if(GameController.LobbyCAP != 5)
+            {
+                cargar1();
+            }
         }
     }
+    int paso = 0;
     public void crearPartida()
     {
         BinaryFormatter bf = new BinaryFormatter(); //Ayudante
@@ -160,6 +168,64 @@ public class SistemaGuardado : MonoBehaviour
         dato.formula1 = GameController.formula0;
         dato.vidasMax1 = GameController.LifeMax;
         dato.corazonesMax1 = GameController.HeartsMax;
+
+        //Serializara los archivos
+        bf.Serialize(expediente, dato);
+        expediente.Close();
+    }
+    public void recuperarCap5()
+    {
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+
+        BinaryFormatter bf = new BinaryFormatter(); //Ayudante
+        FileStream expediente = File.Create(Application.persistentDataPath + "/" + nombrePartida + ".d");//Crea archivo datos.d
+        DatosJuego dato = new DatosJuego(); //Dato es la variable de la clase que se serializa
+        //Respaldo
+        dato.nombreEscena1 = GameController.nombreEscena0;
+        dato.pila1 = GameController.pila0 + radial.basura[0];
+        dato.bolsa1 = GameController.bolsa0 + radial.basura[1];
+        dato.carton1 = GameController.carton0 + radial.basura[2];
+        dato.manzana1 = GameController.manzana0 + radial.basura[3];
+        dato.platano1 = GameController.platano0 + radial.basura[4];
+        dato.lata1 = GameController.lata0 + radial.basura[5];
+        dato.normal1 = GameController.normal0 + radial.esfera[0];
+        dato.paralizante1 = GameController.paralizante0 + radial.esfera[1];
+        dato.desactivadora1 = GameController.desactivadora0 + radial.esfera[2];
+        dato.tranquilizante1 = GameController.tranquilizante0 + radial.esfera[3];
+        dato.pesada1 = GameController.pesada0 + radial.esfera[4];
+        dato.energia1 = GameController.energia0 + radial.especiales[0];
+        dato.curacion1 = GameController.curacion0 + radial.especiales[1];
+        dato.ganzua1 = GameController.ganzua0 + radial.especiales[2];
+        dato.formula1 = GameController.formula0;
+        dato.vidas1 = GameController.LifeMax;
+        dato.corazones1 = GameController.HeartsMax;
+        dato.tipo1 = GameController.TypeLife;
+        dato.vidasMax = GameController.LifeMax;
+        dato.corazonesMax = GameController.HeartsMax;
+        Debug.Log("Nombre de la escena 1 " + dato.nombreEscena1);
+
+        dato.nombrePartida = nombrePartida;
+        dato.nombreEscena = nombreEscena;
+        dato.pila =dato.pila1;
+        dato.bolsa = dato.bolsa1;
+        dato.carton = dato.carton1;
+        dato.manzana = dato.manzana1;
+        dato.platano = dato.platano1;
+        dato.lata = dato.lata1;
+        dato.normal = dato.normal1;
+        dato.paralizante = dato.paralizante1;
+        dato.desactivadora = dato.desactivadora1;
+        dato.tranquilizante = dato.tranquilizante1;
+        dato.pesada = dato.pesada1;
+        dato.energia = dato.energia1;
+        dato.curacion = dato.curacion1;
+        dato.ganzua = dato.ganzua1;
+        dato.formula = dato.formula1;
+        dato.vidas = dato.vidasMax;
+        dato.corazones = dato.corazonesMax;
+        dato.tipo = GameController.TypeLife;
+    
 
         //Serializara los archivos
         bf.Serialize(expediente, dato);
@@ -354,6 +420,104 @@ public class SistemaGuardado : MonoBehaviour
         GameController.e5 = false;
         GameController.e6 = false;
         GameController.e7 = false;
+    }
+    public void cargar5()
+    {
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+        if (File.Exists(Application.persistentDataPath + "/" + buscarNombre + ".d"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream expediente = File.OpenRead(Application.persistentDataPath + "/" + buscarNombre + ".d");
+            DatosJuego datos = new DatosJuego();
+
+            datos = bf.Deserialize(expediente) as DatosJuego;
+            Debug.Log("Nombre al cargar " + nombrePartida);
+            
+            
+            if (morir == 1)
+            {
+                datos.nombreEscena = datos.nombreEscena1;
+                nombreEscena = datos.nombreEscena;
+                Debug.Log("Nombre escena datos " + datos.nombreEscena);
+                Debug.Log("Nombre escena datos 1 " + datos.nombreEscena1);
+                Debug.Log("Nombre escena " + nombreEscena);
+                if (y==0)
+                {
+                    SceneManager.LoadScene(nombreEscena);
+                    y++;
+                }
+                
+                //Datos sobre la vida
+                enemigosFalse();
+                datos.vidas = 3;
+                datos.corazones = 2;
+                datos.tipo = 1;
+                //Datos de respaldo metidos a datos
+                Debug.Log("Cargar al morir");
+                Debug.Log("Nombre de escena" + datos.nombreEscena1);
+                Debug.Log("Bolsa " + datos.bolsa1);
+                
+                datos.pila1 = datos.pila1;
+                datos.bolsa1 = datos.bolsa1;
+                datos.carton1 = datos.carton1;
+                datos.manzana1 = datos.manzana1;
+                datos.platano1 = datos.platano1;
+                datos.lata1 = datos.lata1;
+                datos.normal1 = datos.normal1;
+                datos.paralizante1 = datos.paralizante1;
+                datos.desactivadora1 = datos.desactivadora1;
+                datos.tranquilizante1 = datos.tranquilizante1;
+                datos.pesada1 = datos.pesada1;
+                datos.energia1 = datos.energia1;
+                datos.curacion1 = datos.curacion1;
+                datos.ganzua1 = datos.ganzua1;
+                datos.formula1 = datos.formula1;
+                morir = 0;
+            }
+            nombrePartida = datos.nombrePartida;
+            
+            radial.basura[0] = datos.pila;
+            radial.basura[1] = datos.bolsa;
+            radial.basura[2] = datos.carton;
+            radial.basura[3] = datos.manzana;
+            radial.basura[4] = datos.platano;
+            radial.basura[5] = datos.lata;
+            radial.esfera[0] = datos.normal;
+            radial.esfera[1] = datos.paralizante;
+            radial.esfera[2] = datos.desactivadora;
+            radial.esfera[3] = datos.tranquilizante;
+            radial.esfera[4] = datos.pesada;
+            radial.especiales[0] = datos.energia;
+            radial.especiales[1] = datos.curacion;
+            radial.especiales[2] = datos.ganzua;
+            GameController.lata = datos.lata;
+            GameController.pila = datos.pila;
+            GameController.bolsa = datos.bolsa;
+            GameController.manzana = datos.manzana;
+            GameController.platano = datos.platano;
+            GameController.carton = datos.carton;
+            GameController.normal = datos.normal;
+            GameController.paralizante = datos.paralizante;
+            GameController.desactivadora = datos.desactivadora;
+            GameController.tranquilizante = datos.tranquilizante;
+            GameController.pesada = datos.pesada;
+            GameController.energia = datos.energia;
+            GameController.curacion = datos.curacion;
+            GameController.ganzua = datos.ganzua;
+            GameController.formula = datos.formula;
+            GameController.vidas = datos.vidas;
+            GameController.corazones = datos.corazones;
+            Heart_Bar.Phearts = datos.corazones;
+            Heart_Bar.life = datos.vidas;
+            GameController.TypeLife = datos.tipo;
+            GameController.HeartsMax = datos.corazonesMax;
+            GameController.LifeMax = datos.vidasMax;
+
+            Debug.Log("Noombre de escenaaaaaaaaaaaaaaaaaaa " + nombreEscena);
+            
+        }
+        else { Debug.Log("No se encontro el archivo"); }
     }
     int x = 0, y=0;
     public void cargar1()
@@ -791,11 +955,19 @@ public class SistemaGuardado : MonoBehaviour
             nombreEscena = SceneManager.GetActiveScene().name;
             guardar1();
         }
-        if (collision.gameObject.tag == "Checkpoint5")
+        if (collision.gameObject.tag == "Checkpoint3")
         {
             Debug.Log("Chechkpoint 5 " + nombrePartida);
             nombreEscena = SceneManager.GetActiveScene().name;
+            GameController.LobbyCAP = 5;
             guardarCap5();
+        }
+        if (collision.gameObject.tag == "Checkpoint4")
+        {
+            paso = 1;
+            Debug.Log("Checkpoint recuperar cap  5 " + nombrePartida);
+            nombreEscena = SceneManager.GetActiveScene().name;
+            recuperarCap5();
         }
     }
 }
