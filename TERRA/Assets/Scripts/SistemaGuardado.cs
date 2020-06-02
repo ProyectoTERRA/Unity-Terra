@@ -37,7 +37,14 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("perdio una vida");
             buscarNombre = GameController.nombreActualPartida;
             Debug.Log("Perder antes de cargar " + perder);
-            cargar1();
+            if (GameController.LobbyCAP == 5 && paso != 0)
+            {
+                cargar5();
+            }
+            else if (GameController.LobbyCAP != 5)
+            {
+                cargar1();
+            }
         }
         if(morir == 1)
         {
