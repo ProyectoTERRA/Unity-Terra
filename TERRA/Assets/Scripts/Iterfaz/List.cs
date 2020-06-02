@@ -65,6 +65,10 @@ public class List : MonoBehaviour
         {
             select.Add(esp_E);
         }
+        if(GameController.curacion > 0)
+        {
+            select.Add(esp_H);
+        }
 
 
 
