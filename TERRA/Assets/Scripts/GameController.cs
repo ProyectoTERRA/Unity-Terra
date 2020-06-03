@@ -22,6 +22,9 @@ public class GameController : MonoBehaviour
     public static string H1Equip;
     public static string H2Equip;
 
+    public static string H1Equip0;
+    public static string H2Equip0;
+
 
     public static int LifeMax, TypeLife, HeartsMax;
 
