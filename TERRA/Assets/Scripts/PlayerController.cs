@@ -68,8 +68,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(Equip);
-
+        Debug.Log("---------INICIO PUTO-------------");
+        Debug.Log(GameController.H1Equip0);
+        Debug.Log(GameController.H2Equip0);
+        Debug.Log("---------FIN PUTO-------------");
         //animacion.SetFloat("Velocidad",Mathf.Abs(rbd2.velocity.x));
         //animacion.SetBool("Grounded", grounded);
 
