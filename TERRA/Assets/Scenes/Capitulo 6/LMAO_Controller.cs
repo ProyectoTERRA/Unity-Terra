@@ -70,6 +70,7 @@ public class LMAO_Controller : MonoBehaviour
         }
         if (col.gameObject.tag == "Pesada" && !Defeat)
         {
+            Debug.Log("Ya le diste we");
             Destroy(col.gameObject);
             hit = true;
         }
