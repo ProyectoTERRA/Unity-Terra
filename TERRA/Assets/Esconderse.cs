@@ -71,7 +71,8 @@ public class Esconderse : MonoBehaviour
             h = false;
             hide = false;
         }
-
+        h = false;
+        hide = false;
     }
 
     public void OnTriggerStay2D(Collider2D collision)
