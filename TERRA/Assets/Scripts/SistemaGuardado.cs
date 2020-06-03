@@ -46,6 +46,7 @@ public class SistemaGuardado : MonoBehaviour
             if(GameController.LobbyCAP == 4)
             {
                 cargar5();
+                morir = 0;
             }
             else if(GameController.LobbyCAP != 4)
             {
@@ -87,7 +88,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.equip2 = null;
 
         //Respaldo
-        dato.nombreEscena1 = "Casa";
+        dato.nombreEscena1 = "LOBBY";
         dato.pila1 = 0;
         dato.bolsa1 = 0;
         dato.carton1 = 0;
@@ -236,7 +237,7 @@ public class SistemaGuardado : MonoBehaviour
             GameController.H2Equip = datos.equip20;
 
             Debug.Log("Noombre de escenaaaaaaaaaaaaaaaaaaa " + nombreEscena);
-
+            expediente.Close();
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
@@ -501,7 +502,7 @@ public class SistemaGuardado : MonoBehaviour
             GameController.H2Equip = null;
             */
             Debug.Log("Noombre de escenaaaaaaaaaaaaaaaaaaa " + nombreEscena);
-            
+            expediente.Close();
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
@@ -620,7 +621,7 @@ public class SistemaGuardado : MonoBehaviour
             GameController.H2Equip = datos.equip2;
 
             Debug.Log("Noombre de escenaaaaaaaaaaaaaaaaaaa " + nombreEscena);
-            
+            expediente.Close();
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
@@ -681,6 +682,7 @@ public class SistemaGuardado : MonoBehaviour
             GameController.H2Equip = datos.equip2;
             guardarContador();
             SceneManager.LoadScene(nombreEscena);
+            expediente.Close();
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
@@ -958,6 +960,7 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("Checkpoint recuperar cap  5 " + nombrePartida);
             GameController.LobbyCAP = 5;
             nombreEscena = SceneManager.GetActiveScene().name;
+            Debug.Log("Nombre escena " + nombreEscena);
             recuperarCap5();
         }
     }
