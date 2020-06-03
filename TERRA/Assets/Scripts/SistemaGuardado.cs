@@ -248,7 +248,7 @@ public class SistemaGuardado : MonoBehaviour
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
-
+    int cagando=0;
     public void guardarCap5()
     {
         GameObject go = GameObject.Find("InvFunc");
@@ -258,6 +258,16 @@ public class SistemaGuardado : MonoBehaviour
         FileStream expediente = File.Create(Application.persistentDataPath + "/" + nombrePartida + ".d");//Crea archivo datos.d
         DatosJuego dato = new DatosJuego(); //Dato es la variable de la clase que se serializa
         //Respaldo
+        Debug.Log("----VARIABLES PARA GUARDAR");
+        Debug.Log(radial.basura[0]);
+        Debug.Log(radial.basura[1]);
+        Debug.Log(radial.basura[2]);
+        Debug.Log(GameController.H1Equip);
+        Debug.Log(GameController.H2Equip);
+        Debug.Log(GameController.LifeMax);
+        Debug.Log(GameController.TypeLife);
+
+        Debug.Log("-------------FIN----------");
         dato.nombreEscena1 = nombreEscena;
         dato.pila1 = radial.basura[0];
         dato.bolsa1 = radial.basura[1];
@@ -286,7 +296,8 @@ public class SistemaGuardado : MonoBehaviour
 
         Debug.Log("Nombre de la escena 1 " + dato.nombreEscena1);
         Debug.Log("---------INICIO-------------");
-
+        Debug.Log("Game controller1 " + GameController.H1Equip0);
+        Debug.Log("Game controller2 " + GameController.H1Equip0);
         Debug.Log(dato.equip10);
         Debug.Log(dato.equip20);
 
@@ -419,6 +430,8 @@ public class SistemaGuardado : MonoBehaviour
         dato.tipo1 = GameController.TypeLife;
         dato.vidasMax1 = GameController.LifeMax;
         dato.corazonesMax1 = GameController.HeartsMax;
+        dato.equip10 = GameController.H1Equip;
+        dato.equip20 = GameController.H2Equip0;
         Debug.Log("Nombre de la escena 1 " + dato.nombreEscena1);
 
         //Guardando en gamecontroller
@@ -968,7 +981,12 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("Chechkpoint 5 " + nombrePartida);
             nombreEscena = SceneManager.GetActiveScene().name;
             GameController.LobbyCAP = 4;
-            guardarCap5();
+            if (cagando == 0)
+            {
+                guardarCap5();
+                cagando++;
+            }
+            
         }
         if (collision.gameObject.tag == "Checkpoint4" && PlayerCorredores.Capsule)
         {

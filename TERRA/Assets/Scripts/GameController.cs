@@ -50,6 +50,8 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         Debug.Log("Game controller nombre escena 0 " + nombreEscena0);
+        Debug.Log("Game controler equipo 1  " + H1Equip);
+        Debug.Log("Game controller equipo 2 " + GameController.H2Equip);
     }
     private void Awake()
     {
