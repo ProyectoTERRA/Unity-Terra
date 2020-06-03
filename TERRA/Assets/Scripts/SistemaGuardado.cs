@@ -196,7 +196,14 @@ public class SistemaGuardado : MonoBehaviour
             datos = bf.Deserialize(expediente) as DatosJuego;
             Heart_Bar.Phearts = datos.corazonesMax;
             Heart_Bar.life = datos.vidasMax;
-            
+
+            Debug.Log("---------INICIO-------------");
+
+            Debug.Log(datos.equip10);
+            Debug.Log(datos.equip20);
+
+            Debug.Log("---------FIN-------------");
+
             radial.basura[0] += datos.pila1;
             radial.basura[1] += datos.bolsa1;
             radial.basura[2] += datos.carton1;
@@ -278,6 +285,14 @@ public class SistemaGuardado : MonoBehaviour
         dato.equip20 = GameController.H2Equip0;
 
         Debug.Log("Nombre de la escena 1 " + dato.nombreEscena1);
+        Debug.Log("---------INICIO-------------");
+
+        Debug.Log(dato.equip10);
+        Debug.Log(dato.equip20);
+
+        Debug.Log("---------FIN-------------");
+
+
 
         //Guardando en gamecontroller
         GameController.nombreEscena0 = dato.nombreEscena1;
