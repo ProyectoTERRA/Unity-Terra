@@ -39,7 +39,7 @@ public class cambiarPiso : MonoBehaviour
     {
         if (collision.gameObject.tag == "Pasar")
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.J))
             {
                 transform.position = new Vector3(7f, 13.04f);
                 transform.localScale = new Vector3(1f, 1f, 1f);
