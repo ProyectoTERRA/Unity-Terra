@@ -191,8 +191,11 @@ public class SistemaGuardado : MonoBehaviour
             FileStream expediente = File.OpenRead(Application.persistentDataPath + "/" + nombrePartida + ".d");
             DatosJuego datos = new DatosJuego();
 
+            Debug.Log("Nombre de partidaa " + nombrePartida);
             datos = bf.Deserialize(expediente) as DatosJuego;
-
+            Heart_Bar.Phearts = datos.corazonesMax;
+            Heart_Bar.life = datos.vidasMax;
+            
             radial.basura[0] += datos.pila1;
             radial.basura[1] += datos.bolsa1;
             radial.basura[2] += datos.carton1;
