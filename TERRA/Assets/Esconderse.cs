@@ -66,13 +66,12 @@ public class Esconderse : MonoBehaviour
     {
         if (!hide && (collision.gameObject.name == "DoorOpenPanel 1" || collision.gameObject.name == "DoorOpenPanel 2" ||
             collision.gameObject.name == "DoorOpenPanel 3" || collision.gameObject.name == "DoorOpenPanel 4" ||
-            collision.gameObject.name == "DoorOpenPanel 5" || collision.gameObject.name == "DoorOpenPanel 6" || collision.gameObject.name == "DoorOpenPanel 6"))
+            collision.gameObject.name == "DoorOpenPanel 5" || collision.gameObject.name == "DoorOpenPanel 6" || collision.gameObject.name == "DoorOpenPanel 7"))
         {
             h = false;
             hide = false;
         }
-        h = false;
-        hide = false;
+       
     }
 
     public void OnTriggerStay2D(Collider2D collision)
