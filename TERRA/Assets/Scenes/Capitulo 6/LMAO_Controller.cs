@@ -73,6 +73,7 @@ public class LMAO_Controller : MonoBehaviour
             Debug.Log("Ya le diste we");
             Destroy(col.gameObject);
             hit = true;
+            Debug.Log("Por si dudabas del putazo: " + hit);
         }
 
 
@@ -128,6 +129,7 @@ public class LMAO_Controller : MonoBehaviour
         if (hit)
         {
             Damage++;
+            Debug.Log("ME DOLIO WE: " + Damage);
             hit = false;
         }
     }
