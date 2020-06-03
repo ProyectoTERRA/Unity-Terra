@@ -23,7 +23,7 @@ public class PlayerLMAO : MonoBehaviour
     {
        
 
-        Heart_Bar.Phearts = 6;
+        //Heart_Bar.Phearts = 6;
         cSide = false;
         Front = true;
         healing = false;
