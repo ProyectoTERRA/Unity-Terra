@@ -21,10 +21,7 @@ public class PlayerLobby : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameController.LobbyCAP = 2;
-        Heart_Bar.Phearts = 6;
-        Heart_Bar.life = 3;
-        GameController.TypeLife = 1;
+        GameController.LobbyCAP = 4;
         exit = false;
         /*
         if (GameController.start)
