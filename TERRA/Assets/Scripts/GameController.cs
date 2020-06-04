@@ -43,7 +43,8 @@ public class GameController : MonoBehaviour
     //-----Variables CAP.2-----Escena Refrigeracion-----------
     public static bool e1, e2, e3, e4, e5, e6, e7, b1, b2, b3, b4, b5, l1, l2, l3,l4, l5, m1, m2, m3, m4, m5;
     public static bool t1, t2, t3, t4, t5, t6, t7;
-    
+
+    public static bool breve;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +60,21 @@ public class GameController : MonoBehaviour
         Debug.Log("Game controller type 0 " + TypeLife0);
         Debug.Log("Game controller Heartmax " + HeartsMax);
 
+        Debug.Log("-------------datos------------");
+        Debug.Log(pila0);
+        Debug.Log(bolsa0);
+        Debug.Log(carton0);
+        Debug.Log(manzana0);
+        Debug.Log(platano0);
+        Debug.Log(lata0);
+        Debug.Log(normal0);
+        Debug.Log(paralizante0);
+        Debug.Log(desactivadora0);
+        Debug.Log(tranquilizante0);
+        Debug.Log(pesada0);
+        Debug.Log(curacion0);
+        Debug.Log(ganzua0);
+        Debug.Log("-------------Terminaaaaaaaa--");
 
     }
     private void Awake()

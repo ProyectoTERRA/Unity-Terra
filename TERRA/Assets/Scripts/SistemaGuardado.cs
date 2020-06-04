@@ -19,7 +19,7 @@ public class SistemaGuardado : MonoBehaviour
     public string next, before;
     //Variables que guardaran los datos de las partidas
     public String nombreEscena, nombrePartida, nombrePartida1;
-    public static int perder=0, morir=0;
+    public static int perder = 0, morir = 0;
 
     public static bool TRecovery, T2;
 
@@ -32,13 +32,13 @@ public class SistemaGuardado : MonoBehaviour
             guardarContador();
         }
 
-       
+
     }
     public void Update()
     {
-       
+
         cargarContador();
-        if (perder == 1 )
+        if (perder == 1)
         {
             Debug.Log("perdio una vida");
             buscarNombre = GameController.nombreActualPartida;
@@ -58,17 +58,17 @@ public class SistemaGuardado : MonoBehaviour
             }
             perder = 0;
         }
-        if(morir == 1)
+        if (morir == 1)
         {
             Debug.Log("Se nos murio");
             buscarNombre = GameController.nombreActualPartida;
-            if(GameController.LobbyCAP == 4)
+            if (GameController.LobbyCAP == 4)
             {
                 cargar5();
                 morir = 0;
                 GameController.LobbyCAP = 4;
             }
-            else if(GameController.LobbyCAP != 4)
+            else if (GameController.LobbyCAP != 4)
             {
                 cargar1();
                 morir = 0;
@@ -232,7 +232,7 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("TipoObjetivo en G " + GameController.TypeLife);
             Debug.Log("TipoObjetivo en A " + datos.tipo1);
             Debug.Log("TipoObjetivo en A " + datos.tipo);
-            GameController.TypeLife = datos.tipo1; 
+            GameController.TypeLife = datos.tipo1;
             GameController.HeartsMax = datos.corazonesMax1;
 
             GameController.corazones = GameController.HeartsMax;
@@ -244,7 +244,7 @@ public class SistemaGuardado : MonoBehaviour
 
             Debug.Log("---------INICIO-------------");
             Debug.Log("Corazones datos " + datos.vidasMax);
-            Debug.Log("Vidas datos " +datos.corazonesMax);
+            Debug.Log("Vidas datos " + datos.corazonesMax);
             Debug.Log("Corazones HeartBear " + Heart_Bar.Phearts);
             Debug.Log("Vidas heart " + Heart_Bar.life);
             Debug.Log(datos.equip10);
@@ -302,7 +302,7 @@ public class SistemaGuardado : MonoBehaviour
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
-    int cagando=0;
+    int cagando = 0;
     public void cargarCap5()
     {
         GameObject go = GameObject.Find("InvFunc");
@@ -316,19 +316,12 @@ public class SistemaGuardado : MonoBehaviour
             datos = bf.Deserialize(expediente) as DatosJuego;
             Debug.Log("Nombre al cargar " + nombrePartida);
             Debug.Log("corazones maimos " + GameController.HeartsMax);
-            
+
             datos.corazones = GameController.HeartsMax;
             nombreEscena = datos.nombreEscena;
-            if (x == 0)
-            {
-                datos.vidas = datos.vidas - 1;
-                Debug.Log(datos.vidas);
-                SceneManager.LoadScene(nombreEscena);
-                x++;
-                x++;
-            }
-            perder = 0;
             
+            perder = 0;
+
             nombrePartida = datos.nombrePartida;
 
             radial.basura[0] = datos.pila;
@@ -416,6 +409,37 @@ public class SistemaGuardado : MonoBehaviour
                 GameController.H2Equip = GameController.H2Equip0;
                 GameController.H1Equip0 = datos.equip10;
                 GameController.H2Equip0 = datos.equip20;
+
+                GameController.pila = radial.basura[0];
+                GameController.carton = radial.basura[1];
+                GameController.bolsa = radial.basura[2];
+                GameController.manzana = radial.basura[3];
+                GameController.platano = radial.basura[4];
+                GameController.lata = radial.basura[5];
+                GameController.normal = radial.esfera[0];
+                GameController.paralizante = radial.esfera[1];
+                GameController.desactivadora = radial.esfera[2];
+                GameController.tranquilizante = radial.esfera[3];
+                GameController.pesada = radial.esfera[4];
+                GameController.energia = radial.especiales[0];
+                GameController.curacion = radial.especiales[1];
+                GameController.ganzua = radial.especiales[2];
+                GameController.breve = true;
+
+                Debug.Log("Pilas:" + radial.basura[0]);
+                Debug.Log("Bolsas:" + radial.basura[1]);
+                Debug.Log("Latas:" + datos.lata1);
+                Debug.Log("Cartones:" + datos.carton1);
+                Debug.Log("Manzanas:" + datos.manzana1);
+                Debug.Log("Platanos:" + datos.platano1);
+                if (x == 0)
+                {
+                    datos.vidas = datos.vidas - 1;
+                    Debug.Log(datos.vidas);
+                    SceneManager.LoadScene(nombreEscena);
+                    x++;
+                    x++;
+                }
             }
             perder = 0;
 
@@ -440,7 +464,23 @@ public class SistemaGuardado : MonoBehaviour
         Debug.Log("Lyfe max 1 " + GameController.LifeMax);
         Debug.Log("Tipo " + GameController.TypeLife);
 
-
+        if (GameController.breve)
+        {
+            radial.basura[0] = GameController.pila;
+            radial.basura[1] = GameController.bolsa;
+            radial.basura[2] = GameController.carton;
+            radial.basura[3] = GameController.manzana;
+            radial.basura[4] = GameController.platano;
+            radial.basura[5] = GameController.lata;
+            radial.esfera[0] = GameController.normal;
+            radial.esfera[1] = GameController.paralizante;
+            radial.esfera[2] = GameController.desactivadora;
+            radial.esfera[3] = GameController.tranquilizante;
+            radial.esfera[4] = GameController.pesada;
+            radial.especiales[0] = GameController.energia;
+            radial.especiales[1] = GameController.curacion;
+            radial.especiales[2] = GameController.ganzua;
+        }
 
         Debug.Log("-------------FIN----------");
 
@@ -472,14 +512,14 @@ public class SistemaGuardado : MonoBehaviour
         dato.equip20 = GameController.H2Equip0;
 
         Debug.Log("----VARIABLES PARA GUARDAR");
-        Debug.Log("Pilas:"+dato.pila1);
-        Debug.Log("Bolsas:"+dato.bolsa1);
+        Debug.Log("Pilas:" + dato.pila1);
+        Debug.Log("Bolsas:" + dato.bolsa1);
         Debug.Log("Latas:" + dato.lata1);
         Debug.Log("Cartones:" + dato.carton1);
         Debug.Log("Manzanas:" + dato.manzana1);
         Debug.Log("Platanos:" + dato.platano1);
 
-        Debug.Log("TIpo: "+dato.tipo1);
+        Debug.Log("TIpo: " + dato.tipo1);
 
 
         Debug.Log("-------------FIN----------");
@@ -562,16 +602,10 @@ public class SistemaGuardado : MonoBehaviour
         Debug.Log("CAGANDOOOOOOOOO");
         Debug.Log("EQUIPO 1 " + dato.equip10);
 
-        
-<<<<<<< HEAD
+
         GameController.LifeMax = dato.vidasMax;
 
         //GameController.TypeLife = dato.tipo1;
-=======
-       // GameController.LifeMax = dato.vidasMax;
-        GameController.TypeLife = dato.tipo1;
->>>>>>> 9eeb7fffcd84d2b2675cf42dcc162f6ee2293128
-        
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
@@ -700,7 +734,7 @@ public class SistemaGuardado : MonoBehaviour
             datos.nombreEscena1 = GameController.nombreEscena0;
             datos.pila1 = GameController.pila0;
             datos.carton1 = GameController.carton0;
-            datos.bolsa1 = GameController.bolsa0 ;
+            datos.bolsa1 = GameController.bolsa0;
             datos.manzana1 = GameController.manzana0;
             datos.platano1 = GameController.platano0;
             datos.lata1 = GameController.lata0;
@@ -711,33 +745,42 @@ public class SistemaGuardado : MonoBehaviour
             datos.pesada1 = GameController.pesada0;
             datos.curacion1 = GameController.curacion0;
             datos.ganzua1 = GameController.ganzua0;
-            datos.vidasMax =GameController.LifeMax;
+            datos.vidasMax = GameController.LifeMax;
             datos.corazonesMax = GameController.HeartsMax;
             datos.equip10 = GameController.H1Equip0;
             datos.equip20 = GameController.H2Equip0;
-
+            
             nombreEscena = datos.nombreEscena1;
-            radial.basura[0]=datos.pila1;
-            radial.basura[1]=datos.carton1;
-            radial.basura[2]=datos.bolsa1;
-            radial.basura[3]=datos.manzana1;
-            radial.basura[4]= datos.platano1;
-            radial.basura[5]= datos.lata1 ;
-            radial.esfera[0]= datos.normal1;
-            radial.esfera[1]= datos.paralizante1;
-            radial.esfera[2]= datos.desactivadora1;
+            radial.basura[0] = datos.pila1;
+            radial.basura[1] = datos.carton1;
+            radial.basura[2] = datos.bolsa1;
+            radial.basura[3] = datos.manzana1;
+            radial.basura[4] = datos.platano1;
+            radial.basura[5] = datos.lata1;
+            radial.esfera[0] = datos.normal1;
+            radial.esfera[1] = datos.paralizante1;
+            radial.esfera[2] = datos.desactivadora1;
             radial.esfera[3] = datos.tranquilizante1;
-            radial.esfera[4]= datos.pesada1;
-            radial.especiales[0]= datos.energia1;
-            radial.especiales[1]= datos.curacion1;
-            radial.especiales[2]= datos.ganzua1;
+            radial.esfera[4] = datos.pesada1;
+            radial.especiales[0] = datos.energia1;
+            radial.especiales[1] = datos.curacion1;
+            radial.especiales[2] = datos.ganzua1;
             GameController.TypeLife = datos.tipo1;
-            GameController.LifeMax= datos.vidasMax;
-            GameController.HeartsMax= datos.corazonesMax;
-            GameController.H1Equip= GameController.H1Equip0;
+            GameController.LifeMax = datos.vidasMax;
+            GameController.HeartsMax = datos.corazonesMax;
+            GameController.H1Equip = GameController.H1Equip0;
             GameController.H2Equip = GameController.H2Equip0;
-            GameController.H1Equip0= datos.equip10;
-            GameController.H2Equip0= datos.equip20;
+            GameController.H1Equip0 = datos.equip10;
+            GameController.H2Equip0 = datos.equip20;
+
+            Debug.Log("-------------Cargar 5------------");
+            Debug.Log(radial.basura[0]);
+            Debug.Log(radial.basura[1]);
+            Debug.Log(radial.basura[2]);
+            Debug.Log(radial.basura[3]);
+            Debug.Log(radial.basura[4]);
+            Debug.Log(radial.basura[5]);
+            Debug.Log("-------------Terminaaaaaaaa--");
             /*
             radial.basura[0] = datos.pila;
             radial.basura[1] = datos.bolsa;
@@ -784,7 +827,7 @@ public class SistemaGuardado : MonoBehaviour
         else { Debug.Log("No se encontro el archivo"); }
         morir = 0;
     }
-    int x = 0, y=0;
+    int x = 0, y = 0;
     public void cargar1()
     {
         GameObject go = GameObject.Find("InvFunc");
@@ -797,8 +840,8 @@ public class SistemaGuardado : MonoBehaviour
 
             datos = bf.Deserialize(expediente) as DatosJuego;
             Debug.Log("Nombre al cargar " + nombrePartida);
-            
-            
+
+
             if (morir == 1)
             {
                 datos.nombreEscena = datos.nombreEscena1;
@@ -806,8 +849,8 @@ public class SistemaGuardado : MonoBehaviour
                 Debug.Log("Nombre escena datos " + datos.nombreEscena);
                 Debug.Log("Nombre escena datos 1 " + datos.nombreEscena1);
                 Debug.Log("Nombre escena " + nombreEscena);
-                
-                
+
+
                 //Datos sobre la vida
                 enemigosFalse();
                 datos.vidas = GameController.LifeMax;
@@ -817,7 +860,7 @@ public class SistemaGuardado : MonoBehaviour
                 Debug.Log("Cargar al morir");
                 Debug.Log("Nombre de escena" + datos.nombreEscena1);
                 Debug.Log("Bolsa " + datos.bolsa1);
-                
+
                 datos.pila = datos.pila1;
                 datos.bolsa = datos.bolsa1;
                 datos.carton = datos.carton1;
@@ -842,10 +885,10 @@ public class SistemaGuardado : MonoBehaviour
             }
             if (perder == 1)
             {
-                
+
                 Debug.Log("corazones maimos " + GameController.HeartsMax);
                 datos.corazones = GameController.HeartsMax;
-                
+
                 enemigosFalse();
                 nombreEscena = datos.nombreEscena;
                 if (x == 0)
@@ -858,7 +901,7 @@ public class SistemaGuardado : MonoBehaviour
                 perder = 0;
             }
             nombrePartida = datos.nombrePartida;
-            
+
             radial.basura[0] = datos.pila;
             radial.basura[1] = datos.bolsa;
             radial.basura[2] = datos.carton;
@@ -1221,7 +1264,7 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("Nombre de la escena" + nombreEscena);
             guardar();
         }
-        if(collision.gameObject.tag =="Checkpoint2")
+        if (collision.gameObject.tag == "Checkpoint2")
         {
             nombrePartida = GameController.nombreActualPartida;
             Debug.Log("Chechkpoint 2 " + nombrePartida);
@@ -1239,7 +1282,7 @@ public class SistemaGuardado : MonoBehaviour
                 guardarCap5();
                 cagando++;
             }
-            
+
         }
         if (collision.gameObject.tag == "Checkpoint4" && PlayerCorredores.Capsule && !TRecovery)
         {
@@ -1260,7 +1303,7 @@ class DatosJuego : System.Object
     public int pila1, manzana1, platano1, bolsa1, carton1, lata1, normal1, paralizante1, desactivadora1, tranquilizante1, pesada1, energia1, curacion1, ganzua1;
     public int formula1;
     public int vidas1, corazones1, tipo1, corazonesMax1, vidasMax1;
-    public String equip1, equip2, equip10,equip20;
+    public String equip1, equip2, equip10, equip20;
 }
 
 
@@ -1275,4 +1318,6 @@ class DatosPartidas : System.Object
     public int formula;
     public int vidas, corazones, tipo, corazonesMax, vidasMax;
 }
+
+
 
