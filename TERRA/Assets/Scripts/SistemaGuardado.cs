@@ -217,11 +217,11 @@ public class SistemaGuardado : MonoBehaviour
             
 
             GameController.TypeLife = datos.tipo1;
-            GameController.HeartsMax = datos.corazonesMax1;
+            GameController.HeartsMax = datos.corazonesMax;
 
             GameController.corazones = GameController.HeartsMax;
             Heart_Bar.Phearts = GameController.corazones;
-            GameController.LifeMax = datos.vidasMax1;
+            GameController.LifeMax = datos.vidasMax;
             GameController.vidas = GameController.LifeMax;
             Heart_Bar.life = GameController.vidas;
 
