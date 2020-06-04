@@ -194,12 +194,12 @@ public class SistemaGuardado : MonoBehaviour
 
             Debug.Log("Nombre de partidaa " + nombrePartida);
             datos = bf.Deserialize(expediente) as DatosJuego;
-            Heart_Bar.Phearts = datos.corazonesMax1;
-            Heart_Bar.life = datos.vidasMax1;
+            Heart_Bar.Phearts = datos.corazonesMax;
+            Heart_Bar.life = datos.vidasMax;
 
             Debug.Log("---------INICIO-------------");
 
-
+            Debug.Log(datos.equip10);
             Debug.Log(datos.equip20);
 
             Debug.Log("---------FIN-------------");
@@ -289,8 +289,6 @@ public class SistemaGuardado : MonoBehaviour
         dato.tipo1 = GameController.TypeLife;
         dato.vidasMax = GameController.LifeMax;
         dato.corazonesMax = GameController.HeartsMax;
-        dato.vidasMax1 = GameController.LifeMax;
-        dato.corazonesMax1 = GameController.HeartsMax;
         GameController.H1Equip0 = GameController.H1Equip;
         GameController.H2Equip0 = GameController.H2Equip;
         dato.equip10 = GameController.H1Equip0;
@@ -481,7 +479,7 @@ public class SistemaGuardado : MonoBehaviour
             DatosJuego datos = new DatosJuego();
 
             datos = bf.Deserialize(expediente) as DatosJuego;
-            Debug.Log("Nombre al cargar " + buscarNombre);
+            Debug.Log("Nombre al cargar " + nombrePartida);
 
             datos.nombreEscena = datos.nombreEscena1;
             nombreEscena = datos.nombreEscena;
@@ -980,7 +978,7 @@ public class SistemaGuardado : MonoBehaviour
         }
         if (collision.gameObject.tag == "Checkpoint3")
         {
-            Debug.Log("Chechkpoint 5 " + GameController.nombreActualPartida);
+            Debug.Log("Chechkpoint 5 " + nombrePartida);
             nombreEscena = SceneManager.GetActiveScene().name;
             GameController.LobbyCAP = 4;
             if (cagando == 0)
@@ -990,7 +988,7 @@ public class SistemaGuardado : MonoBehaviour
             }
             
         }
-        if (collision.gameObject.tag == "Checkpoint4"/* && PlayerCorredores.Capsule*/)
+        if (collision.gameObject.tag == "Checkpoint4" && PlayerCorredores.Capsule)
         {
             Debug.Log("Checkpoint recuperar cap  5 " + nombrePartida);
             GameController.LobbyCAP = 5;
