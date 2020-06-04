@@ -207,7 +207,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.formula1 = GameController.formula0;
         dato.vidasMax1 = GameController.LifeMax;
         dato.corazonesMax1 = GameController.HeartsMax;
-        dato.tipo1 = GameController.TypeLife;
+        dato.tipo1 = GameController.TypeLife0;
         dato.equip10 = GameController.H1Equip0;
         dato.equip20 = GameController.H2Equip0;
 
@@ -367,6 +367,7 @@ public class SistemaGuardado : MonoBehaviour
             GameController.TypeLife = datos.tipo;
             GameController.HeartsMax = datos.corazonesMax;
             GameController.LifeMax = datos.vidasMax;
+
             GameController.H1Equip = datos.equip1;
             GameController.H2Equip = datos.equip2;
 
@@ -388,6 +389,7 @@ public class SistemaGuardado : MonoBehaviour
             datos.corazonesMax = GameController.HeartsMax;
             datos.equip10 = GameController.H1Equip0;
             datos.equip20 = GameController.H2Equip0;
+            datos.tipo1 = GameController.TypeLife0;
 
             if (nombreEscena == "Celdas")
             {
@@ -407,6 +409,7 @@ public class SistemaGuardado : MonoBehaviour
                 radial.especiales[0] = datos.energia1;
                 radial.especiales[1] = datos.curacion1;
                 radial.especiales[2] = datos.ganzua1;
+                GameController.TypeLife = datos.tipo1;
                 GameController.LifeMax = datos.vidasMax;
                 GameController.HeartsMax = datos.corazonesMax;
                 GameController.H1Equip = GameController.H1Equip0;
@@ -435,6 +438,7 @@ public class SistemaGuardado : MonoBehaviour
         Debug.Log("----VARIABLES PARA GUARDAR");
         Debug.Log("Celdas:" + radial.especiales[0]);
         Debug.Log("Lyfe max 1 " + GameController.LifeMax);
+        Debug.Log("Tipo " + GameController.TypeLife);
 
 
 
@@ -458,6 +462,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.formula1 = GameController.formula;
         dato.vidas1 = Heart_Bar.life;
         dato.corazones1 = Heart_Bar.Phearts;
+        GameController.TypeLife0 = GameController.TypeLife;
         dato.tipo1 = GameController.TypeLife;
         dato.vidasMax = GameController.LifeMax;
         dato.corazonesMax = GameController.HeartsMax;
@@ -506,7 +511,7 @@ public class SistemaGuardado : MonoBehaviour
         GameController.ganzua0 = dato.ganzua1;
         GameController.formula0 = dato.formula1;
         GameController.LifeMax = 3;
-        GameController.HeartsMax = 6;
+        //GameController.HeartsMax = 6;
 
         //Variables a modificar porel cap
         radial.basura[0] = 0;
@@ -557,10 +562,11 @@ public class SistemaGuardado : MonoBehaviour
         Debug.Log("CAGANDOOOOOOOOO");
         Debug.Log("EQUIPO 1 " + dato.equip10);
 
-        /*
+        
         GameController.LifeMax = dato.vidasMax;
-        GameController.TypeLife = dato.tipo1;
-        */
+
+        //GameController.TypeLife = dato.tipo1;
+        
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
@@ -685,7 +691,7 @@ public class SistemaGuardado : MonoBehaviour
             datos.corazones = 2;
             Heart_Bar.life = datos.vidas;
             Heart_Bar.Phearts = datos.corazones1;
-            GameController.TypeLife = datos.tipo;
+            datos.tipo1 = GameController.TypeLife0;
             datos.nombreEscena1 = GameController.nombreEscena0;
             datos.pila1 = GameController.pila0;
             datos.carton1 = GameController.carton0;
@@ -720,6 +726,7 @@ public class SistemaGuardado : MonoBehaviour
             radial.especiales[0]= datos.energia1;
             radial.especiales[1]= datos.curacion1;
             radial.especiales[2]= datos.ganzua1;
+            GameController.TypeLife = datos.tipo1;
             GameController.LifeMax= datos.vidasMax;
             GameController.HeartsMax= datos.corazonesMax;
             GameController.H1Equip= GameController.H1Equip0;

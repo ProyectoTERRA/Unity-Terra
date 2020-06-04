@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
     public static string H2Equip0;
 
     public static bool TequipCap5;
-    public static int LifeMax, TypeLife, HeartsMax;
+    public static int LifeMax, TypeLife, HeartsMax, TypeLife0;
 
     public static bool DJumpUnlock, LJumpUnlock, DashUnlock, InvisibleUnlock, x4HeartsUnlock, x5HeartsUnlock, x4LifesUnlock, x5LifesUnlock;
 
@@ -53,8 +53,13 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Game controller nombre escena 0 " + nombreEscena0);
         Debug.Log("Game controler equipo 1  " + H1Equip);
-        Debug.Log("Game controller equipo 2 " + GameController.H2Equip);
+        Debug.Log("Game controller equipo 2 " + H2Equip);
         Debug.Log("Vidas max  " + LifeMax);
+        Debug.Log("Game controller type " + TypeLife);
+        Debug.Log("Game controller type 0 " + TypeLife0);
+        Debug.Log("Game controller Heartmax " + HeartsMax);
+
+
     }
     private void Awake()
     {
