@@ -19,7 +19,7 @@ public class PlayerConductos : MonoBehaviour
     void Start()
     {
 
-        Heart_Bar.Phearts = 6;
+
         flag = true;
  
         GetComponent<SliderConductos>().enabled = false;

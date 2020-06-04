@@ -61,7 +61,7 @@ public class PlayerCarga : MonoBehaviour
         Key_Pl2.SetActive(false);
         Key_Pl3.SetActive(false);
 
-        Heart_Bar.Phearts = 6;
+
 
         countPL = 0;
         cAct1= false;

@@ -8,7 +8,7 @@ public class PlayerAterrizaje : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Heart_Bar.Phearts = 6;
+
     }
 
     // Update is called once per frame

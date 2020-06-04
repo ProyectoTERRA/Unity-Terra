@@ -23,7 +23,7 @@ public class PlayerServidores : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Heart_Bar.Phearts = 6;
+
         ActM = false;
         dies = false;
 
