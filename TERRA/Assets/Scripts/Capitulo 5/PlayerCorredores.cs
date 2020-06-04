@@ -51,6 +51,7 @@ public class PlayerCorredores : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameController.LobbyCAP = 4;
         Key_EnergyALMA.SetActive(true);
 
         REC.SetActive(false);

@@ -11,6 +11,7 @@ public class Trampillas : MonoBehaviour
     private bool Active;
     void Start()
     {
+        GameController.LobbyCAP = 4;
         Active = false;
         OnTrap = GetComponent<SpriteRenderer>();
         Bye = GetComponent<BoxCollider2D>();
