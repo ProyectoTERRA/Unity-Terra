@@ -51,8 +51,7 @@ public class PlayerCorredores : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Heart_Bar.Phearts = GameController.corazones;
-        Heart_Bar.life = GameController.vidas;
+       
         GameController.LobbyCAP = 4;
         Key_EnergyALMA.SetActive(true);
 
