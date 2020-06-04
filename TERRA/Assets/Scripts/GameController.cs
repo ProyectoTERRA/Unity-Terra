@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour
 
     public static bool DJumpUnlock, LJumpUnlock, DashUnlock, InvisibleUnlock, x4HeartsUnlock, x5HeartsUnlock, x4LifesUnlock, x5LifesUnlock;
 
+    
 
     //----Variable Singleton--
     public static GameController instance = null;

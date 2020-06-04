@@ -56,6 +56,7 @@ public class Heart_Bar : MonoBehaviour
     public static int Maxlife;
 
     public static bool FULL;
+
     void Start()
     {
         Debug.Log(type);
@@ -78,10 +79,13 @@ public class Heart_Bar : MonoBehaviour
     public void Update()
     {
         type = GameController.TypeLife;
-        
-        Debug.Log(Phearts);
-        Debug.Log(life);
 
+        Debug.Log("bar H: " + Phearts);
+        Debug.Log("bar L: " + life);
+
+        Debug.Log("bar V: " + GameController.vidas);
+        Debug.Log("bar C: " + GameController.corazones);
+        GameController.corazones = Phearts;
         hearts = Phearts;
 
         if (life <= 0)
@@ -125,8 +129,9 @@ public class Heart_Bar : MonoBehaviour
                         //life = 0;
                     }
 
-                    if (hearts > 6)
+                    if (Phearts > 6)
                     {
+                        Phearts = 6;
                         hearts = 6;
                     }
 
@@ -200,8 +205,9 @@ public class Heart_Bar : MonoBehaviour
                         //life = 0;
                     }*/
 
-                    if (hearts > 8)
+                    if (Phearts > 8)
                     {
+                        Phearts = 8;
                         hearts = 8;
                     }
 
@@ -284,8 +290,9 @@ public class Heart_Bar : MonoBehaviour
                         //life = 0;
                     }
 
-                    if (hearts > 10)
+                    if (Phearts > 10)
                     {
+                        Phearts = 10;
                         hearts = 10;
                     }
 
@@ -424,7 +431,7 @@ public class Heart_Bar : MonoBehaviour
         life = GameController.vidas;
     }
 
-    public IEnumerator DIE()
+    private IEnumerator DIE()
     {
         yield return new WaitForSeconds(1f);
         //GameController.life--;
@@ -432,6 +439,8 @@ public class Heart_Bar : MonoBehaviour
         Turret.act = false;
         SistemaGuardado.perder = 1;
         SistemaGuardado.morir = 0;
+        StopAllCoroutines();
+        Debug.Log("DIE");
 
     }
     public IEnumerator DIE2()
@@ -442,6 +451,7 @@ public class Heart_Bar : MonoBehaviour
         Turret.act = false;
         SistemaGuardado.morir = 1;
         SistemaGuardado.perder = 0;
+        Debug.Log("DIE2");
         Refill();
     }
 }
