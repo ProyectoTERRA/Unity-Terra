@@ -562,15 +562,10 @@ public class SistemaGuardado : MonoBehaviour
         Debug.Log("CAGANDOOOOOOOOO");
         Debug.Log("EQUIPO 1 " + dato.equip10);
 
-        
-<<<<<<< HEAD
+
         GameController.LifeMax = dato.vidasMax;
 
-        //GameController.TypeLife = dato.tipo1;
-=======
-       // GameController.LifeMax = dato.vidasMax;
-        GameController.TypeLife = dato.tipo1;
->>>>>>> 9eeb7fffcd84d2b2675cf42dcc162f6ee2293128
+  
         
         //Serializara los archivos
         bf.Serialize(expediente, dato);
