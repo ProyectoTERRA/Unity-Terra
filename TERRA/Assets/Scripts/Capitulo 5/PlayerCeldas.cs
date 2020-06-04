@@ -44,7 +44,7 @@ public class PlayerCeldas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Heart_Bar.Phearts = 3;
+       
 
         Key_DoorE.SetActive(false);
 
