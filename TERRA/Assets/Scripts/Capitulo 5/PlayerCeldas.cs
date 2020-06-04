@@ -209,7 +209,7 @@ public class PlayerCeldas : MonoBehaviour
             GameController.curacion = radial.especiales[1];
             GameController.ganzua = radial.especiales[2];
             Debug.Log("Salido");
-            SceneManager.LoadScene("Corredores");
+            SceneManager.LoadScene("Conductos");
 
 
         }
