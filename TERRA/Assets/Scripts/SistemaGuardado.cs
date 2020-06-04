@@ -177,13 +177,17 @@ public class SistemaGuardado : MonoBehaviour
         dato.corazonesMax1 = GameController.HeartsMax;
         dato.equip10 = GameController.H1Equip0;
         dato.equip20 = GameController.H2Equip0;
-
+        Debug.Log("vidas maximas   " + dato.vidasMax);
+        Debug.Log("Corazones maximooos " + dato.corazonesMax);
+        Debug.Log("vidas maximas   " + dato.vidasMax1);
+        Debug.Log("Corazones maximooos " + dato.corazonesMax1);
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
     }
     public void recuperarCap5()
     {
+        GameController.TypeLife = 1;
         GameObject go = GameObject.Find("InvFunc");
         radial radial = go.GetComponent<radial>();
         if (File.Exists(Application.persistentDataPath + "/" + nombrePartida + ".d"))
@@ -191,13 +195,15 @@ public class SistemaGuardado : MonoBehaviour
             BinaryFormatter bf = new BinaryFormatter();
             FileStream expediente = File.OpenRead(Application.persistentDataPath + "/" + nombrePartida + ".d");
             DatosJuego datos = new DatosJuego();
-
+            GameController.TypeLife = 1;
             Debug.Log("Nombre de partidaa " + nombrePartida);
             datos = bf.Deserialize(expediente) as DatosJuego;
+            Debug.Log(datos.tipo);
+            Debug.Log(datos.tipo1);
             Debug.Log(datos.corazonesMax);
             Debug.Log(datos.vidasMax);
-            Heart_Bar.Phearts = datos.corazonesMax;
-            Heart_Bar.life = datos.vidasMax;
+            Heart_Bar.Phearts = datos.corazonesMax1;
+            Heart_Bar.life = datos.vidasMax1;
 
             Debug.Log("---------INICIO-------------");
 
@@ -239,16 +245,18 @@ public class SistemaGuardado : MonoBehaviour
             GameController.corazones = datos.corazones1;
             //Heart_Bar.Phearts = datos.corazones1;
             Heart_Bar.life = datos.vidas1;
-            GameController.TypeLife = datos.tipo1;
+            GameController.TypeLife = 1;
             GameController.HeartsMax = datos.corazonesMax1;
             GameController.LifeMax = datos.vidasMax1;
             GameController.H1Equip = datos.equip10;
             GameController.H2Equip = datos.equip20;
 
             Debug.Log("Noombre de escenaaaaaaaaaaaaaaaaaaa " + nombreEscena);
+            Debug.Log("Vidas maximaaaas" + GameController.LifeMax);
             expediente.Close();
         }
         else { Debug.Log("No se encontro el archivo"); }
+        GameController.TypeLife = 1;
     }
     int cagando=0;
     public void guardarCap5()
@@ -966,6 +974,7 @@ public class SistemaGuardado : MonoBehaviour
             }
         }
     }
+    int cagando2 = 0;
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Checkpoint")
@@ -986,7 +995,6 @@ public class SistemaGuardado : MonoBehaviour
         if (collision.gameObject.tag == "Checkpoint3")
         {
             nombrePartida = GameController.nombreActualPartida;
-            Debug.Log("Chechkpoint 5 " + nombrePartida);
             nombreEscena = SceneManager.GetActiveScene().name;
             GameController.LobbyCAP = 4;
             if (cagando == 0)
@@ -996,14 +1004,19 @@ public class SistemaGuardado : MonoBehaviour
             }
             
         }
-        if (collision.gameObject.tag == "Checkpoint4" && PlayerCorredores.Capsule)
+        if (collision.gameObject.tag == "Checkpoint4"/*&& PlayerCorredores.Capsule*/)
         {
             nombrePartida = GameController.nombreActualPartida;
             Debug.Log("Checkpoint recuperar cap  5 " + nombrePartida);
             GameController.LobbyCAP = 5;
             nombreEscena = SceneManager.GetActiveScene().name;
             Debug.Log("Nombre escena " + nombreEscena);
-            recuperarCap5();
+            if (cagando == 0)
+            {
+                recuperarCap5();
+                cagando2++;
+            }
+            
         }
     }
 }
