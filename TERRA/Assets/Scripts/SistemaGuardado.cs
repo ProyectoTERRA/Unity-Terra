@@ -45,6 +45,7 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("Perder antes de cargar " + perder);
             if (GameController.LobbyCAP == 4)
             {
+                perder = 0;
                 Debug.Log("Perdio en el capitulo 5");
                 cargarCap5();
                 perder = 0;
@@ -55,6 +56,7 @@ public class SistemaGuardado : MonoBehaviour
                 cargar1();
                 perder = 0;
             }
+            perder = 0;
         }
         if(morir == 1)
         {
@@ -69,6 +71,7 @@ public class SistemaGuardado : MonoBehaviour
             else if(GameController.LobbyCAP != 4)
             {
                 cargar1();
+                morir = 0;
             }
         }
 
@@ -314,6 +317,7 @@ public class SistemaGuardado : MonoBehaviour
                 Debug.Log(datos.vidas);
                 SceneManager.LoadScene(nombreEscena);
                 x++;
+                x++;
             }
             perder = 0;
             
@@ -402,11 +406,7 @@ public class SistemaGuardado : MonoBehaviour
                 GameController.H1Equip0 = datos.equip10;
                 GameController.H2Equip0 = datos.equip20;
             }
-
-
-            
-
-
+            perder = 0;
 
             Debug.Log("Noombre de escenaaaaaaaaaaaaaaaaaaa " + nombreEscena);
             expediente.Close();
@@ -653,6 +653,7 @@ public class SistemaGuardado : MonoBehaviour
         radial radial = go.GetComponent<radial>();
         if (File.Exists(Application.persistentDataPath + "/" + buscarNombre + ".d"))
         {
+            morir = 0;
             BinaryFormatter bf = new BinaryFormatter();
             FileStream expediente = File.OpenRead(Application.persistentDataPath + "/" + buscarNombre + ".d");
             DatosJuego datos = new DatosJuego();
@@ -756,6 +757,7 @@ public class SistemaGuardado : MonoBehaviour
             expediente.Close();
         }
         else { Debug.Log("No se encontro el archivo"); }
+        morir = 0;
     }
     int x = 0, y=0;
     public void cargar1()

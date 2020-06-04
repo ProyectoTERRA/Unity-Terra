@@ -44,6 +44,8 @@ public class PlayerCeldas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Heart_Bar.Phearts = GameController.corazones;
+        Heart_Bar.life = GameController.vidas;
         h = false;
 
         GameController.CAP5 = true;
