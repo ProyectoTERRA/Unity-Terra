@@ -235,11 +235,11 @@ public class SistemaGuardado : MonoBehaviour
             GameController.curacion += datos.curacion1;
             GameController.ganzua += datos.ganzua1;
             GameController.formula += datos.formula1;
+            GameController.TypeLife = datos.tipo1;
             GameController.vidas = datos.vidas1;
             GameController.corazones = datos.corazones1;
             //Heart_Bar.Phearts = datos.corazones1;
-            Heart_Bar.life = datos.vidas1;
-            GameController.TypeLife = datos.tipo1;
+            //Heart_Bar.life = datos.vidas1;
             GameController.HeartsMax = datos.corazonesMax1;
             GameController.LifeMax = datos.vidasMax1;
             GameController.H1Equip = datos.equip10;

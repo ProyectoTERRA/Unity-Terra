@@ -34,6 +34,7 @@ public class PlayerCorredores : MonoBehaviour
     [SerializeField] private GameObject GreenCard_INV;
 
     [SerializeField] private GameObject CAPSULE;
+    [SerializeField] private GameObject REC;
 
     [SerializeField] private GameObject Energy_ALMA;
     [SerializeField] private GameObject Energy_FINAL;
@@ -52,12 +53,14 @@ public class PlayerCorredores : MonoBehaviour
     {
         Key_EnergyALMA.SetActive(true);
 
+        REC.SetActive(false);
+
         Key_YellowCardOBJ.SetActive(false);
         Key_Capsule.SetActive(false);
         Key_Door1.SetActive(false);
         Key_Door2.SetActive(false);
 
-        Heart_Bar.Phearts = 6;
+       
         turret = false;
         s1 = true;
         s2 = false;
@@ -196,6 +199,7 @@ public class PlayerCorredores : MonoBehaviour
         }
         if (collision.gameObject.name == "Capsule" && Input.GetKeyDown(KeyCode.E) && Capsule)//compara si hizo la colision con el objeto correcto
         {
+            REC.SetActive(true);
             Key_Capsule.SetActive(false);
         }
         if (collision.gameObject.name == "YellowCard_OBJ" && Input.GetKeyDown(KeyCode.E))//compara si hizo la colision con el objeto correcto
