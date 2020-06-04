@@ -996,7 +996,7 @@ public class SistemaGuardado : MonoBehaviour
             }
             
         }
-        if (collision.gameObject.tag == "Checkpoint4" /*&& PlayerCorredores.Capsule*/)
+        if (collision.gameObject.tag == "Checkpoint4" && PlayerCorredores.Capsule)
         {
             nombrePartida = GameController.nombreActualPartida;
             Debug.Log("Checkpoint recuperar cap  5 " + nombrePartida);
