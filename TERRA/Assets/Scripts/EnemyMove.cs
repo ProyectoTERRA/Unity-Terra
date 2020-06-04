@@ -42,11 +42,11 @@ public class EnemyMove : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
 
-        if (col.gameObject.tag == "Player" && PlayerController.movement)
+        /*if (col.gameObject.tag == "Player" && PlayerController.movement)
         {
             col.SendMessage("EnemyKnockBack", transform.position.x + 1);
 
-        }
+        }*/
         if (col.gameObject.tag == "BE")
         {
             DistanciaVision = 0;
