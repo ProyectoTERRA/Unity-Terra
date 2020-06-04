@@ -207,6 +207,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.formula1 = GameController.formula0;
         dato.vidasMax1 = GameController.LifeMax;
         dato.corazonesMax1 = GameController.HeartsMax;
+        dato.tipo1 = GameController.TypeLife;
         dato.equip10 = GameController.H1Equip0;
         dato.equip20 = GameController.H2Equip0;
 
@@ -228,23 +229,24 @@ public class SistemaGuardado : MonoBehaviour
             datos = bf.Deserialize(expediente) as DatosJuego;
             Debug.Log(datos.corazonesMax);
             Debug.Log(datos.vidasMax);
-            GameObject H = GameObject.Find("Heart Bar - HUD_0");
-            H.SetActive(false);
-
-
-            GameController.TypeLife = datos.tipo1;
+            Debug.Log("TipoObjetivo en G " + GameController.TypeLife);
+            Debug.Log("TipoObjetivo en A " + datos.tipo1);
+            Debug.Log("TipoObjetivo en A " + datos.tipo);
+            GameController.TypeLife = datos.tipo1; 
             GameController.HeartsMax = datos.corazonesMax;
 
             GameController.corazones = GameController.HeartsMax;
-            Heart_Bar.Phearts = GameController.corazones;
+            Heart_Bar.Phearts = datos.corazonesMax;
             GameController.LifeMax = datos.vidasMax;
             GameController.vidas = GameController.LifeMax;
             Heart_Bar.life = GameController.vidas;
 
-            H.SetActive(true);
 
             Debug.Log("---------INICIO-------------");
-
+            Debug.Log("Corazones datos " + datos.vidasMax);
+            Debug.Log("Vidas datos " +datos.corazonesMax);
+            Debug.Log("Corazones HeartBear " + Heart_Bar.Phearts);
+            Debug.Log("Vidas heart " + Heart_Bar.life);
             Debug.Log(datos.equip10);
             Debug.Log(datos.equip20);
             Debug.Log("Celdas:" + radial.especiales[0]);
@@ -266,6 +268,9 @@ public class SistemaGuardado : MonoBehaviour
             radial.especiales[0] += datos.energia1;
             radial.especiales[1] += datos.curacion1;
             radial.especiales[2] += datos.ganzua1;
+            Debug.Log("TipoObjetivo en G " + GameController.TypeLife);
+            Debug.Log("TipoObjetivo en A " + datos.tipo1);
+            Debug.Log("TipoObjetivo en A " + datos.tipo);
             /*
             GameController.lata += datos.lata1;
             GameController.pila += datos.pila1;
@@ -284,7 +289,7 @@ public class SistemaGuardado : MonoBehaviour
             GameController.formula += datos.formula1;
             
             */
-          
+
 
 
             //Heart_Bar.Phearts = datos.corazones1;
@@ -429,7 +434,7 @@ public class SistemaGuardado : MonoBehaviour
 
         Debug.Log("----VARIABLES PARA GUARDAR");
         Debug.Log("Celdas:" + radial.especiales[0]);
-
+        Debug.Log("Lyfe max 1 " + GameController.LifeMax);
 
 
 
@@ -551,6 +556,8 @@ public class SistemaGuardado : MonoBehaviour
 
         Debug.Log("CAGANDOOOOOOOOO");
         Debug.Log("EQUIPO 1 " + dato.equip10);
+        GameController.LifeMax = dato.vidasMax;
+        GameController.TypeLife = dato.tipo1;
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();

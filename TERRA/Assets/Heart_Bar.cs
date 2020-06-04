@@ -82,11 +82,13 @@ public class Heart_Bar : MonoBehaviour
 
         Debug.Log("bar H: " + Phearts);
         Debug.Log("bar L: " + life);
-
+        Debug.Log("bar V: " + GameController.LifeMax);
         Debug.Log("bar V: " + GameController.vidas);
         Debug.Log("bar C: " + GameController.corazones);
         GameController.corazones = Phearts;
         hearts = Phearts;
+        Debug.Log("bar Hearts: " + Phearts);
+        Debug.Log("bar TYPE: " + type);
 
         if (life <= 0)
         {
@@ -143,22 +145,26 @@ public class Heart_Bar : MonoBehaviour
                     if (hearts == 6)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_3x6;
+                        Debug.Log("6 corazones");
                         FULL = true;
                     }
 
                     else if (hearts == 5)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_3x5;
+                        Debug.Log("5 corazones");
                     }
 
                     else if (hearts == 4)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_3x4;
+                        Debug.Log("4 corazones");
                     }
 
                     else if (hearts == 3)
                     {
                         this.GetComponent<SpriteRenderer>().sprite = LIFE_3x3;
+                        Debug.Log("3 corazones");
                     }
 
                     else if (hearts == 2)
