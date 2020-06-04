@@ -44,7 +44,16 @@ public class PlayerCeldas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        GameController.CAP5 = true;
+
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+
+        Debug.Log("----VARIABLES PARA GUARDAR");
+        Debug.Log("Celdas:" + radial.especiales[0]);
+
+
+        Debug.Log("-------------FIN----------");
 
         Key_DoorE.SetActive(false);
 

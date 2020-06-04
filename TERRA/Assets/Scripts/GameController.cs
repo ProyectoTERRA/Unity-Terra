@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     //----- Equipment/Lobby------
     public static bool LOBBY;
     public static int LobbyCAP;
+    public static bool CAP5;
 
     public static string H1Equip;
     public static string H2Equip;
@@ -25,7 +26,7 @@ public class GameController : MonoBehaviour
     public static string H1Equip0;
     public static string H2Equip0;
 
-
+    public static bool TequipCap5;
     public static int LifeMax, TypeLife, HeartsMax;
 
     public static bool DJumpUnlock, LJumpUnlock, DashUnlock, InvisibleUnlock, x4HeartsUnlock, x5HeartsUnlock, x4LifesUnlock, x5LifesUnlock;

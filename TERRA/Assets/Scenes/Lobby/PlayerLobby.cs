@@ -69,7 +69,25 @@ public class PlayerLobby : MonoBehaviour
 
         if (exit)
         {
-            if(GameController.LobbyCAP == 2)
+            GameObject go = GameObject.Find("InvFunc");
+            radial radial = go.GetComponent<radial>();
+            GameController.pila = radial.basura[0];
+            GameController.bolsa = radial.basura[1];
+            GameController.carton = radial.basura[2];
+            GameController.manzana = radial.basura[3];
+            GameController.platano = radial.basura[4];
+            GameController.lata = radial.basura[5];
+
+            GameController.normal = radial.esfera[0];
+            GameController.paralizante = radial.esfera[1];
+            GameController.desactivadora = radial.esfera[2];
+            GameController.tranquilizante = radial.esfera[3];
+            GameController.pesada = radial.esfera[4];
+
+            GameController.energia = radial.especiales[0];
+            GameController.curacion = radial.especiales[1];
+            GameController.ganzua = radial.especiales[2];
+            if (GameController.LobbyCAP == 2)
             {
                 exit = false;
                 GameController.LOBBY = false;
@@ -85,6 +103,11 @@ public class PlayerLobby : MonoBehaviour
             {
                 exit = false;
                 GameController.LOBBY = false;
+
+                Debug.Log("----VARIABLES PARA GUARDAR");
+                Debug.Log("Celdas:" + radial.especiales[0]);
+
+                Debug.Log("-------------FIN----------");
                 SceneManager.LoadScene("Celdas");
             }
             if (GameController.LobbyCAP == 5)
