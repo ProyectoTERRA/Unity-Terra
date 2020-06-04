@@ -358,7 +358,6 @@ public class SistemaGuardado : MonoBehaviour
             GameController.H1Equip = datos.equip1;
             GameController.H2Equip = datos.equip2;
 
-
             datos.nombreEscena1 = GameController.nombreEscena0;
             datos.pila1 = GameController.pila0;
             datos.carton1 = GameController.carton0;
@@ -377,6 +376,35 @@ public class SistemaGuardado : MonoBehaviour
             datos.corazonesMax = GameController.HeartsMax;
             datos.equip10 = GameController.H1Equip0;
             datos.equip20 = GameController.H2Equip0;
+
+            if (nombreEscena == "Celdas")
+            {
+                Debug.Log("Murio en la primera escena ");
+                nombreEscena = datos.nombreEscena1;
+                radial.basura[0] = datos.pila1;
+                radial.basura[1] = datos.carton1;
+                radial.basura[2] = datos.bolsa1;
+                radial.basura[3] = datos.manzana1;
+                radial.basura[4] = datos.platano1;
+                radial.basura[5] = datos.lata1;
+                radial.esfera[0] = datos.normal1;
+                radial.esfera[1] = datos.paralizante1;
+                radial.esfera[2] = datos.desactivadora1;
+                radial.esfera[3] = datos.tranquilizante1;
+                radial.esfera[4] = datos.pesada1;
+                radial.especiales[0] = datos.energia1;
+                radial.especiales[1] = datos.curacion1;
+                radial.especiales[2] = datos.ganzua1;
+                GameController.LifeMax = datos.vidasMax;
+                GameController.HeartsMax = datos.corazonesMax;
+                GameController.H1Equip = GameController.H1Equip0;
+                GameController.H2Equip = GameController.H2Equip0;
+                GameController.H1Equip0 = datos.equip10;
+                GameController.H2Equip0 = datos.equip20;
+            }
+
+
+            
 
 
 
