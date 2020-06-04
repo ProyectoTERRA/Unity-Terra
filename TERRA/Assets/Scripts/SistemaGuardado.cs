@@ -213,8 +213,17 @@ public class SistemaGuardado : MonoBehaviour
             datos = bf.Deserialize(expediente) as DatosJuego;
             Debug.Log(datos.corazonesMax);
             Debug.Log(datos.vidasMax);
-            Heart_Bar.Phearts = datos.corazonesMax;
-            Heart_Bar.life = datos.vidasMax;
+
+            
+
+            GameController.TypeLife = datos.tipo1;
+            GameController.HeartsMax = datos.corazonesMax1;
+
+            GameController.corazones = GameController.HeartsMax;
+            Heart_Bar.Phearts = GameController.corazones;
+            GameController.LifeMax = datos.vidasMax1;
+            GameController.vidas = GameController.LifeMax;
+            Heart_Bar.life = GameController.vidas;
 
             Debug.Log("---------INICIO-------------");
 
@@ -257,16 +266,13 @@ public class SistemaGuardado : MonoBehaviour
             GameController.formula += datos.formula1;
             
             */
-            GameController.TypeLife = datos.tipo1;
-            GameController.vidas = datos.vidas1;
-            GameController.corazones = datos.corazones1;
+          
+
+
             //Heart_Bar.Phearts = datos.corazones1;
             //Heart_Bar.life = datos.vidas1;
-            GameController.HeartsMax = datos.corazonesMax1;
-            GameController.LifeMax = datos.vidasMax1;
             GameController.H1Equip = datos.equip10;
             GameController.H2Equip = datos.equip20;
-            Heart_Bar.Phearts = GameController.HeartsMax;
 
             Debug.Log("Noombre de escenaaaaaaaaaaaaaaaaaaa " + nombreEscena);
             expediente.Close();
