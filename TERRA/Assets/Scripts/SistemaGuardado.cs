@@ -500,8 +500,8 @@ public class SistemaGuardado : MonoBehaviour
         GameController.curacion0 = dato.curacion1;
         GameController.ganzua0 = dato.ganzua1;
         GameController.formula0 = dato.formula1;
-        GameController.LifeMax = dato.vidasMax;
-        GameController.HeartsMax = dato.corazonesMax;
+        GameController.LifeMax = 3;
+        GameController.HeartsMax = 6;
 
         //Variables a modificar porel cap
         radial.basura[0] = 0;
