@@ -233,11 +233,11 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("TipoObjetivo en A " + datos.tipo1);
             Debug.Log("TipoObjetivo en A " + datos.tipo);
             GameController.TypeLife = datos.tipo1; 
-            GameController.HeartsMax = datos.corazonesMax;
+            GameController.HeartsMax = datos.corazonesMax1;
 
             GameController.corazones = GameController.HeartsMax;
-            Heart_Bar.Phearts = datos.corazonesMax;
-            GameController.LifeMax = datos.vidasMax;
+            Heart_Bar.Phearts = GameController.corazones;
+            GameController.LifeMax = datos.vidasMax1;
             GameController.vidas = GameController.LifeMax;
             Heart_Bar.life = GameController.vidas;
 
@@ -563,9 +563,14 @@ public class SistemaGuardado : MonoBehaviour
         Debug.Log("EQUIPO 1 " + dato.equip10);
 
         
+<<<<<<< HEAD
         GameController.LifeMax = dato.vidasMax;
 
         //GameController.TypeLife = dato.tipo1;
+=======
+       // GameController.LifeMax = dato.vidasMax;
+        GameController.TypeLife = dato.tipo1;
+>>>>>>> 9eeb7fffcd84d2b2675cf42dcc162f6ee2293128
         
         //Serializara los archivos
         bf.Serialize(expediente, dato);
