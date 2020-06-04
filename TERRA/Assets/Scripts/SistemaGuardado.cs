@@ -225,8 +225,9 @@ public class SistemaGuardado : MonoBehaviour
             datos = bf.Deserialize(expediente) as DatosJuego;
             Debug.Log(datos.corazonesMax);
             Debug.Log(datos.vidasMax);
+            GameObject H = GameObject.Find("Heart Bar - HUD_0");
+            H.SetActive(false);
 
-            
 
             GameController.TypeLife = datos.tipo1;
             GameController.HeartsMax = datos.corazonesMax;
@@ -236,6 +237,8 @@ public class SistemaGuardado : MonoBehaviour
             GameController.LifeMax = datos.vidasMax;
             GameController.vidas = GameController.LifeMax;
             Heart_Bar.life = GameController.vidas;
+
+            H.SetActive(true);
 
             Debug.Log("---------INICIO-------------");
 
