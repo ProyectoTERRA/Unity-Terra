@@ -20,6 +20,9 @@ public class SistemaGuardado : MonoBehaviour
     //Variables que guardaran los datos de las partidas
     public String nombreEscena, nombrePartida, nombrePartida1;
     public static int perder=0, morir=0;
+
+    public static bool TRecovery, T2;
+
     void Start()
     {
         contador = 1;
@@ -28,9 +31,12 @@ public class SistemaGuardado : MonoBehaviour
         {
             guardarContador();
         }
+
+       
     }
     public void Update()
     {
+       
         cargarContador();
         if (perder == 1 )
         {
@@ -64,6 +70,17 @@ public class SistemaGuardado : MonoBehaviour
             {
                 cargar1();
             }
+        }
+
+        if (TRecovery && !T2)
+        {
+            nombrePartida = GameController.nombreActualPartida;
+            Debug.Log("Checkpoint recuperar cap  5 " + nombrePartida);
+            GameController.LobbyCAP = 5;
+            nombreEscena = SceneManager.GetActiveScene().name;
+            Debug.Log("Nombre escena " + nombreEscena);
+            recuperarCap5();
+            T2 = true;
         }
     }
     int paso = 0;
@@ -208,13 +225,24 @@ public class SistemaGuardado : MonoBehaviour
             datos = bf.Deserialize(expediente) as DatosJuego;
             Debug.Log(datos.corazonesMax);
             Debug.Log(datos.vidasMax);
-            Heart_Bar.Phearts = datos.corazonesMax;
-            Heart_Bar.life = datos.vidasMax;
+
+            
+
+            GameController.TypeLife = datos.tipo1;
+            GameController.HeartsMax = datos.corazonesMax1;
+
+            GameController.corazones = GameController.HeartsMax;
+            Heart_Bar.Phearts = GameController.corazones;
+            GameController.LifeMax = datos.vidasMax1;
+            GameController.vidas = GameController.LifeMax;
+            Heart_Bar.life = GameController.vidas;
 
             Debug.Log("---------INICIO-------------");
 
             Debug.Log(datos.equip10);
             Debug.Log(datos.equip20);
+            Debug.Log("Celdas:" + radial.especiales[0]);
+            Debug.Log("Celdas:" + datos.energia1);
 
             Debug.Log("---------FIN-------------");
 
@@ -232,6 +260,7 @@ public class SistemaGuardado : MonoBehaviour
             radial.especiales[0] += datos.energia1;
             radial.especiales[1] += datos.curacion1;
             radial.especiales[2] += datos.ganzua1;
+            /*
             GameController.lata += datos.lata1;
             GameController.pila += datos.pila1;
             GameController.bolsa += datos.bolsa1;
@@ -247,13 +276,13 @@ public class SistemaGuardado : MonoBehaviour
             GameController.curacion += datos.curacion1;
             GameController.ganzua += datos.ganzua1;
             GameController.formula += datos.formula1;
-            GameController.TypeLife = datos.tipo1;
-            GameController.vidas = datos.vidas1;
-            GameController.corazones = datos.corazones1;
+            
+            */
+          
+
+
             //Heart_Bar.Phearts = datos.corazones1;
             //Heart_Bar.life = datos.vidas1;
-            GameController.HeartsMax = datos.corazonesMax1;
-            GameController.LifeMax = datos.vidasMax1;
             GameController.H1Equip = datos.equip10;
             GameController.H2Equip = datos.equip20;
 
@@ -365,18 +394,16 @@ public class SistemaGuardado : MonoBehaviour
         BinaryFormatter bf = new BinaryFormatter(); //Ayudante
         FileStream expediente = File.Create(Application.persistentDataPath + "/" + nombrePartida + ".d");//Crea archivo datos.d
         DatosJuego dato = new DatosJuego(); //Dato es la variable de la clase que se serializa
-        //Respaldo
+                                            //Respaldo
+
         Debug.Log("----VARIABLES PARA GUARDAR");
-        Debug.Log(radial.basura[0]);
-        Debug.Log(radial.basura[1]);
-        Debug.Log(radial.basura[2]);
-        Debug.Log(GameController.H1Equip);
-        Debug.Log(GameController.H2Equip);
-        Debug.Log(GameController.LifeMax);
-        Debug.Log(GameController.TypeLife);
-        Debug.Log(GameController.HeartsMax);
+        Debug.Log("Celdas:" + radial.especiales[0]);
+
+
+
 
         Debug.Log("-------------FIN----------");
+
         dato.nombreEscena1 = nombreEscena;
         dato.pila1 = radial.basura[0];
         dato.bolsa1 = radial.basura[1];
@@ -403,13 +430,25 @@ public class SistemaGuardado : MonoBehaviour
         dato.equip10 = GameController.H1Equip0;
         dato.equip20 = GameController.H2Equip0;
 
+        Debug.Log("----VARIABLES PARA GUARDAR");
+        Debug.Log("Pilas:"+dato.pila1);
+        Debug.Log("Bolsas:"+dato.bolsa1);
+        Debug.Log("Latas:" + dato.lata1);
+        Debug.Log("Cartones:" + dato.carton1);
+        Debug.Log("Manzanas:" + dato.manzana1);
+        Debug.Log("Platanos:" + dato.platano1);
+
+        Debug.Log("TIpo: "+dato.tipo1);
+
+
+        Debug.Log("-------------FIN----------");
         Debug.Log("Nombre de la escena 1 " + dato.nombreEscena1);
         Debug.Log("---------INICIO-------------");
         Debug.Log("Game controller1 " + GameController.H1Equip0);
         Debug.Log("Game controller2 " + GameController.H1Equip0);
         Debug.Log(dato.equip10);
         Debug.Log(dato.equip20);
-
+        Debug.Log("Celdas:" + dato.energia1);
         Debug.Log("---------FIN-------------");
 
 
@@ -440,6 +479,7 @@ public class SistemaGuardado : MonoBehaviour
         radial.basura[3] = 0;
         radial.basura[4] = 0;
         radial.basura[5] = 0;
+        radial.esfera[0] = 0;
         radial.esfera[1] = 0;
         radial.esfera[2] = 0;
         radial.esfera[3] = 0;
@@ -1146,14 +1186,9 @@ public class SistemaGuardado : MonoBehaviour
             }
             
         }
-        if (collision.gameObject.tag == "Checkpoint4" && PlayerCorredores.Capsule)
+        if (collision.gameObject.tag == "Checkpoint4" && PlayerCorredores.Capsule && !TRecovery)
         {
-            nombrePartida = GameController.nombreActualPartida;
-            Debug.Log("Checkpoint recuperar cap  5 " + nombrePartida);
-            GameController.LobbyCAP = 5;
-            nombreEscena = SceneManager.GetActiveScene().name;
-            Debug.Log("Nombre escena " + nombreEscena);
-            recuperarCap5();
+            TRecovery = true;
         }
     }
 }

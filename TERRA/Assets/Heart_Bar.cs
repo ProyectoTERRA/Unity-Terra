@@ -75,7 +75,7 @@ public class Heart_Bar : MonoBehaviour
 
         
     }
-    void Update()
+    public void Update()
     {
         type = GameController.TypeLife;
         

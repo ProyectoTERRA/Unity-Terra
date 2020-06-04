@@ -44,7 +44,18 @@ public class PlayerCeldas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        h = false;
+
+        GameController.CAP5 = true;
+
+        GameObject go = GameObject.Find("InvFunc");
+        radial radial = go.GetComponent<radial>();
+
+        Debug.Log("----VARIABLES PARA GUARDAR");
+        Debug.Log("Celdas:" + radial.especiales[0]);
+
+
+        Debug.Log("-------------FIN----------");
 
         Key_DoorE.SetActive(false);
 
@@ -60,11 +71,14 @@ public class PlayerCeldas : MonoBehaviour
         flag2 = false;
         guards = false; 
         GetComponent<SliderPrueba>().enabled = false;
+
+        PlayerCorredores.Capsule = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Complete_mini)
         {
             Key_DoorE.SetActive(true);
