@@ -194,6 +194,8 @@ public class SistemaGuardado : MonoBehaviour
 
             Debug.Log("Nombre de partidaa " + nombrePartida);
             datos = bf.Deserialize(expediente) as DatosJuego;
+            Debug.Log(datos.corazonesMax);
+            Debug.Log(datos.vidasMax);
             Heart_Bar.Phearts = datos.corazonesMax;
             Heart_Bar.life = datos.vidasMax;
 
@@ -235,7 +237,7 @@ public class SistemaGuardado : MonoBehaviour
             GameController.formula += datos.formula1;
             GameController.vidas = datos.vidas1;
             GameController.corazones = datos.corazones1;
-            Heart_Bar.Phearts = datos.corazones1;
+            //Heart_Bar.Phearts = datos.corazones1;
             Heart_Bar.life = datos.vidas1;
             GameController.TypeLife = datos.tipo1;
             GameController.HeartsMax = datos.corazonesMax1;
@@ -266,6 +268,7 @@ public class SistemaGuardado : MonoBehaviour
         Debug.Log(GameController.H2Equip);
         Debug.Log(GameController.LifeMax);
         Debug.Log(GameController.TypeLife);
+        Debug.Log(GameController.HeartsMax);
 
         Debug.Log("-------------FIN----------");
         dato.nombreEscena1 = nombreEscena;
@@ -369,6 +372,8 @@ public class SistemaGuardado : MonoBehaviour
         dato.equip1 = GameController.H1Equip;
         dato.equip2 = GameController.H2Equip;
 
+        Debug.Log("CAGANDOOOOOOOOO");
+        Debug.Log("EQUIPO 1 " + dato.equip10);
         //Serializara los archivos
         bf.Serialize(expediente, dato);
         expediente.Close();
@@ -430,7 +435,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.tipo1 = GameController.TypeLife;
         dato.vidasMax1 = GameController.LifeMax;
         dato.corazonesMax1 = GameController.HeartsMax;
-        dato.equip10 = GameController.H1Equip;
+        dato.equip10 = GameController.H1Equip0;
         dato.equip20 = GameController.H2Equip0;
         Debug.Log("Nombre de la escena 1 " + dato.nombreEscena1);
 
@@ -666,8 +671,8 @@ public class SistemaGuardado : MonoBehaviour
 
             datos = bf.Deserialize(expediente) as DatosJuego;
             Debug.Log("Nombre al cargar " + nombrePartida);
-            
-            
+
+            GameController.nombreActualPartida = nombrePartida;
             nombrePartida = datos.nombrePartida;
             nombreEscena = datos.nombreEscena;
             radial.basura[0] = datos.pila;
@@ -965,6 +970,7 @@ public class SistemaGuardado : MonoBehaviour
     {
         if (collision.gameObject.tag == "Checkpoint")
         {
+            nombrePartida = GameController.nombreActualPartida;
             Debug.Log("Checkpoint 1 " + nombrePartida);
             nombreEscena = SceneManager.GetActiveScene().name;
             Debug.Log("Nombre de la escena" + nombreEscena);
@@ -972,12 +978,14 @@ public class SistemaGuardado : MonoBehaviour
         }
         if(collision.gameObject.tag =="Checkpoint2")
         {
+            nombrePartida = GameController.nombreActualPartida;
             Debug.Log("Chechkpoint 2 " + nombrePartida);
             nombreEscena = SceneManager.GetActiveScene().name;
             guardar1();
         }
         if (collision.gameObject.tag == "Checkpoint3")
         {
+            nombrePartida = GameController.nombreActualPartida;
             Debug.Log("Chechkpoint 5 " + nombrePartida);
             nombreEscena = SceneManager.GetActiveScene().name;
             GameController.LobbyCAP = 4;
@@ -988,8 +996,9 @@ public class SistemaGuardado : MonoBehaviour
             }
             
         }
-        if (collision.gameObject.tag == "Checkpoint4" && PlayerCorredores.Capsule)
+        if (collision.gameObject.tag == "Checkpoint4" /*&& PlayerCorredores.Capsule*/)
         {
+            nombrePartida = GameController.nombreActualPartida;
             Debug.Log("Checkpoint recuperar cap  5 " + nombrePartida);
             GameController.LobbyCAP = 5;
             nombreEscena = SceneManager.GetActiveScene().name;
