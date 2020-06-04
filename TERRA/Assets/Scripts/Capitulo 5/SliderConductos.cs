@@ -46,7 +46,7 @@ public class SliderConductos : MonoBehaviour
         {
             dir = false;
         }
-
+        //dfbgdbfd
     }
 
     public void OnTriggerStay2D(Collider2D collision)
