@@ -51,9 +51,7 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Game controller nombre escena 0 " + nombreEscena0);
         Debug.Log("Game controler equipo 1  " + H1Equip);
-        Debug.Log("Game controller equipo 2 " + H2Equip);
-        Debug.Log("Gamecontroller lifemax " + LifeMax);
-        Debug.Log("GameController corazones Max " + HeartsMax);
+        Debug.Log("Game controller equipo 2 " + GameController.H2Equip);
     }
     private void Awake()
     {

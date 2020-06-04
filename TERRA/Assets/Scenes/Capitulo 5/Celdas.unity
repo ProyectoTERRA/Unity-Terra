@@ -17910,16 +17910,6 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7603211905305346089, guid: b4bf47ce177a23345a1e13aaac07a945,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.14217019
-      objectReference: {fileID: 0}
-    - target: {fileID: 7603211905305346089, guid: b4bf47ce177a23345a1e13aaac07a945,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1.3870578
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4bf47ce177a23345a1e13aaac07a945, type: 3}
 --- !u!1 &1122465755
