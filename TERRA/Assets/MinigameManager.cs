@@ -483,7 +483,7 @@ public class MinigameManager : MonoBehaviour
     }
     void ComparacionCLAVES()
     {
-        string Contra = "";
+        string Contra = " ";
         Contra = Clave.text;
  
         Debug.Log("VALOR INPUTFIELD: " + Contra);
