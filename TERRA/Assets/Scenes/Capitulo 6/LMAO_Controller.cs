@@ -42,6 +42,18 @@ public class LMAO_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AT2 = false;
+        AT3 = false;
+        TDrill = false;
+        Returning = false;
+        TReturn = false;
+        MT = false;
+        Defeat = false;
+        act1 = false;
+        act2 = false;
+        act1T = false;
+        act2T = false;
+        hit = false;
         Damage = 0;
         Matamoscas.SetActive(false);
         boost = false;
@@ -56,6 +68,7 @@ public class LMAO_Controller : MonoBehaviour
         //StartCoroutine(Ataque2());
         //StartCoroutine(Ataque3());
         Physics2D.IgnoreLayerCollision(11, 0, true);
+        Physics2D.IgnoreLayerCollision(11, 12, false);
     }
     private void OnTriggerStay2D(Collider2D col)
     {

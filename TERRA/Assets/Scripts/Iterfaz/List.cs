@@ -69,7 +69,10 @@ public class List : MonoBehaviour
         {
             select.Add(esp_H);
         }
-
+        if (GameController.pesada > 0)
+        {
+            select.Add(esf_H);
+        }
 
 
 
