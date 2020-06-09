@@ -54,6 +54,7 @@ public class PlayerCarga : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameController.LobbyCAP = 5;
         Key_Ener1.SetActive(false);
         Key_Ener2.SetActive(false);
         Key_Ener3.SetActive(false);

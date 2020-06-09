@@ -79,7 +79,6 @@ public class SistemaGuardado : MonoBehaviour
         {
             nombrePartida = GameController.nombreActualPartida;
             Debug.Log("Checkpoint recuperar cap  5 " + nombrePartida);
-            GameController.LobbyCAP = 5;
             nombreEscena = SceneManager.GetActiveScene().name;
             Debug.Log("Nombre escena " + nombreEscena);
             recuperarCap5();
@@ -302,7 +301,8 @@ public class SistemaGuardado : MonoBehaviour
         }
         else { Debug.Log("No se encontro el archivo"); }
     }
-    int cagando = 0;
+    int cagando = 0,xx=0;
+
     public void cargarCap5()
     {
         GameObject go = GameObject.Find("InvFunc");
@@ -317,12 +317,20 @@ public class SistemaGuardado : MonoBehaviour
             Debug.Log("Nombre al cargar " + nombrePartida);
             Debug.Log("corazones maimos " + GameController.HeartsMax);
 
-            datos.corazones = GameController.HeartsMax;
+            //datos.corazones = GameController.HeartsMax;
             nombreEscena = datos.nombreEscena;
             
             perder = 0;
 
             nombrePartida = datos.nombrePartida;
+            if (xx == 0)
+            {
+                datos.vidas = datos.vidas - 1;
+                Debug.Log("Cargar cap 5 " + datos.vidas);
+                SceneManager.LoadScene(nombreEscena);
+                xx++;
+                xx++;
+            }
 
             radial.basura[0] = datos.pila;
             radial.basura[1] = datos.bolsa;
@@ -442,7 +450,7 @@ public class SistemaGuardado : MonoBehaviour
                 }
             }
             perder = 0;
-
+            
             Debug.Log("Noombre de escenaaaaaaaaaaaaaaaaaaa " + nombreEscena);
             expediente.Close();
         }

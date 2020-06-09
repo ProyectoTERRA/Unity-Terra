@@ -85,7 +85,7 @@ public class Heart_Bar : MonoBehaviour
         Debug.Log("bar V: " + GameController.LifeMax);
         Debug.Log("bar V: " + GameController.vidas);
         Debug.Log("bar C: " + GameController.corazones);
-        GameController.corazones = Phearts;
+        //GameController.corazones = Phearts;
         hearts = Phearts;
         Debug.Log("bar Hearts: " + Phearts);
         Debug.Log("bar TYPE: " + type);

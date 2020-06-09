@@ -37,9 +37,24 @@ public class DialogueManager : MonoBehaviour
         if (sentences.Count <= 0)
         {
             displayText.text = activeSentence;
-            Dialogo2.SetActive(true);
+            try
+            {
+                Dialogo2.SetActive(true);
+            }
+            catch(UnityException e){
+                Debug.Log(e);
+            }
+            
             Enable = false;
-            Dialogo1.SetActive(false);
+            try
+            {
+                Dialogo1.SetActive(false);
+            }
+            catch (UnityException e)
+            {
+                Debug.Log(e);
+            }
+            
             Action = true;
             return;
 
@@ -86,7 +101,6 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             displayText.text += letter;
-            Debug.Log("Display " + displayText.text);
             yield return new WaitForSeconds(typingpeed);
         }
 

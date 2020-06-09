@@ -45,8 +45,8 @@ public class PlayerController : MonoBehaviour
     {
         Jumpback = JumpPower;
         ChangeGravity.VG = 1;
-        Heart_Bar.Phearts = GameController.corazones;
-        Heart_Bar.life = GameController.vidas;
+        //Heart_Bar.Phearts = GameController.corazones;
+        //Heart_Bar.life = GameController.vidas;
 
         
 
