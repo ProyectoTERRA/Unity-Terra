@@ -94,7 +94,7 @@ public class SistemaGuardado : MonoBehaviour
 
         //Variables a guardar        
         dato.nombrePartida = nombrePartida1;
-        dato.nombreEscena = "LOBBY";
+        dato.nombreEscena = "Edificio";
         dato.pila = 0;
         dato.bolsa = 0;
         dato.carton = 0;
@@ -119,7 +119,7 @@ public class SistemaGuardado : MonoBehaviour
         dato.equip2 = null;
 
         //Respaldo
-        dato.nombreEscena1 = "LOBBY";
+        dato.nombreEscena1 = "Edificio";
         dato.pila1 = 0;
         dato.bolsa1 = 0;
         dato.carton1 = 0;
