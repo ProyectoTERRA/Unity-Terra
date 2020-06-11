@@ -2533,17 +2533,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 128289250247929000, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6214826627960804926, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729084601171089525, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -2882,6 +2882,6 @@ MonoBehaviour:
   borrar3: {fileID: 1249070254}
   next: 
   before: 
-  nombreEscena: edificio
+  nombreEscena: 
   nombrePartida: 
   nombrePartida1: 
