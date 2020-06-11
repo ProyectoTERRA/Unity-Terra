@@ -1605,16 +1605,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8755725002330985209}
     m_Modifications:
-    - target: {fileID: 7259724196119756033, guid: 779b3acff1391d449ab84aaa16469507,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7259724196119756032, guid: 779b3acff1391d449ab84aaa16469507,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8362500405813697985, guid: 779b3acff1391d449ab84aaa16469507,
         type: 3}
       propertyPath: m_Name
@@ -1684,6 +1674,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5025126
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259724196119756032, guid: 779b3acff1391d449ab84aaa16469507,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259724196119756033, guid: 779b3acff1391d449ab84aaa16469507,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8362500405813697991, guid: 779b3acff1391d449ab84aaa16469507,
         type: 3}
@@ -2130,7 +2130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gspr: {fileID: 193348554}
   Gspr_Special: {fileID: 653013738}
-  Spr: {fileID: 21300000, guid: fcd3314b8ec351748a1cf8c6ff5cf368, type: 3}
+  Spr: {fileID: 21300000, guid: dc09ba2487cd56f40afd7213ef12912b, type: 3}
   especiales: 1
 --- !u!1001 &368537966
 PrefabInstance:
@@ -2850,7 +2850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gspr: {fileID: 793931870}
   Gspr_Special: {fileID: 148342883}
-  Spr: {fileID: 21300000, guid: fcd3314b8ec351748a1cf8c6ff5cf368, type: 3}
+  Spr: {fileID: 21300000, guid: dc09ba2487cd56f40afd7213ef12912b, type: 3}
   especiales: 1
 --- !u!1 &448948731
 GameObject:
@@ -3046,7 +3046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gspr: {fileID: 1909644463}
   Gspr_Special: {fileID: 1539072657}
-  Spr: {fileID: 21300000, guid: 4cbee470c9cbc4443aa85a2698d867de, type: 3}
+  Spr: {fileID: 21300000, guid: dc09ba2487cd56f40afd7213ef12912b, type: 3}
   especiales: 1
 --- !u!1001 &464663930
 PrefabInstance:
@@ -6406,16 +6406,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventario
       objectReference: {fileID: 0}
-    - target: {fileID: 128289250247929000, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888325355320331725, guid: a72f4c8686a07504fbcf19c0072337c4,
-        type: 3}
-      propertyPath: list
-      value: 
-      objectReference: {fileID: 1527938418}
     - target: {fileID: 2671807527447435880, guid: a72f4c8686a07504fbcf19c0072337c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6471,6 +6461,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 128289250247929000, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888325355320331725, guid: a72f4c8686a07504fbcf19c0072337c4,
+        type: 3}
+      propertyPath: list
+      value: 
+      objectReference: {fileID: 1527938418}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a72f4c8686a07504fbcf19c0072337c4, type: 3}
 --- !u!1 &983894167

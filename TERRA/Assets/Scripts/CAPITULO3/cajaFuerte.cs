@@ -8,7 +8,7 @@ public class cajaFuerte : MonoBehaviour
     int x =0;
     void Update()
     {
-        GameController.formula = 8;
+        //GameController.formula = 8;
         Debug.Log("Numero de llaveeeeee " + GameController.llave);
         if (comprobar != 1)
         {
